@@ -73,9 +73,18 @@ def main():
     version = subprocess.check_output([str(binary), '-v'], text=True).strip()
     if version != 'Info: Restool version= Restool 4.105':
         raise ValueError('Unexpected resource compiler: ' + version)
+    # Record the libstdc++ that was actually linked in, which is the one the
+    # pinned compiler resolves -- not the one the workstation's own `c++`
+    # resolves. The two coincide on the x86-64 Linux host this profile was
+    # developed on, so asking `c++` looked equivalent; it is not. On any host
+    # whose native compiler targets a different architecture than the pinned
+    # toolchain, `c++` names an archive that took no part in this link, and the
+    # recorded provenance silently describes the wrong file.
+    libstdcxx = subprocess.check_output(
+        [str(compiler), '-stdlib=libstdc++', '-print-file-name=libstdc++.a'], text=True).strip()
     record = {'sha256': digest(binary), 'version': version,
               'compiler_sha256': digest(compiler),
-              'host_libstdcxx': subprocess.check_output(['c++', '-print-file-name=libstdc++.a'], text=True).strip(),
+              'host_libstdcxx': libstdcxx,
               'sources': len(sources)}
     record['host_libstdcxx_sha256'] = digest(Path(record['host_libstdcxx']))
     (out / 'build.json').write_text(json.dumps(record, sort_keys=True, indent=2) + '\n')
