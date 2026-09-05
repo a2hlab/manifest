@@ -1,0 +1,50 @@
+diff --git a/JNIHelp.cpp b/JNIHelp.cpp
+index b57ec50..c270ed5 100644
+--- a/JNIHelp.cpp
++++ b/JNIHelp.cpp
+@@ -250,9 +250,42 @@ int jniRegisterNativeMethods(C_JNIEnv* env, const char* className,
+                          "Native registration unable to find class '%s'; aborting...",
+                          className);
+ 
+-    int result = e->RegisterNatives(c.get(), gMethods, numMethods);
+-    ALOG_ALWAYS_FATAL_IF(result < 0, "RegisterNatives failed for '%s'; aborting...",
+-                         className);
++    // WESTLAKE (arm64 board, 2026-07-21) — TOLERANT registration.
++    //
++    // Upstream registers the whole table in ONE call.  ART's RegisterNatives walks the
++    // array and bails out with JNI_ERR + NoSuchMethodError on the FIRST method that the
++    // loaded class doesn't declare, leaving every LATER method in the table unregistered.
++    // Our framework.jar is not the same AOSP revision as the libhwui we build, so e.g.
++    // android/graphics/Typeface's table hits a missing entry and everything after it —
++    // including nativeGetReleaseFunc — silently stays unbound.  The failure was invisible
++    // because ALOG_ALWAYS_FATAL_IF is neutered on OHOS, so this function still returned 0
++    // ("register returned rc=0") while having registered nothing.
++    //
++    // Same tolerance the project already applies in stubs/tolerant_native_util.h and in
++    // AndroidRuntime::startReg (which was changed to continue past a failed module).
++    // Register one at a time and skip what this framework.jar doesn't have.
++    //
++    // NOTE: libart.so also links this file and exports jniRegisterNativeMethods with
++    // global visibility, so it wins the runtime binding for libhwui.so too — fixing it
++    // here fixes every libhwui register_android_graphics_* module at once.
++    int ok = 0, missing = 0;
++    for (int i = 0; i < numMethods; ++i) {
++        if (e->RegisterNatives(c.get(), &gMethods[i], 1) == JNI_OK) {
++            ++ok;
++        } else {
++            ++missing;
++            if (e->ExceptionCheck()) {
++                e->ExceptionClear();
++            }
++            fprintf(stderr, "[WESTLAKE-JNIREG] skip %s.%s%s (not in this framework.jar)\n",
++                    className, gMethods[i].name, gMethods[i].signature);
++        }
++    }
++    if (missing != 0) {
++        fprintf(stderr, "[WESTLAKE-JNIREG] %s: %d/%d registered (%d missing)\n",
++                className, ok, numMethods, missing);
++        fflush(stderr);
++    }
+ 
+     return 0;
+ }

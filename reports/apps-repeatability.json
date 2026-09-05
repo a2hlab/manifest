@@ -1,0 +1,14 @@
+{
+  "artifacts": {
+    "imehost-unsigned.hap": {
+      "bytes": 9510,
+      "sha256": "f68410e8f6057667e63a0149e926bc66190134a804f1612906574ad09546aebd"
+    },
+    "pinyin-unsigned.hap": {
+      "bytes": 2536149,
+      "sha256": "65c2d4706df08674acbb96d2a12a84d229619c534990451de169bfdf285adeae"
+    }
+  },
+  "result": "byte-identical",
+  "scope": "Source artifact reproduction only; not device acceptance or performance parity"
+}

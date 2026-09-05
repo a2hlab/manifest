@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "projects": [
+    {
+      "path": "upstream/aosp-11/external/dlmalloc",
+      "url": "https://android.googlesource.com/platform/external/dlmalloc",
+      "revision": "3a9d0af27a9f8fe533931a9e7ca843fd8e5b54f1"
+    },
+    {
+      "path": "upstream/ohos/developtools/global_resource_tool",
+      "url": "https://github.com/openharmony/developtools_global_resource_tool.git",
+      "revision": "eb7d04912888b5f954a7ee4548c4f73897eb8eca"
+    },
+    {
+      "path": "upstream/ohos/third_party/jsoncpp",
+      "url": "https://github.com/openharmony/third_party_jsoncpp.git",
+      "revision": "47321f506153e298ec078a1f4560e44058b12d53"
+    },
+    {
+      "path": "upstream/ohos/third_party/libpng",
+      "url": "https://github.com/openharmony/third_party_libpng.git",
+      "revision": "f7cf480b2d9e5cc74622cd0fc814f5873428a577"
+    },
+    {
+      "path": "upstream/ohos/third_party/zlib",
+      "url": "https://github.com/openharmony/third_party_zlib.git",
+      "revision": "715621a0e254569e2dd9a7683ec89d01c228e2aa"
+    },
+    {
+      "path": "upstream/ohos/third_party/bounds_checking_function",
+      "url": "https://github.com/openharmony/third_party_bounds_checking_function.git",
+      "revision": "dd8125bec1f8d9f28b7a9c99931d4b0580b7f78d"
+    }
+  ]
+}

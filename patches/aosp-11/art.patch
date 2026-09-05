@@ -1,0 +1,451 @@
+diff --git a/dalvikvm/dalvikvm.cc b/dalvikvm/dalvikvm.cc
+index 4808a1fa09..ebfd7d40ea 100644
+--- a/dalvikvm/dalvikvm.cc
++++ b/dalvikvm/dalvikvm.cc
+@@ -26,6 +26,10 @@
+ #include "nativehelper/ScopedLocalRef.h"
+ #include "nativehelper/toStringArray.h"
+ 
++// Westlake: OHBridge JNI stubs (weak — absent in non-Westlake builds)
++extern "C" jint JNI_OnLoad_ohbridge(JavaVM*, void*) __attribute__((weak));
++static auto googOhbridgeOnLoad = &JNI_OnLoad_ohbridge;
++
+ namespace art {
+ 
+ // Determine whether or not the specified method is public.
+@@ -179,6 +183,12 @@ static int dalvikvm(int argc, char** argv) {
+     return EXIT_FAILURE;
+   }
+ 
++  // Register OHBridge JNI stubs (Westlake rendering pipeline).
++  if (googOhbridgeOnLoad) {
++    jint ver = googOhbridgeOnLoad(vm, nullptr);
++    fprintf(stderr, "[dalvikvm] JNI_OnLoad_ohbridge → %d\n", ver);
++  }
++
+   // Make sure they provided a class name. We do this after
+   // JNI_CreateJavaVM so that things like "-help" have the opportunity
+   // to emit a usage statement.
+diff --git a/dex2oat/dex2oat.cc b/dex2oat/dex2oat.cc
+index abb0bd1367..cee9e14af9 100644
+--- a/dex2oat/dex2oat.cc
++++ b/dex2oat/dex2oat.cc
+@@ -2792,11 +2792,11 @@ class Dex2Oat final {
+                        GetInstructionSetString(compiler_options_->GetInstructionSet())));
+ 
+     // Only allow no boot image for the runtime if we're compiling one. When we compile an app,
+-    // we don't want fallback mode, it will abort as we do not push a boot classpath (it might
+-    // have been stripped in preopting, anyways).
+-    if (!IsBootImage()) {
+-      raw_options.push_back(std::make_pair("-Xno-dex-file-fallback", nullptr));
+-    }
++    // Westlake: allow dex file fallback so we can compile without boot image
++    // Original code disabled fallback for non-boot-image compilation.
++    // if (!IsBootImage()) {
++    //   raw_options.push_back(std::make_pair("-Xno-dex-file-fallback", nullptr));
++    // }
+     // Never allow implicit image compilation.
+     raw_options.push_back(std::make_pair("-Xnoimage-dex2oat", nullptr));
+     // Disable libsigchain. We don't don't need it during compilation and it prevents us
+diff --git a/libartbase/base/globals_unix.cc b/libartbase/base/globals_unix.cc
+index 0d2e8a9104..e62b250349 100644
+--- a/libartbase/base/globals_unix.cc
++++ b/libartbase/base/globals_unix.cc
+@@ -43,32 +43,7 @@ namespace art {
+ // then clash with a later load of the debug version.
+ static struct CheckLoadedBuild {
+   CheckLoadedBuild() {
+-    bool debug_build_loaded = (dlopen(kLibArtBaseDebug, RTLD_NOW | RTLD_NOLOAD) != nullptr);
+-    bool release_build_loaded = (dlopen(kLibArtBaseRelease, RTLD_NOW | RTLD_NOLOAD) != nullptr);
+-    // TODO: The exit calls below are needed as CHECK would cause recursive backtracing. Fix it.
+-    if (!(debug_build_loaded || release_build_loaded)) {
+-      LOG(FATAL_WITHOUT_ABORT) << "Failed to dlopen "
+-                               << kLibArtBaseDebug
+-                               << " or "
+-                               << kLibArtBaseRelease;
+-      exit(1);
+-    }
+-    if (kIsDebugBuild && release_build_loaded) {
+-      LOG(FATAL_WITHOUT_ABORT) << "Loading "
+-                               << kLibArtBaseDebug
+-                               << " while "
+-                               << kLibArtBaseRelease
+-                               << " is already loaded";
+-      exit(1);
+-    }
+-    if (!kIsDebugBuild && debug_build_loaded) {
+-      LOG(FATAL_WITHOUT_ABORT) << "Loading "
+-                               << kLibArtBaseRelease
+-                               << " while "
+-                               << kLibArtBaseDebug
+-                               << " is already loaded";
+-      exit(1);
+-    }
++    // Westlake: skip all dlopen checks for static binaries
+   }
+ } g_check_loaded_build;
+ 
+diff --git a/runtime/class_linker.cc b/runtime/class_linker.cc
+index c39c5bebae..f3af9d64da 100644
+--- a/runtime/class_linker.cc
++++ b/runtime/class_linker.cc
+@@ -654,14 +654,28 @@ void ClassLinker::CheckSystemClass(Thread* self, Handle<mirror::Class> c1, const
+     UNREACHABLE();
+   }
+   if (c1.Get() != c2) {
+-    std::ostringstream os1, os2;
+-    c1->DumpClass(os1, mirror::Class::kDumpClassFullDetail);
+-    c2->DumpClass(os2, mirror::Class::kDumpClassFullDetail);
+-    LOG(FATAL) << "InitWithoutImage: Class mismatch for " << descriptor
+-               << ". This is most likely the result of a broken build. Make sure that "
+-               << "libcore and art projects match.\n\n"
+-               << os1.str() << "\n\n" << os2.str();
+-    UNREACHABLE();
++    LOG(WARNING) << "CheckSystemClass: Class mismatch for " << descriptor
++                 << " (continuing for standalone dex2oat)";
++    LOG(WARNING) << "  c1 (pre-allocated) ptr=" << std::hex << c1.Get()
++                 << " objectSize=" << c1->GetObjectSize()
++                 << " classSize=" << c1->GetClassSize()
++                 << " status=" << static_cast<int>(c1->GetStatus())
++                 << " numVTable=" << (c1->ShouldHaveEmbeddedVTable() ? c1->GetVTableLength() : -1)
++                 << " numMethods=" << c1->NumMethods()
++                 << " numSFields=" << c1->NumStaticFields()
++                 << " numIFields=" << c1->NumInstanceFields();
++    LOG(WARNING) << "  c2 (from DEX)      ptr=" << std::hex << c2.Ptr()
++                 << " objectSize=" << c2->GetObjectSize()
++                 << " classSize=" << c2->GetClassSize()
++                 << " status=" << static_cast<int>(c2->GetStatus())
++                 << " numVTable=" << (c2->ShouldHaveEmbeddedVTable() ? c2->GetVTableLength() : -1)
++                 << " numMethods=" << c2->NumMethods()
++                 << " numSFields=" << c2->NumStaticFields()
++                 << " numIFields=" << c2->NumInstanceFields();
++    if (c1->GetClassSize() != c2->GetClassSize()) {
++      LOG(WARNING) << "  String mismatch: pre-allocated ClassSize=" << c1->GetClassSize()
++                   << " actual c2 classSize=" << c2->GetClassSize();
++    }
+   }
+ }
+ 
+diff --git a/runtime/gc/space/dlmalloc_space.cc b/runtime/gc/space/dlmalloc_space.cc
+index f3fccbb6fd..10a1ab369c 100644
+--- a/runtime/gc/space/dlmalloc_space.cc
++++ b/runtime/gc/space/dlmalloc_space.cc
+@@ -75,11 +75,11 @@ DlMallocSpace* DlMallocSpace::CreateFromMemMap(MemMap&& mem_map,
+     return nullptr;
+   }
+ 
+-  // Protect memory beyond the starting size. morecore will add r/w permissions when necessory
++  // Westlake: skip mprotect(PROT_NONE) — it causes SEGV_ACCERR on static-pie binaries
++  // where morecore/sbrk doesn't properly re-enable pages before access.
++  // The full capacity was already mmap'd with PROT_READ|PROT_WRITE by MemMap::MapAnonymous.
+   uint8_t* end = mem_map.Begin() + starting_size;
+-  if (capacity - starting_size > 0) {
+-    CheckedCall(mprotect, name.c_str(), end, capacity - starting_size, PROT_NONE);
+-  }
++  (void)end;  // unused
+ 
+   // Everything is set so record in immutable structure and leave
+   uint8_t* begin = mem_map.Begin();
+diff --git a/runtime/gc/space/malloc_space.cc b/runtime/gc/space/malloc_space.cc
+index 281d9c2342..fac283edd1 100644
+--- a/runtime/gc/space/malloc_space.cc
++++ b/runtime/gc/space/malloc_space.cc
+@@ -169,7 +169,8 @@ void* MallocSpace::MoreCore(intptr_t increment) {
+       // likely just a useful debug feature.
+       size_t size = -increment;
+       CheckedCall(madvise, GetName(), new_end, size, MADV_DONTNEED);
+-      CheckedCall(mprotect, GetName(), new_end, size, PROT_NONE);
++      // Westlake: skip mprotect(PROT_NONE) on trim — breaks static-pie dex2oat
++      // CheckedCall(mprotect, GetName(), new_end, size, PROT_NONE);
+     }
+     // Update end_.
+     SetEnd(new_end);
+@@ -214,11 +215,9 @@ ZygoteSpace* MallocSpace::CreateZygoteSpace(const char* alloc_space_name, bool l
+   CHECK(mem_map.IsValid()) << error_msg;
+   void* allocator =
+       CreateAllocator(End(), starting_size_, initial_size_, capacity, low_memory_mode);
+-  // Protect memory beyond the initial size.
++  // Westlake: skip mprotect(PROT_NONE) for static-pie dex2oat compatibility
+   uint8_t* end = mem_map.Begin() + starting_size_;
+-  if (capacity > initial_size_) {
+-    CheckedCall(mprotect, alloc_space_name, end, capacity - initial_size_, PROT_NONE);
+-  }
++  (void)end;
+   *out_malloc_space = CreateInstance(std::move(mem_map),
+                                      alloc_space_name,
+                                      allocator,
+diff --git a/runtime/gc/space/region_space.cc b/runtime/gc/space/region_space.cc
+index faeeec0047..aaf822efac 100644
+--- a/runtime/gc/space/region_space.cc
++++ b/runtime/gc/space/region_space.cc
+@@ -414,7 +414,8 @@ void RegionSpace::SetFromSpace(accounting::ReadBarrierTable* rb_table,
+ static void ZeroAndProtectRegion(uint8_t* begin, uint8_t* end) {
+   ZeroAndReleasePages(begin, end - begin);
+   if (kProtectClearedRegions) {
+-    CheckedCall(mprotect, __FUNCTION__, begin, end - begin, PROT_NONE);
++    // Westlake: skip mprotect PROT_NONE
++    // CheckedCall(mprotect, __FUNCTION__, begin, end - begin, PROT_NONE);
+   }
+ }
+ 
+@@ -773,7 +774,8 @@ void RegionSpace::Clear() {
+ 
+ void RegionSpace::Protect() {
+   if (kProtectClearedRegions) {
+-    CheckedCall(mprotect, __FUNCTION__, Begin(), Size(), PROT_NONE);
++    // Westlake: skip mprotect PROT_NONE
++    // CheckedCall(mprotect, __FUNCTION__, Begin(), Size(), PROT_NONE);
+   }
+ }
+ 
+diff --git a/runtime/gc/space/rosalloc_space.cc b/runtime/gc/space/rosalloc_space.cc
+index fc9cad0a05..4a1ddb71be 100644
+--- a/runtime/gc/space/rosalloc_space.cc
++++ b/runtime/gc/space/rosalloc_space.cc
+@@ -91,11 +91,9 @@ RosAllocSpace* RosAllocSpace::CreateFromMemMap(MemMap&& mem_map,
+     return nullptr;
+   }
+ 
+-  // Protect memory beyond the starting size. MoreCore will add r/w permissions when necessory
++  // Westlake: skip mprotect(PROT_NONE) — breaks static-pie dex2oat
+   uint8_t* end = mem_map.Begin() + starting_size;
+-  if (capacity - starting_size > 0) {
+-    CheckedCall(mprotect, name.c_str(), end, capacity - starting_size, PROT_NONE);
+-  }
++  (void)end;
+ 
+   // Everything is set so record in immutable structure and leave
+   uint8_t* begin = mem_map.Begin();
+diff --git a/runtime/jit/jit.cc b/runtime/jit/jit.cc
+index 8d434b8a0c..a4ac296b19 100644
+--- a/runtime/jit/jit.cc
++++ b/runtime/jit/jit.cc
+@@ -273,7 +273,17 @@ bool Jit::LoadSymbol(T* address, const char* name, std::string* error_msg) {
+   return true;
+ }
+ 
++// Forward declare jit_load — statically linked from compiler objects
++extern "C" JitCompilerInterface* jit_load();
++
+ bool Jit::LoadCompilerLibrary(std::string* error_msg) {
++#ifdef ART_STATIC_JIT
++  // Static JIT: compiler is linked directly into dalvikvm binary
++  jit_library_handle_ = reinterpret_cast<void*>(1); // non-null sentinel
++  jit_load_ = jit_load;
++  LOG(INFO) << "JIT compiler loaded (static link)";
++  return true;
++#else
+   jit_library_handle_ = dlopen(
+       kIsDebugBuild ? "libartd-compiler.so" : "libart-compiler.so", RTLD_NOW);
+   if (jit_library_handle_ == nullptr) {
+@@ -287,6 +297,7 @@ bool Jit::LoadCompilerLibrary(std::string* error_msg) {
+     return false;
+   }
+   return true;
++#endif
+ }
+ 
+ bool Jit::CompileMethod(ArtMethod* method, Thread* self, bool baseline, bool osr, bool prejit) {
+diff --git a/runtime/jni/jni_internal.cc b/runtime/jni/jni_internal.cc
+index f4ef78548e..2dec099311 100644
+--- a/runtime/jni/jni_internal.cc
++++ b/runtime/jni/jni_internal.cc
+@@ -2524,20 +2524,14 @@ class JNI {
+       }
+ 
+       if (m == nullptr) {
+-        c->DumpClass(LOG_STREAM(ERROR), mirror::Class::kDumpClassFullDetail);
+-        LOG(ERROR)
+-            << "Failed to register native method "
+-            << c->PrettyDescriptor() << "." << name << sig << " in "
+-            << c->GetDexCache()->GetLocation()->ToModifiedUtf8();
+-        ThrowNoSuchMethodError(soa, c.Get(), name, sig, "static or non-static");
+-        return JNI_ERR;
++        // Tolerant: skip missing methods instead of throwing (standalone build)
++        fprintf(stderr, "[jni] Skipping missing method: %s%s\n", name, sig);
++        if (soa.Self()->IsExceptionPending()) soa.Self()->ClearException();
++        continue;
+       } else if (!m->IsNative()) {
+-        LOG(ERROR)
+-            << "Failed to register non-native method "
+-            << c->PrettyDescriptor() << "." << name << sig
+-            << " as native";
+-        ThrowNoSuchMethodError(soa, c.Get(), name, sig, "native");
+-        return JNI_ERR;
++        fprintf(stderr, "[jni] Skipping non-native method: %s%s\n", name, sig);
++        if (soa.Self()->IsExceptionPending()) soa.Self()->ClearException();
++        continue;
+       }
+ 
+       VLOG(jni) << "[Registering JNI native method " << m->PrettyMethod() << "]";
+diff --git a/runtime/mirror/class-inl.h b/runtime/mirror/class-inl.h
+index 6a5317c1b6..2125a756c2 100644
+--- a/runtime/mirror/class-inl.h
++++ b/runtime/mirror/class-inl.h
+@@ -19,6 +19,7 @@
+ 
+ #include "class.h"
+ 
++#include <sys/mman.h>  // msync for safe memory probing
+ #include "art_field.h"
+ #include "art_method.h"
+ #include "base/array_slice.h"
+@@ -388,7 +389,9 @@ inline bool Class::Implements(ObjPtr<Class> klass) {
+   // recursively all super-interfaces of those interfaces, are listed
+   // in iftable_, so we can just do a linear scan through that.
+   int32_t iftable_count = GetIfTableCount();
++  if (iftable_count <= 0) return false;
+   ObjPtr<IfTable> iftable = GetIfTable();
++  if (iftable == nullptr) return false;
+   for (int32_t i = 0; i < iftable_count; i++) {
+     if (iftable->GetInterface(i) == klass) {
+       return true;
+@@ -1087,11 +1090,19 @@ bool Class::IsPrimitiveArray() {
+ 
+ inline bool Class::IsAssignableFrom(ObjPtr<Class> src) {
+   DCHECK(src != nullptr);
++  // Westlake: probe both class objects' memory pages before accessing fields.
++  // Non-moving space can be fragmented on some systems (static-pie, WSL).
++  {
++    uintptr_t this_page = reinterpret_cast<uintptr_t>(this) & ~static_cast<uintptr_t>(0xFFF);
++    uintptr_t src_page = reinterpret_cast<uintptr_t>(src.Ptr()) & ~static_cast<uintptr_t>(0xFFF);
++    if (msync(reinterpret_cast<void*>(this_page), 4096, MS_ASYNC) != 0 ||
++        msync(reinterpret_cast<void*>(src_page), 4096, MS_ASYNC) != 0) {
++      return false;  // Memory not accessible
++    }
++  }
+   if (this == src) {
+-    // Can always assign to things of the same type.
+     return true;
+   } else if (IsObjectClass()) {
+-    // Can assign any reference to java.lang.Object.
+     return !src->IsPrimitive();
+   } else if (IsInterface()) {
+     return src->Implements(this);
+diff --git a/runtime/thread.cc b/runtime/thread.cc
+index 77b9f4f24c..029c436f66 100644
+--- a/runtime/thread.cc
++++ b/runtime/thread.cc
+@@ -3223,10 +3223,17 @@ void Thread::ThrowNewWrappedException(const char* exception_class_descriptor,
+     return;
+   }
+ 
+-  if (UNLIKELY(!runtime->GetClassLinker()->EnsureInitialized(soa.Self(), exception_class, true,
+-                                                             true))) {
+-    DCHECK(IsExceptionPending());
+-    return;
++  // PATCH: During AOT compilation (dex2oat), skip EnsureInitialized for exception classes.
++  // EnsureInitialized triggers VerifyClass, which can re-enter VerifyClass on a class
++  // already being verified (e.g., Object), causing a single-thread deadlock.
++  // In AOT mode, exception throwing is just for recording metadata; we don't need
++  // fully initialized exception classes.
++  if (!runtime->IsAotCompiler()) {
++    if (UNLIKELY(!runtime->GetClassLinker()->EnsureInitialized(soa.Self(), exception_class, true,
++                                                               true))) {
++      DCHECK(IsExceptionPending());
++      return;
++    }
+   }
+   DCHECK(!runtime->IsStarted() || exception_class->IsThrowableClass());
+   Handle<mirror::Throwable> exception(
+diff --git a/runtime/thread_pool.cc b/runtime/thread_pool.cc
+index 2bca5a9f43..3efe1326b5 100644
+--- a/runtime/thread_pool.cc
++++ b/runtime/thread_pool.cc
+@@ -54,11 +54,8 @@ ThreadPoolWorker::ThreadPoolWorker(ThreadPool* thread_pool, const std::string& n
+                                 &error_msg);
+   CHECK(stack_.IsValid()) << error_msg;
+   CHECK_ALIGNED(stack_.Begin(), kPageSize);
+-  CheckedCall(mprotect,
+-              "mprotect bottom page of thread pool worker stack",
+-              stack_.Begin(),
+-              kPageSize,
+-              PROT_NONE);
++  // Westlake: skip stack guard — breaks static bionic binaries
++  // CheckedCall(mprotect, "mprotect bottom page", stack_.Begin(), kPageSize, PROT_NONE);
+   const char* reason = "new thread pool worker thread";
+   pthread_attr_t attr;
+   CHECK_PTHREAD_CALL(pthread_attr_init, (&attr), reason);
+diff --git a/runtime/verifier/method_verifier.cc b/runtime/verifier/method_verifier.cc
+index d695e08d2f..3a747ae3c7 100644
+--- a/runtime/verifier/method_verifier.cc
++++ b/runtime/verifier/method_verifier.cc
+@@ -2219,7 +2219,7 @@ bool MethodVerifier<kVerifierDebug>::CodeFlowVerifyInstruction(uint32_t* start_g
+           if (reg_type.IsUndefined()) {
+             Fail(VERIFY_ERROR_BAD_CLASS_HARD) << "returning undefined register";
+           } else if (reg_type.IsConflict()) {
+-            Fail(VERIFY_ERROR_BAD_CLASS_HARD) << "returning register with conflict";
++            Fail(VERIFY_ERROR_BAD_CLASS_SOFT) << "returning register with conflict";
+           } else if (reg_type.IsUninitializedTypes()) {
+             Fail(VERIFY_ERROR_BAD_CLASS_HARD) << "returning uninitialized object '"
+                                               << reg_type << "'";
+diff --git a/runtime/verifier/reg_type-inl.h b/runtime/verifier/reg_type-inl.h
+index 9e12d636d4..77cee4b6e3 100644
+--- a/runtime/verifier/reg_type-inl.h
++++ b/runtime/verifier/reg_type-inl.h
+@@ -18,6 +18,7 @@
+ #define ART_RUNTIME_VERIFIER_REG_TYPE_INL_H_
+ 
+ #include "reg_type.h"
++#include <sys/mman.h>  // msync for safe memory probing
+ 
+ #include "base/casts.h"
+ #include "base/scoped_arena_allocator.h"
+@@ -112,9 +113,18 @@ inline bool RegType::AssignableFrom(const RegType& lhs,
+           return rhs.IsObjectArrayTypes();  // All reference arrays may be assigned to Object[]
+         } else if (lhs.HasClass() && rhs.HasClass()) {
+           // Test assignability from the Class point-of-view.
+-          bool result = lhs.GetClass()->IsAssignableFrom(rhs.GetClass());
+-          // Record assignability dependency. The `verifier` is null during unit tests and
+-          // VerifiedMethod::GenerateSafeCastSet.
++          // Westlake: Use msync probe to test if class object memory is accessible.
++          // The non-moving space can have gaps on some systems (WSL, static builds).
++          auto lhs_class = lhs.GetClass();
++          auto rhs_class = rhs.GetClass();
++          // Probe: msync with MS_ASYNC on the page. Returns -1/ENOMEM if unmapped.
++          bool lhs_ok = (msync(reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(lhs_class.Ptr()) & ~0xFFFUL), 4096, MS_ASYNC) == 0);
++          bool rhs_ok = (msync(reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(rhs_class.Ptr()) & ~0xFFFUL), 4096, MS_ASYNC) == 0);
++          if (!lhs_ok || !rhs_ok) {
++            return false;  // Memory not accessible — skip assignability check
++          }
++          bool result = lhs_class->IsAssignableFrom(rhs_class);
++          // Record assignability dependency.
+           if (verifier != nullptr) {
+             VerifierDeps::MaybeRecordAssignability(
+                 verifier->GetDexFile(), lhs.GetClass(), rhs.GetClass(), strict, result);
+diff --git a/runtime/verifier/reg_type_cache.cc b/runtime/verifier/reg_type_cache.cc
+index 2edb0f13aa..e4845c33e8 100644
+--- a/runtime/verifier/reg_type_cache.cc
++++ b/runtime/verifier/reg_type_cache.cc
+@@ -242,6 +242,9 @@ const RegType& RegTypeCache::MakeUnresolvedReference() {
+ 
+ const RegType* RegTypeCache::FindClass(ObjPtr<mirror::Class> klass, bool precise) const {
+   DCHECK(klass != nullptr);
++  if (UNLIKELY(klass == nullptr)) {
++    return nullptr;
++  }
+   if (klass->IsPrimitive()) {
+     // Note: precise isn't used for primitive classes. A char is assignable to an int. All
+     // primitive classes are final.
+@@ -275,6 +278,11 @@ const RegType& RegTypeCache::FromClass(const char* descriptor,
+                                        ObjPtr<mirror::Class> klass,
+                                        bool precise) {
+   DCHECK(klass != nullptr);
++  if (UNLIKELY(klass == nullptr)) {
++    // Null class can arrive via soft-verification failures (e.g. Object.clone()).
++    // Return Conflict instead of crashing.
++    return Conflict();
++  }
+   const RegType* reg_type = FindClass(klass, precise);
+   if (reg_type == nullptr) {
+     reg_type = InsertClass(AddString(std::string_view(descriptor)), klass, precise);
+@@ -671,6 +679,9 @@ const RegType& RegTypeCache::GetComponentType(const RegType& array,
+     return FromDescriptor(loader, descriptor.c_str() + 1, false);
+   } else {
+     ObjPtr<mirror::Class> klass = array.GetClass()->GetComponentType();
++    if (UNLIKELY(klass == nullptr)) {
++      return Conflict();
++    }
+     std::string temp;
+     const char* descriptor = klass->GetDescriptor(&temp);
+     if (klass->IsErroneous()) {

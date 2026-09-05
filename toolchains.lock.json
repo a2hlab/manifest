@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "platform-clang": {
+    "url": "https://repo.huaweicloud.com/openharmony/compiler/clang/15.0.4-81cdec/linux/clang_linux-x86_64-81cdec-20240308.tar.gz",
+    "sha256": "61b1b7f99584d6f550170731791d4a27a7b401fd06ac3316fba48e8227bed305",
+    "bytes": 651171270,
+    "root": "clang_linux-x86_64-81cdec-20240308",
+    "version": "15.0.4-81cdec-20240308",
+    "tree_sha256": "b422f5d6d5288e331509fa5f5ec80251578df0439152f16193d097a32790c130"
+  },
+  "ohos-sdk": {
+    "url": "https://repo.huaweicloud.com/openharmony/os/6.1-Release/ohos-sdk-windows_linux-public.tar.gz",
+    "sha256": "b833b75a64ee46bbd7880921abbb49b733ec5c8171b6684c9b524d57f624cee0",
+    "bytes": 2499936800,
+    "version": "6.1.0.31",
+    "api_version": 23,
+    "tree_sha256": "9fcdf0cf834c0267b4db3e54b7aa4c71ebc45791d890688c32bff041b544a512",
+    "license_url": "https://gitee.com/openharmony/docs/blob/OpenHarmony-6.1-Release/en/LICENSE",
+    "members": {
+      "native": "linux/native-linux-x64-6.1.0.31-Release.zip",
+      "ets": "linux/ets-linux-x64-6.1.0.31-Release.zip",
+      "toolchains": "linux/toolchains-linux-x64-6.1.0.31-Release.zip"
+    }
+  }
+}

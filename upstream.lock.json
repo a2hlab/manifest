@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "projects": [
+    {
+      "path": "upstream/aosp-11/art",
+      "url": "https://android.googlesource.com/platform/art",
+      "revision": "83cd633bec9586c44d214f01734d29de582882a3",
+      "patch": "patches/aosp-11/art.patch",
+      "tree": "351ccfa27e84a0f4091ffd17cebf5dfd318167f9",
+      "patch_sha256": "a99dd52e7129d31283e5eddf5d1c68a33e06da8ea66190a4322f4c50e7304433"
+    },
+    {
+      "path": "upstream/aosp-11/system/core",
+      "url": "https://android.googlesource.com/platform/system/core",
+      "revision": "348efca472d810d3152568913da41a081893a4e3"
+    },
+    {
+      "path": "upstream/aosp-11/libnativehelper",
+      "url": "https://android.googlesource.com/platform/libnativehelper",
+      "revision": "4494e4aa4167ec5bdd687a3ed49b10c6f9d21c34",
+      "patch": "patches/aosp-11/libnativehelper.patch",
+      "tree": "dfcf3e310a7b1818027485e7d30f0968e592bbba",
+      "patch_sha256": "1c59e560c191911a305389417c623a87dc01c2aea4e87392cf5062b198d796ff"
+    },
+    {
+      "path": "upstream/aosp-11/external/zlib",
+      "url": "https://android.googlesource.com/platform/external/zlib",
+      "revision": "1a9b432817192342bbfb5a389058a45eea9f816c"
+    },
+    {
+      "path": "upstream/aosp-11/external/lz4",
+      "url": "https://android.googlesource.com/platform/external/lz4",
+      "revision": "fdd43c66dd9e77283aa8f7e52a881be44d622441"
+    },
+    {
+      "path": "upstream/aosp-11/external/vixl",
+      "url": "https://android.googlesource.com/platform/external/vixl",
+      "revision": "c150fd7455f6f3520efe35ac6b24854ecc5b3a70",
+      "patch": "patches/aosp-11/external_vixl.patch",
+      "tree": "d020de8e34a64778eeb11b1b217a4157e90d0ec6",
+      "patch_sha256": "3cb06796213627d332b8baca5fc36a608cb9b8ebfd2f4d942e720835a7058342"
+    },
+    {
+      "path": "upstream/aosp-11/external/lzma",
+      "url": "https://android.googlesource.com/platform/external/lzma",
+      "revision": "7ad0c1013f4666f8c9d088e0c6893a86057f5ebd"
+    },
+    {
+      "path": "upstream/aosp-11/external/icu",
+      "url": "https://android.googlesource.com/platform/external/icu",
+      "revision": "7d24b8a6ac9f91d5b0c8d822cdfe795cff787de4"
+    },
+    {
+      "path": "upstream/aosp-11/external/tinyxml2",
+      "url": "https://android.googlesource.com/platform/external/tinyxml2",
+      "revision": "1b7e9f45b916fdafad6a450244d6d30735b075db"
+    },
+    {
+      "path": "upstream/aosp-11/external/fmtlib",
+      "url": "https://android.googlesource.com/platform/external/fmtlib",
+      "revision": "aa6fa3aa882afe47f7af990b0c6d747a01cd6104"
+    },
+    {
+      "path": "upstream/art-15",
+      "url": "https://github.com/a2hlab/aosp-art-15.git",
+      "revision": "814cc9385f8f8eaba6f4bfd1d723160c2132c76e"
+    }
+  ]
+}

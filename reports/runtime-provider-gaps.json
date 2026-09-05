@@ -1,0 +1,184 @@
+{
+  "additional_platform_libcxx": {
+    "note": "Not in current DT_NEEDED; do not assume another library loads it",
+    "sha256": "9487e6aa920386ca3c83cc2b238a8792c194d55ea73545bbf17b5e0d0fb1c5bc"
+  },
+  "deployment_accepted": false,
+  "missing_needed_libraries": [],
+  "remaining_even_with_platform_libcxx": {
+    "libart.so": [
+      "program_invocation_short_name"
+    ],
+    "libwestlake_runtime_boundary.so": [
+      "JNI_OnLoad_binder_with_cl"
+    ]
+  },
+  "scope": "SDK link-stub audit, not installed-board runtime-provider verification",
+  "sdk_needed_libraries": {
+    "libart.so": {
+      "needed": [
+        "libwestlake_runtime_boundary.so",
+        "libz.so",
+        "libc.so",
+        "libc++_shared.so"
+      ],
+      "sha256": "363e71cf04242d00cd0ffc42111eae4246d3608888fafedbea5f88db775a603e"
+    },
+    "libc++_shared.so": {
+      "needed": [
+        "libc.so"
+      ],
+      "sha256": "d1a368b58e7cb80a7422b8bd344ec9328a43884d62f409af6e9ec161c73a2f4d"
+    },
+    "libc.so": {
+      "needed": [],
+      "sha256": "86d5e1cd6437f1fd4df9df7e5aa32c237bd3c441726612c48e4e44b712623eb1"
+    },
+    "libicu.so": {
+      "needed": [],
+      "sha256": "bc826ef4fc1040a956eee08c058e6c7057bba66ca7e043ac59a0e814d49595be"
+    },
+    "libwestlake_runtime_boundary.so": {
+      "needed": [
+        "libicu.so",
+        "libz.so",
+        "libc.so",
+        "libc++_shared.so"
+      ],
+      "sha256": "f05065ca3e327c10037dfe4dc12961ba378544cba2ae63a0f436ce2732aa893f"
+    },
+    "libz.so": {
+      "needed": [],
+      "sha256": "2103e7c526e5b5538d26c663ac96a531b4f954cd83b10bd4c5e5510d9f3809f5"
+    }
+  },
+  "unresolved_against_needed_sdk_stubs": {
+    "libart.so": [
+      "_ZNKSt3__h12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4findEcm",
+      "_ZNKSt3__h19__shared_weak_count13__get_deleterERKSt9type_info",
+      "_ZNKSt3__h6locale9has_facetERNS0_2idE",
+      "_ZNKSt3__h6locale9use_facetERNS0_2idE",
+      "_ZNKSt3__h8ios_base6getlocEv",
+      "_ZNSt13runtime_errorC1ERKNSt3__h12basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE",
+      "_ZNSt3__h11__call_onceERVmPvPFvS2_E",
+      "_ZNSt3__h12__next_primeEm",
+      "_ZNSt3__h12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6appendEPKc",
+      "_ZNSt3__h12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6appendEPKcm",
+      "_ZNSt3__h12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6appendEmc",
+      "_ZNSt3__h12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6assignEPKc",
+      "_ZNSt3__h12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6assignEPKcm",
+      "_ZNSt3__h12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6assignEmc",
+      "_ZNSt3__h12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6insertENS_11__wrap_iterIPKcEEc",
+      "_ZNSt3__h12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6insertEmPKcm",
+      "_ZNSt3__h12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6insertEmmc",
+      "_ZNSt3__h12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6resizeEmc",
+      "_ZNSt3__h12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE7replaceEmmPKcm",
+      "_ZNSt3__h12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE7reserveEm",
+      "_ZNSt3__h12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE9push_backEc",
+      "_ZNSt3__h12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1ERKS5_",
+      "_ZNSt3__h12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1ERKS5_mmRKS4_",
+      "_ZNSt3__h12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2ERKS5_",
+      "_ZNSt3__h12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED2Ev",
+      "_ZNSt3__h12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEaSERKS5_",
+      "_ZNSt3__h13basic_istreamIcNS_11char_traitsIcEEE6sentryC1ERS3_b",
+      "_ZNSt3__h13basic_istreamIcNS_11char_traitsIcEEED0Ev",
+      "_ZNSt3__h13basic_istreamIcNS_11char_traitsIcEEED1Ev",
+      "_ZNSt3__h13basic_istreamIcNS_11char_traitsIcEEED2Ev",
+      "_ZNSt3__h13basic_ostreamIcNS_11char_traitsIcEEE3putEc",
+      "_ZNSt3__h13basic_ostreamIcNS_11char_traitsIcEEE5flushEv",
+      "_ZNSt3__h13basic_ostreamIcNS_11char_traitsIcEEE6sentryC1ERS3_",
+      "_ZNSt3__h13basic_ostreamIcNS_11char_traitsIcEEE6sentryD1Ev",
+      "_ZNSt3__h13basic_ostreamIcNS_11char_traitsIcEEED0Ev",
+      "_ZNSt3__h13basic_ostreamIcNS_11char_traitsIcEEED1Ev",
+      "_ZNSt3__h13basic_ostreamIcNS_11char_traitsIcEEED2Ev",
+      "_ZNSt3__h13basic_ostreamIcNS_11char_traitsIcEEElsEPKv",
+      "_ZNSt3__h13basic_ostreamIcNS_11char_traitsIcEEElsEb",
+      "_ZNSt3__h13basic_ostreamIcNS_11char_traitsIcEEElsEd",
+      "_ZNSt3__h13basic_ostreamIcNS_11char_traitsIcEEElsEf",
+      "_ZNSt3__h13basic_ostreamIcNS_11char_traitsIcEEElsEi",
+      "_ZNSt3__h13basic_ostreamIcNS_11char_traitsIcEEElsEj",
+      "_ZNSt3__h13basic_ostreamIcNS_11char_traitsIcEEElsEl",
+      "_ZNSt3__h13basic_ostreamIcNS_11char_traitsIcEEElsEm",
+      "_ZNSt3__h13basic_ostreamIcNS_11char_traitsIcEEElsEs",
+      "_ZNSt3__h13basic_ostreamIcNS_11char_traitsIcEEElsEt",
+      "_ZNSt3__h13random_deviceC2ERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE",
+      "_ZNSt3__h13random_deviceD1Ev",
+      "_ZNSt3__h13random_deviceclEv",
+      "_ZNSt3__h14basic_iostreamIcNS_11char_traitsIcEEED0Ev",
+      "_ZNSt3__h14basic_iostreamIcNS_11char_traitsIcEEED1Ev",
+      "_ZNSt3__h14basic_iostreamIcNS_11char_traitsIcEEED2Ev",
+      "_ZNSt3__h15__thread_structC1Ev",
+      "_ZNSt3__h15__thread_structD1Ev",
+      "_ZNSt3__h15basic_streambufIcNS_11char_traitsIcEEE4syncEv",
+      "_ZNSt3__h15basic_streambufIcNS_11char_traitsIcEEE5imbueERKNS_6localeE",
+      "_ZNSt3__h15basic_streambufIcNS_11char_traitsIcEEE5uflowEv",
+      "_ZNSt3__h15basic_streambufIcNS_11char_traitsIcEEE6setbufEPcl",
+      "_ZNSt3__h15basic_streambufIcNS_11char_traitsIcEEE6xsgetnEPcl",
+      "_ZNSt3__h15basic_streambufIcNS_11char_traitsIcEEE6xsputnEPKcl",
+      "_ZNSt3__h15basic_streambufIcNS_11char_traitsIcEEE7seekoffExNS_8ios_base7seekdirEj",
+      "_ZNSt3__h15basic_streambufIcNS_11char_traitsIcEEE7seekposENS_4fposI11__mbstate_tEEj",
+      "_ZNSt3__h15basic_streambufIcNS_11char_traitsIcEEE9pbackfailEi",
+      "_ZNSt3__h15basic_streambufIcNS_11char_traitsIcEEE9showmanycEv",
+      "_ZNSt3__h15basic_streambufIcNS_11char_traitsIcEEE9underflowEv",
+      "_ZNSt3__h15basic_streambufIcNS_11char_traitsIcEEEC2Ev",
+      "_ZNSt3__h15basic_streambufIcNS_11char_traitsIcEEED2Ev",
+      "_ZNSt3__h15recursive_mutex4lockEv",
+      "_ZNSt3__h15recursive_mutex6unlockEv",
+      "_ZNSt3__h15recursive_mutexC1Ev",
+      "_ZNSt3__h18condition_variable10notify_allEv",
+      "_ZNSt3__h18condition_variable15__do_timed_waitERNS_11unique_lockINS_5mutexEEENS_6chrono10time_pointINS5_12system_clockENS5_8durationIxNS_5ratioILl1ELl1000000000EEEEEEE",
+      "_ZNSt3__h18condition_variableD1Ev",
+      "_ZNSt3__h19__shared_weak_count14__release_weakEv",
+      "_ZNSt3__h19__shared_weak_countD2Ev",
+      "_ZNSt3__h19__thread_local_dataEv",
+      "_ZNSt3__h20__throw_system_errorEiPKc",
+      "_ZNSt3__h4cerrE",
+      "_ZNSt3__h5ctypeIcE2idE",
+      "_ZNSt3__h5mutex4lockEv",
+      "_ZNSt3__h5mutex6unlockEv",
+      "_ZNSt3__h5mutexD1Ev",
+      "_ZNSt3__h6__sortIRNS_6__lessIjjEEPjEEvT0_S5_T_",
+      "_ZNSt3__h6__sortIRNS_6__lessIllEEPlEEvT0_S5_T_",
+      "_ZNSt3__h6__sortIRNS_6__lessImmEEPmEEvT0_S5_T_",
+      "_ZNSt3__h6chrono12steady_clock3nowEv",
+      "_ZNSt3__h6chrono12system_clock3nowEv",
+      "_ZNSt3__h6localeC1ERKS0_",
+      "_ZNSt3__h6localeC1Ev",
+      "_ZNSt3__h6localeD1Ev",
+      "_ZNSt3__h6localeaSERKS0_",
+      "_ZNSt3__h6thread4joinEv",
+      "_ZNSt3__h6threadD1Ev",
+      "_ZNSt3__h7codecvtIcc11__mbstate_tE2idE",
+      "_ZNSt3__h8ios_base33__set_badbit_and_consider_rethrowEv",
+      "_ZNSt3__h8ios_base4initEPv",
+      "_ZNSt3__h8ios_base4moveERS0_",
+      "_ZNSt3__h8ios_base5clearEj",
+      "_ZNSt3__h8numpunctIcE2idE",
+      "_ZNSt3__h8numpunctIwE2idE",
+      "_ZNSt3__h9basic_iosIcNS_11char_traitsIcEEED2Ev",
+      "_ZNSt3__h9to_stringEi",
+      "_ZNSt3__h9to_stringEj",
+      "_ZNSt3__h9to_stringEl",
+      "_ZNSt3__h9to_stringEm",
+      "_ZNSt3__hplIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_12basic_stringIT_T0_T1_EEPKS6_RKS9_",
+      "_ZTINSt3__h13basic_istreamIcNS_11char_traitsIcEEEE",
+      "_ZTINSt3__h13basic_ostreamIcNS_11char_traitsIcEEEE",
+      "_ZTINSt3__h14basic_iostreamIcNS_11char_traitsIcEEEE",
+      "_ZTINSt3__h15basic_streambufIcNS_11char_traitsIcEEEE",
+      "_ZTINSt3__h19__shared_weak_countE",
+      "_ZTVNSt3__h13basic_ostreamIcNS_11char_traitsIcEEEE",
+      "_ZThn16_NSt3__h14basic_iostreamIcNS_11char_traitsIcEEED0Ev",
+      "_ZThn16_NSt3__h14basic_iostreamIcNS_11char_traitsIcEEED1Ev",
+      "_ZTv0_n24_NSt3__h13basic_istreamIcNS_11char_traitsIcEEED0Ev",
+      "_ZTv0_n24_NSt3__h13basic_istreamIcNS_11char_traitsIcEEED1Ev",
+      "_ZTv0_n24_NSt3__h13basic_ostreamIcNS_11char_traitsIcEEED0Ev",
+      "_ZTv0_n24_NSt3__h13basic_ostreamIcNS_11char_traitsIcEEED1Ev",
+      "_ZTv0_n24_NSt3__h14basic_iostreamIcNS_11char_traitsIcEEED0Ev",
+      "_ZTv0_n24_NSt3__h14basic_iostreamIcNS_11char_traitsIcEEED1Ev",
+      "program_invocation_short_name"
+    ],
+    "libwestlake_runtime_boundary.so": [
+      "JNI_OnLoad_binder_with_cl"
+    ]
+  }
+}

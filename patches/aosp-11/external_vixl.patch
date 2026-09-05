@@ -1,0 +1,14 @@
+diff --git a/src/aarch64/operands-aarch64.h b/src/aarch64/operands-aarch64.h
+index bfc6b702..0fbe0740 100644
+--- a/src/aarch64/operands-aarch64.h
++++ b/src/aarch64/operands-aarch64.h
+@@ -313,6 +313,9 @@ class VRegister : public CPURegister {
+     VIXL_ASSERT(IsValidVRegister());
+     VIXL_ASSERT(IsPowerOf2(lanes_) && (lanes_ <= 16));
+   }
++  // Single-arg constructor for Android 15 ART compatibility (newer VIXL)
++  explicit VRegister(unsigned code)
++      : CPURegister(code, kQRegSize, kVRegister), lanes_(1) {}
+   VRegister(unsigned code, unsigned size, unsigned lanes = 1)
+       : CPURegister(code, size, kVRegister), lanes_(lanes) {
+     VIXL_ASSERT(IsPowerOf2(lanes_) && (lanes_ <= 16));

@@ -1,0 +1,22 @@
+{
+  "artifacts": {
+    "liboh_ime_helper_capi.so": {
+      "bytes": 30432,
+      "sha256": "f250bc32f56bfc820ce3a72e1ebdef5a61ed5da3b1110a70772ea975c227c687"
+    },
+    "liboh_network_jni.so": {
+      "bytes": 51032,
+      "sha256": "ba132ecca7dd67d61068078e04aec5127808312d48c740ae2529de863214ce2c"
+    },
+    "liboh_tls_boundary.so": {
+      "bytes": 38152,
+      "sha256": "345d7b4c12c5deaedbe5c8a46095fcaa412dd1e9ccfdfb7b7432d1a59f0c9738"
+    },
+    "liboh_webview_startup_order.so": {
+      "bytes": 16880,
+      "sha256": "e50fc274eed558a2a9879482d4cfbb943ce243c53b414decbf6ac883fff24ba4"
+    }
+  },
+  "result": "byte-identical",
+  "scope": "Source artifact reproduction only; not device acceptance or performance parity"
+}
