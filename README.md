@@ -9,6 +9,9 @@ are independent of the organization's Android 16 work:
 | [art-build](https://github.com/a2hlab/art-build) | ART overlays, portable ARM64 makefile, source JNI boundary and declared linker |
 | [aosp-art-15](https://github.com/a2hlab/aosp-art-15) | Modified ART source with its original upstream Git ancestry |
 | [manifest](https://github.com/a2hlab/manifest) | Exact revisions/patches, toolchain content locks, bootstrap/build/verification tools and open full-build gates |
+| [toolchains](https://github.com/a2hlab/toolchains) | Actual SDK/compiler build-input archives in Git LFS, with hashes and original notices |
+| `dep-*` (16 repositories) | Vendored upstream source trees; exact revisions and patches in the included locks |
+| [legacy-runtime-sources](https://github.com/a2hlab/legacy-runtime-sources) | Preserved HWUI/Minikin/FreeType/HarfBuzz/WebP sources and local compatibility headers; not an accepted full runtime build |
 
 Profile: `toutiao-aosp15-oh61-legacy`. **This is not yet a complete reproducible
 Toutiao stack.** Native helpers, unsigned host/Pinyin packages, and ART source
@@ -19,28 +22,38 @@ exact verified scope and remaining work.
 
 ## Bootstrap on a clean Linux x86-64 workstation
 
-Requirements: GitHub read access to the private repos, Git, Python 3.12+ (or a
+Requirements: GitHub read access to **all** private dependency repos, Git and
+Git LFS, Python 3.12+ (or a
 Python with `tarfile.data_filter`), GNU Make, patch, a host GCC/libstdc++ development
-installation, and ~20 GB free space for these milestones. Full framework/OS
-builds will require substantially more. Network access is needed for pinned
-public source projects and two official compiler/SDK archives. Keep their
-licenses; the archives are downloaded, not committed. SDK native metadata is
+installation, and ~35 GB free space for these milestones. Full framework/OS
+builds will require substantially more. **All project dependencies and SDK/compiler
+archives used by these three profiles are now fetched from checked-in `a2hlab`
+repositories.** No public-upstream fetch or release-download fallback is used.
+LFS transfers about 1.57 GB of archives; GitHub's source ZIP download does not
+replace a clone with its LFS objects. SDK native metadata is
 6.1.0.31/API23; app bytecode explicitly targets API20 for the legacy device.
 
 ```sh
 git clone https://github.com/a2hlab/manifest.git a2hlab-manifest
 cd a2hlab-manifest
 python3 tools/fetch_sources.py --workspace /absolute/new-a2hlab-workspace
-python3 tools/bootstrap_sdk.py --out /absolute/new-a2hlab-workspace/toolchains/ohos-sdk
-python3 tools/bootstrap_clang.py --out /absolute/new-a2hlab-workspace/toolchains/clang-15
+python3 tools/install_toolchains.py --workspace /absolute/new-a2hlab-workspace
 ```
 
-`--archive /path/to/previous-download.tar.gz` avoids downloading an archive again;
-its complete length and SHA256 are still checked before extraction. Extraction
-rejects escaping paths/links and preserves compiler executable bits. Source
+The installer is offline: it requires the pinned repository revision and verifies
+the LFS archive size/SHA256 and full extracted tree. Missing pointer objects,
+corrupt archives and modified toolchains fail closed. Extraction rejects escaping
+paths/links and preserves compiler executable bits. Source
 fetches require unused checkout directories. A failed partial fetch must be
 inspected; use a new workspace for a new full trial. No existing checkout is
 reset or overwritten.
+
+The SDK/compiler are **checked-in prebuilt build inputs**, not compilers rebuilt
+from source in this workflow. Original archive identities and the eight omitted
+SDK files are recorded in `toolchains/index.json`. Signing material and unused
+SELinux/diff tools were excluded. Supply your own signing identity separately.
+The workstation OS and standard host prerequisites above are still external:
+this is not a checked-in hermetic host image or a complete source bootstrap.
 
 ## Verified-source build entry points
 
@@ -53,8 +66,15 @@ python3 tools/rebuild.py --workspace /absolute/new-a2hlab-workspace --profile ap
 python3 tools/rebuild.py --workspace /absolute/new-a2hlab-workspace --profile art --out /absolute/new-a2hlab-workspace/out/art --jobs 6
 ```
 
+After fetching, installation and all three builds were also tested inside
+`unshare -Urn` (a new Linux user/network namespace, with no external networking).
+To enforce the same condition, prefix each install/build command with
+`unshare -Urn`. Hosts that disallow user namespaces need an equivalent separately
+configured network-isolated environment; do not interpret a normal build as an
+offline test.
+
 Outputs include complete logs, source/toolchain provenance, artifact sizes and
-SHA256 values. `apps` builds V1 Restool from pinned public sources, recompiles all
+SHA256 values. `apps` builds V1 Restool from vendored sources, recompiles all
 JavaScript and Pinyin native code, regenerates resource indexes, and writes
 deterministic unsigned HAPs. No signing keys, profiles, installed apps, raw app
 logs or user data are distributed. Signing and device installation are separate
@@ -83,6 +103,19 @@ performance. Host Restool currently also records the host libstdc++ archive
 hash; the complete host-container environment is not yet content-locked. No
 cross-host/cross-distribution hermetic claim is made.
 
+## Preserved sources for the unfinished full runtime
+
+These optional inputs are separate from the three verified profiles:
+
+```sh
+python3 tools/fetch_sources.py --workspace /absolute/new-a2hlab-workspace --lock runtime-sources.lock.json
+python3 tools/verify_preserved_sources.py --repository /absolute/new-a2hlab-workspace/preserved/runtime-sources
+```
+
+This verifies preservation of the local graphics dependencies and compatibility
+overlays. It does not build them or close the core/framework, generated-header,
+Skia, board OS/provider or app-input gaps. See [DEPENDENCIES.md](DEPENDENCIES.md).
+
 ## Source provenance and preservation
 
 `import-provenance.json` and `art-support-provenance.json` preserve the reviewed
@@ -92,3 +125,8 @@ changes are normal subsequent source commits. Original source line endings and
 third-party license notices were retained; historical whitespace warnings were
 not reformatted into unrelated diffs. All original repos, device data, and
 validated binary baselines remain untouched.
+
+`dependency-source-provenance.json` records each vendored project's original URL,
+commit and Git tree. Those upstream URLs are provenance, not active downloads.
+`tools/vendor_sources.py`, `tools/package_toolchains.py` and the import scripts
+are one-time maintainer exports, not dependencies on the original workstation.

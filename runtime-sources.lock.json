@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "scope": "Source preservation only; not part of the accepted component build graph",
+  "projects": [
+    {
+      "path": "preserved/runtime-sources",
+      "url": "https://github.com/a2hlab/legacy-runtime-sources.git",
+      "revision": "da3624d46a904d5a4a15ec6ec76312fc92de0611"
+    }
+  ]
+}

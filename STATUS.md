@@ -1,9 +1,35 @@
 # Rebuild status
 
 The requested target is `a2hlab`, not the superseded `a2oh` organization.
-Four new private repositories are published without replacing existing projects.
+The rebuild set now spans 22 private repositories without replacing unrelated
+organization projects. Standard workstation prerequisites remain external.
 
-## Current evidence
+## Repository-only dependency update (2026-09-05)
+
+- All 16 upstream dependencies used by the component profiles are committed in
+  private `a2hlab/dep-*` repositories. Original source trees/licenses, base
+  revisions and separately hash-checked local patches are preserved.
+- `a2hlab/toolchains` contains the actual SDK/compiler archives in Git LFS, not
+  just download URLs or pointer-only stubs. A fresh GitHub fetch, LFS object check
+  and offline extraction verified both archives and complete extracted trees.
+- The fresh checkout contains 21 locked project entries, all fetched from a2hlab.
+  Native, apps and ART builds ran under `unshare -Urn` with no external network.
+  All eight outputs match the earlier clean builds byte-for-byte. Reports:
+  `reports/native-repo-only.json`, `reports/apps-repo-only.json`,
+  `reports/art-repo-only.json`, `reports/repository-only-verification.json`.
+- Fourteen manifest tests pass on Python3.12 and Python3.13; four Westlake tests
+  and seven Pinyin controller groups pass. The `full` profile still exits2.
+- `a2hlab/legacy-runtime-sources` preserves the 54 modified HWUI files, Minikin
+  changes, FreeType/HarfBuzz/WebP dependencies and local compatibility overlays.
+  Its optional source lock is separate from the verified build profiles.
+- The default bootstrap no longer fetches public upstream projects or downloads
+  official archives. Original URLs are retained only as provenance. Missing LFS
+  objects, corrupt archives, changed source trees and reused outputs are errors.
+- **Not complete:** matching core/framework sources, full OH/Skia/board provider
+  closure, proprietary input permission, a checked-in host environment and
+  rebuilt-device acceptance are still missing. See `DEPENDENCIES.md`.
+
+## Earlier component evidence (before repository-only vendoring)
 
 - ART fork ancestry preserved and pushed at `e70733dcec75e56c2ac25833a47c594e7f5fe141`.
 - Westlake source, ART build overlays, legacy header-only sysroot, and curl/JNI

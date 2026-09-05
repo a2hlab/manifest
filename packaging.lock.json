@@ -3,33 +3,63 @@
   "projects": [
     {
       "path": "upstream/aosp-11/external/dlmalloc",
-      "url": "https://android.googlesource.com/platform/external/dlmalloc",
-      "revision": "3a9d0af27a9f8fe533931a9e7ca843fd8e5b54f1"
+      "url": "https://github.com/a2hlab/dep-aosp11-external-dlmalloc.git",
+      "revision": "1b491f2b8fe0542d2aa58b39d0d316020c56bc2c",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/dlmalloc",
+        "revision": "3a9d0af27a9f8fe533931a9e7ca843fd8e5b54f1",
+        "tree": "938694023aa0136a1c996b347dd0799b4ac94983"
+      }
     },
     {
       "path": "upstream/ohos/developtools/global_resource_tool",
-      "url": "https://github.com/openharmony/developtools_global_resource_tool.git",
-      "revision": "eb7d04912888b5f954a7ee4548c4f73897eb8eca"
+      "url": "https://github.com/a2hlab/dep-ohos-developtools-global_resource_tool.git",
+      "revision": "25d2a0844d7d02312342f34061ecebb8e39abc63",
+      "upstream": {
+        "url": "https://github.com/openharmony/developtools_global_resource_tool.git",
+        "revision": "eb7d04912888b5f954a7ee4548c4f73897eb8eca",
+        "tree": "1b99c2996b793e473e3bda7d7e3e063c5e1bcd76"
+      }
     },
     {
       "path": "upstream/ohos/third_party/jsoncpp",
-      "url": "https://github.com/openharmony/third_party_jsoncpp.git",
-      "revision": "47321f506153e298ec078a1f4560e44058b12d53"
+      "url": "https://github.com/a2hlab/dep-ohos-third_party-jsoncpp.git",
+      "revision": "97b1c28aaf87804ab9e2479072824e1cb83462e0",
+      "upstream": {
+        "url": "https://github.com/openharmony/third_party_jsoncpp.git",
+        "revision": "47321f506153e298ec078a1f4560e44058b12d53",
+        "tree": "53c178c55544b0f7cc6f5b20b3111810888591ba"
+      }
     },
     {
       "path": "upstream/ohos/third_party/libpng",
-      "url": "https://github.com/openharmony/third_party_libpng.git",
-      "revision": "f7cf480b2d9e5cc74622cd0fc814f5873428a577"
+      "url": "https://github.com/a2hlab/dep-ohos-third_party-libpng.git",
+      "revision": "d6390a2521e9c17e40f4a3f5d4c8383c989d189b",
+      "upstream": {
+        "url": "https://github.com/openharmony/third_party_libpng.git",
+        "revision": "f7cf480b2d9e5cc74622cd0fc814f5873428a577",
+        "tree": "60f547f5430d5b48b7720c1cd3ed6337da56b4ff"
+      }
     },
     {
       "path": "upstream/ohos/third_party/zlib",
-      "url": "https://github.com/openharmony/third_party_zlib.git",
-      "revision": "715621a0e254569e2dd9a7683ec89d01c228e2aa"
+      "url": "https://github.com/a2hlab/dep-ohos-third_party-zlib.git",
+      "revision": "44057a6a1f6941175c8c1147ea65cf676aba1b94",
+      "upstream": {
+        "url": "https://github.com/openharmony/third_party_zlib.git",
+        "revision": "715621a0e254569e2dd9a7683ec89d01c228e2aa",
+        "tree": "5b986e0dcebc5140c7a2cedd67b1fac63eaf126c"
+      }
     },
     {
       "path": "upstream/ohos/third_party/bounds_checking_function",
-      "url": "https://github.com/openharmony/third_party_bounds_checking_function.git",
-      "revision": "dd8125bec1f8d9f28b7a9c99931d4b0580b7f78d"
+      "url": "https://github.com/a2hlab/dep-ohos-third_party-bounds_checking_function.git",
+      "revision": "b2753b93e223df3dbd6cb3bd9db4ccbaacbeb0c4",
+      "upstream": {
+        "url": "https://github.com/openharmony/third_party_bounds_checking_function.git",
+        "revision": "dd8125bec1f8d9f28b7a9c99931d4b0580b7f78d",
+        "tree": "aed1b16e63269c7ed3b864e70e8984201bcece56"
+      }
     }
   ]
 }

@@ -1,25 +1,19 @@
 {
-  "schema": 1,
+  "schema": 2,
+  "repository_path": "inputs/toolchains",
   "platform-clang": {
-    "url": "https://repo.huaweicloud.com/openharmony/compiler/clang/15.0.4-81cdec/linux/clang_linux-x86_64-81cdec-20240308.tar.gz",
-    "sha256": "61b1b7f99584d6f550170731791d4a27a7b401fd06ac3316fba48e8227bed305",
-    "bytes": 651171270,
-    "root": "clang_linux-x86_64-81cdec-20240308",
+    "path": "artifacts/ohos-clang-15.0.4-81cdec-build-inputs.tar.gz",
+    "sha256": "e0fe73f28d8f270086c6eeffd875b6c6c8c94549c8f35b0e2a80013ff683a1b6",
+    "bytes": 650760836,
     "version": "15.0.4-81cdec-20240308",
     "tree_sha256": "b422f5d6d5288e331509fa5f5ec80251578df0439152f16193d097a32790c130"
   },
   "ohos-sdk": {
-    "url": "https://repo.huaweicloud.com/openharmony/os/6.1-Release/ohos-sdk-windows_linux-public.tar.gz",
-    "sha256": "b833b75a64ee46bbd7880921abbb49b733ec5c8171b6684c9b524d57f624cee0",
-    "bytes": 2499936800,
+    "path": "artifacts/ohos-sdk-6.1.0.31-build-inputs.tar.gz",
+    "sha256": "216f2c2ff264dcb6982472313e54ad3469ed4018363764bee652bac0e3fba90b",
+    "bytes": 916539917,
     "version": "6.1.0.31",
     "api_version": 23,
-    "tree_sha256": "9fcdf0cf834c0267b4db3e54b7aa4c71ebc45791d890688c32bff041b544a512",
-    "license_url": "https://gitee.com/openharmony/docs/blob/OpenHarmony-6.1-Release/en/LICENSE",
-    "members": {
-      "native": "linux/native-linux-x64-6.1.0.31-Release.zip",
-      "ets": "linux/ets-linux-x64-6.1.0.31-Release.zip",
-      "toolchains": "linux/toolchains-linux-x64-6.1.0.31-Release.zip"
-    }
+    "tree_sha256": "2b7a28540a12f9484c6c5e86fa155e2b47a217d4a627939dfefe7c1935488f4f"
   }
 }

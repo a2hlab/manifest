@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-05",
+  "scope": "Maintainer-verified component rebuild; not full Toutiao reproduction",
+  "source_fetch": {
+    "fresh_workspace": true,
+    "locked_project_entries": 21,
+    "all_active_project_urls_under": "https://github.com/a2hlab/",
+    "public_upstream_fallback": false,
+    "toolchains_revision": "e887b8cc720da58526fedf1a8ad169355f94173c",
+    "lfs_objects_fetched_from_github_and_fsck_passed": true
+  },
+  "installation_and_build": {
+    "command_prefix": ["unshare", "-Urn"],
+    "external_network_available": false,
+    "toolchain_install": "pass",
+    "native": "source-build-pass",
+    "apps": "source-build-pass",
+    "art": "source-build-pass",
+    "byte_identical_artifacts": 8,
+    "comparison_reports": ["native-repo-only.json", "apps-repo-only.json", "art-repo-only.json"],
+    "old_objects_runtime_dsos_jars_or_boot_images_used_as_fallback": false
+  },
+  "toolchain_trees": {
+    "ohos-sdk": "2b7a28540a12f9484c6c5e86fa155e2b47a217d4a627939dfefe7c1935488f4f",
+    "platform-clang": "b422f5d6d5288e331509fa5f5ec80251578df0439152f16193d097a32790c130"
+  },
+  "host_observation_not_a_content_locked_host_image": {
+    "distribution": "Ubuntu 24.04.3 LTS x86-64",
+    "build_python": "3.13.5",
+    "unit_tests_also_pass_on_system_python": "3.12",
+    "packages": {
+      "git": "1:2.43.0-1ubuntu7.3",
+      "git-lfs": "3.4.1-1ubuntu0.3",
+      "make": "4.3-4.1build2",
+      "patch": "2.7.6-7build3",
+      "gcc": "4:13.2.0-7ubuntu1",
+      "g++": "4:13.2.0-7ubuntu1",
+      "libc6": "2.39-0ubuntu8.8",
+      "libc6-dev": "2.39-0ubuntu8.8",
+      "libstdc++-13-dev": "13.3.0-6ubuntu2~24.04.1"
+    },
+    "host_libstdcxx_archive_sha256": "1f5a271fb1917b827ddcc3f65be5bf9bb4ab86be8de6acb6566aa638e92f602c",
+    "source_built_restool_sha256": "2bb5bbbfa8b5b7c7409818adff7f3355a7d635363d87cd39177b303749dfe8a3"
+  },
+  "tests": {"manifest": 14, "westlake": 4, "pinyin_groups": 7, "full_profile_expected_exit": 2},
+  "full_toutiao_build": false,
+  "device_accepted": false,
+  "native_performance_parity": false
+}

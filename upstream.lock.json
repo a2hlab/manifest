@@ -3,62 +3,112 @@
   "projects": [
     {
       "path": "upstream/aosp-11/art",
-      "url": "https://android.googlesource.com/platform/art",
-      "revision": "83cd633bec9586c44d214f01734d29de582882a3",
+      "url": "https://github.com/a2hlab/dep-aosp11-art.git",
+      "revision": "88d7d665827b41953678e2adda672b417bdb7d65",
       "patch": "patches/aosp-11/art.patch",
       "tree": "351ccfa27e84a0f4091ffd17cebf5dfd318167f9",
-      "patch_sha256": "a99dd52e7129d31283e5eddf5d1c68a33e06da8ea66190a4322f4c50e7304433"
+      "patch_sha256": "a99dd52e7129d31283e5eddf5d1c68a33e06da8ea66190a4322f4c50e7304433",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/art",
+        "revision": "83cd633bec9586c44d214f01734d29de582882a3",
+        "tree": "bb57e95010e8678e04dc044a1aa5ef80b9cd519e"
+      }
     },
     {
       "path": "upstream/aosp-11/system/core",
-      "url": "https://android.googlesource.com/platform/system/core",
-      "revision": "348efca472d810d3152568913da41a081893a4e3"
+      "url": "https://github.com/a2hlab/dep-aosp11-system-core.git",
+      "revision": "5d1090b660a746f0de1c2399f74bd0d3d1d6ec99",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/core",
+        "revision": "348efca472d810d3152568913da41a081893a4e3",
+        "tree": "6d0f55c0803dd8047fbe00a614703fe151c0fba5"
+      }
     },
     {
-      "path": "upstream/aosp-11/libnativehelper",
-      "url": "https://android.googlesource.com/platform/libnativehelper",
-      "revision": "4494e4aa4167ec5bdd687a3ed49b10c6f9d21c34",
       "patch": "patches/aosp-11/libnativehelper.patch",
+      "patch_sha256": "1c59e560c191911a305389417c623a87dc01c2aea4e87392cf5062b198d796ff",
+      "path": "upstream/aosp-11/libnativehelper",
+      "revision": "2c9470b9a01e6deaed4bacd5e03901cc69599c0f",
       "tree": "dfcf3e310a7b1818027485e7d30f0968e592bbba",
-      "patch_sha256": "1c59e560c191911a305389417c623a87dc01c2aea4e87392cf5062b198d796ff"
+      "upstream": {
+        "revision": "4494e4aa4167ec5bdd687a3ed49b10c6f9d21c34",
+        "tree": "485ea1c9d20eccfbd85e36d48ed74841eae84c78",
+        "url": "https://android.googlesource.com/platform/libnativehelper"
+      },
+      "url": "https://github.com/a2hlab/dep-aosp11-libnativehelper.git"
     },
     {
       "path": "upstream/aosp-11/external/zlib",
-      "url": "https://android.googlesource.com/platform/external/zlib",
-      "revision": "1a9b432817192342bbfb5a389058a45eea9f816c"
+      "revision": "fda0e7422013d1736efb7a615874c5519b4de631",
+      "upstream": {
+        "revision": "1a9b432817192342bbfb5a389058a45eea9f816c",
+        "tree": "d141303ac2d0de4e3c5c7de0e0dbdcdce54421fb",
+        "url": "https://android.googlesource.com/platform/external/zlib"
+      },
+      "url": "https://github.com/a2hlab/dep-aosp11-external-zlib.git"
     },
     {
       "path": "upstream/aosp-11/external/lz4",
-      "url": "https://android.googlesource.com/platform/external/lz4",
-      "revision": "fdd43c66dd9e77283aa8f7e52a881be44d622441"
+      "revision": "0a09447f591060ae2a2ad36561f706cf59fde27a",
+      "upstream": {
+        "revision": "fdd43c66dd9e77283aa8f7e52a881be44d622441",
+        "tree": "166245a77c5909ca3ffb51b9eae4528d99c5b345",
+        "url": "https://android.googlesource.com/platform/external/lz4"
+      },
+      "url": "https://github.com/a2hlab/dep-aosp11-external-lz4.git"
     },
     {
       "path": "upstream/aosp-11/external/vixl",
-      "url": "https://android.googlesource.com/platform/external/vixl",
-      "revision": "c150fd7455f6f3520efe35ac6b24854ecc5b3a70",
+      "url": "https://github.com/a2hlab/dep-aosp11-external-vixl.git",
+      "revision": "c00eed66cf9e35006634b999a70093cf22f4e995",
       "patch": "patches/aosp-11/external_vixl.patch",
       "tree": "d020de8e34a64778eeb11b1b217a4157e90d0ec6",
-      "patch_sha256": "3cb06796213627d332b8baca5fc36a608cb9b8ebfd2f4d942e720835a7058342"
+      "patch_sha256": "3cb06796213627d332b8baca5fc36a608cb9b8ebfd2f4d942e720835a7058342",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/vixl",
+        "revision": "c150fd7455f6f3520efe35ac6b24854ecc5b3a70",
+        "tree": "de6cac29cfdc33bcc8ffb16ef786f2a9ed1dc85a"
+      }
     },
     {
       "path": "upstream/aosp-11/external/lzma",
-      "url": "https://android.googlesource.com/platform/external/lzma",
-      "revision": "7ad0c1013f4666f8c9d088e0c6893a86057f5ebd"
+      "url": "https://github.com/a2hlab/dep-aosp11-external-lzma.git",
+      "revision": "ad2b77f44699c631a06afbc22783eeadb0b59565",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/lzma",
+        "revision": "7ad0c1013f4666f8c9d088e0c6893a86057f5ebd",
+        "tree": "aa35b954113dfa253467cf163dd266d601299ed7"
+      }
     },
     {
       "path": "upstream/aosp-11/external/icu",
-      "url": "https://android.googlesource.com/platform/external/icu",
-      "revision": "7d24b8a6ac9f91d5b0c8d822cdfe795cff787de4"
+      "url": "https://github.com/a2hlab/dep-aosp11-external-icu.git",
+      "revision": "8243eb32a983feafe214270808ea631ca1f76427",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/icu",
+        "revision": "7d24b8a6ac9f91d5b0c8d822cdfe795cff787de4",
+        "tree": "9f7508a41fff7fb9fdafbf4c2df729e0be3ff39c"
+      }
     },
     {
       "path": "upstream/aosp-11/external/tinyxml2",
-      "url": "https://android.googlesource.com/platform/external/tinyxml2",
-      "revision": "1b7e9f45b916fdafad6a450244d6d30735b075db"
+      "url": "https://github.com/a2hlab/dep-aosp11-external-tinyxml2.git",
+      "revision": "d8115e857d7800a4fd4686f954359a6ed370c78c",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/tinyxml2",
+        "revision": "1b7e9f45b916fdafad6a450244d6d30735b075db",
+        "tree": "76ff5e7c21ff763cbade2fb63de6a0f3b67300a3"
+      }
     },
     {
       "path": "upstream/aosp-11/external/fmtlib",
-      "url": "https://android.googlesource.com/platform/external/fmtlib",
-      "revision": "aa6fa3aa882afe47f7af990b0c6d747a01cd6104"
+      "url": "https://github.com/a2hlab/dep-aosp11-external-fmtlib.git",
+      "revision": "80cc7a93886c43cabcdd3423ce5f09221a542072",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/fmtlib",
+        "revision": "aa6fa3aa882afe47f7af990b0c6d747a01cd6104",
+        "tree": "e1fd7ad0e6a928ed5514b4571494e7a9fb924d88"
+      }
     },
     {
       "path": "upstream/art-15",

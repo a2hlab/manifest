@@ -30,7 +30,7 @@ def read_lock(path, seen=None):
 
 def run(*args, cwd=None):
     return subprocess.check_output(args, cwd=cwd, stderr=subprocess.STDOUT,
-                                   env=dict(os.environ, GIT_TERMINAL_PROMPT='0'))
+                                   env=dict(os.environ, GIT_TERMINAL_PROMPT='0', GIT_LFS_SKIP_SMUDGE='1'))
 
 
 def fetch(entry, workspace):
@@ -39,6 +39,8 @@ def fetch(entry, workspace):
         raise ValueError('Invalid checkout path')
     if not re.fullmatch('[0-9a-f]{40}', entry['revision']):
         raise ValueError('A full 40-character source revision is required')
+    if not re.fullmatch(r'https://github\.com/a2hlab/[A-Za-z0-9_.-]+\.git', entry['url']):
+        raise ValueError('Active dependencies must be checked in under a2hlab')
     target = workspace.joinpath(*relative.parts)
     if not target.resolve().is_relative_to(workspace.resolve()):
         raise ValueError('Checkout escapes workspace')
@@ -57,6 +59,10 @@ def fetch(entry, workspace):
     run('git', 'remote', 'add', 'origin', entry['url'], cwd=target)
     run('git', 'fetch', '--depth=1', '--no-tags', 'origin', entry['revision'], cwd=target)
     run('git', 'checkout', '-q', '--detach', entry['revision'], cwd=target)
+    if entry.get('lfs'):
+        run('git', 'lfs', 'install', '--local', cwd=target)
+        run('git', 'lfs', 'pull', 'origin', cwd=target)
+        run('git', 'lfs', 'fsck', cwd=target)
     if patch:
         run('git', 'apply', '--index', str(patch), cwd=target)
     record = dict(entry, tree=run('git', 'write-tree', cwd=target).decode().strip())

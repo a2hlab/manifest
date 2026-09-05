@@ -3,6 +3,9 @@
   "complete_source_build": false,
   "device_accepted": false,
   "native_performance_parity": false,
+  "repository_only_component_project_inputs": true,
+  "hermetic_host_environment": false,
+  "proprietary_app_vendor_inputs_distributed": false,
   "gaps": [
     "Core/framework compile headers and DEX JARs lack a closed source recipe; historical board JARs must not be used as unrecorded build inputs.",
     "Adapter Java builders have a cold-start dependency cycle and need an explicit duplicate-free class ownership inventory.",

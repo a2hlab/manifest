@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Verify a content-locked official SDK archive and unpack selected components.
-
-An existing archive can be supplied with --archive; it is always re-hashed.
-No dependency on the original author's workstation or installed SDK exists.
-"""
+"""SDK archive helpers and compatibility entry point for repository-only installation."""
 import argparse
 import hashlib
 import json
@@ -11,9 +7,6 @@ import os
 from pathlib import Path, PurePosixPath
 import shutil
 import stat
-import tarfile
-import tempfile
-import urllib.request
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -81,56 +74,12 @@ def fingerprint(root):
 
 
 def main():
+    from install_toolchains import install
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--archive', type=Path, help='Previously downloaded official tar.gz (always verified)')
+    parser.add_argument('--workspace', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True, help='New output directory')
-    parser.add_argument('--components', nargs='+', choices=['native', 'ets', 'toolchains'], default=['native', 'ets', 'toolchains'])
     args = parser.parse_args()
-    output = args.out.absolute()
-    if output.exists():
-        parser.error('--out must not already exist')
-    lock = json.loads((ROOT / 'toolchains.lock.json').read_text())['ohos-sdk']
-    output.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix='a2hlab-sdk-', dir=output.parent) as scratch:
-        scratch = Path(scratch)
-        archive = args.archive or scratch / 'sdk.tar.gz'
-        if not args.archive:
-            print('Downloading', lock['url'], flush=True)
-            with urllib.request.urlopen(lock['url']) as src, archive.open('xb') as dst:
-                shutil.copyfileobj(src, dst)
-        if archive.stat().st_size != lock['bytes'] or digest(archive) != lock['sha256']:
-            raise ValueError('SDK archive does not match the content lock; nothing extracted')
-        print('Verified archive', lock['sha256'], flush=True)
-        stage = scratch / 'sdk'
-        stage.mkdir()
-        wanted = {lock['members'][c] for c in args.components}
-        with tarfile.open(archive, 'r|gz') as source:
-            for member in source:
-                if member.name not in wanted:
-                    continue
-                if not member.isfile():
-                    raise ValueError('Expected regular SDK zip: ' + member.name)
-                packed = scratch / Path(member.name).name
-                with source.extractfile(member) as src, packed.open('xb') as dst:
-                    shutil.copyfileobj(src, dst)
-                extract_zip(packed, stage)
-                wanted.remove(member.name)
-                print('Extracted', member.name, flush=True)
-                if not wanted:
-                    break
-        if wanted:
-            raise ValueError('SDK archive missing components: ' + repr(wanted))
-        for component in args.components:
-            meta = json.loads((stage / component / 'oh-uni-package.json').read_text())
-            if meta['version'] != lock['version']:
-                raise ValueError('Unexpected component version: ' + component)
-        tree = fingerprint(stage)
-        tree['archive_sha256'] = lock['sha256']
-        tree['components'] = sorted(set(args.components))
-        (stage / 'tree.json').write_text(json.dumps(tree, sort_keys=True, indent=2) + '\n')
-        stage.rename(output)
-    print('SDK_TREE_SHA256', tree['sha256'], flush=True)
-    print('SDK_READY', output, flush=True)
+    install(args.workspace, ['ohos-sdk'], args.out)
 
 
 if __name__ == '__main__':

@@ -4,6 +4,12 @@
   "includes": ["upstream.lock.json", "packaging.lock.json"],
   "projects": [
     {
+      "path": "inputs/toolchains",
+      "url": "https://github.com/a2hlab/toolchains.git",
+      "revision": "e887b8cc720da58526fedf1a8ad169355f94173c",
+      "lfs": true
+    },
+    {
       "path": "westlake",
       "url": "https://github.com/a2hlab/westlake.git",
       "revision": "ebd166d2e1d5c2e60de5649d5e3d38afa1540e26"
