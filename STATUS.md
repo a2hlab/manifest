@@ -22,6 +22,8 @@ organization projects. Standard workstation prerequisites remain external.
 - `a2hlab/legacy-runtime-sources` preserves the 54 modified HWUI files, Minikin
   changes, FreeType/HarfBuzz/WebP dependencies and local compatibility overlays.
   Its optional source lock is separate from the verified build profiles.
+  A fresh GitHub checkout passed every preserved-source fingerprint, including
+  executable modes; no absolute workstation zlib-header links remain.
 - The default bootstrap no longer fetches public upstream projects or downloads
   official archives. Original URLs are retained only as provenance. Missing LFS
   objects, corrupt archives, changed source trees and reused outputs are errors.
