@@ -15,6 +15,7 @@ import tempfile
 import sys
 from bootstrap_sdk import ROOT, fingerprint
 from fetch_sources import read_lock
+from verify_prebuilts import verify as verify_prebuilts
 
 
 def git(path, *command):
@@ -96,9 +97,13 @@ def main():
     if output.exists():
         parser.error('--out must be new (no stale-object reuse)')
     sources = verify_sources(workspace)
+    # Checked-in binaries are build inputs too. Their hashes are recorded in
+    # sources.lock.json; this is where the record is actually enforced.
+    prebuilts = verify_prebuilts()
     toolchains = verify_toolchains(workspace, args.profile != 'native')
     output.mkdir(parents=True)
     report = {'profile': args.profile, 'sources': sources, 'toolchains': toolchains,
+              'prebuilts': prebuilts,
               'complete_toutiao_build': False, 'device_accepted': False, 'status': 'running'}
     env = dict(os.environ, SOURCE_DATE_EPOCH='1772755200', TZ='UTC', LC_ALL='C')
 
