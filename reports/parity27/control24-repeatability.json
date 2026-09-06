@@ -1,0 +1,14 @@
+{
+  "result": "byte-identical",
+  "artifacts": {
+    "control-unsigned.apk": {
+      "sha256": "9ee391d91816f13be34d82083c8e56869bcf1f716b42911467a21234dc3a6acc",
+      "bytes": 67090
+    },
+    "classes.dex": {
+      "sha256": "e050548eea26880e909eef32aff9568f36598f08aa8db59776ca32d6e2088cd8",
+      "bytes": 61116
+    }
+  },
+  "scope": "Source artifact reproduction only; not device acceptance or performance parity"
+}

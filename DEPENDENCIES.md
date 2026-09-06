@@ -4,6 +4,10 @@ The `native`, `apps` and `art` component profiles consume only locked a2hlab
 project repositories plus declared standard host prerequisites. The full Toutiao
 stack is **not yet reproducible from these repositories alone**.
 
+The [parity follow-up](PARITY27.md) adds concrete SDK/provider/application locks
+and a 410-file observed runtime inventory. These expose remaining binary inputs;
+they do not supply the missing corresponding framework/boot/firmware sources.
+
 | Input | Repository coverage | Remaining limitation |
 | --- | --- | --- |
 | ART, JNI/boundary, host and Pinyin sources | `westlake`, `art-build`, `aosp-art-15` | Component build evidence is not full process acceptance |

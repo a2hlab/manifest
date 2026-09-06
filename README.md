@@ -20,6 +20,10 @@ the `full` build command fails closed; it never substitutes candidate04, old
 objects, board JARs or copied device libraries. See [STATUS.md](STATUS.md) for
 exact verified scope and remaining work.
 
+The [Android-reference parity follow-up](PARITY27.md) pins the generic JIT
+file-cache/runtime fixes, portable controls, benchmark verification and binary
+dependency inventories. It retains the full-build gate.
+
 ## Bootstrap on a clean Linux x86-64 workstation
 
 Requirements: GitHub read access to **all** private dependency repos, Git and

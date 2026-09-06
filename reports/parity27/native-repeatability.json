@@ -1,0 +1,30 @@
+{
+  "result": "byte-identical",
+  "artifacts": {
+    "liboh_ime_helper_capi.so": {
+      "sha256": "f250bc32f56bfc820ce3a72e1ebdef5a61ed5da3b1110a70772ea975c227c687",
+      "bytes": 30432
+    },
+    "liboh_network_jni.so": {
+      "sha256": "e104e0bae6d6676339f21846f0a8e3ffa4e36ba9c061008935c3d37a41835c74",
+      "bytes": 53512
+    },
+    "liboh_popen_boundary.so": {
+      "sha256": "82c81562a822d713d292e9938186a166ef32b6b3d42edd028cfaec86888c8665",
+      "bytes": 18432
+    },
+    "liboh_process_cpu_time.so": {
+      "sha256": "9b0f58e7ad291ce4ee1640eb9fb85b08b68beb9c58f68615f8297dd1f558d8d8",
+      "bytes": 13872
+    },
+    "liboh_tls_boundary.so": {
+      "sha256": "345d7b4c12c5deaedbe5c8a46095fcaa412dd1e9ccfdfb7b7432d1a59f0c9738",
+      "bytes": 38152
+    },
+    "liboh_webview_startup_order.so": {
+      "sha256": "e50fc274eed558a2a9879482d4cfbb943ce243c53b414decbf6ac883fff24ba4",
+      "bytes": 16880
+    }
+  },
+  "scope": "Source artifact reproduction only; not device acceptance or performance parity"
+}

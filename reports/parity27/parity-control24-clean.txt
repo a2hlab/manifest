@@ -1,0 +1,7 @@
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+3 warnings
+UNSIGNED_PARITY_APK_BUILT control24 9ee391d91816f13be34d82083c8e56869bcf1f716b42911467a21234dc3a6acc

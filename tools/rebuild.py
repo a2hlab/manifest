@@ -10,12 +10,25 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import shutil
+import tempfile
 import sys
 from bootstrap_sdk import ROOT, fingerprint
 from fetch_sources import read_lock
 
 
 def git(path, *command):
+    # write-tree updates the index's cached tree. Independent build verifiers
+    # must not contend on the checkout index or modify a caller's index.
+    if command == ('write-tree',):
+        index = Path(git(path, 'rev-parse', '--git-path', 'index').decode().strip())
+        if not index.is_absolute():
+            index = path / index
+        with tempfile.TemporaryDirectory(prefix='a2hlab-verify-index-') as temporary:
+            isolated = Path(temporary) / 'index'
+            shutil.copyfile(index, isolated)
+            return subprocess.check_output(['git', '-C', str(path), 'write-tree'],
+                env=dict(os.environ, GIT_INDEX_FILE=str(isolated)), stderr=subprocess.STDOUT)
     return subprocess.check_output(['git', '-C', str(path), *command], stderr=subprocess.STDOUT)
 
 
