@@ -7,6 +7,19 @@
   ],
   "prebuilts": [
     {
+      "path": "prebuilts/oh-adapter-runtime.jar",
+      "sha256": "4e9e3d4669dfaeab3feee668570ad73062db368f101a6c2387e4b41028668579",
+      "bytes": 38597,
+      "recipe": "tools/recipes/build_adapter_runtime.sh",
+      "contents": "adapter.activity.ActivityManagerRouting, adapter.security.WlTlsGate/WlTlsBootstrap, android.net.ssl.SSLSockets -- 4 sources, 32 classes, one classes.dex at min-api 30",
+      "sources": {
+        "westlake": "framework/activity/java/ActivityManagerRouting.java, framework/security/java/{WlTlsGate,WlTlsBootstrap}.java, framework/security/java/android/net/ssl/SSLSockets.java"
+      },
+      "dexer": {"path": "/opt/a2h/hosttools/r8-9.4.17.jar", "sha256": "2100511344497f041644a4d63fb7be8a516ce9bace30b7d17ab27cc93a0e58d4", "version": "D8 9.4.17 (build c98358724c7e1cb666ffdf35d0808d9d79545e89 from go/r8bot (luci-r8-custom-ci-archive-us-east1-b-0-ngbi))"},
+      "compiled_against_real_framework": false,
+      "note": "Built entirely from westlake source -- no decompiled dex and no shipped base jar. Checked in because dexing needs a dexer, which is not in the locked toolchain set; every other input is source. Deterministic: three independent builds gave these same bytes. compiled_against_real_framework is false because the adapter framework.jar is a dex archive and javac cannot compile against dex; see full-build-gaps.json's adapter cold-start entry."
+    },
+    {
       "path": "prebuilts/wl-tls-min.jar",
       "sha256": "5fd2e39f2e7f1271739e6094d010a88357be852afd3335625f262c9e164a547c",
       "bytes": 652978,
@@ -29,7 +42,7 @@
     {
       "path": "westlake",
       "url": "https://github.com/a2hlab/westlake.git",
-      "revision": "47550c3ce5744ee45cff7b0a200738f3e2713059"
+      "revision": "f8d0c091514acd58c2d176701b0819035c496735"
     },
     {
       "path": "art-build",

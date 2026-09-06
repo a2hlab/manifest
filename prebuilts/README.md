@@ -35,3 +35,34 @@ The Java half of the stack is source in westlake at
 `framework/security/java/westlake/tls/`, and the gate in front of it is
 `framework/security/java/WlTlsGate.java`. This jar is the packaging, not the
 only copy of the logic.
+
+## oh-adapter-runtime.jar
+
+The adapter runtime the child process loads: `ActivityManagerRouting`, the TLS
+gate and its bootstrap, and the `android.net.ssl.SSLSockets` stand-in okhttp
+reaches for on SDK >= 29. Four sources, 32 classes, one `classes.dex` at
+min-api 30. Recipe: `tools/recipes/build_adapter_runtime.sh`.
+
+Unlike the TLS jar, every input to this one is source in westlake. It is
+checked in for one reason only: dexing needs a dexer, and no dexer is in the
+locked toolchain set. `build.json` beside it records which one was used, down to
+its SHA256 and self-reported version, because that tool decides the artifact's
+bytes and nothing else pins it.
+
+It is deterministic — three independent builds into different directories
+produced these same bytes — so the checked-in copy is a convenience, not the
+only copy that can exist. Anyone with a dexer can regenerate it and compare.
+
+`compiled_against_real_framework` is `false`, and that is not an oversight. The
+adapter's `framework.jar` is a dex archive and `javac` cannot compile against
+dex, so the build runs against the compile-only stand-ins in westlake's
+`framework/activity/stubs`. That is the cold-start dependency cycle
+`full-build-gaps.json` records, seen from the compile side, and it is the same
+path the frontline validated on hardware. Five platform types are involved and
+bytecode references them by name and descriptor, so a stand-in of the same shape
+yields the same constant-pool entries — but the closure is still open, and the
+flag says so rather than letting a reader assume otherwise.
+
+What it does *not* contain, deliberately: `westlake.tls` (that is
+`wl-tls-min.jar`, loaded through its own DexClassLoader) and the rest of
+`framework/activity/java` (fifteen classes that need the real platform).
