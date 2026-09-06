@@ -1,4 +1,9 @@
-# A2H Lab: legacy Toutiao rebuild manifest
+# A2H Lab: Android/Westlake source rebuild manifest
+
+The target is **source-built Android/Westlake with Toutiao supplied as a pinned
+original APK**. Toutiao source code is not a build requirement. See
+[SOURCE_STACK.md](SOURCE_STACK.md) for the source build paths, original APK
+staging command, and remaining full-stack gates.
 
 Canonical organization: **https://github.com/a2hlab**. These private repositories
 are independent of the organization's Android 16 work:
@@ -84,11 +89,10 @@ deterministic unsigned HAPs. No signing keys, profiles, installed apps, raw app
 logs or user data are distributed. Signing and device installation are separate
 operator-controlled steps; do not deploy unaccepted runtime candidates.
 
-The ART source link records unresolved dynamic symbols. This is intentional
-visibility, not permission to ignore them: the full process must supply the
-correct platform libc++, binder JNI, WebP and other providers before deployability
-can pass. The old `Makefile` host and historical scripts are not portable entry
-points and are not part of the accepted source-build profiles.
+The ART profile records dynamic imports and requires closure against its
+explicit SDK/platform dependencies. WebP is built from preserved source;
+platform libc++ supplies the correct ABI. `host-tools` uses `Makefile.host`,
+not the historical `Makefile`. Device runtime/UX acceptance remains separate.
 
 ## Repeatability
 
@@ -109,7 +113,8 @@ cross-host/cross-distribution hermetic claim is made.
 
 ## Preserved sources for the unfinished full runtime
 
-These optional inputs are separate from the three verified profiles:
+The preserved graphics repository is now included by the default source lock
+(WebP is needed by ART). To fetch it separately into an otherwise new checkout:
 
 ```sh
 python3 tools/fetch_sources.py --workspace /absolute/new-a2hlab-workspace --lock runtime-sources.lock.json
@@ -117,8 +122,9 @@ python3 tools/verify_preserved_sources.py --repository /absolute/new-a2hlab-work
 ```
 
 This verifies preservation of the local graphics dependencies and compatibility
-overlays. It does not build them or close the core/framework, generated-header,
-Skia, board OS/provider or app-input gaps. See [DEPENDENCIES.md](DEPENDENCIES.md).
+overlays. The ART profile builds its WebP decoder. The remaining graphics/framework
+recipes and full payload acceptance are still open; the original APK has its
+own content lock. See [DEPENDENCIES.md](DEPENDENCIES.md).
 
 ## Source provenance and preservation
 

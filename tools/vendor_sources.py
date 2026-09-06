@@ -6,6 +6,7 @@ snapshot commit with the exact original Git tree and original licenses. The
 original URL/revision are retained in the manifest. Local patches remain separate.
 """
 import argparse
+import hashlib
 from concurrent.futures import ThreadPoolExecutor
 import json
 import os
@@ -46,7 +47,8 @@ def publish(entry, workspace, destination):
         parts = row.split(None, 4)
         if parts[0] == '160000':
             raise ValueError('Nested gitlink needs explicit vendoring: ' + row)
-        if parts[2] != '-' and parts[3].isdigit() and int(parts[3]) >= 100 * 1024 * 1024:
+        if (parts[2] != '-' and parts[3].isdigit() and int(parts[3]) >= 100 * 1024 * 1024
+                and parts[4] not in entry.get('lfs_paths', [])):
             raise ValueError('Oversized source blob needs LFS review: ' + row)
     target.mkdir(parents=True)
     archive = subprocess.Popen(['git', '-C', str(source), 'archive', '--format=tar', 'HEAD'], stdout=subprocess.PIPE)
@@ -77,6 +79,19 @@ def publish(entry, workspace, destination):
     tree = run('git', 'write-tree', cwd=target).decode().strip()
     if tree != run('git', 'rev-parse', 'HEAD^{tree}', cwd=source).decode().strip():
         raise ValueError('Snapshot changed original source tree: ' + name)
+    lfs_records = {}
+    if entry.get('lfs_paths'):
+        run('git', 'lfs', 'install', '--local', cwd=target)
+        for relative in entry['lfs_paths']:
+            path = target / relative
+            if not path.resolve().is_relative_to(target.resolve()) or not path.is_file():
+                raise ValueError('Missing/outside explicit LFS input: ' + relative)
+            with path.open('rb') as stream:
+                lfs_records[relative] = {'sha256': hashlib.file_digest(stream, 'sha256').hexdigest(),
+                                         'bytes': path.stat().st_size}
+            run('git', 'lfs', 'track', '--filename', relative, cwd=target)
+        run('git', 'add', '-f', '.gitattributes', cwd=target)
+        run('git', 'add', '--renormalize', '.', cwd=target)
     message = ('Vendor dependency snapshot for repository-only Westlake rebuild\n\n'
                'Upstream: ' + entry['url'] + '\nRevision: ' + entry['revision'] + '\nTree: ' + tree)
     run('git', 'commit', '-q', '-m', message, cwd=target)
@@ -88,6 +103,9 @@ def publish(entry, workspace, destination):
     run('git', 'push', '-u', 'origin', 'main', cwd=target)
     result = dict(entry, url=url, revision=revision,
                   upstream={'url': entry['url'], 'revision': entry['revision'], 'tree': tree})
+    if lfs_records:
+        result.update(lfs=True, lfs_files=lfs_records,
+                      snapshot_tree=run('git', 'rev-parse', 'HEAD^{tree}', cwd=target).decode().strip())
     record.write_text(json.dumps(result, sort_keys=True, indent=2) + '\n')
     print('PUBLISHED', name, revision, 'original-tree=' + tree, flush=True)
     return result

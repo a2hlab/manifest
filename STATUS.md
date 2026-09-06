@@ -1,5 +1,10 @@
 # Rebuild status
 
+See [SOURCE_STACK.md](SOURCE_STACK.md) for the current source-stack target and
+new core Java/host-tool/runtime-provider work. Earlier sections below record
+historical checkpoints, not the current source-closure state. Toutiao source
+is not required: the original APK is separately pinned in `app-inputs.lock.json`.
+
 The requested target is `a2hlab`, not the superseded `a2oh` organization.
 The rebuild set now spans 22 private repositories without replacing unrelated
 organization projects. Standard workstation prerequisites remain external.
@@ -78,7 +83,7 @@ not closed by these source commits or by the binary hash inventories.
 - HDC device enumeration returned `[Empty]` during this work. No device writes
   or signing-key changes have been made.
 
-## Still prevents a full claim
+## Historical gaps before the source-stack follow-up
 
 1. Core JAR and framework source provenance/build closure. The historical
    `build_aosp_fw.sh` wrapper claims core/framework targets but calls an adapter
@@ -117,7 +122,7 @@ not closed by these source commits or by the binary hash inventories.
 No branch, report, repository name or archived candidate is labelled as a full
 source-reproduction pass.
 
-## Required source handoff
+## Historical frozen-JAR provenance
 
 The remaining framework provenance is not available in either local partial
 `aosp-15` or `bridge-build/aosp` trees. Historical scripts identify the framework
@@ -127,3 +132,7 @@ source recipes for the original framework/core JAR build and OH firmware/provide
 set. A frozen JAR archive or a version label is not an equivalent substitute.
 Without that provenance, choosing a fresh generic Android release would create
 a new port baseline rather than reproduce the existing working stack.
+
+The current source-stack work uses an explicitly pinned Android 15 source
+baseline. The remaining active gates are in `full-build-gaps.json`; unavailable
+Toutiao application source is not among them.

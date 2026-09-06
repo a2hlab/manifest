@@ -32,9 +32,9 @@ def git(path, *command):
     return subprocess.check_output(['git', '-C', str(path), *command], stderr=subprocess.STDOUT)
 
 
-def verify_sources(workspace):
+def verify_sources(workspace, lock=None):
     resolved = []
-    for entry in read_lock(ROOT / 'sources.lock.json'):
+    for entry in read_lock(lock or ROOT / 'sources.lock.json'):
         path = workspace / entry['path']
         revision = git(path, 'rev-parse', 'HEAD').decode().strip()
         if revision != entry['revision']:
@@ -80,7 +80,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--workspace', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
-    parser.add_argument('--profile', choices=['native', 'apps', 'art', 'full'], required=True)
+    parser.add_argument('--profile', choices=['native', 'apps', 'art', 'host-tools', 'core-java', 'full'], required=True)
     parser.add_argument('--jobs', type=int, default=6)
     args = parser.parse_args()
     if args.profile == 'full':
@@ -96,6 +96,8 @@ def main():
     if output.exists():
         parser.error('--out must be new (no stale-object reuse)')
     sources = verify_sources(workspace)
+    if args.profile == 'core-java':
+        sources += verify_sources(workspace, ROOT / 'core-sources.lock.json')
     toolchains = verify_toolchains(workspace, args.profile != 'native')
     output.mkdir(parents=True)
     report = {'profile': args.profile, 'sources': sources, 'toolchains': toolchains,
@@ -123,6 +125,15 @@ def main():
                 'clean-runtime-objects', 'jni-stubs', cwd=workspace / 'art-build')
             run('link', sys.executable, workspace / 'art-build/tools/link_runtime.py',
                 '--workspace', workspace, '--objects', output / 'objects', '--out', output / 'runtime')
+            run('providers', sys.executable, ROOT / 'tools/audit_runtime_symbols.py',
+                '--workspace', workspace, '--runtime', output / 'runtime',
+                '--report', output / 'provider-audit.json', '--require-complete')
+        elif args.profile == 'host-tools':
+            run('host', sys.executable, workspace / 'art-build/tools/build_host.py',
+                '--workspace', workspace, '--out', output / 'host', '--jobs', args.jobs)
+        elif args.profile == 'core-java':
+            run('java', sys.executable, ROOT / 'tools/build_core_java.py',
+                '--source-root', workspace / 'android-source', '--out', output / 'java')
         report['status'] = 'source-build-pass'
     except Exception as error:
         report['status'] = 'fail'

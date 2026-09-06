@@ -7,12 +7,14 @@
   "hermetic_host_environment": false,
   "proprietary_app_vendor_inputs_distributed": false,
   "gaps": [
-    "Core/framework compile headers and DEX JARs lack a closed source recipe; historical board JARs must not be used as unrecorded build inputs.",
-    "Adapter Java builders have a cold-start dependency cycle and need an explicit duplicate-free class ownership inventory.",
-    "Host dex2oat and all ten boot-classpath JARs must be rebuilt together before boot-image reproduction can pass.",
-    "HWUI mixes patched AOSP14 sources and OH Skia providers; historical full builder omits the recorded EglManager source fix.",
-    "Full bridge requires declared OH project/header/generated-source/override and shared-library provider inventories, not a saved Ninja command or wildcard board libraries.",
-    "ART/boundary source links still require full process provider closure, including platform libc++ ABI, binder JNI and WebP providers; source-link success is not deployability.",
-    "Connected-board acceptance and repeated same-input Toutiao/OnePlus 6 latency measurements are not completed for the rebuilt payload."
-  ]
+    "Framework Java/resources and adapter Java need a closed source recipe, generated-source inventory and duplicate-free ownership graph; four core JARs now have a source recipe.",
+    "The complete boot classpath, including Conscrypt and remaining framework/adapter JARs, and a compatible boot image must be built and accepted together; host dex2oat now builds from source.",
+    "HWUI mixes patched AOSP14 sources and OH graphics providers; its complete source/override/provider graph and current EglManager selection remain open.",
+    "Full bridge/appspawn require declared OH header/generated-source/source-override and shared-library provider inventories.",
+    "A complete source-built payload must launch Toutiao and pass device UX checks. Component symbol closure and native probes do not establish that acceptance."
+  ],
+  "target": "source-built Android/Westlake plus pinned original Toutiao APK",
+  "application_source_required": false,
+  "original_apk_lock": "app-inputs.lock.json",
+  "source_java_baseline": "android-15.0.0_r1"
 }
