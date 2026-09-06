@@ -22,22 +22,31 @@ APK or reused output directory is rejected.
 
 ## Implemented source build paths
 
+While these changes are in review, start with the `source-stack-closure` branch:
+
+```sh
+git clone --branch source-stack-closure https://github.com/a2hlab/manifest.git a2hlab-manifest
+cd a2hlab-manifest
+```
+
 Bootstrap the standard source/toolchain locks as described in README.md. The
 ART profile now also fetches the preserved WebP source through the default lock.
 For the additional Android core sources and compiler:
 
 ```sh
 python3 tools/fetch_sources.py --workspace /workspace --lock core-sources.lock.json
+python3 tools/install_java.py --workspace /workspace
 python3 tools/rebuild.py --workspace /workspace --profile host-tools --out /workspace/out/host-tools --jobs 4
 python3 tools/rebuild.py --workspace /workspace --profile core-java --out /workspace/out/core-java
 python3 tools/rebuild.py --workspace /workspace --profile art --out /workspace/out/art --jobs 6
 python3 tools/build_core_boot.py --host-build /workspace/out/host-tools/host --core-build /workspace/out/core-java/java --out /workspace/out/core-boot
 ```
 
-All project inputs in these locks are fetched from a2hlab repositories. JDK 21
-is an explicit workstation prerequisite for `core-java`; the OHOS SDK, platform
-Clang, and Android D8 are pinned compiler inputs, not compilers bootstrapped from
-source by this workflow. The running OHOS firmware is the host platform; this
+All project and compiler inputs in these locks are fetched from a2hlab
+repositories. The OHOS SDK, platform Clang, Temurin JDK 21.0.6+7 and Android D8
+are pinned compiler inputs, not compilers bootstrapped from source by this
+workflow. The JDK installer checks the original release archive and extracted
+tree hashes; the build does not select Java from the workstation PATH. The running OHOS firmware is the host platform; this
 target does not rebuild its kernel or system services.
 
 * `host-tools` builds host `dex2oat`, zlib, disassemblers, and Android 15 x86-64
@@ -59,6 +68,18 @@ target does not rebuild its kernel or system services.
   `std::__h` provider, uses OHOS musl's program-name symbol, and delegates Binder
   library loading to the normal ART loader. The SDK/provider audit must pass.
 
+Bouncy Castle and Apache XML have an additional source recipe using the
+verified core compile classes and the same pinned JDK/D8:
+
+```sh
+python3 tools/fetch_sources.py --workspace /workspace --lock java-extensions.lock.json
+python3 tools/build_java_extensions.py --workspace /workspace --core-build /workspace/out/core-java/java --out /workspace/out/java-extensions
+```
+
+It compiles 1291 declared Java sources, preserves Apache XML resources, and
+checks compiled-class ownership and duplicate DEX definitions against the core.
+These JARs have not yet been accepted as part of the complete boot classpath.
+
 The additional complete AOSP framework source snapshot is available separately:
 
 ```sh
@@ -75,6 +96,22 @@ core JARs. This is a core image, not the final framework/Westlake boot image.
 The builder verifies the input artifact hashes and records all twelve image,
 OAT, and VDEX outputs. Core JAR verification rejects duplicate DEX definitions,
 compile-header leakage, and loss of required ART classes such as `java.lang.Record`.
+
+## Reproduce the core device check
+
+After the builds above, use the connected OHOS device's HDC executable and serial:
+
+```sh
+python3 tools/probe_core_vm.py --workspace /workspace --runtime /workspace/out/art/runtime --core /workspace/out/core-java/java --boot /workspace/out/core-boot --out /workspace/out/core-device-probe --hdc /path/to/hdc --serial DEVICE_SERIAL
+```
+
+This compiles the probe, verifies build reports and transfers each artifact into
+an isolated, newly created `/data/local/tmp/a2hlab-core-*` directory. Every
+transfer is hash-checked. It creates the VM and tests Record resolution,
+monotonic time, OS-derived properties and I/O limits, and the system class loader.
+It records native-registration diagnostics even when these specific checks pass.
+The existing JNI boundary still contains legacy registrations that do not match
+all Android 15 classes; passing startup is not a complete class-library test.
 
 ## Acceptance boundary
 

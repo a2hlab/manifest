@@ -71,6 +71,12 @@
         "url": "https://android.googlesource.com/platform/prebuilts/r8"
       },
       "url": "https://github.com/a2hlab/dep-android-source-r8.git"
+    },
+    {
+      "path": "inputs/jdk21",
+      "url": "https://github.com/a2hlab/dep-jdk21-linux-x64.git",
+      "revision": "b238d7c6343d5577621150b68f052d9c7e3fafc8",
+      "lfs": true
     }
   ]
 }

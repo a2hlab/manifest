@@ -21,7 +21,7 @@
     {
       "path": "art-build",
       "url": "https://github.com/a2hlab/art-build.git",
-      "revision": "ddb17753fa86ad94f33fe3a8d18ad72039ac789d"
+      "revision": "354ab4ec9c75a2719a47963e67c27c2eb60e05da"
     },
     {
       "path": "aosp-art-15",

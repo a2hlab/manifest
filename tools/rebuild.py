@@ -15,6 +15,7 @@ import tempfile
 import sys
 from bootstrap_sdk import ROOT, fingerprint
 from fetch_sources import read_lock
+from install_java import verify_java
 
 
 def git(path, *command):
@@ -99,6 +100,8 @@ def main():
     if args.profile == 'core-java':
         sources += verify_sources(workspace, ROOT / 'core-sources.lock.json')
     toolchains = verify_toolchains(workspace, args.profile != 'native')
+    if args.profile == 'core-java':
+        java_home, toolchains['jdk21'] = verify_java(workspace)
     output.mkdir(parents=True)
     report = {'profile': args.profile, 'sources': sources, 'toolchains': toolchains,
               'complete_toutiao_build': False, 'device_accepted': False, 'status': 'running'}
@@ -133,7 +136,8 @@ def main():
                 '--workspace', workspace, '--out', output / 'host', '--jobs', args.jobs)
         elif args.profile == 'core-java':
             run('java', sys.executable, ROOT / 'tools/build_core_java.py',
-                '--source-root', workspace / 'android-source', '--out', output / 'java')
+                '--source-root', workspace / 'android-source', '--java-home', java_home,
+                '--out', output / 'java')
         report['status'] = 'source-build-pass'
     except Exception as error:
         report['status'] = 'fail'

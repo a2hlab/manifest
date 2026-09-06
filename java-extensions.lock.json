@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "projects": [
+    {
+      "path": "android-source/bouncycastle",
+      "revision": "5053fe5be608f879f860908c7b3ab1d29e240933",
+      "upstream": {
+        "revision": "9be82ede5e65ebf63fcaa57f788d142d99f58948",
+        "tree": "8b1044aabaab90bf47f12381cf73316e6c0fb71f",
+        "url": "https://android.googlesource.com/platform/external/bouncycastle"
+      },
+      "url": "https://github.com/a2hlab/dep-android-source-bouncycastle.git"
+    },
+    {
+      "path": "android-source/apache-xml",
+      "revision": "553e22620228776ae081fcf0f2f0d5fbdb44ec15",
+      "upstream": {
+        "revision": "5a9996d3fa744b9e720d1696f01f9d14829a87a5",
+        "tree": "964b576a3a44feeda1cf513214a491cb982fd057",
+        "url": "https://android.googlesource.com/platform/external/apache-xml"
+      },
+      "url": "https://github.com/a2hlab/dep-android-source-apache-xml.git"
+    }
+  ]
+}

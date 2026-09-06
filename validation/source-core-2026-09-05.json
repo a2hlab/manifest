@@ -1,0 +1,202 @@
+{
+  "art_commit": "354ab4ec9c75a2719a47963e67c27c2eb60e05da",
+  "core_boot": {
+    "boot-core-icu4j.art": {
+      "bytes": 1866496,
+      "sha256": "2fe5e4baee69c740db84b748ceba6bc73a94a3bd05aa6e44d9163848909be4e7"
+    },
+    "boot-core-icu4j.oat": {
+      "bytes": 29312,
+      "sha256": "b59afc2ae2661f03b380f732f561316c19d1593c2b4f4bd0ade2f73eb1a89107"
+    },
+    "boot-core-icu4j.vdex": {
+      "bytes": 2416732,
+      "sha256": "708e2b092a036cb3efba3d60f418ebe63b1203ecc202f34ddf2b7bba89b6cf48"
+    },
+    "boot-core-libart.art": {
+      "bytes": 445424,
+      "sha256": "ead394a76fe6d1eb585e6d4b78f6e087717c37c79bf723ea47db64125589e5d0"
+    },
+    "boot-core-libart.oat": {
+      "bytes": 21120,
+      "sha256": "8a35d493be0f39d851413fcc581efbf33b029d9026599cec6af02264c1045a8d"
+    },
+    "boot-core-libart.vdex": {
+      "bytes": 500980,
+      "sha256": "86bd533be08880d3d638a2b07614d2078ed07eaa01a4c68e2e94bc32bdbd2359"
+    },
+    "boot-okhttp.art": {
+      "bytes": 284832,
+      "sha256": "81d2d868741add24e3ef67f601cde4f356541b598f10cb23c800464ea25cdba2"
+    },
+    "boot-okhttp.oat": {
+      "bytes": 17024,
+      "sha256": "e8d009e93df23752173d0376ab537635db0b79b9618efcfe80d5df4d8463978b"
+    },
+    "boot-okhttp.vdex": {
+      "bytes": 352304,
+      "sha256": "a6eb42b8eaa99aae1bce013a8f68f8682006c755e118fc20b990ff903edb048f"
+    },
+    "boot.art": {
+      "bytes": 4924784,
+      "sha256": "cf46617120b135217fac9acbf7753e93cf32c76a689aaf1a18e8198393ad2d13"
+    },
+    "boot.oat": {
+      "bytes": 53888,
+      "sha256": "5ccc58bb80051f5d726418aa2c46e5facbcd861fbd7be521e654d20ed4022cd0"
+    },
+    "boot.vdex": {
+      "bytes": 4725628,
+      "sha256": "03e3ade4a936a1b07d2aa72b0e6e7692980c0d98381b4274ca6f11814c0d1c78"
+    }
+  },
+  "core_compiler": "Pinned Temurin OpenJDK 21.0.6+7 from a2hlab/dep-jdk21-linux-x64",
+  "core_jars": {
+    "core-icu4j.jar": {
+      "bytes": 1079326,
+      "sha256": "7d8786c1a0c7f0c3b2eae51160a872368fcf65bc6faf6592cd3155bbdfb67787",
+      "source_classes": 1661
+    },
+    "core-libart.jar": {
+      "bytes": 197929,
+      "sha256": "b9438a3b4fe5dd37f750a1eb6c8c4fdf0bc4933217442d1bcbd98e2575717ac6",
+      "source_classes": 471
+    },
+    "core-oj.jar": {
+      "bytes": 1927350,
+      "sha256": "02d8b12d06c8944844916b46b66da5a90a61d876399a003e9b82d0828f617c5c",
+      "source_classes": 3584
+    },
+    "okhttp.jar": {
+      "bytes": 148928,
+      "sha256": "1f8dfdb55631b0747c6402f04eb6b30a820ae326b9642a23a6edb3da7ba65f03",
+      "source_classes": 229
+    }
+  },
+  "device_core_probe": {
+    "all_transfers_hash_verified": true,
+    "checks": [
+      "VM creation",
+      "Record resolution",
+      "monotonic nanotime",
+      "OS working directory/library path",
+      "OS IOV limit",
+      "system class loader"
+    ],
+    "native_registration_diagnostics": [
+      "Failed to register native method java.io.FileInputStream.close0()V in /system/framework/core-oj.jar",
+      "Failed to register native method java.io.FileInputStream.open0(Ljava/lang/String;)V in /system/framework/core-oj.jar",
+      "Failed to register native method java.io.FileInputStream.read0()I in /system/framework/core-oj.jar",
+      "Failed to register native method java.io.FileInputStream.readBytes([BII)I in /system/framework/core-oj.jar",
+      "Failed to register native method java.io.FileOutputStream.close0()V in /system/framework/core-oj.jar",
+      "Failed to register native method java.io.FileOutputStream.open0(Ljava/lang/String;Z)V in /system/framework/core-oj.jar",
+      "Failed to register native method java.io.FileOutputStream.write(IZ)V in /system/framework/core-oj.jar",
+      "Failed to register native method java.io.FileOutputStream.writeBytes([BIIZ)V in /system/framework/core-oj.jar",
+      "Failed to register native method java.io.UnixFileSystem.checkAccess0(Ljava/io/File;I)Z in /system/framework/core-oj.jar",
+      "Failed to register native method java.io.UnixFileSystem.delete0(Ljava/io/File;)Z in /system/framework/core-oj.jar",
+      "Failed to register native method java.io.UnixFileSystem.getBooleanAttributes0(Ljava/io/File;)I in /system/framework/core-oj.jar",
+      "Failed to register native method java.io.UnixFileSystem.getLength0(Ljava/io/File;)J in /system/framework/core-oj.jar",
+      "Failed to register native method java.io.UnixFileSystem.rename0(Ljava/io/File;Ljava/io/File;)Z in /system/framework/core-oj.jar",
+      "Failed to register native method java.lang.Runtime.runFinalization0()V in /system/framework/core-oj.jar",
+      "Failed to register native method java.lang.Thread.nicenessForPriority(I)I in /system/framework/core-oj.jar",
+      "Failed to register native method java.util.zip.Inflater.initIDs()V in /system/framework/core-oj.jar",
+      "Failed to register native method java.util.zip.ZipFile.close(J)V in /system/framework/core-oj.jar",
+      "Failed to register native method java.util.zip.ZipFile.freeEntry(JJ)V in /system/framework/core-oj.jar",
+      "Failed to register native method java.util.zip.ZipFile.getCommentBytes(J)[B in /system/framework/core-oj.jar",
+      "Failed to register native method java.util.zip.ZipFile.getEntry(J[BZ)J in /system/framework/core-oj.jar",
+      "Failed to register native method java.util.zip.ZipFile.getEntryBytes(JI)[B in /system/framework/core-oj.jar",
+      "Failed to register native method java.util.zip.ZipFile.getEntryCSize(J)J in /system/framework/core-oj.jar",
+      "Failed to register native method java.util.zip.ZipFile.getEntryCrc(J)J in /system/framework/core-oj.jar",
+      "Failed to register native method java.util.zip.ZipFile.getEntryFlag(J)I in /system/framework/core-oj.jar",
+      "Failed to register native method java.util.zip.ZipFile.getEntryMethod(J)I in /system/framework/core-oj.jar",
+      "Failed to register native method java.util.zip.ZipFile.getEntrySize(J)J in /system/framework/core-oj.jar",
+      "Failed to register native method java.util.zip.ZipFile.getEntryTime(J)J in /system/framework/core-oj.jar",
+      "Failed to register native method java.util.zip.ZipFile.getFileDescriptor(J)I in /system/framework/core-oj.jar",
+      "Failed to register native method java.util.zip.ZipFile.getTotal(J)I in /system/framework/core-oj.jar",
+      "Failed to register native method java.util.zip.ZipFile.open(Ljava/lang/String;IJZ)J in /system/framework/core-oj.jar",
+      "Failed to register native method java.util.zip.ZipFile.read(JJJ[BII)I in /system/framework/core-oj.jar",
+      "Failed to register native method java.util.zip.ZipFile.startsWithLOC(J)Z in /system/framework/core-oj.jar",
+      "Failed to register native method libcore.icu.ICU.initLocaleDataNative(Ljava/lang/String;Llibcore/icu/LocaleData;)Z in /system/framework/core-libart.jar",
+      "Failed to register native method sun.nio.ch.FileDispatcherImpl.allocationGranularity0()J in /system/framework/core-oj.jar",
+      "Failed to register native method sun.nio.ch.FileDispatcherImpl.init0()V in /system/framework/core-oj.jar",
+      "Failed to register native method sun.nio.ch.FileDispatcherImpl.map0(Ljava/io/FileDescriptor;IJJZ)J in /system/framework/core-oj.jar",
+      "Failed to register native method sun.nio.ch.FileDispatcherImpl.seek0(Ljava/io/FileDescriptor;J)J in /system/framework/core-oj.jar",
+      "Failed to register native method sun.nio.ch.FileDispatcherImpl.setDirect0(Ljava/io/FileDescriptor;)I in /system/framework/core-oj.jar",
+      "Failed to register native method sun.nio.ch.FileDispatcherImpl.unmap0(JJ)I in /system/framework/core-oj.jar",
+      "Failed to register native method sun.nio.ch.FileKey.initIDs()V in /system/framework/core-oj.jar",
+      "Failed to register non-native method java.io.UnixFileSystem.canonicalize(Ljava/lang/String;)Ljava/lang/String; as native",
+      "Failed to register non-native method java.io.UnixFileSystem.canonicalize0(Ljava/lang/String;)Ljava/lang/String; as native",
+      "Failed to register non-native method java.io.UnixFileSystem.parentOrNull(Ljava/lang/String;)Ljava/lang/String; as native",
+      "Failed to register non-native method java.lang.Math.abs(D)D as native",
+      "Failed to register non-native method java.lang.Math.copySign(DD)D as native",
+      "Failed to register non-native method java.lang.Math.max(DD)D as native",
+      "Failed to register non-native method java.lang.Math.round(F)I as native",
+      "Failed to register non-native method java.lang.Math.toDegrees(D)D as native",
+      "Failed to register non-native method java.lang.StrictMath.abs(D)D as native",
+      "Failed to register non-native method java.lang.StrictMath.ceil(D)D as native",
+      "Failed to register non-native method java.lang.StrictMath.floor(D)D as native",
+      "Failed to register non-native method java.lang.StrictMath.max(DD)D as native",
+      "Failed to register non-native method java.lang.StrictMath.random()D as native",
+      "Failed to register non-native method java.lang.StrictMath.toDegrees(D)D as native",
+      "Failed to register non-native method java.util.zip.CRC32.updateByteBuffer(IJII)I as native",
+      "Failed to register non-native method java.util.zip.CRC32.updateBytes(I[BII)I as native",
+      "Failed to register non-native method java.util.zip.ZipFile.ensureOpen()V as native",
+      "Failed to register non-native method libcore.icu.ICU.getBestDateTimePatternNative(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; as native",
+      "Failed to register non-native method libcore.icu.ICU.getCurrencyCode(Ljava/lang/String;)Ljava/lang/String; as native",
+      "Failed to register non-native method libcore.icu.ICU.setDefaultLocale(Ljava/lang/String;)V as native"
+    ],
+    "passed": true
+  },
+  "extension_dex_classes": 1868,
+  "full_stack_source_build": false,
+  "host_art_build_commit": "ddb17753fa86ad94f33fe3a8d18ad72039ac789d",
+  "host_declared_objects": 496,
+  "host_dex2oat": {
+    "bytes": 25651496,
+    "path": "objects/bin/dex2oat",
+    "sha256": "04e27876b6bed1350d65f1a4349ebed59292531172a6692cd957eef6778bd9e5"
+  },
+  "java_extensions": {
+    "apache-xml.classes.jar": {
+      "bytes": 998721,
+      "sha256": "c4e643597b5331cf30e94972e7e851b4a817c751a209a5c5b5ca4552177ffc92"
+    },
+    "apache-xml.jar": {
+      "bytes": 439222,
+      "sha256": "6e76cc75c53ccc8fc1089d62d8457be09a3f88e409717cd242970087a5cc01ec"
+    },
+    "bouncycastle.classes.jar": {
+      "bytes": 1473400,
+      "sha256": "d5a7eb49c16edf016bd3c0fbedb793f86ccc8d6a5067da1713c769bbe8360371"
+    },
+    "bouncycastle.jar": {
+      "bytes": 483790,
+      "sha256": "7edd0e1a7668c12b459ddee6563e4ce1b0c5df5003304b858c3903bb27aa608c"
+    }
+  },
+  "manifest_tests": {
+    "failed": 0,
+    "passed": 20
+  },
+  "network_during_build": "disabled with unshare -Urn",
+  "original_apk_modified": false,
+  "original_apk_sha256": "a1112a0c941f865847c2fab9138cf815735268fbfcd41d697412fb80992c7395",
+  "project_sources": "Fresh independent a2hlab GitHub checkouts under source-closure/verify; no older workspace sources",
+  "provider_audit": "zero unresolved imports for ART/boundary/WebP against declared OHOS SDK and platform C++ providers",
+  "runtime": {
+    "libart.so": {
+      "bytes": 21530928,
+      "sha256": "13ac1173e27cd4a9f18c8cb20ff171db128716bfefce2cb0c6d974aafcb15a29"
+    },
+    "libwestlake_runtime_boundary.so": {
+      "bytes": 392792,
+      "sha256": "52859e45e2c8deb7bf22dcb740225b2648f9c9a10e0874b2f17fc4ab691fbfa1"
+    },
+    "libwestlake_webp.so": {
+      "bytes": 287184,
+      "sha256": "eab59243365aebddf0e6ac8bd07d6c7129a12ca8c78ae2310c43885bb32adfa4"
+    }
+  },
+  "scope": "Reproducible source components and core VM startup; complete Android/Westlake/Toutiao UX remains open",
+  "source_built_toutiao_ux": false
+}

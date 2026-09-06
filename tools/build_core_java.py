@@ -166,15 +166,15 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source-root', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
-    parser.add_argument('--java-home', type=Path)
+    parser.add_argument('--java-home', type=Path, required=True)
     args = parser.parse_args()
     source = args.source_root.resolve()
     output = args.out.absolute()
     if output.exists():
         parser.error('--out must be new')
-    compiler = str(args.java_home / 'bin/javac') if args.java_home else shutil.which('javac')
-    java = str(args.java_home / 'bin/java') if args.java_home else shutil.which('java')
-    if not compiler or not java:
+    compiler = str(args.java_home.resolve() / 'bin/javac')
+    java = str(args.java_home.resolve() / 'bin/java')
+    if not Path(compiler).is_file() or not Path(java).is_file():
         parser.error('JDK 21 is required')
     d8 = source / 'r8/r8.jar'
     if sha(d8) != D8_SHA256:
@@ -198,7 +198,7 @@ def main():
     owners[('android/net/ssl', 'SSLSockets.java')] = 'compile-only'
     owners[('com/android/icu', 'Flags.java')] = 'compile-only'
     env = {k: v for k, v in os.environ.items()
-           if k not in ('JAVA_TOOL_OPTIONS', 'JDK_JAVA_OPTIONS', 'CLASSPATH')}
+           if k not in ('JAVA_TOOL_OPTIONS', 'JDK_JAVA_OPTIONS', '_JAVA_OPTIONS', 'CLASSPATH')}
     env.update(SOURCE_DATE_EPOCH='1772755200', TZ='UTC', LC_ALL='C')
     commands = []
 
@@ -208,7 +208,9 @@ def main():
             subprocess.run(command, check=True, env=env, stdout=log, stderr=subprocess.STDOUT)
 
     sources = [source / name for name in sorted(inventory)] + generated
-    sources += [source / 'libcore/luni/src/module/java/module-info.java']
+    module = source / 'libcore/luni/src/module/java/module-info.java'
+    inputs[module.relative_to(source).as_posix()] = sha(module)
+    sources += [module]
     response = output / 'sources.rsp'
     response.write_text('\n'.join('"' + str(path) + '"' for path in sources) + '\n')
     classes = output / 'classes'
@@ -282,6 +284,7 @@ def main():
               'compiler': subprocess.check_output([compiler, '-version'], text=True, env=env).strip(),
               'd8_sha256': sha(d8), 'class_ownership': ownership, 'artifacts': artifacts,
               'dex_class_ownership': dex_ownership,
+              'compile_header': {'path': header_jar.name, 'sha256': sha(header_jar)},
               'board_jar_inputs': [], 'device_accepted': False}
     (output / 'artifacts.json').write_text(json.dumps(report, indent=2, sort_keys=True) + '\n')
     print('CORE_JAVA_SOURCE_BUILD_PASS', json.dumps(artifacts, sort_keys=True))
