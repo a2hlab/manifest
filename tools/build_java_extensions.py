@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Bouncy Castle and Apache XML from declared sources and source core classes."""
+"""Build Bouncy Castle, Apache XML and Conscrypt using source core classes."""
 import argparse
 import json
 import os
@@ -9,6 +9,7 @@ import subprocess
 from build_core_java import ROOT, D8_SHA256, sha, class_source, write_jar, dex_definitions
 from install_java import verify_java
 from rebuild import verify_sources
+from rebuild import verify_toolchains
 
 
 def main():
@@ -16,12 +17,18 @@ def main():
     parser.add_argument('--workspace', type=Path, required=True)
     parser.add_argument('--core-build', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
+    parser.add_argument('--library', action='append', choices=['bouncycastle', 'apache-xml', 'conscrypt'])
     args = parser.parse_args()
     workspace, core, output = args.workspace.resolve(), args.core_build.resolve(), args.out.absolute()
     if output.exists():
         parser.error('--out must be new')
     locks = verify_sources(workspace, ROOT / 'core-sources.lock.json')
     locks += verify_sources(workspace, ROOT / 'java-extensions.lock.json')
+    selected = args.library or ['bouncycastle', 'apache-xml', 'conscrypt']
+    native_toolchains = {}
+    if 'conscrypt' in selected:
+        locks += verify_sources(workspace, ROOT / 'native-sources.lock.json')
+        native_toolchains = verify_toolchains(workspace, False)
     java_home, jdk_hash = verify_java(workspace)
     report = json.loads((core / 'artifacts.json').read_text())
     header = core / report['compile_header']['path']
@@ -43,6 +50,8 @@ def main():
               'd8_sha256': sha(d8), 'inputs': {module.relative_to(source).as_posix(): sha(module)},
               'commands': [], 'artifacts': {}, 'dex_class_ownership': {}, 'board_jar_inputs': [],
               'device_accepted': False}
+    record['native_toolchains'] = native_toolchains
+    record['generated_sources'] = {}
 
     def run(name, command):
         record['commands'].append(list(map(str, command)))
@@ -58,7 +67,25 @@ def main():
 
     definitions = set(report['dex_class_ownership'])
     for name, spec in inventory.items():
+        if name not in selected:
+            continue
         paths = [checked(relative) for relative in spec['sources']]
+        if spec.get('generator') == 'conscrypt-native-constants':
+            generator = checked('conscrypt/constants/src/gen/cpp/generate_constants.cc')
+            native = workspace / 'toolchains/ohos-sdk/native'
+            tool = output / 'conscrypt_generate_constants'
+            run('compile-constants', [native / 'llvm/bin/clang', '-x', 'c++', '-std=c++17',
+                '-DBORINGSSL_NO_CXX', '-I' + str(source / 'boringssl/src/include'),
+                '-O2', '-Werror=date-time', '-ffile-prefix-map=' + str(workspace) + '=/src',
+                generator, '-o', tool])
+            generated = output / 'generated/com/android/org/conscrypt/NativeConstants.java'
+            generated.parent.mkdir(parents=True)
+            command = [str(tool), 'com.android.org.conscrypt']
+            record['commands'].append(command)
+            generated.write_bytes(subprocess.check_output(command, env=env))
+            record['generated_sources'][generated.relative_to(output).as_posix()] = sha(generated)
+            record['constants_generator_sha256'] = sha(tool)
+            paths.append(generated)
         owners = set()
         for path in paths:
             package = re.search(r'(?m)^\s*package\s+([\w.]+)\s*;', path.read_text())

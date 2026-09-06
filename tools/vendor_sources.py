@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 import subprocess
 import tarfile
+from contextlib import contextmanager
 
 ROOT = Path(__file__).resolve().parents[1]
 ENV = dict(os.environ, GIT_AUTHOR_DATE='2026-09-05T12:00:00Z',
@@ -21,6 +22,25 @@ ENV = dict(os.environ, GIT_AUTHOR_DATE='2026-09-05T12:00:00Z',
 
 def run(*command, cwd=None):
     return subprocess.check_output([str(x) for x in command], cwd=cwd, env=ENV, stderr=subprocess.STDOUT)
+
+
+@contextmanager
+def exact_archive_attributes(source):
+    # git archive otherwise honors export-ignore and eol conversions, silently
+    # omitting files or changing bytes in embedded third-party source trees.
+    path = Path(run('git', 'rev-parse', '--git-path', 'info/attributes', cwd=source).decode().strip())
+    if not path.is_absolute():
+        path = source / path
+    saved = path.read_bytes() if path.exists() else None
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes((saved or b'') + b'\n* -export-ignore -export-subst -text\n')
+    try:
+        yield
+    finally:
+        if saved is None:
+            path.unlink()
+        else:
+            path.write_bytes(saved)
 
 
 def publish(entry, workspace, destination):
@@ -51,24 +71,25 @@ def publish(entry, workspace, destination):
                 and parts[4] not in entry.get('lfs_paths', [])):
             raise ValueError('Oversized source blob needs LFS review: ' + row)
     target.mkdir(parents=True)
-    archive = subprocess.Popen(['git', '-C', str(source), 'archive', '--format=tar', 'HEAD'], stdout=subprocess.PIPE)
     # Preserve cross-project test symlinks as Git symlink blobs. Do not follow
     # or read their targets, and create them only after regular file extraction.
     links = []
-    with tarfile.open(fileobj=archive.stdout, mode='r|') as packed:
-        for member in packed:
-            relative = Path(member.name)
-            if relative.is_absolute() or '..' in relative.parts:
-                raise ValueError('Unsafe source path: ' + member.name)
-            if member.issym():
-                if Path(member.linkname).is_absolute():
-                    raise ValueError('Absolute source symlink needs review: ' + member.name)
-                links.append((target / relative, member.linkname))
-            else:
-                packed.extract(member, target, filter='data')
-    archive.stdout.close()
-    if archive.wait() != 0:
-        raise ValueError('Source export failed')
+    with exact_archive_attributes(source):
+        archive = subprocess.Popen(['git', '-C', str(source), 'archive', '--format=tar', 'HEAD'], stdout=subprocess.PIPE)
+        with tarfile.open(fileobj=archive.stdout, mode='r|') as packed:
+            for member in packed:
+                relative = Path(member.name)
+                if relative.is_absolute() or '..' in relative.parts:
+                    raise ValueError('Unsafe source path: ' + member.name)
+                if member.issym():
+                    if Path(member.linkname).is_absolute():
+                        raise ValueError('Absolute source symlink needs review: ' + member.name)
+                    links.append((target / relative, member.linkname))
+                else:
+                    packed.extract(member, target, filter='data')
+        archive.stdout.close()
+        if archive.wait() != 0:
+            raise ValueError('Source export failed')
     for path, link in links:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.symlink_to(link)

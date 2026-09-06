@@ -4,7 +4,7 @@ The target is **source-built Android/Westlake with Toutiao supplied as a pinned
 original APK**. Toutiao source code is not a build requirement. See
 [SOURCE_STACK.md](SOURCE_STACK.md) for the source build paths, original APK
 staging command, and remaining full-stack gates. The [source-core validation
-record](validation/source-core-2026-09-05.json) contains fresh offline build hashes
+record](reports/source-stack-progress.json) contains fresh offline build hashes
 and connected-device startup results.
 
 Canonical organization: **https://github.com/a2hlab**. These private repositories
@@ -17,12 +17,12 @@ are independent of the organization's Android 16 work:
 | [aosp-art-15](https://github.com/a2hlab/aosp-art-15) | Modified ART source with its original upstream Git ancestry |
 | [manifest](https://github.com/a2hlab/manifest) | Exact revisions/patches, toolchain content locks, bootstrap/build/verification tools and open full-build gates |
 | [toolchains](https://github.com/a2hlab/toolchains) | Actual SDK/compiler build-input archives in Git LFS, with hashes and original notices |
-| `dep-*` (27 repositories across the locks) | Vendored upstream source trees; exact revisions and patches in the included locks |
+| `dep-*` (exact revisions in the source locks) | Vendored upstream source trees; exact revisions and patches in the included locks |
 | [legacy-runtime-sources](https://github.com/a2hlab/legacy-runtime-sources) | Preserved HWUI/Minikin/FreeType/HarfBuzz/WebP sources and local compatibility headers; not an accepted full runtime build |
 
 Profile: `toutiao-aosp15-oh61-legacy`. **This is not yet a complete reproducible
-Toutiao stack.** Native helpers, unsigned host/Pinyin packages, ART/host dex2oat, four core Java
-JARs, two Java extensions and core VM startup are separate milestones. `full-build-gaps.json` is machine-readable and
+Toutiao stack.** Native helpers, unsigned host/Pinyin packages, ART/host dex2oat, seven core Java
+JARs with a boot image, native support, and framework source generators are separate milestones. `full-build-gaps.json` is machine-readable and
 the `full` build command fails closed; it never substitutes candidate04, old
 objects, board JARs or copied device libraries. See [STATUS.md](STATUS.md) for
 exact verified scope and remaining work.

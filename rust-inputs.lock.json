@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "projects": [
+    {
+      "path": "inputs/rust-compiler194-linux-x64",
+      "url": "https://github.com/a2hlab/dep-rust-compiler194-linux-x64.git",
+      "revision": "cc5d4d3f8bc4f9ac912a31df71d36d25277e0d57",
+      "lfs": true
+    }
+  ]
+}

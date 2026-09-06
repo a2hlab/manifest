@@ -1,0 +1,193 @@
+{
+  "schema": 1,
+  "profile": "android15-framework-dependencies",
+  "projects": [
+    {
+      "path": "android-source/frameworks-av",
+      "android_path": "frameworks/av",
+      "url": "https://github.com/a2hlab/dep-android-source-frameworks-av.git",
+      "revision": "06e77eb82725144ad237927bff01a6b99eecae3b",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/frameworks/av",
+        "revision": "1863cb0ea5a9e1340f11a435618ff863e017da29",
+        "tree": "08769fbefd29d08b3532af9da5fb989974361970"
+      }
+    },
+    {
+      "path": "android-source/frameworks-hardware-interfaces",
+      "android_path": "frameworks/hardware/interfaces",
+      "url": "https://github.com/a2hlab/dep-android-source-frameworks-hardware-interfaces.git",
+      "revision": "bc41aefe46f5a77cb5e969fd3e048c014d300bb0",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/frameworks/hardware/interfaces",
+        "revision": "07a63dac5cd48dd5e6c9cfb572fac7278eb574ad",
+        "tree": "4fd491915d8eafcd85ad0902634996cc4ce36bb0"
+      }
+    },
+    {
+      "path": "android-source/frameworks-opt-net-ims",
+      "android_path": "frameworks/opt/net/ims",
+      "url": "https://github.com/a2hlab/dep-android-source-frameworks-opt-net-ims.git",
+      "revision": "2545f2bfe2a99ddcba204798c8082d7db372ba22",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/frameworks/opt/net/ims",
+        "revision": "3105f6c297d60aa38da8b261cf84521050225bf2",
+        "tree": "0e7ea77464104d4f26a8e45e7b02c3e36d7f2d46"
+      }
+    },
+    {
+      "path": "android-source/frameworks-opt-telephony",
+      "android_path": "frameworks/opt/telephony",
+      "url": "https://github.com/a2hlab/dep-android-source-frameworks-opt-telephony.git",
+      "revision": "6b145cfead7ff98e3c4cb223283cfc2b526b23b3",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/frameworks/opt/telephony",
+        "revision": "fd916079a28b535deb40473a4483752c3a7ab387",
+        "tree": "84b866c4a2364ceb08cdbfbe9e8a36d9aa8716a6"
+      }
+    },
+    {
+      "path": "android-source/frameworks-proto-logging",
+      "android_path": "frameworks/proto_logging",
+      "url": "https://github.com/a2hlab/dep-android-source-frameworks-proto-logging.git",
+      "revision": "57886a1a2d670576bf51875270a2576fb4f15045",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/frameworks/proto_logging",
+        "revision": "2c6c588cd1895718850f52bdbf492438331ee60d",
+        "tree": "838b63515cb4746b61bfd6118f0a295ff809e762"
+      }
+    },
+    {
+      "path": "android-source/hardware-interfaces",
+      "android_path": "hardware/interfaces",
+      "url": "https://github.com/a2hlab/dep-android-source-hardware-interfaces.git",
+      "revision": "838b50759438331f31d8171cb642be827872d08f",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/hardware/interfaces",
+        "revision": "488942f82bd1bc9ad1cb65a02c71421dc3a6a3d6",
+        "tree": "484d45fd7355830b7b66d1cffdb679f8bf484a6a"
+      }
+    },
+    {
+      "path": "android-source/modules-bluetooth",
+      "android_path": "packages/modules/Bluetooth",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-bluetooth.git",
+      "revision": "ca2a8689423bd6b36a453ceb34cd0128e0957b51",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth",
+        "revision": "84f57cd7ec507a5daeaf65a692435680037987c9",
+        "tree": "1cb486d623111aa86c86caf8bf03e1ff486efcd2"
+      }
+    },
+    {
+      "path": "android-source/modules-connectivity",
+      "android_path": "packages/modules/Connectivity",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-connectivity.git",
+      "revision": "fd8f3590402a68ab30595e13d97887cc547753ed",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/Connectivity",
+        "revision": "355670c19612b43b73d496fee4b4fc7d4c13bf01",
+        "tree": "27347f5d078e2fa1010319004c7d44140b16f466"
+      }
+    },
+    {
+      "path": "android-source/modules-crashrecovery",
+      "android_path": "packages/modules/CrashRecovery",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-crashrecovery.git",
+      "revision": "04c4585d2f6ab96c23f31fe3d5c9a69b7c1ca7d0",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/CrashRecovery",
+        "revision": "8890698024322e509d45a2159795a4763dfa1786",
+        "tree": "4efb08f09f72fec674dee2805137cd3b4372088b"
+      }
+    },
+    {
+      "path": "android-source/modules-permission",
+      "android_path": "packages/modules/Permission",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-permission.git",
+      "revision": "0143e6b7ccbe3686bf444deada34f8c490ebbe64",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/Permission",
+        "revision": "d7374497d3ac1a1257af7df777e7fdf5a4a46501",
+        "tree": "3f7b53fbd66296e36f288edf4e7a53cdb1919552"
+      }
+    },
+    {
+      "path": "android-source/modules-wifi",
+      "android_path": "packages/modules/Wifi",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-wifi.git",
+      "revision": "c0c9bdbd2e55c7bd8a1c2fceeefddc88211569ff",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/Wifi",
+        "revision": "a88d7fbb026bada1345124fc1afbbaa0a6b5498f",
+        "tree": "ab100956f3cffaee05c04d44fb29eec66d046362"
+      }
+    },
+    {
+      "path": "android-source/system-gatekeeper",
+      "android_path": "system/gatekeeper",
+      "url": "https://github.com/a2hlab/dep-android-source-system-gatekeeper.git",
+      "revision": "52c2cd0747c295d9ac92a0ded5fe520c6dd9a0a8",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/gatekeeper",
+        "revision": "7ee1850e65b62f2cdcdda518ee8d04182c8df239",
+        "tree": "c6acee376a3da7ad430236641a8891a123796c03"
+      }
+    },
+    {
+      "path": "android-source/system-gsid",
+      "android_path": "system/gsid",
+      "url": "https://github.com/a2hlab/dep-android-source-system-gsid.git",
+      "revision": "749cd0a7333f2828010bfff2b4b3f2b8f4b6fcc0",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/gsid",
+        "revision": "4f15296cc73edbc1de2bfaa9e92b50ff47d3092c",
+        "tree": "4013ba6d02b75afdf43ae5365c5ca440a43624ac"
+      }
+    },
+    {
+      "path": "android-source/system-hardware-interfaces",
+      "android_path": "system/hardware/interfaces",
+      "url": "https://github.com/a2hlab/dep-android-source-system-hardware-interfaces.git",
+      "revision": "c351f083128a9872dd8ec531c6a3b3fa6f5b842e",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/hardware/interfaces",
+        "revision": "34d76c29fff78058183215ab8d57fa8ea7944db0",
+        "tree": "1dadb4fd2d9d4f892032244d0b28b357574fe88b"
+      }
+    },
+    {
+      "path": "android-source/system-security",
+      "android_path": "system/security",
+      "url": "https://github.com/a2hlab/dep-android-source-system-security.git",
+      "revision": "9a508e63421f27d65bcddb7b9cd6a962fd950ada",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/security",
+        "revision": "5a37034a3a97492cca75928193363c4f13bce5d3",
+        "tree": "0b5da8149249a0b3269d95b527fe6cc70d062897"
+      }
+    },
+    {
+      "path": "android-source/system-update-engine",
+      "android_path": "system/update_engine",
+      "url": "https://github.com/a2hlab/dep-android-source-system-update-engine.git",
+      "revision": "18a5a55995158088f0c8e593a2007fe2e947257d",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/update_engine",
+        "revision": "9441d89992eaefa1d64b17896d569e6053a0124e",
+        "tree": "514d41153869d60da7c9b4f7bf111b36ad2a6d90"
+      }
+    },
+    {
+      "path": "android-source/system-vold",
+      "android_path": "system/vold",
+      "url": "https://github.com/a2hlab/dep-android-source-system-vold.git",
+      "revision": "b05804c9cc4e86d58265bddf440cf442ab1efe2e",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/vold",
+        "revision": "a10f878c78b03c0a5e0eb9c4587c29630661cacc",
+        "tree": "6fe38a902c0f0492d4c7204a0da5e7c95b6bf443"
+      }
+    }
+  ]
+}

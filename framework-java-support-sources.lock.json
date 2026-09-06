@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "profile": "android15-framework-dependencies",
+  "projects": [
+    {
+      "path": "android-source/external-exoplayer",
+      "android_path": "external/exoplayer",
+      "url": "https://github.com/a2hlab/dep-android-source-external-exoplayer.git",
+      "revision": "26135045f064653bbba586ecf60f05907f6abc70",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/exoplayer",
+        "revision": "ef2eeeaa78012e9fad70ef9954dcafae7acb9b07",
+        "tree": "d52a18c482931cf88f21dad3156a3f60c963c83c"
+      }
+    },
+    {
+      "path": "android-source/external-guava",
+      "android_path": "external/guava",
+      "url": "https://github.com/a2hlab/dep-android-source-external-guava.git",
+      "revision": "33c1e4e5ec2029cdcde38eedb84881d09bd3a48f",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/guava",
+        "revision": "c349c15c20dd5a047936dddfcb19beee8869e393",
+        "tree": "aea3bdc0219699e9a437fc0f0d5df38eb5e9753f"
+      }
+    },
+    {
+      "path": "android-source/external-jsilver",
+      "android_path": "external/jsilver",
+      "url": "https://github.com/a2hlab/dep-android-source-external-jsilver.git",
+      "revision": "54e9f70187c2b7fbc6de8d8849463f9b7ad0bb06",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/jsilver",
+        "revision": "6852f0fba8b5c7341af68a69daaa9b8f0e4d0c65",
+        "tree": "4428a926491876c1101c23c8a483c729e30bfea0"
+      }
+    }
+  ]
+}

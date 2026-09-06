@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "profile": "android15-framework-dependencies",
+  "projects": [
+    {
+      "path": "android-source/system-libsysprop",
+      "android_path": "system/libsysprop",
+      "url": "https://github.com/a2hlab/dep-android-source-system-libsysprop.git",
+      "revision": "a3e22b271c33bd6397401c8bed9b2cc6643dd652",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/libsysprop",
+        "revision": "ff9aadd95667638b888019217acca817adef3953",
+        "tree": "bc0e4ad9c5e266d4e81297f31bddd99491f8deb2"
+      }
+    }
+  ]
+}

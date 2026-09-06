@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "profile": "android15-native-support",
+  "projects": [
+    {
+      "path": "android-source/libbase",
+      "url": "https://github.com/a2hlab/dep-android-source-libbase.git",
+      "revision": "161bc3b1f9f4a80349caeab667d265c77dd59945",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/libbase",
+        "revision": "68f963c62f7fddc70c34df141d943ae0f7631020",
+        "tree": "f13f552402a9fc84a2c255caa07f782f1d1d939e"
+      }
+    },
+    {
+      "path": "android-source/system-core",
+      "url": "https://github.com/a2hlab/dep-android-source-system-core.git",
+      "revision": "bdbd38889d9c275b1e9d6344aeccf41cfef46440",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/core",
+        "revision": "fc7bc8c4bfb4c6095e34ea784509dae56f25b486",
+        "tree": "5cf82bdcf8760455bc4ef94b2d5a75e0bbfa3fd6"
+      }
+    },
+    {
+      "path": "android-source/libziparchive",
+      "url": "https://github.com/a2hlab/dep-android-source-libziparchive.git",
+      "revision": "d060398344852d30bde7528fde4b852e7aa92ad5",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/libziparchive",
+        "revision": "13b815f485784ed356869746796bb405ec86a7d4",
+        "tree": "08f51083ec218a4c8c31f81d4753953178514894"
+      }
+    },
+    {
+      "path": "android-source/logging",
+      "url": "https://github.com/a2hlab/dep-android-source-logging.git",
+      "revision": "c66269c22efad4aa739fc74f39b964dab7f946cd",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/logging",
+        "revision": "54d3fa266d2123c0b076c646fae60d049311052a",
+        "tree": "5ab4b611c5f4fea6e895b41ccc0727580787b800"
+      }
+    },
+    {
+      "path": "android-source/frameworks-native",
+      "url": "https://github.com/a2hlab/dep-android-source-frameworks-native.git",
+      "revision": "47739e45e2cc620ebe0b76e7d09ef9f3a9e16306",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/frameworks/native",
+        "revision": "f7274fca5e36082674740bc6c976f73c4578d009",
+        "tree": "c3fd8ecd41b6fb43a043bf4897aa325051c87587"
+      }
+    },
+    {
+      "path": "android-source/incremental-delivery",
+      "url": "https://github.com/a2hlab/dep-android-source-incremental-delivery.git",
+      "revision": "5a606414507697d7a49bb825a6395c795b3a6714",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/incremental_delivery",
+        "revision": "fcd1a7622ab49905e2bd3e3fd46bd2b15ca75389",
+        "tree": "4b98ef550b345eb48144b073da8ee96016e4652e"
+      }
+    },
+    {
+      "path": "android-source/expat",
+      "url": "https://github.com/a2hlab/dep-android-source-expat.git",
+      "revision": "1c263c5f9e24438441056958acb38346d82a15c3",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/expat",
+        "revision": "8ae3fff00472acf17b96871c7cdeaccfa7430c73",
+        "tree": "55d10d69c78c75027876b9f10e1ad0e0eb5642a2"
+      }
+    },
+    {
+      "path": "android-source/libnativehelper",
+      "url": "https://github.com/a2hlab/dep-android-source-libnativehelper.git",
+      "revision": "a1227d25273df8fd505a030456e2140b7b8f377b",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/libnativehelper",
+        "revision": "3ca43dfe2bf4613852df0303531fa8ecf4b7063c",
+        "tree": "4503ad2c3540eec13111a442aab50bed39aa65f9"
+      }
+    },
+    {
+      "path": "android-source/fmtlib",
+      "url": "https://github.com/a2hlab/dep-android-source-fmtlib.git",
+      "revision": "d92aedd5b74d145a0c9d6f26b17a70045fb4a3c8",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/fmtlib",
+        "revision": "360e74bb8ec766ee05e5c4e8956c811391e3e9e5",
+        "tree": "77eb0afe0529d93aaf8f54988182a425173c056c"
+      }
+    },
+    {
+      "path": "android-source/libpng",
+      "url": "https://github.com/a2hlab/dep-android-source-libpng.git",
+      "revision": "ab6d453ab59d61400557de252ee7da435fdfcff8",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/libpng",
+        "revision": "6a336e4372cfb5f4a128a6c454d43de359a7ef95",
+        "tree": "1b7a6ca5e4a2914fed0d917912cbf7e78e12d3bb"
+      }
+    },
+    {
+      "path": "android-source/boringssl",
+      "url": "https://github.com/a2hlab/dep-android-source-boringssl.git",
+      "revision": "f0ca4f680309885c7100df77e498ce15bc1e2b9e",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/boringssl",
+        "revision": "23a87e389eb925678c6766f7d0fcd189c2f9303c",
+        "tree": "61619ecdc47c74bedd8fafd0399e49bde8711c08"
+      }
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "schema": 1,
+  "profile": "android15-framework-dependencies",
+  "projects": [
+    {
+      "path": "android-source/build-make",
+      "android_path": "build",
+      "url": "https://github.com/a2hlab/dep-android-source-build-make.git",
+      "revision": "9431e060dd74f0e910b1b13574136190ad64ee29",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/build",
+        "revision": "3d9c9aacdb6ca0b745b3048dad88d0db4680d50e",
+        "tree": "b49d6e9a5fa766ed6eb51076a7acbda435f3c24e"
+      }
+    },
+    {
+      "path": "android-source/build-release",
+      "android_path": "build/release",
+      "url": "https://github.com/a2hlab/dep-android-source-build-release.git",
+      "revision": "8417aa44abde684d357aa16a6792cf91469e9723",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/build/release",
+        "revision": "e1dfb3dc783166aadcf150d67d3d53d68001883a",
+        "tree": "25842befe24db8cebcc7e0a917f74af2034a8a65"
+      }
+    },
+    {
+      "path": "android-source/build-soong",
+      "android_path": "build/soong",
+      "url": "https://github.com/a2hlab/dep-android-source-build-soong.git",
+      "revision": "741c11c15bc6f80d84106a24cbb7c6155b97dc65",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/build/soong",
+        "revision": "3fe78dc9b32f1ac3f7eb279ae9376d7037b18452",
+        "tree": "8def74512107adb8296471335f55d7ebfeb7ea64"
+      }
+    },
+    {
+      "path": "android-source/external-commons-cli",
+      "url": "https://github.com/a2hlab/dep-android-source-external-commons-cli.git",
+      "revision": "a153343b5ed8d7a8a6a4de9955401d6f708b9d1c",
+      "upstream": {
+        "url": "https://github.com/apache/commons-cli.git",
+        "revision": "636fac44643c497373b747097bd46b457bddbc8e",
+        "tree": "87b88678c00f1c207a0621cd520debfe0f8493c1"
+      }
+    },
+    {
+      "path": "android-source/external-jsoncpp",
+      "android_path": "external/jsoncpp",
+      "url": "https://github.com/a2hlab/dep-android-source-external-jsoncpp.git",
+      "revision": "4c320c5b9c3183476167dada2c73c0c146ceeed7",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/jsoncpp",
+        "revision": "8b9aabf635515d453160bb9df5f3d8437561626a",
+        "tree": "6cbf0d73485a9bbadc8b9354853edcd90470a20a"
+      }
+    },
+    {
+      "path": "android-source/modules-configinfrastructure",
+      "android_path": "packages/modules/ConfigInfrastructure",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-configinfrastructure.git",
+      "revision": "ab158bc9637da46741156f1c247d5d435f54ec4c",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/ConfigInfrastructure",
+        "revision": "fd0d464d645c3419bf692d4b7c34b085b41155ef",
+        "tree": "3a716566b6214f83376d497e6c20932eb7fae070"
+      }
+    },
+    {
+      "path": "android-source/modules-media",
+      "android_path": "packages/modules/Media",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-media.git",
+      "revision": "102506253fc9237ac9f5c85ba2c2dddb6cec8d11",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/Media",
+        "revision": "579b22cdf08d463034146603014a1eab2a08274a",
+        "tree": "1c9fa07619f8c333703d43e4cfee0b8a4effa608"
+      }
+    },
+    {
+      "path": "android-source/services-telecomm",
+      "android_path": "packages/services/Telecomm",
+      "url": "https://github.com/a2hlab/dep-android-source-services-telecomm.git",
+      "revision": "104d5552e6880744b83c882b6367b264379d7dd1",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/services/Telecomm",
+        "revision": "ab6428db8d29c88b1d8c8ad5d19b9c75408ff3e2",
+        "tree": "84ce8acee8159fd05127e69f987b5ffeff50e906"
+      }
+    },
+    {
+      "path": "android-source/system-chre",
+      "android_path": "system/chre",
+      "url": "https://github.com/a2hlab/dep-android-source-system-chre.git",
+      "revision": "be0654df14bec63797b9f6e5d45cefc011b0dc70",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/chre",
+        "revision": "6f8f329dc5e804f96761c61d2bfdabb76bfa7a86",
+        "tree": "75ca748e465272b3404f7a8dec4be49ef9d0f1b6"
+      }
+    },
+    {
+      "path": "android-source/system-connectivity-wificond",
+      "android_path": "system/connectivity/wificond",
+      "url": "https://github.com/a2hlab/dep-android-source-system-connectivity-wificond.git",
+      "revision": "5d77db3a0a79e5bc8a5fe0c7cae6fd4bc95abf0d",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/connectivity/wificond",
+        "revision": "038bc6f5ac9e58de3be9cf7161ae87292d0d98f6",
+        "tree": "a3502bf7af560cffbc256401fa3d1351d9cc7eea"
+      }
+    },
+    {
+      "path": "android-source/system-libbase-hidl",
+      "android_path": "system/libhidl",
+      "url": "https://github.com/a2hlab/dep-android-source-system-libbase-hidl.git",
+      "revision": "f575198526166775b34f7bddedffbad18edc2ddf",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/libhidl",
+        "revision": "dffcee6b429e5b56cf40fcbca6502826adabd747",
+        "tree": "8b783f8a13951d4b5d933a780a818ff685308777"
+      }
+    },
+    {
+      "path": "android-source/system-libhwbinder",
+      "android_path": "system/libhwbinder",
+      "url": "https://github.com/a2hlab/dep-android-source-system-libhwbinder.git",
+      "revision": "d8bf0f2130199761a5652f2e0111c78c15fa3116",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/libhwbinder",
+        "revision": "142745e883f896decfaedd7f8d310da96123eb1c",
+        "tree": "e2807779617305b17f8f7eb8dc0cf0f986cecc69"
+      }
+    },
+    {
+      "path": "android-source/system-server-configurable-flags",
+      "android_path": "system/server_configurable_flags",
+      "url": "https://github.com/a2hlab/dep-android-source-system-server-configurable-flags.git",
+      "revision": "95a93b26c501bc5f1a2a5336a2c5cbedd4ad7c1f",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/server_configurable_flags",
+        "revision": "3b6d3e8d7d20d2f1876c8882dcbdf347b16f80dc",
+        "tree": "8d96661ec799fdd66372ef9e789d6895776a9f39"
+      }
+    },
+    {
+      "path": "android-source/system-tools-hidl",
+      "android_path": "system/tools/hidl",
+      "url": "https://github.com/a2hlab/dep-android-source-system-tools-hidl.git",
+      "revision": "1668997912051730ad9ab95a34b8530960b73a18",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/tools/hidl",
+        "revision": "a61c3e7eafd1c3ac523c105392a88c0165237394",
+        "tree": "60ebef21e94df1da0fbce245e45e927c75b8d28d"
+      }
+    },
+    {
+      "path": "android-source/system-tools-sysprop",
+      "android_path": "system/tools/sysprop",
+      "url": "https://github.com/a2hlab/dep-android-source-system-tools-sysprop.git",
+      "revision": "a1a43af9bfbdaccd2253d7d4337e992ec09ea5f6",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/tools/sysprop",
+        "revision": "5be999d96af8fb091376a8ef85d3b9015d9f8be9",
+        "tree": "c42c2aad2a31bafd893c7a7773e1f363bf7a77ee"
+      }
+    },
+    {
+      "path": "android-source/system-tools-xsdc",
+      "android_path": "system/tools/xsdc",
+      "url": "https://github.com/a2hlab/dep-android-source-system-tools-xsdc.git",
+      "revision": "4e368cc458efb0fc6ff8aa96fae05a4bbe072094",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/tools/xsdc",
+        "revision": "2c0760cfb454309419bb71d8452dfa5a644c6e8b",
+        "tree": "833fb4b577d60c307933406f5e2e417d5a9174b0"
+      }
+    }
+  ]
+}

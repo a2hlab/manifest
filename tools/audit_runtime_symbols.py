@@ -32,9 +32,13 @@ def main():
                 result.add(parts[0].split('@')[0])
         return result
 
-    roots = [runtime / 'libart.so', runtime / 'libwestlake_runtime_boundary.so']
-    if (runtime / 'libwestlake_webp.so').is_file():
-        roots.append(runtime / 'libwestlake_webp.so')
+    inventory = json.loads((runtime / 'artifacts.json').read_text())
+    roots = []
+    for name, entry in inventory['artifacts'].items():
+        path = runtime / name
+        if not name.endswith('.so') or not path.resolve().is_relative_to(runtime) or digest(path) != entry['sha256']:
+            raise ValueError('Invalid/changed declared runtime artifact: ' + name)
+        roots.append(path)
     queue, visited, missing_libraries = list(roots), {}, set()
     exports = set()
     while queue:

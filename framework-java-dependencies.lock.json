@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "profile": "android15-framework-dependencies",
+  "projects": [
+    {
+      "path": "android-source/external-cronet",
+      "android_path": "external/cronet",
+      "url": "https://github.com/a2hlab/dep-android-source-external-cronet.git",
+      "revision": "023d0f48ca237468898347c0594ca084459d8926",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/cronet",
+        "revision": "9fd93bd1e1904dc186f609bc25109717190afa63",
+        "tree": "c1c3d5467cf4e3d536b3420a301efb6589bb0d8a"
+      }
+    },
+    {
+      "path": "android-source/external-error-prone",
+      "android_path": "external/error_prone",
+      "url": "https://github.com/a2hlab/dep-android-source-external-error-prone.git",
+      "revision": "d38d2c784f0a384b66840302e5c4cfe0ca192952",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/error_prone",
+        "revision": "3b700d6a64fda08a66ebf46e3793d9c06a85394e",
+        "tree": "c324ef190790faba2be57f817e789e74fccb1113"
+      }
+    },
+    {
+      "path": "android-source/external-jsr305",
+      "android_path": "external/jsr305",
+      "url": "https://github.com/a2hlab/dep-android-source-external-jsr305.git",
+      "revision": "70545a00dc27a650b6a582e866f3f94431e95b11",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/jsr305",
+        "revision": "0d4f494e6c59b8d5cb98b35885bc4a49fffba70e",
+        "tree": "e47ded2f5c8817e6039140df9c2e81f380e8d847"
+      }
+    },
+    {
+      "path": "android-source/external-perfetto",
+      "android_path": "external/perfetto",
+      "url": "https://github.com/a2hlab/dep-android-source-external-perfetto.git",
+      "revision": "c6ae0362459e041af929e6ce2b15954d9498b8ae",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/perfetto",
+        "revision": "1c396ab8fcb74752f8b433c9051929d7e679b859",
+        "tree": "19f2234fed7d1c6f6313245ff35ecd766f1d327d"
+      }
+    },
+    {
+      "path": "android-source/modules-devicelock",
+      "android_path": "packages/modules/DeviceLock",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-devicelock.git",
+      "revision": "eff219e8f05027332f9f77e0d884dfc7c2e9d8c3",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/DeviceLock",
+        "revision": "9db83af1151d4773a8cf65e111915147d4984131",
+        "tree": "800a7fdee7e3f7137620a258521e3edb5d454588"
+      }
+    }
+  ]
+}

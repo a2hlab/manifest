@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "projects": [
+    {
+      "path": "android-source/errorprone-annotations",
+      "url": "https://github.com/a2hlab/dep-errorprone-annotation-sources.git",
+      "revision": "ef820dae4ff001cc52b315a9d7e7fd970b522baf",
+      "source_archive": {
+        "url": "https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.23.0/error_prone_annotations-2.23.0-sources.jar",
+        "sha256": "5b4504609bb93d3c24b87cd839cf0bb7d878135d0a917a05081d0dc9b2a9973f",
+        "version": "2.23.0",
+        "kind": "Java source archive; no class files"
+      }
+    }
+  ]
+}

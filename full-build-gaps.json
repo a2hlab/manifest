@@ -7,11 +7,12 @@
   "hermetic_host_environment": false,
   "proprietary_app_vendor_inputs_distributed": false,
   "gaps": [
-    "The source Android 15 core now creates a VM on device, but legacy JNI registrations still mismatch some classes; complete core-library behavior remains unverified.",
-    "Framework Java/resources and adapter Java need a closed source recipe, generated-source inventory and duplicate-free ownership graph; four core JARs now have a source recipe.",
-    "The complete boot classpath, including Conscrypt and remaining framework/adapter JARs, and a compatible boot image must be built and accepted together; host dex2oat now builds from source.",
+    "The seven source core JARs pass device Unicode, regex, Conscrypt, BouncyCastle, XML and boot-resource probes; remaining legacy native registration mismatches and untested APIs still need full application acceptance.",
+    "Framework resources, AIDL and compiler generators now build from source; complete framework/adapter Java compilation and duplicate-free DEX ownership remain in progress.",
+    "The seven-JAR core boot image is source-built and accepted by the core device probe. Framework/adapter JARs must be added to a complete boot image and accepted with the full payload.",
     "HWUI mixes patched AOSP14 sources and OH graphics providers; its complete source/override/provider graph and current EglManager selection remain open.",
     "Full bridge/appspawn require declared OH header/generated-source/source-override and shared-library provider inventories.",
+    "Every mapped runtime provider, including WebView support, must be source-built or verified as an explicit OH host-firmware provider; captured Android/Westlake DSOs are not accepted as source outputs.",
     "A complete source-built payload must launch Toutiao and pass device UX checks. Component symbol closure and native probes do not establish that acceptance."
   ],
   "target": "source-built Android/Westlake plus pinned original Toutiao APK",
