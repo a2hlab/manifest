@@ -1,0 +1,218 @@
+{
+  "verified": true,
+  "projects": [
+    {
+      "path": "inputs/toolchains",
+      "url": "https://github.com/a2hlab/toolchains.git",
+      "revision": "e887b8cc720da58526fedf1a8ad169355f94173c",
+      "lfs": true,
+      "tree": "20a48173f24f31687d3471e3ebe9b130cbbc83f6"
+    },
+    {
+      "path": "westlake",
+      "url": "https://github.com/a2hlab/westlake.git",
+      "revision": "a64b9be58d09437bd8e0eb6d739a81f354c8328d",
+      "tree": "b4eaa8f45482d7c0a624c7c1154669bd6ec3f598"
+    },
+    {
+      "path": "art-build",
+      "url": "https://github.com/a2hlab/art-build.git",
+      "revision": "cbbde72124e8fc0f73b2b3763bb23b2f3303c202",
+      "tree": "42e4bbbd2c2e0bcfcb4ba16e7095cd0f8f357d69"
+    },
+    {
+      "path": "aosp-art-15",
+      "url": "https://github.com/a2hlab/aosp-art-15.git",
+      "revision": "dfd9b6775382b275f68678100e19d0bf2c3a5401",
+      "tree": "83ddc5fe2dbdca3eaef354a0ba74e151bbe5c238"
+    },
+    {
+      "path": "upstream/aosp-11/art",
+      "url": "https://github.com/a2hlab/dep-aosp11-art.git",
+      "revision": "88d7d665827b41953678e2adda672b417bdb7d65",
+      "patch": "patches/aosp-11/art.patch",
+      "tree": "351ccfa27e84a0f4091ffd17cebf5dfd318167f9",
+      "patch_sha256": "a99dd52e7129d31283e5eddf5d1c68a33e06da8ea66190a4322f4c50e7304433",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/art",
+        "revision": "83cd633bec9586c44d214f01734d29de582882a3",
+        "tree": "bb57e95010e8678e04dc044a1aa5ef80b9cd519e"
+      }
+    },
+    {
+      "path": "upstream/aosp-11/system/core",
+      "url": "https://github.com/a2hlab/dep-aosp11-system-core.git",
+      "revision": "5d1090b660a746f0de1c2399f74bd0d3d1d6ec99",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/core",
+        "revision": "348efca472d810d3152568913da41a081893a4e3",
+        "tree": "6d0f55c0803dd8047fbe00a614703fe151c0fba5"
+      },
+      "tree": "6d0f55c0803dd8047fbe00a614703fe151c0fba5"
+    },
+    {
+      "patch": "patches/aosp-11/libnativehelper.patch",
+      "patch_sha256": "1c59e560c191911a305389417c623a87dc01c2aea4e87392cf5062b198d796ff",
+      "path": "upstream/aosp-11/libnativehelper",
+      "revision": "2c9470b9a01e6deaed4bacd5e03901cc69599c0f",
+      "tree": "dfcf3e310a7b1818027485e7d30f0968e592bbba",
+      "upstream": {
+        "revision": "4494e4aa4167ec5bdd687a3ed49b10c6f9d21c34",
+        "tree": "485ea1c9d20eccfbd85e36d48ed74841eae84c78",
+        "url": "https://android.googlesource.com/platform/libnativehelper"
+      },
+      "url": "https://github.com/a2hlab/dep-aosp11-libnativehelper.git"
+    },
+    {
+      "path": "upstream/aosp-11/external/zlib",
+      "revision": "fda0e7422013d1736efb7a615874c5519b4de631",
+      "upstream": {
+        "revision": "1a9b432817192342bbfb5a389058a45eea9f816c",
+        "tree": "d141303ac2d0de4e3c5c7de0e0dbdcdce54421fb",
+        "url": "https://android.googlesource.com/platform/external/zlib"
+      },
+      "url": "https://github.com/a2hlab/dep-aosp11-external-zlib.git",
+      "tree": "d141303ac2d0de4e3c5c7de0e0dbdcdce54421fb"
+    },
+    {
+      "path": "upstream/aosp-11/external/lz4",
+      "revision": "0a09447f591060ae2a2ad36561f706cf59fde27a",
+      "upstream": {
+        "revision": "fdd43c66dd9e77283aa8f7e52a881be44d622441",
+        "tree": "166245a77c5909ca3ffb51b9eae4528d99c5b345",
+        "url": "https://android.googlesource.com/platform/external/lz4"
+      },
+      "url": "https://github.com/a2hlab/dep-aosp11-external-lz4.git",
+      "tree": "166245a77c5909ca3ffb51b9eae4528d99c5b345"
+    },
+    {
+      "path": "upstream/aosp-11/external/vixl",
+      "url": "https://github.com/a2hlab/dep-aosp11-external-vixl.git",
+      "revision": "c00eed66cf9e35006634b999a70093cf22f4e995",
+      "patch": "patches/aosp-11/external_vixl.patch",
+      "tree": "d020de8e34a64778eeb11b1b217a4157e90d0ec6",
+      "patch_sha256": "3cb06796213627d332b8baca5fc36a608cb9b8ebfd2f4d942e720835a7058342",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/vixl",
+        "revision": "c150fd7455f6f3520efe35ac6b24854ecc5b3a70",
+        "tree": "de6cac29cfdc33bcc8ffb16ef786f2a9ed1dc85a"
+      }
+    },
+    {
+      "path": "upstream/aosp-11/external/lzma",
+      "url": "https://github.com/a2hlab/dep-aosp11-external-lzma.git",
+      "revision": "ad2b77f44699c631a06afbc22783eeadb0b59565",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/lzma",
+        "revision": "7ad0c1013f4666f8c9d088e0c6893a86057f5ebd",
+        "tree": "aa35b954113dfa253467cf163dd266d601299ed7"
+      },
+      "tree": "aa35b954113dfa253467cf163dd266d601299ed7"
+    },
+    {
+      "path": "upstream/aosp-11/external/icu",
+      "url": "https://github.com/a2hlab/dep-aosp11-external-icu.git",
+      "revision": "8243eb32a983feafe214270808ea631ca1f76427",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/icu",
+        "revision": "7d24b8a6ac9f91d5b0c8d822cdfe795cff787de4",
+        "tree": "9f7508a41fff7fb9fdafbf4c2df729e0be3ff39c"
+      },
+      "tree": "9f7508a41fff7fb9fdafbf4c2df729e0be3ff39c"
+    },
+    {
+      "path": "upstream/aosp-11/external/tinyxml2",
+      "url": "https://github.com/a2hlab/dep-aosp11-external-tinyxml2.git",
+      "revision": "d8115e857d7800a4fd4686f954359a6ed370c78c",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/tinyxml2",
+        "revision": "1b7e9f45b916fdafad6a450244d6d30735b075db",
+        "tree": "76ff5e7c21ff763cbade2fb63de6a0f3b67300a3"
+      },
+      "tree": "76ff5e7c21ff763cbade2fb63de6a0f3b67300a3"
+    },
+    {
+      "path": "upstream/aosp-11/external/fmtlib",
+      "url": "https://github.com/a2hlab/dep-aosp11-external-fmtlib.git",
+      "revision": "80cc7a93886c43cabcdd3423ce5f09221a542072",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/fmtlib",
+        "revision": "aa6fa3aa882afe47f7af990b0c6d747a01cd6104",
+        "tree": "e1fd7ad0e6a928ed5514b4571494e7a9fb924d88"
+      },
+      "tree": "e1fd7ad0e6a928ed5514b4571494e7a9fb924d88"
+    },
+    {
+      "path": "upstream/art-15",
+      "url": "https://github.com/a2hlab/aosp-art-15.git",
+      "revision": "814cc9385f8f8eaba6f4bfd1d723160c2132c76e",
+      "tree": "94beccbdace14d059c7a989c68172a0e4fe4858b"
+    },
+    {
+      "path": "upstream/aosp-11/external/dlmalloc",
+      "url": "https://github.com/a2hlab/dep-aosp11-external-dlmalloc.git",
+      "revision": "1b491f2b8fe0542d2aa58b39d0d316020c56bc2c",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/dlmalloc",
+        "revision": "3a9d0af27a9f8fe533931a9e7ca843fd8e5b54f1",
+        "tree": "938694023aa0136a1c996b347dd0799b4ac94983"
+      },
+      "tree": "938694023aa0136a1c996b347dd0799b4ac94983"
+    },
+    {
+      "path": "upstream/ohos/developtools/global_resource_tool",
+      "url": "https://github.com/a2hlab/dep-ohos-developtools-global_resource_tool.git",
+      "revision": "25d2a0844d7d02312342f34061ecebb8e39abc63",
+      "upstream": {
+        "url": "https://github.com/openharmony/developtools_global_resource_tool.git",
+        "revision": "eb7d04912888b5f954a7ee4548c4f73897eb8eca",
+        "tree": "1b99c2996b793e473e3bda7d7e3e063c5e1bcd76"
+      },
+      "tree": "1b99c2996b793e473e3bda7d7e3e063c5e1bcd76"
+    },
+    {
+      "path": "upstream/ohos/third_party/jsoncpp",
+      "url": "https://github.com/a2hlab/dep-ohos-third_party-jsoncpp.git",
+      "revision": "97b1c28aaf87804ab9e2479072824e1cb83462e0",
+      "upstream": {
+        "url": "https://github.com/openharmony/third_party_jsoncpp.git",
+        "revision": "47321f506153e298ec078a1f4560e44058b12d53",
+        "tree": "53c178c55544b0f7cc6f5b20b3111810888591ba"
+      },
+      "tree": "53c178c55544b0f7cc6f5b20b3111810888591ba"
+    },
+    {
+      "path": "upstream/ohos/third_party/libpng",
+      "url": "https://github.com/a2hlab/dep-ohos-third_party-libpng.git",
+      "revision": "d6390a2521e9c17e40f4a3f5d4c8383c989d189b",
+      "upstream": {
+        "url": "https://github.com/openharmony/third_party_libpng.git",
+        "revision": "f7cf480b2d9e5cc74622cd0fc814f5873428a577",
+        "tree": "60f547f5430d5b48b7720c1cd3ed6337da56b4ff"
+      },
+      "tree": "60f547f5430d5b48b7720c1cd3ed6337da56b4ff"
+    },
+    {
+      "path": "upstream/ohos/third_party/zlib",
+      "url": "https://github.com/a2hlab/dep-ohos-third_party-zlib.git",
+      "revision": "44057a6a1f6941175c8c1147ea65cf676aba1b94",
+      "upstream": {
+        "url": "https://github.com/openharmony/third_party_zlib.git",
+        "revision": "715621a0e254569e2dd9a7683ec89d01c228e2aa",
+        "tree": "5b986e0dcebc5140c7a2cedd67b1fac63eaf126c"
+      },
+      "tree": "5b986e0dcebc5140c7a2cedd67b1fac63eaf126c"
+    },
+    {
+      "path": "upstream/ohos/third_party/bounds_checking_function",
+      "url": "https://github.com/a2hlab/dep-ohos-third_party-bounds_checking_function.git",
+      "revision": "b2753b93e223df3dbd6cb3bd9db4ccbaacbeb0c4",
+      "upstream": {
+        "url": "https://github.com/openharmony/third_party_bounds_checking_function.git",
+        "revision": "dd8125bec1f8d9f28b7a9c99931d4b0580b7f78d",
+        "tree": "aed1b16e63269c7ed3b864e70e8984201bcece56"
+      },
+      "tree": "aed1b16e63269c7ed3b864e70e8984201bcece56"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "oh": {
+    "input_sha256": {
+      "popen_contract_probe": "88aa2a27b1e13e013fc6feec1caa0c36c0fffdac9a830c23984fb1c7937131e6",
+      "popen_stress_probe": "f2e679ceb2c01d86e661b69197dfe8f21a2892e1b2b7e724a1630814d4051774",
+      "liboh_popen_boundary.so": "82c81562a822d713d292e9938186a166ef32b6b3d42edd028cfaec86888c8665"
+    },
+    "contract_allowed": true,
+    "contract_denied": true,
+    "stress": true,
+    "identity_scope": "transport shell; not an ordinary app-domain acceptance test"
+  },
+  "android": {
+    "input_sha256": {
+      "popen_contract_probe": "3e6927ddb513cd02850e90c3a69e8edd135072a24fe872367912b1ef7e1b09df",
+      "popen_stress_probe": "7733d393492dd4e99cbd8bb5c98ab71ebcc0766e80488bb056d3b50a3e46658c"
+    },
+    "contract_allowed": true,
+    "contract_denied": true,
+    "stress": true,
+    "identity_scope": "transport shell; not an ordinary app-domain acceptance test"
+  }
+}

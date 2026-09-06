@@ -1,0 +1,2058 @@
+{
+  "schema": 1,
+  "profile": "parity27-observed-runtime",
+  "complete_build_input_closure": false,
+  "description": "Mapped immutable files in the accepted isolated Toutiao process; dynamic/unexercised dependencies may be additional. No app data included.",
+  "files": [
+    {
+      "path": "/data/local/tmp/asx/framework-res.apk",
+      "sha256": "c05bc0d3ccac5cbcb84e8af10d22505739189f6b2511623c84c1d5931c9c249b",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-adapter-mainline-stubs.art",
+      "sha256": "3fe367f46db4703775e940dc846ba32515bfd10862542ae79bbab150697813e9",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-adapter-mainline-stubs.oat",
+      "sha256": "1876ce8747af915519782b62290f3343df4418d58cb2a7b5426a9be49f6e8689",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-adapter-mainline-stubs.vdex",
+      "sha256": "7479367c1a4cd0a075be26aabc6e72b80883aed801aa1bdceb2de75d0d0551c4",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-adapter-runtime-bcp.art",
+      "sha256": "2758c235ca90c94bdb36e330dd88760c5db1b7cb20c29316cd0abc30e80e474c",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-adapter-runtime-bcp.oat",
+      "sha256": "0ca0c5b14f32d946fc0f36f5f45c354011c3411aa920092b1d4bcb6bcfb2d02a",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-adapter-runtime-bcp.vdex",
+      "sha256": "e65fecc077cc0a151254432535a69401990cac4925cb9afaba6e4d4d1b09cff7",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-apache-xml.art",
+      "sha256": "c6bcb9057dda40242bd6e942e237954f5dcf37f6b486f26a05138bb4725da6b0",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-apache-xml.oat",
+      "sha256": "eaf4078bfb99ead8d22d2aafd0c51cf8218c72f13886d40f523cb19f2b9dfb52",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-apache-xml.vdex",
+      "sha256": "1fd18a17745fa9d5dfec174e6a46d067e1554bbd97a798e6c026dad6e2d1535f",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-bouncycastle.art",
+      "sha256": "b9ac7fac8a6ded3a60902459811af57b345deb115820a9c83d1b4c71fd078938",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-bouncycastle.oat",
+      "sha256": "d59021a509cdb39b3dd3a7fab1b48928012d880cd8766f96876361c47fe33c6a",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-bouncycastle.vdex",
+      "sha256": "2639162ae232cddedbc7b88346f4c9041b08ef6451fa4e65bcaab3e3868913c6",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-core-icu4j.art",
+      "sha256": "9fef1670b2f93062696652649567b15bb708b7c7fe7b2399a0400bfcebc832bc",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-core-icu4j.oat",
+      "sha256": "e3985f0624b511068839fdfb539fe3c0e5f9c2c495cca94c5af031fae4450f75",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-core-icu4j.vdex",
+      "sha256": "bbfddd352b14209d31d48f6f5270908c009e0f6a18414d11355ad61578f2d2a4",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-core-libart.art",
+      "sha256": "12dad841c6f9102e15315f65e92bf1e347296cd67354c8fad1f847138c0556af",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-core-libart.oat",
+      "sha256": "02a2974eb991e95337506351bf51bb131618f610f3a4af404cd4bf97bfb72727",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-core-libart.vdex",
+      "sha256": "6ffe24e968855e735e2c29818bb7de54db29fb486351be2b04a361b3ec2368ff",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-framework.art",
+      "sha256": "1f8358f96254769a1bcfa4842b5b17bf80d11f97e4de2484c403c8c93afccccc",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-framework.oat",
+      "sha256": "9fbf5dda9bab9b4c164cc6c607c53c1bcee1737c7702f1d4bbfd068ef70edb68",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-framework.vdex",
+      "sha256": "96c2d0777f47b4e15426b7435225f10d544f65649870da65025c6421982b6133",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-oh-adapter-framework.art",
+      "sha256": "5508fca20dd856b571562097ea6e2de35001092303b0c835fc10af429d25edd4",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-oh-adapter-framework.oat",
+      "sha256": "1d8e1d74b0005760e593ab1d600d201bdefd32e2379d1f274e2b4329cffbdae5",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-oh-adapter-framework.vdex",
+      "sha256": "8fe257e39e4ffd8a82d3a2e54749a06199f74ea0ba4f70fb5c8cef0106f85347",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-okhttp.art",
+      "sha256": "2749a37680326036ad2bdd36e47e7dd1e49d443fd8c54026ed1281cfe22fe5bc",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-okhttp.oat",
+      "sha256": "7d84f66963348bf33ef71c82df7f85f96698d5918d200d8c3dc18a693ebe70cf",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot-okhttp.vdex",
+      "sha256": "3c9715e05ae55d9682fa3bacee23f04137a32c26c2e73da995f69d1d081076ba",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot.art",
+      "sha256": "be26c8d22a85914efe28df8a021eeed5fd079169f28c11d2c645f4fbb376fdd3",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot.oat",
+      "sha256": "bd4215655bc8ac5ba93a523b1a958a90be51d96a19dbf79b3f6914e7eabf3782",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/fwbootimg-v118-explicitfault-objectfieldoffset-verify-nojavatimezone-v4-20260903/gap-repair-20260904-candidate26/boot.vdex",
+      "sha256": "5eb8e3b8f816bae206bebf8caaa1ac13249a628f278d08fffea56df24c3c63c7",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/gap-repair-20260904/candidate26/fw/core-oj.jar",
+      "sha256": "610c2920aaa22174fad24faf6eb8a7c62ddf923f21752bd506acfcdae7dc2549",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/gap-repair-20260904/candidate26/runtime/libhwui.so",
+      "sha256": "1ebfe4b511696cbf6f02bb45453ba5fd8758001aad2c1d55e8a9a379c254ea16",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/gap-repair-20260904/candidate26/runtime/liboh_adapter_bridge.so",
+      "sha256": "a7124bbb1c5908d18b8dabcefe33e96547b2dbb861c67efe95df3f9d9a913547",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/gap-repair-20260904/candidate26/runtime/liboh_egl_boundary.so",
+      "sha256": "caaa11119d9534a4af83f36051213c4600533b64124cb815055027b17dbb58ce",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/gap-repair-20260904/candidate26/runtime/liboh_hwui_functor.so",
+      "sha256": "711c615e3515b7a554650314e07bd80f373edff5e6e749d86c0ebca812a9ed9d",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/gap-repair-20260904/candidate26/runtime/liboh_ime_geometry.so",
+      "sha256": "38a614308c71390d2dfa4cd6d547dbeafb751679ef33437b702a9be3a99ee25e",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/gap-repair-20260904/candidate26/runtime/liboh_owned_input.so",
+      "sha256": "99fa2f95182991a0b0ca4d1de9c1306bfedd888c777f76f0e02af2e93587404e",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/gap-repair-20260904/candidate26/runtime/liboh_permission_queries.so",
+      "sha256": "86c089d16782e01efe9fa6fa49542dfec3a40bd315d3d22325ec86c9eae8a891",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/gap-repair-20260904/candidate26/runtime/liboh_process_cpu_time.so",
+      "sha256": "ed6511f534f9f880f1752d9f0c2f952ed1af0a997dd875ee4ec25384f51f8fb3",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/gap-repair-20260904/candidate26/runtime/liboh_tls_boundary.so",
+      "sha256": "6088020067c3b3c5314646480a1db427cb079c7903e1e3416a474fb1c5afcfb9",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/gap-repair-20260904/candidate26/runtime/liboh_webview_startup_order.so",
+      "sha256": "25e87db5fb29963a170782fa16f335550575d6f3fa8852ed462fde18457e95da",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/gap-repair-20260904/candidate26/runtime/libowned_window_z.so",
+      "sha256": "fdbbfb5c6faff500fd4223448e53c8739b526fb46f5174e38220dd5bd59763e4",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/gap-repair-20260904/candidate26/runtime/libwestlake_runtime_boundary.so",
+      "sha256": "4f19042e29aec18f24e16700555ff8cc3c53574405f2af143ac355d6b387a3d3",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/gap-repair-20260904/resume27ready/appspawn-x-v15",
+      "sha256": "2598e7b39d5b996be7f562e023dcd66091325d921568955706eed1d1bec22e5a",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/gap-repair-20260904/resume27ready/libart.so",
+      "sha256": "ef0a243315860997aa21ec67005b58b5a798e6bd215ea81895acb4c026f57ee9",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/gap-repair-20260904/resume27ready/liboh_network_jni_v4.so",
+      "sha256": "fb8f76cfcf5cc05dc163e7c742d0472c2e3dc0eb1737d81d6ff6501258a252f8",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/gap-repair-20260904/resume27ready/liboh_popen_v24.so",
+      "sha256": "d171bfa603b42a6e0c6e896665392ac1c839a1a8ec06ba8518c4213759286fda",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/i18n/etc/icu/icudt72l.dat",
+      "sha256": "49ffcff1815988587c276d7daab7c44642f747bd6413592a01e4f679cb76d9de",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/icudt66l.dat",
+      "sha256": "15ae06920d6bc5f4659c489bfee13d679d1654f90f79afd9e1775987694b7adb",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libByteVC1_dec.so",
+      "sha256": "bed098904c2a287f96d6b27281e306493122636588a546c68e6ffe23541797ea",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libEncryptor.so",
+      "sha256": "6fcc31f1cb466a35b3278eb92dc71d9f158028b2bdb3720eefd95ccb7f7dab8a",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libalog.so",
+      "sha256": "ef25ef0760c9182744d61ff4eb52a7a2041f2bacdd4b9bf379bfacbe9f0f5d3e",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libbdheif.so",
+      "sha256": "af3a4a80fda5085a157e77956186925c4a2139fef932d5ad0b10e57d2588e6ba",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libbdsword.so",
+      "sha256": "6d56636a95db15bfd207fc371a046a0335cd0943df251e1ecbd9e1fe55102839",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libbdzstd.so",
+      "sha256": "028bfc9c90905f7046e18f4076da04bb29e8017490715892902e3942c51842ec",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libbuffer.so",
+      "sha256": "0ffba1231af9ce1e16b820d28ce91a7b975ac0c4b678d4cb67d4425cf482a66c",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libbyteVC2dec.so",
+      "sha256": "62f77bbf035dc26d5a8973a8e58c70dddf8e120604b7e0539b0dbc1a37d8401e",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libbytehook.so",
+      "sha256": "238e7bc3e0c36247de86fe80453d596503ec0c45bc3ece578fc351d638506d61",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libc++_shared.so",
+      "sha256": "e8373ee43274541efd2d34fe0588d55bf953612e1417ad47cfd2c4bd1aa383d0",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libcjtfccsm.so",
+      "sha256": "c188662e1dcb6493cb3abf58b80d664e63b8e3f6f9f464a1b8ab215f7e051f74",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libdelta.so",
+      "sha256": "63cf9c4ea319b637abfd0effe816c1b78bba391d5d47f6509230fd81159cb96a",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libflipped.so",
+      "sha256": "8e5346baa621e0db676a940cbc85671e4f4b55a39fd5344ca03449b38af96fb3",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libgecko_encrypt.so",
+      "sha256": "f0cbcae1e0874eba88419fcb95dca88b7dc02708e760bb078abc927adee6b384",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libgodzilla-sysopt.so",
+      "sha256": "3a7ecd20feadcb1c84b2203ce2901900b3f284bf687468354461458f0d25b790",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libhost_abi.so",
+      "sha256": "2315045d9d826558ad8c996e2eb7c83d1421808b66b72cf13747b0599d4b6203",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libimagepipeline.so",
+      "sha256": "9a921dcd8e20d8be00620c9fad89fa2fbb65d719e8d77a74242aa2a65a5da4c0",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libjnativehook.so",
+      "sha256": "4d38af2899c8f06fef57e20c5b6e3f0e5d12041a1231a57094163d1771a2c2b7",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libkeva.so",
+      "sha256": "a732963504b9705e86bc5a6a7e5388b4a9999cae1e44141bb6a678a713570769",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/liblynx.so",
+      "sha256": "fb5ce4339c47000ddb551a8582fe8b9d11a0cd88ce92ff4f15defc0054960650",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/liblynxsecurity.so",
+      "sha256": "73dbf8b3ed3f052f103519500a9c4db95a242a6b29fd82d7d384bfd4bfb1ec85",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/liblynxtrace.so",
+      "sha256": "8ae73f08e06d10c32b03f4ca08ea17fd11d134eed521c654d37dd86ebac454fc",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libmannorarmor.so",
+      "sha256": "9e39a2367402ef88a6b49b3faba46e07378591c7edf69ec065686b0dacbf2fda",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libmetasec_ml.so",
+      "sha256": "a2a7d0cd7f213d5368212dfc5a6c42c4e27a4961aa41836c6b93dd377bbf6064",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libnapi.so",
+      "sha256": "90e8610e65099c7fc7a8cfea2f3fdc130fb5e5c80aff249c92454155e3c1d0a6",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libnativelog.so",
+      "sha256": "4fb8bcf1ddaeec183d73e82099d9d2fb36e1718acb9f5af713702a7f49296f02",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libnpth_dl.so",
+      "sha256": "f47ad5b615856925a44738c82451b6981bf5a09f394b0eb4c82f21c282a3c4ff",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libquick.so",
+      "sha256": "629716af07f709e6ead8137ff7c0de36f122d634b91e6b574bd50dab449981b7",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libsafe-mode-native-lib.so",
+      "sha256": "ffe713e33da8f7f7ef26983905ff07c3a996b3ddb12733cf9c11c2bb30f3b2d8",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libshadowhook.so",
+      "sha256": "d36663fab2b834d477932ef1b5be85f38846bdd435756e3e7411f4b878fdb536",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libsscronet.so",
+      "sha256": "38f0dd424fabd2b92a08e0a6eb372bc464dd424b370aba23c88e39ba6374866f",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libstdc++.so",
+      "sha256": "a61cb7c89105c913e62400991c745dde35bd0fbed78f77636b764ab649007d89",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libtnet-3.1.14.so",
+      "sha256": "d82243d2c6ec8715df689360b35a4a01999a66dea4bfe3fa5ad7a4e181cf9756",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libttboringssl.so",
+      "sha256": "f43dd760cf8233f03d70b36307ddfbb101d5f6c75b4387ae07f884b9ca29198a",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libttcrypto.so",
+      "sha256": "f890c0ba266fe4c71b3d8d240af1c72ebaa09cb1c5bee1a3143b2534fd19f86f",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libttheif_dec.so",
+      "sha256": "50c9276b63298eb3c86c08c6c9b3ea616987d37b3c7ec3618fd8963c924bb33b",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libumeng-spy.so",
+      "sha256": "e7eadfebaad7fc69d00bc49cf2ec1b8217c1f1d42f62f1e78cf4c9e7c9273cd3",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libvcbasekit.so",
+      "sha256": "014a0ceb1a384396071dbf89605198db29754705f5e9ac39d19368fb23e98662",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libvideodec.so",
+      "sha256": "e2221d12c2078987dce48e29ebfd986bcec52cd1084f1b18bd8ddd0fba72b7f1",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libxbnlog.so",
+      "sha256": "3a8bdc88e3c7bc564c133c1efb027b05b10ae2e0f7d1d3ce2fef29e23eea4a75",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/lib/arm64/libzstd-jni-decompress.so",
+      "sha256": "fe84dbd48c738c48c7dc29167a904f480426a32535efd322192bdea4dc9f88fa",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/libandroid_native_network_compat.so",
+      "sha256": "09d4b4579930e42b64da5c2765e069e0ebcc1b267592767aae12ae61eb021b44",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/libandroidfw.so",
+      "sha256": "cac6b1ef3e23b646811f369e4ce73f9ad4c62ce1854f4940baab9c3fbee50494",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/libbase.so",
+      "sha256": "03051e77b6862f2596bde49c1c1a28cc8f992dda39b6b5fc01e8f067882ebf7d",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/libbionic_abi_shim.so",
+      "sha256": "03e0c70602e8b9dc90e0fdb3e46d03acf77346ade4f90de4ee429953c3e252c3",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/libbridge_compat.so",
+      "sha256": "08e78f632bac0b3be9b1c9a15865baf17bafeb77505370ed99bd1f73a5bb2f75",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/libcutils.so",
+      "sha256": "6e16557df77d91c1a2b3d3b3afd06536936560ff50432e25fca9d9f431ddd80b",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/libft2.so",
+      "sha256": "bfe1a3148171e443666ffd3f0da9d74cad1f30ccf5553004213583c67e4ff820",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/libharfbuzz_ng.so",
+      "sha256": "48e99e6391af880e4909e9ae424501cbd14f8d121b79ae69d7e07b3e5b5c1fe9",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/libicui18n.so",
+      "sha256": "5fd6ae0820d3e1b2a3fdb7403638f50491d36645ac21b30bbc3a8a2eabb50810",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/libicuuc.so",
+      "sha256": "ea1e1a437ac81bd4845d0032b605e37778e0805b1d1b0bc0cd911101eb37fcda",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/liblog.so",
+      "sha256": "e8c113e62d2f9b53fac9ad99d61ff1d2f9a027f7d129f5ab8c47dbc64fa69214",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/liblog_shim.so",
+      "sha256": "8d9198b1699eb1c03cf8893a69eab6d6f846331891e17d948cee895d9c592c89",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/libmedia_jni.so",
+      "sha256": "12d7daadd41fe74816b1bd96670c64fec8d6f2ec96a2b89668fa371c1f4f7f9c",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/libminikin.so",
+      "sha256": "0185b4c944f7513662004c0aab6257dfbad3d4ad3becef621d3d010c8b45cb65",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/libnativehelper.so",
+      "sha256": "7803616f7d962bad4c51a12198ecb0ce6e252877bb1f4ce6c15ed63b1db5334f",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/liboh_hwui_shim.so",
+      "sha256": "0c4a0d73f5dc31af4e498452f3bf43f9efe1c0ae5860f528aff5de0f6f7cd5c0",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/liboh_skia_rtti_shim.so",
+      "sha256": "67fe5dff5ee24945cd439c038d4f06e96ca9d600b91b5da3689683a878bc33ae",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/libutils.so",
+      "sha256": "7270ecd50efe8e762b993aec5a91e9a06d32f417a9d3151e9d0b1d3405f35a46",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/libwl636.so",
+      "sha256": "a9b9757c79db92e294fbf7c8619a53fef846b1d5d1536c4a3c7551208bba1a92",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/libziparchive.so",
+      "sha256": "e39388e69aa1cec613d350d91d3b09b130e76a6c2df60c4d9985c6867099d8d3",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/nsprobe/libandroid.so",
+      "sha256": "e25e1718c0e789b0a3f897ec4d071fc9135fbf03233bffbc9086e6122755aee1",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/nsprobe/libandroid_native_network_compat.so",
+      "sha256": "721455abcbe89b7e226f1c139ac9c9c99e70df5739b94131988b498a74d4a7cc",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/nsprobe/libbionic_stdio_shim.so",
+      "sha256": "f518b7e217b849eb858d346246d55cc26458786c9d04525e4048c840160e4f60",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/nsprobe/liblog.so",
+      "sha256": "e8c113e62d2f9b53fac9ad99d61ff1d2f9a027f7d129f5ab8c47dbc64fa69214",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/nsprobe/libwestlake_native_bootstrap_anchor.so",
+      "sha256": "4991227f8705858415d5d44fd25dbaa880de605e78dd0198e0c747bd02a513fa",
+      "category": "bridge-runtime"
+    },
+    {
+      "path": "/data/local/tmp/asx/toutiao.apk",
+      "sha256": "a1112a0c941f865847c2fab9138cf815735268fbfcd41d697412fb80992c7395",
+      "category": "application"
+    },
+    {
+      "path": "/data/local/tmp/asx/webview-t-lib/libandroid.so",
+      "sha256": "f1fa918ce0ee0841db20408ad178cf07d628d1078a6e512ff1bf6a975eda6980",
+      "category": "webview"
+    },
+    {
+      "path": "/data/local/tmp/asx/webview-t-lib/libjnigraphics.so",
+      "sha256": "af90eaf4efde2f0029374466f4da34162d713d37f3c234620e0056bd2d40ef89",
+      "category": "webview"
+    },
+    {
+      "path": "/data/local/tmp/asx/webview-t-lib/libwebview_bionic_shim.so",
+      "sha256": "e2103f79086810bd92b471c49011bb4ce1ae2a0ab1cb26ddfe012aa287104b23",
+      "category": "webview"
+    },
+    {
+      "path": "/data/local/tmp/asx/webview-t-lib/libwebviewchromium.so",
+      "sha256": "27c34ff45b14fe68a397a6dbe78733731a8da5822ffcb334f8a8588f1546777b",
+      "category": "webview"
+    },
+    {
+      "path": "/data/local/tmp/asx/webview-t-lib/libwebviewchromium_plat_support.so",
+      "sha256": "f68806b2c03314a95db5e9c1b5d1122c805f97fe74832de5973edaa75f565b4e",
+      "category": "webview"
+    },
+    {
+      "path": "/data/local/tmp/asx/webview-t.apk",
+      "sha256": "bccbe4ff243f2a6a6b67b5f241d67bd9df8ba980d56043f42e74af5ef0eb7d21",
+      "category": "webview"
+    },
+    {
+      "path": "/system/etc/zoneinfo/tzdata",
+      "sha256": "98fa9135fed03a227de197cf64a0528fef4143996608fef52ec3ce6ea08abc85",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/fonts/HMOSColorEmojiCompat.ttf",
+      "sha256": "a01627a733f1ff723a4eba9f0c4a2ca47e111ea91f2b56eceed1ef50846639cc",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/fonts/HMSymbolVF.ttf",
+      "sha256": "42bc147944f63cfa5067ac7d8c58be79e94d8d15895011515d1a399a7d299fdc",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/fonts/HarmonyOS_Sans.ttf",
+      "sha256": "72d5adb60242fae60686ca94c27e10b89cb7ed2008531390d3f22ac61ad64593",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/fonts/HarmonyOS_Sans_Italic.ttf",
+      "sha256": "64234302c0e063fe30ce3ee5875e6e02535c023e8de29515972b1e524c346e0a",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/fonts/HarmonyOS_Sans_Naskh_Arabic.ttf",
+      "sha256": "62ae1dd2ce8f43894978ccf7c6cc2eecb797a13b7a7cdd46eae521d4b38b7d7c",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/fonts/HarmonyOS_Sans_SC.ttf",
+      "sha256": "8978e05044e7089ad6a9de38c505c8148305607983487435a916d2610700a7ca",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/fonts/HarmonyOS_Sans_TC.ttf",
+      "sha256": "6fb487e96d456b0e15875899c1a8180da828944bfe66fbf1ceffbb0177b9ee6d",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib/ld-musl-aarch64.so.1",
+      "sha256": "fd3c4701acf719738fbd14cf1d419e4dd222c06a6df41f53d973354d648af7e2",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libasync_stack.z.so",
+      "sha256": "15b0bb2956e1b1db5bb6ed4fb308e092b8ecb5468a3acf10db295fff3b0f2535",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libbacktrace_local.so",
+      "sha256": "ee6debe4d956d15981258697e872337333242400fb1e4ce85521136952d9e2c3",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libbeget_proxy.z.so",
+      "sha256": "b59dd504966015fdbddb5f17d15e79fda25f268bf45575bb3933c8612dbf70af",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libbegetutil.z.so",
+      "sha256": "1f114e636be004950428e82ebdff19dc9c755507c90a9bddcb412f6356029460",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libbuffer_handle.z.so",
+      "sha256": "63b5aaf3f9deca8f607c0548ac10dec5c6c11001efe1fe2eb03a271c0867c9a6",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libc++.so",
+      "sha256": "9466fb0d933689533bdf4b4962907f3e0c0970be278bd6ccf703ffa2aea838a6",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libcjson.z.so",
+      "sha256": "e25ecca520cab790f4cd9d1c6c7c9529e9db643366dd81dd7e379f1f4ce9e8ab",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libclang_rt.ubsan_minimal.so",
+      "sha256": "d13f3b8791d9d2c4d2d73f3b0495ef41a04269618e4fc5000b49d4012dd3df8c",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libconfigpolicy_util.z.so",
+      "sha256": "2c8572a3e66b8cd557432e598abfac45f7ed6d82a372fb71352e503ee4fc8f5d",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libcrypto_openssl.z.so",
+      "sha256": "cd25c0b60610dae147bc750a7764d7bdf9fcc3b3db1e2069977a5766656fb760",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libdfx_dumpcatcher.z.so",
+      "sha256": "77d9d3e637510144754af9f3f356b1b5f1f5e57ba80bf806022befd76cafba12",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libdfx_procinfo.z.so",
+      "sha256": "aea0f0028c69a23402c38ed9151f727aebf3e2456ee7245d6971e5dceb652ef7",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libdisplay_buffer_hdi_impl_v1_4.z.so",
+      "sha256": "af5e153cab2d8f238b3e8131aa3397c8e8b04752718ab5e5699037dbc340b0b1",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libdisplay_buffer_proxy_1.0.z.so",
+      "sha256": "d67682cdf9432d5aececec4c886600b368ec1fcd7ec61e8adc55bdf2504346b7",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libdisplay_buffer_proxy_1.1.z.so",
+      "sha256": "f126aeeb8559e43ddf5c59f17756cf86d30a74677fe93d9d2b2bfd369e9377eb",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libdisplay_buffer_proxy_1.2.z.so",
+      "sha256": "d98912fd92b64b855a74f01fb5b06ebaddc29558862b9cc02c93b3d69730957b",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libdisplay_buffer_proxy_1.3.z.so",
+      "sha256": "752b65b405f3d449d3b3ca647b7514e9d606bc1b39b3b25834c07467641dd63b",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libdisplay_buffer_proxy_1.4.z.so",
+      "sha256": "ff97d5365a93f8b0b392b1fd07330adcdce4d297324f1799d36ac09434ced11b",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libeventhandler.z.so",
+      "sha256": "d4197d1c4d1ab0990361ad3047d908fd63cb040a7212d98538fbc75cfef34f51",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libfaultloggerd.z.so",
+      "sha256": "57f87325af491b5ea51dc1a1ec08f150fbd340a26b1b40266c65547039d90980",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libhdf_ipc_adapter.z.so",
+      "sha256": "86be92864cbd491b90f21a4174acda8942b9fcd2ca6e21e30426dc61a7cb8fae",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libhdi.z.so",
+      "sha256": "ad8ac70c243d2ebf8f064820d4d1ccba8ba4392f6f16992b5e6804d3b2053a65",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libhdi_base.z.so",
+      "sha256": "b68debf71076c912de196f18c25b977a7f73fa0619bea4f7c76173d86d695330",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libhicollie.z.so",
+      "sha256": "4a60bd132b21c90b07f106b1ec9d953455f69da0d40d5f2023f70791f19e0e2b",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libhisysevent.z.so",
+      "sha256": "c107d1af76a0019b49f9a0e0a75aa747f6ae9428b727d8e89d71ccea1c380be4",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libhitrace_meter.so",
+      "sha256": "bb76e2f07c7b6c1689209ad30fb385348d4d22548ffc560c88a2a624e26925e2",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libhitracechain.so",
+      "sha256": "5badd8e2a5a60ba473c15e60c4da274a4d88c1d757c87640bb453b4023840340",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libjsoncpp.z.so",
+      "sha256": "21ea4ea5d1743d875ebdf67a817225dc77e3847c4822f1b2d59191971f517f37",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/liblzma.z.so",
+      "sha256": "c1418c6d8f063722cf00450f9f08e5b6510c976dc199fdf04c3fdad121a5db86",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libpcre2.z.so",
+      "sha256": "7476b5ed20dc99687ff5be4c0fe57c15848bb889d6ba4c21667bbb281e69bbda",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libprotobuf_lite.z.so",
+      "sha256": "de09eebeabb74737aa4e53c183877d13d428c0a7108050c0cc882d0f16e0d05f",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libpub_utils.z.so",
+      "sha256": "207ea1fc7b3097fa61277bd6a2b3db04622a95c185ac7bed384c34396736df9f",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libressched_client.z.so",
+      "sha256": "7daea584ce11f1aa121b270dd931cafe2ad789126d1b6b024d7b841d4af88f3e",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libsamgr_proxy.z.so",
+      "sha256": "a97fe3dc89365d6e37b44cd130aaf89f3ea30f788f1039301a9bd169d205a107",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libsec_shared.z.so",
+      "sha256": "d2b6cfcc288e26b06d3efa6b38dd001c36cb85602741e7b730e0512652170702",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libselinux.z.so",
+      "sha256": "c68260e6a2760bbff1fdcefda55ae63176996a49c126684d277b269b4838a302",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libshared_libz.z.so",
+      "sha256": "3c025525f68bc3afcd74fe3c14c2f7c55112e2b801a4d1046a335dd2f4c73240",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libstack_printer.z.so",
+      "sha256": "5f670594a8fcaae4f8e04585128c2da3dc398a8f3d34052262ed93fa47f4fa0e",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libstorage_manager_acl.z.so",
+      "sha256": "8f7269718aa82199f152e9b2f5dfc9120e009e45c4158e46a354519fb9ab7cd3",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libsurface.z.so",
+      "sha256": "8f1879f82a307d3a95555067575132918a05244fbdeee1c2f2db37834a58f4a3",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libsystemparam.z.so",
+      "sha256": "fcdf36416e93adfc715e310d7ef5dbcad69f386417e5a460c5dba900cd93d969",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libucollection_client.z.so",
+      "sha256": "8d35ab14c4031b694349c170d1f1c3329eda40089a4a447fb015453948be9c54",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libunwinder.z.so",
+      "sha256": "f71cf42bff2ff0880270e3392d0be77263823317f5c8711477fa07b4ccb8784c",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk-sp/libutils.z.so",
+      "sha256": "66bdf65d494437eae03b4cb4a6f277e65f1832de5d79634d350d01b69e079d1a",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk/libaccesstoken_common_cxx.z.so",
+      "sha256": "a2c169a4dadfde595486ae8897f00c289705a2f2c824b96107d202637d8d9659",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk/libaccesstoken_communication_adapter_cxx.z.so",
+      "sha256": "cac6185111e2d17409424b672689b2be0f8e738c14f2a55e044d62bebb11eae6",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk/libaccesstoken_sdk.z.so",
+      "sha256": "402e7bdd50c93b5a1ffc9cd2b38a71ea8d6147d1e266957f7882938d05b202c8",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk/libexif.z.so",
+      "sha256": "d3928e5de75bc6c8e663c3596a3589775dc5e0e1232de146b8ef148a1eefa708",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk/libextractortool.z.so",
+      "sha256": "13e03d9c2c1bc591804af3db6dc20848f85a738d42c190e347c062f8ad830ba0",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk/libhilog.so",
+      "sha256": "20d33c225230ef3a1eef3d4bdfdab0404457af98b26358a6a532bd79f2e0b719",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk/libohosffmpeg.z.so",
+      "sha256": "a035f3ee15cb276af567aa03638d6dc07cc6407d852e7329bd192c65157e6037",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk/libpng.z.so",
+      "sha256": "914f393d89fe2764f4b87a982900f4c4789823b1d2e1769ce7d94d61ba6dbcdf",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk/libssl_openssl.z.so",
+      "sha256": "bfe176ddbb22dd4c05df9a689aeb173f52460584407c5f8ebe358843cd15661f",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk/libstring_utils.z.so",
+      "sha256": "0b604099ab57277d92fa72a6b878c1ead654a7127f768d90b3a6479850eb735f",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk/libxml2.z.so",
+      "sha256": "bb89d760d0402ed120ef4148bd14f724ae5ce745ae5c84d8b045c7d3ee2e3f90",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/chipset-sdk/libxperfservice_client.z.so",
+      "sha256": "3076270d113a44ac2ba049e901e49fbcc856fbee7527e4f65ccb4362539aa8c0",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/lib2d_graphics.z.so",
+      "sha256": "e6e9716f9e7017e1e97d91530f616b451256983d6cf19b0552cf71d139f92784",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libapp_util.z.so",
+      "sha256": "39eed33ca0c4f471c392268769917fe2b4431ce988a14fdb9d1db3c940ecdbf3",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libapplication_context_manager.z.so",
+      "sha256": "6a8e649daad74a2ce89c641959407d080b000626c425c4be7d0ab7c1bb8060a0",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libaudio_engine_plugins.z.so",
+      "sha256": "5338f910103c98cf4e38717713ce7d20bd674a9d9275fcd1cc07eab027940aee",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libaudio_framework_interface.z.so",
+      "sha256": "e64ff0e5e400eb00d0461eb7351d8fe6a8ca2b0abc0b82299a2334763a880971",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libaudio_policy_client_idl_interface.z.so",
+      "sha256": "e49f5327d09b8d10abb8c3f561c5952bba12248077c739c130fbf2d42194641d",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libaudio_schedule.z.so",
+      "sha256": "72011f9c4213564536ffa4fe17ffa538571af2ad475e1857088c17c08484e1c5",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libc++_shared.so",
+      "sha256": "1cdf4eaecdb990769edce8f35d72034affb76ce47e6d7a946d15b62f18969725",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libconcurrent_task_client.z.so",
+      "sha256": "5d19b12bef34f440edc4b2ef227b40d8f31be5460458487c4605543892a1cbca",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libdevicemanagerjson.z.so",
+      "sha256": "228075555a8b1693142a887c21204900037169c4f0f9218dcb514eb810cac89c",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libdlp_permission_sdk.z.so",
+      "sha256": "db44fb1dae131832d8dccde8bec3732adf22cfe9a6985311f766a3442bf6d273",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libdlpparse.z.so",
+      "sha256": "2a3838342c2e25d021d4e65b3edb96cde7e886eb4dfadb4de38764e5a2c1c3d1",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libdm.z.so",
+      "sha256": "ad0137edaf5cdd21641172b8ff6d22b6924f9065adbd0a49804efeb73ee4b218",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libfileuri_native.z.so",
+      "sha256": "45fc4e3cbf43a33ba3f2a85b96f323ddfaff6512d439f3c1eeb630e0ca4e1a59",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libgraphics_effect.z.so",
+      "sha256": "387b301c21cae76a533cdbd7251f267f690ade4bba1d320c6a28dcd78b0048ca",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libhap_restorecon.z.so",
+      "sha256": "5ed7836eb81d60e8389158c2648044d6e02dd41ac390e2ff7d8f2d35bc421b71",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libhisysevent_report.z.so",
+      "sha256": "332d16588d642026ca2cea396dae303b6a6488f2345c33ab1a2decdf6b4ca2a9",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libimage_accessor.z.so",
+      "sha256": "d54164b9da8ec57ecd31251abe7e2e41c77f83f2c1b8f90052492f471a787c18",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libimage_error_convert.z.so",
+      "sha256": "2a3c841ab07981dec8720810b7d0d79fd33fa4dd386a64263d38af25439d561c",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libimf_hisysevent.z.so",
+      "sha256": "cf05c99b25fbe1d16576173b2c506368f2bcb68c358fdff8d92b0f0165daa45c",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libinputmethod_common.z.so",
+      "sha256": "6f5e49a106d064227c9b4db54ff313d34b07c494200c0bfd9a12c806b27cb9b5",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libmemmgrclient.z.so",
+      "sha256": "a8814917e96dc1da3c302bb43897a86c1860903cf30d66be5b8eab50bb0e0652",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libmmi_rust_key_config.z.so",
+      "sha256": "d9a68b4a28e43c25a78bd828c83103cc38e3770c86a75879d4c0cef90a7d4d3f",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libnative_drawing_ndk.z.so",
+      "sha256": "c234804a8c9650c4c44fb578b9b8e5d65a3f2ae8661ce22c650c8b23dd503b9d",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libpasteboard_framework.z.so",
+      "sha256": "c9f2fdb0af6948e8fc8fd0312f0d358995ef912311520ac2ae14d1165431ff08",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libqos.z.so",
+      "sha256": "87ac565cce899acfe3c0fd59bad8af6b1663388a1e09300fc362a9726a122800",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/librelational_common_base.z.so",
+      "sha256": "50035b82d0209adc2bd492b518dce3a606327232c5d91fe10ee997019734496c",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/librosen_text.z.so",
+      "sha256": "3c2c49d33804db74dee3ddaf68e9b503f85eac9084bbefbdd11bbbdbba4bfbc6",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/librtg_interface.z.so",
+      "sha256": "159771d93f8ace5866024214de40f1b7f2801d5879e97092dc276867533e2010",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libsecurity_component_sdk.z.so",
+      "sha256": "176eed6fbf997ada27d31e196e47722ddf472e80c6b6f2882ecfa56d0ff4dab8",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libskia_canvaskit.z.so",
+      "sha256": "caa86d58671eef0079cdcfa60cf943c6cda6ee7934ecfdf59bf37df754a2abe4",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libstd.dylib.so",
+      "sha256": "2d47ffa7c738dd5a53a4db73617a30aefa22d8fe95bc498ec93224c30a32de4f",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/libwm.z.so",
+      "sha256": "dc36f9663338d309fa5fbb55a73cedb075d799e6c58be4fd75d1ab5806cf55b2",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/ndk/libability_access_control.so",
+      "sha256": "0cfc0224b86cb9f6e3b820d44a7afd2eca30d00e478b5b97def73159c8dd4b50",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/ndk/libffrt.so",
+      "sha256": "dac10556ea5f80fed87466a8bfa41a82c66404af15a9b2283ced740fa56a87b4",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/ndk/libhitrace_ndk.z.so",
+      "sha256": "821d9f12e01ae4d2cadf00c74d46fc02251bece617333fd144758ca901c6a1f7",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/ndk/libicu.so",
+      "sha256": "40be2d7533a09ee16acf2714e8319d670b5d87546d98f8395009290eed4892c3",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/ndk/libnative_display_manager.so",
+      "sha256": "44a76df21739f8ff0e9681352e03e204cf7e10a1c159a4718aee3bcbf4c3b84c",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/ndk/libohaudio.so",
+      "sha256": "ba0f9685934a71d95e5ec1bfebc4dffd291a82363ae5d6b58c76661d504c3d5d",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/ndk/libpasteboard.so",
+      "sha256": "a35420dde76e32b21d083ff1f73ae4908e0a6f4be7aa73a32f5383aaebbe88c8",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/ndk/libpixelmap.so",
+      "sha256": "93027c052a7c4eef0c24b8ea92dd18aecd01d5f3bb71a37d2296d5b7674b6c8b",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/ndk/libpixelmap_ndk.z.so",
+      "sha256": "507db2b13977ab98da91a4f28c105711246e2e9303a32724245fd4c8e4d1bccb",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/ndk/libsync_fence.z.so",
+      "sha256": "02a5ab6610a710a3cb17d00b356650335dfff287eaa99db8a2eec102ba1bd84d",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/ndk/libudmf.so",
+      "sha256": "e98be8b1f3d4f47604aa6f71d04dc56e4c89c095ac2ec4d985dce6270b188d16",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libEGL.so",
+      "sha256": "96bc14217ceb3536440e97b53e80228106cb57fe95a3e17570bdefbdb76d49a5",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libGLESv3.so",
+      "sha256": "859a05be01f426ef7cffb7fb3cd61a7c7b45aa718210411b6d5af9b0fbed6255",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libability_business_error.z.so",
+      "sha256": "fd9bb47be3156914f1ffb87d7fd14ce1783b06b6a3ebfa45399dfaf4b41f7b6e",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libability_connect_callback_stub.z.so",
+      "sha256": "40c516b9a4c36bad39b9b85f9ab23f765253f948b86a52a504faebe979ee1300",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libability_context_native.z.so",
+      "sha256": "5a2802d05fee0f8d5c1bf483b94761286b0f94ed3061af15255a59ac38c1ec96",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libability_deps_wrapper.z.so",
+      "sha256": "13011b68f14430b86ec00340d2210747f172f2bc3fb9800d66cc12631ba402d3",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libability_manager.z.so",
+      "sha256": "b1bd33d4a634f12abfc081a7f8aa5e34399b11e6d6659882561ed4fff7bbdb45",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libability_runtime_error_util.z.so",
+      "sha256": "aa50b15a525ee03b79fd094f17524d04373aa2c7e6601aad1c3b5db46388a01a",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libability_start_options.z.so",
+      "sha256": "310a5cc24d8ec2c348cb684e0254382a58d59d710ae3752cbe0291409befc013",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libability_start_setting.z.so",
+      "sha256": "e55e1740c7200007b92ef2108f66675925fc4c48fa036fa9a840d4b5bba387ae",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libabsl_raw_logging_internal.z.so",
+      "sha256": "a2109f01ac4cc91e7b50dfbc3856b3bb71d6cac0b23310b9ae1c56364c7df75c",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libabsl_strings.z.so",
+      "sha256": "4167e288fa3c81eb520351bf684207d45b25e55f2136b9a338a2c52fe76c95cb",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libabsl_strings_internal.z.so",
+      "sha256": "1a8ca6c2a5e8e5cdecb396ce436a157e982a7e543a8ff15c800b2fea47dc2e7b",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libaccessibility_common.z.so",
+      "sha256": "aad599ed0affddca586a70e1d78bdb1fd958758e0e5f6f22bb4f2f512ec60ddf",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libaccessibility_interface.z.so",
+      "sha256": "4aa741f11b4b2364e0f8906bb62d3efcdf77a4a3b39d6a9198c538cd71a712b0",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libaccessibilityconfig.z.so",
+      "sha256": "6e2727226f4cd358580d09d1fa2c1aec994188db45b4df6580303e024d426c21",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libaccount_common.z.so",
+      "sha256": "ce2e474a90d47be82e3e7807299650bcf9aab5662a3789470a21448070ff5fcd",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libaccountkits.z.so",
+      "sha256": "c79e2f3de5687856698f7b407a594256ef8885646bc800ccfa46f42c4de5c7d9",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libace_container_scope.z.so",
+      "sha256": "a4d5dda9a3719bdbe3039b03d47603d23873495de713dbff8bcc4c7e16b7927f",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libace_forward_compatibility.z.so",
+      "sha256": "a978fa06bd980891c4c6fc830a73c0e8bf3ba24a684a4431eff9cab26e1d1681",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libace_napi.z.so",
+      "sha256": "b054b0061021276dc98ad310432da8a1554a38be212edc4718cfbfcd5e09311a",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libace_uicontent.z.so",
+      "sha256": "9be2b9d06b896db1f6a5699d9c7d406e04f55efabf9ac110ae22aacca28612a7",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libapi_cache_manager.z.so",
+      "sha256": "30f6113af6788fb8cf19c17c7345bcd6e962699e41d97a4da586b2e001836d68",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libapp_context.z.so",
+      "sha256": "a0eaeec339af8f758427411e5392cd4de0273736ae760a1fa536fe9f669cfeb1",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libapp_context_utils.z.so",
+      "sha256": "d0e914311d679696bef88db62aa09c183a18e2511a6f8fe809213519874e8b7c",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libapp_manager.z.so",
+      "sha256": "6ae44a9ca22305a58e78eb93b3cc118abe51a585ffa3a7c98b6dd380f5ff4cc7",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libappexecfwk_base.z.so",
+      "sha256": "85c84aff96b10e5ba2f3f5138bdb5b864c321f1fa00d5153f7143b363e5b869d",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libappexecfwk_common.z.so",
+      "sha256": "c39eba26367bcbcc40a5d230297f85ac8888004c632eb7eaca84023cd9cab6aa",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libappexecfwk_core.z.so",
+      "sha256": "17f9c8b6622f09ff4891bbcf17973948ee58c164a4172789c588909ef379208e",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libark_jsruntime.so",
+      "sha256": "30e5b41ac3d0f87032e12e1c111dcd19db75121f363cf0811f4af4218449abd8",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libastc_encoder_shared.z.so",
+      "sha256": "a67d525854ba785dd74790098fe19b87c220037903ce0babbf8765e4f960c241",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libaudio_capturer.z.so",
+      "sha256": "e96a071ca0f3293f4b297eb821ea2adedcaebde8fa53fa3d62bf83186d097de2",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libaudio_client.z.so",
+      "sha256": "7f44eb8e48c6c2cf147bc06d92a45e782f19779043839b38ad78e24062c2634a",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libaudio_common.z.so",
+      "sha256": "dedab041b65dab02e2e74fae0db6808babe3b77565b911abfb0388d789ee4be9",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libaudio_definitions.z.so",
+      "sha256": "6a258c1d50e53941aa8259eda7382f6f569782433c21c4792b6fe7ff7feb1e7c",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libaudio_engine_manager.z.so",
+      "sha256": "2cafdd4bb9226209ae4ab30c8b7cc8e6a3e2d81e59ebfaef26f0112f9dd489c2",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libaudio_foundation.z.so",
+      "sha256": "f45a3028322548133667ee3f3c3d7f8e922712da008c99e79f7005b476045c60",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libaudio_policy_client.z.so",
+      "sha256": "61ea4ffd9700df90fd15d5a6ce8d0dbd1ba6a9f6dc0be1730e983c38bc3c6645",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libaudio_policy_manager.z.so",
+      "sha256": "4ba1b52b0f6cd170fd19f5608fac886edeb0b0e576753525751ac2d7480297d5",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libaudio_renderer.z.so",
+      "sha256": "cf66db2e9014c322589b1bc03cfd1a072f8a6999a508d6551bc6a196c03297ab",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libaudio_stream_client.z.so",
+      "sha256": "7df1aaabccfbec8b4553a27d71ae2949e2d8146367fe07d42f4680d720d9f36c",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libaudio_utils.z.so",
+      "sha256": "fcbebcca8f5eb20717794422432dd609f74cb84d0dda28965c7fc80ef7eaa546",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libbase.z.so",
+      "sha256": "61e9fe76865014482de04e855b4916f10f5cd2ffc3ab88c08e7f7c8382642dfb",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libbundle_napi_common.z.so",
+      "sha256": "8f58d153fdcd68a57b9520718db684da49e168e7c4e620f543ee77eb38dfa62c",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libcesfwk_core.z.so",
+      "sha256": "6839a20bce5efa4c2385c6dd449d8aca7846cd12b39b2e1fa08d88d8333527a4",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libcesfwk_innerkits.z.so",
+      "sha256": "7f7bf5c810c94a46233e87a0d48a855f186c7c5610da322952e96a05d4ebda5c",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libcolor_manager.z.so",
+      "sha256": "63c08ea9c0589a1f72ba657eebcc958c2d85970fdc8ed8b302f5186b19e3e112",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libcolor_space_object_convertor.z.so",
+      "sha256": "15007f9afe40aa513c9509c48194963af6b7392809e0cfa5e86cd28a2941e5be",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libconfiguration.z.so",
+      "sha256": "8824cf0ec817cf2f9dba6bbcded0d4be1c19f46d8c6d055584f55b4043b62c95",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libconnect_server_manager.z.so",
+      "sha256": "6e2e63c6aba7436f89a25ead87c272c95513567d048fe939e138289f294775b4",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libconsole.z.so",
+      "sha256": "7b00273b18a3c66f02feecdf272dc8fdd9edb0e55f423d698a0caa057a26f5e7",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libdatabase_utils.z.so",
+      "sha256": "5b2c70b40ba81b74478cb398de84462e50fab59b99ceb498741abb49d40d4e16",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libdataobs_manager.z.so",
+      "sha256": "c233507e2ae0cac22706a8102694d340bd0c637307ef19e8d92e2fe318244f95",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libdatashare_common.z.so",
+      "sha256": "1bbbda6aebb348f437a16ee0d0176d013bb2cedc6353662507778323de66abe3",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libdatashare_consumer.z.so",
+      "sha256": "7b51f886d98ccd51173b8d68ace56d2fcc3a6a4cd9d2de5be1072f5772c0083b",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libdevicemanagersdk.z.so",
+      "sha256": "ee02709357cfab0dac0de8c8ca729785b258166c1fa56fe40c9b241473776fd7",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libdevicestatus_client.z.so",
+      "sha256": "ee92630502556d7fb7996a8c3f32b9b72f4accfd968c49e636311ed7885643bd",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libdevicestatus_ipc.z.so",
+      "sha256": "f87189757ee7f8de6507568bbb468c87bb3570beacd28247b5512ecb78d2658f",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libdevicestatus_util.z.so",
+      "sha256": "4e85b01e177921d3a665a2c3c9d1a8bb99b842fed8a3f4de31fa53f175f71887",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libdfx_signalhandler.z.so",
+      "sha256": "2be2b1371499d79893502657a097809c134f8a23528a55bb41198b637d65b6c2",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libdialog_request_callback.z.so",
+      "sha256": "fed8e0d99cfaefe9f2fa90550064483c7c60ffd809b6bd9aca1973fbaaf4e58e",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libdistributed_file_daemon_kit_inner.z.so",
+      "sha256": "bf1fb7a12d1f0d71717b77dbbffc83de073a4dcce429b9cc079e3629c04858a3",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libdistributeddata_mgr.z.so",
+      "sha256": "081e56bf5121813bc7eed127c576d42c26c11d740b939cbc7aa6d855f5363664",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libdistributeddb_client.z.so",
+      "sha256": "ea7498d35184623626f8b8cddf5c215fd7205c0a61a6dc3fd9224d422698a148",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libdlp_permission_common_interface.z.so",
+      "sha256": "355e2ae20fda69a64db135083d93f55184218e76cc612a4c1c77fc33e2e04e70",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libdomain_account_innerkits.z.so",
+      "sha256": "0fba48e76ed088289a2eaec0b0bc70c59112a0a2c11621fff7b8afb044441c3b",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libdrawable_descriptor.z.so",
+      "sha256": "147da22c875c62b5cf9eca00d7a3bd6889967fe153afcdc89d20e5c51141bb19",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libegl_image.z.so",
+      "sha256": "16bb73af5e6bf6cfcdd51ed3e232c87fe9c41a2344e01e1d0f8a07ed1dac14c4",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libextension_manager.z.so",
+      "sha256": "2a45f49bcae3fd9dc946aca432e6c83934725191ce58e9dc44c8f830be640e83",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libextractresourcemanager.z.so",
+      "sha256": "99a35db037455c3eae82daeaf1306fe62dc6189f76838e0aa587cc81267d7939",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libframe_analyzer.z.so",
+      "sha256": "98c7851bd0aab441b4e82d0e8ef80e04e5299816a81b3cb374f3fdafa3100d94",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libframe_trace_intf.z.so",
+      "sha256": "8c21ca5874387fc88f027be91c3ad145639b8b2dfe8c3e11743b87d666202aa0",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libframe_ui_intf.z.so",
+      "sha256": "19f1b064adf1c210adf27c4e13eab7cbc6c7c7dda841f5dc40fdee508d1978b8",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libfreeze_util.z.so",
+      "sha256": "baa9c3066203b79237c08372f0b640c0ccb2c94c0b3bad4e96ab2d520e6d4e5c",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libfwmark_client.z.so",
+      "sha256": "dcda4108d228a9efab130b1fb273b8e7f4ccd79af53a4e1e6e6b6f26fc0325b8",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libglobal_resmgr.z.so",
+      "sha256": "6ab3388a63fe27dddea7591804482814ae9b59ea366a779068deac32d17b400c",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libheifparser.z.so",
+      "sha256": "4df86f3f61d670625f128e0047225d07ef9ab850198be88cdaacf38e78ffabb1",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libhichecker.so",
+      "sha256": "215249eb8f5976e175e2b95478adb2b129d0a24e54f15782b5ab72834a81062e",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libhmicui18n.z.so",
+      "sha256": "e96d246c6bf58e09014df1e17b3c3e886f3fcfc312e97f5b1282f9ef0ac98d93",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libhmicuuc.z.so",
+      "sha256": "cf60f7ec5b12341239c062c33aa1f0a8e7efdc0632ed9f533728e47be903956d",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libimage_napi.z.so",
+      "sha256": "bb8056d2d982381dbf40550d3b4e9f638462cddc8df51f94a18fb0f4c22b8c4e",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libimage_native.z.so",
+      "sha256": "d60c1fefa24ef3c3410ef6cdbd06764c7358cecb071fdcaf352b44db330d7a60",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libimage_utils.z.so",
+      "sha256": "ca66283d317166e3a799ad3312a97afeca009c34f23d4c732cab930aaeaf38dc",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libimageformatagent.z.so",
+      "sha256": "e12c6b1ab579ca9fae678651d38d1ded52a345ebd7d16fb1f9e1f90f146accbf",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libinputmethod_client.z.so",
+      "sha256": "f71d7fa9a39477ee37884a661595aa24fd27cd198a0537b5d0d3c1732df4b8db",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libintl_register.z.so",
+      "sha256": "d8a7fe6aea6c0fdfe295bf31574f9bbe2fc241729057482eaf91288a2f09b9c2",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libintl_util.z.so",
+      "sha256": "edf9a73f664314066cc51aaa12e9020d68fee583ffaccb1899ebecd80b0761c0",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libipc_common.z.so",
+      "sha256": "4fff574005db73e1bf27b192d913687fbdb6c9dc6a0554710ae0b8335bbcae10",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libipc_napi.z.so",
+      "sha256": "0011e1179c83ca2c90bbe26ef795e66a84677e998e9094d766566f68a2f2356e",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libipc_single.z.so",
+      "sha256": "f6742ea92c89d4400d69201ec5ac47261dcfeb0945951ecc5ae44041ff6bd4f8",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libjs_environment.z.so",
+      "sha256": "b5ae694866fdcd108d345596559f413dec9ba3dba626417aee03f1b028c09147",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/liblz4_shared.z.so",
+      "sha256": "8e375ed8dfafdf79e7b7c1acd251747a13b0c2e38c1bef94eb6a0e90a48bc992",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libmedia_monitor_client.z.so",
+      "sha256": "670045953c991570d7c4510c60736e941c3201ab1d948d6ac2d3aaccb9d4e92e",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libmedia_monitor_common.z.so",
+      "sha256": "eae8c866104db29d375e35a2c520c003dd16e4d9c0759e93056410498461281d",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libmission_info.z.so",
+      "sha256": "0d2a7d9f2b4612e76f32e0a76e42633a9d96c05c3a7dabc4c4278eb28170000e",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libmmi-client.z.so",
+      "sha256": "cc4a5786832b903034979dd708936789600deee8589494b817c1ff1987e538db",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libmmi-util.z.so",
+      "sha256": "b7e616218f33431decbe5901ad821b1cd2ea6104fb03490dec078c904926c86f",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libnapi_common.z.so",
+      "sha256": "c8334b5aa0bf9f6e9c8c4ed3d503ef6728717492a818d743e6457f8f2dc809c0",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libnative_appdatafwk.z.so",
+      "sha256": "fa7feecb34a31bfaf119a05e99099386b897acadf67dd64e8de06d207146b862",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libnative_dataability.z.so",
+      "sha256": "178ffe9e56be27be04920279d74849d6808d9fd12b9df309def3a2bbe6e377bc",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libnative_image.so",
+      "sha256": "74b6ea0de10d8e9171a35042e46aa5d4a2d44e3a3ba529b6202603f9af749b9f",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libnative_preferences.z.so",
+      "sha256": "442c383b26fa39bec874d83b0f2e8dd3cd86df962f0f861585cb88d0c6c24610",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libnative_rdb.z.so",
+      "sha256": "332eb643efb939908be13a671a1c53e94b33fabb33e19d8ee174692a70e98c42",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libnative_vsync.so",
+      "sha256": "7d9f7d9213c5781b888a52e5cd023fb5c28b0dd05585f0f209043a1bb9edb304",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libnetsys_client.z.so",
+      "sha256": "5183d87c6370d627d78963edcbfe2078ed3a89888e7855b7d2748a9cfbe9a4b7",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libos_account_innerkits.z.so",
+      "sha256": "ee0fe4a84e3344d63aecdd5e7158bdf2da770eb2f370fb1900ec23a95f58ec1b",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libpasteboard_client.z.so",
+      "sha256": "e556ccd59d65e22815062e806f92c3afb7f0aabaf1857e28afc1c6ecb8ee200b",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libpasteboard_data.z.so",
+      "sha256": "f04fcabdfa53bc2525a6724138c73f8b0b90c1bc3c6a9cbd5fbc01ae39e53fe1",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libphonenumber_standard.z.so",
+      "sha256": "1b7982a1db7d97eedabff8094e0d14677c8d3c01d76f1b7195813f6f7d0c3266",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libpixelconvertadapter.z.so",
+      "sha256": "06d053d5ce35e3535b27bde428a800dcbe99bfb7d2f0880bab61a647aa602f6a",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libpluginmanager.z.so",
+      "sha256": "185d891634309014ba3df7261a138b8dda51f440f912be1fd9d8fc92aece4374",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libpost_proc_gl.z.so",
+      "sha256": "db7cadcad5aab5075bdb4ba0480c0849e58eda1a9e35dab3cdadececfe9ff7a0",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libpowermgr_client.z.so",
+      "sha256": "cd63a2003352963577c93ba106eb53d54becd0b9be77e401afd45425232ded86",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libprivacy_communication_adapter_cxx.z.so",
+      "sha256": "f7abab98ab369051710545b9ab3f6dd2c2ff14135edb0346c501cd185342ba6d",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libprivacy_sdk.z.so",
+      "sha256": "356310c88a753c4aa9785928daa0671b28902002d56127a485e965010f2a0204",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libprocess_options.z.so",
+      "sha256": "c75c9201c8aa5f2b7b135860928c111827a20f7f191c633d34b6a2ade7bd8b8b",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libremote_file_share_native.z.so",
+      "sha256": "c00151be29dabedbc1b26ff1d9a5c2fa239bf2e6ab187790cdc12d4f25261646",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/librender_service_base.z.so",
+      "sha256": "9cc625e716da8379e78e11e216d7c5e68f18b2c1bd22b0d907b96338a1ef1062",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/librender_service_client.z.so",
+      "sha256": "ea46c53899641fe6e5783cde9e87be7d75ea24517e374ff61b5b7d64d647f7e4",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libresmgr_napi_core.z.so",
+      "sha256": "4cb0ea5516d1c89165d602beb0f4360d4146c1c7c473625fcd8be07ce8d2c333",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/librestorecon.z.so",
+      "sha256": "3f4a800469d8ecf741feac0f1d146287361389acade4d57053b05084bf5d6286",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libruntime.z.so",
+      "sha256": "9fd4c04bc8522cc3effc98ad5cb4dfb301cbd9d9145fd881a85e5aeee2988987",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libruntime_utils.z.so",
+      "sha256": "d17d7c701355e7ec970b26e0fd973dc977a5af2bd11cc44b4ab5f4e6def99994",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libscene_session.z.so",
+      "sha256": "291a9f68ca981850649ffd2771fe50b21f45547f9554c2b7e50d798ac439e8de",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libscreen_session.z.so",
+      "sha256": "b1312feec471127f19d8d1bfd4ef0e201573638b249428dcda7610cd5a02081f",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libscreen_session_manager_client.z.so",
+      "sha256": "18b7b57a45537b98ca98a4aea8b7f129948e70f0cda9feba8752d516413008a7",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libsession_info.z.so",
+      "sha256": "c2b56731b5f997213082cf66900468ab8ad2fd48a896e4f86ce1c6e038d7abed",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libsession_manager.z.so",
+      "sha256": "b906ff740c6375d58e6870a02adc3004201203e7af6bde19b60236f99f6b530f",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libsession_manager_lite.z.so",
+      "sha256": "2e630d2e5aa0085365298a1de160d5219d4e925e43f0d876d760c94dd14271c5",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libsocketpair.z.so",
+      "sha256": "2e584b9133bd4e9ee6c12e388bd4b9fbacf19bd5a84b15eaf5beaf22866b8887",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libsonic.z.so",
+      "sha256": "73667ce8941d6e1f0129b78b41a4e3df1a074ebdb5c348ea695f998ef1dd7feb",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libsqlite.z.so",
+      "sha256": "e77265d198c908266d3dbb9cbeb41a6b1bdb0864e631145359fd14ed7f38aba1",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libstart_window_option.z.so",
+      "sha256": "17436b1f9ab05d04d5c2d71e4885ad2b4215b7e5b5cf3a6d15df50b0c822dc45",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libstartup_util.z.so",
+      "sha256": "3cfe628a7d73a7e548d5017119208026a247244fef75d9f6a21bb23b82288f1f",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libtime_client.z.so",
+      "sha256": "9eed53ea3d3585e7ab3893bbded098dbc273322dc7eb4a1c722410ad463cf918",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libtimer.z.so",
+      "sha256": "7ae6d72266e8380ee2dd2c01103aa134f036da08063ed2ded64c94154e91a633",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libtoken_callback_sdk.z.so",
+      "sha256": "1a0f0ff59ed76092df9c6cabc75c3fac24064982cd6303a83a8d4c6e116880b8",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libtokenid_sdk.z.so",
+      "sha256": "f50dfaee2db6e5b6aa60c75030d93bf952b8f5e8e9c9bf13575f08b3c1f809f1",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libtokensetproc_shared.z.so",
+      "sha256": "478c3739261bb512c89d0bbd155a76ab921d4dfb16d2d8587b14ad2882c42194",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libudmf_client.z.so",
+      "sha256": "c1e9cc32a4b7e5dde9871e40ef38aff8e339a7076febb74fe5264b8ce524a10d",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/liburi_permission_mgr.z.so",
+      "sha256": "842fe9c4eeafb31c4cf7ac67008aa55b384496a9b69e862ba62f3c48a5af3818",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libutd_client.z.so",
+      "sha256": "25e8a8b33c6a58af711a5f47ddea9d26800ed51c3e1e1476fe470a65ffb8c033",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libuv.so",
+      "sha256": "3f393a06286ef090771f21b9b0c36f18bc4f6ebaa130c74c4c85edf4498b9562",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libvsync.z.so",
+      "sha256": "1ef97eda6aae15c8756a81c87647925db2b7a04cf49bb3a56567af6cccb9e2a0",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libvulkan.so",
+      "sha256": "711d9723c47d816b7a72d96cd1d0a05533b76e891347fb830e5c8b6889a2f3dc",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libwant.z.so",
+      "sha256": "4d31b4ada8c6e6188d8e9cc60d91c67e703ac37bad5bc882e67850707018db8f",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libwantagent_manager.z.so",
+      "sha256": "92dccead361107477eb7774c477ade0109720b07bb552eae878072c8335955ec",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libwindow_animation.z.so",
+      "sha256": "b2e8c629085a2be2bd9bd4094df3ef92075d9ccc9827ac4bbe91c8c7577337b5",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libwindow_animation_utils.z.so",
+      "sha256": "a3894f31a30b3ad77b8cef1f6f33501e9d551da40680bf02afa01d468e596c5e",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libwindow_scene_common.z.so",
+      "sha256": "9551c7fe2617e032ac0b999695230076331ea644eb0bcf5bb3cbda971ebe2c8f",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libwmutil.z.so",
+      "sha256": "06734bf3308057ab2f28b21cacb5b47aed875f145704fbfd3e1a76a86ee9c102",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libwmutil_base.z.so",
+      "sha256": "8c96da51508a34a3597b66160885f0e5c861490061740c8c1f0d26e8279ed9b1",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libwsutils.z.so",
+      "sha256": "e9dd0c7efbf4f3fe2ed2c47c220f9e7a1a40295a0fc88726ec81904d91a133d3",
+      "category": "firmware"
+    },
+    {
+      "path": "/system/lib64/platformsdk/libzuri.z.so",
+      "sha256": "a7d06d280bf7d337c11b5538325de018156bbb766fd4e4c44f82f0d28e2ae65c",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/chipsetsdk/libGLES_mali.z.so",
+      "sha256": "e0cb108121981c6ad30c9e3f338c384172ef3be2dc790a457e0287a10efa2cfe",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/hw/libmapper.z.so",
+      "sha256": "41841443b32fcd7b72c6a875a1bb8c5b0530794e6e2f893309fd6a198111540f",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/liballocator2.0.z.so",
+      "sha256": "c28472346bb98fba70397cc530acc0e41866a167762d9f8336b45f67bf762903",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/liballocator3.0.z.so",
+      "sha256": "294fc624f3d8899b1380fe8fd16471557a5e1fe8c634e7c637a772065f475219",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/liballocator4.0.z.so",
+      "sha256": "522e30a4334bc37e6196db9a1bc50f89efbf67b1e4b57c5c6fd51d8d730e688e",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/libaosp_base.z.so",
+      "sha256": "e29bc389eccacae71fb726e0146fa57f082c8f4b08d3a17d73950506fec79694",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/libaosp_cutils.z.so",
+      "sha256": "40f8d13f073d5203715c9b95eda5bcbde54ccefcfdc17b022673cd3ee12233a7",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/libaosp_dmabufheap.z.so",
+      "sha256": "d622132d9635fcc24f048732883925b780392930dbe1543dc2f2305dac91e314",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/libaosp_utils.z.so",
+      "sha256": "b653940740c37cf7bc3ca4bfe20a4d2a52fd4250aacf650d52548a6f89635cec",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/libgralloctypes.z.so",
+      "sha256": "9d8bf4bfb8d302961ff1e0098f9dd5e1df1fe239b44339edf5172831be3004f7",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/libgrallocusage.z.so",
+      "sha256": "72f161149a6bc2117e83672757da70b40a3e6283262b42c7be4d1547b7fca4e3",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/libhidlbase.z.so",
+      "sha256": "3a671b252d24ba13d22399cd29a83f9daa17190032cfcde776d868cd8d988c25",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/libhwbinder.z.so",
+      "sha256": "007ac535027e4c180f5ef9cebba8f466f0b594feea4718311ffd0215edc9d65c",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/libion.z.so",
+      "sha256": "307eb83a70dae432caa87d4a38b1cb8b0958ffa74e571e12dda66885621b2e5c",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/libmapper2.0.z.so",
+      "sha256": "6cd7bfc2cd9311888a0f60b7d5f3f08b289a6142dd34eb58db39427861ab10e3",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/libmapper2.1.z.so",
+      "sha256": "e4552237e829f897d5933758d43acc94a5a9360ca32283673f678a52f7afe76d",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/libmapper3.0.z.so",
+      "sha256": "0fa511e4a0b4597bc9d842fbacdce1da826af9792ec30e1d8058334481173db9",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/libmapper4.0.z.so",
+      "sha256": "9745da6f37714d634a98309b6138d2f6d9a386eacb3a894d46e0ee7db3dd3763",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/libmodem-utils.z.so",
+      "sha256": "d061b673d39cd93bcc02a9a62866789b5a688a7c00e8973096f0b783c0ba2445",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/libmodem_halo.z.so",
+      "sha256": "c49ab0bbf6fdcce1058238bd65e2bec2e8c3bc091f7ea8d0166afad89acd426b",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/libnativewindow.z.so",
+      "sha256": "17ab739670877ad0b4373a11da22903d32b147c21d60c1bee767a53e213677e6",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/libsync_adapter.z.so",
+      "sha256": "289b7d223846156034662a05699865e0ab184e0ecd705377f8798f2e7fd6ca05",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/libui.z.so",
+      "sha256": "90071a0e42722d896a55627f4d1ff1b19d2b5c6206c56d1bc08e60edd72b29e4",
+      "category": "firmware"
+    },
+    {
+      "path": "/vendor/lib64/libutils_wrapper.z.so",
+      "sha256": "1c3143c18b9b0acf655a5340492dca9271daf7c6b2a5c9ea4311c003ceddc55a",
+      "category": "firmware"
+    }
+  ]
+}

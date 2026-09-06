@@ -1,0 +1,5 @@
+{
+  "exit_code": 2,
+  "output": "FULL_BUILD_NOT_READY: refusing historical binary fallback\n- Core/framework compile headers and DEX JARs lack a closed source recipe; historical board JARs must not be used as unrecorded build inputs.\n- Adapter Java builders have a cold-start dependency cycle and need an explicit duplicate-free class ownership inventory.\n- Host dex2oat and all ten boot-classpath JARs must be rebuilt together before boot-image reproduction can pass.\n- HWUI mixes patched AOSP14 sources and OH Skia providers; historical full builder omits the recorded EglManager source fix.\n- Full bridge requires declared OH project/header/generated-source/override and shared-library provider inventories, not a saved Ninja command or wildcard board libraries.\n- ART/boundary source links still require full process provider closure, including platform libc++ ABI, binder JNI and WebP providers; source-link success is not deployability.\n- Connected-board acceptance and repeated same-input Toutiao/OnePlus 6 latency measurements are not completed for the rebuilt payload.\n",
+  "created_output": false
+}

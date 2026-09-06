@@ -1,0 +1,21 @@
+{
+  "result": "byte-identical",
+  "artifacts": {
+    "oh/popen_contract_probe": {
+      "sha256": "88aa2a27b1e13e013fc6feec1caa0c36c0fffdac9a830c23984fb1c7937131e6",
+      "bytes": 16688
+    },
+    "oh/popen_stress_probe": {
+      "sha256": "f2e679ceb2c01d86e661b69197dfe8f21a2892e1b2b7e724a1630814d4051774",
+      "bytes": 16096
+    },
+    "android/popen_contract_probe": {
+      "sha256": "3e6927ddb513cd02850e90c3a69e8edd135072a24fe872367912b1ef7e1b09df",
+      "bytes": 8904
+    },
+    "android/popen_stress_probe": {
+      "sha256": "7733d393492dd4e99cbd8bb5c98ab71ebcc0766e80488bb056d3b50a3e46658c",
+      "bytes": 9432
+    }
+  }
+}

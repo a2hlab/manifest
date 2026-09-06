@@ -4,6 +4,26 @@ The requested target is `a2hlab`, not the superseded `a2oh` organization.
 The rebuild set now spans 22 private repositories without replacing unrelated
 organization projects. Standard workstation prerequisites remain external.
 
+## Android-reference parity follow-up (2026-09-05)
+
+The current source lock includes the generic JIT file-cache, process-stream,
+CPU-time and window power fixes and the associated process/network corrections.
+Westlake now builds six public-SDK helpers, deterministic comparison APKs and
+Android/OH native probes. Its 75-file window header closure removes the saved
+Ninja include-list dependency for that helper; the linked DSO still requires
+two exact board providers. The reference inventory records 410 immutable loaded
+files and the separate 66-artifact candidate manifest. See [PARITY27.md](PARITY27.md).
+
+Fresh GitHub/offline builds reproduce 18 compared artifacts byte for byte,
+including ART and its source runtime boundary. Three comparison-app DEX files
+match the measured APKs. Seventeen manifest tests and six Westlake tests pass;
+repository-built native contract/stress probes pass on both devices. Evidence:
+`reports/parity27/verification.json` and the adjacent rehash/source-input records.
+
+Historical device acceptance, fresh component builds and full stack reproduction
+remain separate gates. The full framework/boot/provider source gaps below are
+not closed by these source commits or by the binary hash inventories.
+
 ## Repository-only dependency update (2026-09-05)
 
 - All 16 upstream dependencies used by the component profiles are committed in

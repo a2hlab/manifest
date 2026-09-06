@@ -1,0 +1,20 @@
+{
+  "control22": {
+    "dex_sha256": "7f924729d46310eadb62509ec800c6ace025f6a050f58473f05f59b7defd1d3e",
+    "measured_apk_sha256": "f09a8b8661d8ee51f696a673ada58094df5463de9b27721ea75ec12e1e8abb61",
+    "dex_matches": true,
+    "signed_apk_byte_identity_claimed": false
+  },
+  "control24": {
+    "dex_sha256": "e050548eea26880e909eef32aff9568f36598f08aa8db59776ca32d6e2088cd8",
+    "measured_apk_sha256": "8a0065888a673add9c0c4027474622d6d6f31c55e537d7985ba59b9cf304a11b",
+    "dex_matches": true,
+    "signed_apk_byte_identity_claimed": false
+  },
+  "control26": {
+    "dex_sha256": "20a7d8acad027b8642e274b892cf7edff82cb4080baf159534d8ac72d5e779a2",
+    "measured_apk_sha256": "d397f7841619984efdb134f528072283427a13575aab672ef4211425f8d15602",
+    "dex_matches": true,
+    "signed_apk_byte_identity_claimed": false
+  }
+}

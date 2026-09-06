@@ -1,0 +1,14 @@
+{
+  "artifacts": {
+    "libart.so": {
+      "bytes": 21530984,
+      "sha256": "cf927cbed7864a6adcc414f528ebb76f2a73a907728046a51256b700362b1e69"
+    },
+    "libwestlake_runtime_boundary.so": {
+      "bytes": 393320,
+      "sha256": "f05065ca3e327c10037dfe4dc12961ba378544cba2ae63a0f436ce2732aa893f"
+    }
+  },
+  "result": "byte-identical",
+  "scope": "Source artifact reproduction only; not device acceptance or performance parity"
+}
