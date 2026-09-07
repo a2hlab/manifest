@@ -8,6 +8,6 @@
 # Regenerate:  python3 tools/write_sha256sums.py
 # Check:       cd prebuilts && shasum -a 256 -c SHA256SUMS
 0fd992331091aa8aee05b0f6a087f1880203f2073ab72cb3b867d832fc1f8975  baseline-classes-retarget.dex
-41327fdcd6eed32bb9613028ffd969e859952633b7d01dd918ca1c8801115c0c  oh-adapter-runtime-unified.jar
+0e195f0564582eedb1e30c63e949f4bbbfeeed806a4236d32d12cbd8de62d6bc  oh-adapter-runtime-unified.jar
 4e9e3d4669dfaeab3feee668570ad73062db368f101a6c2387e4b41028668579  oh-adapter-runtime.jar
 5fd2e39f2e7f1271739e6094d010a88357be852afd3335625f262c9e164a547c  wl-tls-min.jar

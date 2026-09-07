@@ -28,8 +28,8 @@
     "path": "/Users/mac/a2h-build/baseline-classes-retarget.dex",
     "sha256": "0fd992331091aa8aee05b0f6a087f1880203f2073ab72cb3b867d832fc1f8975"
   },
-  "bytes": 84296,
-  "classes": 37,
+  "bytes": 98377,
+  "classes": 52,
   "classes_from_source": [
     "adapter.activity.ActivityManagerRouting",
     "adapter.activity.ActivityManagerRouting$1",
@@ -44,7 +44,21 @@
     "adapter.activity.ActivityManagerRouting$13",
     "adapter.activity.ActivityManagerRouting$14",
     "adapter.activity.ActivityManagerRouting$15",
+    "adapter.activity.ActivityManagerRouting$16",
+    "adapter.activity.ActivityManagerRouting$17",
+    "adapter.activity.ActivityManagerRouting$18",
+    "adapter.activity.ActivityManagerRouting$19",
+    "adapter.activity.ActivityManagerRouting$19$1",
     "adapter.activity.ActivityManagerRouting$2",
+    "adapter.activity.ActivityManagerRouting$20",
+    "adapter.activity.ActivityManagerRouting$21",
+    "adapter.activity.ActivityManagerRouting$22",
+    "adapter.activity.ActivityManagerRouting$23",
+    "adapter.activity.ActivityManagerRouting$24",
+    "adapter.activity.ActivityManagerRouting$25",
+    "adapter.activity.ActivityManagerRouting$26",
+    "adapter.activity.ActivityManagerRouting$27",
+    "adapter.activity.ActivityManagerRouting$28",
     "adapter.activity.ActivityManagerRouting$3",
     "adapter.activity.ActivityManagerRouting$4",
     "adapter.activity.ActivityManagerRouting$5",
@@ -55,6 +69,7 @@
     "adapter.activity.ActivityManagerRouting$9",
     "adapter.activity.ActivityManagerRouting$DefaultsHandler",
     "adapter.activity.ActivityManagerRouting$FlagMaskHandler",
+    "adapter.activity.ActivityManagerRouting$MountHandler",
     "adapter.activity.ActivityManagerRouting$PmHandler",
     "adapter.activity.ActivityManagerRouting$Probe",
     "adapter.activity.ActivityManagerRouting$TlsGateSpi",
@@ -80,6 +95,6 @@
     "version": "D8 9.4.17 (build c98358724c7e1cb666ffdf35d0808d9d79545e89 from go/r8bot (luci-r8-custom-ci-archive-us-east1-b-0-ngbi))"
   },
   "fully_source_built": false,
-  "sha256": "41327fdcd6eed32bb9613028ffd969e859952633b7d01dd918ca1c8801115c0c",
+  "sha256": "0e195f0564582eedb1e30c63e949f4bbbfeeed806a4236d32d12cbd8de62d6bc",
   "sources": 6
 }

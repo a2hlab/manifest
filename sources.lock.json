@@ -8,16 +8,17 @@
   "prebuilts": [
     {
       "path": "prebuilts/oh-adapter-runtime-unified.jar",
-      "sha256": "41327fdcd6eed32bb9613028ffd969e859952633b7d01dd918ca1c8801115c0c",
-      "bytes": 84296,
+      "sha256": "0e195f0564582eedb1e30c63e949f4bbbfeeed806a4236d32d12cbd8de62d6bc",
+      "bytes": 98377,
       "recipe": "tools/recipes/build_adapter_runtime.sh",
-      "contents": "61 classes in one classes.dex: 37 compiled from westlake source + 23 from the transitional baseline dex, +1 d8 synthetic",
+      "contents": "76 classes in one classes.dex: 52 compiled from westlake source + 23 from the transitional baseline dex, +1 d8 synthetic",
       "fully_source_built": false,
-      "classes_from_source": 37,
+      "classes_from_source": 52,
       "classes_from_baseline": 23,
       "baseline_dex": "prebuilts/baseline-classes-retarget.dex",
       "dexer": {"path": "/opt/a2h/hosttools/r8-9.4.17.jar", "sha256": "2100511344497f041644a4d63fb7be8a516ce9bace30b7d17ab27cc93a0e58d4", "version": "D8 9.4.17 (build c98358724c7e1cb666ffdf35d0808d9d79545e89 from go/r8bot (luci-r8-custom-ci-archive-us-east1-b-0-ngbi))"},
-      "note": "TRANSITIONAL. Unlike oh-adapter-runtime.jar (33 classes, fully source-built, but missing the AppSpawnXInit bootstrap so it cannot replace the deployed runtime) this one is a superset of what is deployed and passes westlake tools/check_runtime_replacement.py. It gets there by fusing in a prebuilt dex, which is the thing the source-build workstream exists to remove -- see the two adapter entries in full-build-gaps.json for what has to close before this can be retired. Not pushed to any device."
+      "verified_superset_of": "the jar running on the board at ad13bbd641b193aa1fee4f470704c27f770e9c3ede2a1972aeb6a462db1bbb39 -- westlake tools/check_runtime_replacement.py exits 0 with zero missing identifiers",
+      "note": "TRANSITIONAL. Carries the full frontline union: S1 window focus/back-key/tap dispatch, S2 network degradation and WCDB prewarm, S4 metadata enrichment, provider filtering and instrumentation unhook. Fuses in a prebuilt dex for the bootstrap classes, which is what full-build-gaps.json's two adapter entries have to close before this can be retired. Not deployed."
     },
     {
       "path": "prebuilts/baseline-classes-retarget.dex",
@@ -63,7 +64,7 @@
     {
       "path": "westlake",
       "url": "https://github.com/a2hlab/westlake.git",
-      "revision": "db11582009ad916b79ddd122ea633dcfeb4e2f5f"
+      "revision": "79ae95915771f9138bf60cf277a1753a2410ad60"
     },
     {
       "path": "art-build",
