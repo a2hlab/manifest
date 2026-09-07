@@ -9,7 +9,8 @@
   "gaps": [
     "Core/framework compile headers and DEX JARs lack a closed source recipe; historical board JARs must not be used as unrecorded build inputs.",
     "Adapter Java builders have a cold-start dependency cycle: the routing class extends a superclass that needs the adapter framework.jar, which the same pipeline produces.",
-    "The adapter runtime class ownership inventory is now mechanical (westlake tools/dex_class_inventory.py) and reports no duplicate owners, but com.android.internal.os.PmProxy still has no source owner, so that jar cannot yet be built from source alone.",
+    "A source-built oh-adapter-runtime.jar exists and is closed over its own 33 classes, but it is NOT a replacement for the deployed runtime: it lacks 23 of that jar's 28 classes, including the AppSpawnXInit child bootstrap entry point and AppSchedulerBridge. Measured, not estimated -- westlake tools/check_runtime_replacement.py refuses the swap.",
+    "Widening that jar's source list does not close the gap: AppSpawnXInit and AppSchedulerBridge need the real platform classes (98 and 312 javac errors against the compile-only stubs), the adapter framework.jar is a dex archive javac cannot consume, and com.android.internal.os.PmProxy has no source in any repository.",
     "Host dex2oat and all ten boot-classpath JARs must be rebuilt together before boot-image reproduction can pass.",
     "HWUI mixes patched AOSP14 sources and OH Skia providers; historical full builder omits the recorded EglManager source fix.",
     "Full bridge requires declared OH project/header/generated-source/override and shared-library provider inventories, not a saved Ninja command or wildcard board libraries.",
