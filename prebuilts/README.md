@@ -66,3 +66,35 @@ flag says so rather than letting a reader assume otherwise.
 What it does *not* contain, deliberately: `westlake.tls` (that is
 `wl-tls-min.jar`, loaded through its own DexClassLoader) and the rest of
 `framework/activity/java` (fifteen classes that need the real platform).
+
+## oh-adapter-runtime-unified.jar — transitional
+
+61 classes in one `classes.dex`: **37 compiled from westlake source, 23 from
+`baseline-classes-retarget.dex`**, plus one d8 synthetic. `build.json` beside it
+lists both sets by name, and the lock entry says `fully_source_built: false`.
+
+This exists because the source-only `oh-adapter-runtime.jar` above, for all that
+it is genuinely closed over its own classes, **cannot replace the deployed
+runtime** — it lacks `AppSpawnXInit`, the child bootstrap entry point, so
+swapping it in would stop every app launching.
+`westlake tools/check_runtime_replacement.py` refuses that swap and passes this
+one:
+
+```
+candidate defines 61 classes; deployed defines 28
+SAFE: the candidate is a superset.
+```
+
+The price is a prebuilt dex in the middle of the build — the thing this
+workstream exists to remove. It is a step backwards taken deliberately and
+under a decision, not by drift. Retiring it needs the two adapter entries in
+`full-build-gaps.json` closed: a classfile-form platform classpath (the
+adapter's `framework.jar` is dex-only, so `javac` cannot use it) and a source
+owner for `PmProxy`.
+
+`baseline-classes-retarget.dex` is archived alongside for one reason: without
+it the fusion could only be reproduced from a frontline home directory. Pinning
+its identity here is not an endorsement of it.
+
+Deterministic: two independent builds gave identical bytes. **Not pushed to any
+device.**

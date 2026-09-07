@@ -80,6 +80,34 @@ class PrebuiltLockTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'escapes the manifest'):
             self.verifier.verify(lock)
 
+    def test_sha256sums_agrees_with_the_lock(self):
+        """Two records of the same fact drift; this is the one that catches it."""
+        sums = (ROOT / 'prebuilts/SHA256SUMS').read_text()
+        recorded = {}
+        for line in sums.splitlines():
+            if not line or line.startswith('#'):
+                continue
+            digest, name = line.split(None, 1)
+            recorded[name.strip()] = digest
+        self.assertEqual(len(recorded), len(self.entries))
+        for entry in self.entries:
+            name = Path(entry['path']).name
+            self.assertIn(name, recorded)
+            self.assertEqual(recorded[name], entry['sha256'], name)
+
+    def test_fused_runtime_declares_it_is_not_source_built(self):
+        """The transitional jar must not be mistakable for the source-only one."""
+        fused = [e for e in self.entries
+                 if e['path'].endswith('oh-adapter-runtime-unified.jar')]
+        if not fused:
+            self.skipTest('no fused runtime archived')
+        entry = fused[0]
+        self.assertFalse(entry['fully_source_built'])
+        self.assertIn('baseline_dex', entry)
+        # The baseline it names has to be archived too, or the jar cannot be
+        # regenerated from this repository alone.
+        self.assertTrue((ROOT / entry['baseline_dex']).is_file())
+
 
 if __name__ == '__main__':
     unittest.main()

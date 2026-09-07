@@ -7,6 +7,27 @@
   ],
   "prebuilts": [
     {
+      "path": "prebuilts/oh-adapter-runtime-unified.jar",
+      "sha256": "41327fdcd6eed32bb9613028ffd969e859952633b7d01dd918ca1c8801115c0c",
+      "bytes": 84296,
+      "recipe": "tools/recipes/build_adapter_runtime.sh",
+      "contents": "61 classes in one classes.dex: 37 compiled from westlake source + 23 from the transitional baseline dex, +1 d8 synthetic",
+      "fully_source_built": false,
+      "classes_from_source": 37,
+      "classes_from_baseline": 23,
+      "baseline_dex": "prebuilts/baseline-classes-retarget.dex",
+      "dexer": {"path": "/opt/a2h/hosttools/r8-9.4.17.jar", "sha256": "2100511344497f041644a4d63fb7be8a516ce9bace30b7d17ab27cc93a0e58d4", "version": "D8 9.4.17 (build c98358724c7e1cb666ffdf35d0808d9d79545e89 from go/r8bot (luci-r8-custom-ci-archive-us-east1-b-0-ngbi))"},
+      "note": "TRANSITIONAL. Unlike oh-adapter-runtime.jar (33 classes, fully source-built, but missing the AppSpawnXInit bootstrap so it cannot replace the deployed runtime) this one is a superset of what is deployed and passes westlake tools/check_runtime_replacement.py. It gets there by fusing in a prebuilt dex, which is the thing the source-build workstream exists to remove -- see the two adapter entries in full-build-gaps.json for what has to close before this can be retired. Not pushed to any device."
+    },
+    {
+      "path": "prebuilts/baseline-classes-retarget.dex",
+      "sha256": "0fd992331091aa8aee05b0f6a087f1880203f2073ab72cb3b867d832fc1f8975",
+      "bytes": 99792,
+      "recipe": "tools/recipes/build_adapter_runtime.sh",
+      "contents": "AppSpawnXInit, AppSchedulerBridge, PmProxy, OHSecureRandomProvider/Spi, TlsShimProvider -- 23 classes, 6 top-level",
+      "note": "Input to the transitional fusion, archived so that build is reproducible without a frontline workspace. Origin: the frontline base dex, identical bytes in both frontline trees. It is a prebuilt of exactly the kind full-build-gaps.json warns about; it is recorded here rather than referenced from someone's home directory so that at least its identity is pinned."
+    },
+    {
       "path": "prebuilts/oh-adapter-runtime.jar",
       "sha256": "4e9e3d4669dfaeab3feee668570ad73062db368f101a6c2387e4b41028668579",
       "bytes": 38597,

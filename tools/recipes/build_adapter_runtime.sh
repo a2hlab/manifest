@@ -34,9 +34,27 @@ OUT="${OUT:-$PWD/out/adapter-runtime}"
 BUILDER="$WORKSPACE/westlake/tools/build_adapter_runtime.py"
 [ -f "$BUILDER" ] || { echo "no westlake builder at $BUILDER -- is WORKSPACE fetched?" >&2; exit 1; }
 
-python3 "$BUILDER" --out "$OUT" --r8 "$R8"
+args=(--out "$OUT" --r8 "$R8")
+
+# Transitional: fuse in the platform classes that are not yet buildable from
+# source (AppSpawnXInit, AppSchedulerBridge, PmProxy and friends). Without this
+# the jar is a component, not a replacement -- check_runtime_replacement.py will
+# say so. Defaults to the archived baseline next to the output jar.
+BASELINE_DEX="${BASELINE_DEX:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../../prebuilts" && pwd)/baseline-classes-retarget.dex}"
+if [ -f "$BASELINE_DEX" ]; then
+    args+=(--baseline-dex "$BASELINE_DEX")
+else
+    echo "note: no baseline dex at $BASELINE_DEX -- building the source-only component jar" >&2
+fi
+
+python3 "$BUILDER" "${args[@]}"
 
 echo
+if [ -f "$BASELINE_DEX" ]; then
+    echo "built: the FUSED runtime (archived as prebuilts/oh-adapter-runtime-unified.jar)"
+else
+    echo "built: the source-only component jar (archived as prebuilts/oh-adapter-runtime.jar)"
+fi
 echo "jar:  $OUT/oh-adapter-runtime.jar"
 sha256sum "$OUT/oh-adapter-runtime.jar"
-echo "record: $OUT/build.json"
+echo "record: $OUT/build.json  (fully_source_built tells you which variant this is)"
