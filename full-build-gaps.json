@@ -13,7 +13,7 @@
     "The OH bridge source/header graph is declared and the device host firmware identities are checked. Remaining media JNI/provider integration and complete window/input behavior require source builds and device validation.",
     "Chromium WebView 109 native engine and APK build successfully; packaged native libraries match the build outputs. Retained AndroidX, Kotlin and Google Play Services bytecode still need source provenance/build closure, as do remaining compiler input mirrors and the fresh repository-only WebView recipe.",
     "Source WebView Android/OH native loading, framework provider integration and device acceptance remain unverified. Captured WebView binaries are not source outputs.",
-    "A fresh checkout using only a2hlab repositories must rebuild the complete payload offline, then launch the pinned original Toutiao APK and pass UI, scrolling, input and media checks. Component builds and the earlier captured-runtime UI do not establish that acceptance."
+    "A fresh checkout of the source-stack-closure branch now fetches and verifies all pinned a2hlab repositories and rebuilds the documented native, apps and ART component profiles. It still needs a repository-only complete-payload command, offline rebuild, deployment of the pinned original Toutiao APK and passing UI, scrolling, input and media checks. Component builds and the structurally rendered offline UI do not establish that acceptance."
   ],
   "target": "source-built Android/Westlake plus pinned original Toutiao APK",
   "application_source_required": false,

@@ -31,6 +31,13 @@ The [Android-reference parity follow-up](PARITY27.md) pins the generic JIT
 file-cache/runtime fixes, portable controls, benchmark verification and binary
 dependency inventories. It retains the full-build gate.
 
+The [2026-09-14 fresh-checkout record](reports/fresh-checkout-20260914.json)
+verifies that the `source-stack-closure` branch can fetch every pinned a2hlab
+repository, install both toolchains and rebuild the documented `native`, `apps`
+and `art` profiles from a new workspace. The `full` profile still exits 2 and
+refuses historical binary fallback; this is component reproducibility, not a
+fresh end-to-end Toutiao run.
+
 ## Bootstrap on a clean Linux x86-64 workstation
 
 Requirements: GitHub read access to **all** private dependency repos, Git and
