@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "profile": "oh61-bridge-source-dependencies",
+  "projects": [
+    {
+      "path": "android-source/oh-bundle-framework",
+      "url": "https://github.com/a2hlab/dep-android-source-oh-bundle-framework.git",
+      "revision": "9f026ea9706e6ecba75de5587317dbeda67c2785",
+      "release_branch": "OpenHarmony-6.1-Release",
+      "upstream": {
+        "url": "https://github.com/openharmony/bundlemanager_bundle_framework.git",
+        "revision": "161dd82173c0fc31472f72f571a4876914c5c2a6",
+        "tree": "6dd0a696ec0b2002d64e5a47cd0cbfd9810f780c"
+      }
+    },
+    {
+      "path": "android-source/oh-eventhandler",
+      "url": "https://github.com/a2hlab/dep-android-source-oh-eventhandler.git",
+      "revision": "75872b4c07d6956410e0c1706977b04c24d51d9c",
+      "release_branch": "OpenHarmony-6.1-Release",
+      "upstream": {
+        "url": "https://github.com/openharmony/notification_eventhandler.git",
+        "revision": "141698e8cf8ef0094aa84d7c9e65192213c31ae8",
+        "tree": "aca58a91601880e57cca051e16b566968dfeac7e"
+      }
+    },
+    {
+      "path": "android-source/oh-idl",
+      "url": "https://github.com/a2hlab/dep-android-source-oh-idl.git",
+      "revision": "44fdcd0f23983b2dcdc7c4a0d79376fd4711f1ff",
+      "release_branch": "OpenHarmony-6.1-Release",
+      "upstream": {
+        "url": "https://github.com/openharmony/ability_idl_tool.git",
+        "revision": "5ea18d927836d0367350a1ff8988210fa361514d",
+        "tree": "1dd9720778afa0e372686fb6a8f6a4404c3e8f4e"
+      }
+    },
+    {
+      "path": "android-source/oh-image-framework",
+      "url": "https://github.com/a2hlab/dep-android-source-oh-image-framework.git",
+      "revision": "c70433bf30e94e85314f94894d9d028cfda018ca",
+      "release_branch": "OpenHarmony-6.1-Release",
+      "upstream": {
+        "url": "https://github.com/openharmony/multimedia_image_framework.git",
+        "revision": "52ada0907b3a338c7b615d835560b3ca70ecaef9",
+        "tree": "6fcb7e105389269b9ce18546841a79197043e800"
+      }
+    },
+    {
+      "path": "android-source/oh-imf",
+      "url": "https://github.com/a2hlab/dep-android-source-oh-imf.git",
+      "revision": "37c206471ec977180a3a5f93715ab2a1a1cad0a8",
+      "release_branch": "OpenHarmony-6.1-Release",
+      "upstream": {
+        "url": "https://github.com/openharmony/inputmethod_imf.git",
+        "revision": "89a5b693550deb4aa8bf99b0d3c4d3cc4f40eb28",
+        "tree": "b16297728ea1060552b885e1c51ca3ddb717c72e"
+      }
+    },
+    {
+      "path": "android-source/oh-jsoncpp",
+      "url": "https://github.com/a2hlab/dep-android-source-oh-jsoncpp.git",
+      "revision": "fec994972cf784085b24932fa51203619be6a696",
+      "release_branch": "OpenHarmony-6.1-Release",
+      "upstream": {
+        "url": "https://github.com/openharmony/third_party_jsoncpp.git",
+        "revision": "ea808a0b6318fbe1fee1d3acb8cb0fa36d4748d0",
+        "tree": "c0d98c9788a1ace8282aa178179640669db4ad3c"
+      }
+    }
+  ]
+}

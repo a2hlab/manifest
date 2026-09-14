@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "projects": [
+    {
+      "path": "android-source/androidx-annotation-experimental",
+      "url": "https://github.com/a2hlab/dep-androidx-annotation-experimental-sources.git",
+      "revision": "ff9d0394c52e596a711e24e773b8e64e8163895d",
+      "source_archive": {
+        "url": "https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-experimental/1.3.0/annotation-experimental-1.3.0-sources.jar",
+        "sha256": "90ea2761129cfe76516171e6b26f7c016178b97828ddc85cdfdd5f6e83e40d35",
+        "version": "1.3.0",
+        "kind": "Kotlin source archive; no class files"
+      }
+    }
+  ]
+}

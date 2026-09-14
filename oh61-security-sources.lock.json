@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "profile": "oh61-selinux-source-headers",
+  "projects": [
+    {
+      "path": "android-source/oh-selinux-adapter",
+      "url": "https://github.com/a2hlab/dep-android-source-oh-selinux-adapter.git",
+      "revision": "0f2ad87e281ad98130d270c88dda2e9f3eb2cb33",
+      "release_branch": "OpenHarmony-6.1-Release",
+      "upstream": {
+        "url": "https://github.com/openharmony/security_selinux_adapter.git",
+        "revision": "77d07c410a353a1d9fcffde8aba965c025000363",
+        "tree": "6fa9ee5811d17ba1c511dc8daabed73508d34de7"
+      }
+    }
+  ]
+}

@@ -10,6 +10,7 @@ import hashlib
 from concurrent.futures import ThreadPoolExecutor
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import tarfile
@@ -48,6 +49,7 @@ def publish(entry, workspace, destination):
     if run('git', 'rev-parse', 'HEAD', cwd=source).decode().strip() != entry['revision']:
         raise ValueError('Original checkout revision differs: ' + entry['path'])
     name = 'dep-' + entry['path'].removeprefix('upstream/').replace('aosp-11', 'aosp11').replace('/', '-')
+    name = re.sub(r'[^A-Za-z0-9_.-]+', '-', name)
     target = destination / name
     record = destination / (name + '.json')
     if record.is_file():
@@ -63,10 +65,17 @@ def publish(entry, workspace, destination):
     if existing.returncode == 0:
         raise ValueError('Refusing to change existing org repository: ' + name)
     listing = run('git', 'ls-tree', '-r', '-l', 'HEAD', cwd=source).decode()
+    gitlinks = {}
     for row in listing.splitlines():
         parts = row.split(None, 4)
         if parts[0] == '160000':
-            raise ValueError('Nested gitlink needs explicit vendoring: ' + row)
+            relative = parts[4]
+            if entry.get('unmaterialized_gitlinks', {}).get(relative) != parts[2]:
+                raise ValueError('Nested gitlink needs explicit vendoring: ' + row)
+            path = source / relative
+            if path.is_dir() and any(path.iterdir()):
+                raise ValueError('Declared unmaterialized gitlink contains files: ' + relative)
+            gitlinks[relative] = parts[2]
         if (parts[2] != '-' and parts[3].isdigit() and int(parts[3]) >= 100 * 1024 * 1024
                 and parts[4] not in entry.get('lfs_paths', [])):
             raise ValueError('Oversized source blob needs LFS review: ' + row)
@@ -96,7 +105,12 @@ def publish(entry, workspace, destination):
     run('git', 'init', '-q', '-b', 'main', cwd=target)
     run('git', 'config', 'user.name', 'ymote', cwd=target)
     run('git', 'config', 'user.email', '151983+ymote@users.noreply.github.com', cwd=target)
+    # Preserve upstream blob bytes even when a project has eol=lf attributes
+    # for CRLF files already committed upstream.
+    (target / '.git/info/attributes').write_text('* -text\n')
     run('git', 'add', '-f', '--', '.', cwd=target)
+    for relative, revision in gitlinks.items():
+        run('git', 'update-index', '--add', '--cacheinfo', '160000,' + revision + ',' + relative, cwd=target)
     tree = run('git', 'write-tree', cwd=target).decode().strip()
     if tree != run('git', 'rev-parse', 'HEAD^{tree}', cwd=source).decode().strip():
         raise ValueError('Snapshot changed original source tree: ' + name)

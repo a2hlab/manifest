@@ -17,6 +17,8 @@
     "framework-module-common-sources.lock.json",
     "framework-catalog-sources.lock.json",
     "parser-sources.lock.json",
-    "aconfig-sources.lock.json"
+    "aconfig-sources.lock.json",
+    "annotation-experimental-sources.lock.json",
+    "framework-java-compiler-tools.lock.json"
   ]
 }

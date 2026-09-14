@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "profile": "oh61-account-service-boundary",
+  "projects": [
+    {
+      "path": "android-source/oh61-account",
+      "url": "https://github.com/a2hlab/dep-android-source-oh61-account.git",
+      "revision": "c8f646651500d0059a728aeb79dc54a3e69ee15a",
+      "upstream": {
+        "url": "https://github.com/openharmony/account_os_account.git",
+        "revision": "0e64dcd471dbea53fd6549fed4cc2e3d8ad208dd",
+        "tree": "2d8a41561eb0bb5665c1bb8fb8306e0149ed7362"
+      }
+    }
+  ]
+}

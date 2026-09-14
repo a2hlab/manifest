@@ -1,0 +1,1044 @@
+{
+  "schema": 1,
+  "scope": "Android 15 default fonts from original Blueprint src values; no product overrides",
+  "configs": {
+    "fonts.xml": "android-source/frameworks-base/data/fonts/fonts.xml",
+    "font_fallback.xml": "android-source/frameworks-base/data/fonts/font_fallback.xml"
+  },
+  "fonts": {
+    "CarroisGothicSC-Regular.ttf": {
+      "source": "android-source/external-google-fonts-carrois-gothic-sc/CarroisGothicSC-Regular.ttf",
+      "blueprint": "android-source/external-google-fonts-carrois-gothic-sc/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "ComingSoon.ttf": {
+      "source": "android-source/external-google-fonts-coming-soon/ComingSoon.ttf",
+      "blueprint": "android-source/external-google-fonts-coming-soon/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "CutiveMono.ttf": {
+      "source": "android-source/external-google-fonts-cutive-mono/CutiveMono.ttf",
+      "blueprint": "android-source/external-google-fonts-cutive-mono/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "DancingScript-Regular.ttf": {
+      "source": "android-source/external-google-fonts-dancing-script/DancingScript-Regular.ttf",
+      "blueprint": "android-source/external-google-fonts-dancing-script/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "DroidSansMono.ttf": {
+      "source": "android-source/frameworks-base/data/fonts/DroidSansMono.ttf",
+      "blueprint": "android-source/frameworks-base/data/fonts/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoColorEmoji.ttf": {
+      "source": "android-source/external-noto-fonts/emoji-compat/font/2.042/Noto-COLRv1-noflags.ttf",
+      "blueprint": "android-source/external-noto-fonts/emoji-compat/Android.bp",
+      "module_kind": "prebuilt_emoji_font"
+    },
+    "NotoColorEmojiFlags.ttf": {
+      "source": "android-source/external-noto-fonts/emoji-compat/font/2.042/NotoColorEmoji-flagsonly.ttf",
+      "blueprint": "android-source/external-noto-fonts/emoji-compat/Android.bp",
+      "module_kind": "prebuilt_flag_emoji_font"
+    },
+    "NotoColorEmojiLegacy.ttf": {
+      "source": "android-source/external-noto-fonts/emoji-compat/font/2.042/NotoColorEmoji-noflags.ttf",
+      "blueprint": "android-source/external-noto-fonts/emoji-compat/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoNaskhArabic-Bold.ttf": {
+      "source": "android-source/external-noto-fonts/notonaskharabic/NotoNaskhArabic-Bold.ttf",
+      "blueprint": "android-source/external-noto-fonts/notonaskharabic/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoNaskhArabic-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notonaskharabic/NotoNaskhArabic-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notonaskharabic/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoNaskhArabicUI-Bold.ttf": {
+      "source": "android-source/external-noto-fonts/notonaskharabicui/NotoNaskhArabicUI-Bold.ttf",
+      "blueprint": "android-source/external-noto-fonts/notonaskharabicui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoNaskhArabicUI-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notonaskharabicui/NotoNaskhArabicUI-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notonaskharabicui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansAdlam-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosansadlam/NotoSansAdlam-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansadlam/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansAhom-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notoserifahom/NotoSansAhom-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notoserifahom/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansAnatolianHieroglyphs-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosansanatolianhieroglyphs/NotoSansAnatolianHieroglyphs-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansanatolianhieroglyphs/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansArmenian-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosansarmenian/NotoSansArmenian-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansarmenian/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansAvestan-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansavestan/NotoSansAvestan-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansavestan/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansBalinese-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansbalinese/NotoSansBalinese-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansbalinese/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansBamum-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansbamum/NotoSansBamum-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansbamum/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansBassaVah-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosansbassavah/NotoSansBassaVah-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansbassavah/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansBatak-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansbatak/NotoSansBatak-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansbatak/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansBengali-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosansbengali/NotoSansBengali-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansbengali/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansBengaliUI-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosansbengaliui/NotoSansBengaliUI-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansbengaliui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansBhaiksuki-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosansbhaiksuki/NotoSansBhaiksuki-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansbhaiksuki/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansBrahmi-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansbrahmi/NotoSansBrahmi-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansbrahmi/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansBuginese-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansbuginese/NotoSansBuginese-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansbuginese/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansBuhid-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansbuhid/NotoSansBuhid-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansbuhid/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansCJK-Regular.ttc": {
+      "source": "android-source/external-noto-fonts/notosanscjk/NotoSansCJK-Regular.ttc",
+      "blueprint": "android-source/external-noto-fonts/notosanscjk/Android.bp",
+      "module_kind": "prebuilt_noto_sans_cjk"
+    },
+    "NotoSansCanadianAboriginal-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanscanadianaboriginal/NotoSansCanadianAboriginal-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanscanadianaboriginal/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansCarian-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanscarian/NotoSansCarian-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanscarian/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansChakma-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosanschakma/NotoSansChakma-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosanschakma/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansCham-Bold.ttf": {
+      "source": "android-source/external-noto-fonts/notosanscham/NotoSansCham-Bold.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanscham/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansCham-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanscham/NotoSansCham-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanscham/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansCherokee-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanscherokee/NotoSansCherokee-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanscherokee/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansCoptic-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanscoptic/NotoSansCoptic-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanscoptic/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansCuneiform-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanscuneiform/NotoSansCuneiform-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanscuneiform/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansCypriot-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanscypriot/NotoSansCypriot-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanscypriot/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansDeseret-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansdeseret/NotoSansDeseret-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansdeseret/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansDevanagari-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosansdevanagari/NotoSansDevanagari-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansdevanagari/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansDevanagariUI-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosansdevanagariui/NotoSansDevanagariUI-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansdevanagariui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansEgyptianHieroglyphs-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansegyptianhieroglyphs/NotoSansEgyptianHieroglyphs-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansegyptianhieroglyphs/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansElbasan-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosanselbasan/NotoSansElbasan-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosanselbasan/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansEthiopic-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosansethiopic/NotoSansEthiopic-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansethiopic/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansGeorgian-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosansgeorgian/NotoSansGeorgian-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansgeorgian/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansGlagolitic-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansglagolitic/NotoSansGlagolitic-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansglagolitic/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansGothic-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansgothic/NotoSansGothic-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansgothic/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansGrantha-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansgrantha/NotoSansGrantha-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansgrantha/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansGujarati-Bold.ttf": {
+      "source": "android-source/external-noto-fonts/notosansgujarati/NotoSansGujarati-Bold.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansgujarati/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansGujarati-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansgujarati/NotoSansGujarati-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansgujarati/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansGujaratiUI-Bold.ttf": {
+      "source": "android-source/external-noto-fonts/notosansgujaratiui/NotoSansGujaratiUI-Bold.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansgujaratiui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansGujaratiUI-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansgujaratiui/NotoSansGujaratiUI-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansgujaratiui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansGunjalaGondi-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosansgunjalagondi/NotoSansGunjalaGondi-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansgunjalagondi/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansGurmukhi-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosansgurmukhi/NotoSansGurmukhi-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansgurmukhi/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansGurmukhiUI-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosansgurmukhiui/NotoSansGurmukhiUI-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansgurmukhiui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansHanifiRohingya-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosanshanifirohingya/NotoSansHanifiRohingya-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosanshanifirohingya/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansHanunoo-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanshanunoo/NotoSansHanunoo-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanshanunoo/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansHatran-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosanshatran/NotoSansHatran-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosanshatran/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansHebrew-Bold.ttf": {
+      "source": "android-source/external-noto-fonts/notosanshebrew/1.04/NotoSansHebrew-Bold.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanshebrew/Android.bp",
+      "module_kind": "prebuilt_hebrew_font"
+    },
+    "NotoSansHebrew-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanshebrew/1.04/NotoSansHebrew-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanshebrew/Android.bp",
+      "module_kind": "prebuilt_hebrew_font"
+    },
+    "NotoSansImperialAramaic-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansimperialaramaic/NotoSansImperialAramaic-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansimperialaramaic/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansInscriptionalPahlavi-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansinscriptionalpahlavi/NotoSansInscriptionalPahlavi-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansinscriptionalpahlavi/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansInscriptionalParthian-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansinscriptionalparthian/NotoSansInscriptionalParthian-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansinscriptionalparthian/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansJavanese-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosansjavanese/NotoSansJavanese-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansjavanese/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansKaithi-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanskaithi/NotoSansKaithi-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanskaithi/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansKannada-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosanskannada/NotoSansKannada-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanskannada/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansKannadaUI-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosanskannadaui/NotoSansKannadaUI-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanskannadaui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansKayahLi-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanskayahli/NotoSansKayahLi-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanskayahli/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansKharoshthi-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanskharoshthi/NotoSansKharoshthi-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanskharoshthi/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansKhmer-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosanskhmer/NotoSansKhmer-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanskhmer/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansKhmerUI-Bold.ttf": {
+      "source": "android-source/external-noto-fonts/notosanskhmerui/NotoSansKhmerUI-Bold.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanskhmerui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansKhmerUI-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanskhmerui/NotoSansKhmerUI-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanskhmerui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansKhojki-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosanskhojki/NotoSansKhojki-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosanskhojki/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansLao-Bold.ttf": {
+      "source": "android-source/external-noto-fonts/notosanslao/NotoSansLao-Bold.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanslao/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansLao-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanslao/NotoSansLao-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanslao/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansLaoUI-Bold.ttf": {
+      "source": "android-source/external-noto-fonts/notosanslaoui/NotoSansLaoUI-Bold.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanslaoui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansLaoUI-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanslaoui/NotoSansLaoUI-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanslaoui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansLepcha-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanslepcha/NotoSansLepcha-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanslepcha/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansLimbu-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanslimbu/NotoSansLimbu-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanslimbu/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansLinearA-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosanslineara/NotoSansLinearA-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosanslineara/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansLinearB-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanslinearb/NotoSansLinearB-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanslinearb/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansLisu-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanslisu/NotoSansLisu-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanslisu/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansLycian-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanslycian/NotoSansLycian-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanslycian/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansLydian-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanslydian/NotoSansLydian-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanslydian/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansMalayalam-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosansmalayalam/NotoSansMalayalam-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansmalayalam/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansMalayalamUI-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosansmalayalamui/NotoSansMalayalamUI-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansmalayalamui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansMandaic-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansmandaic/NotoSansMandaic-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansmandaic/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansManichaean-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosansmanichaean/NotoSansManichaean-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansmanichaean/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansMarchen-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosansmarchen/NotoSansMarchen-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansmarchen/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansMasaramGondi-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosansmasaramgondi/NotoSansMasaramGondi-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansmasaramgondi/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansMedefaidrin-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosansmedefaidrin/NotoSansMedefaidrin-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansmedefaidrin/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansMeeteiMayek-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansmeeteimayek/NotoSansMeeteiMayek-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansmeeteimayek/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansMeroitic-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosansmeroitic/NotoSansMeroitic-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansmeroitic/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansMiao-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosansmiao/NotoSansMiao-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansmiao/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansModi-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansmodi/NotoSansModi-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansmodi/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansMongolian-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansmongolian/NotoSansMongolian-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansmongolian/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansMro-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosansmro/NotoSansMro-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansmro/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansMultani-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosansmultani/NotoSansMultani-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansmultani/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansMyanmar-Bold.otf": {
+      "source": "android-source/external-noto-fonts/notosansmyanmar/NotoSansMyanmar-Bold.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansmyanmar/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansMyanmar-Medium.otf": {
+      "source": "android-source/external-noto-fonts/notosansmyanmar/NotoSansMyanmar-Medium.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansmyanmar/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansMyanmar-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosansmyanmar/NotoSansMyanmar-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansmyanmar/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansMyanmarUI-Bold.otf": {
+      "source": "android-source/external-noto-fonts/notosansmyanmarui/NotoSansMyanmarUI-Bold.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansmyanmarui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansMyanmarUI-Medium.otf": {
+      "source": "android-source/external-noto-fonts/notosansmyanmarui/NotoSansMyanmarUI-Medium.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansmyanmarui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansMyanmarUI-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosansmyanmarui/NotoSansMyanmarUI-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansmyanmarui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansNKo-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansnko_todelist/NotoSansNKo-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansnko_todelist/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansNabataean-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosansnabataean/NotoSansNabataean-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansnabataean/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansNewTaiLue-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansnewtailue/NotoSansNewTaiLue-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansnewtailue/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansNewa-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosansnewa/NotoSansNewa-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansnewa/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansOgham-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansogham/NotoSansOgham-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansogham/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansOlChiki-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansolchiki/NotoSansOlChiki-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansolchiki/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansOldItalic-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansolditalic/NotoSansOldItalic-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansolditalic/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansOldNorthArabian-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosansoldnortharabian/NotoSansOldNorthArabian-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansoldnortharabian/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansOldPermic-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosansoldpermic/NotoSansOldPermic-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosansoldpermic/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansOldPersian-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansoldpersian/NotoSansOldPersian-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansoldpersian/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansOldSouthArabian-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansoldsoutharabian/NotoSansOldSouthArabian-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansoldsoutharabian/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansOldTurkic-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansoldturkic/NotoSansOldTurkic-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansoldturkic/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansOriya-Bold.ttf": {
+      "source": "android-source/external-noto-fonts/notosansoriya/NotoSansOriya-Bold.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansoriya/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansOriya-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansoriya/NotoSansOriya-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansoriya/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansOriyaUI-Bold.ttf": {
+      "source": "android-source/external-noto-fonts/notosansoriyaui/NotoSansOriyaUI-Bold.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansoriyaui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansOriyaUI-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansoriyaui/NotoSansOriyaUI-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansoriyaui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansOsage-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansosage/NotoSansOsage-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansosage/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansOsmanya-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansosmanya/NotoSansOsmanya-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansosmanya/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansPahawhHmong-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosanspahawhhmong/NotoSansPahawhHmong-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosanspahawhhmong/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansPalmyrene-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosanspalmyrene/NotoSansPalmyrene-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosanspalmyrene/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansPauCinHau-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosanspaucinhau/NotoSansPauCinHau-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosanspaucinhau/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansPhagsPa-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansphagspa/NotoSansPhagsPa-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansphagspa/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansPhoenician-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansphoenician/NotoSansPhoenician-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansphoenician/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansRejang-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansrejang/NotoSansRejang-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansrejang/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansRunic-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansrunic/NotoSansRunic-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansrunic/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansSamaritan-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanssamaritan/NotoSansSamaritan-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanssamaritan/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansSaurashtra-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanssaurashtra/NotoSansSaurashtra-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanssaurashtra/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansSharada-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosanssharada/NotoSansSharada-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosanssharada/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansShavian-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansshavian/NotoSansShavian-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansshavian/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansSinhala-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosanssinhala/NotoSansSinhala-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanssinhala/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansSinhalaUI-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosanssinhalaui/NotoSansSinhalaUI-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanssinhalaui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansSoraSompeng-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosanssorasompeng/NotoSansSoraSompeng-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosanssorasompeng/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansSoyombo-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosanssoyombo/NotoSansSoyombo-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanssoyombo/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansSundanese-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanssundanese/NotoSansSundanese-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanssundanese/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansSylotiNagri-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanssylotinagri/NotoSansSylotiNagri-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanssylotinagri/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansSymbols-Regular-Subsetted.ttf": {
+      "source": "android-source/external-noto-fonts/notosanssymbols/NotoSansSymbols-Regular-Subsetted.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanssymbols/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansSymbols-Regular-Subsetted2.ttf": {
+      "source": "android-source/external-noto-fonts/notosanssymbols/NotoSansSymbols-Regular-Subsetted2.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanssymbols/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansSyriacEastern-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanssyriac/NotoSansSyriacEastern-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanssyriac/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansSyriacEstrangela-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanssyriac/NotoSansSyriacEstrangela-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanssyriac/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansSyriacWestern-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanssyriac/NotoSansSyriacWestern-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanssyriac/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansTagalog-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanstagalog/NotoSansTagalog-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanstagalog/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansTagbanwa-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanstagbanwa/NotoSansTagbanwa-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanstagbanwa/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansTaiLe-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanstaile/NotoSansTaiLe-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanstaile/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansTaiTham-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanstaitham/NotoSansTaiTham-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanstaitham/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansTaiViet-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosanstaiviet/NotoSansTaiViet-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanstaiviet/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansTakri-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosanstakri/NotoSansTakri-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanstakri/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansTamil-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosanstamil/NotoSansTamil-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanstamil/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansTamilUI-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosanstamilui/NotoSansTamilUI-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanstamilui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansTelugu-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosanstelugu/NotoSansTelugu-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosanstelugu/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansTeluguUI-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notosansteluguui/NotoSansTeluguUI-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansteluguui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansThaana-Bold.ttf": {
+      "source": "android-source/external-noto-fonts/notosansthaana/NotoSansThaana-Bold.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansthaana/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansThaana-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansthaana/NotoSansThaana-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansthaana/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansThai-Bold.ttf": {
+      "source": "android-source/external-noto-fonts/notosansthai/NotoSansThai-Bold.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansthai/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansThai-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansthai/NotoSansThai-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansthai/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansThaiUI-Bold.ttf": {
+      "source": "android-source/external-noto-fonts/notosansthaiui/NotoSansThaiUI-Bold.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansthaiui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansThaiUI-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansthaiui/NotoSansThaiUI-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansthaiui/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansTifinagh-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosanstifinagh/NotoSansTifinagh-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosanstifinagh/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansUgaritic-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansugaritic/NotoSansUgaritic-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansugaritic/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansVai-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansvai/NotoSansVai-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansvai/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansWancho-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosanswancho/NotoSansWancho-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosanswancho/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansWarangCiti-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notosanswarangciti/NotoSansWarangCiti-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notosanswarangciti/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSansYi-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notosansyi/NotoSansYi-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notosansyi/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerif-Bold.ttf": {
+      "source": "android-source/external-noto-fonts/notoserif/NotoSerif-Bold.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserif/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerif-BoldItalic.ttf": {
+      "source": "android-source/external-noto-fonts/notoserif/NotoSerif-BoldItalic.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserif/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerif-Italic.ttf": {
+      "source": "android-source/external-noto-fonts/notoserif/NotoSerif-Italic.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserif/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerif-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notoserif/NotoSerif-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserif/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifArmenian-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notoserifarmenian/NotoSerifArmenian-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserifarmenian/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifBengali-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notoserifbengali/NotoSerifBengali-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserifbengali/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifCJK-Regular.ttc": {
+      "source": "android-source/external-noto-fonts/notoserifcjk/NotoSerifCJK-Regular.ttc",
+      "blueprint": "android-source/external-noto-fonts/notoserifcjk/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifDevanagari-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notoserifdevanagari/NotoSerifDevanagari-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserifdevanagari/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifDogra-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notoserifdogra/NotoSerifDogra-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserifdogra/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifEthiopic-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notoserifethiopic/NotoSerifEthiopic-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserifethiopic/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifGeorgian-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notoserifgeorgian/NotoSerifGeorgian-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserifgeorgian/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifGujarati-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notoserifgujarati/NotoSerifGujarati-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserifgujarati/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifGurmukhi-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notoserifgurmukhi/NotoSerifGurmukhi-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserifgurmukhi/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifHebrew-Bold.ttf": {
+      "source": "android-source/external-noto-fonts/notoserifhebrew/NotoSerifHebrew-Bold.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserifhebrew/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifHebrew-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notoserifhebrew/NotoSerifHebrew-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserifhebrew/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifHentaigana.ttf": {
+      "source": "android-source/external-noto-fonts/notoserifhentaigana/NotoSerifHentaigana.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserifhentaigana/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifKannada-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notoserifkannada/NotoSerifKannada-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserifkannada/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifKhmer-Bold.otf": {
+      "source": "android-source/external-noto-fonts/notoserifkhmer/NotoSerifKhmer-Bold.otf",
+      "blueprint": "android-source/external-noto-fonts/notoserifkhmer/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifKhmer-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notoserifkhmer/NotoSerifKhmer-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notoserifkhmer/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifLao-Bold.ttf": {
+      "source": "android-source/external-noto-fonts/notoseriflao/NotoSerifLao-Bold.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoseriflao/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifLao-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notoseriflao/NotoSerifLao-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoseriflao/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifMalayalam-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notoserifmalayalam/NotoSerifMalayalam-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserifmalayalam/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifMyanmar-Bold.otf": {
+      "source": "android-source/external-noto-fonts/notoserifmyanmar/NotoSerifMyanmar-Bold.otf",
+      "blueprint": "android-source/external-noto-fonts/notoserifmyanmar/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifMyanmar-Regular.otf": {
+      "source": "android-source/external-noto-fonts/notoserifmyanmar/NotoSerifMyanmar-Regular.otf",
+      "blueprint": "android-source/external-noto-fonts/notoserifmyanmar/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifNyiakengPuachueHmong-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notoserifnyiakengpuachuehmong/NotoSerifNyiakengPuachueHmong-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserifnyiakengpuachuehmong/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifSinhala-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notoserifsinhala/NotoSerifSinhala-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserifsinhala/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifTamil-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notoseriftamil/NotoSerifTamil-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoseriftamil/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifTelugu-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notoseriftelugu/NotoSerifTelugu-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoseriftelugu/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifThai-Bold.ttf": {
+      "source": "android-source/external-noto-fonts/notoserifthai/NotoSerifThai-Bold.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserifthai/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifThai-Regular.ttf": {
+      "source": "android-source/external-noto-fonts/notoserifthai/NotoSerifThai-Regular.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserifthai/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifTibetan-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notoseriftibetan/NotoSerifTibetan-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoseriftibetan/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "NotoSerifYezidi-VF.ttf": {
+      "source": "android-source/external-noto-fonts/notoserifyezidi/NotoSerifYezidi-VF.ttf",
+      "blueprint": "android-source/external-noto-fonts/notoserifyezidi/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "Roboto-Regular.ttf": {
+      "source": "android-source/external-roboto-fonts/Roboto-Regular.ttf",
+      "blueprint": "android-source/external-roboto-fonts/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "RobotoFlex-Regular.ttf": {
+      "source": "android-source/external-roboto-flex-fonts/RobotoFlex-Regular.ttf",
+      "blueprint": "android-source/external-roboto-flex-fonts/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "RobotoStatic-Regular.ttf": {
+      "source": "android-source/external-roboto-fonts/RobotoStatic-Regular.ttf",
+      "blueprint": "android-source/external-roboto-fonts/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "SourceSansPro-Bold.ttf": {
+      "source": "android-source/external-google-fonts-source-sans-pro/SourceSansPro-Bold.ttf",
+      "blueprint": "android-source/external-google-fonts-source-sans-pro/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "SourceSansPro-BoldItalic.ttf": {
+      "source": "android-source/external-google-fonts-source-sans-pro/SourceSansPro-BoldItalic.ttf",
+      "blueprint": "android-source/external-google-fonts-source-sans-pro/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "SourceSansPro-Italic.ttf": {
+      "source": "android-source/external-google-fonts-source-sans-pro/SourceSansPro-Italic.ttf",
+      "blueprint": "android-source/external-google-fonts-source-sans-pro/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "SourceSansPro-Regular.ttf": {
+      "source": "android-source/external-google-fonts-source-sans-pro/SourceSansPro-Regular.ttf",
+      "blueprint": "android-source/external-google-fonts-source-sans-pro/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "SourceSansPro-SemiBold.ttf": {
+      "source": "android-source/external-google-fonts-source-sans-pro/SourceSansPro-SemiBold.ttf",
+      "blueprint": "android-source/external-google-fonts-source-sans-pro/Android.bp",
+      "module_kind": "prebuilt_font"
+    },
+    "SourceSansPro-SemiBoldItalic.ttf": {
+      "source": "android-source/external-google-fonts-source-sans-pro/SourceSansPro-SemiBoldItalic.ttf",
+      "blueprint": "android-source/external-google-fonts-source-sans-pro/Android.bp",
+      "module_kind": "prebuilt_font"
+    }
+  },
+  "aliases": {
+    "DroidSans.ttf": "Roboto-Regular.ttf",
+    "DroidSans-Bold.ttf": "Roboto-Regular.ttf"
+  }
+}

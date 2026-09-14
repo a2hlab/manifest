@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "profile": "android15-renderer-dependencies",
+  "projects": [
+    {
+      "path": "android-source/giflib-android15",
+      "url": "https://github.com/a2hlab/dep-android-source-giflib-android15.git",
+      "revision": "84947bfa7bc689ce9d4b0b4f751eaf03ce7c0cef",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/giflib",
+        "revision": "b771f86bcb3d0086ee5eda84da70634e7ab746dd",
+        "tree": "ce4bf9a1f3b15d59d7187d1a6d98a1c05cfac554"
+      }
+    },
+    {
+      "path": "android-source/libultrahdr-android15",
+      "url": "https://github.com/a2hlab/dep-android-source-libultrahdr-android15.git",
+      "revision": "53edb9ce533468cd9d468e1c7f974e353c6fe2df",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/libultrahdr",
+        "revision": "448f96ed83151f92fdaf840075f385b4c56315a7",
+        "tree": "3f3c0d48fcc7f3d2582fb9dfa9b2be8b1c2d2141"
+      }
+    },
+    {
+      "path": "android-source/hardware-libhardware",
+      "url": "https://github.com/a2hlab/dep-android-source-hardware-libhardware.git",
+      "revision": "bc4205be9aa4a1f458ced4057d35305ab6ff4b71",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/hardware/libhardware",
+        "revision": "58faa60aadb6e17fc0af9b0e5246a09ec046ec96",
+        "tree": "571f7398fc488bda50baeee81c6cfeda19dbd897"
+      }
+    },
+    {
+      "path": "android-source/system-libfmq",
+      "url": "https://github.com/a2hlab/dep-android-source-system-libfmq.git",
+      "revision": "e57df083d27f44dc3df1bf0c20589874cf9d3e33",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/libfmq",
+        "revision": "e913a84568c39e832af34035fe93f813cc5133c7",
+        "tree": "767cdd1dd39e5976cd29f58f081c8f72cf8ae031"
+      }
+    }
+  ]
+}

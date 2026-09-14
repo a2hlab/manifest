@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "scope": "Generic isolated Android font root at the host filesystem boundary",
+  "files": {
+    "frameworks-base/graphics/java/android/graphics/fonts/SystemFonts.java": {
+      "\"/system/etc/font_fallback.xml\"": "System.getProperty(\"westlake.android.root\", \"/system\") + \"/etc/font_fallback.xml\"",
+      "\"/system/etc/fonts.xml\"": "System.getProperty(\"westlake.android.root\", \"/system\") + \"/etc/fonts.xml\"",
+      "\"/system/fonts/\"": "System.getProperty(\"westlake.android.root\", \"/system\") + \"/fonts/\"",
+      "\"/product/etc/fonts_customization.xml\"": "System.getProperty(\"westlake.android.product\", \"/product\") + \"/etc/fonts_customization.xml\"",
+      "\"/product/fonts/\"": "System.getProperty(\"westlake.android.product\", \"/product\") + \"/fonts/\""
+    },
+    "frameworks-base/graphics/java/android/graphics/Typeface.java": {
+      "\"/system/fonts/Roboto-Regular.ttf\"": "SystemFonts.SYSTEM_FONT_DIR + \"Roboto-Regular.ttf\"",
+      "\"/system/fonts/RobotoStatic-Regular.ttf\"": "SystemFonts.SYSTEM_FONT_DIR + \"RobotoStatic-Regular.ttf\""
+    }
+  }
+}

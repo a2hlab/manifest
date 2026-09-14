@@ -16,12 +16,12 @@
     {
       "path": "westlake",
       "url": "https://github.com/a2hlab/westlake.git",
-      "revision": "fbc6a1f292e5d14e3c6b42c78ada36a02ebeec3f"
+      "revision": "e2b0bf669ca33459c74618883614f4c603fbccbb"
     },
     {
       "path": "art-build",
       "url": "https://github.com/a2hlab/art-build.git",
-      "revision": "6783038a99b281a7aca50e649952f32d964dd35d"
+      "revision": "9acbaec8c3bd0c696995def1d14c959094ecf8b7"
     },
     {
       "path": "aosp-art-15",

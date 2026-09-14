@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "profile": "android15-text-layout",
+  "projects": [
+    {
+      "path": "android-source/minikin-android15",
+      "url": "https://github.com/a2hlab/dep-android-source-minikin-android15.git",
+      "revision": "4e0e648148d7f8bede8f1f9eb26cdca336f3e78d",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/frameworks/minikin",
+        "revision": "b41e852cee7ffcc52ab476aa52db5644812ec114",
+        "tree": "8c3a77a13d7f4f4e786dd3074d12415e433eb1e6"
+      }
+    }
+  ]
+}

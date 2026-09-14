@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "projects": [
+    {
+      "path": "inputs/kotlin1822",
+      "url": "https://github.com/a2hlab/dep-kotlin-compiler1822.git",
+      "revision": "530e70fd4ef767d2f4fb832cc1b1b057136116f5",
+      "lfs": true
+    }
+  ]
+}
