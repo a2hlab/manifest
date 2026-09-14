@@ -52,7 +52,7 @@ replace a clone with its LFS objects. SDK native metadata is
 6.1.0.31/API23; app bytecode explicitly targets API20 for the legacy device.
 
 ```sh
-git clone https://github.com/a2hlab/manifest.git a2hlab-manifest
+git clone --branch source-stack-closure --single-branch https://github.com/a2hlab/manifest.git a2hlab-manifest
 cd a2hlab-manifest
 python3 tools/fetch_sources.py --workspace /absolute/new-a2hlab-workspace
 python3 tools/install_toolchains.py --workspace /absolute/new-a2hlab-workspace
