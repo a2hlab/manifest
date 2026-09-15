@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "projects": [
+    {
+      "path": "android-source/aconfig-crates",
+      "url": "https://github.com/a2hlab/dep-aconfig-rust-crates.git",
+      "revision": "80b5427f046d005bdafc7878b2fca0d4e8d5e77a",
+      "scope": "compiler dependency sources with crates.io checksums; not runtime binaries"
+    }
+  ]
+}

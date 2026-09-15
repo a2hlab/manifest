@@ -1,0 +1,128 @@
+{
+  "schema": 1,
+  "profile": "android15-framework-dependencies",
+  "projects": [
+    {
+      "path": "android-source/modules-adservices",
+      "android_path": "packages/modules/AdServices",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-adservices.git",
+      "revision": "32ff8a5fdfaef41397b2bf5318cc350329ecf489",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/AdServices",
+        "revision": "563c714668050f1f628f74ac14e8655dbd391cbe",
+        "tree": "af2fcb2e5696acaeb2610c7b135af381027c15eb"
+      }
+    },
+    {
+      "path": "android-source/modules-appsearch",
+      "android_path": "packages/modules/AppSearch",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-appsearch.git",
+      "revision": "ff16c890c4d0b02cb4213f5a3f1ab912d7556c86",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/AppSearch",
+        "revision": "5776d8d321cc3525886ff4b507eb7b448b865951",
+        "tree": "b799ede48e35c53c3a06ee7a263a0c6f2b2dc8e1"
+      }
+    },
+    {
+      "path": "android-source/modules-extservices",
+      "android_path": "packages/modules/ExtServices",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-extservices.git",
+      "revision": "07f7fb02be084ecaaf7ae2e398ca5a67c2d22702",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/ExtServices",
+        "revision": "9d26eb65d2a118e4b242b5fad1432e1b86e00418",
+        "tree": "91b0a1a40e680a6ca4d08fba6957745d0c1327de"
+      }
+    },
+    {
+      "path": "android-source/modules-healthfitness",
+      "android_path": "packages/modules/HealthFitness",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-healthfitness.git",
+      "revision": "57392eb9e50b27692f180a2ae83901e43afca2ec",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/HealthFitness",
+        "revision": "37f52da6d15b630868ff4338652a9f9e225e2bc6",
+        "tree": "97f6f5d79bc8451062cd978726b3a693237dcba5"
+      }
+    },
+    {
+      "path": "android-source/modules-ondevicepersonalization",
+      "android_path": "packages/modules/OnDevicePersonalization",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-ondevicepersonalization.git",
+      "revision": "d095529a59b6d7975cf37db7d8f7c25de4b8559e",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/OnDevicePersonalization",
+        "revision": "3195f6b6babad2ab7c63bc7b28f9876c58e245ef",
+        "tree": "40066cdd4d7b1a403d729709858a2eaf8e771e32"
+      }
+    },
+    {
+      "path": "android-source/modules-profiling",
+      "android_path": "packages/modules/Profiling",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-profiling.git",
+      "revision": "4663bd3280e87ec760ad4f448f92b42b2ddd349e",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/Profiling",
+        "revision": "80382258289dda9a692f3ea5f58b8bc41792ae43",
+        "tree": "cb7e40683f8875d2094dcf7164e6a7fa60ee5572"
+      }
+    },
+    {
+      "path": "android-source/modules-scheduling",
+      "android_path": "packages/modules/Scheduling",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-scheduling.git",
+      "revision": "1f6bb3ac20dc16ef923c1f6bd176c8ddfff332b4",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/Scheduling",
+        "revision": "82f4ac84261a8f16f048072abc4a9b07567fa4e5",
+        "tree": "07c883ce993a591f0f2590f7a4814c5aab7decca"
+      }
+    },
+    {
+      "path": "android-source/modules-statsd",
+      "android_path": "packages/modules/StatsD",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-statsd.git",
+      "revision": "d96c3e594af4eca1223f51780c975a69da0b7a1e",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/StatsD",
+        "revision": "95f509bb8b4ff6f6148ac52bda328e3a580eb79e",
+        "tree": "27ef469002b72055bcd13ee99432490791de7b29"
+      }
+    },
+    {
+      "path": "android-source/modules-uwb",
+      "android_path": "packages/modules/Uwb",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-uwb.git",
+      "revision": "fdd8f59de8a95b356f6092337f53044a9a2a1679",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/Uwb",
+        "revision": "ad0ad840e8ecf9eeea28cf5dc8879aaf3eeb7f6e",
+        "tree": "e72ef12f13bbdb26011b697d428ba25ed661876e"
+      }
+    },
+    {
+      "path": "android-source/modules-virtualization",
+      "android_path": "packages/modules/Virtualization",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-virtualization.git",
+      "revision": "3c1aede088a6cfa63339794aad456dc0fe820e68",
+      "lfs_paths": [
+        "libs/apkverify/tests/data/input.272629760"
+      ],
+      "large_fixture_scope": "Upstream apkverify synthetic large-input tests; excluded from the runtime build",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/Virtualization",
+        "revision": "fb58d45765319e46e2c95c34532ad343e0b9232e",
+        "tree": "1a58c9ce25c64df3da268cc4affc589bf3e85903"
+      },
+      "lfs": true,
+      "lfs_files": {
+        "libs/apkverify/tests/data/input.272629760": {
+          "sha256": "5f3c4c7a03a42948e80bcd7ffc89592d266bfccd3f438c206f69a2e0db7ac8a4",
+          "bytes": 272629760
+        }
+      },
+      "snapshot_tree": "87575306564ce7a91a88394fd36700f7c2dd2816"
+    }
+  ]
+}

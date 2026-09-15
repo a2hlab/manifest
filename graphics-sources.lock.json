@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "profile": "graphics-sources",
+  "projects": [
+    {
+      "path": "android-source/oh-skia",
+      "url": "https://github.com/a2hlab/dep-android-source-oh-skia.git",
+      "revision": "d9add872a957a7b027e90945c8475aaa5f6b3134",
+      "upstream": {
+        "url": "https://github.com/openharmony/third_party_skia.git",
+        "revision": "31fda4ea21f035509f5bcf761e787fd8eb3a8811",
+        "tree": "a429a22f71cfe96ddf580815e195701d9b6976d9"
+      }
+    },
+    {
+      "path": "android-source/oh61-source-carrier",
+      "url": "https://github.com/a2hlab/00.Workspace-vendor.git",
+      "revision": "59d95514ad363dbcfe1a0a5230c009a7a878d317",
+      "sparse_paths": [
+        "upstream/sources/oh61-v7-b2133b5b"
+      ],
+      "scope": "OH 6.1.0.31 platform headers and bridge source provenance; no captured runtime binaries"
+    }
+  ]
+}

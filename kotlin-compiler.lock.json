@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "repository_path": "inputs/kotlin1822",
+  "path": "kotlin-compiler-1.8.22.zip",
+  "url": "https://github.com/JetBrains/kotlin/releases/download/v1.8.22/kotlin-compiler-1.8.22.zip",
+  "sha256": "91f50fe25c9edfb1e79ae1fe2ede85fa4728f7f4b0587644a4eee40252cdfaa6",
+  "bytes": 76338547,
+  "home": "kotlinc",
+  "tree_sha256": "d00905e5afa55ae8bc22d75261a47e158e9ef790eafc6ac410c87f5dd6b357fc"
+}

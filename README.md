@@ -1,4 +1,11 @@
-# A2H Lab: legacy Toutiao rebuild manifest
+# A2H Lab: Android/Westlake source rebuild manifest
+
+The target is **source-built Android/Westlake with Toutiao supplied as a pinned
+original APK**. Toutiao source code is not a build requirement. See
+[SOURCE_STACK.md](SOURCE_STACK.md) for the source build paths, original APK
+staging command, and remaining full-stack gates. The [source-core validation
+record](reports/source-stack-progress.json) contains fresh offline build hashes
+and connected-device startup results.
 
 Canonical organization: **https://github.com/a2hlab**. These private repositories
 are independent of the organization's Android 16 work:
@@ -10,12 +17,12 @@ are independent of the organization's Android 16 work:
 | [aosp-art-15](https://github.com/a2hlab/aosp-art-15) | Modified ART source with its original upstream Git ancestry |
 | [manifest](https://github.com/a2hlab/manifest) | Exact revisions/patches, toolchain content locks, bootstrap/build/verification tools and open full-build gates |
 | [toolchains](https://github.com/a2hlab/toolchains) | Actual SDK/compiler build-input archives in Git LFS, with hashes and original notices |
-| `dep-*` (16 repositories) | Vendored upstream source trees; exact revisions and patches in the included locks |
+| `dep-*` (exact revisions in the source locks) | Vendored upstream source trees; exact revisions and patches in the included locks |
 | [legacy-runtime-sources](https://github.com/a2hlab/legacy-runtime-sources) | Preserved HWUI/Minikin/FreeType/HarfBuzz/WebP sources and local compatibility headers; not an accepted full runtime build |
 
 Profile: `toutiao-aosp15-oh61-legacy`. **This is not yet a complete reproducible
-Toutiao stack.** Native helpers, unsigned host/Pinyin packages, and ART source
-builds are separate milestones. `full-build-gaps.json` is machine-readable and
+Toutiao stack.** Native helpers, unsigned host/Pinyin packages, ART/host dex2oat, seven core Java
+JARs with a boot image, native support, and framework source generators are separate milestones. `full-build-gaps.json` is machine-readable and
 the `full` build command fails closed; it never substitutes candidate04, old
 objects, board JARs or copied device libraries. See [STATUS.md](STATUS.md) for
 exact verified scope and remaining work.
@@ -23,6 +30,14 @@ exact verified scope and remaining work.
 The [Android-reference parity follow-up](PARITY27.md) pins the generic JIT
 file-cache/runtime fixes, portable controls, benchmark verification and binary
 dependency inventories. It retains the full-build gate.
+
+The [2026-09-14 fresh-checkout record](reports/fresh-checkout-20260914.json)
+verifies that the then-current `source-stack-closure` branch could fetch its pinned a2hlab
+repository, install both toolchains and rebuild the documented `native`, `apps`
+and `art` profiles from a new workspace. The newer `main` source pin needs its
+own fresh-checkout run. The `full` profile still exits 2 and
+refuses historical binary fallback; this is component reproducibility, not a
+fresh end-to-end Toutiao run.
 
 ## Bootstrap on a clean Linux x86-64 workstation
 
@@ -38,7 +53,7 @@ replace a clone with its LFS objects. SDK native metadata is
 6.1.0.31/API23; app bytecode explicitly targets API20 for the legacy device.
 
 ```sh
-git clone https://github.com/a2hlab/manifest.git a2hlab-manifest
+git clone --branch main --single-branch https://github.com/a2hlab/manifest.git a2hlab-manifest
 cd a2hlab-manifest
 python3 tools/fetch_sources.py --workspace /absolute/new-a2hlab-workspace
 python3 tools/install_toolchains.py --workspace /absolute/new-a2hlab-workspace
@@ -84,11 +99,10 @@ deterministic unsigned HAPs. No signing keys, profiles, installed apps, raw app
 logs or user data are distributed. Signing and device installation are separate
 operator-controlled steps; do not deploy unaccepted runtime candidates.
 
-The ART source link records unresolved dynamic symbols. This is intentional
-visibility, not permission to ignore them: the full process must supply the
-correct platform libc++, binder JNI, WebP and other providers before deployability
-can pass. The old `Makefile` host and historical scripts are not portable entry
-points and are not part of the accepted source-build profiles.
+The ART profile records dynamic imports and requires closure against its
+explicit SDK/platform dependencies. WebP is built from preserved source;
+platform libc++ supplies the correct ABI. `host-tools` uses `Makefile.host`,
+not the historical `Makefile`. Device runtime/UX acceptance remains separate.
 
 ## Repeatability
 
@@ -109,7 +123,8 @@ cross-host/cross-distribution hermetic claim is made.
 
 ## Preserved sources for the unfinished full runtime
 
-These optional inputs are separate from the three verified profiles:
+The preserved graphics repository is now included by the default source lock
+(WebP is needed by ART). To fetch it separately into an otherwise new checkout:
 
 ```sh
 python3 tools/fetch_sources.py --workspace /absolute/new-a2hlab-workspace --lock runtime-sources.lock.json
@@ -117,8 +132,9 @@ python3 tools/verify_preserved_sources.py --repository /absolute/new-a2hlab-work
 ```
 
 This verifies preservation of the local graphics dependencies and compatibility
-overlays. It does not build them or close the core/framework, generated-header,
-Skia, board OS/provider or app-input gaps. See [DEPENDENCIES.md](DEPENDENCIES.md).
+overlays. The ART profile builds its WebP decoder. The remaining graphics/framework
+recipes and full payload acceptance are still open; the original APK has its
+own content lock. See [DEPENDENCIES.md](DEPENDENCIES.md).
 
 ## Source provenance and preservation
 

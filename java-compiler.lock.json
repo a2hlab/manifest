@@ -1,0 +1,11 @@
+{
+  "repository_path": "inputs/jdk21",
+  "path": "OpenJDK21U-jdk_x64_linux_hotspot_21.0.6_7.tar.gz",
+  "sha256": "a2650fba422283fbed20d936ce5d2a52906a5414ec17b2f7676dddb87201dbae",
+  "bytes": 206861665,
+  "tree_sha256": "2c75e7295217b3ee512e4cd3e9c449be1cc62514b4a25291aa06fd476710b2b0",
+  "home": "jdk-21.0.6+7",
+  "version": "Eclipse Temurin OpenJDK 21.0.6+7",
+  "upstream": "https://github.com/adoptium/temurin21-binaries/releases/tag/jdk-21.0.6%2B7",
+  "scope": "Pinned compiler distribution; not a source-bootstrap claim"
+}

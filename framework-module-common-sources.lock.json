@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "profile": "android15-framework-dependencies",
+  "projects": [
+    {
+      "path": "android-source/modules-common",
+      "android_path": "packages/modules/common",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-common.git",
+      "revision": "d3d1009dd96bddaa6c5c39e062f077568c025222",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/common",
+        "revision": "cd899d322ead9fc2ec176200fa404a7f1917b9a1",
+        "tree": "afdc8c8f885ac989fea8b6400de83fb61f9d235e"
+      }
+    },
+    {
+      "path": "android-source/system-apex",
+      "android_path": "system/apex",
+      "url": "https://github.com/a2hlab/dep-android-source-system-apex.git",
+      "revision": "b012e58f60802888693347faa63799b8289052dc",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/system/apex",
+        "revision": "896cdde58b67ddbf37ffdfe06f5b2567ef770f70",
+        "tree": "95d81026ce2264ae075f83caf7793460e6c503e6"
+      }
+    }
+  ]
+}

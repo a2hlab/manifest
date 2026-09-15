@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "scope": "Source preservation only; not part of the accepted component build graph",
+  "scope": "Preserved runtime sources; declared WebP decoder sources now participate in the ART component graph",
   "projects": [
     {
       "path": "preserved/runtime-sources",

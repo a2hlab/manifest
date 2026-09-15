@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "profile": "oh61-libselinux-source-headers",
+  "projects": [
+    {
+      "path": "android-source/oh-libselinux",
+      "url": "https://github.com/a2hlab/dep-android-source-oh-libselinux.git",
+      "revision": "0b50aa3aa140e1dd4750f2ac03a49e6350d56cec",
+      "release_branch": "OpenHarmony-6.1-Release",
+      "upstream": {
+        "url": "https://github.com/openharmony/third_party_selinux.git",
+        "revision": "f8a0f14aa092d9687ce3d3cfbd0372be3345e43a",
+        "tree": "07955d7032f0ef97172f916fb1d91dbfbf00562c"
+      }
+    }
+  ]
+}

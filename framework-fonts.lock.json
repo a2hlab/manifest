@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "profile": "android15-framework-dependencies",
+  "projects": [
+    {
+      "path": "android-source/external-google-fonts-carrois-gothic-sc",
+      "android_path": "external/google-fonts/carrois-gothic-sc",
+      "url": "https://github.com/a2hlab/dep-android-source-external-google-fonts-carrois-gothic-sc.git",
+      "revision": "eaffb08d3a1c714c232aca2ac62f12168a3f953d",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/google-fonts/carrois-gothic-sc",
+        "revision": "4290760dcda7718a329f9cb70660925be83e6c27",
+        "tree": "088229cd6f590400e0e5c7adb1a3b065ea01a35f"
+      }
+    },
+    {
+      "path": "android-source/external-google-fonts-coming-soon",
+      "android_path": "external/google-fonts/coming-soon",
+      "url": "https://github.com/a2hlab/dep-android-source-external-google-fonts-coming-soon.git",
+      "revision": "e4f8d5e1468c40ea029d5837824541df367d2bb8",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/google-fonts/coming-soon",
+        "revision": "8673beb227ed81e094b0e10a830b66f259694e43",
+        "tree": "2bf31da43a657241a40473937a39e4765238e20c"
+      }
+    },
+    {
+      "path": "android-source/external-google-fonts-cutive-mono",
+      "android_path": "external/google-fonts/cutive-mono",
+      "url": "https://github.com/a2hlab/dep-android-source-external-google-fonts-cutive-mono.git",
+      "revision": "3b42eb47023ecad9107854e0c7bfd1d94905015f",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/google-fonts/cutive-mono",
+        "revision": "58c78bf2783ff6ef3f96e1766342ebbe2082fccc",
+        "tree": "54856de7d3a099ce84fb6b8427650ef64e4b0fa0"
+      }
+    },
+    {
+      "path": "android-source/external-google-fonts-dancing-script",
+      "android_path": "external/google-fonts/dancing-script",
+      "url": "https://github.com/a2hlab/dep-android-source-external-google-fonts-dancing-script.git",
+      "revision": "514ca1c413e6330375933a30aa67caa08a47f753",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/google-fonts/dancing-script",
+        "revision": "56837af7b437e2fae6e607e54ff51e6324ff52c7",
+        "tree": "a25b1706fb1b5cd3e07c6cb167f8e5b48922cb48"
+      }
+    },
+    {
+      "path": "android-source/external-google-fonts-source-sans-pro",
+      "android_path": "external/google-fonts/source-sans-pro",
+      "url": "https://github.com/a2hlab/dep-android-source-external-google-fonts-source-sans-pro.git",
+      "revision": "876ea441be946eb8af32307c799a6655e5bd04e7",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/google-fonts/source-sans-pro",
+        "revision": "c2c018df631f0b3610244a40a3a68be71b180483",
+        "tree": "649af55f10d0c5a1467da5f170ad1060dadf5a96"
+      }
+    },
+    {
+      "path": "android-source/external-noto-fonts",
+      "android_path": "external/noto-fonts",
+      "url": "https://github.com/a2hlab/dep-android-source-external-noto-fonts.git",
+      "revision": "195d8268fbdcc3dbc5f2e81b38cc847e3d5edbdf",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/noto-fonts",
+        "revision": "1763da7de494446263d6e6b7b9e9328eac8ecdd8",
+        "tree": "926a87e351e8d091393dc9035005ea4b70b12a2a"
+      }
+    },
+    {
+      "path": "android-source/external-roboto-flex-fonts",
+      "android_path": "external/roboto-flex-fonts",
+      "url": "https://github.com/a2hlab/dep-android-source-external-roboto-flex-fonts.git",
+      "revision": "8a15841e528199057015fde9a523b4f1a4332f99",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/roboto-flex-fonts",
+        "revision": "b3264fa5a10f38f5cdadf6c4033e767326e4adbc",
+        "tree": "d370a4b8c7345063f2291260a64a53eb4669c128"
+      }
+    },
+    {
+      "path": "android-source/external-roboto-fonts",
+      "android_path": "external/roboto-fonts",
+      "url": "https://github.com/a2hlab/dep-android-source-external-roboto-fonts.git",
+      "revision": "2cdd9cb1c254baa729412d7c8cb9c7bd0e184125",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/roboto-fonts",
+        "revision": "4029d6e45cb3ed68e3141332f91ce6ea561c0e1d",
+        "tree": "d96b4a9d0643f6463dfdb67270cfdb43ad2ac7e1"
+      }
+    }
+  ]
+}

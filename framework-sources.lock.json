@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "profile": "source-framework-aosp15-inputs",
+  "projects": [
+    {
+      "lfs": true,
+      "lfs_files": {
+        "packages/SettingsLib/Spa/gradle/wrapper/gradle-8.8-bin.zip": {
+          "bytes": 138039528,
+          "sha256": "a4b4158601f8636cdeeab09bd76afb640030bb5b144aafe261a5e8af027dc612"
+        }
+      },
+      "lfs_paths": [
+        "packages/SettingsLib/Spa/gradle/wrapper/gradle-8.8-bin.zip"
+      ],
+      "path": "android-source/frameworks-base",
+      "patch": "patches/android15/frameworks-base-toutiao-api-compat.patch",
+      "patch_sha256": "913cf9a8d9e80ce4afb16e08c8987986ea9ce3d8dff225f49dfd871cfb0de5b1",
+      "revision": "2ccf774088791253092f6921d6476d308b046dfc",
+      "snapshot_tree": "ae2d2d422a7ed657121aae991daf866712bec1e8",
+      "tree": "2a164d651cb7867399d8055899923634479aba0c",
+      "upstream": {
+        "revision": "4e43ad12e1b211f15152e9c5b16b0fe88e6b93f3",
+        "tree": "9583c6d9586b84169697623a44af09e8ac3d79b9",
+        "url": "https://android.googlesource.com/platform/frameworks/base"
+      },
+      "url": "https://github.com/a2hlab/dep-android-source-frameworks-base.git"
+    }
+  ]
+}

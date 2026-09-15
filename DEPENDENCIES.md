@@ -1,47 +1,39 @@
-# Dependency closure: what is actually checked in
+# Source and compiler dependency closure
 
-The `native`, `apps` and `art` component profiles consume only locked a2hlab
-project repositories plus declared standard host prerequisites. The full Toutiao
-stack is **not yet reproducible from these repositories alone**.
+The target is a source-built Android/Westlake runtime on the existing OHOS host,
+with the original Toutiao APK pinned separately. Toutiao application source is
+not required. Historical device JARs, boot images and Android/Westlake DSOs are
+not build inputs.
 
-The [parity follow-up](PARITY27.md) adds concrete SDK/provider/application locks
-and a 410-file observed runtime inventory. These expose remaining binary inputs;
-they do not supply the missing corresponding framework/boot/firmware sources.
-
-| Input | Repository coverage | Remaining limitation |
+| Component | Source/build coverage | Acceptance |
 | --- | --- | --- |
-| ART, JNI/boundary, host and Pinyin sources | `westlake`, `art-build`, `aosp-art-15` | Component build evidence is not full process acceptance |
-| 16 upstream support/resource dependencies | `dep-*`, locked snapshots preserving original source trees and licenses | Original ancestry metadata retained; snapshots do not contain all upstream Git history |
-| OH SDK6.1.0.31 and platform clang15 | `toolchains`, actual LFS archives and hash-locked installation | Prebuilt compiler inputs, not compiler source bootstrap |
-| HWUI14, Minikin14, FreeType11, HarfBuzz11, WebP11 and local bridge/HWUI headers | `legacy-runtime-sources`, per-file provenance and local patches | Preserved sources, not yet a closed build/provider graph |
-| Linux, Git/LFS, Python, Make, patch, host GCC/libstdc++ headers/libraries | Declared workstation prerequisites; tested on Ubuntu24.04 | No checked-in host image/sysroot; cross-host bit identity is unproven |
-| Exact core/framework JAR sources and generation recipes | Missing matching source handoff | Local AOSP11 libcore is not proven to match the frozen JARs; historical scripts pulled final ECS artifacts |
-| Host dex2oat and ten-JAR boot image | Incomplete source recipe | No historical `.art/.oat/.vdex` substituted |
-| OH firmware, full bridge/Skia and board provider set | Not closed/pinned as a complete source build | Mixed revisions/generated headers/vendor graphics providers must be resolved |
-| Toutiao/WebView APKs, proprietary native libraries | Not distributed | Redistribution permission and exact identities/licensing required |
-| Private app state, signing keys and device credentials | Deliberately excluded | Operators supply their own; these must not become repository dependencies |
+| ART, JNI boundary, WebP and host dex2oat | Locked a2hlab sources and declared object/link recipes | Offline builds and core device probes pass |
+| Seven core JARs and boot image | Android 15 libcore, ICU, Conscrypt, OkHttp, Bouncy Castle and Apache XML | Device Unicode, regex, crypto, XML and boot-resource probes pass |
+| Android native support | Source log/base/cutils/utils/nativehelper, zlib/ZIP, Expat/PNG, FreeType, ICU/JNI, HarfBuzz, Minikin, androidfw, BoringSSL/Conscrypt | 19 artifacts; 18-output independent builds were byte-identical; native device behavior probes pass |
+| Framework resources | Original Android 15 resources, generated resource IDs and release flag inputs | Source build passes; complete UI acceptance is pending |
+| Framework generators | Source protobuf/streaming/nano, stats, sysprop, XSD and aconfig tools; versioned AIDL | Source builds and generation pass; complete framework Java/DEX build is in progress |
+| HWUI, bridge and appspawn | Preserved Android/OH sources, full Android 15 dependencies, OH Skia and the pinned OH header carrier | Complete compile/link/provider recipes remain in progress |
+| OH host firmware providers | Running OHOS platform | Every required provider must be inventoried and verified against the target ABI |
+| Toutiao | Unchanged original APK in `app-inputs.lock.json` | Supplied separately; never rebuilt or decompiled |
 
-## Required handoff to finish the full stack
+The compiler inputs are pinned OHOS SDK/Clang, JDK/D8, AAPT2/AIDL and Rust
+archives hosted under a2hlab. Rust crate sources are vendored with Cargo.lock
+and package checksums; aconfig builds with `--offline --locked`. Archive
+installers verify bytes and extracted-tree fingerprints and have no download
+fallback. Compiler bootstrapping and rebuilding the OH kernel/system services
+are outside this target.
 
-Provide the source manifest, local patches and generated-source recipes for the
-ECS build that produced the accepted core/framework JARs, plus the exact board
-OS/firmware build and provider manifest. The known historical workflow pulls
-final JARs from the builder; it does not capture corresponding source state.
-The local libcore license contains GPL with Classpath Exception, so unmatched
-sources or an Apache NOTICE cannot establish a corresponding-source release.
+Git/LFS, Python, Make, standard Linux host development headers/libraries and
+user/network namespaces remain declared host prerequisites. Network-isolated
+build evidence is recorded separately from cross-host byte identity; there is
+no claim that an entire workstation image has been made hermetic.
 
-For proprietary app/vendor files, confirm redistribution rights separately. A
-private organization does not itself establish those rights. Raw user-data
-snapshots, request files, learned dictionaries and credentials are not substitutes
-for a fresh-install recipe and must remain excluded.
+The complete source-built payload still needs the framework/adapter ownership
+graph, full boot classpath, rendering/bridge provider closure, and fresh Toutiao
+UI/scroll/input acceptance. WebView support must also be source-built or proven
+to be a declared OH host-firmware provider. Captured runtime copies do not meet
+that requirement.
 
-The audited candidate05 core consists of 15 framework files, 11 runtime files
-and 30 boot files (56 files, 172824635 bytes). This is an inventory of historical
-inputs, **not a published or accepted reproduction bundle**. Its runtime files
-have 68 distinct direct DT_NEEDED names, only three provided within that group.
-Normal platform dependencies must be resolved against the exact board ABI,
-not filled with arbitrary DSOs found on a workstation.
-
-`full-build-gaps.json` and `tools/rebuild.py --profile full` remain fail-closed.
-No Toutiao functionality or native-performance-parity claim follows from an
-offline component build or from committing additional source dependencies.
+See `reports/source-stack-progress.json` for the current core/native evidence.
+`full-build-gaps.json` and `tools/rebuild.py --profile full` remain fail-closed
+until the complete source-built application process passes device acceptance.

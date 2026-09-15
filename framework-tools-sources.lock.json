@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "profile": "framework-tools-sources",
+  "projects": [
+    {
+      "path": "android-source/aidl",
+      "revision": "1a2b17112b68d4a2f7f7f91c1ad24700a9657ea3",
+      "upstream": {
+        "revision": "d1304733b74b69f26dbe2d3c40c797aaac22f163",
+        "tree": "88abb42f3a3c63c23739566b9ee429873a86eaac",
+        "url": "https://android.googlesource.com/platform/system/tools/aidl"
+      },
+      "url": "https://github.com/a2hlab/dep-android-source-aidl.git"
+    },
+    {
+      "path": "android-source/protobuf",
+      "revision": "8f798c739eb09b40bbb65b2dcab1e16e2739b5e0",
+      "upstream": {
+        "revision": "aeea14007d1a5841e2499322e232beb6c7717814",
+        "tree": "31a425387068c0b4dc75a270cf765cb98ed83c39",
+        "url": "https://android.googlesource.com/platform/external/protobuf"
+      },
+      "url": "https://github.com/a2hlab/dep-android-source-protobuf.git"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "profile": "public-openharmony-development-signing-inputs",
+  "projects": [
+    {
+      "path": "android-source/oh-hapsigner",
+      "url": "https://github.com/a2hlab/dep-android-source-oh-hapsigner.git",
+      "revision": "2b6b6d3e07d452593929c9f27dfb01b0b851fb8a",
+      "upstream": {
+        "url": "https://github.com/openharmony/developtools_hapsigner.git",
+        "revision": "6e3ade57fe27504ebb0dac878d6cd2d364f74f6b",
+        "tree": "b984d02f8db8a502c4f517f7620489cfc68203d3"
+      }
+    }
+  ]
+}

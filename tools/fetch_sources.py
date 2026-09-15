@@ -57,7 +57,16 @@ def fetch(entry, workspace):
     print('FETCH', entry['path'], entry['revision'], flush=True)
     run('git', 'init', '-q', str(target))
     run('git', 'remote', 'add', 'origin', entry['url'], cwd=target)
-    run('git', 'fetch', '--depth=1', '--no-tags', 'origin', entry['revision'], cwd=target)
+    sparse = entry.get('sparse_paths', [])
+    for name in sparse:
+        path = PurePosixPath(name)
+        if path.is_absolute() or '..' in path.parts or not path.parts:
+            raise ValueError('Invalid sparse source directory: ' + name)
+    if sparse:
+        run('git', 'sparse-checkout', 'init', '--cone', cwd=target)
+        run('git', 'sparse-checkout', 'set', *sparse, cwd=target)
+    run('git', 'fetch', '--depth=1', '--no-tags', *(['--filter=blob:none'] if sparse else []),
+        'origin', entry['revision'], cwd=target)
     run('git', 'checkout', '-q', '--detach', entry['revision'], cwd=target)
     if entry.get('lfs'):
         run('git', 'lfs', 'install', '--local', cwd=target)

@@ -3,7 +3,8 @@
   "profile": "toutiao-aosp15-oh61-legacy",
   "includes": [
     "upstream.lock.json",
-    "packaging.lock.json"
+    "packaging.lock.json",
+    "runtime-sources.lock.json"
   ],
   "projects": [
     {
@@ -15,17 +16,17 @@
     {
       "path": "westlake",
       "url": "https://github.com/a2hlab/westlake.git",
-      "revision": "a64b9be58d09437bd8e0eb6d739a81f354c8328d"
+      "revision": "75d82d53ca11ca5e0796777bdfdab4f34faf70a6"
     },
     {
       "path": "art-build",
       "url": "https://github.com/a2hlab/art-build.git",
-      "revision": "cbbde72124e8fc0f73b2b3763bb23b2f3303c202"
+      "revision": "9acbaec8c3bd0c696995def1d14c959094ecf8b7"
     },
     {
       "path": "aosp-art-15",
       "url": "https://github.com/a2hlab/aosp-art-15.git",
-      "revision": "dfd9b6775382b275f68678100e19d0bf2c3a5401"
+      "revision": "047ccf02924f0b71142e9b5fa3f2f303ec03d145"
     }
   ]
 }

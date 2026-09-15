@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "profile": "source-core-aosp15",
+  "projects": [
+    {
+      "path": "android-source/libcore",
+      "revision": "5be0ab11f0b9cda88945a56ecbaed70896a8efb4",
+      "upstream": {
+        "revision": "a996d969fdd17c6707b84544e5d1c35e0c25b5cb",
+        "tree": "548b3ffd1f1f465542b9d51dc6ba5b1f37f521db",
+        "url": "https://android.googlesource.com/platform/libcore"
+      },
+      "url": "https://github.com/a2hlab/dep-android-source-libcore.git"
+    },
+    {
+      "path": "android-source/icu",
+      "revision": "be65bb2c69abe7674ffe6af1ee0167618ae47a6a",
+      "upstream": {
+        "revision": "cf305aeb6df416fa81cfc98bd73d913ee781175d",
+        "tree": "6e404e0eb2731f6c3d42b534f536fdce498b16e6",
+        "url": "https://android.googlesource.com/platform/external/icu"
+      },
+      "url": "https://github.com/a2hlab/dep-android-source-icu.git"
+    },
+    {
+      "path": "android-source/okhttp",
+      "revision": "a446ef4ce284af127190ff71a3203572d5a7b2b0",
+      "upstream": {
+        "revision": "fdad2b22b00721086808f155529df11a2e4335f3",
+        "tree": "85e067b4d3c8ab795474825c7038eb63d22dee40",
+        "url": "https://android.googlesource.com/platform/external/okhttp"
+      },
+      "url": "https://github.com/a2hlab/dep-android-source-okhttp.git"
+    },
+    {
+      "path": "android-source/conscrypt",
+      "revision": "b3b84e7739c5529fff94435fe3e2e4555dcc03a0",
+      "upstream": {
+        "revision": "f8e2d81432416b14fbc8e6f62375d9917b044ef1",
+        "tree": "a36edf67b8071d8a41b1f420328d998ae85ff2a8",
+        "url": "https://android.googlesource.com/platform/external/conscrypt"
+      },
+      "url": "https://github.com/a2hlab/dep-android-source-conscrypt.git"
+    },
+    {
+      "path": "android-source/modules-utils",
+      "revision": "b1ec88277e14141b5ba6b350b50cb1251e139cea",
+      "upstream": {
+        "revision": "810bd8c57bb39c232cad66e5aa007839dd4e55e3",
+        "tree": "4141a7c5eda61a1d42b6cbd7ede893845071cff6",
+        "url": "https://android.googlesource.com/platform/frameworks/libs/modules-utils"
+      },
+      "url": "https://github.com/a2hlab/dep-android-source-modules-utils.git"
+    },
+    {
+      "path": "android-source/platform-compat",
+      "revision": "a9c8003ee713c55d082ae26a5c405ff58038fed9",
+      "upstream": {
+        "revision": "df531c7caea306b811fec85a638a371c2a2492d1",
+        "tree": "abaac6964da12bc6681f323069a7abeb3c8168cb",
+        "url": "https://android.googlesource.com/tools/platform-compat"
+      },
+      "url": "https://github.com/a2hlab/dep-android-source-platform-compat.git"
+    },
+    {
+      "path": "android-source/r8",
+      "revision": "c91dd5200a1db0fd35b72f11c1c83d95005bdd03",
+      "upstream": {
+        "revision": "535c14aebec54e8b67a8ca2889d34cb7c38a29b4",
+        "tree": "3b8569c4bb0c676654bc49cc993468d61faa15fa",
+        "url": "https://android.googlesource.com/platform/prebuilts/r8"
+      },
+      "url": "https://github.com/a2hlab/dep-android-source-r8.git"
+    },
+    {
+      "path": "inputs/jdk21",
+      "url": "https://github.com/a2hlab/dep-jdk21-linux-x64.git",
+      "revision": "b238d7c6343d5577621150b68f052d9c7e3fafc8",
+      "lfs": true
+    }
+  ]
+}

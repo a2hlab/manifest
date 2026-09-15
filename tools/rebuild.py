@@ -15,6 +15,7 @@ import tempfile
 import sys
 from bootstrap_sdk import ROOT, fingerprint
 from fetch_sources import read_lock
+from install_java import verify_java
 
 
 def git(path, *command):
@@ -32,9 +33,9 @@ def git(path, *command):
     return subprocess.check_output(['git', '-C', str(path), *command], stderr=subprocess.STDOUT)
 
 
-def verify_sources(workspace):
+def verify_sources(workspace, lock=None):
     resolved = []
-    for entry in read_lock(ROOT / 'sources.lock.json'):
+    for entry in read_lock(lock or ROOT / 'sources.lock.json'):
         path = workspace / entry['path']
         revision = git(path, 'rev-parse', 'HEAD').decode().strip()
         if revision != entry['revision']:
@@ -80,9 +81,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--workspace', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
-    parser.add_argument('--profile', choices=['native', 'apps', 'art', 'full'], required=True)
+    parser.add_argument('--profile', choices=['native', 'native-support', 'apps', 'art', 'host-tools', 'core-java', 'full'], required=True)
     parser.add_argument('--jobs', type=int, default=6)
+    parser.add_argument('--native-build', type=Path,
+                        help='Verified native-support output for source ICU JNI in the ART profile')
     args = parser.parse_args()
+    if args.native_build and args.profile != 'art':
+        parser.error('--native-build applies to the art profile')
     if args.profile == 'full':
         gaps = json.loads((ROOT / 'full-build-gaps.json').read_text())
         if not gaps['complete_source_build']:
@@ -96,7 +101,14 @@ def main():
     if output.exists():
         parser.error('--out must be new (no stale-object reuse)')
     sources = verify_sources(workspace)
+    if args.profile == 'core-java':
+        sources += verify_sources(workspace, ROOT / 'core-sources.lock.json')
+    if args.profile == 'native-support':
+        for lock in ['native-sources.lock.json', 'framework-sources.lock.json', 'core-sources.lock.json']:
+            sources += verify_sources(workspace, ROOT / lock)
     toolchains = verify_toolchains(workspace, args.profile != 'native')
+    if args.profile == 'core-java':
+        java_home, toolchains['jdk21'] = verify_java(workspace)
     output.mkdir(parents=True)
     report = {'profile': args.profile, 'sources': sources, 'toolchains': toolchains,
               'complete_toutiao_build': False, 'device_accepted': False, 'status': 'running'}
@@ -111,6 +123,9 @@ def main():
         if args.profile == 'native':
             run('native', sys.executable, workspace / 'westlake/tools/build_native.py',
                 '--sdk', workspace / 'toolchains/ohos-sdk/native', '--out', output / 'native')
+        elif args.profile == 'native-support':
+            run('native-support', sys.executable, workspace / 'westlake/tools/build_android_native.py',
+                '--workspace', workspace, '--out', output / 'native', '--jobs', args.jobs)
         elif args.profile == 'apps':
             run('restool', sys.executable, ROOT / 'tools/build_restool.py', '--workspace', workspace,
                 '--out', output / 'restool', '--jobs', args.jobs)
@@ -122,7 +137,18 @@ def main():
                 'WORKSPACE=' + str(workspace), 'BUILDDIR=' + str(output / 'objects'),
                 'clean-runtime-objects', 'jni-stubs', cwd=workspace / 'art-build')
             run('link', sys.executable, workspace / 'art-build/tools/link_runtime.py',
-                '--workspace', workspace, '--objects', output / 'objects', '--out', output / 'runtime')
+                '--workspace', workspace, '--objects', output / 'objects', '--out', output / 'runtime',
+                *(['--native-build', args.native_build.resolve()] if args.native_build else []))
+            run('providers', sys.executable, ROOT / 'tools/audit_runtime_symbols.py',
+                '--workspace', workspace, '--runtime', output / 'runtime',
+                '--report', output / 'provider-audit.json', '--require-complete')
+        elif args.profile == 'host-tools':
+            run('host', sys.executable, workspace / 'art-build/tools/build_host.py',
+                '--workspace', workspace, '--out', output / 'host', '--jobs', args.jobs)
+        elif args.profile == 'core-java':
+            run('java', sys.executable, ROOT / 'tools/build_core_java.py',
+                '--source-root', workspace / 'android-source', '--java-home', java_home,
+                '--out', output / 'java')
         report['status'] = 'source-build-pass'
     except Exception as error:
         report['status'] = 'fail'

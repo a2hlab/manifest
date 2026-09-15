@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "profile": "android15-framework-dependencies",
+  "projects": [
+    {
+      "path": "android-source/external-libphonenumber",
+      "android_path": "external/libphonenumber",
+      "url": "https://github.com/a2hlab/dep-android-source-external-libphonenumber.git",
+      "revision": "9ed32160cfa5a7505977848a9df4d6574071e6f1",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/libphonenumber",
+        "revision": "5096f223825860ab38a488496efd6fb37a15c388",
+        "tree": "f77f378be24ad1942ca9678dcc3c9365c246728a"
+      }
+    },
+    {
+      "path": "android-source/external-rappor",
+      "android_path": "external/rappor",
+      "url": "https://github.com/a2hlab/dep-android-source-external-rappor.git",
+      "revision": "ae917719d42d1df848c4587e96995f3d283a0f2d",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/rappor",
+        "revision": "10aab0d94a61605a2dbe082af14fb460e897e131",
+        "tree": "1a72e028104e26c068b460741dc1f954db9f1af6"
+      }
+    },
+    {
+      "path": "android-source/external-tagsoup",
+      "android_path": "external/tagsoup",
+      "url": "https://github.com/a2hlab/dep-android-source-external-tagsoup.git",
+      "revision": "e3878034313345558f88966c54c2e2195a514186",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/tagsoup",
+        "revision": "5c387116e235ff706ba0baf63a9883b72c872490",
+        "tree": "eb8c56dd7dc4e7045cf319744ef45e2716c502a7"
+      }
+    },
+    {
+      "path": "android-source/modules-ipsec",
+      "android_path": "packages/modules/IPsec",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-ipsec.git",
+      "revision": "4de17814d7c911fc2b4b221a7d417af2d8881834",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/IPsec",
+        "revision": "46aaa93155c50ceac2840703cbf42201e20394d7",
+        "tree": "14818e175cfcd292cad3eabcfd99a471ad7b76d8"
+      }
+    },
+    {
+      "path": "android-source/modules-sdkextensions",
+      "android_path": "packages/modules/SdkExtensions",
+      "url": "https://github.com/a2hlab/dep-android-source-modules-sdkextensions.git",
+      "revision": "3fce973c17c3d21fd3f26f91743ae309b5d15036",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/modules/SdkExtensions",
+        "revision": "fdf46b5f21629f4716c705d3f0a5569dacca5bbe",
+        "tree": "c222a12ee177cb576006a40519c374803e8b4b1d"
+      }
+    },
+    {
+      "path": "android-source/providers-mediaprovider",
+      "android_path": "packages/providers/MediaProvider",
+      "url": "https://github.com/a2hlab/dep-android-source-providers-mediaprovider.git",
+      "revision": "dfca5a84e37e83d051efa48c7c3631698cb781f9",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/packages/providers/MediaProvider",
+        "revision": "8a53c6d378a9c6ff61ef751d260a1281985b93fe",
+        "tree": "d9b6ee932e18f64e5356326a8776e857b33d4950"
+      }
+    }
+  ]
+}

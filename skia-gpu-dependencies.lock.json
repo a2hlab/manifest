@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "profile": "oh61-skia-gpu-headers",
+  "projects": [
+    {
+      "path": "android-source/oh61-vulkan-headers",
+      "url": "https://github.com/a2hlab/dep-android-source-oh61-vulkan-headers.git",
+      "revision": "0a32ec7e6c011e9ae552fc43d6d6b056b2f2e4c9",
+      "upstream": {
+        "url": "https://github.com/openharmony/third_party_vulkan-headers.git",
+        "revision": "08596f6bfc4c24678ec0fd87d42519690538ee27",
+        "tree": "230ad6b6baf4c8848bfb59334c30902d6a2caa86"
+      }
+    },
+    {
+      "path": "android-source/oh61-bounds-checking",
+      "url": "https://github.com/a2hlab/dep-android-source-oh61-bounds-checking.git",
+      "revision": "672af3a542a2aa5f508b0b92128652dfc6d45594",
+      "upstream": {
+        "url": "https://github.com/openharmony/third_party_bounds_checking_function.git",
+        "revision": "61baa7a3eb9347efca58397d1d0504faa96d79f0",
+        "tree": "99609d60f58d96a846104652d5f03201b20460bc"
+      }
+    }
+  ]
+}

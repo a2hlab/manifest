@@ -1,0 +1,3950 @@
+{
+  "android15_graphics_progress": {
+    "android_runtime": {
+      "build_report_sha256": "38f1cdc64264ecbda9978d6536f8cc6df56c391f62ea2df3a2c72dab2e5490f0",
+      "scope": "source objects; integrated native link and device acceptance pending",
+      "translation_units": 40
+    },
+    "binder": {
+      "build_report_sha256": "26db79d4ead76675b0db4cb316b2e45e454b41627d051a5b0341abda07006638",
+      "scope": "source objects; integrated native link and device acceptance pending",
+      "translation_units": 25
+    },
+    "binder_ndk": {
+      "build_report_sha256": "820fe91f4dd3eb8d02514edbb71678d96cf3955cd516340eef71bf317681b90e",
+      "scope": "source objects; integrated native link and device acceptance pending",
+      "translation_units": 8
+    },
+    "canonical_graphics_registration": {
+      "device_registration_passed": true,
+      "registration_modules": 52,
+      "source_build": "HWUI APEX jni_runtime.cpp with separate PDF provider excluded",
+      "translation_units": 1
+    },
+    "gif": {
+      "build_report_sha256": "870b273da31b7e80d1346a5f2379a00bee319b21e20347ced21bcc03db038304",
+      "scope": "source objects; integrated native link and device acceptance pending",
+      "translation_units": 7
+    },
+    "hardware_buffer_jni": {
+      "build_report_sha256": "1966c68af537cf5726e36a7078eedc3e54fc8f9a7b8bfe2ee49708efcdac879c",
+      "java_contracts_passed": false,
+      "source_build": "HardwareBuffer and GraphicBuffer JNI using the OH allocator, real Binder Parcel FDs and source HWUI Canvas",
+      "translation_units": 1
+    },
+    "hwui": {
+      "build_report_sha256": "6f21e0ec8e7461f93eb4212aa155b46d64f28baef9183eb5938c30c9f038ea55",
+      "scope": "source objects; integrated native link and device acceptance pending",
+      "translation_units": 189
+    },
+    "minikin": {
+      "build_report_sha256": "838aedd6c42fa580f7014888f2561a1851b5f4575b79d5746ba73ebf01cd6413",
+      "scope": "source objects; integrated native link and device acceptance pending",
+      "translation_units": 30
+    },
+    "oh_bridge": {
+      "build_report_sha256": "bc8a94de235ce03a3a77cea4ddac2434e80a4207888e50621ecd58c368cc52d0",
+      "scope": "source objects; integrated native link and device acceptance pending",
+      "translation_units": 51
+    },
+    "oh_graphics_boundary": {
+      "build_report_sha256": "18e85930b8b1e710d1f941b6fac9240b919a22db35ea44742a2819d2bb7220e1",
+      "scope": "source objects; integrated native link and device acceptance pending",
+      "translation_units": 6
+    },
+    "skia_closure": {
+      "build_report_sha256": "15bb6c0a6c7e2f9346fc5048fa54772679e8bb53c4651b47284b15cbc8626629",
+      "scope": "source objects; integrated native link and device acceptance pending",
+      "translation_units": 469
+    },
+    "skia_platform": {
+      "build_report_sha256": "9835d863568a12b08b7581703baedcd577c64730fcc7713c1b8e778560fa1101",
+      "scope": "source objects; integrated native link and device acceptance pending",
+      "translation_units": 3
+    },
+    "stats_pull": {
+      "build_report_sha256": "012a1d76c7e18e87c185b802e84febaef642c54c80a69e2d8ad6733dbc0ab727",
+      "scope": "source objects; integrated native link and device acceptance pending",
+      "translation_units": 14
+    },
+    "stats_socket": {
+      "build_report_sha256": "4df2a6b45092ec1eb6c9f3d3a3d38ed47006aea2ff4ced0b601622abee2da4a1",
+      "scope": "source objects; integrated native link and device acceptance pending",
+      "translation_units": 8
+    },
+    "ultrahdr": {
+      "build_report_sha256": "9bc93c97f4739e19a70cc179851ef82d26841aaf6505cefae2d2de91e73c7c69",
+      "scope": "source objects; integrated native link and device acceptance pending",
+      "translation_units": 48
+    }
+  },
+  "android15_native_platform": {
+    "build_report_sha256": "7eeba9fc0b2c4f58f25f08a767e996cf29584c1e700d3a37f8ff9dea6e33f204",
+    "full_payload_accepted": false,
+    "libraries": {
+      "libandroid.so": {
+        "bytes": 44024,
+        "needed": [
+          "libhwui.so",
+          "liboh_android_runtime.so",
+          "libwestlake_binder.so",
+          "libandroidfw.so",
+          "libutils.so",
+          "liblog.so",
+          "libc++.so",
+          "libc.so",
+          "libGLES_mali.z.so",
+          "libsurface.z.so",
+          "libutils.z.so"
+        ],
+        "sha256": "000e984822c53a488b87a55b5443ab91eea8d886ab91d47a518e85706278c6dd"
+      },
+      "libbinder_ndk.so": {
+        "bytes": 144360,
+        "needed": [
+          "libwestlake_binder.so",
+          "liboh_android_runtime.so",
+          "libutils.so",
+          "liblog.so",
+          "libc++.so",
+          "libc.so"
+        ],
+        "sha256": "cd3fe767fcfba48467c3e23d67a63f3ff2e466517e1b32b967841bd8e20f6008"
+      },
+      "libframework-connectivity-tiramisu-jni.so": {
+        "bytes": 12976,
+        "needed": [
+          "libandroid.so",
+          "libnativehelper.so",
+          "liblog.so",
+          "libc.so"
+        ],
+        "sha256": "b08c035a914fa4cd7a7ec27182625ffd43b41076551ffeae8e456059e99e934c"
+      },
+      "libgif.so": {
+        "bytes": 37768,
+        "needed": [
+          "libc.so"
+        ],
+        "sha256": "a22e52138a0927ef1af874d01fda5edff65d39c7f749797897eaeeb4d959dd3a"
+      },
+      "libhwui.so": {
+        "bytes": 12204464,
+        "needed": [
+          "libandroidfw.so",
+          "libminikin.so",
+          "libft2.so",
+          "libutils.so",
+          "libcutils.so",
+          "libbase.so",
+          "liblog.so",
+          "libnativehelper.so",
+          "liboh_hwui_shim.so",
+          "liboh_adapter_bridge.so",
+          "libgif.so",
+          "libultrahdr.so",
+          "libbinder_ndk.so",
+          "libstatspull.so",
+          "libjpeg.so",
+          "libwebp.so",
+          "libpng.so",
+          "libexpat.so",
+          "libwestlake_securec.so",
+          "libwuffs.so",
+          "libc++.so",
+          "libc.so",
+          "libEGL.so",
+          "libGLES_mali.z.so",
+          "libbacktrace_local.so",
+          "libbegetutil.z.so",
+          "libhilog.so",
+          "libnative_display_manager.so",
+          "libnative_image.so",
+          "libsurface.z.so",
+          "libvulkan.so"
+        ],
+        "sha256": "e0a991207be0a2676b38a518dfba9a18c0e658f89a035da2840f41aebfb1f06a"
+      },
+      "libjnigraphics.so": {
+        "bytes": 37624,
+        "needed": [
+          "libhwui.so",
+          "libandroid.so",
+          "liblog.so",
+          "libc++.so",
+          "libc.so"
+        ],
+        "sha256": "217b800ca291dcf213802154d79c6109e3d867c159f7f109daf7c125a67d5ad5"
+      },
+      "libjpeg.so": {
+        "bytes": 377256,
+        "needed": [
+          "libc.so"
+        ],
+        "sha256": "a8323769564926d12fea716c0528b3ccc569f0170a65818b2ff986f84ae45b10"
+      },
+      "libminikin.so": {
+        "bytes": 431728,
+        "needed": [
+          "libharfbuzz_ng.so",
+          "libicuuc.so",
+          "libcutils.so",
+          "liblog.so",
+          "libc++.so",
+          "libc.so"
+        ],
+        "sha256": "b5203bf3777e42d91fc74ed57d0c1eba1e4d3006c8b816607cdf4ca3e6ecb3c6"
+      },
+      "liboh_account_state.so": {
+        "bytes": 13064,
+        "needed": [
+          "liblog.so",
+          "libc.so",
+          "libos_account_innerkits.z.so"
+        ],
+        "sha256": "99c193d581eca592ab18e00e78bd193d32c143a8111e5c1a1971ef8e36b3f6da"
+      },
+      "liboh_adapter_bridge.so": {
+        "bytes": 1999240,
+        "needed": [
+          "liblog.so",
+          "libnativehelper.so",
+          "libz.so",
+          "libhwui.so",
+          "liboh_android_runtime.so",
+          "libc++.so",
+          "libc.so",
+          "libEGL.so",
+          "libability_connect_callback_stub.z.so",
+          "libability_manager.z.so",
+          "libapp_manager.z.so",
+          "libappexecfwk_base.z.so",
+          "libappexecfwk_core.z.so",
+          "libbegetutil.z.so",
+          "libcesfwk_innerkits.z.so",
+          "libconfiguration.z.so",
+          "libdatashare_consumer.z.so",
+          "libdm.z.so",
+          "libeventhandler.z.so",
+          "libhilog.so",
+          "libhitrace_ndk.z.so",
+          "libinputmethod_client.z.so",
+          "libipc_single.z.so",
+          "libmission_info.z.so",
+          "libmmi-client.z.so",
+          "libnative_image.so",
+          "libpasteboard.so",
+          "librender_service_base.z.so",
+          "librender_service_client.z.so",
+          "libsamgr_proxy.z.so",
+          "libscene_session.z.so",
+          "libsurface.z.so",
+          "libsync_fence.z.so",
+          "libudmf.so",
+          "libutils.z.so",
+          "libwant.z.so",
+          "libwindow_scene_common.z.so",
+          "libwm.z.so",
+          "libwmutil.z.so",
+          "libwmutil_base.z.so",
+          "libzuri.z.so"
+        ],
+        "sha256": "d1a6847a18bf0b3b5e14953cc972869a94585c045cc3e1dd912d3b4c9cba0c63"
+      },
+      "liboh_android_runtime.so": {
+        "bytes": 2173672,
+        "needed": [
+          "libandroidfw.so",
+          "libnativehelper.so",
+          "libutils.so",
+          "libcutils.so",
+          "libbase.so",
+          "liblog.so",
+          "libicuuc.so",
+          "libicui18n.so",
+          "liboh_adapter_bridge.so",
+          "libwestlake_binder.so",
+          "libandroid.so",
+          "libwestlake_libcore_linux.so",
+          "libc++.so",
+          "libc.so",
+          "libbegetutil.z.so",
+          "libhilog.so",
+          "libhitrace_ndk.z.so"
+        ],
+        "sha256": "2bb6d5f400835f52dd775c2bd57c6f326871562024dc3157999c5eb107c756c8"
+      },
+      "liboh_hwui_shim.so": {
+        "bytes": 52424,
+        "needed": [
+          "liblog.so",
+          "libhwui.so",
+          "libc++.so",
+          "libc.so",
+          "libhitrace_ndk.z.so"
+        ],
+        "sha256": "e795e3b3b6dce6ba4fbc38c61f06a5416b02644d493808882b02da7f1db89ffa"
+      },
+      "liboh_permission_queries.so": {
+        "bytes": 14336,
+        "needed": [
+          "libc++.so",
+          "libc.so",
+          "libability_access_control.so"
+        ],
+        "sha256": "2b52da2e95762fabd8eccfa81824579c4942f71176d5e68ac6dfb5078c57392d"
+      },
+      "libstats_jni.so": {
+        "bytes": 11024,
+        "needed": [
+          "libstatssocket.so",
+          "liblog.so",
+          "libc++.so"
+        ],
+        "sha256": "b4903d6ce3c36ccf68b198a0a9a4abbfd6ae1f9fb524ba55e823fc406124b1a6"
+      },
+      "libstatspull.so": {
+        "bytes": 349784,
+        "needed": [
+          "libbinder_ndk.so",
+          "libstatssocket.so",
+          "liblog.so",
+          "libc++.so",
+          "libc.so"
+        ],
+        "sha256": "779c8ad9e26b5129216cadc55b54c276fa49d78586e22d90641c10c94243a312"
+      },
+      "libstatssocket.so": {
+        "bytes": 52624,
+        "needed": [
+          "libbase.so",
+          "libc++.so",
+          "libc.so"
+        ],
+        "sha256": "94132828a8267d238a3b599c1dee6a9c006e1db3b533ad12a1e0ecbf1956718a"
+      },
+      "libstdc++.so": {
+        "bytes": 22952,
+        "needed": [
+          "libc.so"
+        ],
+        "sha256": "1d914dab5a29d9047a1d7fdaa48beed278e63f1cde3976082694e9b4e8e69296"
+      },
+      "libultrahdr.so": {
+        "bytes": 675112,
+        "needed": [
+          "libjpeg.so",
+          "libc++.so",
+          "libc.so"
+        ],
+        "sha256": "71d838b17be98b4ad07078a4e9bed516ed9a8281588764d1a1426b16626eb4b1"
+      },
+      "libwebp.so": {
+        "bytes": 583416,
+        "needed": [
+          "libc.so"
+        ],
+        "sha256": "d87ed0fbc004ce195b0e35e8ea7d780dbedc346b774977904f02a579c24464f0"
+      },
+      "libwestlake_binder.so": {
+        "bytes": 809120,
+        "needed": [
+          "libbase.so",
+          "libcutils.so",
+          "libutils.so",
+          "liblog.so",
+          "libc++.so",
+          "libc.so"
+        ],
+        "sha256": "297f719cc322c9a18c6b610b0c2f30524aead9a5e00790e3920c20be185bdbd0"
+      },
+      "libwestlake_bionic.so": {
+        "bytes": 17192,
+        "needed": [
+          "libc.so"
+        ],
+        "sha256": "99baf31def2a4d908f688d7ae0cc50284640fdd4c65212bf6d37bf989c1dcedd"
+      },
+      "libwestlake_libcore_linux.so": {
+        "bytes": 216536,
+        "needed": [
+          "libnativehelper.so",
+          "libbase.so",
+          "liblog.so",
+          "libc++.so",
+          "libc.so"
+        ],
+        "sha256": "7aac5c7a7bd11ce2fe36c55944c6b41109b189ee665413788436eabfc9705791"
+      },
+      "libwestlake_securec.so": {
+        "bytes": 71312,
+        "needed": [
+          "libc.so"
+        ],
+        "sha256": "94f5315607f94955bda2ea36e70f3cda426ba6e66fd07b0921350f71cc5257c4"
+      },
+      "libwuffs.so": {
+        "bytes": 143056,
+        "needed": [
+          "libc.so"
+        ],
+        "sha256": "3145809ea990d8dcf68c1152ecdd2c24fe97519c6f301d20bde90c30f2279803"
+      }
+    },
+    "library_count": 24,
+    "strict_object_link": true
+  },
+  "chromium109_progress": {
+    "a2hlab_git_dependency_projects": 136,
+    "apk_build_complete": true,
+    "apk_native_payloads": {
+      "lib/arm64-v8a/libcrashpad_handler_trampoline.so": {
+        "bytes": 4984,
+        "sha256": "d9a80b23a609d0242560a09801282777c645b9672dbdcff3cf2504192e444f9b"
+      },
+      "lib/arm64-v8a/libwebviewchromium.so": {
+        "bytes": 154847216,
+        "sha256": "5bc605c91913643ddccce9c1eb857ae4e421b69459d46e1f4672d1bab7d41a5d"
+      }
+    },
+    "device_accepted": false,
+    "first_build_artifacts": {
+      "apks/SystemWebView64.apk": {
+        "bytes": 79660460,
+        "sha256": "566318270480029e6749febefdce560d038c02df099e8e931f798241b611c556"
+      },
+      "args.gn": {
+        "bytes": 410,
+        "sha256": "74e2c3335126705e0a1ec93bbc322a7e559c96d2b4a9ca7b68f712fa7a67978d"
+      },
+      "libcrashpad_handler_trampoline.so": {
+        "bytes": 4984,
+        "sha256": "d9a80b23a609d0242560a09801282777c645b9672dbdcff3cf2504192e444f9b"
+      },
+      "libwebviewchromium.so": {
+        "bytes": 154847216,
+        "sha256": "5bc605c91913643ddccce9c1eb857ae4e421b69459d46e1f4672d1bab7d41a5d"
+      }
+    },
+    "git_dependency_lock_sha256": "1c393e764aa78df030978a67a058a3afec7c7ab38c8a0a07ff6287bcee2ae316",
+    "java_runtime_dependencies_source_complete": false,
+    "native_build_complete": true,
+    "native_needed": [
+      "libdl.so",
+      "libm.so",
+      "libandroid.so",
+      "liblog.so",
+      "libjnigraphics.so",
+      "libc.so"
+    ],
+    "remaining_java_runtime_classes": {
+      "androidx": 705,
+      "com.google.android.gms": 445,
+      "kotlin": 101,
+      "kotlinx.coroutines": 58
+    },
+    "version": "109.0.5414.123"
+  },
+  "complete_source_build": false,
+  "core_probe_pass_lines": [
+    "CORE_VM_PASS record=resolved nanotime=monotonic properties=os iovmax=os systemloader=resolved",
+    "PASS ICU UTF8 UTF16 GB18030 supplementary-characters Unicode-regex-groups",
+    "PASS Conscrypt SHA256 AES-GCM-known-answer authentication-rejection entropy",
+    "PASS BouncyCastle-provider ApacheXML-Chinese-DOM",
+    "PASS boot-JAR-resource physical-path",
+    "CORE_COMPATIBILITY_PASS"
+  ],
+  "device_probes": {
+    "core": {
+      "device_log_sha256": "b9258751545b5beed453675d53bd943e3d25989e6e15d1e1dddbf45c5f377d31",
+      "files": {
+        "boot/boot-apache-xml.art": {
+          "bytes": 1651216,
+          "sha256": "58bec1359738688826911212b48b0469a343ac26fe177ae3b5b2ff0b9d7a3bbc"
+        },
+        "boot/boot-apache-xml.oat": {
+          "bytes": 21120,
+          "sha256": "bbfc251619c59ae998d5cdcc30dfbfb56ba883423153dbc95e6eb37c9da45b9d"
+        },
+        "boot/boot-apache-xml.vdex": {
+          "bytes": 999472,
+          "sha256": "20476b98d65414de9437a7706864227063377fcad5e0eda774e87d17fd2e3fb4"
+        },
+        "boot/boot-bouncycastle.art": {
+          "bytes": 1107264,
+          "sha256": "a2bc97959e6fc22425efb9dfe119abb3c0cc6d1479704dc967e9569f88f670a7"
+        },
+        "boot/boot-bouncycastle.oat": {
+          "bytes": 25216,
+          "sha256": "cd2bcce5c72182fa661d1b06dcbc9306e8ccb335974f28ea093aca670cc42c24"
+        },
+        "boot/boot-bouncycastle.vdex": {
+          "bytes": 1259912,
+          "sha256": "ac95a246f2b4706c17d8176c9e1c643f752d111b2cd3a8bff6822235c47efdf3"
+        },
+        "boot/boot-conscrypt.art": {
+          "bytes": 351152,
+          "sha256": "f1973230b3b221fbdfd3d6c24bf7ef61ae590a5e309b85c69354c654dbb22fba"
+        },
+        "boot/boot-conscrypt.oat": {
+          "bytes": 17024,
+          "sha256": "7749d2f44841725d0eb097e139c43fb4f3448f1419d0259f0533644b60de771d"
+        },
+        "boot/boot-conscrypt.vdex": {
+          "bytes": 427764,
+          "sha256": "285dbff86378a1eb3495283053fd03b11729efb61c7e7f20da7145a85016b91f"
+        },
+        "boot/boot-core-icu4j.art": {
+          "bytes": 1866512,
+          "sha256": "edfb584e9a77d4127dc631aba631c7f6e847b46e4df5be42e9a3a02d44f95795"
+        },
+        "boot/boot-core-icu4j.oat": {
+          "bytes": 29312,
+          "sha256": "b59afc2ae2661f03b380f732f561316c19d1593c2b4f4bd0ade2f73eb1a89107"
+        },
+        "boot/boot-core-icu4j.vdex": {
+          "bytes": 2416732,
+          "sha256": "708e2b092a036cb3efba3d60f418ebe63b1203ecc202f34ddf2b7bba89b6cf48"
+        },
+        "boot/boot-core-libart.art": {
+          "bytes": 445456,
+          "sha256": "e9c2d4844e12cc36d5324b33b8feb6c783e1e3677667b6bf2c9fce8a1bad30c6"
+        },
+        "boot/boot-core-libart.oat": {
+          "bytes": 21120,
+          "sha256": "8a35d493be0f39d851413fcc581efbf33b029d9026599cec6af02264c1045a8d"
+        },
+        "boot/boot-core-libart.vdex": {
+          "bytes": 500980,
+          "sha256": "86bd533be08880d3d638a2b07614d2078ed07eaa01a4c68e2e94bc32bdbd2359"
+        },
+        "boot/boot-okhttp.art": {
+          "bytes": 284816,
+          "sha256": "f7d75ad4b36e965b771a4bfbd041fb78e42a31cb484872e891cdf8d5da8c4208"
+        },
+        "boot/boot-okhttp.oat": {
+          "bytes": 17024,
+          "sha256": "8c6c35333af3c0339b81612043d1991a724601cd72ae8f2575286fcf78666bbf"
+        },
+        "boot/boot-okhttp.vdex": {
+          "bytes": 352304,
+          "sha256": "a6eb42b8eaa99aae1bce013a8f68f8682006c755e118fc20b990ff903edb048f"
+        },
+        "boot/boot.art": {
+          "bytes": 4928912,
+          "sha256": "bde5c5ed50da679758023704fc634863db59f05f229cb58c98595828cc83ef89"
+        },
+        "boot/boot.oat": {
+          "bytes": 53888,
+          "sha256": "f146b485399e4de652ac05df9dc4c8d9ea7fd2e0753b169a00fa09ab7f7e17e0"
+        },
+        "boot/boot.vdex": {
+          "bytes": 4725628,
+          "sha256": "03e3ade4a936a1b07d2aa72b0e6e7692980c0d98381b4274ca6f11814c0d1c78"
+        },
+        "core/apache-xml.jar": {
+          "bytes": 439222,
+          "sha256": "6e76cc75c53ccc8fc1089d62d8457be09a3f88e409717cd242970087a5cc01ec"
+        },
+        "core/bouncycastle.jar": {
+          "bytes": 483790,
+          "sha256": "7edd0e1a7668c12b459ddee6563e4ce1b0c5df5003304b858c3903bb27aa608c"
+        },
+        "core/conscrypt.jar": {
+          "bytes": 163474,
+          "sha256": "0e7577a33612afa55a33ebdd2468f742fd37eb0fbbadde19f843f889a301ad58"
+        },
+        "core/core-icu4j.jar": {
+          "bytes": 1079326,
+          "sha256": "7d8786c1a0c7f0c3b2eae51160a872368fcf65bc6faf6592cd3155bbdfb67787"
+        },
+        "core/core-libart.jar": {
+          "bytes": 197929,
+          "sha256": "b9438a3b4fe5dd37f750a1eb6c8c4fdf0bc4933217442d1bcbd98e2575717ac6"
+        },
+        "core/core-oj.jar": {
+          "bytes": 1927350,
+          "sha256": "02d8b12d06c8944844916b46b66da5a90a61d876399a003e9b82d0828f617c5c"
+        },
+        "core/okhttp.jar": {
+          "bytes": 148928,
+          "sha256": "1f8dfdb55631b0747c6402f04eb6b30a820ae326b9642a23a6edb3da7ba65f03"
+        },
+        "core_vm_probe": {
+          "bytes": 17736,
+          "sha256": "96f866b3509041f6af469721fdc8a07a5aa7e03c44f75d923038e519843a8f36"
+        },
+        "libandroidfw.so": {
+          "bytes": 908040,
+          "sha256": "3da719deea81c1667ca8b2bb6efb0f88b04807c773b238236fcd482fe6557e9a"
+        },
+        "libart.so": {
+          "bytes": 21531272,
+          "sha256": "bd87e834a60b5158d4d5a175c979185f27e10610ead1c24f28a87211d0200cc5"
+        },
+        "libbase.so": {
+          "bytes": 347456,
+          "sha256": "b976ad27de85287a12867238c372803157cf4778ba2b839661b8c2143811c1d3"
+        },
+        "libc++.so": {
+          "bytes": 1258776,
+          "sha256": "9487e6aa920386ca3c83cc2b238a8792c194d55ea73545bbf17b5e0d0fb1c5bc"
+        },
+        "libcutils.so": {
+          "bytes": 98240,
+          "sha256": "7964168df499aed82c853aadaa66b5b695cfe305da0254ffad44b642600e6e6d"
+        },
+        "libexpat.so": {
+          "bytes": 166832,
+          "sha256": "fe08c1224706444a4da35daa25ca68fd6b127235d84ba8be0b71bc7c8f8db7f2"
+        },
+        "libft2.so": {
+          "bytes": 634024,
+          "sha256": "8242228fcf38a9c397d2d233d601a59d8bfd8a0956fb5ec60eb009fec0cf69c6"
+        },
+        "libharfbuzz_ng.so": {
+          "bytes": 1094960,
+          "sha256": "bec22002b04c75adef9d9122361e27f16c2049b4ccd491773053306fe2a771e3"
+        },
+        "libicu_jni.so": {
+          "bytes": 147896,
+          "sha256": "be7697a24cf59593a637a22c3b6fc63f1bd810727b88a796b7edae29762238e5"
+        },
+        "libicui18n.so": {
+          "bytes": 3969600,
+          "sha256": "2aa3bf514088f35f7f3f1b2650c7b1cb6753743bdec007bcc9bba40dd49c53d2"
+        },
+        "libicuuc.so": {
+          "bytes": 30385440,
+          "sha256": "fe821dc664991d10290bcfdb7cb9176f2f7bde0f932e21e08b819c3e4db7621c"
+        },
+        "libjavacrypto.so": {
+          "bytes": 1819344,
+          "sha256": "05223bfd53925be686d0b5dcf16e494b60f78c4586441d8c31e95a2187ca2fd9"
+        },
+        "liblog.so": {
+          "bytes": 70216,
+          "sha256": "d8ad176b41b820a4868b74394188429ad2dc69025661d320d0986dd713048ca4"
+        },
+        "libminikin.so": {
+          "bytes": 359576,
+          "sha256": "d0cf4d392b07bf7e5b4ba5ed9a412ff94259b7b08f583932ff6ebb0cc1eb9250"
+        },
+        "libnativehelper.so": {
+          "bytes": 32280,
+          "sha256": "ddd555394e8aaa354393f0aaaadfb0756d154a9cc6cacd484cc543e2e095463c"
+        },
+        "libpng.so": {
+          "bytes": 226512,
+          "sha256": "004344ec858bf9be8e924e0a1243b712e7335e731ba047c567793f05e079edd0"
+        },
+        "libutils.so": {
+          "bytes": 174584,
+          "sha256": "0f7f1064e7efcdaa4112416ab288c653c397e9bcecfef7c7d3d85d362e99da6e"
+        },
+        "libwestlake_runtime_boundary.so": {
+          "bytes": 375272,
+          "sha256": "bfb2bbea7d22f9568f6d1a8646ec4bb20fc8eef68d6f258467c5627d7ce4e4d1"
+        },
+        "libwestlake_webp.so": {
+          "bytes": 287184,
+          "sha256": "eab59243365aebddf0e6ac8bd07d6c7129a12ca8c78ae2310c43885bb32adfa4"
+        },
+        "libz.so": {
+          "bytes": 105024,
+          "sha256": "72c2eac44492d1feafb036ac6c129a9162576777dafe14886c80740a35fa4b2b"
+        },
+        "libziparchive.so": {
+          "bytes": 119776,
+          "sha256": "eef3e76498be60fc922228df1446f868167e1dcc093313d282876333294fa412"
+        },
+        "probe.jar": {
+          "bytes": 3156,
+          "sha256": "ec6a0d5ba723d814cef145aa96506434c5731c6e218477ebd6d906860e20cf2f"
+        }
+      },
+      "full_stack_accepted": false,
+      "passed": true,
+      "scope": "source core VM startup; not framework/Toutiao acceptance"
+    },
+    "framework_android15": {
+      "class_initialization_failures": [
+        "java.lang.UnsatisfiedLinkError: Error loading shared library libmedia_jni.so: No such file or directory"
+      ],
+      "device_log_sha256": "81875c593e549926b4aeebc8577597383c1e8ea8850270a4958926b30f58a1f2",
+      "exit_code": 0,
+      "files": {
+        "appspawn-x": {
+          "bytes": 180056,
+          "sha256": "d676e62212c87d0794fe1a6e4b748792de436323f4a3625fac3575a503d58215"
+        },
+        "boot/boot-adapter-runtime-bcp.art": {
+          "bytes": 293200,
+          "sha256": "3636024001472ee0e2db527888652a0adae584d04f92d8d2cd538ff752e4ebe1"
+        },
+        "boot/boot-adapter-runtime-bcp.oat": {
+          "bytes": 17024,
+          "sha256": "2a2ea05e684bcff760f1ddb654af9678a691568924256cc3c35981648cdd39f4"
+        },
+        "boot/boot-adapter-runtime-bcp.vdex": {
+          "bytes": 404380,
+          "sha256": "31ff893017826dc553f8f218774eb8e7071f5d8840221e1e21efa258530077b2"
+        },
+        "boot/boot-apache-xml.art": {
+          "bytes": 1651232,
+          "sha256": "33f8336b295a8258d17c7221a63ff9927cff5732368221f8c6d55fd96cc6df20"
+        },
+        "boot/boot-apache-xml.oat": {
+          "bytes": 21120,
+          "sha256": "bbfc251619c59ae998d5cdcc30dfbfb56ba883423153dbc95e6eb37c9da45b9d"
+        },
+        "boot/boot-apache-xml.vdex": {
+          "bytes": 999472,
+          "sha256": "20476b98d65414de9437a7706864227063377fcad5e0eda774e87d17fd2e3fb4"
+        },
+        "boot/boot-bouncycastle.art": {
+          "bytes": 1107280,
+          "sha256": "4f33f22d16cacf3af627c9f2926afc2ffe6325b0aa91cee54599fcaf7764da59"
+        },
+        "boot/boot-bouncycastle.oat": {
+          "bytes": 25216,
+          "sha256": "cd2bcce5c72182fa661d1b06dcbc9306e8ccb335974f28ea093aca670cc42c24"
+        },
+        "boot/boot-bouncycastle.vdex": {
+          "bytes": 1259912,
+          "sha256": "ac95a246f2b4706c17d8176c9e1c643f752d111b2cd3a8bff6822235c47efdf3"
+        },
+        "boot/boot-conscrypt.art": {
+          "bytes": 351168,
+          "sha256": "9a2e041bbe47323108a287855cd9a49c8040226421cd7773bd25dd8c2983855e"
+        },
+        "boot/boot-conscrypt.oat": {
+          "bytes": 17024,
+          "sha256": "b3c92868ba82305b613b284eca84c251961d5dcc40499c852316dc62f63a29cf"
+        },
+        "boot/boot-conscrypt.vdex": {
+          "bytes": 427764,
+          "sha256": "285dbff86378a1eb3495283053fd03b11729efb61c7e7f20da7145a85016b91f"
+        },
+        "boot/boot-core-icu4j.art": {
+          "bytes": 1870640,
+          "sha256": "9967e1fe2232401e6f3134b104847152e761fac2606c0dfbccfa07cbbeb7eb92"
+        },
+        "boot/boot-core-icu4j.oat": {
+          "bytes": 29312,
+          "sha256": "b59afc2ae2661f03b380f732f561316c19d1593c2b4f4bd0ade2f73eb1a89107"
+        },
+        "boot/boot-core-icu4j.vdex": {
+          "bytes": 2416732,
+          "sha256": "708e2b092a036cb3efba3d60f418ebe63b1203ecc202f34ddf2b7bba89b6cf48"
+        },
+        "boot/boot-core-libart.art": {
+          "bytes": 449568,
+          "sha256": "5743a2e28a9a33b809f0800b904c777abc4ca5110c3e705c6c26224db5a6113c"
+        },
+        "boot/boot-core-libart.oat": {
+          "bytes": 21120,
+          "sha256": "8a35d493be0f39d851413fcc581efbf33b029d9026599cec6af02264c1045a8d"
+        },
+        "boot/boot-core-libart.vdex": {
+          "bytes": 500980,
+          "sha256": "86bd533be08880d3d638a2b07614d2078ed07eaa01a4c68e2e94bc32bdbd2359"
+        },
+        "boot/boot-framework.art": {
+          "bytes": 46782928,
+          "sha256": "50992f20f5cea78ef817fd9333f1165b4abdeff51e527a76b9453fd324d92a0f"
+        },
+        "boot/boot-framework.oat": {
+          "bytes": 373376,
+          "sha256": "66141ce0080bae34d2251346916929a017450b9f135ce9196c71111ed1fcc240"
+        },
+        "boot/boot-framework.vdex": {
+          "bytes": 47226788,
+          "sha256": "c67f97f606cad1bf27af9edf448df4de63a772aea0f3955ade0e3587843a7bb8"
+        },
+        "boot/boot-okhttp.art": {
+          "bytes": 284832,
+          "sha256": "758ece4d9785ab6f180b4662f47277c2b33157c49121c6f4210a358520aada65"
+        },
+        "boot/boot-okhttp.oat": {
+          "bytes": 17024,
+          "sha256": "8c6c35333af3c0339b81612043d1991a724601cd72ae8f2575286fcf78666bbf"
+        },
+        "boot/boot-okhttp.vdex": {
+          "bytes": 352304,
+          "sha256": "a6eb42b8eaa99aae1bce013a8f68f8682006c755e118fc20b990ff903edb048f"
+        },
+        "boot/boot.art": {
+          "bytes": 4953808,
+          "sha256": "6d31cde400a07eee4c0eb348d56b03477889fbc07c1733cbfc139b3d444889ac"
+        },
+        "boot/boot.oat": {
+          "bytes": 57984,
+          "sha256": "fe035eb8c09b441d59e25629f1c912ace9f01a85007291f75642398cc9fdd24c"
+        },
+        "boot/boot.vdex": {
+          "bytes": 4725628,
+          "sha256": "03e3ade4a936a1b07d2aa72b0e6e7692980c0d98381b4274ca6f11814c0d1c78"
+        },
+        "framework-res.apk": {
+          "bytes": 37580135,
+          "sha256": "dfbbd90a9255012182046fe74f506c5b78af6e3f55fc53815fdf4c268b8459f3"
+        },
+        "fw/adapter-runtime-bcp.jar": {
+          "bytes": 158904,
+          "sha256": "6a075b161b3075603f1e1256d5d924f5ae312122bd9a5ab004a6cb0346510498"
+        },
+        "fw/apache-xml.jar": {
+          "bytes": 439222,
+          "sha256": "6e76cc75c53ccc8fc1089d62d8457be09a3f88e409717cd242970087a5cc01ec"
+        },
+        "fw/bouncycastle.jar": {
+          "bytes": 483790,
+          "sha256": "7edd0e1a7668c12b459ddee6563e4ce1b0c5df5003304b858c3903bb27aa608c"
+        },
+        "fw/conscrypt.jar": {
+          "bytes": 163474,
+          "sha256": "0e7577a33612afa55a33ebdd2468f742fd37eb0fbbadde19f843f889a301ad58"
+        },
+        "fw/core-icu4j.jar": {
+          "bytes": 1079326,
+          "sha256": "7d8786c1a0c7f0c3b2eae51160a872368fcf65bc6faf6592cd3155bbdfb67787"
+        },
+        "fw/core-libart.jar": {
+          "bytes": 197929,
+          "sha256": "b9438a3b4fe5dd37f750a1eb6c8c4fdf0bc4933217442d1bcbd98e2575717ac6"
+        },
+        "fw/core-oj.jar": {
+          "bytes": 1927350,
+          "sha256": "02d8b12d06c8944844916b46b66da5a90a61d876399a003e9b82d0828f617c5c"
+        },
+        "fw/framework.jar": {
+          "bytes": 18118892,
+          "sha256": "9278212ab6f527d174795011664ac7a60c7d04835050e9ea9032a84bd485fdfd"
+        },
+        "fw/okhttp.jar": {
+          "bytes": 148928,
+          "sha256": "1f8dfdb55631b0747c6402f04eb6b30a820ae326b9642a23a6edb3da7ba65f03"
+        },
+        "i18n/etc/icu/icudt75l.dat": {
+          "bytes": 27956384,
+          "sha256": "0ee29e29eb2c29517e5d78ae8d9e8f73024678cb5f423aaf3b385bb32e802242"
+        },
+        "libandroid.so": {
+          "bytes": 27944,
+          "sha256": "17f964ab9f1eb63eb8d1b95314f095c26cb5a029a1db4f36f15805aa62159690"
+        },
+        "libandroidfw.so": {
+          "bytes": 908040,
+          "sha256": "3da719deea81c1667ca8b2bb6efb0f88b04807c773b238236fcd482fe6557e9a"
+        },
+        "libart.so": {
+          "bytes": 21531272,
+          "sha256": "bd87e834a60b5158d4d5a175c979185f27e10610ead1c24f28a87211d0200cc5"
+        },
+        "libbase.so": {
+          "bytes": 347456,
+          "sha256": "b976ad27de85287a12867238c372803157cf4778ba2b839661b8c2143811c1d3"
+        },
+        "libbinder_ndk.so": {
+          "bytes": 144360,
+          "sha256": "cd3fe767fcfba48467c3e23d67a63f3ff2e466517e1b32b967841bd8e20f6008"
+        },
+        "libcutils.so": {
+          "bytes": 98240,
+          "sha256": "7964168df499aed82c853aadaa66b5b695cfe305da0254ffad44b642600e6e6d"
+        },
+        "libexpat.so": {
+          "bytes": 166832,
+          "sha256": "fe08c1224706444a4da35daa25ca68fd6b127235d84ba8be0b71bc7c8f8db7f2"
+        },
+        "libft2.so": {
+          "bytes": 634024,
+          "sha256": "8242228fcf38a9c397d2d233d601a59d8bfd8a0956fb5ec60eb009fec0cf69c6"
+        },
+        "libgif.so": {
+          "bytes": 37768,
+          "sha256": "a22e52138a0927ef1af874d01fda5edff65d39c7f749797897eaeeb4d959dd3a"
+        },
+        "libharfbuzz_ng.so": {
+          "bytes": 1094960,
+          "sha256": "bec22002b04c75adef9d9122361e27f16c2049b4ccd491773053306fe2a771e3"
+        },
+        "libhwui.so": {
+          "bytes": 7754416,
+          "sha256": "db36f1c61821a6bec986e1f161eab7052610fb760640d6607fcccce1900faab8"
+        },
+        "libicu_jni.so": {
+          "bytes": 147896,
+          "sha256": "be7697a24cf59593a637a22c3b6fc63f1bd810727b88a796b7edae29762238e5"
+        },
+        "libicui18n.so": {
+          "bytes": 3969600,
+          "sha256": "2aa3bf514088f35f7f3f1b2650c7b1cb6753743bdec007bcc9bba40dd49c53d2"
+        },
+        "libicuuc.so": {
+          "bytes": 30385440,
+          "sha256": "fe821dc664991d10290bcfdb7cb9176f2f7bde0f932e21e08b819c3e4db7621c"
+        },
+        "libjavacrypto.so": {
+          "bytes": 1819344,
+          "sha256": "05223bfd53925be686d0b5dcf16e494b60f78c4586441d8c31e95a2187ca2fd9"
+        },
+        "liblog.so": {
+          "bytes": 70216,
+          "sha256": "d8ad176b41b820a4868b74394188429ad2dc69025661d320d0986dd713048ca4"
+        },
+        "libminikin.so": {
+          "bytes": 431728,
+          "sha256": "b5203bf3777e42d91fc74ed57d0c1eba1e4d3006c8b816607cdf4ca3e6ecb3c6"
+        },
+        "libnativehelper.so": {
+          "bytes": 32280,
+          "sha256": "ddd555394e8aaa354393f0aaaadfb0756d154a9cc6cacd484cc543e2e095463c"
+        },
+        "liboh_adapter_bridge.so": {
+          "bytes": 2013816,
+          "sha256": "580d36aa9a2ed81046090bafe33a763cbff7994af0b26081d45956447d4c083a"
+        },
+        "liboh_android_runtime.so": {
+          "bytes": 2148208,
+          "sha256": "5872af5f5802584623020f47cc83dfae9ee51c56e542793613590aceb4942c42"
+        },
+        "liboh_hwui_shim.so": {
+          "bytes": 120640,
+          "sha256": "3628a6f13353737859c08d55d81823483fd1b70c5a7a866591acdba056aa7735"
+        },
+        "liboh_skia_rtti_shim.so": {
+          "bytes": 16688,
+          "sha256": "aa4f789f57dbbd98815f40ab19bb70a7ac4c30c595658f585ff46fbacbc8eca4"
+        },
+        "libpng.so": {
+          "bytes": 226512,
+          "sha256": "004344ec858bf9be8e924e0a1243b712e7335e731ba047c567793f05e079edd0"
+        },
+        "libstatspull.so": {
+          "bytes": 349784,
+          "sha256": "779c8ad9e26b5129216cadc55b54c276fa49d78586e22d90641c10c94243a312"
+        },
+        "libstatssocket.so": {
+          "bytes": 52624,
+          "sha256": "94132828a8267d238a3b599c1dee6a9c006e1db3b533ad12a1e0ecbf1956718a"
+        },
+        "libultrahdr.so": {
+          "bytes": 675128,
+          "sha256": "8c15b458544453fafcf7bd4bfb04300f0d5f40640f0753113197e2d396ca551c"
+        },
+        "libutils.so": {
+          "bytes": 174584,
+          "sha256": "0f7f1064e7efcdaa4112416ab288c653c397e9bcecfef7c7d3d85d362e99da6e"
+        },
+        "libwestlake_binder.so": {
+          "bytes": 809120,
+          "sha256": "297f719cc322c9a18c6b610b0c2f30524aead9a5e00790e3920c20be185bdbd0"
+        },
+        "libwestlake_runtime_boundary.so": {
+          "bytes": 375320,
+          "sha256": "0c6ce10bebfd3c2be173246c614eeebece38573161db830df765407b7f991690"
+        },
+        "libwestlake_webp.so": {
+          "bytes": 287184,
+          "sha256": "eab59243365aebddf0e6ac8bd07d6c7129a12ca8c78ae2310c43885bb32adfa4"
+        },
+        "libz.so": {
+          "bytes": 105024,
+          "sha256": "72c2eac44492d1feafb036ac6c129a9162576777dafe14886c80740a35fa4b2b"
+        },
+        "libziparchive.so": {
+          "bytes": 119776,
+          "sha256": "eef3e76498be60fc922228df1446f868167e1dcc093313d282876333294fa412"
+        }
+      },
+      "full_stack_accepted": false,
+      "passed": true,
+      "scope": "source Appspawn framework initialization; not Toutiao UX acceptance",
+      "source_report_sha256": "84f61dcfba2f4b457c496b082005c471b897e392d1b41ff98aff46b073d454f7"
+    },
+    "framework_connectivity": {
+      "contract": "SOURCE_TRAFFIC_STATS_JNI_PASS invalid_fd=EBADF accounting=EOPNOTSUPP socket_preserved=1",
+      "passed": true,
+      "report_sha256": "f38e4c9d09b5a055cf85eb6d32000276935061f0468cd3c54206d0a9c80a6dfe"
+    },
+    "framework_font_ndk_contracts": {
+      "checks": [
+        "Parcel int/long/Chinese string round trip",
+        "HardwareBuffer Parcel ownership after original close",
+        "software Canvas pixel readback",
+        "NDK Bitmap lock/write and Java pixel visibility",
+        "NDK PNG compression and exact four-pixel decode",
+        "220 font faces confined to source font stage",
+        "Chinese glyph rasterization with 408 ink pixels"
+      ],
+      "class_initialization_failures": [
+        "java.lang.UnsatisfiedLinkError: Error loading shared library libmedia_jni.so: No such file or directory"
+      ],
+      "contracts_passed": true,
+      "device_log_sha256": "9b806f47ed6440e143db5f23a1c884bfe236555f5d8ba32a56827856838dd3b5",
+      "exit_code": 0,
+      "font_contracts_passed": true,
+      "full_stack_accepted": false,
+      "ndk_graphics_contracts_passed": true,
+      "passed": true,
+      "provider_limit": "Image codec and GPU functions still resolve partly to OH firmware Skia; this is a functional test, not complete Skia source closure."
+    },
+    "framework_java_contracts": {
+      "checks": [
+        "Parcel int, long and Chinese string round trip",
+        "HardwareBuffer Parcel import survives original close and preserves allocation id",
+        "Software Canvas exact color pixel readback"
+      ],
+      "class_initialization_failures": [
+        "java.lang.UnsatisfiedLinkError: Error loading shared library libmedia_jni.so: No such file or directory"
+      ],
+      "contracts_passed": true,
+      "device_log_sha256": "7d9efa918079193497c9f760e402d694b784d029bc9683d761a422ab11daedf3",
+      "exit_code": 0,
+      "font_data_isolated": false,
+      "passed": true,
+      "stage": "/data/local/tmp/a2hlab-framework-775c85f8cea541ca9d0fdefc8df127fc"
+    },
+    "framework_preload": {
+      "device_command": "cd /data/local/tmp/a2hlab-framework-da82483c3e4a4e0db4eae947c5a4dae3; WESTLAKE_RUNTIME_ROOT=/data/local/tmp/a2hlab-framework-da82483c3e4a4e0db4eae947c5a4dae3 LD_LIBRARY_PATH=/data/local/tmp/a2hlab-framework-da82483c3e4a4e0db4eae947c5a4dae3:/system/lib64:/system/lib64/platformsdk:/system/lib64/chipset-sdk:/system/lib64/chipset-sdk-sp:/system/lib64/ndk:/vendor/lib64/chipsetsdk:/vendor/lib64/hw:/vendor/lib64 timeout 40 /data/local/tmp/a2hlab-framework-da82483c3e4a4e0db4eae947c5a4dae3/appspawn-x --preload-test --socket-name A2H-4ca799f25ba3",
+      "device_log_sha256": "a3f4a9050317edcfecdfb1310b2a5aa1582ec5e181a9cdcab8ee6dfcc12362bd",
+      "exit_code": 134,
+      "failure": "Android 15 Paint JNI signature differs from the Android 14 renderer; full source preload and UX not accepted",
+      "files": {
+        "appspawn-x": {
+          "bytes": 180056,
+          "sha256": "d676e62212c87d0794fe1a6e4b748792de436323f4a3625fac3575a503d58215"
+        },
+        "boot/boot-adapter-runtime-bcp.art": {
+          "bytes": 293200,
+          "sha256": "3636024001472ee0e2db527888652a0adae584d04f92d8d2cd538ff752e4ebe1"
+        },
+        "boot/boot-adapter-runtime-bcp.oat": {
+          "bytes": 17024,
+          "sha256": "2a2ea05e684bcff760f1ddb654af9678a691568924256cc3c35981648cdd39f4"
+        },
+        "boot/boot-adapter-runtime-bcp.vdex": {
+          "bytes": 404380,
+          "sha256": "31ff893017826dc553f8f218774eb8e7071f5d8840221e1e21efa258530077b2"
+        },
+        "boot/boot-apache-xml.art": {
+          "bytes": 1651232,
+          "sha256": "33f8336b295a8258d17c7221a63ff9927cff5732368221f8c6d55fd96cc6df20"
+        },
+        "boot/boot-apache-xml.oat": {
+          "bytes": 21120,
+          "sha256": "bbfc251619c59ae998d5cdcc30dfbfb56ba883423153dbc95e6eb37c9da45b9d"
+        },
+        "boot/boot-apache-xml.vdex": {
+          "bytes": 999472,
+          "sha256": "20476b98d65414de9437a7706864227063377fcad5e0eda774e87d17fd2e3fb4"
+        },
+        "boot/boot-bouncycastle.art": {
+          "bytes": 1107280,
+          "sha256": "4f33f22d16cacf3af627c9f2926afc2ffe6325b0aa91cee54599fcaf7764da59"
+        },
+        "boot/boot-bouncycastle.oat": {
+          "bytes": 25216,
+          "sha256": "cd2bcce5c72182fa661d1b06dcbc9306e8ccb335974f28ea093aca670cc42c24"
+        },
+        "boot/boot-bouncycastle.vdex": {
+          "bytes": 1259912,
+          "sha256": "ac95a246f2b4706c17d8176c9e1c643f752d111b2cd3a8bff6822235c47efdf3"
+        },
+        "boot/boot-conscrypt.art": {
+          "bytes": 351168,
+          "sha256": "9a2e041bbe47323108a287855cd9a49c8040226421cd7773bd25dd8c2983855e"
+        },
+        "boot/boot-conscrypt.oat": {
+          "bytes": 17024,
+          "sha256": "b3c92868ba82305b613b284eca84c251961d5dcc40499c852316dc62f63a29cf"
+        },
+        "boot/boot-conscrypt.vdex": {
+          "bytes": 427764,
+          "sha256": "285dbff86378a1eb3495283053fd03b11729efb61c7e7f20da7145a85016b91f"
+        },
+        "boot/boot-core-icu4j.art": {
+          "bytes": 1870640,
+          "sha256": "9967e1fe2232401e6f3134b104847152e761fac2606c0dfbccfa07cbbeb7eb92"
+        },
+        "boot/boot-core-icu4j.oat": {
+          "bytes": 29312,
+          "sha256": "b59afc2ae2661f03b380f732f561316c19d1593c2b4f4bd0ade2f73eb1a89107"
+        },
+        "boot/boot-core-icu4j.vdex": {
+          "bytes": 2416732,
+          "sha256": "708e2b092a036cb3efba3d60f418ebe63b1203ecc202f34ddf2b7bba89b6cf48"
+        },
+        "boot/boot-core-libart.art": {
+          "bytes": 449568,
+          "sha256": "5743a2e28a9a33b809f0800b904c777abc4ca5110c3e705c6c26224db5a6113c"
+        },
+        "boot/boot-core-libart.oat": {
+          "bytes": 21120,
+          "sha256": "8a35d493be0f39d851413fcc581efbf33b029d9026599cec6af02264c1045a8d"
+        },
+        "boot/boot-core-libart.vdex": {
+          "bytes": 500980,
+          "sha256": "86bd533be08880d3d638a2b07614d2078ed07eaa01a4c68e2e94bc32bdbd2359"
+        },
+        "boot/boot-framework.art": {
+          "bytes": 46782928,
+          "sha256": "50992f20f5cea78ef817fd9333f1165b4abdeff51e527a76b9453fd324d92a0f"
+        },
+        "boot/boot-framework.oat": {
+          "bytes": 373376,
+          "sha256": "66141ce0080bae34d2251346916929a017450b9f135ce9196c71111ed1fcc240"
+        },
+        "boot/boot-framework.vdex": {
+          "bytes": 47226788,
+          "sha256": "c67f97f606cad1bf27af9edf448df4de63a772aea0f3955ade0e3587843a7bb8"
+        },
+        "boot/boot-okhttp.art": {
+          "bytes": 284832,
+          "sha256": "758ece4d9785ab6f180b4662f47277c2b33157c49121c6f4210a358520aada65"
+        },
+        "boot/boot-okhttp.oat": {
+          "bytes": 17024,
+          "sha256": "8c6c35333af3c0339b81612043d1991a724601cd72ae8f2575286fcf78666bbf"
+        },
+        "boot/boot-okhttp.vdex": {
+          "bytes": 352304,
+          "sha256": "a6eb42b8eaa99aae1bce013a8f68f8682006c755e118fc20b990ff903edb048f"
+        },
+        "boot/boot.art": {
+          "bytes": 4953808,
+          "sha256": "6d31cde400a07eee4c0eb348d56b03477889fbc07c1733cbfc139b3d444889ac"
+        },
+        "boot/boot.oat": {
+          "bytes": 57984,
+          "sha256": "fe035eb8c09b441d59e25629f1c912ace9f01a85007291f75642398cc9fdd24c"
+        },
+        "boot/boot.vdex": {
+          "bytes": 4725628,
+          "sha256": "03e3ade4a936a1b07d2aa72b0e6e7692980c0d98381b4274ca6f11814c0d1c78"
+        },
+        "framework-res.apk": {
+          "bytes": 37580135,
+          "sha256": "dfbbd90a9255012182046fe74f506c5b78af6e3f55fc53815fdf4c268b8459f3"
+        },
+        "fw/adapter-runtime-bcp.jar": {
+          "bytes": 158904,
+          "sha256": "6a075b161b3075603f1e1256d5d924f5ae312122bd9a5ab004a6cb0346510498"
+        },
+        "fw/apache-xml.jar": {
+          "bytes": 439222,
+          "sha256": "6e76cc75c53ccc8fc1089d62d8457be09a3f88e409717cd242970087a5cc01ec"
+        },
+        "fw/bouncycastle.jar": {
+          "bytes": 483790,
+          "sha256": "7edd0e1a7668c12b459ddee6563e4ce1b0c5df5003304b858c3903bb27aa608c"
+        },
+        "fw/conscrypt.jar": {
+          "bytes": 163474,
+          "sha256": "0e7577a33612afa55a33ebdd2468f742fd37eb0fbbadde19f843f889a301ad58"
+        },
+        "fw/core-icu4j.jar": {
+          "bytes": 1079326,
+          "sha256": "7d8786c1a0c7f0c3b2eae51160a872368fcf65bc6faf6592cd3155bbdfb67787"
+        },
+        "fw/core-libart.jar": {
+          "bytes": 197929,
+          "sha256": "b9438a3b4fe5dd37f750a1eb6c8c4fdf0bc4933217442d1bcbd98e2575717ac6"
+        },
+        "fw/core-oj.jar": {
+          "bytes": 1927350,
+          "sha256": "02d8b12d06c8944844916b46b66da5a90a61d876399a003e9b82d0828f617c5c"
+        },
+        "fw/framework.jar": {
+          "bytes": 18118892,
+          "sha256": "9278212ab6f527d174795011664ac7a60c7d04835050e9ea9032a84bd485fdfd"
+        },
+        "fw/okhttp.jar": {
+          "bytes": 148928,
+          "sha256": "1f8dfdb55631b0747c6402f04eb6b30a820ae326b9642a23a6edb3da7ba65f03"
+        },
+        "i18n/etc/icu/icudt75l.dat": {
+          "bytes": 27956384,
+          "sha256": "0ee29e29eb2c29517e5d78ae8d9e8f73024678cb5f423aaf3b385bb32e802242"
+        },
+        "libandroidfw.so": {
+          "bytes": 908040,
+          "sha256": "3da719deea81c1667ca8b2bb6efb0f88b04807c773b238236fcd482fe6557e9a"
+        },
+        "libart.so": {
+          "bytes": 21531272,
+          "sha256": "bd87e834a60b5158d4d5a175c979185f27e10610ead1c24f28a87211d0200cc5"
+        },
+        "libbase.so": {
+          "bytes": 347456,
+          "sha256": "b976ad27de85287a12867238c372803157cf4778ba2b839661b8c2143811c1d3"
+        },
+        "libcutils.so": {
+          "bytes": 98240,
+          "sha256": "7964168df499aed82c853aadaa66b5b695cfe305da0254ffad44b642600e6e6d"
+        },
+        "libexpat.so": {
+          "bytes": 166832,
+          "sha256": "fe08c1224706444a4da35daa25ca68fd6b127235d84ba8be0b71bc7c8f8db7f2"
+        },
+        "libft2.so": {
+          "bytes": 634024,
+          "sha256": "8242228fcf38a9c397d2d233d601a59d8bfd8a0956fb5ec60eb009fec0cf69c6"
+        },
+        "libharfbuzz_ng.so": {
+          "bytes": 1094960,
+          "sha256": "bec22002b04c75adef9d9122361e27f16c2049b4ccd491773053306fe2a771e3"
+        },
+        "libhwui.so": {
+          "bytes": 2747936,
+          "sha256": "01e3b469cd018579b6a92f3a5c9d95cc33572336d9c4d19dc54c02d046a4593a"
+        },
+        "libicu_jni.so": {
+          "bytes": 147896,
+          "sha256": "be7697a24cf59593a637a22c3b6fc63f1bd810727b88a796b7edae29762238e5"
+        },
+        "libicui18n.so": {
+          "bytes": 3969600,
+          "sha256": "2aa3bf514088f35f7f3f1b2650c7b1cb6753743bdec007bcc9bba40dd49c53d2"
+        },
+        "libicuuc.so": {
+          "bytes": 30385440,
+          "sha256": "fe821dc664991d10290bcfdb7cb9176f2f7bde0f932e21e08b819c3e4db7621c"
+        },
+        "libjavacrypto.so": {
+          "bytes": 1819344,
+          "sha256": "05223bfd53925be686d0b5dcf16e494b60f78c4586441d8c31e95a2187ca2fd9"
+        },
+        "liblog.so": {
+          "bytes": 70216,
+          "sha256": "d8ad176b41b820a4868b74394188429ad2dc69025661d320d0986dd713048ca4"
+        },
+        "libminikin.so": {
+          "bytes": 359576,
+          "sha256": "d0cf4d392b07bf7e5b4ba5ed9a412ff94259b7b08f583932ff6ebb0cc1eb9250"
+        },
+        "libnativehelper.so": {
+          "bytes": 32280,
+          "sha256": "ddd555394e8aaa354393f0aaaadfb0756d154a9cc6cacd484cc543e2e095463c"
+        },
+        "liboh_adapter_bridge.so": {
+          "bytes": 2036960,
+          "sha256": "760d57120e19680db4784c48ae6d99dcd3b7d42e816e6f83e2fbc12313648636"
+        },
+        "liboh_android_runtime.so": {
+          "bytes": 2087984,
+          "sha256": "9336b38788f246376fe696b2cae4a6c729b4eb8b8c8cc749e9babf250691c4b3"
+        },
+        "liboh_hwui_shim.so": {
+          "bytes": 137664,
+          "sha256": "7ae233450ab581e4f360d21f3bc9f40acd2ffbd7e357ec760f32d44db6bea5d4"
+        },
+        "liboh_skia_rtti_shim.so": {
+          "bytes": 16688,
+          "sha256": "aa4f789f57dbbd98815f40ab19bb70a7ac4c30c595658f585ff46fbacbc8eca4"
+        },
+        "libpng.so": {
+          "bytes": 226512,
+          "sha256": "004344ec858bf9be8e924e0a1243b712e7335e731ba047c567793f05e079edd0"
+        },
+        "libutils.so": {
+          "bytes": 174584,
+          "sha256": "0f7f1064e7efcdaa4112416ab288c653c397e9bcecfef7c7d3d85d362e99da6e"
+        },
+        "libwestlake_binder.so": {
+          "bytes": 649544,
+          "sha256": "5cc27252cc69fd770f8d3c094b28d34bb42bbbc1a103239700ee03b5cf12afd7"
+        },
+        "libwestlake_runtime_boundary.so": {
+          "bytes": 375320,
+          "sha256": "0c6ce10bebfd3c2be173246c614eeebece38573161db830df765407b7f991690"
+        },
+        "libwestlake_webp.so": {
+          "bytes": 287184,
+          "sha256": "eab59243365aebddf0e6ac8bd07d6c7129a12ca8c78ae2310c43885bb32adfa4"
+        },
+        "libz.so": {
+          "bytes": 105024,
+          "sha256": "72c2eac44492d1feafb036ac6c129a9162576777dafe14886c80740a35fa4b2b"
+        },
+        "libziparchive.so": {
+          "bytes": 119776,
+          "sha256": "eef3e76498be60fc922228df1446f868167e1dcc093313d282876333294fa412"
+        }
+      },
+      "firmware": {
+        "/system/lib/ld-musl-aarch64.so.1": "fd3c4701acf719738fbd14cf1d419e4dd222c06a6df41f53d973354d648af7e2",
+        "/system/lib64/chipset-sdk-sp/libbegetutil.z.so": "1f114e636be004950428e82ebdff19dc9c755507c90a9bddcb412f6356029460",
+        "/system/lib64/chipset-sdk-sp/libc++.so": "9466fb0d933689533bdf4b4962907f3e0c0970be278bd6ccf703ffa2aea838a6",
+        "/system/lib64/chipset-sdk-sp/libeventhandler.z.so": "d4197d1c4d1ab0990361ad3047d908fd63cb040a7212d98538fbc75cfef34f51",
+        "/system/lib64/chipset-sdk-sp/libsamgr_proxy.z.so": "a97fe3dc89365d6e37b44cd130aaf89f3ea30f788f1039301a9bd169d205a107",
+        "/system/lib64/chipset-sdk-sp/libsurface.z.so": "8f1879f82a307d3a95555067575132918a05244fbdeee1c2f2db37834a58f4a3",
+        "/system/lib64/chipset-sdk-sp/libutils.z.so": "66bdf65d494437eae03b4cb4a6f277e65f1832de5d79634d350d01b69e079d1a",
+        "/system/lib64/chipset-sdk/libhilog.so": "20d33c225230ef3a1eef3d4bdfdab0404457af98b26358a6a532bd79f2e0b719",
+        "/system/lib64/libdm.z.so": "ad0137edaf5cdd21641172b8ff6d22b6924f9065adbd0a49804efeb73ee4b218",
+        "/system/lib64/libhap_restorecon.z.so": "5ed7836eb81d60e8389158c2648044d6e02dd41ac390e2ff7d8f2d35bc421b71",
+        "/system/lib64/libskia_canvaskit.z.so": "caa86d58671eef0079cdcfa60cf943c6cda6ee7934ecfdf59bf37df754a2abe4",
+        "/system/lib64/libwm.z.so": "dc36f9663338d309fa5fbb55a73cedb075d799e6c58be4fd75d1ab5806cf55b2",
+        "/system/lib64/ndk/libhitrace_ndk.z.so": "821d9f12e01ae4d2cadf00c74d46fc02251bece617333fd144758ca901c6a1f7",
+        "/system/lib64/ndk/libnative_display_manager.so": "44a76df21739f8ff0e9681352e03e204cf7e10a1c159a4718aee3bcbf4c3b84c",
+        "/system/lib64/ndk/libpasteboard.so": "a35420dde76e32b21d083ff1f73ae4908e0a6f4be7aa73a32f5383aaebbe88c8",
+        "/system/lib64/ndk/libsync_fence.z.so": "02a5ab6610a710a3cb17d00b356650335dfff287eaa99db8a2eec102ba1bd84d",
+        "/system/lib64/ndk/libudmf.so": "e98be8b1f3d4f47604aa6f71d04dc56e4c89c095ac2ec4d985dce6270b188d16",
+        "/system/lib64/platformsdk/libEGL.so": "96bc14217ceb3536440e97b53e80228106cb57fe95a3e17570bdefbdb76d49a5",
+        "/system/lib64/platformsdk/libability_connect_callback_stub.z.so": "40c516b9a4c36bad39b9b85f9ab23f765253f948b86a52a504faebe979ee1300",
+        "/system/lib64/platformsdk/libability_manager.z.so": "b1bd33d4a634f12abfc081a7f8aa5e34399b11e6d6659882561ed4fff7bbdb45",
+        "/system/lib64/platformsdk/libapp_manager.z.so": "6ae44a9ca22305a58e78eb93b3cc118abe51a585ffa3a7c98b6dd380f5ff4cc7",
+        "/system/lib64/platformsdk/libappexecfwk_base.z.so": "85c84aff96b10e5ba2f3f5138bdb5b864c321f1fa00d5153f7143b363e5b869d",
+        "/system/lib64/platformsdk/libappexecfwk_core.z.so": "17f9c8b6622f09ff4891bbcf17973948ee58c164a4172789c588909ef379208e",
+        "/system/lib64/platformsdk/libcesfwk_innerkits.z.so": "7f7bf5c810c94a46233e87a0d48a855f186c7c5610da322952e96a05d4ebda5c",
+        "/system/lib64/platformsdk/libconfiguration.z.so": "8824cf0ec817cf2f9dba6bbcded0d4be1c19f46d8c6d055584f55b4043b62c95",
+        "/system/lib64/platformsdk/libdatashare_consumer.z.so": "7b51f886d98ccd51173b8d68ace56d2fcc3a6a4cd9d2de5be1072f5772c0083b",
+        "/system/lib64/platformsdk/libinputmethod_client.z.so": "f71d7fa9a39477ee37884a661595aa24fd27cd198a0537b5d0d3c1732df4b8db",
+        "/system/lib64/platformsdk/libipc_single.z.so": "f6742ea92c89d4400d69201ec5ac47261dcfeb0945951ecc5ae44041ff6bd4f8",
+        "/system/lib64/platformsdk/libmission_info.z.so": "0d2a7d9f2b4612e76f32e0a76e42633a9d96c05c3a7dabc4c4278eb28170000e",
+        "/system/lib64/platformsdk/libmmi-client.z.so": "cc4a5786832b903034979dd708936789600deee8589494b817c1ff1987e538db",
+        "/system/lib64/platformsdk/libnative_image.so": "74b6ea0de10d8e9171a35042e46aa5d4a2d44e3a3ba529b6202603f9af749b9f",
+        "/system/lib64/platformsdk/librender_service_base.z.so": "9cc625e716da8379e78e11e216d7c5e68f18b2c1bd22b0d907b96338a1ef1062",
+        "/system/lib64/platformsdk/librender_service_client.z.so": "ea46c53899641fe6e5783cde9e87be7d75ea24517e374ff61b5b7d64d647f7e4",
+        "/system/lib64/platformsdk/libscene_session.z.so": "291a9f68ca981850649ffd2771fe50b21f45547f9554c2b7e50d798ac439e8de",
+        "/system/lib64/platformsdk/libtokensetproc_shared.z.so": "478c3739261bb512c89d0bbd155a76ab921d4dfb16d2d8587b14ad2882c42194",
+        "/system/lib64/platformsdk/libwant.z.so": "4d31b4ada8c6e6188d8e9cc60d91c67e703ac37bad5bc882e67850707018db8f",
+        "/system/lib64/platformsdk/libwindow_scene_common.z.so": "9551c7fe2617e032ac0b999695230076331ea644eb0bcf5bb3cbda971ebe2c8f",
+        "/system/lib64/platformsdk/libwmutil.z.so": "06734bf3308057ab2f28b21cacb5b47aed875f145704fbfd3e1a76a86ee9c102",
+        "/system/lib64/platformsdk/libwmutil_base.z.so": "8c96da51508a34a3597b66160885f0e5c861490061740c8c1f0d26e8279ed9b1",
+        "/system/lib64/platformsdk/libzuri.z.so": "a7d06d280bf7d337c11b5538325de018156bbb766fd4e4c44f82f0d28e2ae65c",
+        "/vendor/lib64/chipsetsdk/libGLES_mali.z.so": "e0cb108121981c6ad30c9e3f338c384172ef3be2dc790a457e0287a10efa2cfe"
+      },
+      "full_stack_accepted": false,
+      "passed": false,
+      "prerequisites": {
+        "/home/dspfac/a2hlab/source-closure/verify/out/appspawn-attempt3": "b95526b12ad574aaac16cac3d4ed3c77eac2c86a1c90ed861932e1386336f3d8",
+        "/home/dspfac/a2hlab/source-closure/verify/out/art-source-framework-boundary/runtime": "53628146668edddc866d76966e664e1470a83661a5a0df5aad02c59667d54568",
+        "/home/dspfac/a2hlab/source-closure/verify/out/framework-boot-attempt3": "dca32f8ce554e994fc31bfd023f74768c13f56c00e7104ab07372ef9bb3a192a",
+        "/home/dspfac/a2hlab/source-closure/verify/out/framework-res-ap3a": "beb871d077db20cc94f48761731624b010617aecccf3ca33f8a24d7c12926c9c",
+        "/home/dspfac/a2hlab/source-closure/verify/out/framework-runtime-attempt5": "d269a4b7a10708bfc1384fd72e7b141789929888abf3ce13b89a1da724a6f5d7",
+        "/home/dspfac/a2hlab/source-closure/verify/out/native-platform-attempt5": "c9a023dec2f520a97c1c08502edd0eb2be7d242553a07893ae2218b424d36a8f",
+        "/home/dspfac/a2hlab/source-closure/verify/out/runtime-data-attempt1": "819f971454782256e67e45a878bc11cc602a8bc4768befd8102d7b4f38405033"
+      },
+      "scope": "source Appspawn framework initialization; not Toutiao UX acceptance",
+      "stage": "/data/local/tmp/a2hlab-framework-da82483c3e4a4e0db4eae947c5a4dae3"
+    },
+    "framework_source_codecs": {
+      "checks": [
+        "PNG exact pixel decode",
+        "lossless WebP exact pixel decode",
+        "JPEG uniform color tolerance 3",
+        "Java/NDK bitmap coherence",
+        "source font isolation and Chinese rendering"
+      ],
+      "class_initialization_failures": [
+        "java.lang.UnsatisfiedLinkError: Error loading shared library libmedia_jni.so: No such file or directory"
+      ],
+      "device_log_sha256": "30e758a387f37786880d846c091f67e6834ca1c4cf09c59c195d47dcd8900273",
+      "exit_code": 0,
+      "font_contracts_passed": true,
+      "full_stack_accepted": false,
+      "ndk_graphics_contracts_passed": true,
+      "passed": true
+    },
+    "framework_source_renderer": {
+      "cache_files_reused": 279,
+      "class_initialization_failures": [
+        "java.lang.UnsatisfiedLinkError: Error loading shared library libmedia_jni.so: No such file or directory"
+      ],
+      "contracts_passed": true,
+      "contracts_requested": true,
+      "device_command": "export WESTLAKE_SOURCE_NDK_GRAPHICS_CONTRACTS=1; export WESTLAKE_SOURCE_FONT_CONTRACTS=1; export WESTLAKE_SOURCE_CONTRACTS=1; cd /data/local/tmp/a2hlab-framework-673bf7752f904801a562662287a3fb60; WESTLAKE_RUNTIME_ROOT=/data/local/tmp/a2hlab-framework-673bf7752f904801a562662287a3fb60 LD_LIBRARY_PATH=/data/local/tmp/a2hlab-framework-673bf7752f904801a562662287a3fb60:/system/lib64:/system/lib64/platformsdk:/system/lib64/chipset-sdk:/system/lib64/chipset-sdk-sp:/system/lib64/ndk:/vendor/lib64/chipsetsdk:/vendor/lib64/hw:/vendor/lib64 timeout 40 /data/local/tmp/a2hlab-framework-673bf7752f904801a562662287a3fb60/appspawn-x --preload-test --socket-name A2H-ad87a7d12534",
+      "device_log_sha256": "985a4310b83b13bed98bf48b08c9e679d04a62ec35f3fff22fa2e11e79de63ba",
+      "exit_code": 0,
+      "files": {
+        "appspawn-x": {
+          "bytes": 204672,
+          "sha256": "85232676bd3ef86e18e74bac9e89083ff98bcc191c66e30916c7c62cfd398bab"
+        },
+        "boot/boot-adapter-runtime-bcp.art": {
+          "bytes": 293200,
+          "sha256": "16ded0437fe00556efa23894a1cb5597b7064789fa60e410c9dcef9689f34640"
+        },
+        "boot/boot-adapter-runtime-bcp.oat": {
+          "bytes": 17024,
+          "sha256": "2a2ea05e684bcff760f1ddb654af9678a691568924256cc3c35981648cdd39f4"
+        },
+        "boot/boot-adapter-runtime-bcp.vdex": {
+          "bytes": 404380,
+          "sha256": "31ff893017826dc553f8f218774eb8e7071f5d8840221e1e21efa258530077b2"
+        },
+        "boot/boot-apache-xml.art": {
+          "bytes": 1651232,
+          "sha256": "33f8336b295a8258d17c7221a63ff9927cff5732368221f8c6d55fd96cc6df20"
+        },
+        "boot/boot-apache-xml.oat": {
+          "bytes": 21120,
+          "sha256": "bbfc251619c59ae998d5cdcc30dfbfb56ba883423153dbc95e6eb37c9da45b9d"
+        },
+        "boot/boot-apache-xml.vdex": {
+          "bytes": 999472,
+          "sha256": "20476b98d65414de9437a7706864227063377fcad5e0eda774e87d17fd2e3fb4"
+        },
+        "boot/boot-bouncycastle.art": {
+          "bytes": 1107280,
+          "sha256": "4f33f22d16cacf3af627c9f2926afc2ffe6325b0aa91cee54599fcaf7764da59"
+        },
+        "boot/boot-bouncycastle.oat": {
+          "bytes": 25216,
+          "sha256": "cd2bcce5c72182fa661d1b06dcbc9306e8ccb335974f28ea093aca670cc42c24"
+        },
+        "boot/boot-bouncycastle.vdex": {
+          "bytes": 1259912,
+          "sha256": "ac95a246f2b4706c17d8176c9e1c643f752d111b2cd3a8bff6822235c47efdf3"
+        },
+        "boot/boot-conscrypt.art": {
+          "bytes": 351168,
+          "sha256": "0c8ac39d994dfef0631b7ab6fa88aa4b5137f546f4bcc6c3db427edc9a2839ee"
+        },
+        "boot/boot-conscrypt.oat": {
+          "bytes": 17024,
+          "sha256": "b3c92868ba82305b613b284eca84c251961d5dcc40499c852316dc62f63a29cf"
+        },
+        "boot/boot-conscrypt.vdex": {
+          "bytes": 427764,
+          "sha256": "285dbff86378a1eb3495283053fd03b11729efb61c7e7f20da7145a85016b91f"
+        },
+        "boot/boot-core-icu4j.art": {
+          "bytes": 1870640,
+          "sha256": "01030a436261ff034d30b2d2f500046305c89015e834d9df7340a59c6dec4094"
+        },
+        "boot/boot-core-icu4j.oat": {
+          "bytes": 29312,
+          "sha256": "b59afc2ae2661f03b380f732f561316c19d1593c2b4f4bd0ade2f73eb1a89107"
+        },
+        "boot/boot-core-icu4j.vdex": {
+          "bytes": 2416732,
+          "sha256": "708e2b092a036cb3efba3d60f418ebe63b1203ecc202f34ddf2b7bba89b6cf48"
+        },
+        "boot/boot-core-libart.art": {
+          "bytes": 449568,
+          "sha256": "4083732a0a61041caab64913ec90d59e03d25d5f068d535861a508e22a4b1412"
+        },
+        "boot/boot-core-libart.oat": {
+          "bytes": 21120,
+          "sha256": "8a35d493be0f39d851413fcc581efbf33b029d9026599cec6af02264c1045a8d"
+        },
+        "boot/boot-core-libart.vdex": {
+          "bytes": 500980,
+          "sha256": "86bd533be08880d3d638a2b07614d2078ed07eaa01a4c68e2e94bc32bdbd2359"
+        },
+        "boot/boot-framework.art": {
+          "bytes": 46782928,
+          "sha256": "e55e989306fd62452d29919a726ffd379b58b51016eb2f2aea43293083cd764d"
+        },
+        "boot/boot-framework.oat": {
+          "bytes": 373376,
+          "sha256": "d688cc22f42382bc478addd8ae6deeec4927436949eb63ece092a71a5476341a"
+        },
+        "boot/boot-framework.vdex": {
+          "bytes": 47227128,
+          "sha256": "146977051ddb65272c376ec803404ab57a859ac7fd3aefed5e57a6b577b7f127"
+        },
+        "boot/boot-okhttp.art": {
+          "bytes": 284832,
+          "sha256": "758ece4d9785ab6f180b4662f47277c2b33157c49121c6f4210a358520aada65"
+        },
+        "boot/boot-okhttp.oat": {
+          "bytes": 17024,
+          "sha256": "8c6c35333af3c0339b81612043d1991a724601cd72ae8f2575286fcf78666bbf"
+        },
+        "boot/boot-okhttp.vdex": {
+          "bytes": 352304,
+          "sha256": "a6eb42b8eaa99aae1bce013a8f68f8682006c755e118fc20b990ff903edb048f"
+        },
+        "boot/boot.art": {
+          "bytes": 4953808,
+          "sha256": "89ac9443734350d19e093e477143d0a1de926504c39801caa8eb6deb67c63a0a"
+        },
+        "boot/boot.oat": {
+          "bytes": 57984,
+          "sha256": "17b3927963850fb8eabb4371ca37e2a94854b9dacbd730725e054d8e56ad86ac"
+        },
+        "boot/boot.vdex": {
+          "bytes": 4725628,
+          "sha256": "03e3ade4a936a1b07d2aa72b0e6e7692980c0d98381b4274ca6f11814c0d1c78"
+        },
+        "etc/font_fallback.xml": {
+          "bytes": 40399,
+          "sha256": "a7cee9430923f480cf06771aa6c733c07fcf9ae029c87ca0863680b1b0785ad5"
+        },
+        "etc/fonts.xml": {
+          "bytes": 72394,
+          "sha256": "b44814e7a06fcc884ba2c43bc911609b7858aa9906551a4cdaab7ff0b36fc0da"
+        },
+        "fonts/CarroisGothicSC-Regular.ttf": {
+          "bytes": 40356,
+          "sha256": "3dfc5fe797ab3e04327287d9dbae313847623670417e850d39e24662071f1c98"
+        },
+        "fonts/ComingSoon.ttf": {
+          "bytes": 53256,
+          "sha256": "cf81388f587ff6122de1a705d1070b8f00abccdba66108509908b5d10715068c"
+        },
+        "fonts/CutiveMono.ttf": {
+          "bytes": 78984,
+          "sha256": "543c74f6185531aebf6151fba7c618f5aeb43af8cb6b09d70e97e3611b351e6e"
+        },
+        "fonts/DancingScript-Regular.ttf": {
+          "bytes": 133636,
+          "sha256": "21808625578fe8d8cd10cb684be546dca077b27cd03a53a2f1ec11dc743c924c"
+        },
+        "fonts/DroidSans-Bold.ttf": {
+          "bytes": 2371712,
+          "sha256": "9ca9debb09459bf4e3e7f826f5cd0f35f253902b85684921fce2ba3f28dd0f50"
+        },
+        "fonts/DroidSans.ttf": {
+          "bytes": 2371712,
+          "sha256": "9ca9debb09459bf4e3e7f826f5cd0f35f253902b85684921fce2ba3f28dd0f50"
+        },
+        "fonts/DroidSansMono.ttf": {
+          "bytes": 108128,
+          "sha256": "db19a1fdaba41cc4a2fec0330e5c15e71c6dd68a3ef074f4f28268828b45c862"
+        },
+        "fonts/NotoColorEmoji.ttf": {
+          "bytes": 2779576,
+          "sha256": "e98e9e1f19ceada5ade4dce5d25c2b0e4d14e5df4b3d06f6f3ea6735b5e8b658"
+        },
+        "fonts/NotoColorEmojiFlags.ttf": {
+          "bytes": 912352,
+          "sha256": "e86de9e525cd8ba9ad75f5a0aa02fc8b98dab15cdfe00452293ea37c220223b6"
+        },
+        "fonts/NotoColorEmojiLegacy.ttf": {
+          "bytes": 9713108,
+          "sha256": "4b7ca551999f11cd7cbf90ddc6baca0daf7ee7f33eaca16916dd219f92ec7ca6"
+        },
+        "fonts/NotoNaskhArabic-Bold.ttf": {
+          "bytes": 115784,
+          "sha256": "929b986ed48ea5f6579afc211f9d6058d6db2304611bc109a4b22fff39b98d76"
+        },
+        "fonts/NotoNaskhArabic-Regular.ttf": {
+          "bytes": 116716,
+          "sha256": "4a23dc5dea7f846fb274f7ebb256d25063bc432e2cb810fc9eeb964a3d7ae217"
+        },
+        "fonts/NotoNaskhArabicUI-Bold.ttf": {
+          "bytes": 119356,
+          "sha256": "1bdd62b362a2a26b19dbcbf34d8bdb95b58ed35522d516f50c601b5f60b2b642"
+        },
+        "fonts/NotoNaskhArabicUI-Regular.ttf": {
+          "bytes": 120800,
+          "sha256": "61e022fdf23df726b4fdf2e5022c166c97ec4b3846c5dbb76fc0922798a2083a"
+        },
+        "fonts/NotoSansAdlam-VF.ttf": {
+          "bytes": 99448,
+          "sha256": "88041ee8705c9704de3b5cfd71748fcfa1333174e680815329eef6e0561b32dd"
+        },
+        "fonts/NotoSansAhom-Regular.otf": {
+          "bytes": 13852,
+          "sha256": "3fcdd9d52b768ef016cf665c180d6cf154437750dd035eaa31d9a56c4fc6433d"
+        },
+        "fonts/NotoSansAnatolianHieroglyphs-Regular.otf": {
+          "bytes": 134908,
+          "sha256": "bd7a25d474482c34d53223969c89a63241e877c5782cb623e6f8ad0afdf0fbe3"
+        },
+        "fonts/NotoSansArmenian-VF.ttf": {
+          "bytes": 33844,
+          "sha256": "14ff2d8c91c842037e7c956e76dbe739f302bd1c7ba105c6611547c46ce660e2"
+        },
+        "fonts/NotoSansAvestan-Regular.ttf": {
+          "bytes": 11852,
+          "sha256": "3313d172bdd89ffc4f421750fe7c6aea34ba93b46d81659432043423acfb6697"
+        },
+        "fonts/NotoSansBalinese-Regular.ttf": {
+          "bytes": 32084,
+          "sha256": "409da69bdfe93e4bece9c4695b2b74498fbbc3a8dff76145baf7784dcb52a2c5"
+        },
+        "fonts/NotoSansBamum-Regular.ttf": {
+          "bytes": 133732,
+          "sha256": "28aef8dfc96b81afdb6385e8a23c47f01d1ad3111dd849c917c3693201aebb77"
+        },
+        "fonts/NotoSansBassaVah-Regular.otf": {
+          "bytes": 6332,
+          "sha256": "865f1ae251fbbfbc2e2fd6293bf35bfce60f703baeb95d341066d86bfc710cb8"
+        },
+        "fonts/NotoSansBatak-Regular.ttf": {
+          "bytes": 12808,
+          "sha256": "536462a433183ea120090ce8acae20c0f6ca6970c9b65444e053fa04f454e4b4"
+        },
+        "fonts/NotoSansBengali-VF.ttf": {
+          "bytes": 249244,
+          "sha256": "78ad923ecd8d10005d23632aad2299c001c049b5de9aeb04d739f5d689af7412"
+        },
+        "fonts/NotoSansBengaliUI-VF.ttf": {
+          "bytes": 246772,
+          "sha256": "2df70a74abd7c41da37684d212700bae874c2e10b0e432120c3fc6f7cdfdd621"
+        },
+        "fonts/NotoSansBhaiksuki-Regular.otf": {
+          "bytes": 100344,
+          "sha256": "3662195ecb82f2c4f8b1de77c7f85462d389798a02a589f1896b3788e9d396de"
+        },
+        "fonts/NotoSansBrahmi-Regular.ttf": {
+          "bytes": 23652,
+          "sha256": "5b9f93986fb382870090cf73724c48a788619aebdc6c0b4f138ef71ed6efcb11"
+        },
+        "fonts/NotoSansBuginese-Regular.ttf": {
+          "bytes": 7844,
+          "sha256": "50dfd5dd744f7c3059ca39408676e13634077beffb41d765bc7cdcd113d0ba62"
+        },
+        "fonts/NotoSansBuhid-Regular.ttf": {
+          "bytes": 4896,
+          "sha256": "d7c9275ab99c4947d7080f399318e33df66a6b1b08086fd49766b5acba0b037a"
+        },
+        "fonts/NotoSansCJK-Regular.ttc": {
+          "bytes": 19474972,
+          "sha256": "39fb47c543da50618ab99e8b9e5529e54566bdbef41719308165975f627d5c93"
+        },
+        "fonts/NotoSansCanadianAboriginal-Regular.ttf": {
+          "bytes": 62852,
+          "sha256": "41004292e9bdd64c5847b17ad30a964961b27240705096a4beabccd6719cd1ba"
+        },
+        "fonts/NotoSansCarian-Regular.ttf": {
+          "bytes": 6260,
+          "sha256": "64c86646654dcfb0e09516843169386159b82b3be407eb2c470912af69742c89"
+        },
+        "fonts/NotoSansChakma-Regular.otf": {
+          "bytes": 29512,
+          "sha256": "ed60df782074cb1c1ae9988110dc7add27777e83ea1e8efa3015ff0382b6f500"
+        },
+        "fonts/NotoSansCham-Bold.ttf": {
+          "bytes": 22272,
+          "sha256": "8621575e81279b82bc0a42f11e8e257f1c9319419efdcbe671b8a596d29afae1"
+        },
+        "fonts/NotoSansCham-Regular.ttf": {
+          "bytes": 22264,
+          "sha256": "ab0fab673bc45667a15a351c34553f1a27b1a30f6b422933e5c2e775c2ba4cba"
+        },
+        "fonts/NotoSansCherokee-Regular.ttf": {
+          "bytes": 65132,
+          "sha256": "e87a28782a302c4a8dae2d47412d44a1dcfa76b602e86cb00150599d5620cc8f"
+        },
+        "fonts/NotoSansCoptic-Regular.ttf": {
+          "bytes": 21984,
+          "sha256": "7b4fb37ecfad8f340d027cff2eb25a2aab4dc5258495ffff2fa94a3ed05b5902"
+        },
+        "fonts/NotoSansCuneiform-Regular.ttf": {
+          "bytes": 500380,
+          "sha256": "5e6fc6c0d4ceee2dd772ef4256bff2efc00eae96fbc213f1508b3c91d2251a72"
+        },
+        "fonts/NotoSansCypriot-Regular.ttf": {
+          "bytes": 7980,
+          "sha256": "99c7369fd729dede1dbffe28a57a94f282efe8e96567ecbc39dba50b99ac5fef"
+        },
+        "fonts/NotoSansDeseret-Regular.ttf": {
+          "bytes": 10512,
+          "sha256": "70ceb878d8a96eb8784958d403c7098b71c5ac81aaf5a06070c1b545d3c30141"
+        },
+        "fonts/NotoSansDevanagari-VF.ttf": {
+          "bytes": 253156,
+          "sha256": "4d3dc977b444667bc8c5af0193d963f95ca86629a117f02e02bfb86495a928fe"
+        },
+        "fonts/NotoSansDevanagariUI-VF.ttf": {
+          "bytes": 247460,
+          "sha256": "bff82fa98d2a3d3b664f7d9df3265c3acb35848bafa61249f041df989bc230d7"
+        },
+        "fonts/NotoSansEgyptianHieroglyphs-Regular.ttf": {
+          "bytes": 505436,
+          "sha256": "924634bfc275e587283e0ea33655fc5aafa57655e9899ec9a747f3f7f780787b"
+        },
+        "fonts/NotoSansElbasan-Regular.otf": {
+          "bytes": 8788,
+          "sha256": "d69b41542eee4d59ed22e811111af1c06b432d5d00da8b97c462053ea83d65d7"
+        },
+        "fonts/NotoSansEthiopic-VF.ttf": {
+          "bytes": 448888,
+          "sha256": "adbddd7406fb266361ce193c507424574913bfdda191212cf590c04fba96de0e"
+        },
+        "fonts/NotoSansGeorgian-VF.ttf": {
+          "bytes": 63180,
+          "sha256": "d30b57d7d54a8bfd8796fc21bb421627112f326ba762eedf6dc2fdb86ce4c595"
+        },
+        "fonts/NotoSansGlagolitic-Regular.ttf": {
+          "bytes": 15676,
+          "sha256": "303f3cb7ce9fabc2c46f907d12dd1015b80e84b78fa7f0c3c587e3215f47a497"
+        },
+        "fonts/NotoSansGothic-Regular.ttf": {
+          "bytes": 6032,
+          "sha256": "0c903d797325af318b92d882c57914f0b837c40ffc18b4cb63c28c12a69c91a5"
+        },
+        "fonts/NotoSansGrantha-Regular.ttf": {
+          "bytes": 399684,
+          "sha256": "00d8e1156f3ddb8b9af1e3dda3d5669f6a19d93c52ff51b1ea96e1d69dae1092"
+        },
+        "fonts/NotoSansGujarati-Bold.ttf": {
+          "bytes": 117020,
+          "sha256": "0ef97965e6516d434db064968d2e36a729ca8a1cb4420fdf01eeb3477332af36"
+        },
+        "fonts/NotoSansGujarati-Regular.ttf": {
+          "bytes": 120040,
+          "sha256": "d56563ea8e43d107d2c591f8babdf53cc6b248cbbc0e0c47aeae678e5e990d6d"
+        },
+        "fonts/NotoSansGujaratiUI-Bold.ttf": {
+          "bytes": 114312,
+          "sha256": "3a4168fb5628bf9fcd71e5d9a571b02e5e5a2fa7ab0a6b4418cb003f83b416a2"
+        },
+        "fonts/NotoSansGujaratiUI-Regular.ttf": {
+          "bytes": 117380,
+          "sha256": "9bc3db073c526cc05548e9fc33367b6ed0b0dc49b6c5cf09bad620caeb622aaf"
+        },
+        "fonts/NotoSansGunjalaGondi-Regular.otf": {
+          "bytes": 32336,
+          "sha256": "c79cddeea8ded216bd1f4277526cd538dba82cb19dde159dbbd71a0e0694f52e"
+        },
+        "fonts/NotoSansGurmukhi-VF.ttf": {
+          "bytes": 63884,
+          "sha256": "7f7112a7145ea3201de1ddcda3e97175d0238d8c8f9eddde5216fb134e72e1b6"
+        },
+        "fonts/NotoSansGurmukhiUI-VF.ttf": {
+          "bytes": 64008,
+          "sha256": "d08a89597d2dc96497d995348248df5548676a698df86a2b4b0cfd7b47075c8a"
+        },
+        "fonts/NotoSansHanifiRohingya-Regular.otf": {
+          "bytes": 13432,
+          "sha256": "285f9970fdc6ffa036c0a8bef37c55ff43827d3482f8305dc8ccc110ce6e5b0f"
+        },
+        "fonts/NotoSansHanunoo-Regular.ttf": {
+          "bytes": 6768,
+          "sha256": "177c0d32f3e8e4b12f84a4c5ff6b11045cf828d2ab1e3b3ab35c8242ad565d0a"
+        },
+        "fonts/NotoSansHatran-Regular.otf": {
+          "bytes": 4388,
+          "sha256": "94ddef5730cb514fdd13a3a4ed0e0cac9ae2daac83a773f10cc8fd1eed252574"
+        },
+        "fonts/NotoSansHebrew-Bold.ttf": {
+          "bytes": 17540,
+          "sha256": "138a49ada08b30f301660e1da4d0004825297fc083aea344e613b90c172d5d59"
+        },
+        "fonts/NotoSansHebrew-Regular.ttf": {
+          "bytes": 17352,
+          "sha256": "ef877e0e136f7942900b7ec8c866c180562d45def425b8bfe2dc0a992e3c2fd7"
+        },
+        "fonts/NotoSansImperialAramaic-Regular.ttf": {
+          "bytes": 5632,
+          "sha256": "29b20cc724a54a9ad0def2c0bb99ab85ca9caccc66465752f799aab0f763bf2c"
+        },
+        "fonts/NotoSansInscriptionalPahlavi-Regular.ttf": {
+          "bytes": 5668,
+          "sha256": "d4935f9c0b2e43866bc050d1be319ecce8384fc3840049a1ee1b9900f59f7e1f"
+        },
+        "fonts/NotoSansInscriptionalParthian-Regular.ttf": {
+          "bytes": 7508,
+          "sha256": "c19104929fa2ef5bcf2bdace5697b3329d5b09541a8d2ce091ea447d3a242d17"
+        },
+        "fonts/NotoSansJavanese-Regular.otf": {
+          "bytes": 86944,
+          "sha256": "7726ee134bf91bb06a4636cf5220ea40284f2aab988a0eef77ca44306a838b65"
+        },
+        "fonts/NotoSansKaithi-Regular.ttf": {
+          "bytes": 59452,
+          "sha256": "a868a242e82c8fa502b609b82ee29f0c56631e2133263b55fa6a0ca3aa57334b"
+        },
+        "fonts/NotoSansKannada-VF.ttf": {
+          "bytes": 211752,
+          "sha256": "5f332f40630fb3b23390a40b2572cc2b830428a8c783d06b8b0286532fbe5f4a"
+        },
+        "fonts/NotoSansKannadaUI-VF.ttf": {
+          "bytes": 212632,
+          "sha256": "6fb9ad49eb09e6e2e26852c01077dd4d9d6b5c3f7107ebef65b8650992a6c51b"
+        },
+        "fonts/NotoSansKayahLi-Regular.ttf": {
+          "bytes": 8024,
+          "sha256": "34bf0532d7f36e0a93e35f97b40437ae6b95618b3ff11485b4f6e09ab0383b0a"
+        },
+        "fonts/NotoSansKharoshthi-Regular.ttf": {
+          "bytes": 21860,
+          "sha256": "8d4388f6499899d2f39fe6bde7fc75e45eb5f41150daf5b2757a796ec4afbfd5"
+        },
+        "fonts/NotoSansKhmer-VF.ttf": {
+          "bytes": 143484,
+          "sha256": "f6c68aef46b03a96ce80265aa9b6d2051cdb818158a624a5888f68cf9dfc461b"
+        },
+        "fonts/NotoSansKhmerUI-Bold.ttf": {
+          "bytes": 36216,
+          "sha256": "72cbfe46e5182d253f6cd5e72da97f751ec7ddcdc9b95d8beacd70587c027479"
+        },
+        "fonts/NotoSansKhmerUI-Regular.ttf": {
+          "bytes": 37932,
+          "sha256": "1a311c88696789bbf513f7e698292904c1af031a5ca89529ef5b60666b8d78d9"
+        },
+        "fonts/NotoSansKhojki-Regular.otf": {
+          "bytes": 26928,
+          "sha256": "51d840c90abf9bfb6a3333e1416946860bc827d232d5847ddcbeaaf9122e1292"
+        },
+        "fonts/NotoSansLao-Bold.ttf": {
+          "bytes": 18848,
+          "sha256": "6d80ede279d5c470b22873b4d80062ba81f4f916201606053682e1a7dba30c45"
+        },
+        "fonts/NotoSansLao-Regular.ttf": {
+          "bytes": 18956,
+          "sha256": "39d257f79b4dafb5d9cd03d366462841ae83f6c822bbf9622e536cd377203237"
+        },
+        "fonts/NotoSansLaoUI-Bold.ttf": {
+          "bytes": 29228,
+          "sha256": "20272f7387c0532501485cc439309f7ced0b4c7693104621e38b940e7dca265f"
+        },
+        "fonts/NotoSansLaoUI-Regular.ttf": {
+          "bytes": 30568,
+          "sha256": "5ca99ed9c26068c082e6c11d673030b16e3a4940b409a1c412e3da06f4ef653e"
+        },
+        "fonts/NotoSansLepcha-Regular.ttf": {
+          "bytes": 102060,
+          "sha256": "9adb88daecec85f6d2172b6358e55ba73e222cc6940820fa7c9c450af73f809c"
+        },
+        "fonts/NotoSansLimbu-Regular.ttf": {
+          "bytes": 11100,
+          "sha256": "49408ea319c9182b62f90ca2671f0244d59fb70bf7f26eef4d2fea32975822a1"
+        },
+        "fonts/NotoSansLinearA-Regular.otf": {
+          "bytes": 33916,
+          "sha256": "5e4be1fcbecf25e3387676af597bf7c967a202d6be8edd7dd68581b5b26f2b9f"
+        },
+        "fonts/NotoSansLinearB-Regular.ttf": {
+          "bytes": 57936,
+          "sha256": "ce85db1ab3beccdcfd4f3238949b9f5b99d69ae1e355395c330bc3b336906559"
+        },
+        "fonts/NotoSansLisu-Regular.ttf": {
+          "bytes": 5676,
+          "sha256": "384bc4a7e096210da21a2e1eaff0d814a79f5b5054372cfb442bdfedf6ef0d63"
+        },
+        "fonts/NotoSansLycian-Regular.ttf": {
+          "bytes": 4308,
+          "sha256": "611a9807ef816503070c147d67db12a7fd3b7e8c65231a6db6fb1d99b2b6bafa"
+        },
+        "fonts/NotoSansLydian-Regular.ttf": {
+          "bytes": 4268,
+          "sha256": "7e2cc09db954487bac4658813261b00abf2e1aa3c0a2c9b1bf64e69c7b963640"
+        },
+        "fonts/NotoSansMalayalam-VF.ttf": {
+          "bytes": 137732,
+          "sha256": "8595f1a3f82b9c7a4faf6242b802df2033f033845bc5dd7afba25c8d5a222c6c"
+        },
+        "fonts/NotoSansMalayalamUI-VF.ttf": {
+          "bytes": 135660,
+          "sha256": "4b855810a5f0fc0303969ee54a9e4836de27beaf126ce8f272708f52cab8120d"
+        },
+        "fonts/NotoSansMandaic-Regular.ttf": {
+          "bytes": 15328,
+          "sha256": "f2fb404c8c997168f1f474792590fe0111e2747cc3258fd966bcb66e00ecb1c5"
+        },
+        "fonts/NotoSansManichaean-Regular.otf": {
+          "bytes": 16608,
+          "sha256": "1e8b5697ca21587b51e13d6ba6b32191010faa497931b29e1d235e44070da118"
+        },
+        "fonts/NotoSansMarchen-Regular.otf": {
+          "bytes": 63992,
+          "sha256": "79a150005b111f748b5ba3ea26bd98a7be6e2c659a997a596c677b764678df13"
+        },
+        "fonts/NotoSansMasaramGondi-Regular.otf": {
+          "bytes": 23016,
+          "sha256": "86fa58f8fdd16dd21ffc24e94baf9c137b0aacf7aea57ac4babba2b7312b19f5"
+        },
+        "fonts/NotoSansMedefaidrin-VF.ttf": {
+          "bytes": 55888,
+          "sha256": "f941e4e0198d3758da7c540e6b6ebabb0ac3b65753fc251119d8fafae91e6e33"
+        },
+        "fonts/NotoSansMeeteiMayek-Regular.ttf": {
+          "bytes": 13940,
+          "sha256": "c7f2b1600fa33a569de0e7b81903e925a86640194662572c10b0d7f44719a889"
+        },
+        "fonts/NotoSansMeroitic-Regular.otf": {
+          "bytes": 20064,
+          "sha256": "60e26cccda2b060df06210a79cad521692feec73bdb269079516a0bb12a4afb3"
+        },
+        "fonts/NotoSansMiao-Regular.otf": {
+          "bytes": 26768,
+          "sha256": "9ab6f8e35add8ba7df0d69c1402a93713dcedf9575239c4851730120fabc6fee"
+        },
+        "fonts/NotoSansModi-Regular.ttf": {
+          "bytes": 42688,
+          "sha256": "980f27c1af84e04f1c8f575ce001edff6bcd13421fdeffb29f4a7c9de8ad9337"
+        },
+        "fonts/NotoSansMongolian-Regular.ttf": {
+          "bytes": 113656,
+          "sha256": "c85851bf399c809089cdbd7c04eb134a740ac1ae34fada5bd8332979e4d3ba87"
+        },
+        "fonts/NotoSansMro-Regular.otf": {
+          "bytes": 5680,
+          "sha256": "973f27d7d2f54bb857a3961d07d080e7298aeb95b6ecb397c7ed6321eee94155"
+        },
+        "fonts/NotoSansMultani-Regular.otf": {
+          "bytes": 7808,
+          "sha256": "8c991e4fb6ed7d7bdb316257a7790f9c8a12787dc85029c44301c963dc7d4bc4"
+        },
+        "fonts/NotoSansMyanmar-Bold.otf": {
+          "bytes": 110508,
+          "sha256": "5780905803daaa182c7bd0bc7c6a8db7611a4bea0ad028178d5b37ab9d3b4711"
+        },
+        "fonts/NotoSansMyanmar-Medium.otf": {
+          "bytes": 115600,
+          "sha256": "7dcbcde595d7d73a7c0fce7bb45a2805274e11d04f3a6d1e4b17be8902fd6136"
+        },
+        "fonts/NotoSansMyanmar-Regular.otf": {
+          "bytes": 110380,
+          "sha256": "7c853527f4a6d34b624eae84a76ecc2b9c477f731fc9c481b0316817537eae17"
+        },
+        "fonts/NotoSansMyanmarUI-Bold.otf": {
+          "bytes": 112636,
+          "sha256": "9731e1428bbfa51161ac015a95301dce771b37b5d37ebca54a14183ced8274b1"
+        },
+        "fonts/NotoSansMyanmarUI-Medium.otf": {
+          "bytes": 117084,
+          "sha256": "ba01be8dbdb7132ae6264da12d72638ea3f676d0d5eade4c3b67b2577f6b63d3"
+        },
+        "fonts/NotoSansMyanmarUI-Regular.otf": {
+          "bytes": 112332,
+          "sha256": "e02de9d0912a5df57f3172b4644e71b7b569585d82e3469f8429344a233abb23"
+        },
+        "fonts/NotoSansNKo-Regular.ttf": {
+          "bytes": 18716,
+          "sha256": "c8eb3d3dcda221063df51d779d6f3badd3dd47afa0f093f3be55e7dc2a8d2c5d"
+        },
+        "fonts/NotoSansNabataean-Regular.otf": {
+          "bytes": 6624,
+          "sha256": "869c85215e873298b95fae8df59efd871d97fdc535310f9b954d20fb21c157b4"
+        },
+        "fonts/NotoSansNewTaiLue-Regular.ttf": {
+          "bytes": 14908,
+          "sha256": "a168215bb0c8c0caf33716f623b359901cddb8c23f237ace3090c80ffced7d20"
+        },
+        "fonts/NotoSansNewa-Regular.otf": {
+          "bytes": 66132,
+          "sha256": "c7da6566c4b517461f8c6d6df01e2dd65608954e4775fadd13c2cfe9dcd20478"
+        },
+        "fonts/NotoSansOgham-Regular.ttf": {
+          "bytes": 4464,
+          "sha256": "465aea6ff51b3f0c4df07d19fe15b90ed59b952745945a1af8788646e68ecdf8"
+        },
+        "fonts/NotoSansOlChiki-Regular.ttf": {
+          "bytes": 7628,
+          "sha256": "489d623e07230435f1741dda015c5fdf973f8a698f3fb7f1b3f92510bba47f1c"
+        },
+        "fonts/NotoSansOldItalic-Regular.ttf": {
+          "bytes": 5000,
+          "sha256": "4190146b7af92173710eb2d3b8d79ff4bda585f6899818e8c921941dffa80ab9"
+        },
+        "fonts/NotoSansOldNorthArabian-Regular.otf": {
+          "bytes": 6276,
+          "sha256": "319ab8ab6ed92f768bc34a73b3f71354a2286f1be3995ed3537032160a725a02"
+        },
+        "fonts/NotoSansOldPermic-Regular.otf": {
+          "bytes": 8628,
+          "sha256": "a4d0fd72d883854463247468d4732ba3b7fd6f640edfbc019867a523dac022dd"
+        },
+        "fonts/NotoSansOldPersian-Regular.ttf": {
+          "bytes": 12420,
+          "sha256": "de38f5a8b9ccca527e66f38f7591e9a2d68851368ff70537b98f21bce76b0f5f"
+        },
+        "fonts/NotoSansOldSouthArabian-Regular.ttf": {
+          "bytes": 4724,
+          "sha256": "3891fe86e38b5219cde71d1e2a1780e7d70c2ca9b797744273fa464a9c7e26f2"
+        },
+        "fonts/NotoSansOldTurkic-Regular.ttf": {
+          "bytes": 7856,
+          "sha256": "d8db7c4918bd48209c240787f56d063a0cd3fd196b48a5bd918de7574b2701cd"
+        },
+        "fonts/NotoSansOriya-Bold.ttf": {
+          "bytes": 84624,
+          "sha256": "c33847f6a0c653089ba998a0a3dd4ac32b5a6f717778bf372add044ae5c4c33a"
+        },
+        "fonts/NotoSansOriya-Regular.ttf": {
+          "bytes": 85224,
+          "sha256": "4f3781f7ea2c59206504a2f62091b76fc5e4e28655abdd36417e5a5fa5f00b9f"
+        },
+        "fonts/NotoSansOriyaUI-Bold.ttf": {
+          "bytes": 80180,
+          "sha256": "6c5e04572e7c6262817a29daafde56ed7d84e84c18eb35d0befd9097d916fbf2"
+        },
+        "fonts/NotoSansOriyaUI-Regular.ttf": {
+          "bytes": 80728,
+          "sha256": "6a8ce0b7d097d63a9736f7f5083e31994e6626bd5d44db075c7f412a0233d328"
+        },
+        "fonts/NotoSansOsage-Regular.ttf": {
+          "bytes": 10556,
+          "sha256": "d836b97a34bb9fdd79dfa9d5eb86d0bdcfd632dc581ec16926fc469731eaffe5"
+        },
+        "fonts/NotoSansOsmanya-Regular.ttf": {
+          "bytes": 7472,
+          "sha256": "38e7d786b350a66cc8f58f3e4e49880f8d383086099734e7a04cf756f45c846f"
+        },
+        "fonts/NotoSansPahawhHmong-Regular.otf": {
+          "bytes": 13228,
+          "sha256": "6ea6d8bcadd3674598e43da51b87fd486b14f792c9a661a20658e2759da39199"
+        },
+        "fonts/NotoSansPalmyrene-Regular.otf": {
+          "bytes": 8604,
+          "sha256": "08f9d1cd814b7c911ab45e2d87e84e642622728dfe9cd54e6090102535f2ea73"
+        },
+        "fonts/NotoSansPauCinHau-Regular.otf": {
+          "bytes": 8204,
+          "sha256": "7799b776086b10a64de9b42db372181736c68d1870460d7d4658866247e47f8b"
+        },
+        "fonts/NotoSansPhagsPa-Regular.ttf": {
+          "bytes": 28404,
+          "sha256": "697dd78af6329451cc4c787a4a0f3a0164b23700dac38985f56e122bed7c46b3"
+        },
+        "fonts/NotoSansPhoenician-Regular.ttf": {
+          "bytes": 5404,
+          "sha256": "4b77c819ef06a594c7796e341704a27e78be90b1e712eb3e7ff66c273f622493"
+        },
+        "fonts/NotoSansRejang-Regular.ttf": {
+          "bytes": 6476,
+          "sha256": "5f804a055eca82f6aeb52e5ddcdbb2f1157f85bb57f27b2ba3d550f4159600c5"
+        },
+        "fonts/NotoSansRunic-Regular.ttf": {
+          "bytes": 8528,
+          "sha256": "fa02cddbf2d6f90e69160b171e78732cf082394f91fc90b13ccb6a9420ff9b41"
+        },
+        "fonts/NotoSansSamaritan-Regular.ttf": {
+          "bytes": 9772,
+          "sha256": "af7d09716d68e107948efe1e25b063a92d75f4a30968183d6a9bcb7730fd9226"
+        },
+        "fonts/NotoSansSaurashtra-Regular.ttf": {
+          "bytes": 18720,
+          "sha256": "606b9eb9e9c05af5b54c3c95f299e832d5cbf4b92dadadae8ca9b88a3f99174a"
+        },
+        "fonts/NotoSansSharada-Regular.otf": {
+          "bytes": 27752,
+          "sha256": "8d6d20f2ae7f99b7c8cbe63de390555ddeff7cbef4a45d9299adb47fa8717bcf"
+        },
+        "fonts/NotoSansShavian-Regular.ttf": {
+          "bytes": 6020,
+          "sha256": "844a7d9d35523b77d1268c0210d72ef4e85eb323df2d3a64375c8189487d97bc"
+        },
+        "fonts/NotoSansSinhala-VF.ttf": {
+          "bytes": 358248,
+          "sha256": "ad74d05e6bc80e103f3745281ae059ffea8a4ea84a0c8ce94ef80f7c83869db9"
+        },
+        "fonts/NotoSansSinhalaUI-VF.ttf": {
+          "bytes": 358268,
+          "sha256": "8bcae6deaaf18c47aa33ce2007432a83ebc59ac5b0dfa28055aa1273aa3e79a8"
+        },
+        "fonts/NotoSansSoraSompeng-Regular.otf": {
+          "bytes": 6388,
+          "sha256": "4f98eb562225229d63ce22026fdaf995605fad84799a4edaa575e2b4dfa01fc7"
+        },
+        "fonts/NotoSansSoyombo-VF.ttf": {
+          "bytes": 72168,
+          "sha256": "da5d905740ec05d0b16ff9cb1215ed108247a780b12313d9e46d6b6cb2e8274d"
+        },
+        "fonts/NotoSansSundanese-Regular.ttf": {
+          "bytes": 10356,
+          "sha256": "8be5e1edb34e530638017b989d29dc72fdd762d72ccfa7f7b37507ee9af8e2a6"
+        },
+        "fonts/NotoSansSylotiNagri-Regular.ttf": {
+          "bytes": 14904,
+          "sha256": "47c30dad7d5b60deac26ae5ad658453032d154c2a223c8fb5dfe0d1f226f69b7"
+        },
+        "fonts/NotoSansSymbols-Regular-Subsetted.ttf": {
+          "bytes": 708968,
+          "sha256": "e47300d639a32c08610384baf325f021859da84a7ca129599af5130212dfea43"
+        },
+        "fonts/NotoSansSymbols-Regular-Subsetted2.ttf": {
+          "bytes": 32996,
+          "sha256": "e178faa39809e969f59ab1eab9680fa8e03f07d728b5ed692f98809fcbed17a0"
+        },
+        "fonts/NotoSansSyriacEastern-Regular.ttf": {
+          "bytes": 50164,
+          "sha256": "846579f4a1e74ef965e88d7d03771b291148e137820add98cc5f1f5e3a493510"
+        },
+        "fonts/NotoSansSyriacEstrangela-Regular.ttf": {
+          "bytes": 46396,
+          "sha256": "a599db65d2c30e432f914f714ca60f1102faf6237246bd623d964e2eb2d37f9f"
+        },
+        "fonts/NotoSansSyriacWestern-Regular.ttf": {
+          "bytes": 52380,
+          "sha256": "3104217db0750c1be67785b68fee2d28deb19f102a87030a9acbf8b752a1f271"
+        },
+        "fonts/NotoSansTagalog-Regular.ttf": {
+          "bytes": 5640,
+          "sha256": "cc64aa4e476d96fbdc336173285df4143e5aee51d3dbd2264c53c1ef022e5430"
+        },
+        "fonts/NotoSansTagbanwa-Regular.ttf": {
+          "bytes": 5596,
+          "sha256": "23d60952c37225d9bc87d6b2cf9cde252b01060a78c8fdd2de52c11d284180a0"
+        },
+        "fonts/NotoSansTaiLe-Regular.ttf": {
+          "bytes": 10012,
+          "sha256": "ad829e43d12c6a190a0e760006a048accb2bf55675b47e95c0e3f2d023178659"
+        },
+        "fonts/NotoSansTaiTham-Regular.ttf": {
+          "bytes": 48064,
+          "sha256": "b4e0103d3cc5e91a1159c8af62cd1a0beb8587b38240f34029ced6416fe61cd7"
+        },
+        "fonts/NotoSansTaiViet-Regular.ttf": {
+          "bytes": 15852,
+          "sha256": "846d077bd93d7ba0025c18271b063cff3b7a2f759c710097767c18e65a804a04"
+        },
+        "fonts/NotoSansTakri-VF.ttf": {
+          "bytes": 22172,
+          "sha256": "ef6cbef5f87e46c1037c659ad3393ec08f45ae2b0fbde77a53e80bafb88e762b"
+        },
+        "fonts/NotoSansTamil-VF.ttf": {
+          "bytes": 79724,
+          "sha256": "5b7bcf3a932ec4c603d5686c2c5d2000c2056270019adc78925b47ad9b113ee8"
+        },
+        "fonts/NotoSansTamilUI-VF.ttf": {
+          "bytes": 132512,
+          "sha256": "42276e3f21443ac0deb2c505c4122374b87a4ceebb5ee0058c0c34d227475bcd"
+        },
+        "fonts/NotoSansTelugu-VF.ttf": {
+          "bytes": 233580,
+          "sha256": "5e6d07b1f74e7f3c650d195492b78213d6392f673823ade7c45c1f50eeaee027"
+        },
+        "fonts/NotoSansTeluguUI-VF.ttf": {
+          "bytes": 220752,
+          "sha256": "f98590ac355770b40065400baf821918203dec833e10273b896c6017b06d5d02"
+        },
+        "fonts/NotoSansThaana-Bold.ttf": {
+          "bytes": 14504,
+          "sha256": "420f1d666b2a04da1b96e6c6e518f57c9215f939cb6c2f253e86b4ab434e1217"
+        },
+        "fonts/NotoSansThaana-Regular.ttf": {
+          "bytes": 14412,
+          "sha256": "9fdec733de67f60aa1c1a5117c891c3943d66712cc17ab22955f7478ad4050f9"
+        },
+        "fonts/NotoSansThai-Bold.ttf": {
+          "bytes": 18336,
+          "sha256": "cb0c042aa09133898650ac487ce4866956b105bf1474ee82648832c500ff3c35"
+        },
+        "fonts/NotoSansThai-Regular.ttf": {
+          "bytes": 21380,
+          "sha256": "0dc4e81ac4fe236db1a1d8a9cdb28971b9c136de08f2e6328e365e11c76410de"
+        },
+        "fonts/NotoSansThaiUI-Bold.ttf": {
+          "bytes": 19000,
+          "sha256": "172960599004a03e6399ea0d73c4a00462063a495dd61a0d9e00c0bb44f33d70"
+        },
+        "fonts/NotoSansThaiUI-Regular.ttf": {
+          "bytes": 22024,
+          "sha256": "2d197a017cba9b2df168558bccd224e44da38d1abf95b0997eb92bd0a05fa196"
+        },
+        "fonts/NotoSansTifinagh-Regular.otf": {
+          "bytes": 24924,
+          "sha256": "c02541279a60888379a8d660757ae1f91aa667ddb8fe8cfedbf1da1bbec0e62c"
+        },
+        "fonts/NotoSansUgaritic-Regular.ttf": {
+          "bytes": 6772,
+          "sha256": "24d47b083a5ca86f8f71d5586e83e5d946e37f264157cf14e6bce7cab1babff2"
+        },
+        "fonts/NotoSansVai-Regular.ttf": {
+          "bytes": 64292,
+          "sha256": "0eb963a6f1f731a7bb440ce66a7e7602008f6bd78521c87dbb7ce146b703e069"
+        },
+        "fonts/NotoSansWancho-Regular.otf": {
+          "bytes": 14216,
+          "sha256": "56e194263f14734942dee4639867de4d73cd6ed4a5595fb56bb21ba17e6f8eee"
+        },
+        "fonts/NotoSansWarangCiti-Regular.otf": {
+          "bytes": 23484,
+          "sha256": "bda4427202ee1524cc4d51759a7f805bd2498c45e82484fe58fb266569477bc3"
+        },
+        "fonts/NotoSansYi-Regular.ttf": {
+          "bytes": 122904,
+          "sha256": "578b6b033f959350e3434df207eefd307a990f4907e317b228959de81194f066"
+        },
+        "fonts/NotoSerif-Bold.ttf": {
+          "bytes": 247892,
+          "sha256": "d245c6187216b7e2f943431525beb29a22c2141dd1c9e4a9de14f3899e6ab699"
+        },
+        "fonts/NotoSerif-BoldItalic.ttf": {
+          "bytes": 263080,
+          "sha256": "e9421c1ca461ff0e5c9c3149e05a9880f92378def342dd09a567ee104330eef5"
+        },
+        "fonts/NotoSerif-Italic.ttf": {
+          "bytes": 249748,
+          "sha256": "bb2ad30a8b95b367ed9576cea42bc085b7e69a6f81e6fe53ac3db6f10c7ff5f3"
+        },
+        "fonts/NotoSerif-Regular.ttf": {
+          "bytes": 246740,
+          "sha256": "1e65d9bbb6864fd4a32b96a8f0de3739b667c9eac793ec2d6d00bab7adb5a965"
+        },
+        "fonts/NotoSerifArmenian-VF.ttf": {
+          "bytes": 33992,
+          "sha256": "a4c98541044745101bd3c20ff5a68b3d001f7ca83ebbe87f29cdc1deda045306"
+        },
+        "fonts/NotoSerifBengali-VF.ttf": {
+          "bytes": 292736,
+          "sha256": "13df1cfa95ff9510a428974b7d3bf8ae6a50dae999fd94f54606835e56db9e87"
+        },
+        "fonts/NotoSerifCJK-Regular.ttc": {
+          "bytes": 26273008,
+          "sha256": "5dec6bbce13a3bbf1487a022392c23e571abd0696a102f3715697420dd94b47a"
+        },
+        "fonts/NotoSerifDevanagari-VF.ttf": {
+          "bytes": 304140,
+          "sha256": "2f2d48c7b26c58f87514000fab899555bcce4c09128beed8726bd1537fac3726"
+        },
+        "fonts/NotoSerifDogra-Regular.ttf": {
+          "bytes": 27480,
+          "sha256": "3a5a78cd5f2fa004729c670177f30c24792c4c5d52e53a8787721bca4afac30e"
+        },
+        "fonts/NotoSerifEthiopic-VF.ttf": {
+          "bytes": 412896,
+          "sha256": "8e3d15a69af101aa31f019e2662ec19f5ea16b486598ae8132d00ca60931f8c5"
+        },
+        "fonts/NotoSerifGeorgian-VF.ttf": {
+          "bytes": 76856,
+          "sha256": "06713712ecf2925c60fc786c569ec491ad669fa7a04e9bea1a9a36537977e8c2"
+        },
+        "fonts/NotoSerifGujarati-VF.ttf": {
+          "bytes": 177380,
+          "sha256": "0c040bf7305de3a2973ca2ceeeaf35468f22710ceb3836adc3716b9f29e17d84"
+        },
+        "fonts/NotoSerifGurmukhi-VF.ttf": {
+          "bytes": 57172,
+          "sha256": "9a409846a25350aeb6244bf4bab3a18835f65f17b5b9d9e243d9e9bdd78d2fcd"
+        },
+        "fonts/NotoSerifHebrew-Bold.ttf": {
+          "bytes": 20232,
+          "sha256": "1731dfd0d005032f5e3af0cc05f27f161040c065ad9462e8a2064939465a8b86"
+        },
+        "fonts/NotoSerifHebrew-Regular.ttf": {
+          "bytes": 20312,
+          "sha256": "f6589dbe258d02c2ba7fc6776a2fd903ad0e9def291482570a508086ab025f32"
+        },
+        "fonts/NotoSerifHentaigana.ttf": {
+          "bytes": 454624,
+          "sha256": "94d31f3669977a8464d7f4c6597a2c0bacab636e70548e1a3184ffc7e0a5abf1"
+        },
+        "fonts/NotoSerifKannada-VF.ttf": {
+          "bytes": 249112,
+          "sha256": "1cfbebd9a15c63ed9c34f321d943b8259380e0346da54213314bf7836ca3a47a"
+        },
+        "fonts/NotoSerifKhmer-Bold.otf": {
+          "bytes": 48076,
+          "sha256": "9d0a2897ff50355596cf04d4e0f693edadeba0eafe79bf1769ff8ae81923876c"
+        },
+        "fonts/NotoSerifKhmer-Regular.otf": {
+          "bytes": 40688,
+          "sha256": "6f42f96732a16acb80fd905c6a491d928f5268cfb71a9a0090202c38e7779d65"
+        },
+        "fonts/NotoSerifLao-Bold.ttf": {
+          "bytes": 23376,
+          "sha256": "13e9fadba7fc21d89a09070eaaec169b8316bdd1f7235089c3063c783b84f13f"
+        },
+        "fonts/NotoSerifLao-Regular.ttf": {
+          "bytes": 23664,
+          "sha256": "39c7cf20f52c37b928880d4aaf479124696f7a62469b884b090674cad181c823"
+        },
+        "fonts/NotoSerifMalayalam-VF.ttf": {
+          "bytes": 124804,
+          "sha256": "135dd1865f239aa246ca05b36d876d04396dcab614619644c4f5826b4714aaa7"
+        },
+        "fonts/NotoSerifMyanmar-Bold.otf": {
+          "bytes": 136260,
+          "sha256": "8d0cb2f74ddb7dc97f3935086b5b6b7dd99fed54c19df40429df584dc5a0f9ac"
+        },
+        "fonts/NotoSerifMyanmar-Regular.otf": {
+          "bytes": 137544,
+          "sha256": "d79096e7dd8c9d50700ce29db334e7d5fd14c8581c166d215698fde3ed21d3c4"
+        },
+        "fonts/NotoSerifNyiakengPuachueHmong-VF.ttf": {
+          "bytes": 41084,
+          "sha256": "b3ff4d8f0a592a484ffeb2066f4d9bf73a1506fa2b725852c10a2b8c747834a6"
+        },
+        "fonts/NotoSerifSinhala-VF.ttf": {
+          "bytes": 352220,
+          "sha256": "a79e6235b9adc565dd129887e7ca0e3404a03da416d54268ee9f903abdba7ed2"
+        },
+        "fonts/NotoSerifTamil-VF.ttf": {
+          "bytes": 90464,
+          "sha256": "cbe3b71c79020a143aaf950f14fe79182fe0b17429fc1ccfdd66c4fc01675fd1"
+        },
+        "fonts/NotoSerifTelugu-VF.ttf": {
+          "bytes": 340420,
+          "sha256": "7dd9fec04720de0b2a24289c70c9a7060c160b51be82a0983eff8d6fb53862f5"
+        },
+        "fonts/NotoSerifThai-Bold.ttf": {
+          "bytes": 26856,
+          "sha256": "d914b80813e97c544e40395e8028b8df60fc4dfbb98efb38081e4541a9d15b2c"
+        },
+        "fonts/NotoSerifThai-Regular.ttf": {
+          "bytes": 26824,
+          "sha256": "6b6bdf65405dc04b5106c2dc428ece57e135681c3d9c7f445a3809bab2fbad86"
+        },
+        "fonts/NotoSerifTibetan-VF.ttf": {
+          "bytes": 1100000,
+          "sha256": "e0eadd7af633580848e649373475d02b560025fbdf7927ff73d4d8aaf1f860a5"
+        },
+        "fonts/NotoSerifYezidi-VF.ttf": {
+          "bytes": 23744,
+          "sha256": "52cd5147c575949acbe57b1f191ee6dc7305488d17e0bbd91701d501f642b561"
+        },
+        "fonts/Roboto-Regular.ttf": {
+          "bytes": 2371712,
+          "sha256": "9ca9debb09459bf4e3e7f826f5cd0f35f253902b85684921fce2ba3f28dd0f50"
+        },
+        "fonts/RobotoFlex-Regular.ttf": {
+          "bytes": 1775480,
+          "sha256": "94a7ea95ccee28c54885a507e3cc0a534ce41ec61d413935df0e07261a7ffe63"
+        },
+        "fonts/RobotoStatic-Regular.ttf": {
+          "bytes": 305656,
+          "sha256": "06cba01eb71ea5cbd3a7df498910624db68953beead4be18fd91f8ec7dc72351"
+        },
+        "fonts/SourceSansPro-Bold.ttf": {
+          "bytes": 290916,
+          "sha256": "da4f442e66843990825ed4757e27ad3442cad83f9844cc503e8ece85e00f77f2"
+        },
+        "fonts/SourceSansPro-BoldItalic.ttf": {
+          "bytes": 103200,
+          "sha256": "4413cbf92a508e6a6eb0a089ee9bcf1b94f0b366ea755c5c64b6d4755f160c40"
+        },
+        "fonts/SourceSansPro-Italic.ttf": {
+          "bytes": 103828,
+          "sha256": "dac7846e443ec58c0802cd6fa55836060a62d8a7448c0bccff5242bac9e71d0e"
+        },
+        "fonts/SourceSansPro-Regular.ttf": {
+          "bytes": 293516,
+          "sha256": "71d10a86b4c54a5a9c0c8b467e53ac67d79edb96c956e4e9f65a7074dfb9992a"
+        },
+        "fonts/SourceSansPro-SemiBold.ttf": {
+          "bytes": 291864,
+          "sha256": "1abd7bd14daea0c793865e0df0e17b3f07ec1cbf22855676c4716726b930f17e"
+        },
+        "fonts/SourceSansPro-SemiBoldItalic.ttf": {
+          "bytes": 103556,
+          "sha256": "f819a0030a22a416cf14cda512e731643faf8d5615e833b57c6f2ac2e316643e"
+        },
+        "framework-res.apk": {
+          "bytes": 37580135,
+          "sha256": "dfbbd90a9255012182046fe74f506c5b78af6e3f55fc53815fdf4c268b8459f3"
+        },
+        "fw/adapter-runtime-bcp.jar": {
+          "bytes": 158904,
+          "sha256": "6a075b161b3075603f1e1256d5d924f5ae312122bd9a5ab004a6cb0346510498"
+        },
+        "fw/apache-xml.jar": {
+          "bytes": 439222,
+          "sha256": "6e76cc75c53ccc8fc1089d62d8457be09a3f88e409717cd242970087a5cc01ec"
+        },
+        "fw/bouncycastle.jar": {
+          "bytes": 483790,
+          "sha256": "7edd0e1a7668c12b459ddee6563e4ce1b0c5df5003304b858c3903bb27aa608c"
+        },
+        "fw/conscrypt.jar": {
+          "bytes": 163474,
+          "sha256": "0e7577a33612afa55a33ebdd2468f742fd37eb0fbbadde19f843f889a301ad58"
+        },
+        "fw/core-icu4j.jar": {
+          "bytes": 1079326,
+          "sha256": "7d8786c1a0c7f0c3b2eae51160a872368fcf65bc6faf6592cd3155bbdfb67787"
+        },
+        "fw/core-libart.jar": {
+          "bytes": 197929,
+          "sha256": "b9438a3b4fe5dd37f750a1eb6c8c4fdf0bc4933217442d1bcbd98e2575717ac6"
+        },
+        "fw/core-oj.jar": {
+          "bytes": 1927350,
+          "sha256": "02d8b12d06c8944844916b46b66da5a90a61d876399a003e9b82d0828f617c5c"
+        },
+        "fw/framework.jar": {
+          "bytes": 18118956,
+          "sha256": "d3622a112acdec5b05db14c3b0c7a81820cf1d1e9c718bdda290095cf9951a4a"
+        },
+        "fw/okhttp.jar": {
+          "bytes": 148928,
+          "sha256": "1f8dfdb55631b0747c6402f04eb6b30a820ae326b9642a23a6edb3da7ba65f03"
+        },
+        "i18n/etc/icu/icudt75l.dat": {
+          "bytes": 27956384,
+          "sha256": "0ee29e29eb2c29517e5d78ae8d9e8f73024678cb5f423aaf3b385bb32e802242"
+        },
+        "libandroid.so": {
+          "bytes": 38472,
+          "sha256": "e225633f7ebfa51e60d07c4c6e071cd0e2a15062bb652589c6604dce0ec149c4"
+        },
+        "libandroidfw.so": {
+          "bytes": 908040,
+          "sha256": "3da719deea81c1667ca8b2bb6efb0f88b04807c773b238236fcd482fe6557e9a"
+        },
+        "libart.so": {
+          "bytes": 21531272,
+          "sha256": "bd87e834a60b5158d4d5a175c979185f27e10610ead1c24f28a87211d0200cc5"
+        },
+        "libbase.so": {
+          "bytes": 347456,
+          "sha256": "b976ad27de85287a12867238c372803157cf4778ba2b839661b8c2143811c1d3"
+        },
+        "libbinder_ndk.so": {
+          "bytes": 144360,
+          "sha256": "cd3fe767fcfba48467c3e23d67a63f3ff2e466517e1b32b967841bd8e20f6008"
+        },
+        "libcutils.so": {
+          "bytes": 98240,
+          "sha256": "7964168df499aed82c853aadaa66b5b695cfe305da0254ffad44b642600e6e6d"
+        },
+        "libexpat.so": {
+          "bytes": 166832,
+          "sha256": "fe08c1224706444a4da35daa25ca68fd6b127235d84ba8be0b71bc7c8f8db7f2"
+        },
+        "libft2.so": {
+          "bytes": 634024,
+          "sha256": "8242228fcf38a9c397d2d233d601a59d8bfd8a0956fb5ec60eb009fec0cf69c6"
+        },
+        "libgif.so": {
+          "bytes": 37768,
+          "sha256": "a22e52138a0927ef1af874d01fda5edff65d39c7f749797897eaeeb4d959dd3a"
+        },
+        "libharfbuzz_ng.so": {
+          "bytes": 1094960,
+          "sha256": "bec22002b04c75adef9d9122361e27f16c2049b4ccd491773053306fe2a771e3"
+        },
+        "libhwui.so": {
+          "bytes": 12204464,
+          "sha256": "e0a991207be0a2676b38a518dfba9a18c0e658f89a035da2840f41aebfb1f06a"
+        },
+        "libicu_jni.so": {
+          "bytes": 147896,
+          "sha256": "be7697a24cf59593a637a22c3b6fc63f1bd810727b88a796b7edae29762238e5"
+        },
+        "libicui18n.so": {
+          "bytes": 3969600,
+          "sha256": "2aa3bf514088f35f7f3f1b2650c7b1cb6753743bdec007bcc9bba40dd49c53d2"
+        },
+        "libicuuc.so": {
+          "bytes": 30385440,
+          "sha256": "fe821dc664991d10290bcfdb7cb9176f2f7bde0f932e21e08b819c3e4db7621c"
+        },
+        "libjavacrypto.so": {
+          "bytes": 1819344,
+          "sha256": "05223bfd53925be686d0b5dcf16e494b60f78c4586441d8c31e95a2187ca2fd9"
+        },
+        "libjnigraphics.so": {
+          "bytes": 37624,
+          "sha256": "217b800ca291dcf213802154d79c6109e3d867c159f7f109daf7c125a67d5ad5"
+        },
+        "libjpeg.so": {
+          "bytes": 377256,
+          "sha256": "a8323769564926d12fea716c0528b3ccc569f0170a65818b2ff986f84ae45b10"
+        },
+        "liblog.so": {
+          "bytes": 70216,
+          "sha256": "d8ad176b41b820a4868b74394188429ad2dc69025661d320d0986dd713048ca4"
+        },
+        "libminikin.so": {
+          "bytes": 431728,
+          "sha256": "b5203bf3777e42d91fc74ed57d0c1eba1e4d3006c8b816607cdf4ca3e6ecb3c6"
+        },
+        "libnativehelper.so": {
+          "bytes": 32280,
+          "sha256": "ddd555394e8aaa354393f0aaaadfb0756d154a9cc6cacd484cc543e2e095463c"
+        },
+        "liboh_adapter_bridge.so": {
+          "bytes": 1999192,
+          "sha256": "130673d77451a875bffe00d56531a3122ef4c05116f83f787a741c3cd28c90a3"
+        },
+        "liboh_android_runtime.so": {
+          "bytes": 2157664,
+          "sha256": "324c146fdb11fd2545dfa97379923376edef2e2130e8320e9404143980780986"
+        },
+        "liboh_hwui_shim.so": {
+          "bytes": 52424,
+          "sha256": "e795e3b3b6dce6ba4fbc38c61f06a5416b02644d493808882b02da7f1db89ffa"
+        },
+        "libpng.so": {
+          "bytes": 226512,
+          "sha256": "004344ec858bf9be8e924e0a1243b712e7335e731ba047c567793f05e079edd0"
+        },
+        "libstatspull.so": {
+          "bytes": 349784,
+          "sha256": "779c8ad9e26b5129216cadc55b54c276fa49d78586e22d90641c10c94243a312"
+        },
+        "libstatssocket.so": {
+          "bytes": 52624,
+          "sha256": "94132828a8267d238a3b599c1dee6a9c006e1db3b533ad12a1e0ecbf1956718a"
+        },
+        "libultrahdr.so": {
+          "bytes": 675112,
+          "sha256": "71d838b17be98b4ad07078a4e9bed516ed9a8281588764d1a1426b16626eb4b1"
+        },
+        "libutils.so": {
+          "bytes": 174584,
+          "sha256": "0f7f1064e7efcdaa4112416ab288c653c397e9bcecfef7c7d3d85d362e99da6e"
+        },
+        "libwebp.so": {
+          "bytes": 583416,
+          "sha256": "d87ed0fbc004ce195b0e35e8ea7d780dbedc346b774977904f02a579c24464f0"
+        },
+        "libwestlake_binder.so": {
+          "bytes": 809120,
+          "sha256": "297f719cc322c9a18c6b610b0c2f30524aead9a5e00790e3920c20be185bdbd0"
+        },
+        "libwestlake_runtime_boundary.so": {
+          "bytes": 408544,
+          "sha256": "14e047f543bf674e10ae9e7268cfe8c643fbbe2546f74a96f8c76580955029f7"
+        },
+        "libwestlake_securec.so": {
+          "bytes": 71312,
+          "sha256": "94f5315607f94955bda2ea36e70f3cda426ba6e66fd07b0921350f71cc5257c4"
+        },
+        "libwestlake_webp.so": {
+          "bytes": 287184,
+          "sha256": "eab59243365aebddf0e6ac8bd07d6c7129a12ca8c78ae2310c43885bb32adfa4"
+        },
+        "libwuffs.so": {
+          "bytes": 143056,
+          "sha256": "3145809ea990d8dcf68c1152ecdd2c24fe97519c6f301d20bde90c30f2279803"
+        },
+        "libz.so": {
+          "bytes": 105024,
+          "sha256": "72c2eac44492d1feafb036ac6c129a9162576777dafe14886c80740a35fa4b2b"
+        },
+        "libziparchive.so": {
+          "bytes": 119776,
+          "sha256": "eef3e76498be60fc922228df1446f868167e1dcc093313d282876333294fa412"
+        }
+      },
+      "firmware": {
+        "/system/lib/ld-musl-aarch64.so.1": "fd3c4701acf719738fbd14cf1d419e4dd222c06a6df41f53d973354d648af7e2",
+        "/system/lib64/chipset-sdk-sp/libbacktrace_local.so": "ee6debe4d956d15981258697e872337333242400fb1e4ce85521136952d9e2c3",
+        "/system/lib64/chipset-sdk-sp/libbegetutil.z.so": "1f114e636be004950428e82ebdff19dc9c755507c90a9bddcb412f6356029460",
+        "/system/lib64/chipset-sdk-sp/libc++.so": "9466fb0d933689533bdf4b4962907f3e0c0970be278bd6ccf703ffa2aea838a6",
+        "/system/lib64/chipset-sdk-sp/libeventhandler.z.so": "d4197d1c4d1ab0990361ad3047d908fd63cb040a7212d98538fbc75cfef34f51",
+        "/system/lib64/chipset-sdk-sp/libsamgr_proxy.z.so": "a97fe3dc89365d6e37b44cd130aaf89f3ea30f788f1039301a9bd169d205a107",
+        "/system/lib64/chipset-sdk-sp/libsurface.z.so": "8f1879f82a307d3a95555067575132918a05244fbdeee1c2f2db37834a58f4a3",
+        "/system/lib64/chipset-sdk-sp/libutils.z.so": "66bdf65d494437eae03b4cb4a6f277e65f1832de5d79634d350d01b69e079d1a",
+        "/system/lib64/chipset-sdk/libhilog.so": "20d33c225230ef3a1eef3d4bdfdab0404457af98b26358a6a532bd79f2e0b719",
+        "/system/lib64/libdm.z.so": "ad0137edaf5cdd21641172b8ff6d22b6924f9065adbd0a49804efeb73ee4b218",
+        "/system/lib64/libhap_restorecon.z.so": "5ed7836eb81d60e8389158c2648044d6e02dd41ac390e2ff7d8f2d35bc421b71",
+        "/system/lib64/libskia_canvaskit.z.so": "caa86d58671eef0079cdcfa60cf943c6cda6ee7934ecfdf59bf37df754a2abe4",
+        "/system/lib64/libwm.z.so": "dc36f9663338d309fa5fbb55a73cedb075d799e6c58be4fd75d1ab5806cf55b2",
+        "/system/lib64/ndk/libhitrace_ndk.z.so": "821d9f12e01ae4d2cadf00c74d46fc02251bece617333fd144758ca901c6a1f7",
+        "/system/lib64/ndk/libnative_display_manager.so": "44a76df21739f8ff0e9681352e03e204cf7e10a1c159a4718aee3bcbf4c3b84c",
+        "/system/lib64/ndk/libpasteboard.so": "a35420dde76e32b21d083ff1f73ae4908e0a6f4be7aa73a32f5383aaebbe88c8",
+        "/system/lib64/ndk/libsync_fence.z.so": "02a5ab6610a710a3cb17d00b356650335dfff287eaa99db8a2eec102ba1bd84d",
+        "/system/lib64/ndk/libudmf.so": "e98be8b1f3d4f47604aa6f71d04dc56e4c89c095ac2ec4d985dce6270b188d16",
+        "/system/lib64/platformsdk/libEGL.so": "96bc14217ceb3536440e97b53e80228106cb57fe95a3e17570bdefbdb76d49a5",
+        "/system/lib64/platformsdk/libability_connect_callback_stub.z.so": "40c516b9a4c36bad39b9b85f9ab23f765253f948b86a52a504faebe979ee1300",
+        "/system/lib64/platformsdk/libability_manager.z.so": "b1bd33d4a634f12abfc081a7f8aa5e34399b11e6d6659882561ed4fff7bbdb45",
+        "/system/lib64/platformsdk/libapp_manager.z.so": "6ae44a9ca22305a58e78eb93b3cc118abe51a585ffa3a7c98b6dd380f5ff4cc7",
+        "/system/lib64/platformsdk/libappexecfwk_base.z.so": "85c84aff96b10e5ba2f3f5138bdb5b864c321f1fa00d5153f7143b363e5b869d",
+        "/system/lib64/platformsdk/libappexecfwk_core.z.so": "17f9c8b6622f09ff4891bbcf17973948ee58c164a4172789c588909ef379208e",
+        "/system/lib64/platformsdk/libcesfwk_innerkits.z.so": "7f7bf5c810c94a46233e87a0d48a855f186c7c5610da322952e96a05d4ebda5c",
+        "/system/lib64/platformsdk/libconfiguration.z.so": "8824cf0ec817cf2f9dba6bbcded0d4be1c19f46d8c6d055584f55b4043b62c95",
+        "/system/lib64/platformsdk/libdatashare_consumer.z.so": "7b51f886d98ccd51173b8d68ace56d2fcc3a6a4cd9d2de5be1072f5772c0083b",
+        "/system/lib64/platformsdk/libinputmethod_client.z.so": "f71d7fa9a39477ee37884a661595aa24fd27cd198a0537b5d0d3c1732df4b8db",
+        "/system/lib64/platformsdk/libipc_single.z.so": "f6742ea92c89d4400d69201ec5ac47261dcfeb0945951ecc5ae44041ff6bd4f8",
+        "/system/lib64/platformsdk/libmission_info.z.so": "0d2a7d9f2b4612e76f32e0a76e42633a9d96c05c3a7dabc4c4278eb28170000e",
+        "/system/lib64/platformsdk/libmmi-client.z.so": "cc4a5786832b903034979dd708936789600deee8589494b817c1ff1987e538db",
+        "/system/lib64/platformsdk/libnative_image.so": "74b6ea0de10d8e9171a35042e46aa5d4a2d44e3a3ba529b6202603f9af749b9f",
+        "/system/lib64/platformsdk/librender_service_base.z.so": "9cc625e716da8379e78e11e216d7c5e68f18b2c1bd22b0d907b96338a1ef1062",
+        "/system/lib64/platformsdk/librender_service_client.z.so": "ea46c53899641fe6e5783cde9e87be7d75ea24517e374ff61b5b7d64d647f7e4",
+        "/system/lib64/platformsdk/libscene_session.z.so": "291a9f68ca981850649ffd2771fe50b21f45547f9554c2b7e50d798ac439e8de",
+        "/system/lib64/platformsdk/libtokensetproc_shared.z.so": "478c3739261bb512c89d0bbd155a76ab921d4dfb16d2d8587b14ad2882c42194",
+        "/system/lib64/platformsdk/libvulkan.so": "711d9723c47d816b7a72d96cd1d0a05533b76e891347fb830e5c8b6889a2f3dc",
+        "/system/lib64/platformsdk/libwant.z.so": "4d31b4ada8c6e6188d8e9cc60d91c67e703ac37bad5bc882e67850707018db8f",
+        "/system/lib64/platformsdk/libwindow_scene_common.z.so": "9551c7fe2617e032ac0b999695230076331ea644eb0bcf5bb3cbda971ebe2c8f",
+        "/system/lib64/platformsdk/libwmutil.z.so": "06734bf3308057ab2f28b21cacb5b47aed875f145704fbfd3e1a76a86ee9c102",
+        "/system/lib64/platformsdk/libwmutil_base.z.so": "8c96da51508a34a3597b66160885f0e5c861490061740c8c1f0d26e8279ed9b1",
+        "/system/lib64/platformsdk/libzuri.z.so": "a7d06d280bf7d337c11b5538325de018156bbb766fd4e4c44f82f0d28e2ae65c",
+        "/vendor/lib64/chipsetsdk/libGLES_mali.z.so": "e0cb108121981c6ad30c9e3f338c384172ef3be2dc790a457e0287a10efa2cfe"
+      },
+      "font_contracts_passed": true,
+      "font_contracts_requested": true,
+      "full_stack_accepted": false,
+      "ndk_graphics_contracts_passed": true,
+      "ndk_graphics_contracts_requested": true,
+      "passed": true,
+      "prerequisites": {
+        "/home/dspfac/a2hlab/source-closure/verify/out/appspawn-attempt11": "97586f2f8e4544fbe2bf78767c63a0277c67e698cb52931907d7dec5c3dd89d9",
+        "/home/dspfac/a2hlab/source-closure/verify/out/framework-boot-attempt4": "6978e753313cbbd6197cff14c16a84aeff2d700a8ab919ca06496d394306195e",
+        "/home/dspfac/a2hlab/source-closure/verify/out/framework-native15-runtime-attempt12": "11bcb5070b0905a0ce418a260864ef36a4a6af4735b9ffa1f23110597f5817c0",
+        "/home/dspfac/a2hlab/source-closure/verify/out/framework-res-ap3a": "beb871d077db20cc94f48761731624b010617aecccf3ca33f8a24d7c12926c9c",
+        "/home/dspfac/a2hlab/source-closure/verify/out/framework-runtime-attempt6": "0221b72d356dd5da4a64596df40abbe45950a4a4ff69b735618d78f73a16b2ca",
+        "/home/dspfac/a2hlab/source-closure/verify/out/native-platform15-attempt21": "00a7c0924cf9150c57714bbc975ae1f13697510fd87a9f9e2ba7121dac390f9b",
+        "/home/dspfac/a2hlab/source-closure/verify/out/runtime-data-attempt2": "122d6aed966997df49e70a576d7d28fc74e1cbba1d53a0624097d296971dce34"
+      },
+      "scope": "source Appspawn framework initialization; not Toutiao UX acceptance",
+      "stage": "/data/local/tmp/a2hlab-framework-673bf7752f904801a562662287a3fb60"
+    },
+    "legacy_cpp": {
+      "contract": "Eight threads initialize one guard once; aborted guard retries; real allocation/free and async-safe formatting pass",
+      "needed": [
+        "libc.so"
+      ],
+      "passed": true,
+      "report_sha256": "0c31cd97d5aa9308cf8f7788d898c1f104d25cbbc22aa6afc750d66afc5afc83"
+    },
+    "native": {
+      "device_log_sha256": "61e3fc4cfbaf189b91a7b053685f0c4df0c5992b5d202ea13ce367de3834be3e",
+      "files": {
+        "fixture.png": {
+          "bytes": 75,
+          "sha256": "7f2538a6e81af23e034f8ca2efc2cb5f1d7d709f502fa30bdccfebe774e4ecab"
+        },
+        "fixture.zip": {
+          "bytes": 132,
+          "sha256": "8551ce55d0c8d90598321b0c2bad95942824882945b61d438064374c32b9b90d"
+        },
+        "font.ttf": {
+          "bytes": 3451900,
+          "sha256": "21b96a0377f067833a93af3082eb28d4ffab7a8cd46bfd513286f1d64b7b0949"
+        },
+        "lib/libandroidfw.so": {
+          "bytes": 908040,
+          "sha256": "3da719deea81c1667ca8b2bb6efb0f88b04807c773b238236fcd482fe6557e9a"
+        },
+        "lib/libbase.so": {
+          "bytes": 347456,
+          "sha256": "b976ad27de85287a12867238c372803157cf4778ba2b839661b8c2143811c1d3"
+        },
+        "lib/libc++.so": {
+          "bytes": 1258776,
+          "sha256": "9487e6aa920386ca3c83cc2b238a8792c194d55ea73545bbf17b5e0d0fb1c5bc"
+        },
+        "lib/libcutils.so": {
+          "bytes": 98240,
+          "sha256": "7964168df499aed82c853aadaa66b5b695cfe305da0254ffad44b642600e6e6d"
+        },
+        "lib/libexpat.so": {
+          "bytes": 166832,
+          "sha256": "fe08c1224706444a4da35daa25ca68fd6b127235d84ba8be0b71bc7c8f8db7f2"
+        },
+        "lib/libft2.so": {
+          "bytes": 634024,
+          "sha256": "8242228fcf38a9c397d2d233d601a59d8bfd8a0956fb5ec60eb009fec0cf69c6"
+        },
+        "lib/libharfbuzz_ng.so": {
+          "bytes": 1094960,
+          "sha256": "bec22002b04c75adef9d9122361e27f16c2049b4ccd491773053306fe2a771e3"
+        },
+        "lib/libicui18n.so": {
+          "bytes": 3969600,
+          "sha256": "2aa3bf514088f35f7f3f1b2650c7b1cb6753743bdec007bcc9bba40dd49c53d2"
+        },
+        "lib/libicuuc.so": {
+          "bytes": 30385440,
+          "sha256": "fe821dc664991d10290bcfdb7cb9176f2f7bde0f932e21e08b819c3e4db7621c"
+        },
+        "lib/libjavacrypto.so": {
+          "bytes": 1819344,
+          "sha256": "05223bfd53925be686d0b5dcf16e494b60f78c4586441d8c31e95a2187ca2fd9"
+        },
+        "lib/liblog.so": {
+          "bytes": 70216,
+          "sha256": "d8ad176b41b820a4868b74394188429ad2dc69025661d320d0986dd713048ca4"
+        },
+        "lib/libminikin.so": {
+          "bytes": 359576,
+          "sha256": "d0cf4d392b07bf7e5b4ba5ed9a412ff94259b7b08f583932ff6ebb0cc1eb9250"
+        },
+        "lib/libnativehelper.so": {
+          "bytes": 32280,
+          "sha256": "ddd555394e8aaa354393f0aaaadfb0756d154a9cc6cacd484cc543e2e095463c"
+        },
+        "lib/libpng.so": {
+          "bytes": 226512,
+          "sha256": "004344ec858bf9be8e924e0a1243b712e7335e731ba047c567793f05e079edd0"
+        },
+        "lib/libutils.so": {
+          "bytes": 174584,
+          "sha256": "0f7f1064e7efcdaa4112416ab288c653c397e9bcecfef7c7d3d85d362e99da6e"
+        },
+        "lib/libz.so": {
+          "bytes": 105024,
+          "sha256": "72c2eac44492d1feafb036ac6c129a9162576777dafe14886c80740a35fa4b2b"
+        },
+        "lib/libziparchive.so": {
+          "bytes": 119776,
+          "sha256": "eef3e76498be60fc922228df1446f868167e1dcc093313d282876333294fa412"
+        },
+        "malformed.zip": {
+          "bytes": 20,
+          "sha256": "8514dca35c476dbeef6a45198471ba185418329714581dd5c3b2a7f07bc02369"
+        },
+        "support_probe": {
+          "bytes": 33512,
+          "sha256": "ffe624fc5c78a81de709b05ca96babbd7f64e22dffe22be48c371967293cf3df"
+        },
+        "toutiao.apk": {
+          "bytes": 138641340,
+          "sha256": "a1112a0c941f865847c2fab9138cf815735268fbfcd41d697412fb80992c7395"
+        }
+      },
+      "full_stack_accepted": false,
+      "passed": true,
+      "scope": "source native support behavior; not a Toutiao UI launch"
+    },
+    "rgba8888_buffers": {
+      "device_log_sha256": "480e20aa9628033f221cfed9f66013284f0f4938a44f981a628631411637c5fa",
+      "exit_code": 0,
+      "files": {
+        "libandroidfw.so": "3da719deea81c1667ca8b2bb6efb0f88b04807c773b238236fcd482fe6557e9a",
+        "libart.so": "bd87e834a60b5158d4d5a175c979185f27e10610ead1c24f28a87211d0200cc5",
+        "libbase.so": "b976ad27de85287a12867238c372803157cf4778ba2b839661b8c2143811c1d3",
+        "libbinder_ndk.so": "cd3fe767fcfba48467c3e23d67a63f3ff2e466517e1b32b967841bd8e20f6008",
+        "libcutils.so": "7964168df499aed82c853aadaa66b5b695cfe305da0254ffad44b642600e6e6d",
+        "libexpat.so": "fe08c1224706444a4da35daa25ca68fd6b127235d84ba8be0b71bc7c8f8db7f2",
+        "libft2.so": "8242228fcf38a9c397d2d233d601a59d8bfd8a0956fb5ec60eb009fec0cf69c6",
+        "libgif.so": "a22e52138a0927ef1af874d01fda5edff65d39c7f749797897eaeeb4d959dd3a",
+        "libharfbuzz_ng.so": "bec22002b04c75adef9d9122361e27f16c2049b4ccd491773053306fe2a771e3",
+        "libhwui.so": "96aa6be453d8568b03a1ab095e047cccf0273f77b4d6a6d90c9a7cc17c2d45b9",
+        "libicu_jni.so": "be7697a24cf59593a637a22c3b6fc63f1bd810727b88a796b7edae29762238e5",
+        "libicui18n.so": "2aa3bf514088f35f7f3f1b2650c7b1cb6753743bdec007bcc9bba40dd49c53d2",
+        "libicuuc.so": "fe821dc664991d10290bcfdb7cb9176f2f7bde0f932e21e08b819c3e4db7621c",
+        "libjavacrypto.so": "05223bfd53925be686d0b5dcf16e494b60f78c4586441d8c31e95a2187ca2fd9",
+        "liblog.so": "d8ad176b41b820a4868b74394188429ad2dc69025661d320d0986dd713048ca4",
+        "libminikin.so": "b5203bf3777e42d91fc74ed57d0c1eba1e4d3006c8b816607cdf4ca3e6ecb3c6",
+        "libnativehelper.so": "ddd555394e8aaa354393f0aaaadfb0756d154a9cc6cacd484cc543e2e095463c",
+        "liboh_adapter_bridge.so": "580d36aa9a2ed81046090bafe33a763cbff7994af0b26081d45956447d4c083a",
+        "liboh_android_runtime.so": "00a5a57f91a2902ca5beb54011e32fd739a391ea02ce9e6b7747fd4a51476fcd",
+        "liboh_hwui_shim.so": "3628a6f13353737859c08d55d81823483fd1b70c5a7a866591acdba056aa7735",
+        "liboh_skia_rtti_shim.so": "aa4f789f57dbbd98815f40ab19bb70a7ac4c30c595658f585ff46fbacbc8eca4",
+        "libpng.so": "004344ec858bf9be8e924e0a1243b712e7335e731ba047c567793f05e079edd0",
+        "libstatspull.so": "779c8ad9e26b5129216cadc55b54c276fa49d78586e22d90641c10c94243a312",
+        "libstatssocket.so": "94132828a8267d238a3b599c1dee6a9c006e1db3b533ad12a1e0ecbf1956718a",
+        "libultrahdr.so": "8c15b458544453fafcf7bd4bfb04300f0d5f40640f0753113197e2d396ca551c",
+        "libutils.so": "0f7f1064e7efcdaa4112416ab288c653c397e9bcecfef7c7d3d85d362e99da6e",
+        "libwestlake_binder.so": "297f719cc322c9a18c6b610b0c2f30524aead9a5e00790e3920c20be185bdbd0",
+        "libwestlake_runtime_boundary.so": "0c6ce10bebfd3c2be173246c614eeebece38573161db830df765407b7f991690",
+        "libwestlake_webp.so": "eab59243365aebddf0e6ac8bd07d6c7129a12ca8c78ae2310c43885bb32adfa4",
+        "libz.so": "72c2eac44492d1feafb036ac6c129a9162576777dafe14886c80740a35fa4b2b",
+        "libziparchive.so": "eef3e76498be60fc922228df1446f868167e1dcc093313d282876333294fa412",
+        "platform_load_probe": "e21bd76b44fa990316178cfd14c29b1880ee0106c17b94de1d9282315d52b744"
+      },
+      "full_stack_accepted": false,
+      "passed": true,
+      "scope": "source Android/OH buffer descriptors and CPU round trips",
+      "source_report_sha256": "abe199f95254178a05a3f5eb4b86382ec03644580f17c7fe9bf641dd8091519e"
+    },
+    "source_gpu_render": {
+      "command": [
+        "/home/dspfac/a2hlab/source-closure/verify/toolchains/ohos-sdk/native/llvm/bin/clang++",
+        "--target=aarch64-linux-ohos",
+        "--sysroot=/home/dspfac/a2hlab/source-closure/verify/toolchains/ohos-sdk/native/sysroot",
+        "-nostdlib++",
+        "-pie",
+        "-fuse-ld=lld",
+        "-Wl,-z,defs",
+        "-Wl,--allow-shlib-undefined",
+        "/home/dspfac/a2hlab/source-closure/verify/out/skia15-probe-objects1/objects/westlake_native_skia_gpu_probe.cpp.o",
+        "-Wl,--as-needed",
+        "/home/dspfac/a2hlab/source-closure/verify/out/native-platform15-attempt21/libhwui.so",
+        "/home/dspfac/a2hlab/source-closure/verify/out/native-link-imports-attempt27/libEGL.so",
+        "/home/dspfac/a2hlab/source-closure/verify/out/native-link-imports-attempt27/libGLES_mali.z.so",
+        "/home/dspfac/a2hlab/source-closure/verify/out/native-link-imports-attempt27/libc++.so",
+        "/home/dspfac/a2hlab/source-closure/verify/out/native-link-imports-attempt27/libc.so",
+        "-o",
+        "/home/dspfac/a2hlab/source-closure/verify/out/skia15-gpu-probe2/platform_load_probe"
+      ],
+      "device_command": "LD_LIBRARY_PATH=/data/local/tmp/a2hlab-native-d726963fb27b4cbb94888e6ac58ae455:/system/lib64:/system/lib64/platformsdk:/system/lib64/chipset-sdk:/system/lib64/chipset-sdk-sp:/system/lib64/ndk:/vendor/lib64/chipsetsdk:/vendor/lib64/hw:/vendor/lib64 timeout 30 /data/local/tmp/a2hlab-native-d726963fb27b4cbb94888e6ac58ae455/platform_load_probe libandroid.so libandroidfw.so libart.so libbase.so libbinder_ndk.so libcutils.so libexpat.so libft2.so libgif.so libharfbuzz_ng.so libhwui.so libicu_jni.so libicui18n.so libicuuc.so libjavacrypto.so libjnigraphics.so libjpeg.so liblog.so libminikin.so libnativehelper.so liboh_adapter_bridge.so liboh_android_runtime.so liboh_hwui_shim.so libpng.so libstatspull.so libstatssocket.so libultrahdr.so libutils.so libwebp.so libwestlake_binder.so libwestlake_runtime_boundary.so libwestlake_securec.so libwestlake_webp.so libwuffs.so libz.so libziparchive.so",
+      "device_log_sha256": "fc92fc235d22ca77360ec75fa6033510435ac41fa3f77b1fbc9cb74c83df6ae5",
+      "exit_code": 0,
+      "files": {
+        "libandroid.so": "e225633f7ebfa51e60d07c4c6e071cd0e2a15062bb652589c6604dce0ec149c4",
+        "libandroidfw.so": "3da719deea81c1667ca8b2bb6efb0f88b04807c773b238236fcd482fe6557e9a",
+        "libart.so": "bd87e834a60b5158d4d5a175c979185f27e10610ead1c24f28a87211d0200cc5",
+        "libbase.so": "b976ad27de85287a12867238c372803157cf4778ba2b839661b8c2143811c1d3",
+        "libbinder_ndk.so": "cd3fe767fcfba48467c3e23d67a63f3ff2e466517e1b32b967841bd8e20f6008",
+        "libcutils.so": "7964168df499aed82c853aadaa66b5b695cfe305da0254ffad44b642600e6e6d",
+        "libexpat.so": "fe08c1224706444a4da35daa25ca68fd6b127235d84ba8be0b71bc7c8f8db7f2",
+        "libft2.so": "8242228fcf38a9c397d2d233d601a59d8bfd8a0956fb5ec60eb009fec0cf69c6",
+        "libgif.so": "a22e52138a0927ef1af874d01fda5edff65d39c7f749797897eaeeb4d959dd3a",
+        "libharfbuzz_ng.so": "bec22002b04c75adef9d9122361e27f16c2049b4ccd491773053306fe2a771e3",
+        "libhwui.so": "e0a991207be0a2676b38a518dfba9a18c0e658f89a035da2840f41aebfb1f06a",
+        "libicu_jni.so": "be7697a24cf59593a637a22c3b6fc63f1bd810727b88a796b7edae29762238e5",
+        "libicui18n.so": "2aa3bf514088f35f7f3f1b2650c7b1cb6753743bdec007bcc9bba40dd49c53d2",
+        "libicuuc.so": "fe821dc664991d10290bcfdb7cb9176f2f7bde0f932e21e08b819c3e4db7621c",
+        "libjavacrypto.so": "05223bfd53925be686d0b5dcf16e494b60f78c4586441d8c31e95a2187ca2fd9",
+        "libjnigraphics.so": "217b800ca291dcf213802154d79c6109e3d867c159f7f109daf7c125a67d5ad5",
+        "libjpeg.so": "a8323769564926d12fea716c0528b3ccc569f0170a65818b2ff986f84ae45b10",
+        "liblog.so": "d8ad176b41b820a4868b74394188429ad2dc69025661d320d0986dd713048ca4",
+        "libminikin.so": "b5203bf3777e42d91fc74ed57d0c1eba1e4d3006c8b816607cdf4ca3e6ecb3c6",
+        "libnativehelper.so": "ddd555394e8aaa354393f0aaaadfb0756d154a9cc6cacd484cc543e2e095463c",
+        "liboh_adapter_bridge.so": "130673d77451a875bffe00d56531a3122ef4c05116f83f787a741c3cd28c90a3",
+        "liboh_android_runtime.so": "324c146fdb11fd2545dfa97379923376edef2e2130e8320e9404143980780986",
+        "liboh_hwui_shim.so": "e795e3b3b6dce6ba4fbc38c61f06a5416b02644d493808882b02da7f1db89ffa",
+        "libpng.so": "004344ec858bf9be8e924e0a1243b712e7335e731ba047c567793f05e079edd0",
+        "libstatspull.so": "779c8ad9e26b5129216cadc55b54c276fa49d78586e22d90641c10c94243a312",
+        "libstatssocket.so": "94132828a8267d238a3b599c1dee6a9c006e1db3b533ad12a1e0ecbf1956718a",
+        "libultrahdr.so": "71d838b17be98b4ad07078a4e9bed516ed9a8281588764d1a1426b16626eb4b1",
+        "libutils.so": "0f7f1064e7efcdaa4112416ab288c653c397e9bcecfef7c7d3d85d362e99da6e",
+        "libwebp.so": "d87ed0fbc004ce195b0e35e8ea7d780dbedc346b774977904f02a579c24464f0",
+        "libwestlake_binder.so": "297f719cc322c9a18c6b610b0c2f30524aead9a5e00790e3920c20be185bdbd0",
+        "libwestlake_runtime_boundary.so": "14e047f543bf674e10ae9e7268cfe8c643fbbe2546f74a96f8c76580955029f7",
+        "libwestlake_securec.so": "94f5315607f94955bda2ea36e70f3cda426ba6e66fd07b0921350f71cc5257c4",
+        "libwestlake_webp.so": "eab59243365aebddf0e6ac8bd07d6c7129a12ca8c78ae2310c43885bb32adfa4",
+        "libwuffs.so": "3145809ea990d8dcf68c1152ecdd2c24fe97519c6f301d20bde90c30f2279803",
+        "libz.so": "72c2eac44492d1feafb036ac6c129a9162576777dafe14886c80740a35fa4b2b",
+        "libziparchive.so": "eef3e76498be60fc922228df1446f868167e1dcc093313d282876333294fa412",
+        "platform_load_probe": "abf57d3315df161cb0bd8c8160526a0c71185dabefc8f6db48b62a1d8024fb27"
+      },
+      "firmware": {
+        "/system/lib/ld-musl-aarch64.so.1": "fd3c4701acf719738fbd14cf1d419e4dd222c06a6df41f53d973354d648af7e2",
+        "/system/lib64/chipset-sdk-sp/libbacktrace_local.so": "ee6debe4d956d15981258697e872337333242400fb1e4ce85521136952d9e2c3",
+        "/system/lib64/chipset-sdk-sp/libbegetutil.z.so": "1f114e636be004950428e82ebdff19dc9c755507c90a9bddcb412f6356029460",
+        "/system/lib64/chipset-sdk-sp/libc++.so": "9466fb0d933689533bdf4b4962907f3e0c0970be278bd6ccf703ffa2aea838a6",
+        "/system/lib64/chipset-sdk-sp/libeventhandler.z.so": "d4197d1c4d1ab0990361ad3047d908fd63cb040a7212d98538fbc75cfef34f51",
+        "/system/lib64/chipset-sdk-sp/libsamgr_proxy.z.so": "a97fe3dc89365d6e37b44cd130aaf89f3ea30f788f1039301a9bd169d205a107",
+        "/system/lib64/chipset-sdk-sp/libsurface.z.so": "8f1879f82a307d3a95555067575132918a05244fbdeee1c2f2db37834a58f4a3",
+        "/system/lib64/chipset-sdk-sp/libutils.z.so": "66bdf65d494437eae03b4cb4a6f277e65f1832de5d79634d350d01b69e079d1a",
+        "/system/lib64/chipset-sdk/libhilog.so": "20d33c225230ef3a1eef3d4bdfdab0404457af98b26358a6a532bd79f2e0b719",
+        "/system/lib64/libdm.z.so": "ad0137edaf5cdd21641172b8ff6d22b6924f9065adbd0a49804efeb73ee4b218",
+        "/system/lib64/libhap_restorecon.z.so": "5ed7836eb81d60e8389158c2648044d6e02dd41ac390e2ff7d8f2d35bc421b71",
+        "/system/lib64/libskia_canvaskit.z.so": "caa86d58671eef0079cdcfa60cf943c6cda6ee7934ecfdf59bf37df754a2abe4",
+        "/system/lib64/libwm.z.so": "dc36f9663338d309fa5fbb55a73cedb075d799e6c58be4fd75d1ab5806cf55b2",
+        "/system/lib64/ndk/libhitrace_ndk.z.so": "821d9f12e01ae4d2cadf00c74d46fc02251bece617333fd144758ca901c6a1f7",
+        "/system/lib64/ndk/libnative_display_manager.so": "44a76df21739f8ff0e9681352e03e204cf7e10a1c159a4718aee3bcbf4c3b84c",
+        "/system/lib64/ndk/libpasteboard.so": "a35420dde76e32b21d083ff1f73ae4908e0a6f4be7aa73a32f5383aaebbe88c8",
+        "/system/lib64/ndk/libsync_fence.z.so": "02a5ab6610a710a3cb17d00b356650335dfff287eaa99db8a2eec102ba1bd84d",
+        "/system/lib64/ndk/libudmf.so": "e98be8b1f3d4f47604aa6f71d04dc56e4c89c095ac2ec4d985dce6270b188d16",
+        "/system/lib64/platformsdk/libEGL.so": "96bc14217ceb3536440e97b53e80228106cb57fe95a3e17570bdefbdb76d49a5",
+        "/system/lib64/platformsdk/libability_connect_callback_stub.z.so": "40c516b9a4c36bad39b9b85f9ab23f765253f948b86a52a504faebe979ee1300",
+        "/system/lib64/platformsdk/libability_manager.z.so": "b1bd33d4a634f12abfc081a7f8aa5e34399b11e6d6659882561ed4fff7bbdb45",
+        "/system/lib64/platformsdk/libapp_manager.z.so": "6ae44a9ca22305a58e78eb93b3cc118abe51a585ffa3a7c98b6dd380f5ff4cc7",
+        "/system/lib64/platformsdk/libappexecfwk_base.z.so": "85c84aff96b10e5ba2f3f5138bdb5b864c321f1fa00d5153f7143b363e5b869d",
+        "/system/lib64/platformsdk/libappexecfwk_core.z.so": "17f9c8b6622f09ff4891bbcf17973948ee58c164a4172789c588909ef379208e",
+        "/system/lib64/platformsdk/libcesfwk_innerkits.z.so": "7f7bf5c810c94a46233e87a0d48a855f186c7c5610da322952e96a05d4ebda5c",
+        "/system/lib64/platformsdk/libconfiguration.z.so": "8824cf0ec817cf2f9dba6bbcded0d4be1c19f46d8c6d055584f55b4043b62c95",
+        "/system/lib64/platformsdk/libdatashare_consumer.z.so": "7b51f886d98ccd51173b8d68ace56d2fcc3a6a4cd9d2de5be1072f5772c0083b",
+        "/system/lib64/platformsdk/libinputmethod_client.z.so": "f71d7fa9a39477ee37884a661595aa24fd27cd198a0537b5d0d3c1732df4b8db",
+        "/system/lib64/platformsdk/libipc_single.z.so": "f6742ea92c89d4400d69201ec5ac47261dcfeb0945951ecc5ae44041ff6bd4f8",
+        "/system/lib64/platformsdk/libmission_info.z.so": "0d2a7d9f2b4612e76f32e0a76e42633a9d96c05c3a7dabc4c4278eb28170000e",
+        "/system/lib64/platformsdk/libmmi-client.z.so": "cc4a5786832b903034979dd708936789600deee8589494b817c1ff1987e538db",
+        "/system/lib64/platformsdk/libnative_image.so": "74b6ea0de10d8e9171a35042e46aa5d4a2d44e3a3ba529b6202603f9af749b9f",
+        "/system/lib64/platformsdk/librender_service_base.z.so": "9cc625e716da8379e78e11e216d7c5e68f18b2c1bd22b0d907b96338a1ef1062",
+        "/system/lib64/platformsdk/librender_service_client.z.so": "ea46c53899641fe6e5783cde9e87be7d75ea24517e374ff61b5b7d64d647f7e4",
+        "/system/lib64/platformsdk/libscene_session.z.so": "291a9f68ca981850649ffd2771fe50b21f45547f9554c2b7e50d798ac439e8de",
+        "/system/lib64/platformsdk/libtokensetproc_shared.z.so": "478c3739261bb512c89d0bbd155a76ab921d4dfb16d2d8587b14ad2882c42194",
+        "/system/lib64/platformsdk/libvulkan.so": "711d9723c47d816b7a72d96cd1d0a05533b76e891347fb830e5c8b6889a2f3dc",
+        "/system/lib64/platformsdk/libwant.z.so": "4d31b4ada8c6e6188d8e9cc60d91c67e703ac37bad5bc882e67850707018db8f",
+        "/system/lib64/platformsdk/libwindow_scene_common.z.so": "9551c7fe2617e032ac0b999695230076331ea644eb0bcf5bb3cbda971ebe2c8f",
+        "/system/lib64/platformsdk/libwmutil.z.so": "06734bf3308057ab2f28b21cacb5b47aed875f145704fbfd3e1a76a86ee9c102",
+        "/system/lib64/platformsdk/libwmutil_base.z.so": "8c96da51508a34a3597b66160885f0e5c861490061740c8c1f0d26e8279ed9b1",
+        "/system/lib64/platformsdk/libzuri.z.so": "a7d06d280bf7d337c11b5538325de018156bbb766fd4e4c44f82f0d28e2ae65c",
+        "/vendor/lib64/chipsetsdk/libGLES_mali.z.so": "e0cb108121981c6ad30c9e3f338c384172ef3be2dc790a457e0287a10efa2cfe"
+      },
+      "graphics_buffer_format": null,
+      "passed": true,
+      "prerequisites": {
+        "/home/dspfac/a2hlab/source-closure/verify/out/framework-native15-runtime-attempt12": "11bcb5070b0905a0ce418a260864ef36a4a6af4735b9ffa1f23110597f5817c0",
+        "/home/dspfac/a2hlab/source-closure/verify/out/native-platform15-attempt21": "00a7c0924cf9150c57714bbc975ae1f13697510fd87a9f9e2ba7121dac390f9b",
+        "/home/dspfac/a2hlab/source-closure/verify/out/skia15-gpu-probe2": "cba6c4c597c7e69ba74d59eec3d00ea0aceeb7e0216c74267231709d92e8f58e"
+      },
+      "probe_source_sha256": "1a2537f09b53e6d7348dc31268a283899c5c5573ba5853d0cfe15f4e0978de7a",
+      "scope": "source Ganesh GPU draw and readback",
+      "stage": "/data/local/tmp/a2hlab-native-d726963fb27b4cbb94888e6ac58ae455"
+    },
+    "source_package_startup": {
+      "application_bound": true,
+      "decor_view": true,
+      "failure": "The source window session and main shell render, but the feed reports network unavailable; provider, input, media JNI and WebView integration remain incomplete",
+      "full_source_closure": false,
+      "inspection_sha256": "3d5c0a2c7f53c0863ca0e037e9777f0eeb51f53daa7deca5369f303335289745",
+      "latest_probe_report_sha256": "66bbf98c4ef87a9f24afe6133f53388ab0a765a57bd85e0bb25c16188aa3d8ea",
+      "native_directory": "lib/arm64-v8a",
+      "original_native_library_loaded": "libflipped.so",
+      "package_parser_passed": true,
+      "rendered_state": "Toutiao main shell and tabs with a three-item recycler; feed shows current network unavailable",
+      "screenshot_sha256": "c71d66f35f689666657910024fd71f54d16cf05f32eb78df6838ba5c93b48876",
+      "source_ui_accepted": false,
+      "spawn_report_sha256": "989b431fa222ad07333e0517f61123e605b58a8c8f1c579f1a3c847de9f7bb07",
+      "target_sdk": 30,
+      "uid": 20010056,
+      "view_tree_complete": true,
+      "view_tree_sha256": "bb1437beb3de41a4102752c2c2cccf792db45f1e3a3453cea741dcfd29c99a1a"
+    }
+  },
+  "font_source_progress": {
+    "a2hlab_repositories": 8,
+    "available_font_faces": 220,
+    "chinese_ink_pixels": 408,
+    "compatibility_aliases": 2,
+    "device_log_sha256": "9b806f47ed6440e143db5f23a1c884bfe236555f5d8ba32a56827856838dd3b5",
+    "font_assets": 206,
+    "font_map_device_accepted": true,
+    "packaged_assets_with_icu_and_configs": 211,
+    "remaining": "Full source payload Toutiao UI acceptance",
+    "source_config": "Android 15 default Blueprint selections"
+  },
+  "framework_generator_milestones": {
+    "aidl_input_units": 3591,
+    "aidl_output_files_including_declaration_only": 3658,
+    "framework_compilation_accepted": false,
+    "hidl_interfaces": 42,
+    "hidl_java_files": 507,
+    "module_generated_java_files": 931,
+    "release_flag_packages": 99,
+    "release_flags": 1284
+  },
+  "full_payload_device_accepted": false,
+  "graphics_shim_checkout_selection": {
+    "byte_identical_objects": 21,
+    "explicit_westlake_source": true
+  },
+  "graphics_source_objects": {
+    "hwui": {
+      "inventory_sha256": "e3c9cd4f864790ec3697b182ba15970c885fb53f2bc4bf7659cd1244ce805bf5",
+      "linked": false,
+      "object_count": 154,
+      "scope": "source HWUI objects; native linking and device acceptance pending"
+    },
+    "hwui_shims": {
+      "inventory_sha256": "df24003a16d30d6f51cce1e87804d002be86b1087ea1121c127f3aed32161789",
+      "linked": false,
+      "object_count": 21,
+      "scope": "source graphics shim objects; linking and device acceptance pending"
+    }
+  },
+  "image_codec_sources": {
+    "formats_device_decode": [
+      "JPEG",
+      "PNG",
+      "WebP",
+      "GIF"
+    ],
+    "formats_device_roundtrip": [
+      "JPEG",
+      "PNG",
+      "WebP"
+    ],
+    "formats_selected": [
+      "JPEG",
+      "PNG",
+      "WebP",
+      "GIF",
+      "BMP",
+      "ICO",
+      "WBMP"
+    ],
+    "libjpeg_units": 64,
+    "libwebp_units": 115,
+    "remaining": [
+      "AVIF/HEIF/RAW/JPEG XL providers if needed by the app",
+      "BMP/ICO/WBMP device contracts",
+      "complete application symbol provider and format acceptance"
+    ],
+    "skia_units": 45,
+    "wuffs_units": 1
+  },
+  "source_core_jars": [
+    "core-oj",
+    "core-libart",
+    "core-icu4j",
+    "conscrypt",
+    "okhttp",
+    "bouncycastle",
+    "apache-xml"
+  ],
+  "source_framework": {
+    "adapter_class_count": 104,
+    "adapter_source_count": 61,
+    "artifacts": {
+      "adapter-runtime-bcp.classes.jar": {
+        "bytes": 263524,
+        "sha256": "d8601a26f95af51400da60c3de5c094271ff0865379f4974e16589a017d7b96e"
+      },
+      "adapter-runtime-bcp.jar": {
+        "bytes": 158820,
+        "sha256": "da5a04f71fc20be273617dffdb3b866667efdead5600d550bcf91e8662bc2db0"
+      },
+      "framework.classes.jar": {
+        "bytes": 48622089,
+        "sha256": "b035ad04403898bef341173b6894a454e84ff0cb46534c0f703159341921df95"
+      },
+      "framework.jar": {
+        "bytes": 18118892,
+        "sha256": "9278212ab6f527d174795011664ac7a60c7d04835050e9ea9032a84bd485fdfd"
+      }
+    },
+    "boot_artifacts": {
+      "boot-adapter-runtime-bcp.art": {
+        "bytes": 293200,
+        "sha256": "e265b5304c0bed99c465c083fe729b6aff7209171a1e60e3dfaef97c6976f728"
+      },
+      "boot-adapter-runtime-bcp.oat": {
+        "bytes": 17024,
+        "sha256": "9fe1e14f92adca25b37229e43c57241afc02d36f3ae9e51f55434568168b57c2"
+      },
+      "boot-adapter-runtime-bcp.vdex": {
+        "bytes": 404148,
+        "sha256": "a327b3ccdb3108e3a05f3db6946ec716b058ebd4ce63d6b33d8d6f8817556df7"
+      },
+      "boot-apache-xml.art": {
+        "bytes": 1651232,
+        "sha256": "33f8336b295a8258d17c7221a63ff9927cff5732368221f8c6d55fd96cc6df20"
+      },
+      "boot-apache-xml.oat": {
+        "bytes": 21120,
+        "sha256": "bbfc251619c59ae998d5cdcc30dfbfb56ba883423153dbc95e6eb37c9da45b9d"
+      },
+      "boot-apache-xml.vdex": {
+        "bytes": 999472,
+        "sha256": "20476b98d65414de9437a7706864227063377fcad5e0eda774e87d17fd2e3fb4"
+      },
+      "boot-bouncycastle.art": {
+        "bytes": 1107280,
+        "sha256": "4f33f22d16cacf3af627c9f2926afc2ffe6325b0aa91cee54599fcaf7764da59"
+      },
+      "boot-bouncycastle.oat": {
+        "bytes": 25216,
+        "sha256": "cd2bcce5c72182fa661d1b06dcbc9306e8ccb335974f28ea093aca670cc42c24"
+      },
+      "boot-bouncycastle.vdex": {
+        "bytes": 1259912,
+        "sha256": "ac95a246f2b4706c17d8176c9e1c643f752d111b2cd3a8bff6822235c47efdf3"
+      },
+      "boot-conscrypt.art": {
+        "bytes": 351168,
+        "sha256": "9a2e041bbe47323108a287855cd9a49c8040226421cd7773bd25dd8c2983855e"
+      },
+      "boot-conscrypt.oat": {
+        "bytes": 17024,
+        "sha256": "b3c92868ba82305b613b284eca84c251961d5dcc40499c852316dc62f63a29cf"
+      },
+      "boot-conscrypt.vdex": {
+        "bytes": 427764,
+        "sha256": "285dbff86378a1eb3495283053fd03b11729efb61c7e7f20da7145a85016b91f"
+      },
+      "boot-core-icu4j.art": {
+        "bytes": 1870640,
+        "sha256": "2b64749b10f0075e4cbbefc45d38be7efe4e737e8b537f9b4468d3763ba17f2e"
+      },
+      "boot-core-icu4j.oat": {
+        "bytes": 29312,
+        "sha256": "b59afc2ae2661f03b380f732f561316c19d1593c2b4f4bd0ade2f73eb1a89107"
+      },
+      "boot-core-icu4j.vdex": {
+        "bytes": 2416732,
+        "sha256": "708e2b092a036cb3efba3d60f418ebe63b1203ecc202f34ddf2b7bba89b6cf48"
+      },
+      "boot-core-libart.art": {
+        "bytes": 449568,
+        "sha256": "7e51a5c467c25ed03d52e4b38982d688ad40f41606cbbab2bf0d1aa477f7a741"
+      },
+      "boot-core-libart.oat": {
+        "bytes": 21120,
+        "sha256": "8a35d493be0f39d851413fcc581efbf33b029d9026599cec6af02264c1045a8d"
+      },
+      "boot-core-libart.vdex": {
+        "bytes": 500980,
+        "sha256": "86bd533be08880d3d638a2b07614d2078ed07eaa01a4c68e2e94bc32bdbd2359"
+      },
+      "boot-framework.art": {
+        "bytes": 46782928,
+        "sha256": "65232ed190335cc63df64a02f0560d0f6ed8dde69455dc54a1d02594a029cb77"
+      },
+      "boot-framework.oat": {
+        "bytes": 373376,
+        "sha256": "66141ce0080bae34d2251346916929a017450b9f135ce9196c71111ed1fcc240"
+      },
+      "boot-framework.vdex": {
+        "bytes": 47226788,
+        "sha256": "c67f97f606cad1bf27af9edf448df4de63a772aea0f3955ade0e3587843a7bb8"
+      },
+      "boot-okhttp.art": {
+        "bytes": 284832,
+        "sha256": "758ece4d9785ab6f180b4662f47277c2b33157c49121c6f4210a358520aada65"
+      },
+      "boot-okhttp.oat": {
+        "bytes": 17024,
+        "sha256": "8c6c35333af3c0339b81612043d1991a724601cd72ae8f2575286fcf78666bbf"
+      },
+      "boot-okhttp.vdex": {
+        "bytes": 352304,
+        "sha256": "a6eb42b8eaa99aae1bce013a8f68f8682006c755e118fc20b990ff903edb048f"
+      },
+      "boot.art": {
+        "bytes": 4953808,
+        "sha256": "49ce76b5212aa4e04bb29124d3ecd2ee0c289d24923d10a56fe9b75475a7de79"
+      },
+      "boot.oat": {
+        "bytes": 57984,
+        "sha256": "0d6bcd7c31530d730440821723fe59f20c2898fe5720a546742620f4748f1e5d"
+      },
+      "boot.vdex": {
+        "bytes": 4725628,
+        "sha256": "03e3ade4a936a1b07d2aa72b0e6e7692980c0d98381b4274ca6f11814c0d1c78"
+      }
+    },
+    "boot_classpath": [
+      "core-oj",
+      "core-libart",
+      "core-icu4j",
+      "conscrypt",
+      "okhttp",
+      "bouncycastle",
+      "apache-xml",
+      "framework",
+      "adapter-runtime-bcp"
+    ],
+    "compiler_diagnostics": [
+      "The pinned upstream D8 warns that min-api 35 exceeds its API database (34); emitted code retains CharSequence.compare, which exists in the source libcore. Full device acceptance remains required."
+    ],
+    "device_accepted": false,
+    "framework_class_count": 34463,
+    "java_source_count": 13034,
+    "runtime_dex_class_count": 44999,
+    "safeparcel_source_count": 58,
+    "scope": "source-built combined process framework and adapters; full native linking and UX pending"
+  },
+  "source_host_tools": {
+    "experimental_annotations": {
+      "artifacts": {
+        "annotation-experimental.jar": {
+          "bytes": 5441,
+          "sha256": "e14c313b6125e4a6fbfa50f62ede2a5c2c78e76d8ed631955fd85ef682fba04a"
+        }
+      },
+      "scope": "source Kotlin annotations; compiler libraries are not deployed"
+    },
+    "hidl": {
+      "artifacts": {
+        "hidl-gen": {
+          "bytes": 3357408,
+          "path": "hidl-gen",
+          "sha256": "744f408d26b975ab12766bd7a905d7d3d3e95143b7aff8d080eee161b88b395a"
+        }
+      },
+      "scope": "source host HIDL compiler; no device runtime acceptance"
+    },
+    "jarjar": {
+      "artifacts": {
+        "jarjar.jar": {
+          "bytes": 248710,
+          "sha256": "c3f03cb1cb0ea6b493ca02682dd70149f5aa2b1b8500581af9996662c0d50587"
+        }
+      },
+      "scope": "source host CLI; no Ant or Maven integration and no runtime deployment"
+    },
+    "java-support": {
+      "artifacts": {
+        "annotations.jar": {
+          "bytes": 69269,
+          "sha256": "3a9c43dff58c901ab3866d72aa6fb510a6bec7587c210452f6d4065ded80645b"
+        },
+        "guava-android.jar": {
+          "bytes": 2251239,
+          "sha256": "bc074649cc0f1619f47ed912006a910f675c2538bbab42341d000e18a1e987b7"
+        },
+        "guava-host.jar": {
+          "bytes": 2374498,
+          "sha256": "7cf40948c208a648fff254aa30a8e486e1d609a009507c5407032e88c4e1a877"
+        },
+        "protobuf-lite.jar": {
+          "bytes": 379475,
+          "sha256": "f53cc9a0ebcc75d652cb0f13f83d0e7efa50690a5ef1750ce16f704c8d4f5e7d"
+        },
+        "safeparcel-processor.jar": {
+          "bytes": 465665,
+          "sha256": "e67075163f62ea86db88f7e85d1e263f00486d2f0c69d7f459fa6b36a3dd512b"
+        }
+      },
+      "scope": "source framework dependencies and annotation processor; no framework acceptance"
+    },
+    "parser-tools": {
+      "artifacts": {
+        "dest/opt/a2hlab-parser-tools/bin/bison": {
+          "bytes": 610688,
+          "sha256": "4ec53e4cf277dca094e069621907977c8c233b3d02358d7858da198ccaa11a06"
+        },
+        "dest/opt/a2hlab-parser-tools/bin/flex": {
+          "bytes": 461832,
+          "sha256": "0a83e0934a3f7ccaefde20d73b8484fcdcb85ca446ae9b5e0de752324c23cb1b"
+        },
+        "dest/opt/a2hlab-parser-tools/bin/flex++": {
+          "bytes": 461832,
+          "sha256": "0a83e0934a3f7ccaefde20d73b8484fcdcb85ca446ae9b5e0de752324c23cb1b"
+        },
+        "dest/opt/a2hlab-parser-tools/bin/m4": {
+          "bytes": 298224,
+          "sha256": "b2f249bde0750ccc6b9e5bce23cc638e0ec6fdb56ae388bf55ddb118ebe36b8c"
+        },
+        "dest/opt/a2hlab-parser-tools/bin/yacc": {
+          "bytes": 4254,
+          "sha256": "9b32ad6e34514f18706ea6d649055964f8110522f80a5f10f70a8085d1df2bac"
+        },
+        "dest/opt/a2hlab-parser-tools/include/FlexLexer.h": {
+          "bytes": 6893,
+          "sha256": "ee9859d6b3027ed565f98f42744e438ab31b2cd2e9f797ddf870029ca2021686"
+        },
+        "dest/opt/a2hlab-parser-tools/lib/libfl.a": {
+          "bytes": 2420,
+          "sha256": "8652a2a8b0de10ffb31997fe1c82603938b1df51380643d22d7965b12170e321"
+        },
+        "dest/opt/a2hlab-parser-tools/lib/libfl.la": {
+          "bytes": 937,
+          "sha256": "d231bb36d24fb56c0082d1a88e32aa32433d1f3f92d745a97785486898ed1842"
+        },
+        "dest/opt/a2hlab-parser-tools/lib/libfl.so": {
+          "bytes": 15496,
+          "sha256": "0b0eb6103729e5b1d5c6f4c78dd93839648515e797a15504560e017dc054f93c"
+        },
+        "dest/opt/a2hlab-parser-tools/lib/libfl.so.2": {
+          "bytes": 15496,
+          "sha256": "0b0eb6103729e5b1d5c6f4c78dd93839648515e797a15504560e017dc054f93c"
+        },
+        "dest/opt/a2hlab-parser-tools/lib/libfl.so.2.0.0": {
+          "bytes": 15496,
+          "sha256": "0b0eb6103729e5b1d5c6f4c78dd93839648515e797a15504560e017dc054f93c"
+        },
+        "dest/opt/a2hlab-parser-tools/lib/liby.a": {
+          "bytes": 2822,
+          "sha256": "da6c79df2d06b0e11a356092fc79b690f72f2878a77b94db346577188c6169ec"
+        },
+        "dest/opt/a2hlab-parser-tools/share/aclocal/bison-i18n.m4": {
+          "bytes": 1939,
+          "sha256": "d1f25176a9f20d517c39eb81e309a9ceadcc3d7213f7fe092c59a26ac4c0f227"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/README.md": {
+          "bytes": 8234,
+          "sha256": "cd063573f09ea45704d1519f90e86bd48a90f86b1192bf17fdc8f3498bb3a874"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/bison-default.css": {
+          "bytes": 1862,
+          "sha256": "c20d18c885554d8f1981fba66294b26149fe4688ffe149a818dde867c6fa300d"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/m4sugar/foreach.m4": {
+          "bytes": 14761,
+          "sha256": "f853cfbca513526863b0fbfb9388ac7c22d84305163d344e3daa68cc86560ee8"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/m4sugar/m4sugar.m4": {
+          "bytes": 123136,
+          "sha256": "8fdb20cf13d61b98037c710a9d962c067db115cd54868b6bfa1d6457536074bf"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/bison.m4": {
+          "bytes": 43379,
+          "sha256": "a3056074b9d6da3866e4dff3d8fba2b9d81d1ca2ca74920718586822d60df767"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/c++-skel.m4": {
+          "bytes": 1170,
+          "sha256": "0eb87848bfed0bd60c2377bd6508a503ba6843f19caa1237c351ef2f662a80df"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/c++.m4": {
+          "bytes": 23066,
+          "sha256": "ee0120e686161120207113183e77019abddd7f9e74de57428839a5cdf99dab8a"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/c-like.m4": {
+          "bytes": 2565,
+          "sha256": "a1b5c38e07851529110c5720a4fb86fe05ab7c49c2765919effd207c58108973"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/c-skel.m4": {
+          "bytes": 1164,
+          "sha256": "ec60e7d29b61b0cf752f19a88eecda5e32f5cd5d9fe326901000370c0f06fbc8"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/c.m4": {
+          "bytes": 34544,
+          "sha256": "328d06afdea69ce9604790634abb406d55c0da0a4f39a103defba8084637a67f"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/d-skel.m4": {
+          "bytes": 1136,
+          "sha256": "648bc3362d2c8fed246fcdfc911c0bfa83fb37eb07be98ffd6ef6dc86da1feae"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/d.m4": {
+          "bytes": 19495,
+          "sha256": "7b313e97927d4f3b0a4b57725ecc12c034f27813c386804c7822c4166ba688a6"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/glr.c": {
+          "bytes": 91333,
+          "sha256": "0af615595a0e0ed252e893ec88b5eb44912f685e30e1cb57f132a811a84b346f"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/glr.cc": {
+          "bytes": 12669,
+          "sha256": "2171d3d3bb670cbe3a6f09d999c8281b383f1c286657a3ea58eacf2cf5846536"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/glr2.cc": {
+          "bytes": 115011,
+          "sha256": "7c63a6ba9d9908b401e54ccad6bedbd1cd8d4f549010e5e98a41cec2c2414223"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/java-skel.m4": {
+          "bytes": 1167,
+          "sha256": "8774449ff4864f61cf6355684146bb57d77292b789fb4f08be78f5571774504c"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/java.m4": {
+          "bytes": 14594,
+          "sha256": "8952f572e346315183392421a4aee23ac211890f794774689dafcaad6afb9787"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/lalr1.cc": {
+          "bytes": 51545,
+          "sha256": "67142c22036d1eb995ebe0aa1a266b2cb749208c9970af2b24f2039174ab9a23"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/lalr1.d": {
+          "bytes": 43502,
+          "sha256": "442f2e5e05f842ea5e7176293877c019f611e60c6b110378105f6dbab438eb00"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/lalr1.java": {
+          "bytes": 45349,
+          "sha256": "4edd5b536cba7e7574b4b1c0156d0d69574fe4902c8a132a9b9b3b98d55c7627"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/location.cc": {
+          "bytes": 10393,
+          "sha256": "70ca8b2c5783d462cb662252177b969f1132cf7a6f1b15f1bc63b795b142d696"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/stack.hh": {
+          "bytes": 4000,
+          "sha256": "d8bff95c9fbd9120102533dc8e35bcf62b5b10200ac7cb11cff1ac271078f6ae"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/traceon.m4": {
+          "bytes": 87,
+          "sha256": "8211489b86df152b93e9af60d838efc2f17481f2d4307ab815dfb67a4dcf1292"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/variant.hh": {
+          "bytes": 15031,
+          "sha256": "a21303c3c4a0401777204b3037b623de79d59c713e03b2b817f8417d28df5b5f"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/skeletons/yacc.c": {
+          "bytes": 74996,
+          "sha256": "998d3a462761d5e6b9c408b6744b8741dc5b59eb7df47e9057055de45ee799df"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/xslt/bison.xsl": {
+          "bytes": 3366,
+          "sha256": "d49605e30acdcb7d904988701c95eb4fd2af1df7bc586c918f15dd98b8b6cc31"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/xslt/xml2dot.xsl": {
+          "bytes": 12812,
+          "sha256": "5f8ba954a77a15749d074f5ad0fb0d7293279d6da1d90ac6757653d6f823a06b"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/xslt/xml2text.xsl": {
+          "bytes": 18867,
+          "sha256": "20d5a491fb73dd6f9a96e3a1167c115a6f544c0c7a50245d6cc4f488ac5fe961"
+        },
+        "dest/opt/a2hlab-parser-tools/share/bison/xslt/xml2xhtml.xsl": {
+          "bytes": 23252,
+          "sha256": "e8da37276ae95942de9d260f3f90c7efc3cfc3e5677796f183edd534f66d05d7"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/AUTHORS": {
+          "bytes": 1472,
+          "sha256": "bc5ad04a3bb29a122f64033e12c7108443415634f063d98c5fdca350ae9c8bf9"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/COPYING": {
+          "bytes": 35149,
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/NEWS": {
+          "bytes": 164484,
+          "sha256": "4652d1ab2b7bddfc8eaff40fcf5eab246199aec06d28458a534500f299923da0"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/README": {
+          "bytes": 5475,
+          "sha256": "19a802ad381694b73268cde2453f6ee8d6d7ca4eed72bc515be3c4255c022f4d"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/THANKS": {
+          "bytes": 11806,
+          "sha256": "2e0616ca685a53f295a79eb2d50cc9d3a649e2976d0804ac37d37aef74681c55"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/TODO": {
+          "bytes": 27912,
+          "sha256": "a8ea9a9c2d86f2e74f3ccf6c786e94beb12aad514960b0a59993dcbbb862b6ea"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/README.md": {
+          "bytes": 1008,
+          "sha256": "c689a7dddcfafff3c3a4fc803a918152e40366e20ec797a74f1d1d81a60e15d2"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c++/Makefile": {
+          "bytes": 418,
+          "sha256": "19a6481be4d95ec67231032ce4a3d4861adbfd25174103d0e29a6918c5556f92"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c++/README.md": {
+          "bytes": 2337,
+          "sha256": "4e851e8e912ce446b8e1f25af901e11ff88bfea064a81d51ca213731c065bcca"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c++/calc++/Makefile": {
+          "bytes": 723,
+          "sha256": "9d70a20f39f9815fdd25c75ab31959defabe376f68690f9736f8a2f5d378b572"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c++/calc++/README.md": {
+          "bytes": 1664,
+          "sha256": "2b6e001de03d54c0351bb64442466aea37ff389747c70d5306e6b454a30c4272"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c++/calc++/calc++.cc": {
+          "bytes": 1214,
+          "sha256": "4741ed05441093b26f1dbd83d41dcad0411567e98be8bed5350e406139914563"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c++/calc++/driver.cc": {
+          "bytes": 1203,
+          "sha256": "fb71046798f66e970639860b54bb6cd0de39946cb9dcf7e483d77904f2250a3e"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c++/calc++/driver.hh": {
+          "bytes": 1680,
+          "sha256": "edd294021f4f4a10fe0a2c84a8f5091af6a13bd390b42a03ad087eea4f4da971"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c++/calc++/parser.yy": {
+          "bytes": 2039,
+          "sha256": "db3ec75788a13858b02d5cfc98e0a2a7a78e9d8c319f34d2bb480971ffdf8555"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c++/calc++/scanner.ll": {
+          "bytes": 5389,
+          "sha256": "407c38cfef17a478d8539bf63d7b24e1dc2dd90a04bbd42a77b594123483e46c"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c++/simple.yy": {
+          "bytes": 2223,
+          "sha256": "3f981d8e1fb8acac5ba057c2f636accff4d9b61a499cad6489b9bc603bb82a2d"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c++/variant-11.yy": {
+          "bytes": 3708,
+          "sha256": "507cf28cc6cc713a465ac85bc1af6bdcea3cde4b604a21ea10a4544b8c938a7e"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c++/variant.yy": {
+          "bytes": 3319,
+          "sha256": "f8d2bdeca64963d84cf2a2e45d137b20f776d86ed8cddae89e9823668b387318"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/README.md": {
+          "bytes": 4140,
+          "sha256": "6e6367271b488e8a2deb21ed426f37aad3cc9358944e940271c7f6d98fbfb2b1"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/bistromathic/Makefile": {
+          "bytes": 996,
+          "sha256": "adf9fd8b7a681dd252583b9a7221850e8211f0a07dfa983246aa07b0edfede33"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/bistromathic/README.md": {
+          "bytes": 1886,
+          "sha256": "f271823631440dd0e07dfc29f0ba697c1e8b2f3dbc760de80c116abb017125a1"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/bistromathic/parse.y": {
+          "bytes": 18276,
+          "sha256": "0536e3e95bea815f5cace19874dbe2169a2b0de6148c242494503bece20d9888"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/calc/Makefile": {
+          "bytes": 499,
+          "sha256": "8048040092872e7ba912c80cfb479997df1dd5ab62fe83662e1d4fc7da088234"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/calc/README.md": {
+          "bytes": 721,
+          "sha256": "07cfb1f17ee84854fc1dfdd5527024124c77e35fbc18ddf94af8ce5234986a6d"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/calc/calc.y": {
+          "bytes": 1846,
+          "sha256": "59259755e8619ebb514b1c1832de28574341efbb64f3f593318961c0cfa4aa1b"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/glr/Makefile": {
+          "bytes": 499,
+          "sha256": "5bf6af9af75115c808e40ca8b9d57cd7fb9bcc4248e9c138649aaf6feace65f5"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/glr/README.md": {
+          "bytes": 758,
+          "sha256": "053b4050b6a5511f591012a9207f877aacf7fc171d06098d4bf97af8429b7ba2"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/glr/c++-types.y": {
+          "bytes": 7933,
+          "sha256": "a4b02fa78ec688b797a512306828be3032ea3e3204ba8d267af387dcbdcb58eb"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/lexcalc/Makefile": {
+          "bytes": 581,
+          "sha256": "986ab5a001e240242177a55da6f9c61dec6bf42e232a3b5a879aa92bced3af2d"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/lexcalc/README.md": {
+          "bytes": 796,
+          "sha256": "2992b3bcc98fa2a07f34eddd12e89f6a23d434a12ea1bd652249f0e52aa1292b"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/lexcalc/parse.y": {
+          "bytes": 3313,
+          "sha256": "4faeb31cf76adcba111f07f4a0729a0b2aea8131549c80810a4c471f454aa983"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/lexcalc/scan.l": {
+          "bytes": 2294,
+          "sha256": "1c104c985548bf7500c2713aaeb12445596488e2662e13e4cc8fb472dc70cec6"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/mfcalc/Makefile": {
+          "bytes": 423,
+          "sha256": "26da8a6b8ea35023fe00f2bcce85a2f584cbcd03cfade6ef826bb4d2315e42f9"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/mfcalc/calc.h": {
+          "bytes": 1391,
+          "sha256": "1a757dc642042558ac33a333992a2bd8414128939cbb84fa83a170969a7e7134"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/mfcalc/mfcalc.y": {
+          "bytes": 5242,
+          "sha256": "4b19334970fbe08005668382ba173031ea817bab0422efa82b74a5e22d7bcc15"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/pushcalc/Makefile": {
+          "bytes": 493,
+          "sha256": "e4c41b31e96375930d88c3a63c7856efe022a7883beed293c4053d6b0200626b"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/pushcalc/README.md": {
+          "bytes": 1110,
+          "sha256": "0090a145bbcc420b606eefad3e325f70e3b69240ff9b32c8863b50b584784aa4"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/pushcalc/calc.y": {
+          "bytes": 3011,
+          "sha256": "922c31255e345086c67a573641779df31e29d05d0c3d3fa40c8d456ed1a1ec12"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/reccalc/Makefile": {
+          "bytes": 606,
+          "sha256": "dd6fd3065c43debe775b721233a7c8bfff97e2c1da58dc0571f703a82e4fca88"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/reccalc/README.md": {
+          "bytes": 1029,
+          "sha256": "344201a8a0ea50530fe4f9c6e41199c90e5cebff90b81307c7c14318df68bbc4"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/reccalc/parse.y": {
+          "bytes": 4702,
+          "sha256": "decf9755da4d9b806bdde7b8ea40abc224c0682d5d8083c249518fc1cc2e19a0"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/reccalc/scan.l": {
+          "bytes": 2946,
+          "sha256": "97a045419e4482d666a9620efbdaacad0b1e7b8d7e8007ebee37b5464566eb30"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/rpcalc/Makefile": {
+          "bytes": 435,
+          "sha256": "e4fe9d8795bdf48d7b5d51122e0105122c2ceb1347dd35d0fe906245bc7fb0d1"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/c/rpcalc/rpcalc.y": {
+          "bytes": 2287,
+          "sha256": "e4a2d6baf00c8e75a228940c3392ff1757eb2933b86aa4abffa04fca24289c2f"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/d/README.md": {
+          "bytes": 854,
+          "sha256": "f3d9cb0b8807ca08cf77a4f17ae455fbd12d63318243a18a04fb36e97469767f"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/d/calc/Makefile": {
+          "bytes": 381,
+          "sha256": "3e7afe1c821a1b988b5377e5bba051937de1e9e37aa57498420f9a46fea97b08"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/d/calc/calc.y": {
+          "bytes": 4624,
+          "sha256": "cdcb4e8003a1412ec8a9c077217a196c434c4817ba00844475f2567ab1e4e172"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/d/simple/Makefile": {
+          "bytes": 381,
+          "sha256": "3e7afe1c821a1b988b5377e5bba051937de1e9e37aa57498420f9a46fea97b08"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/d/simple/calc.y": {
+          "bytes": 3472,
+          "sha256": "fa34684b72c4c6f96e4b46b50147b36052940cc1968c866200df33fdf008ab50"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/java/README.md": {
+          "bytes": 875,
+          "sha256": "7d0d96616cf939a483e253c6487d8218f9a0e78f92b11aeb37b920c88dc4fa8b"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/java/calc/Calc.y": {
+          "bytes": 7475,
+          "sha256": "c431e03361693be9fdf483554d34edff76cd67798ddbaa52c6188cc8c2ad3dbc"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/java/calc/Makefile": {
+          "bytes": 454,
+          "sha256": "fe679563cc0ab680c7fa5e0abffc71871f45fbe1668b71809e068c3c3cf5ec43"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/java/simple/Calc.y": {
+          "bytes": 3046,
+          "sha256": "4fb8b74a6eea6ed060faeccb26a10c18a12593d2c806ae151fabc4e2960bc500"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/bison/examples/java/simple/Makefile": {
+          "bytes": 454,
+          "sha256": "fe679563cc0ab680c7fa5e0abffc71871f45fbe1668b71809e068c3c3cf5ec43"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/flex/AUTHORS": {
+          "bytes": 624,
+          "sha256": "06ef76f80c20dee05013c90d51437c393e8f3c57b008a0c0c87c98faea2f548b"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/flex/COPYING": {
+          "bytes": 1855,
+          "sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/flex/NEWS": {
+          "bytes": 23840,
+          "sha256": "4fabf5ca67345053342b6413466138a794a49527b33793b9231a953466e66b56"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/flex/ONEWS": {
+          "bytes": 46318,
+          "sha256": "408309c4ee604fde8b9ac588857fc7f908f77c015992f63b8b56e8ecad92debe"
+        },
+        "dest/opt/a2hlab-parser-tools/share/doc/flex/README.md": {
+          "bytes": 4104,
+          "sha256": "9269b1fe4e79b8504bf9be7d9319ff794f50c6677ee8477a770212ce93134379"
+        },
+        "dest/opt/a2hlab-parser-tools/share/info/bison.info": {
+          "bytes": 701958,
+          "sha256": "fcec2ecff085f9db0d227e3cf5b46d44bf4b33ccff420a1d7e4b51cdb4bf6921"
+        },
+        "dest/opt/a2hlab-parser-tools/share/info/dir": {
+          "bytes": 859,
+          "sha256": "2cab273f37ef2e2b686e1e2e958979024059bcb83dd1274437eedcb89946b452"
+        },
+        "dest/opt/a2hlab-parser-tools/share/info/flex.info": {
+          "bytes": 10414,
+          "sha256": "33f38dd17d4ffe039302005f19c1dbee64a98b3930a655bb3b7035f0f9297fb4"
+        },
+        "dest/opt/a2hlab-parser-tools/share/info/flex.info-1": {
+          "bytes": 317123,
+          "sha256": "5e025695fc20dd1563cb926496c9ac2c0a2457b111a062ab6ee444bbb0d7790b"
+        },
+        "dest/opt/a2hlab-parser-tools/share/info/flex.info-2": {
+          "bytes": 26966,
+          "sha256": "9b6034d2ba9fec36d055b6879e34b102779a5b2078f21f9cc9d99773f40f559a"
+        },
+        "dest/opt/a2hlab-parser-tools/share/info/m4.info": {
+          "bytes": 3570,
+          "sha256": "1f472eaff63311e035f6e6b36225721cd6523cfb0705c2cac7453400928acc61"
+        },
+        "dest/opt/a2hlab-parser-tools/share/info/m4.info-1": {
+          "bytes": 309387,
+          "sha256": "10af9b1935c7f25d387cc0889b53aac1aed1bdd8367493f310e28dc0c002bb2c"
+        },
+        "dest/opt/a2hlab-parser-tools/share/info/m4.info-2": {
+          "bytes": 54561,
+          "sha256": "e24d8af155fd9a0a6191cc10693efffb884e6bcfe4aef6933e487bf2a6130b7d"
+        },
+        "dest/opt/a2hlab-parser-tools/share/man/man1/bison.1": {
+          "bytes": 6684,
+          "sha256": "3f3d77f0d778d84a6fa7cebdd1a6214d0b16112c5759ab182e92558d4e260d12"
+        },
+        "dest/opt/a2hlab-parser-tools/share/man/man1/flex.1": {
+          "bytes": 3717,
+          "sha256": "9e0087af211afe059f620a47931a1d0386f9a8044d0fbcd74ed04191ccb527c8"
+        },
+        "dest/opt/a2hlab-parser-tools/share/man/man1/m4.1": {
+          "bytes": 3852,
+          "sha256": "d322c2aca0ce4e300da8623a66a42ba77cfe0e401a70d15915a2033d6e03950a"
+        },
+        "dest/opt/a2hlab-parser-tools/share/man/man1/yacc.1": {
+          "bytes": 1021,
+          "sha256": "f97939a1fe8278d89486f911ba72dd10b9d534d31d983c7fd4a9387cd2a62c16"
+        }
+      },
+      "scope": "source host parser generators; no device runtime artifacts"
+    }
+  },
+  "source_libcore_progress": {
+    "boundary_sha256": "14e047f543bf674e10ae9e7268cfe8c643fbbe2546f74a96f8c76580955029f7",
+    "character_icu": "Pinned source ICU 75; no firmware libicu.so dependency",
+    "os_constants": "Original AOSP initializer compiled against OH headers, registered before Java use",
+    "sysconf": "Native OH selectors and errno propagation"
+  },
+  "source_native_platform": {
+    "artifacts": {
+      "libhwui.so": {
+        "bytes": 2747608,
+        "needed": [
+          "libandroidfw.so",
+          "libminikin.so",
+          "libutils.so",
+          "libcutils.so",
+          "libbase.so",
+          "libnativehelper.so",
+          "liboh_hwui_shim.so",
+          "liboh_skia_rtti_shim.so",
+          "liboh_adapter_bridge.so",
+          "libEGL.so",
+          "libGLES_mali.z.so",
+          "libc++.so",
+          "libc.so",
+          "libhilog.so",
+          "libnative_display_manager.so",
+          "libskia_canvaskit.z.so"
+        ],
+        "sha256": "9bec87e0d24b9d56d14f232dd2ecf6815e4389c904527bd4120a54a6e66b296b"
+      },
+      "liboh_adapter_bridge.so": {
+        "bytes": 2036960,
+        "needed": [
+          "liblog.so",
+          "libnativehelper.so",
+          "libz.so",
+          "libhwui.so",
+          "liboh_android_runtime.so",
+          "liboh_hwui_shim.so",
+          "libEGL.so",
+          "libability_connect_callback_stub.z.so",
+          "libability_manager.z.so",
+          "libapp_manager.z.so",
+          "libappexecfwk_base.z.so",
+          "libappexecfwk_core.z.so",
+          "libbegetutil.z.so",
+          "libc++.so",
+          "libc.so",
+          "libcesfwk_innerkits.z.so",
+          "libconfiguration.z.so",
+          "libdatashare_consumer.z.so",
+          "libdm.z.so",
+          "libeventhandler.z.so",
+          "libhilog.so",
+          "libhitrace_ndk.z.so",
+          "libinputmethod_client.z.so",
+          "libipc_single.z.so",
+          "libmission_info.z.so",
+          "libmmi-client.z.so",
+          "libnative_image.so",
+          "libpasteboard.so",
+          "librender_service_base.z.so",
+          "librender_service_client.z.so",
+          "libsamgr_proxy.z.so",
+          "libscene_session.z.so",
+          "libskia_canvaskit.z.so",
+          "libsurface.z.so",
+          "libsync_fence.z.so",
+          "libudmf.so",
+          "libutils.z.so",
+          "libwant.z.so",
+          "libwindow_scene_common.z.so",
+          "libwm.z.so",
+          "libwmutil.z.so",
+          "libwmutil_base.z.so",
+          "libzuri.z.so"
+        ],
+        "sha256": "760d57120e19680db4784c48ae6d99dcd3b7d42e816e6f83e2fbc12313648636"
+      },
+      "liboh_android_runtime.so": {
+        "bytes": 2084680,
+        "needed": [
+          "libandroidfw.so",
+          "libnativehelper.so",
+          "libutils.so",
+          "libcutils.so",
+          "libbase.so",
+          "liblog.so",
+          "libicuuc.so",
+          "libicui18n.so",
+          "libhwui.so",
+          "liboh_adapter_bridge.so",
+          "libwestlake_binder.so",
+          "libbegetutil.z.so",
+          "libc++.so",
+          "libc.so",
+          "libhilog.so",
+          "libhitrace_ndk.z.so",
+          "libsurface.z.so"
+        ],
+        "sha256": "fccf6883f0803d27db94c17f329c2c366e14676ce417c7611001e0babea7da52"
+      },
+      "liboh_hwui_shim.so": {
+        "bytes": 137664,
+        "needed": [
+          "liblog.so",
+          "libhwui.so",
+          "liboh_adapter_bridge.so",
+          "liboh_skia_rtti_shim.so",
+          "libEGL.so",
+          "libGLES_mali.z.so",
+          "libc++.so",
+          "libc.so",
+          "libhitrace_ndk.z.so",
+          "libskia_canvaskit.z.so",
+          "libsurface.z.so"
+        ],
+        "sha256": "7ae233450ab581e4f360d21f3bc9f40acd2ffbd7e357ec760f32d44db6bea5d4"
+      },
+      "liboh_skia_rtti_shim.so": {
+        "bytes": 16688,
+        "needed": [
+          "libc++.so"
+        ],
+        "sha256": "aa4f789f57dbbd98815f40ab19bb70a7ac4c30c595658f585ff46fbacbc8eca4"
+      },
+      "libwestlake_binder.so": {
+        "bytes": 649544,
+        "needed": [
+          "libbase.so",
+          "libcutils.so",
+          "libutils.so",
+          "liblog.so",
+          "libability_manager.z.so",
+          "libc++.so",
+          "libc.so"
+        ],
+        "sha256": "5cc27252cc69fd770f8d3c094b28d34bb42bbbc1a103239700ee03b5cf12afd7"
+      }
+    },
+    "device_stage": "/data/local/tmp/a2hlab-native-2ab1bc23ad0e49a2b236a2d14ca564b2",
+    "java_framework_device_accepted": false,
+    "link_only_import_libraries_deployed": false,
+    "native_device_load_passed": true,
+    "source_object_counts": {
+      "android_runtime": 41,
+      "binder_rpc_no_kernel": 21,
+      "hwui": 154,
+      "hwui_shims_with_rtti": 21,
+      "oh_bridge": 52
+    },
+    "strict_object_link": true,
+    "toutiao_source_stack_device_accepted": false
+  },
+  "source_renderer_progress": {
+    "device_gpu": {
+      "checked_pixels": 4,
+      "draw_and_readback_passed": true,
+      "height": 32,
+      "host_gles_control_passed": true,
+      "renderer": "Mali-G57",
+      "source_provider": "libhwui.so",
+      "vendor": "ARM",
+      "width": 32
+    },
+    "firmware_skia_excluded_from_link": [
+      "libhwui.so",
+      "liboh_hwui_shim.so"
+    ],
+    "full_window_ui_accepted": false,
+    "ganesh_gpu_source_units": 319,
+    "hwui_objects": 1041,
+    "rtti_original_source_replacements": 8,
+    "securec_source_units": 39,
+    "support_source_units": 9,
+    "synthetic_rtti_dso_excluded": true
+  },
+  "source_runtime_artifacts": {
+    "libandroidfw.so": {
+      "bytes": 908040,
+      "sha256": "3da719deea81c1667ca8b2bb6efb0f88b04807c773b238236fcd482fe6557e9a"
+    },
+    "libart.so": {
+      "bytes": 21531272,
+      "sha256": "bd87e834a60b5158d4d5a175c979185f27e10610ead1c24f28a87211d0200cc5"
+    },
+    "libbase.so": {
+      "bytes": 347456,
+      "sha256": "b976ad27de85287a12867238c372803157cf4778ba2b839661b8c2143811c1d3"
+    },
+    "libcutils.so": {
+      "bytes": 98240,
+      "sha256": "7964168df499aed82c853aadaa66b5b695cfe305da0254ffad44b642600e6e6d"
+    },
+    "libexpat.so": {
+      "bytes": 166832,
+      "sha256": "fe08c1224706444a4da35daa25ca68fd6b127235d84ba8be0b71bc7c8f8db7f2"
+    },
+    "libft2.so": {
+      "bytes": 634024,
+      "sha256": "8242228fcf38a9c397d2d233d601a59d8bfd8a0956fb5ec60eb009fec0cf69c6"
+    },
+    "libharfbuzz_ng.so": {
+      "bytes": 1094960,
+      "sha256": "bec22002b04c75adef9d9122361e27f16c2049b4ccd491773053306fe2a771e3"
+    },
+    "libicu_jni.so": {
+      "bytes": 147896,
+      "sha256": "be7697a24cf59593a637a22c3b6fc63f1bd810727b88a796b7edae29762238e5"
+    },
+    "libicui18n.so": {
+      "bytes": 3969600,
+      "sha256": "2aa3bf514088f35f7f3f1b2650c7b1cb6753743bdec007bcc9bba40dd49c53d2"
+    },
+    "libicuuc.so": {
+      "bytes": 30385440,
+      "sha256": "fe821dc664991d10290bcfdb7cb9176f2f7bde0f932e21e08b819c3e4db7621c"
+    },
+    "libjavacrypto.so": {
+      "bytes": 1819344,
+      "sha256": "05223bfd53925be686d0b5dcf16e494b60f78c4586441d8c31e95a2187ca2fd9"
+    },
+    "liblog.so": {
+      "bytes": 70216,
+      "sha256": "d8ad176b41b820a4868b74394188429ad2dc69025661d320d0986dd713048ca4"
+    },
+    "libminikin.so": {
+      "bytes": 359576,
+      "sha256": "d0cf4d392b07bf7e5b4ba5ed9a412ff94259b7b08f583932ff6ebb0cc1eb9250"
+    },
+    "libnativehelper.so": {
+      "bytes": 32280,
+      "sha256": "ddd555394e8aaa354393f0aaaadfb0756d154a9cc6cacd484cc543e2e095463c"
+    },
+    "libpng.so": {
+      "bytes": 226512,
+      "sha256": "004344ec858bf9be8e924e0a1243b712e7335e731ba047c567793f05e079edd0"
+    },
+    "libutils.so": {
+      "bytes": 174584,
+      "sha256": "0f7f1064e7efcdaa4112416ab288c653c397e9bcecfef7c7d3d85d362e99da6e"
+    },
+    "libwestlake_runtime_boundary.so": {
+      "bytes": 375272,
+      "sha256": "bfb2bbea7d22f9568f6d1a8646ec4bb20fc8eef68d6f258467c5627d7ce4e4d1"
+    },
+    "libwestlake_webp.so": {
+      "bytes": 287184,
+      "sha256": "eab59243365aebddf0e6ac8bd07d6c7129a12ca8c78ae2310c43885bb32adfa4"
+    },
+    "libz.so": {
+      "bytes": 105024,
+      "sha256": "72c2eac44492d1feafb036ac6c129a9162576777dafe14886c80740a35fa4b2b"
+    },
+    "libziparchive.so": {
+      "bytes": 119776,
+      "sha256": "eef3e76498be60fc922228df1446f868167e1dcc093313d282876333294fa412"
+    }
+  },
+  "source_service_bootstrap": {
+    "android15_bind_loggable_compat_array": true,
+    "application_acceptance_pending": true,
+    "bionic_abi": {
+      "apk_errno_visibility_accepted": true,
+      "apk_visibility_accepted": false,
+      "device_report_sha256": "2609fe1ed0a8f5a2a7afbca2af8989b2e62a056fe0a446d38fd9b9b78c7a441a",
+      "errno_thread_and_syscall_contract": true,
+      "global_symbols": true,
+      "inspection_sha256": "f1d30f14b9a3fe24040d3f73e880e13dbfc3ca87c72f746bec36898ddb10e971",
+      "library": {
+        "bytes": 17192,
+        "needed": [
+          "libc.so"
+        ],
+        "sha256": "99baf31def2a4d908f688d7ae0cc50284640fdd4c65212bf6d37bf989c1dcedd"
+      },
+      "source_build": "westlake/native/bionic-abi-sources.json",
+      "source_objects_offline_byte_identical": 5,
+      "stdio_legacy_and_host_exact_bytes": 11,
+      "versioned_LIBC_lookup_passed": true
+    },
+    "oh_account_state_library": {
+      "active": true,
+      "android_user": 200,
+      "application_acceptance_pending": false,
+      "host_library_sha256": "ee0fe4a84e3344d63aecdd5e7158bdf2da770eb2f370fb1900ec23a95f58ec1b",
+      "inspection_sha256": "70663d3fd84342da5eaece8a5a8e9923f6648b7527e669dd030e74dc79fcc8f3",
+      "oh_account": 100,
+      "source_helper_sha256": "99c193d581eca592ab18e00e78bd193d32c143a8111e5c1a1971ef8e36b3f6da",
+      "source_lock": "oh61-account-sources.lock.json",
+      "storage_verified": true
+    },
+    "oh_permission_enforcer_context_independent": true,
+    "original_apk_target_sdk": 30,
+    "original_legacy_cpp_runtime": true,
+    "original_linux_jni": true,
+    "original_stats_jni": true,
+    "original_traffic_stats_jni": true,
+    "shared_android_looper": {
+      "device_report_sha256": "8ccd9ccd3e12c907abceff43b74df6ea7128a10e8b53dca6903b86a4cf008fc0",
+      "java_poll_dispatches_ndk_callback": true,
+      "native_queue_survives_java_disposal": true,
+      "source_jni": "westlake/native/android_message_queue.cpp includes original Android android_os_MessageQueue.cpp",
+      "source_ndk": "frameworks-base/native/android/looper.cpp"
+    },
+    "source_package_registry": "Android PackageParser reads pinned original APK; current OH UID and isolated runtime paths",
+    "source_permission_query_library": true,
+    "traffic_tag_accounting": "OH boundary returns EOPNOTSUPP; existing sockets remain usable"
+  },
+  "source_window_host": {
+    "build_report_sha256": "4aef32f1d3cc3cae75d306ed591fb356286048c552aca6f74bd2f45c4b8e4029",
+    "development_signing_lock": "host-signing-sources.lock.json",
+    "device_installed": true,
+    "existing_host_replaced": false,
+    "package": "org.westlake.sourcehost",
+    "program_and_resources_unchanged_by_signing": true,
+    "signed_hap_sha256": "8f04d56083df94c5e8d335b00afa6cf5d67fc08882d7f5e82b8f4f0e1b21f010",
+    "signer_generated_metadata": [
+      ".pages.info"
+    ],
+    "uid": 20010056,
+    "unsigned_hap": {
+      "imehost-unsigned.hap": {
+        "bytes": 9513,
+        "entries": {
+          ".pages.info": "621d1c271cf89755a64364b8e70c65745d9049ebaf18efa3eba95a2ae0b4558d",
+          "ResourceTable.txt": "7c9432d2440bda324eeabec9e212e6a704c127dbc5ec7e16d89e768c20488af5",
+          "ets/entryability/EntryAbility.abc": "bb1eccd3338dde573393b24d81e26e67450d5461ba51f73e578d9e42a78cbde9",
+          "ets/pages/Index.abc": "0755d5df3a17d33f1c94576d2cc326286c6ac03c4d7a63f662cc1ce14d8267c1",
+          "module.json": "bc05ac6b23835ffb4e62f1cafa8ffc8b5f15b045ff08f1a7f1e2659688c03aba",
+          "resources.index": "f9cc1894d5139e9562fc7306b6ba0e95a73d62a19fc7223f11156a18a93272b5",
+          "resources/base/profile/main_pages.json": "621d1c271cf89755a64364b8e70c65745d9049ebaf18efa3eba95a2ae0b4558d"
+        },
+        "sha256": "8ea9e01c7ddfdfc4f8995044681a3e9542c094d528ac977833d92333181c732d"
+      }
+    },
+    "window_id": 94
+  },
+  "spawn_receiver_regression": {
+    "asan_failure_before_fix": true,
+    "asan_pass_after_fix": true,
+    "device_spawn_passed": true,
+    "socket_requests": 3,
+    "source": "westlake/tests/test_spawn_server.py"
+  },
+  "target": "Source-built Android/Westlake with pinned original Toutiao APK"
+}

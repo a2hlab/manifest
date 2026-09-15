@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "profile": "android15-binder-kernel-uapi",
+  "projects": [
+    {
+      "path": "android-source/bionic-android15",
+      "url": "https://github.com/a2hlab/dep-android-source-bionic-android15.git",
+      "revision": "760f8c750e10c62f033705639ad1b3e6907e938f",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/bionic",
+        "revision": "361ba86734fb2821a6adcfdf775db8abd04e0de0",
+        "tree": "68b63c92db56eb480e39be2586a027a52e5e4a01"
+      }
+    }
+  ]
+}

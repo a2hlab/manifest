@@ -1,0 +1,136 @@
+diff --git a/core/java/android/app/Instrumentation.java b/core/java/android/app/Instrumentation.java
+index db216b1af..07a9b16fe 100644
+--- a/core/java/android/app/Instrumentation.java
++++ b/core/java/android/app/Instrumentation.java
+@@ -1909,6 +1909,20 @@ public class Instrumentation {
+         private final Intent mResultData;
+     }
+ 
++    /**
++     * Legacy form retained for applications compiled against pre-Bundle
++     * instrumentation APIs.
++     *
++     * {@hide}
++     */
++    @UnsupportedAppUsage
++    public ActivityResult execStartActivity(
++            Context who, IBinder contextThread, IBinder token, Activity target,
++            Intent intent, int requestCode) {
++        return execStartActivity(
++                who, contextThread, token, target, intent, requestCode, null);
++    }
++
+     /**
+      * Execute a startActivity call made by the application.  The default 
+      * implementation takes care of updating any active {@link ActivityMonitor}
+@@ -2101,6 +2115,34 @@ public class Instrumentation {
+         }
+     }
+ 
++    /**
++     * Legacy Fragment form retained for applications compiled against the
++     * platform Fragment instrumentation API.
++     *
++     * {@hide}
++     */
++    @UnsupportedAppUsage
++    public ActivityResult execStartActivity(
++            Context who, IBinder contextThread, IBinder token, Fragment target,
++            Intent intent, int requestCode) {
++        return execStartActivity(
++                who, contextThread, token, target, intent, requestCode, null);
++    }
++
++    /**
++     * Legacy Fragment-plus-options form. The current implementation represents
++     * the result target by its framework-assigned identity string.
++     *
++     * {@hide}
++     */
++    @UnsupportedAppUsage
++    public ActivityResult execStartActivity(
++            Context who, IBinder contextThread, IBinder token, Fragment target,
++            Intent intent, int requestCode, Bundle options) {
++        return execStartActivity(who, contextThread, token,
++                target != null ? target.mWho : null, intent, requestCode, options);
++    }
++
+     /**
+      * Like {@link #execStartActivity(android.content.Context, android.os.IBinder,
+      * android.os.IBinder, String, android.content.Intent, int, android.os.Bundle)},
+diff --git a/core/java/android/content/pm/PackageParser.java b/core/java/android/content/pm/PackageParser.java
+index 4b579e7db..bec3a6d51 100644
+--- a/core/java/android/content/pm/PackageParser.java
++++ b/core/java/android/content/pm/PackageParser.java
+@@ -7799,6 +7799,17 @@ public class PackageParser {
+         @UnsupportedAppUsage
+         public PermissionGroup group;
+ 
++        /**
++         * Compatibility constructor for callers that populate {@link #info}
++         * reflectively from an existing PackageInfo component.
++         *
++         * @hide
++         */
++        public Permission() {
++            super((Package) null);
++            info = new PermissionInfo();
++        }
++
+         /**
+          * @hide
+          */
+@@ -8115,6 +8126,17 @@ public class PackageParser {
+         private boolean mHasMaxAspectRatio;
+         private boolean mHasMinAspectRatio;
+ 
++        /**
++         * Compatibility constructor for callers that populate {@link #info}
++         * reflectively from an existing PackageInfo component.
++         *
++         * @hide
++         */
++        public Activity() {
++            super((Package) null);
++            info = new ActivityInfo();
++        }
++
+         private boolean hasMaxAspectRatio() {
+             return mHasMaxAspectRatio;
+         }
+@@ -8269,6 +8291,17 @@ public class PackageParser {
+         @UnsupportedAppUsage
+         public final ServiceInfo info;
+ 
++        /**
++         * Compatibility constructor for callers that populate {@link #info}
++         * reflectively from an existing PackageInfo component.
++         *
++         * @hide
++         */
++        public Service() {
++            super((Package) null);
++            info = new ServiceInfo();
++        }
++
+         public Service(final ParseComponentArgs args, final ServiceInfo _info) {
+             super(args, _info);
+             info = _info;
+@@ -8360,6 +8393,17 @@ public class PackageParser {
+         @UnsupportedAppUsage
+         public boolean syncable;
+ 
++        /**
++         * Compatibility constructor for callers that populate {@link #info}
++         * reflectively from an existing PackageInfo component.
++         *
++         * @hide
++         */
++        public Provider() {
++            super((Package) null);
++            info = new ProviderInfo();
++        }
++
+         public Provider(final ParseComponentArgs args, final ProviderInfo _info) {
+             super(args, _info);
+             info = _info;

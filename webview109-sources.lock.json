@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "profile": "chromium109-webview-source",
+  "projects": [
+    {
+      "path": "android-source/chromium-webview-109",
+      "url": "https://github.com/a2hlab/dep-android-source-chromium-webview-109.git",
+      "revision": "0fc5870b5b3d8c09ffb784f7c537b14ff949e717",
+      "release_tag": "109.0.5414.123",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromium/src.git",
+        "revision": "1da24e1281b9ed5d02aa48789f8481ccb9469b13",
+        "tree": "d9bc077729a88a4e72b8086e0659d67ccb6884c2"
+      }
+    }
+  ]
+}

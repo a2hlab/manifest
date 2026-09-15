@@ -1,0 +1,1504 @@
+{
+  "schema": 1,
+  "profile": "chromium109-git-dependencies",
+  "projects": [
+    {
+      "path": "chromium109/buildtools/clang_format/script",
+      "url": "https://github.com/a2hlab/dep-chromium109-buildtools-clang_format-script.git",
+      "revision": "353c8b4c0f0a05985ae0fff21c65de2b4bb2f3e3",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/clang/tools/clang-format.git",
+        "revision": "8b525d2747f2584fc35d8c7e612e66f377858df7",
+        "tree": "365ad174efdc6b68a87babb4fddb626ecc86b8ef"
+      }
+    },
+    {
+      "path": "chromium109/buildtools/third_party/libc++/trunk",
+      "url": "https://github.com/a2hlab/dep-chromium109-buildtools-third_party-libc--trunk.git",
+      "revision": "cb6a5565666d7a79df31c564952edbdbf701a8e7",
+      "unmaterialized_gitlinks": {},
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libcxx.git",
+        "revision": "4218f3525ad438b22b0e173d963515a09d143398",
+        "tree": "a0f8dbe60a99cd283932ad903952f97fd932f755"
+      }
+    },
+    {
+      "path": "chromium109/buildtools/third_party/libc++abi/trunk",
+      "url": "https://github.com/a2hlab/dep-chromium109-buildtools-third_party-libc-abi-trunk.git",
+      "revision": "0389bbfb37bca8c309d60f223360c6faf99059e3",
+      "unmaterialized_gitlinks": {},
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libcxxabi.git",
+        "revision": "1a32724f721e1c3b6c590a07fe4a954344f15e48",
+        "tree": "be28809d739773850fcb5e4d5e3d61a0fe1f1be2"
+      }
+    },
+    {
+      "path": "chromium109/buildtools/third_party/libunwind/trunk",
+      "url": "https://github.com/a2hlab/dep-chromium109-buildtools-third_party-libunwind-trunk.git",
+      "revision": "ca1aed319e8df270d2dfd70e56c8eb86e07e656a",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libunwind.git",
+        "revision": "86213b7902ad64cad566fc4878024ad26654d56a",
+        "tree": "8e856f6b042dd3b33070d9739b60ae10bb5b6643"
+      }
+    },
+    {
+      "path": "chromium109/chrome/test/data/perf/canvas_bench",
+      "url": "https://github.com/a2hlab/dep-chromium109-chrome-test-data-perf-canvas_bench.git",
+      "revision": "c8f0585d54b8d20f4c2c049bf5b157f9d2e59065",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromium/canvas_bench.git",
+        "revision": "a7b40ea5ae0239517d78845a5fc9b12976bfc732",
+        "tree": "edf33faa2362240de3b5887cd23a4d9af71d958e"
+      }
+    },
+    {
+      "path": "chromium109/chrome/test/data/perf/frame_rate/content",
+      "url": "https://github.com/a2hlab/dep-chromium109-chrome-test-data-perf-frame_rate-content.git",
+      "revision": "692117af86f2d35f4d4e355643aab62b4e1d9d58",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromium/frame_rate/content.git",
+        "revision": "c10272c88463efeef6bb19c9ec07c42bc8fe22b9",
+        "tree": "1bddba7664d12c00d320037521ea891103913017"
+      }
+    },
+    {
+      "path": "chromium109/chrome/test/data/xr/webvr_info",
+      "url": "https://github.com/a2hlab/dep-chromium109-chrome-test-data-xr-webvr_info.git",
+      "revision": "42a2747ff192f558c415df76fd48a0d3497f5fee",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/toji/webvr.info.git",
+        "revision": "c58ae99b9ff9e2aa4c524633519570bf33536248",
+        "tree": "a67763186183f2b65d81dcbb28d8f9103843aaae"
+      }
+    },
+    {
+      "path": "chromium109/docs/website",
+      "url": "https://github.com/a2hlab/dep-chromium109-docs-website.git",
+      "revision": "57e0cffafe6b8d53facd56a743242ed58d47976e",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/website.git",
+        "revision": "5bef1125e998d33bfb101ac0da9a6bc445121955",
+        "tree": "efa39035b1fbeef6314960a472c3087089a7ccec"
+      }
+    },
+    {
+      "path": "chromium109/media/cdm/api",
+      "url": "https://github.com/a2hlab/dep-chromium109-media-cdm-api.git",
+      "revision": "ae0273394e3314073b2b85b76ffb46ff9c5db9f6",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromium/cdm.git",
+        "revision": "fef0b5aa1bd31efb88dfab804bdbe614f3d54f28",
+        "tree": "279e248917ac450b9145bb527491ed24da8ad275"
+      }
+    },
+    {
+      "path": "chromium109/net/third_party/quiche/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-net-third_party-quiche-src.git",
+      "revision": "967a0c94365852dd50093f5b4f91c9dee193efc5",
+      "upstream": {
+        "url": "https://quiche.googlesource.com/quiche.git",
+        "revision": "a17968ca8acf183aa58529312f7a888d1157075f",
+        "tree": "1ff524e6b3669689db7a1b408a134829cf9d9027"
+      }
+    },
+    {
+      "path": "chromium109/third_party/android_ndk",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-android_ndk.git",
+      "revision": "9c9ab62e1b10ccf443ad2fec0e7bdf7e30925691",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/android_ndk.git",
+        "revision": "8388a2be5421311dc75c5f937aae13d821a27f3d",
+        "tree": "28393f27e44f9a98d8f5796dc32b3d953fa18d74"
+      }
+    },
+    {
+      "path": "chromium109/third_party/android_protobuf/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-android_protobuf-src.git",
+      "revision": "9637cd2240d613c1d1c39d6d40eee7e8cdcc63dc",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/protobuf.git",
+        "revision": "7fca48d8ce97f7ba3ab8eea5c472f1ad3711762f",
+        "tree": "46d791f74621c23c3e7a441aa2a0afef52230eb3"
+      }
+    },
+    {
+      "path": "chromium109/third_party/android_sdk/androidx_browser/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-android_sdk-androidx_browser-src.git",
+      "revision": "28ee1c6957b64650db86ad362b7a05429a58e8b1",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/gob/android/platform/frameworks/support/browser.git",
+        "revision": "65086eb5e52c16778fa7b4f157156d17b176fcb3",
+        "tree": "3796ab4fbea76b73dd4b3fd8ba2df641c8f02c07"
+      }
+    },
+    {
+      "path": "chromium109/third_party/angle",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-angle.git",
+      "revision": "0bdff1cc56bc812acb9ed1f38ab26e948f473d98",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/angle/angle.git",
+        "revision": "aa63ea230e0c507e7b4b164a30e502fb17168c17",
+        "tree": "2eceb2d25894ecf2e7117cabfa8e876049013308"
+      }
+    },
+    {
+      "path": "chromium109/third_party/angle/third_party/VK-GL-CTS/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-angle-third_party-VK-GL-CTS-src.git",
+      "revision": "483077798d977e76cfa6558f6c48aa41d59db446",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/KhronosGroup/VK-GL-CTS",
+        "revision": "acb25bf242c31cef2d82d4ebdb8d8d2f67af0ef6",
+        "tree": "498d3614dfc91374e0d5f977786c6bf731d5bdcf"
+      }
+    },
+    {
+      "path": "chromium109/third_party/angle/third_party/glmark2/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-angle-third_party-glmark2-src.git",
+      "revision": "363cfda6c181f84fb35b353fba36e591117c34ad",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/glmark2/glmark2",
+        "revision": "ca8de51fedb70bace5351c6b002eb952c747e889",
+        "tree": "e54047b534181697ee66e1ad823debe32adca6d2"
+      }
+    },
+    {
+      "path": "chromium109/third_party/angle/third_party/rapidjson/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-angle-third_party-rapidjson-src.git",
+      "revision": "db6c6eca0c047145fda3d63403d3c22c88c76c0d",
+      "unmaterialized_gitlinks": {
+        "thirdparty/gtest": "ba96d0b1161f540656efdaed035b3c062b60e006"
+      },
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/Tencent/rapidjson",
+        "revision": "781a4e667d84aeedbeb8184b7b62425ea66ec59f",
+        "tree": "df7366b45a116a41adad893667e50fc533a331ab"
+      }
+    },
+    {
+      "path": "chromium109/third_party/apache-portable-runtime/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-apache-portable-runtime-src.git",
+      "revision": "ecd2f87a2fa47ec09dc53bc0faf90f487c01e0d8",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/apache-portable-runtime.git",
+        "revision": "c3f11fcd86b42922834cae91103cf068246c6bb6",
+        "tree": "ff122666d0c47b7ebf7b4f6da8f7269115e44a49"
+      }
+    },
+    {
+      "path": "chromium109/third_party/arcore-android-sdk/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-arcore-android-sdk-src.git",
+      "revision": "a9b241645bfecb672a73bbfc42c59a40030b65f8",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/google-ar/arcore-android-sdk.git",
+        "revision": "d197af6b38f98d2344bc7f76326c4aa0c4f2fb90",
+        "tree": "d2d8b199759aae3f50179694611191cea9b4251c"
+      }
+    },
+    {
+      "path": "chromium109/third_party/boringssl/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-boringssl-src.git",
+      "revision": "2a9b8737274d842bec892ee9f026547aea71df8d",
+      "upstream": {
+        "url": "https://boringssl.googlesource.com/boringssl.git",
+        "revision": "1ccef4908ce04adc6d246262846f3cd8a111fa44",
+        "tree": "aedb4e6203869ad95dc0a911ec16cc97a30052ca"
+      }
+    },
+    {
+      "path": "chromium109/third_party/breakpad/breakpad",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-breakpad-breakpad.git",
+      "revision": "793b4846bf573e0f5f4c1b4cae32eea5353346c3",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/breakpad/breakpad.git",
+        "revision": "e059dad5ea3e781786f155ff9806602a4374b5fa",
+        "tree": "971a4df0fa9f63eaa67e0a62bde2ff3e38f06e46"
+      }
+    },
+    {
+      "path": "chromium109/third_party/cast_core/public/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-cast_core-public-src.git",
+      "revision": "f753065324b7996c81ae3959138cb1fb91529c92",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/cast_core/public",
+        "revision": "f4628fda1b370eb238ae69545024d256ca62d719",
+        "tree": "dcaf38a10f3475d26fc7d3d2f7a45bfdc849a135"
+      }
+    },
+    {
+      "path": "chromium109/third_party/catapult",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-catapult.git",
+      "revision": "fab9576d6e89f97838717f13605303cd93b5fed7",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/catapult.git",
+        "revision": "037b0ac25d75c1274af5aa2e3c8316f81b99d5be",
+        "tree": "b993cbd24d883ea1ac421ebae86f42a17c68efcc"
+      }
+    },
+    {
+      "path": "chromium109/third_party/ced/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-ced-src.git",
+      "revision": "5e81d1235deba9720752ae4a2281a5bd0c74249f",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/google/compact_enc_det.git",
+        "revision": "ba412eaaacd3186085babcd901679a48863c7dd5",
+        "tree": "6fbb4c383f8957ff9c1d9d01ad1e117f3b11fc93"
+      }
+    },
+    {
+      "path": "chromium109/third_party/cld_3/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-cld_3-src.git",
+      "revision": "daf609fb6ae935a9965e1f52fe572c353e4ce3f8",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/google/cld_3.git",
+        "revision": "b48dc46512566f5a2d41118c8c1116c4f96dc661",
+        "tree": "cd07b0747b2a2676b6762b3d866024d4c000a383"
+      }
+    },
+    {
+      "path": "chromium109/third_party/colorama/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-colorama-src.git",
+      "revision": "d0590edba0f86db178a4c78be7438a0397ab7a52",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/colorama.git",
+        "revision": "799604a1041e9b3bc5d2789ecbd7e8db2e18e6b8",
+        "tree": "b59fb9b531d8a2b779f50eeb015f6efa4850d4e7"
+      }
+    },
+    {
+      "path": "chromium109/third_party/content_analysis_sdk/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-content_analysis_sdk-src.git",
+      "revision": "6b23946cab057e0b687c46c97e2e17f4e07cffbf",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/chromium/content_analysis_sdk.git",
+        "revision": "3d3f3d6f27288d7b0628ae5259238162c5e5ae76",
+        "tree": "bf4232a31fb11833d8e2315fcd678137353c7848"
+      }
+    },
+    {
+      "path": "chromium109/third_party/cpuinfo/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-cpuinfo-src.git",
+      "revision": "e2ae6a525f2b292a8068c5063894eac51d361c96",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/pytorch/cpuinfo.git",
+        "revision": "beb46ca0319882f262e682dd596880c92830687f",
+        "tree": "a549c7496e589f09b67b829a01c04f3aa67c06eb"
+      }
+    },
+    {
+      "path": "chromium109/third_party/crc32c/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-crc32c-src.git",
+      "revision": "8a92c0d75f2b8be7af77fc14f6777d77f31657b6",
+      "unmaterialized_gitlinks": {
+        "third_party/benchmark": "bf585a2789e30585b4e3ce6baf11ef2750b54677",
+        "third_party/glog": "c8f8135a5720aee7de8328b42e4c43f8aa2e60aa",
+        "third_party/googletest": "18f8200e3079b0e54fa00cb7ac55d4c39dcf6da6"
+      },
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/google/crc32c.git",
+        "revision": "fa5ade41ee480003d9c5af6f43567ba22e4e17e6",
+        "tree": "88f7592f241d24be589294c2cee9ad6a62d7f8d8"
+      }
+    },
+    {
+      "path": "chromium109/third_party/cros_components",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-cros_components.git",
+      "revision": "45e2bb7ccc5ad51cdffa17d29205c5702ced05e3",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/google3/cros_components.git",
+        "revision": "97e45e933f8f9f584a4a8caf59b0e517a0dd5324",
+        "tree": "aa6b39e740ee33bc6a0c5e7a889f31721cb99bec"
+      }
+    },
+    {
+      "path": "chromium109/third_party/cros_system_api",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-cros_system_api.git",
+      "revision": "47f960c8944cc4dfb894ea249b2b86dc1d0bef64",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromiumos/platform2/system_api.git",
+        "revision": "ca1cd5d1bb30fbbd5c8b3eddeac77f0892b38516",
+        "tree": "df37f357f33163942b923d202c7a43ba12753e9f"
+      }
+    },
+    {
+      "path": "chromium109/third_party/dav1d/libdav1d",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-dav1d-libdav1d.git",
+      "revision": "e48ff69b8153e71c458082d71dc21994a1c0fa9c",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/videolan/dav1d.git",
+        "revision": "87f9a81cd770e49394a45deca7a3df41243de00b",
+        "tree": "13e5360f16700daf6a7e7154dea127c3d2121592"
+      }
+    },
+    {
+      "path": "chromium109/third_party/dawn",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-dawn.git",
+      "revision": "f01ebf7795815e30f08e60994b5f94c5488b08a8",
+      "upstream": {
+        "url": "https://dawn.googlesource.com/dawn.git",
+        "revision": "1c39f56e59167b9200d2a904e7e9a6a77a4dca4d",
+        "tree": "f4f48cfd50ca3d9731c71203aa2e9c23e1c2cc9b"
+      }
+    },
+    {
+      "path": "chromium109/third_party/dawn/third_party/glfw",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-dawn-third_party-glfw.git",
+      "revision": "d123daa6b244a8bca5a9136b6896ad857b40381b",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/glfw/glfw",
+        "revision": "62e175ef9fae75335575964c845a302447c012c7",
+        "tree": "5d0eb39cb23a4e48c6bb38b114d789b95692c5ad"
+      }
+    },
+    {
+      "path": "chromium109/third_party/dawn/third_party/webgpu-cts",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-dawn-third_party-webgpu-cts.git",
+      "revision": "ef8a1f7e916ee7ac8ed4249a046858f2ecd0b63f",
+      "unmaterialized_gitlinks": {},
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/gpuweb/cts",
+        "revision": "dac3646b15e7291d7248a6f4ab2e3477afd1db1b",
+        "tree": "7215e770fac5cf73df164ca15ab951895e70df4a"
+      }
+    },
+    {
+      "path": "chromium109/third_party/depot_tools",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-depot_tools.git",
+      "revision": "605e8e542f87b330e85811e426c34809c6767c01",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromium/tools/depot_tools.git",
+        "revision": "9d351f8b5aa6d0362eae0c6d32b4e9b6ef3207bf",
+        "tree": "6e6198daec63b4e991f2a3504309042727452737"
+      }
+    },
+    {
+      "path": "chromium109/third_party/devtools-frontend/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-devtools-frontend-src.git",
+      "revision": "75ea27a79a7a478273db604eaf8e2add46dbe1fd",
+      "unmaterialized_gitlinks": {},
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/devtools/devtools-frontend",
+        "revision": "74ceee1e9a0f73b817709ee8acdf08608a6f0f6f",
+        "tree": "40cda5d3039639818867741d3adc802196a7f908"
+      }
+    },
+    {
+      "path": "chromium109/third_party/dom_distiller_js/dist",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-dom_distiller_js-dist.git",
+      "revision": "e81e658b7afef05da534eae9a2c85c15dfddc6f4",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromium/dom-distiller/dist.git",
+        "revision": "199de96b345ada7c6e7e6ba3d2fa7a6911b8767d",
+        "tree": "5513f980447bc5efe0018630c5db398683284260"
+      }
+    },
+    {
+      "path": "chromium109/third_party/eigen3/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-eigen3-src.git",
+      "revision": "0e06164b6dd0a83c4d85ef74fcfc61512982c582",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/gitlab.com/libeigen/eigen.git",
+        "revision": "3bb6a48d8c171cf20b5f8e48bfb4e424fbd4f79e",
+        "tree": "a0b726302fd57e2bcd8c5bb3752dff0e8199cf75"
+      }
+    },
+    {
+      "path": "chromium109/third_party/emoji-segmenter/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-emoji-segmenter-src.git",
+      "revision": "531f5f7f9c9b21cd92a3acb97160eb4eefbe6447",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/google/emoji-segmenter.git",
+        "revision": "9ba6d25d0d9313569665d4a9d2b34f0f39f9a50e",
+        "tree": "02195f4e81e9516bfc06ce7d8ab3b20e33b11da2"
+      }
+    },
+    {
+      "path": "chromium109/third_party/expat/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-expat-src.git",
+      "revision": "7aee9918fe8912a280174a5a2c765969fa30ca1e",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/libexpat/libexpat.git",
+        "revision": "53fbdf5b8925a426e1b41a9e09b833986b87524e",
+        "tree": "33de5235fa06eeaa32c61dd089bb97de0a7095cd"
+      }
+    },
+    {
+      "path": "chromium109/third_party/farmhash/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-farmhash-src.git",
+      "revision": "40f2a849ed9d005f5cc07a935063f79893ee3bf8",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/google/farmhash.git",
+        "revision": "816a4ae622e964763ca0862d9dbd19324a1eaf45",
+        "tree": "919dc93811a9d1872a260210d579ea1059e538d3"
+      }
+    },
+    {
+      "path": "chromium109/third_party/ffmpeg",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-ffmpeg.git",
+      "revision": "3012ab4123cfaac77886db7677cfd9ae847d526b",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromium/third_party/ffmpeg.git",
+        "revision": "fd5b30c4bcf95ee607caf47ef65c3b96210867a4",
+        "tree": "1d468ab717f365825c425e045502b34876240dd1"
+      }
+    },
+    {
+      "path": "chromium109/third_party/flac",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-flac.git",
+      "revision": "3d95fbfbaccff3db5e057b01c9c55745134f19dc",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromium/deps/flac.git",
+        "revision": "af862024c8c8fa0ae07ced05e89013d881b00596",
+        "tree": "f301f4b1a6f6445769602eb19ed3c6cca999cb5e"
+      }
+    },
+    {
+      "path": "chromium109/third_party/flatbuffers/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-flatbuffers-src.git",
+      "revision": "7ef9f1387d6431209756397031c28c867ade2075",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/google/flatbuffers.git",
+        "revision": "e3017029647a88eb6f509ee9744012fffeb0d371",
+        "tree": "130542f1322d349fe4cef1cf73e88dd038c4be73"
+      }
+    },
+    {
+      "path": "chromium109/third_party/fontconfig/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-fontconfig-src.git",
+      "revision": "4e3a6a75f25c25ebfa96425a7b6374273800f01e",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/fontconfig.git",
+        "revision": "452be8125f0e2a18a7dfef469e05d19374d36307",
+        "tree": "7164caf1023dd4490fcb6ef011539a221b34c82a"
+      }
+    },
+    {
+      "path": "chromium109/third_party/fp16/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-fp16-src.git",
+      "revision": "372c69e80e8778150ee9dcdc91c90853fb2d1287",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/Maratyszcza/FP16.git",
+        "revision": "0a92994d729ff76a58f692d3028ca1b64b145d91",
+        "tree": "22fa70554c0492998a4c110f8af30520362c2224"
+      }
+    },
+    {
+      "path": "chromium109/third_party/freetype-testing/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-freetype-testing-src.git",
+      "revision": "1decaa30b9fffa72bee82e79be2270c018b896e8",
+      "unmaterialized_gitlinks": {
+        "external/brotli": "63be8a99401992075c23e99f7c84de1c653e39e2",
+        "external/bzip2": "8ca1faa31f396d94ab927b257f3a05236c84e330",
+        "external/freetype2": "94cb3a2eb96b3f17a1a3bd0e6f7da97c0e1d8f57",
+        "external/glog": "d4e8ebab7e295f20f86cae9557da0d5087a02f73",
+        "external/libarchive": "a45905b0166713760a2fb4f2e908d7ce47488371",
+        "external/libpng": "dbe3e0c43e549a1602286144d94b0666549b18e6",
+        "external/llvm-project": "d7b669b3a30345cfcdb2fde2af6f48aa4b94845d",
+        "external/zlib": "cacf7f1d4e3d44d871b605da3b647f07d718623f"
+      },
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/freetype/freetype2-testing.git",
+        "revision": "7a69b1a2b028476f840ab7d4a2ffdfe4eb2c389f",
+        "tree": "42995b7243b74907a63a330cbe7ceb079e5b4889"
+      }
+    },
+    {
+      "path": "chromium109/third_party/freetype/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-freetype-src.git",
+      "revision": "1239a16ec06314d107f5357569910800c6836bce",
+      "unmaterialized_gitlinks": {
+        "subprojects/dlg": "d142e646e263c89f93663e027c2f0d03739ab42d"
+      },
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromium/src/third_party/freetype2.git",
+        "revision": "dea2e6358b2f963008d447d27564dd79890b61f0",
+        "tree": "e1081c6ad6bc26d6ac71eae8fa7e60493cc82f15"
+      }
+    },
+    {
+      "path": "chromium109/third_party/fxdiv/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-fxdiv-src.git",
+      "revision": "dae921384ee7b54dfb15435c2d206c21970143a3",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/Maratyszcza/FXdiv.git",
+        "revision": "63058eff77e11aa15bf531df5dd34395ec3017c8",
+        "tree": "f49cdff6b7a861d0097471edcca842fe685477c0"
+      }
+    },
+    {
+      "path": "chromium109/third_party/gemmlowp/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-gemmlowp-src.git",
+      "revision": "43acaaa2a9b1c614f8d2147552d7cfa15f2f8c20",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/google/gemmlowp.git",
+        "revision": "13d57703abca3005d97b19df1f2db731607a7dc2",
+        "tree": "13109bdd826ec985edc6968aa30bbf5a7f79dce7"
+      }
+    },
+    {
+      "path": "chromium109/third_party/googletest/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-googletest-src.git",
+      "revision": "ac3e7c18510874bed5e6103b4eab76d20560308f",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/google/googletest.git",
+        "revision": "af29db7ec28d6df1c7f0f745186884091e602e07",
+        "tree": "09d0515602204655c233d87c6e19d4f609b3486a"
+      }
+    },
+    {
+      "path": "chromium109/third_party/grpc/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-grpc-src.git",
+      "revision": "2557eec8a9893cd06bfca08dbac92ead0bae6dc8",
+      "unmaterialized_gitlinks": {
+        "third_party/abseil-cpp": "273292d1cfc0a94a65082ee350509af1d113344d",
+        "third_party/benchmark": "0baacde3618ca617da95375e0af13ce1baadea47",
+        "third_party/bloaty": "60209eb1ccc34d5deefb002d1b7f37545204f7f2",
+        "third_party/boringssl-with-bazel": "b9232f9e27e5668bc0414879dcdedb2a59ea75f2",
+        "third_party/cares/cares": "6654436a307a5a686b008c1d4c93b0085da6e6d8",
+        "third_party/envoy-api": "bf6154e482bbd5e6f64032993206e66b6116f2bd",
+        "third_party/googleapis": "2f9af297c84c55c8b871ba4495e01ade42476c92",
+        "third_party/googletest": "0e402173c97aea7a00749e825b194bfede4f2e45",
+        "third_party/libuv": "02a9e1be252b623ee032a3137c0b0c94afbe6809",
+        "third_party/opencensus-proto": "4aa53e15cbf1a47bc9087e6cfdca214c1eea4e89",
+        "third_party/opentelemetry": "60fa8754d890b5c55949a8c68dcfd7ab5c2395df",
+        "third_party/protobuf": "22d0e265de7d2b3d2e9a00d071313502e7d4cccf",
+        "third_party/re2": "8e08f47b11b413302749c0d8b17a1c94777495d5",
+        "third_party/xds": "cb28da3451f158a947dfc45090fe92b07b243bc1",
+        "third_party/zlib": "21767c654d31d2dccdde4330529775c6c5fd5389"
+      },
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/grpc/grpc.git",
+        "revision": "dd77c67217b10ffeaf766e25eb8b46d2d59de4ff",
+        "tree": "392fb4535b16176b02d1a8d058d889766a61b118"
+      }
+    },
+    {
+      "path": "chromium109/third_party/gvr-android-sdk/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-gvr-android-sdk-src.git",
+      "revision": "1b5952d09e3da3ba029f004ebbb9e8c8e7039b18",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/googlevr/gvr-android-sdk.git",
+        "revision": "233e7fe922a543e0bc55382d64cacd047307d0e7",
+        "tree": "447863ea8ca6321fddcf422a73b872a8b7d3fd91"
+      }
+    },
+    {
+      "path": "chromium109/third_party/harfbuzz-ng/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-harfbuzz-ng-src.git",
+      "revision": "38e51f8168c6a8fed11e7880ac0026e10b4ac2a0",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/harfbuzz/harfbuzz.git",
+        "revision": "2822b589bc837fae6f66233e2cf2eef0f6ce8470",
+        "tree": "b89d607578630b4b68aff75466a51cf5471e2202"
+      }
+    },
+    {
+      "path": "chromium109/third_party/highway/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-highway-src.git",
+      "revision": "57b8f6f8d468324e1184493d7b0146f3c6086ffc",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/google/highway.git",
+        "revision": "8ae5b88670fb918f815b717c7c13d38a9b0eb4bb",
+        "tree": "800394cc47e1edad69c72288130bc05a5d2eec3f"
+      }
+    },
+    {
+      "path": "chromium109/third_party/hunspell_dictionaries",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-hunspell_dictionaries.git",
+      "revision": "710cc2f1f88d566f47ffebbbf1414264e6e1510b",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromium/deps/hunspell_dictionaries.git",
+        "revision": "41cdffd71c9948f63c7ad36e1fb0ff519aa7a37e",
+        "tree": "ab60fa7cb9c149d400af134b240dc0f3fbfda833"
+      }
+    },
+    {
+      "path": "chromium109/third_party/icu",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-icu.git",
+      "revision": "d2bd3fcc49357c3779a9b6e5d894f1747f32ae18",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromium/deps/icu.git",
+        "revision": "da07448619763d1cde255b361324242646f5b268",
+        "tree": "f6f210145379c500e67b5a234d30605e17ca3f19"
+      }
+    },
+    {
+      "path": "chromium109/third_party/javalang/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-javalang-src.git",
+      "revision": "c887499774919ab467ba03e55f54a0aa1abadc4f",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/c2nes/javalang.git",
+        "revision": "0664afb7f4d40254312693f2e833c1ed4ac551c7",
+        "tree": "653767078f0091c60174561218191ec1362f3a55"
+      }
+    },
+    {
+      "path": "chromium109/third_party/jsoncpp/source",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-jsoncpp-source.git",
+      "revision": "7ed07610ebd1eea306a305a57059f9e559d6e7a6",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/open-source-parsers/jsoncpp.git",
+        "revision": "42e892d96e47b1f6e29844cc705e148ec4856448",
+        "tree": "c9b5ffc95a60647ddfba8a148daa86d0235df093"
+      }
+    },
+    {
+      "path": "chromium109/third_party/junit/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-junit-src.git",
+      "revision": "4646d1b64e7aa601e3a61d75530eec6b76fac89e",
+      "unmaterialized_gitlinks": {},
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/junit.git",
+        "revision": "05fe2a64f59127c02135be22f416e91260d6ede6",
+        "tree": "4f6b842004c5745eb3c20cea697aa33dd59b9d93"
+      }
+    },
+    {
+      "path": "chromium109/third_party/leveldatabase/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-leveldatabase-src.git",
+      "revision": "842a55114b790ad498c57efd3b4e4873c9be3a1f",
+      "unmaterialized_gitlinks": {
+        "third_party/benchmark": "7d0d9061d83b663ce05d9de5da3d5865a3845b79",
+        "third_party/googletest": "662fe38e44900c007eccb65a5d2ea19df7bd520e"
+      },
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/leveldb.git",
+        "revision": "d019e3605f222ebc5a3a2484a2cb29db537551dd",
+        "tree": "35720fc09614a6cc69c2db7294f76390ea19bf44"
+      }
+    },
+    {
+      "path": "chromium109/third_party/libFuzzer/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-libFuzzer-src.git",
+      "revision": "9656e7f201f06b3bb09e20b7e5665de3d923a594",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromium/llvm-project/compiler-rt/lib/fuzzer.git",
+        "revision": "debe7d2d1982e540fbd6bd78604bf001753f9e74",
+        "tree": "6045fc1a2e312105d20958c6e5fa0642eb054ca3"
+      }
+    },
+    {
+      "path": "chromium109/third_party/libaddressinput/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-libaddressinput-src.git",
+      "revision": "bcb6b056630da9aca22dbde4261c606175433ba2",
+      "unmaterialized_gitlinks": {
+        "externals/grit": "b0336743af4d045cae05b9201207325115e9c013",
+        "externals/rapidjson": "d0f98d2da1e2e6345831dc1ab2c30950417e6490"
+      },
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/libaddressinput.git",
+        "revision": "df35d6c42da4fa2759e4cfb592afe33817993b89",
+        "tree": "4f7be7beb967b4504e2fea1eb6cc8c725810ae86"
+      }
+    },
+    {
+      "path": "chromium109/third_party/libaom/source/libaom",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-libaom-source-libaom.git",
+      "revision": "77b4783c9bfd7b88b1a77c30973f65ab44cb7a0d",
+      "upstream": {
+        "url": "https://aomedia.googlesource.com/aom.git",
+        "revision": "b42e001a9ca9805aff7aaaa270b364a8298c33b4",
+        "tree": "13c8026bc52fb410bc2aafff9041a11b8b2ed09f"
+      }
+    },
+    {
+      "path": "chromium109/third_party/libavif/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-libavif-src.git",
+      "revision": "28d24471218c48677f0eac6e6b3bb8f350585e89",
+      "unmaterialized_gitlinks": {},
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/AOMediaCodec/libavif.git",
+        "revision": "cd03eef10a7cc6081ee98e3911e21d977a2bf17b",
+        "tree": "d98aeedf6da8110ca985187b1a40b8464a8aa459"
+      }
+    },
+    {
+      "path": "chromium109/third_party/libdrm/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-libdrm-src.git",
+      "revision": "acaaa622c5421289f4b477de0eb3231e7534d281",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromiumos/third_party/libdrm.git",
+        "revision": "56f81e6776c1c100c3f627b2c1feb9dcae2aad3c",
+        "tree": "f2dad5f135f56bf9e56b44d5b9637ffb59d38f23"
+      }
+    },
+    {
+      "path": "chromium109/third_party/libgav1/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-libgav1-src.git",
+      "revision": "2edf15d6db077ab280721b3c579ec6b7906a7b25",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/codecs/libgav1.git",
+        "revision": "cd53f7c0d6a1c005e38874d143c8876d375bae70",
+        "tree": "7245ef53bb2c7609ec7b117994d2b8c786ad175f"
+      }
+    },
+    {
+      "path": "chromium109/third_party/libipp/libipp",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-libipp-libipp.git",
+      "revision": "345bf150bea4b62955099594b202d4945cc33653",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromiumos/platform2/libipp.git",
+        "revision": "6c45a4f3a05cb5dd700414fe4d94cf685159d3ce",
+        "tree": "ebcf92f2f52477c1523cfe2d92b3461824aec0a8"
+      }
+    },
+    {
+      "path": "chromium109/third_party/libjpeg_turbo",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-libjpeg_turbo.git",
+      "revision": "c9bbeb8c6188bd404bc34bb48743388e5eb3be6f",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromium/deps/libjpeg_turbo.git",
+        "revision": "ed683925e4897a84b3bffc5c1414c85b97a129a3",
+        "tree": "ede67ceca0ec34c3ca432e2a3221b4c407614a01"
+      }
+    },
+    {
+      "path": "chromium109/third_party/libjxl/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-libjxl-src.git",
+      "revision": "bf9bf75dd29dac5f549f8be8fc3c5e92da954ac7",
+      "unmaterialized_gitlinks": {
+        "testdata": "d81acaca8e037d9514f3211045c77e7467bcb814",
+        "third_party/brotli": "35ef5c554d888bef217d449346067de05e269b30",
+        "third_party/googletest": "0ea2d8f8fa1601abb9ce713b7414e7b86f90bc61",
+        "third_party/highway": "22e3d7276f4157d4a47586ba9fd91dd6303f441a",
+        "third_party/lcms": "65c63bf549d78253c14b30b3d62cb668bbbe612c",
+        "third_party/libpng": "a40189cf881e9f0db80511c382292a5604c3c3d1",
+        "third_party/sjpeg": "868ab558fad70fcbe8863ba4e85179eeb81cc840",
+        "third_party/skcms": "64374756e03700d649f897dbd98c95e78c30c7da",
+        "third_party/zlib": "cacf7f1d4e3d44d871b605da3b647f07d718623f"
+      },
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/libjxl/libjxl.git",
+        "revision": "8001738dc9cd8dc6fa24cf75fefd08f909b2ac3c",
+        "tree": "a60969a1be221964626c1007d132e94b25f102d8"
+      }
+    },
+    {
+      "path": "chromium109/third_party/liblouis/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-liblouis-src.git",
+      "revision": "8458b546dc2a44073b962fe4070e638b179c66c3",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/liblouis-github.git",
+        "revision": "9700847afb92cb35969bdfcbbfbbb74b9c7b3376",
+        "tree": "aa3bb4e2d715fbd071aa62b00655511342cb0d9e"
+      }
+    },
+    {
+      "path": "chromium109/third_party/libphonenumber/dist",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-libphonenumber-dist.git",
+      "revision": "f76644beacdcf93f714a215d679edaac01707133",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/libphonenumber.git",
+        "revision": "140dfeb81b753388e8a672900fb7a971e9a0d362",
+        "tree": "403d3b917deb0d45d3a82d634c877043f747da6f"
+      }
+    },
+    {
+      "path": "chromium109/third_party/libprotobuf-mutator/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-libprotobuf-mutator-src.git",
+      "revision": "94dfb71d5d932363b3ccc2541778fa62e5293733",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/google/libprotobuf-mutator.git",
+        "revision": "a304ec48dcf15d942607032151f7e9ee504b5dcf",
+        "tree": "e33780fffebc5091bf36c358008376e2112761a7"
+      }
+    },
+    {
+      "path": "chromium109/third_party/libsrtp",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-libsrtp.git",
+      "revision": "b8082fad8ba28bf852c854e82f7d95023c3d01c4",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromium/deps/libsrtp.git",
+        "revision": "5b7c744eb8310250ccc534f3f86a2015b3887a0a",
+        "tree": "02680587bcb33927e37653dc8002dfdc83eb8f63"
+      }
+    },
+    {
+      "path": "chromium109/third_party/libsync/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-libsync-src.git",
+      "revision": "67e4e5210c054aac70f96609cb0349c4a474b126",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/aosp/platform/system/core/libsync.git",
+        "revision": "f4f4387b6bf2387efbcfd1453af4892e8982faf6",
+        "tree": "6735ede3571072051f02df69fdf53bb239ebe6bd"
+      }
+    },
+    {
+      "path": "chromium109/third_party/libunwindstack",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-libunwindstack.git",
+      "revision": "81396ad614a7a02823815df37793581b6e0d19c1",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromium/src/third_party/libunwindstack.git",
+        "revision": "4dbfa0e8c844c8e243b297bc185e54a99ff94f9e",
+        "tree": "a73ff8b6a4825d28d6e41c8dbe9d58dc3ce9e7ae"
+      }
+    },
+    {
+      "path": "chromium109/third_party/libvpx/source/libvpx",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-libvpx-source-libvpx.git",
+      "revision": "64d38d83f13e97b221b50f6a62de023866b7368c",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/webm/libvpx.git",
+        "revision": "5245f6e9cb7e6bb68ab45fe4d8b00bc9b16857e1",
+        "tree": "f2da9ce87551032ef1b85c55b06c0dba515c06b4"
+      }
+    },
+    {
+      "path": "chromium109/third_party/libwebm/source",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-libwebm-source.git",
+      "revision": "7fb89c7f71a1a93168477735803adb454e1cbeb4",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/webm/libwebm.git",
+        "revision": "e4fbea0c9751ae8aa86629b197a28d8276a2b0da",
+        "tree": "949cbf06d929d614d75e9d5870c8a1a081a54c83"
+      }
+    },
+    {
+      "path": "chromium109/third_party/libwebp/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-libwebp-src.git",
+      "revision": "4d5e27dba066b9987253480e99784b47991ad160",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/webm/libwebp.git",
+        "revision": "7366f7f394af26de814296152c50e673ed0a832f",
+        "tree": "7e3d743b523a4395926c57610d43ac9efab6c15b"
+      }
+    },
+    {
+      "path": "chromium109/third_party/libyuv",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-libyuv.git",
+      "revision": "8e81591a1d77d342e37b2efbf00a7cc1dad43af9",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/libyuv/libyuv.git",
+        "revision": "fe9ced6e3c8ae6c69bcc3ebb8505a650d2df30e0",
+        "tree": "21ed26babe45bf55a1afdfd76a3c7a705661c9fd"
+      }
+    },
+    {
+      "path": "chromium109/third_party/lss",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-lss.git",
+      "revision": "ee0bee70e6ecfb79ab49e1db843e8010414ee0e7",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/linux-syscall-support.git",
+        "revision": "ce877209e11aa69dcfffbd53ef90ea1d07136521",
+        "tree": "eba006afd812532f89fd7395ca7458fce5670f64"
+      }
+    },
+    {
+      "path": "chromium109/third_party/minigbm/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-minigbm-src.git",
+      "revision": "e9d328b88a86bdb0274fc66eccc35c1833ef653f",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromiumos/platform/minigbm.git",
+        "revision": "d73fa7ff377919d94d4ed675cc91a070f0631548",
+        "tree": "48060b95821508b45270a07e4dc352037404cc06"
+      }
+    },
+    {
+      "path": "chromium109/third_party/minizip/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-minizip-src.git",
+      "revision": "96e17277144e300d80d3ec9176ccabca320691bf",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/nmoinvaz/minizip",
+        "revision": "1ff40343b55e738d941abb51c70eddb803db16e2",
+        "tree": "c236b69567fc7e8b991767701cf997cca938d4cf"
+      }
+    },
+    {
+      "path": "chromium109/third_party/mockito/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-mockito-src.git",
+      "revision": "417b5692bade116a0dfd6bf4baf1717286a516b4",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/mockito/mockito.git",
+        "revision": "04a2a289a4222f80ad20717c25144981210d2eac",
+        "tree": "4be9962ac0cda2c81117399eaefc390e0ffd7bda"
+      }
+    },
+    {
+      "path": "chromium109/third_party/nasm",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-nasm.git",
+      "revision": "a7db5ad5fb8e8dd8a6163ba362be4075c86cb254",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromium/deps/nasm.git",
+        "revision": "0873b2bae6a5388a1c55deac8456e3c60a47ca08",
+        "tree": "e7983f5b6458f9019cf9dfbf91d06caf63ad803f"
+      }
+    },
+    {
+      "path": "chromium109/third_party/nearby/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-nearby-src.git",
+      "revision": "eff3c539ceb821d8c599128994234856949ecb8f",
+      "unmaterialized_gitlinks": {
+        "third_party/absl": "9336be04a242237cd41a525bedfcf3be1bb55377",
+        "third_party/depot_tools": "e1197f06a8f45c0328d341b30e337d3a4b609716",
+        "third_party/google-toolbox-for-mac/google-toolbox-for-mac": "339415048005a9eba957357a02459a977a2e3007",
+        "third_party/gtest": "d61d4d8e64c08a662055e82904bbf90e108a704f",
+        "third_party/protobuf": "4812107b9d0fb9fdcca933766c237c38f2150379",
+        "third_party/securemessage/securemessage": "69a02984d4563c6c21132ee882d1d3df1981f5a1",
+        "third_party/smhasher/smhasher": "61a0530f28277f2e850bfc39600ce61d02b518de",
+        "third_party/ukey2/ukey2": "c2436e55116964d88532080784f6ed496b0d11f9"
+      },
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/google/nearby-connections.git",
+        "revision": "8c8e5d7e6f72dacd0917fdf5a3fab3e5b19ce93c",
+        "tree": "7a6f44655dd12fbede0cfd9a216e38656313f796"
+      }
+    },
+    {
+      "path": "chromium109/third_party/neon_2_sse/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-neon_2_sse-src.git",
+      "revision": "d0b4493483488a2d8b0d6217d39543a5058fb5f1",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/intel/ARM_NEON_2_x86_SSE.git",
+        "revision": "a15b489e1222b2087007546b4912e21293ea86ff",
+        "tree": "7afdb1974017802a8ac52fd3a36a12fe3cebe098"
+      }
+    },
+    {
+      "path": "chromium109/third_party/netty-tcnative/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-netty-tcnative-src.git",
+      "revision": "aab1bf6709e15bb111ab28c60166470d2d6e539f",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/netty-tcnative.git",
+        "revision": "7eeb50be90c9ba0f6afa3375132df63942a0f32d",
+        "tree": "e87e7d781e0f8dd866f25c0e274f717e3bff334c"
+      }
+    },
+    {
+      "path": "chromium109/third_party/netty4/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-netty4-src.git",
+      "revision": "36e6597febef1799860d56b2bdd55ab669bc4d4a",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/netty4.git",
+        "revision": "cc4420b13bb4eeea5b1cf4f93b2755644cd3b120",
+        "tree": "d078839523de759e589323cdc5a3586a32fbf2d4"
+      }
+    },
+    {
+      "path": "chromium109/third_party/openh264/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-openh264-src.git",
+      "revision": "c42b7ceeb117378d84860e3e7074137b9393971c",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/cisco/openh264",
+        "revision": "db956674bbdfbaab5acdd3fdb4117c2fef5527e9",
+        "tree": "e94bb4d5f79842b90793ccb2e5b08a52193c9fbc"
+      }
+    },
+    {
+      "path": "chromium109/third_party/openscreen/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-openscreen-src.git",
+      "revision": "675e1c9a0ad8e44fa1d4f6c42b320842e9f1daeb",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/openscreen",
+        "revision": "9be5eefa2605408a671cc11c695849400caecbbb",
+        "tree": "1812e63e9f433c55319c264d2e7c92aa4587c31a"
+      }
+    },
+    {
+      "path": "chromium109/third_party/openscreen/src/third_party/tinycbor/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-openscreen-src-third_party-tinycbor-src.git",
+      "revision": "581dcec28cb1be9233cb4c8de84dcee3e3a99e4e",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/intel/tinycbor.git",
+        "revision": "d393c16f3eb30d0c47e6f9d92db62272f0ec4dc7",
+        "tree": "121b57e21bfe072a9781a45fd55bd9faca46296a"
+      }
+    },
+    {
+      "path": "chromium109/third_party/ots/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-ots-src.git",
+      "revision": "b9f8e7f87cc339aa29fcf218c54389fac43a46cb",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/khaledhosny/ots.git",
+        "revision": "46bea9879127d0ff1c6601b078e2ce98e83fcd33",
+        "tree": "909e6e11351cbdb62e08e6d758b7901470d3b4d7"
+      }
+    },
+    {
+      "path": "chromium109/third_party/pdfium",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-pdfium.git",
+      "revision": "d4e98e23f7e957a8b5f169f9451eff2c20d4ecf7",
+      "upstream": {
+        "url": "https://pdfium.googlesource.com/pdfium.git",
+        "revision": "89aa9f9ebe803480ec697fb39470ed106869e272",
+        "tree": "6fa900b3bacb0799cbf896cb88a0f0ff40b5c530"
+      }
+    },
+    {
+      "path": "chromium109/third_party/perfetto",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-perfetto.git",
+      "revision": "263dda34503880dd6b0cd6ac57921d95701545c2",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/perfetto.git",
+        "revision": "10498394b9f4b302ee5f56a08e41e7ba7016be44",
+        "tree": "c17de8a543cff32c7ca98658ad0711fa4336af74"
+      }
+    },
+    {
+      "path": "chromium109/third_party/pthreadpool/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-pthreadpool-src.git",
+      "revision": "484d1c3fe4217a393a8342d79ba974a7fc8c299e",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/Maratyszcza/pthreadpool.git",
+        "revision": "1787867f6183f056420e532eec640cba25efafea",
+        "tree": "aeae5e5d98e20c60b058ed4f9ef4058f7ef55df0"
+      }
+    },
+    {
+      "path": "chromium109/third_party/pyelftools",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-pyelftools.git",
+      "revision": "0a66d8be0e52f66a5a15b446b5d835a18298ea02",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromiumos/third_party/pyelftools.git",
+        "revision": "19b3e610c86fcadb837d252c794cb5e8008826ae",
+        "tree": "b5382f0f65cf48e98eec618c94f67e4ff17764b5"
+      }
+    },
+    {
+      "path": "chromium109/third_party/pywebsocket3/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-pywebsocket3-src.git",
+      "revision": "83e1771d86ce69306c79c67bf98b5acc283e8c13",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/GoogleChromeLabs/pywebsocket3.git",
+        "revision": "50602a14f1b6da17e0b619833a13addc6ea78bc2",
+        "tree": "f72d4b128a502d7fe021cb2d62ae91045ce8705d"
+      }
+    },
+    {
+      "path": "chromium109/third_party/quic_trace/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-quic_trace-src.git",
+      "revision": "e6d2362d3d38748021b513b13570b441da9bfc8d",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/google/quic-trace.git",
+        "revision": "caa0a6eaba816ecb737f9a70782b7c80b8ac8dbc",
+        "tree": "58373d8bce9b007c00f3605b9f4f0d114d6b2cf1"
+      }
+    },
+    {
+      "path": "chromium109/third_party/re2/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-re2-src.git",
+      "revision": "49dba3cf35bd70477d4a1443184e74dd7c5366ab",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/google/re2.git",
+        "revision": "7a65faf439295e941baa6640a717d89c1f13e9cd",
+        "tree": "d686803117ba70f117494c1846b9661b61d369a7"
+      }
+    },
+    {
+      "path": "chromium109/third_party/requests/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-requests-src.git",
+      "revision": "fda8af42b089a61b8d016beb91105468413b28e1",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/kennethreitz/requests.git",
+        "revision": "c7e0fc087ceeadb8b4c84a0953a422c474093d6d",
+        "tree": "acd4b129e372ddfb573a1a2f4a7ba9b3ccc0e276"
+      }
+    },
+    {
+      "path": "chromium109/third_party/ruy/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-ruy-src.git",
+      "revision": "d973ffbbcad283c86e0771f5a0352c3f0f37e89a",
+      "unmaterialized_gitlinks": {
+        "third_party/cpuinfo": "082deffc80ce517f81dc2f3aebe6ba671fcd09c9",
+        "third_party/googletest": "6c58c11d5497b6ee1df3cb400ce30deb72fc28c0"
+      },
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/google/ruy.git",
+        "revision": "3286a34cc8de6149ac6844107dfdffac91531e72",
+        "tree": "dcc7f0f6e9f9bc60bd369944481d3b6a673c53d6"
+      }
+    },
+    {
+      "path": "chromium109/third_party/securemessage/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-securemessage-src.git",
+      "revision": "7fb220412ecb1c0769acb7c163db7ce00ed4e681",
+      "unmaterialized_gitlinks": {
+        "third_party/gtest": "703bd9caab50b139428cea1aaff9974ebee5742e",
+        "third_party/protobuf": "d0bfd5221182da1a7cc280f3337b5e41a89539cf"
+      },
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/google/securemessage.git",
+        "revision": "fa07beb12babc3b25e0c5b1f38c16aa8cb6b8f84",
+        "tree": "f2bd58038b22308a37aaa253a4bfd892722242ff"
+      }
+    },
+    {
+      "path": "chromium109/third_party/skia",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-skia.git",
+      "revision": "f518565ede788b47d85f5219e287c4ddce9b0c03",
+      "upstream": {
+        "url": "https://skia.googlesource.com/skia.git",
+        "revision": "c3c074db76330e847ab9adcaef66604b67c17745",
+        "tree": "8be63a0b6777262867fea829521619b882803fa1"
+      }
+    },
+    {
+      "path": "chromium109/third_party/smhasher/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-smhasher-src.git",
+      "revision": "733e30cbfcadc598e6187eda0df282b2bedcad3e",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/smhasher.git",
+        "revision": "e87738e57558e0ec472b2fc3a643b838e5b6e88f",
+        "tree": "72b8b9186b057c053fb6721bb9ad51b3d5764cd5"
+      }
+    },
+    {
+      "path": "chromium109/third_party/snappy/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-snappy-src.git",
+      "revision": "867cf84b1052f65e80362b19901c59442c7c58e5",
+      "unmaterialized_gitlinks": {
+        "third_party/benchmark": "bf585a2789e30585b4e3ce6baf11ef2750b54677",
+        "third_party/googletest": "18f8200e3079b0e54fa00cb7ac55d4c39dcf6da6"
+      },
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/google/snappy.git",
+        "revision": "65dc7b383985eb4f63cd3e752136db8d9b4be8c0",
+        "tree": "791b925fad4067e4d65fe174e0cf063b9e3d5422"
+      }
+    },
+    {
+      "path": "chromium109/third_party/sqlite/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-sqlite-src.git",
+      "revision": "cf6e499664fd61924ba5b5d13cffda5ce1f305cf",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromium/deps/sqlite.git",
+        "revision": "b48b7b78fcdf0227c59a1fde8bc7e19362239e97",
+        "tree": "a9996a7e2a1632ad91ea68dc969e646793365389"
+      }
+    },
+    {
+      "path": "chromium109/third_party/swiftshader",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-swiftshader.git",
+      "revision": "a7ad0e2b9e7221644a6480e4898e64f17be2248e",
+      "unmaterialized_gitlinks": {
+        "third_party/PowerVR_Examples": "409c9d54fdaffe68565283e38dcbbe6c58535925",
+        "third_party/benchmark": "e5ea03ce07997620980636b3ee7e6117d68bc6ad",
+        "third_party/cppdap": "1fd23dda91e01550be1a421de307e6fedb2035a9",
+        "third_party/git-hooks": "de5ff141c9c35e3999a19379cd68c80031a74e46",
+        "third_party/glslang": "2b2523fb951f63f072cfba514c26f2feea5f4329",
+        "third_party/googletest": "e2239ee6043f73722e7aa812a459f54a28552929",
+        "third_party/json": "ed5541440a36bf7dc1a544f9a84fa3e5ae97b71f",
+        "third_party/libbacktrace/src": "5a99ff7fed66b8ea8f09c9805c138524a7035ece",
+        "third_party/llvm-project": "fc3b34c50803274b8ba3b8a30df9177b7d29063c"
+      },
+      "lfs_paths": [
+        "tests/regres/testlists/vk-master-NOT_SUPPORTED.txt"
+      ],
+      "upstream": {
+        "url": "https://swiftshader.googlesource.com/SwiftShader.git",
+        "revision": "dd7bb92b9a7a813ebc2da9fe3f6484c34cc69363",
+        "tree": "53ba7bc3ef8838def57775d152af70f6417df01b"
+      },
+      "lfs": true,
+      "lfs_files": {
+        "tests/regres/testlists/vk-master-NOT_SUPPORTED.txt": {
+          "sha256": "fc93cabe342325ca65735b2f79bf3b5add407792666f4a08278dd1d0b35fda95",
+          "bytes": 144618423
+        }
+      },
+      "snapshot_tree": "fe34d88dab69bd34a88a0b7866737c2dad4156bb"
+    },
+    {
+      "path": "chromium109/third_party/text-fragments-polyfill/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-text-fragments-polyfill-src.git",
+      "revision": "b9fd076637949e8f554e3e92f9c9d64269834ee3",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/GoogleChromeLabs/text-fragments-polyfill.git",
+        "revision": "c036420683f672d685e27415de0a5f5e85bdc23f",
+        "tree": "37a5e27623b097b0a262bcdb511f8edbf5b186d2"
+      }
+    },
+    {
+      "path": "chromium109/third_party/tflite/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-tflite-src.git",
+      "revision": "3690fe43caec2b09ad48855dca1d9ddceb77a7ce",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/tensorflow/tensorflow.git",
+        "revision": "11eaf0880146cdd6af17b38fb1361dd031ee0f8c",
+        "tree": "eba50745241a54bf90a3b73540b5c7f0867ac1fb"
+      }
+    },
+    {
+      "path": "chromium109/third_party/ukey2/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-ukey2-src.git",
+      "revision": "b65f2380eb28b024ee2ebe89781e111e878e5f11",
+      "unmaterialized_gitlinks": {
+        "third_party/absl": "62f05b1f57ad660e9c09e02ce7d591dcc4d0ca08",
+        "third_party/gtest": "703bd9caab50b139428cea1aaff9974ebee5742e",
+        "third_party/protobuf": "d0bfd5221182da1a7cc280f3337b5e41a89539cf",
+        "third_party/secure_message": "e7b6988454bc94601616fbbf0db3559f73a1ebdf"
+      },
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/google/ukey2.git",
+        "revision": "0275885d8e6038c39b8a8ca55e75d1d4d1727f47",
+        "tree": "d2da3a87e6558cde2cd3a66fa8f6bc5db7e76401"
+      }
+    },
+    {
+      "path": "chromium109/third_party/vulkan-deps",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-vulkan-deps.git",
+      "revision": "a4986296222cc92dfa6ed8cc66cddc5029e3ea0f",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/vulkan-deps",
+        "revision": "16939fbb2bf748d2edd3ecf99eb2d8bf0a3ab382",
+        "tree": "f5d41058cc765d94ca85975e1973df74113ded70"
+      }
+    },
+    {
+      "path": "chromium109/third_party/vulkan-deps/glslang/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-vulkan-deps-glslang-src.git",
+      "revision": "37970ad11895c63450a415f23c43b1964439c7ee",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/KhronosGroup/glslang",
+        "revision": "f4cba22d08241cad63a270e33f4ef3384979982e",
+        "tree": "f655c45dc4a4a38d7bb49e6d70245c5804402400"
+      }
+    },
+    {
+      "path": "chromium109/third_party/vulkan-deps/spirv-cross/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-vulkan-deps-spirv-cross-src.git",
+      "revision": "f07f81cbaa0685fe595afbde2ff2272de23b438e",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/KhronosGroup/SPIRV-Cross",
+        "revision": "edd66a2fc9e932ad0d3dce78f2627eeae91c2660",
+        "tree": "69f0a7417484e67c91abd5a22beb926e2d518f59"
+      }
+    },
+    {
+      "path": "chromium109/third_party/vulkan-deps/spirv-headers/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-vulkan-deps-spirv-headers-src.git",
+      "revision": "aaf0f0a3ee92fd61be56bec4eca7c7439bf092d3",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/KhronosGroup/SPIRV-Headers",
+        "revision": "47f2465ee3e78ec5ec38f00b2c405d9475797228",
+        "tree": "8b6a99bcc408fc80c4804a46b4d808b8e97197e4"
+      }
+    },
+    {
+      "path": "chromium109/third_party/vulkan-deps/spirv-tools/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-vulkan-deps-spirv-tools-src.git",
+      "revision": "c5465b5e07c837ab7f671b065320fad8dd881fd6",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/KhronosGroup/SPIRV-Tools",
+        "revision": "525bc38062ab082d5b540dfe9465231cfb94361d",
+        "tree": "2ac69614a5ca3f732692f3ce3368fb8dd56d968c"
+      }
+    },
+    {
+      "path": "chromium109/third_party/vulkan-deps/vulkan-headers/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-vulkan-deps-vulkan-headers-src.git",
+      "revision": "ed0e8d203fc10699de104358fb45e8395c36772a",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/KhronosGroup/Vulkan-Headers",
+        "revision": "689821914113a7e50cc8f44913699b4127b88eb3",
+        "tree": "67e6599926ec95881f1aead1d7da1151351d79bf"
+      }
+    },
+    {
+      "path": "chromium109/third_party/vulkan-deps/vulkan-loader/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-vulkan-deps-vulkan-loader-src.git",
+      "revision": "469f32e1cbd118c66d93238d9061d8d18f1738a1",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/KhronosGroup/Vulkan-Loader",
+        "revision": "6442b72aea02ed762bbcc7c649840c0a8a092237",
+        "tree": "a0754481f795abf934c497c89ef644342c1b9f0c"
+      }
+    },
+    {
+      "path": "chromium109/third_party/vulkan-deps/vulkan-tools/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-vulkan-deps-vulkan-tools-src.git",
+      "revision": "54461ae923839800caa46ce6872511823d4afe7f",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/KhronosGroup/Vulkan-Tools",
+        "revision": "6e5bd86b76c092fcd5d8a873260a8a96f43705d5",
+        "tree": "968418ca5fbc24014439f47213901675c368f988"
+      }
+    },
+    {
+      "path": "chromium109/third_party/vulkan-deps/vulkan-validation-layers/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-vulkan-deps-vulkan-validation-layers-src.git",
+      "revision": "40846626cf88888a31d4cf265d660ffe37376b3e",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/KhronosGroup/Vulkan-ValidationLayers",
+        "revision": "e09172e79c0b842a1ea2f5357e9f9d35d2be86fd",
+        "tree": "b03eb28b40567d5b56912799938394662d230f38"
+      }
+    },
+    {
+      "path": "chromium109/third_party/vulkan_memory_allocator",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-vulkan_memory_allocator.git",
+      "revision": "2cdb9587472eb70092f0bf24c27f15ffcefc7dce",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator.git",
+        "revision": "ebe84bec02c041d28f902da0214bf442743fc907",
+        "tree": "bbda13ee70747332568e153c29a31b6e75623ee5"
+      }
+    },
+    {
+      "path": "chromium109/third_party/wayland-protocols/gtk",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-wayland-protocols-gtk.git",
+      "revision": "481fcd6cdfaba7f8e18a105bdbf256bc1499c9e1",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/GNOME/gtk.git",
+        "revision": "40ebed3a03aef096addc0af09fec4ec529d882a0",
+        "tree": "5ac7da504f1b2bc42b134301c3e731fb9e7ec293"
+      }
+    },
+    {
+      "path": "chromium109/third_party/wayland-protocols/kde",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-wayland-protocols-kde.git",
+      "revision": "283bcabf1afd5f50c9bc5bd501030b352012af98",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/KDE/plasma-wayland-protocols.git",
+        "revision": "0b07950714b3a36c9b9f71fc025fc7783e82926e",
+        "tree": "d6e0c9d9cefb12afd48a534352b7ea8f5dbad95d"
+      }
+    },
+    {
+      "path": "chromium109/third_party/wayland-protocols/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-wayland-protocols-src.git",
+      "revision": "2a2d9a4e934375b1c7d1d5f80a839ce3e0be0bf2",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/anongit.freedesktop.org/git/wayland/wayland-protocols.git",
+        "revision": "83866f19d3d61b28e94d71781646466b3a6623d8",
+        "tree": "3acd8e0c69efd9993a49f8828f6ba19a3dd19be4"
+      }
+    },
+    {
+      "path": "chromium109/third_party/wayland/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-wayland-src.git",
+      "revision": "c1e7b86c11daadf75bfe92c403ec9e0a082c4f25",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/anongit.freedesktop.org/git/wayland/wayland.git",
+        "revision": "c7473676b8abc682e820546287044cee3bca9147",
+        "tree": "98935e034e203e20c69c1cce33d46763bbf37e35"
+      }
+    },
+    {
+      "path": "chromium109/third_party/webdriver/pylib",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-webdriver-pylib.git",
+      "revision": "257b7d73f06b4a241b54567b3a76a4c09d29299c",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/SeleniumHQ/selenium/py.git",
+        "revision": "fc5e7e70c098bfb189a9a74746809ad3c5c34e04",
+        "tree": "40aae5192750f52ced606eb0948d3a649e6ea825"
+      }
+    },
+    {
+      "path": "chromium109/third_party/webgl/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-webgl-src.git",
+      "revision": "846bf741ad633ad002eeed0df5ba38c635438a9e",
+      "unmaterialized_gitlinks": {
+        "sdk/devtools": "b42e702487d02d5278814e0fe2e2888d234893e6"
+      },
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/khronosgroup/webgl.git",
+        "revision": "d1b65aa5a88f6efd900604dfcda840154e9f16e2",
+        "tree": "552c6c98f24588207713560bc9eaa3812a0ddb2c"
+      }
+    },
+    {
+      "path": "chromium109/third_party/webgpu-cts/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-webgpu-cts-src.git",
+      "revision": "ca4984ff150340e58baaa53da0763fa367fa1f47",
+      "unmaterialized_gitlinks": {},
+      "lfs_paths": [],
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/gpuweb/cts.git",
+        "revision": "9eb57da4a0252044feac56418f4a306f5c66880a",
+        "tree": "1a0204a79b548ce921d82eff8047d6cd4d380bc3"
+      }
+    },
+    {
+      "path": "chromium109/third_party/webrtc",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-webrtc.git",
+      "revision": "16f024d836b92a4accde3b56a4d4372053679f64",
+      "upstream": {
+        "url": "https://webrtc.googlesource.com/src.git",
+        "revision": "4e8a5ac68e8a4ae0588f54f2fdb8cbd1eb5fa50d",
+        "tree": "b4bc7329f3226b884b8ebea6564a70d8747b1657"
+      }
+    },
+    {
+      "path": "chromium109/third_party/weston/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-weston-src.git",
+      "revision": "bbb90c471503a55ac4fdcd3f4042000244a32b87",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/anongit.freedesktop.org/git/wayland/weston.git",
+        "revision": "420cfd00f2de91de74bd9d4d8348e43c582d29f0",
+        "tree": "fd08a9078c1926abed87b3a082d67ead7d56f292"
+      }
+    },
+    {
+      "path": "chromium109/third_party/wuffs/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-wuffs-src.git",
+      "revision": "7e1c8073c9eb41e5319d11c9a2f9627c55fa7e84",
+      "upstream": {
+        "url": "https://skia.googlesource.com/external/github.com/google/wuffs-mirror-release-c.git",
+        "revision": "a8205c2fe7564b12fea81ee028ba670112cc7719",
+        "tree": "18e5f97cbf8461cf8d98f0e0437a5cc86a431be2"
+      }
+    },
+    {
+      "path": "chromium109/third_party/xdg-utils",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-xdg-utils.git",
+      "revision": "ab80a8568211aa5a51ac4930959924246926bbae",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromium/deps/xdg-utils.git",
+        "revision": "d80274d5869b17b8c9067a1022e4416ee7ed5e0d",
+        "tree": "985efc8c8a981ad889b3427d5eb1ae4311d04cf5"
+      }
+    },
+    {
+      "path": "chromium109/third_party/xnnpack/src",
+      "url": "https://github.com/a2hlab/dep-chromium109-third_party-xnnpack-src.git",
+      "revision": "f8a898e6ee6d88417732d26026a57afdb7c3e4c6",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/external/github.com/google/XNNPACK.git",
+        "revision": "a50369c0fdd15f0f35b1a91c964644327a88d480",
+        "tree": "4d936c97f1bda00bf276d76bbd3f6c0f2d04e722"
+      }
+    },
+    {
+      "path": "chromium109/tools/page_cycler/acid3",
+      "url": "https://github.com/a2hlab/dep-chromium109-tools-page_cycler-acid3.git",
+      "revision": "3aed5b98ecf55a368bf5e66c23939b732e794a34",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/chromium/deps/acid3.git",
+        "revision": "6be0a66a1ebd7ebc5abc1b2f405a945f6d871521",
+        "tree": "2c76ec8dd14e9dd7ba4011e11a3ed85350637cf2"
+      }
+    },
+    {
+      "path": "chromium109/v8",
+      "url": "https://github.com/a2hlab/dep-chromium109-v8.git",
+      "revision": "fc105601dbfef1653a270863dc3490e9755fd4d5",
+      "upstream": {
+        "url": "https://chromium.googlesource.com/v8/v8.git",
+        "revision": "2a26215a720a2b741aa8868ae7a040f78d30f46c",
+        "tree": "a0fd7d155e14e8ca3c2ab2d6f78a42a519b121a5"
+      }
+    }
+  ]
+}

@@ -17,7 +17,7 @@ def extract_tar(archive, output):
     """Extract new files only, then create validated in-tree relative symlinks."""
     links = []
     names = set()
-    with tarfile.open(archive, 'r:gz') as source:
+    with tarfile.open(archive, 'r:*') as source:
         for member in source:
             target = inside(output, member.name)
             if target == output or target in names:

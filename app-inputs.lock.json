@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "applications": {
+    "toutiao": {
+      "kind": "original-apk",
+      "package": "com.ss.android.article.news",
+      "version_name": "13.9.0",
+      "version_code": 13900,
+      "abi": "arm64-v8a",
+      "bytes": 138641340,
+      "sha256": "a1112a0c941f865847c2fab9138cf815735268fbfcd41d697412fb80992c7395",
+      "delivery": "operator-supplied",
+      "reference": "parity27-runtime-inputs.lock.json:/data/local/tmp/asx/toutiao.apk",
+      "rebuild": false,
+      "modify_or_resign": false
+    }
+  }
+}

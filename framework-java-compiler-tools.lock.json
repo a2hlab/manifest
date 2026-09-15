@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "profile": "android15-framework-dependencies",
+  "projects": [
+    {
+      "path": "android-source/external-jarjar",
+      "android_path": "external/jarjar",
+      "url": "https://github.com/a2hlab/dep-android-source-external-jarjar.git",
+      "revision": "ba6a14e85c92f8104c5cda68a265da2dad871e64",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/jarjar",
+        "revision": "836d2157fefd7d3d73b3c2aa86cc8242f4fe7137",
+        "tree": "d79fd260420ca7f26993cadb057551a2bdd75fcf"
+      }
+    },
+    {
+      "path": "android-source/external-ow2-asm",
+      "android_path": "external/ow2-asm",
+      "url": "https://github.com/a2hlab/dep-android-source-external-ow2-asm.git",
+      "revision": "f25909376dabfc7ac141fbc3f578e42ea9b5a7d2",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/ow2-asm",
+        "revision": "dfb1f2cfa1fbe8b8f1dc4f9caad7d9de07677a57",
+        "tree": "ffd50e192e697491e5aca465e6d4f89aa0be9381"
+      }
+    }
+  ]
+}

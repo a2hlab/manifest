@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "profile": "android15-framework-dependencies",
+  "projects": [
+    {
+      "path": "android-source/external-gflags",
+      "android_path": "external/gflags",
+      "url": "https://github.com/a2hlab/dep-android-source-external-gflags.git",
+      "revision": "a1533312b4a2eefd7fc9996f0b2df4dde60b59a7",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/gflags",
+        "revision": "08ab5237c114d5c0eac1090c56f941d3f639d7d3",
+        "tree": "07b9b342d4ebbd1dea2458358ee2b863898f0911"
+      }
+    },
+    {
+      "path": "android-source/external-libtextclassifier",
+      "android_path": "external/libtextclassifier",
+      "url": "https://github.com/a2hlab/dep-android-source-external-libtextclassifier.git",
+      "revision": "36494ff45107607c1ea03443daa2cc4d44f77409",
+      "upstream": {
+        "url": "https://android.googlesource.com/platform/external/libtextclassifier",
+        "revision": "9f70faf20317a399a5237c47ad9fd68fef963d0e",
+        "tree": "6f572d72ce607eb4bac43220ca1492931e29613a"
+      }
+    }
+  ]
+}

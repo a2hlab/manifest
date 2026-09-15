@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "repository_path": "inputs/rust-compiler194-linux-x64",
+  "index": {
+    "version": "1.94.0",
+    "target": "x86_64-unknown-linux-gnu",
+    "components": [
+      {
+        "name": "rustc",
+        "archive": "rustc-1.94.0-x86_64-unknown-linux-gnu.tar.xz",
+        "url": "https://static.rust-lang.org/dist/2026-03-05/rustc-1.94.0-x86_64-unknown-linux-gnu.tar.xz",
+        "sha256": "31a0d3ac9383dfdeb4fce86eeed5ade3230131c635264c0eab7252dbf235f28e",
+        "bytes": 78590076
+      },
+      {
+        "name": "cargo",
+        "archive": "cargo-1.94.0-x86_64-unknown-linux-gnu.tar.xz",
+        "url": "https://static.rust-lang.org/dist/2026-03-05/cargo-1.94.0-x86_64-unknown-linux-gnu.tar.xz",
+        "sha256": "8e17624f3de39e079845bfb25ed15a042f4b50ceca78e37c56c4b9b15949b9f7",
+        "bytes": 10986096
+      },
+      {
+        "name": "rust-std",
+        "archive": "rust-std-1.94.0-x86_64-unknown-linux-gnu.tar.xz",
+        "url": "https://static.rust-lang.org/dist/2026-03-05/rust-std-1.94.0-x86_64-unknown-linux-gnu.tar.xz",
+        "sha256": "dd33653107c36e040082050d9e547e64dac5b456ba74069430d838c00c189a05",
+        "bytes": 29809088
+      }
+    ]
+  },
+  "tree_sha256": "72e56ec2e40c8a23973ee5133d67a2cb98a4460006a13daf4e5e0351cbcc134f"
+}

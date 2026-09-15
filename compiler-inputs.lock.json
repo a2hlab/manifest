@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "projects": [
+    {
+      "path": "inputs/android-build-tools35",
+      "url": "https://github.com/a2hlab/dep-android-build-tools35-linux-x64.git",
+      "revision": "adbef458f45239d3e070038b9b91687665a160f2",
+      "lfs": true
+    }
+  ]
+}
