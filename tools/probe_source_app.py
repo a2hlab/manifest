@@ -25,6 +25,18 @@ def main():
     parser.add_argument('--serial', required=True)
     parser.add_argument('--host', default='org.westlake.imehost')
     parser.add_argument('--host-build', type=Path, help='Verified signed source host build')
+    parser.add_argument('--webview-input', type=Path,
+                        help='Hash-locked device-captured WebView payload root')
+    parser.add_argument('--source-webview-build', type=Path,
+                        help='Verified source WebView build overriding its APK and engine DSO')
+    parser.add_argument('--android-native-target', action='append', default=[],
+                        help='APK DSO basename to route through the isolated Android ABI namespace')
+    parser.add_argument('--android-native-net-target', action='append', default=[],
+                        help='Android DSO basename requiring Bionic network-structure translation')
+    parser.add_argument('--trace-runtime-lock', type=Path,
+                        help='Exact harness runtime lock for opt-in ART JNI registration tracing')
+    parser.add_argument('--trace-run-id', help='Unique structured trace run identity')
+    parser.add_argument('--trace-scenario', default='cold-launch')
     args = parser.parse_args()
     output = args.out.absolute()
     if output.exists() or not re.fullmatch(r'[a-zA-Z0-9_.]+', args.host):
@@ -43,10 +55,175 @@ def main():
         path = args.app_input.resolve() / name
         if not path.resolve().is_relative_to(args.app_input.resolve()) or digest(path) != entry['sha256']:
             raise ValueError('Changed original APK input: ' + name)
+    trace = None
+    if args.trace_runtime_lock:
+        trace = json.loads(args.trace_runtime_lock.read_text())
+        if (not args.trace_run_id or not re.fullmatch(r'[a-zA-Z0-9_.-]+', args.trace_run_id)
+                or not re.fullmatch(r'[a-zA-Z0-9_.-]+', args.trace_scenario)
+                or trace.get('target_abi') != 'arm64-v8a'
+                or not re.fullmatch(r'sha256:[0-9a-f]{64}', trace.get('runtime_lock_id', ''))):
+            raise ValueError('Trace needs an explicit valid run and ARM64 runtime lock')
+        staged_jars = {entry['name']: entry['sha256'] for entry in trace['boot_classpath']}
+        expected_jars = {
+            name.removeprefix('fw/'): entry['sha256']
+            for name, entry in framework['files'].items()
+            if name.startswith('fw/') and name.endswith('.jar')
+        }
+        staged_bridges = {entry['name']: entry['sha256'] for entry in trace['bridge_libraries']}
+        expected_bridges = {
+            name: entry['sha256'] for name, entry in framework['files'].items()
+            if name.endswith('.so')
+        }
+        if (len(staged_jars) != len(trace['boot_classpath']) or staged_jars != expected_jars
+                or len(staged_bridges) != len(trace['bridge_libraries'])
+                or staged_bridges != expected_bridges or 'libart.so' not in staged_bridges):
+            raise ValueError('Trace runtime lock does not match staged source JARs and DSOs')
+    elif args.trace_run_id:
+        raise ValueError('Trace run identity requires a verified runtime lock')
+    native_targets = sorted(set(args.android_native_target))
+    native_net_targets = sorted(set(args.android_native_net_target))
+    available_native_basenames = {
+        Path(name).name for name in app['native_libraries'] if name.endswith('.so')
+    }
+    if any(not re.fullmatch(r'lib[a-zA-Z0-9_.+-]+\.so', name)
+           or name not in available_native_basenames for name in native_targets):
+        raise ValueError('Android namespace target is not a pinned APK DSO')
+    webview_files = {}
+    webview_paths = {}
+    webview_lock_path = Path(__file__).resolve().parents[1] / 'parity27-runtime-inputs.lock.json'
+    if args.webview_input:
+        webview_lock = json.loads(webview_lock_path.read_text())
+        prefix = '/data/local/tmp/asx/'
+        webview_files = {
+            entry['path'].removeprefix(prefix): {
+                'sha256': entry['sha256'],
+                'provenance': 'device-captured',
+            }
+            for entry in webview_lock['files']
+            if entry.get('category') == 'webview' and entry['path'].startswith(prefix)
+        }
+        required = {
+            'webview-t.apk',
+            'webview-t-lib/libandroid.so',
+            'webview-t-lib/libjnigraphics.so',
+            'webview-t-lib/libwebview_bionic_shim.so',
+            'webview-t-lib/libwebviewchromium.so',
+            'webview-t-lib/libwebviewchromium_plat_support.so',
+        }
+        if (set(webview_files) != required
+                or webview_lock.get('complete_build_input_closure') is not False):
+            raise ValueError('Unexpected WebView device-input lock')
+        webview_root = args.webview_input.resolve()
+        for name, entry in webview_files.items():
+            path = webview_root / name
+            if (not path.resolve().is_relative_to(webview_root)
+                    or digest(path) != entry['sha256']):
+                raise ValueError('Changed device-captured WebView input: ' + name)
+            webview_paths[name] = path
+    source_webview_report = None
+    if args.source_webview_build:
+        if not webview_files:
+            raise ValueError('Source WebView candidate requires the locked device input as a control')
+        source_webview_root = args.source_webview_build.resolve()
+        source_webview_report_path = source_webview_root / 'artifacts.json'
+        source_webview_report = json.loads(source_webview_report_path.read_text())
+        source_names = {
+            'webview-t.apk',
+            'webview-t-lib/libandroid.so',
+            'webview-t-lib/libjnigraphics.so',
+            'webview-t-lib/libwebviewchromium.so',
+            'webview-t-lib/libwebview_bionic_shim.so',
+            'webview-t-lib/libwebviewchromium_plat_support.so',
+        }
+        if (source_webview_report.get('errors')
+                or source_webview_report.get('schema') != 'a2hlab-source-webview/v4'
+                or source_webview_report.get('package') != 'com.android.webview'
+                or source_webview_report.get('version_name') != '109.0.5414.123'
+                or source_webview_report.get('native_engine_source_build') is not True
+                or source_webview_report.get('native_engine_boundary_transformed') is not True
+                or source_webview_report.get('boundary_source_build') is not True
+                or source_webview_report.get('platform_support_source_build') is not True
+                or set(source_webview_report.get('artifacts', {})) != source_names):
+            raise ValueError('Unexpected source WebView build report')
+        for name in source_names:
+            path = source_webview_root / name
+            entry = source_webview_report['artifacts'][name]
+            if (not path.resolve().is_relative_to(source_webview_root)
+                    or digest(path) != entry['sha256'] or path.stat().st_size != entry['bytes']):
+                raise ValueError('Changed source WebView artifact: ' + name)
+            webview_paths[name] = path
+            webview_files[name] = {
+                'sha256': entry['sha256'],
+                'provenance': 'source-built',
+                'source_build_report_sha256': digest(source_webview_report_path),
+            }
+    available_net_basenames = available_native_basenames | {
+        Path(name).name for name in webview_files if name.endswith('.so')
+    }
+    if any(not re.fullmatch(r'lib[a-zA-Z0-9_.+-]+\.so', name)
+           or name not in available_net_basenames for name in native_net_targets):
+        raise ValueError('Android network ABI target is not a pinned staged DSO')
     output.mkdir(parents=True)
     state = {'scope': 'isolated source stack application startup probe', 'source_ui_accepted': False,
              'full_source_closure': False, 'framework_report_sha256': digest(args.framework_report),
              'app_input_sha256': digest(args.app_input / 'app-input.json'), 'parent': None, 'child': None}
+    if trace:
+        state['jni_registration_trace'] = {
+            'enabled': True,
+            'run_id': args.trace_run_id,
+            'scenario': args.trace_scenario,
+            'apk_sha256': app['apk_sha256'],
+            'runtime_lock_id': trace['runtime_lock_id'],
+            'runtime_lock_sha256': digest(args.trace_runtime_lock),
+            'libart_sha256': staged_bridges['libart.so'],
+            'source': 'ClassLinker::RegisterNative after effective entrypoint installation',
+        }
+    if webview_files:
+        state['webview_payload'] = {
+            'complete_build_input_closure': False,
+            'files': webview_files,
+        }
+        device_files = {name: entry for name, entry in webview_files.items()
+                        if entry['provenance'] == 'device-captured'}
+        if device_files:
+            state['webview_device_input'] = {
+                'provenance': 'device-captured',
+                'complete_build_input_closure': False,
+                'lock_sha256': digest(webview_lock_path),
+                'files': device_files,
+            }
+        if source_webview_report is not None:
+            state['webview_source_build'] = {
+                'report_sha256': digest(source_webview_report_path),
+                'native_engine_source_build': True,
+                'native_engine_boundary_transformed': True,
+                'boundary_source_build': True,
+                'java_runtime_dependencies_source_complete':
+                    source_webview_report['java_runtime_dependencies_source_complete'],
+                'complete_build_input_closure':
+                    source_webview_report['complete_build_input_closure'],
+                'files': {name: entry for name, entry in webview_files.items()
+                          if entry['provenance'] == 'source-built'},
+            }
+    if native_targets:
+        if not webview_files:
+            raise ValueError('Android ABI namespace currently requires the locked bionic boundary input')
+        state['android_native_namespace'] = {
+            'selection': 'explicit APK DSO basenames',
+            'targets': native_targets,
+            'bionic_boundary': 'webview-t-lib/libwebview_bionic_shim.so',
+            'bionic_boundary_provenance':
+                webview_files['webview-t-lib/libwebview_bionic_shim.so']['provenance'],
+        }
+    if native_net_targets:
+        if 'libandroid_native_network_compat.so' not in framework.get('files', {}):
+            raise ValueError('Android network ABI targets require the source translator')
+        state['android_native_network_boundary'] = {
+            'selection': 'explicit Android DSO basenames',
+            'targets': native_net_targets,
+            'translator': 'libandroid_native_network_compat.so',
+            'translator_provenance': 'source-built',
+        }
 
     def save():
         (output / 'device-report.json').write_text(json.dumps(state, indent=2) + '\n')
@@ -154,18 +331,26 @@ def main():
     copied = {runtime + '/' + n: e['sha256'] for n, e in framework['files'].items()}
     if hashes(sorted(copied)) != copied:
         raise ValueError('Candidate source copy changed')
-    archive = output / 'original-app.tar'
+    archive = output / 'launch-inputs.tar'
     with tarfile.open(archive, 'w') as tar:
         for name in sorted(app_files):
             tar.add(args.app_input / name, arcname=name, recursive=False)
+        if webview_files:
+            for name in sorted(webview_files):
+                tar.add(webview_paths[name], arcname=name, recursive=False)
     send(archive, stage + '/' + archive.name)
-    shell('tar -xf ' + stage + '/original-app.tar -C ' + runtime)
+    shell('tar -xf ' + stage + '/' + archive.name + ' -C ' + runtime)
     expected_app = {runtime + '/' + n: e['sha256'] for n, e in app_files.items()}
     if hashes(sorted(expected_app)) != expected_app:
         raise ValueError('Candidate original APK files changed')
+    if webview_files:
+        expected_webview = {runtime + '/' + n: e['sha256'] for n, e in webview_files.items()}
+        if hashes(sorted(expected_webview)) != expected_webview:
+            raise ValueError('Candidate WebView files changed')
     shell('mkdir -p ' + runtime + '/private-tmp/asx ' + runtime + '/data/dalvik-cache/arm64 ' +
           runtime + '/app-data/' + package + '/code_cache/art-volatile ' +
           runtime + '/app-data/' + package + '/app_webview ' + runtime + '/app-data/' + args.host +
+          (' ' + runtime + '/webview-t-data' if webview_files else '') +
           ' && chown -R ' + str(uid) + ':' + str(uid) + ' ' + runtime +
           ' && chmod 755 ' + runtime + '/appspawn-x')
     for name in helpers:
@@ -186,6 +371,8 @@ def main():
     search = [logical, '/system/lib64', '/system/lib64/platformsdk', '/system/lib64/chipset-sdk',
               '/system/lib64/chipset-sdk-sp', '/system/lib64/ndk', '/vendor/lib64/chipsetsdk',
               '/vendor/lib64/hw', '/vendor/lib64', logical + '/lib/arm64-v8a']
+    if webview_files:
+        search.append(logical + '/webview-t-lib')
     env = {'WESTLAKE_RUNTIME_ROOT': logical, 'LD_LIBRARY_PATH': ':'.join(search),
            'WESTLAKE_SOURCE_LOG_STDERR': '1',
            'WESTLAKE_SOURCE_PACKAGE': '1',
@@ -210,10 +397,54 @@ def main():
            # Runtime::CreateJit(); this reaches it without rebuilding libart.
            'APPSPAWNX_JIT_BASELINE': '1',
            'WESTLAKE_OH_JIT_FILE_CACHE_DIR': '/data/data/' + package + '/code_cache/art-volatile'}
+    if trace:
+        env.update({
+            'WESTLAKE_TRACE_JNI_REGISTRATION': '1',
+            'WESTLAKE_TRACE_RUN_ID': args.trace_run_id,
+            'WESTLAKE_TRACE_SCENARIO': args.trace_scenario,
+            'WESTLAKE_TRACE_APK_SHA256': app['apk_sha256'],
+            'WESTLAKE_TRACE_RUNTIME_LOCK_ID': trace['runtime_lock_id'],
+            'WESTLAKE_TRACE_LIBART_SHA256': staged_bridges['libart.so'],
+        })
+    preloads = []
+    if native_net_targets:
+        preloads.append(logical + '/libandroid_native_network_compat.so')
+        env.update({
+            'WESTLAKE_ANDROID_NATIVE_NET_TARGETS': ':'.join(native_net_targets),
+            'WESTLAKE_TRACE_ANDROID_NATIVE_NET': '1',
+        })
+    if webview_files:
+        preloads.append(logical + '/webview-t-lib/libwebview_bionic_shim.so')
+        env.update({
+            'ASX_WEBVIEW_APK': logical + '/webview-t.apk',
+            'ASX_WEBVIEW_LIB_DIR': logical + '/webview-t-lib',
+            'ASX_WEBVIEW_DATA_DIR': logical + '/webview-t-data',
+        })
+    if preloads:
+        env['LD_PRELOAD'] = ':'.join(preloads)
+    if native_targets:
+        # Android NDK libc++ uses std::__ndk1 while the OH platform C++ runtime
+        # uses a different ABI. Route only launcher-selected APK DSOs through
+        # ART's generic isolated namespace and let their DT_NEEDED graph select
+        # the APK's own libc++_shared.so. The bionic boundary is preloaded in
+        # that namespace; OH-native framework DSOs stay in the parent namespace.
+        namespace_search = [logical + '/lib/arm64-v8a', logical + '/webview-t-lib',
+                            logical, '/system/lib64/ndk', '/system/lib64/platformsdk',
+                            '/system/lib64/chipset-sdk-sp', '/system/lib64']
+        env.update({
+            'WESTLAKE_ANDROID_NATIVE_TARGETS': ':'.join(native_targets),
+            'WESTLAKE_ANDROID_NATIVE_SEARCH_PATH': ':'.join(namespace_search),
+            'WESTLAKE_ANDROID_NATIVE_INHERIT':
+                'libc.so:libdl.so:libm.so:libz.so:liblog.so',
+            'WESTLAKE_ANDROID_NATIVE_PRELOAD':
+                logical + '/webview-t-lib/libwebview_bionic_shim.so',
+        })
     if 'liboh_permission_queries.so' in framework['files']:
         env['WESTLAKE_PERMISSION_HELPER_PATH'] = logical + '/liboh_permission_queries.so'
     if 'liboh_account_state.so' in framework['files']:
         env['WESTLAKE_ACCOUNT_HELPER_PATH'] = logical + '/liboh_account_state.so'
+    if 'liboh_connectivity_state.so' in framework['files']:
+        env['WESTLAKE_CONNECTIVITY_HELPER_PATH'] = logical + '/liboh_connectivity_state.so'
     script = output / 'run.sh'
     script.write_text('#!/system/bin/sh\nset -eu\ncd ' + logical + '\n' +
                       ''.join('export ' + k + '=' + shlex.quote(v) + '\n' for k, v in env.items()) +

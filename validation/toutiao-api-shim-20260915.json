@@ -1,0 +1,51 @@
+{
+  "schema": "a2hlab-toutiao-api-shim-local-candidate/v1",
+  "date": "2026-09-15",
+  "westlake_source_revision": "75d82d53ca11ca5e0796777bdfdab4f34faf70a6",
+  "application": {
+    "package": "com.ss.android.article.news",
+    "version": "13.9.0",
+    "sha256": "a1112a0c941f865847c2fab9138cf815735268fbfcd41d697412fb80992c7395",
+    "provenance": "separately supplied unchanged APK; not source-built"
+  },
+  "scanner": {
+    "revision": "3283cc9f65a473a9d83e511cc5470b724092b3ad",
+    "runtime_lock_id": "sha256:bb6278943338cbc4144d8e11dd129bd347b9afba365eeaa2f8f221d4d7cfb96d",
+    "scan_sha256": "4354b0a0fdd5e8e4aef5c1a1c181e6fc83e3c8c637e2a4f45736b1002e086055",
+    "boot_jars": 9,
+    "source_runtime_dsos": 48,
+    "runtime_classes": 54042,
+    "duplicate_classes": 0,
+    "missing_referenced_methods": 0,
+    "missing_referenced_fields": 0,
+    "missing_zero_reference_classes": 11,
+    "hollow_body_candidates": 424,
+    "existence_probes": 32,
+    "native_declarations_without_complete_static_binding_evidence": 1944
+  },
+  "source_build": {
+    "oh_connectivity_helper_sha256": "c0cfb72f861be7f1ca880c3d54d7cf1eda296c224be9c033b76def728bf0b5b6",
+    "adapter_runtime_bcp_jar_sha256": "89c248b44f24ddd15a2633d1a6b3f78206613ae2740f4d99fb59aeb972444e96",
+    "framework_boot_artifacts": 27,
+    "build_artifact_hash_mismatches": 0
+  },
+  "local_validation": {
+    "manifest_tests_passed": 27,
+    "westlake_tests_passed": 9,
+    "scanner_known_answer_tests_passed": 7,
+    "network_snapshot_host_contract_passed": true,
+    "media_session_local_binder_host_contract_passed": true,
+    "staged_diff_check_passed_excluding_locked_patch_context": true,
+    "framework_patch_sha256_verified": true,
+    "framework_patch_reverse_apply_check_passed": true
+  },
+  "device_validation": {
+    "hdc_targets": "[Empty]",
+    "candidate_deployed": false,
+    "candidate_device_accepted": false,
+    "network_timeout_loss_reconnect_accepted": false,
+    "source_ui_accepted": false
+  },
+  "fresh_checkout_with_this_pin_verified": false,
+  "complete_source_build": false
+}

@@ -32,9 +32,10 @@ file-cache/runtime fixes, portable controls, benchmark verification and binary
 dependency inventories. It retains the full-build gate.
 
 The [2026-09-14 fresh-checkout record](reports/fresh-checkout-20260914.json)
-verifies that the `source-stack-closure` branch can fetch every pinned a2hlab
+verifies that the then-current `source-stack-closure` branch could fetch its pinned a2hlab
 repository, install both toolchains and rebuild the documented `native`, `apps`
-and `art` profiles from a new workspace. The `full` profile still exits 2 and
+and `art` profiles from a new workspace. The newer `main` source pin needs its
+own fresh-checkout run. The `full` profile still exits 2 and
 refuses historical binary fallback; this is component reproducibility, not a
 fresh end-to-end Toutiao run.
 
@@ -52,7 +53,7 @@ replace a clone with its LFS objects. SDK native metadata is
 6.1.0.31/API23; app bytecode explicitly targets API20 for the legacy device.
 
 ```sh
-git clone --branch source-stack-closure --single-branch https://github.com/a2hlab/manifest.git a2hlab-manifest
+git clone --branch main --single-branch https://github.com/a2hlab/manifest.git a2hlab-manifest
 cd a2hlab-manifest
 python3 tools/fetch_sources.py --workspace /absolute/new-a2hlab-workspace
 python3 tools/install_toolchains.py --workspace /absolute/new-a2hlab-workspace

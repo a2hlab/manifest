@@ -55,6 +55,45 @@ class NativeComposition(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Unused replacement'):
             compose([build], {'libprovider.so'}, self.root / 'out')
 
+    def test_composed_runtime_can_be_composed_again(self):
+        build = self.root / 'nested'
+        (build / 'lib').mkdir(parents=True)
+        content = b'nested-provider'
+        (build / 'lib/libprovider.so').write_bytes(content)
+        report = {'errors': [], 'artifacts': {'libprovider.so': {
+            'bytes': len(content), 'sha256': hashlib.sha256(content).hexdigest(),
+            'path': 'lib/libprovider.so'}}}
+        (build / 'artifacts.json').write_text(json.dumps(report))
+        first = self.root / 'first'
+        first_report = compose([build], set(), first)
+        self.assertNotIn('path', first_report['artifacts']['libprovider.so'])
+        second = self.root / 'second'
+        compose([first], set(), second)
+        self.assertEqual((second / 'libprovider.so').read_bytes(), content)
+
+    def test_replacement_build_consumes_only_declared_replacements(self):
+        before = self.build('old', b'old')
+        companion = b'accepted-companion'
+        (before / 'libcompanion.so').write_bytes(companion)
+        report = json.loads((before / 'artifacts.json').read_text())
+        report['artifacts']['libcompanion.so'] = {
+            'bytes': len(companion), 'sha256': hashlib.sha256(companion).hexdigest()}
+        (before / 'artifacts.json').write_text(json.dumps(report))
+
+        after = self.build('new', b'new')
+        rejected_companion = b'unselected-companion'
+        (after / 'libcompanion.so').write_bytes(rejected_companion)
+        report = json.loads((after / 'artifacts.json').read_text())
+        report['artifacts']['libcompanion.so'] = {
+            'bytes': len(rejected_companion),
+            'sha256': hashlib.sha256(rejected_companion).hexdigest()}
+        (after / 'artifacts.json').write_text(json.dumps(report))
+
+        out = self.root / 'out'
+        compose([before], {'libprovider.so'}, out, [after])
+        self.assertEqual((out / 'libprovider.so').read_bytes(), b'new')
+        self.assertEqual((out / 'libcompanion.so').read_bytes(), companion)
+
 
 if __name__ == '__main__':
     unittest.main()

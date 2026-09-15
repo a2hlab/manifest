@@ -22,7 +22,7 @@ APK or reused output directory is rejected.
 
 ## Implemented source build paths
 
-Use the `source-stack-closure` branch while this work is in review. Bootstrap
+Use the merged `main` branch. Bootstrap
 `sources.lock.json` and the standard toolchains as described in README.md, then
 fetch each additional lock once into the same workspace:
 
