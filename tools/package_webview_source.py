@@ -356,7 +356,7 @@ def main():
             [str(readelf), '--dyn-syms', '--wide',
              str(framework_runtime / 'libhwui.so')], text=True)
     for symbol in ['ALooper_acquire', 'ALooper_addFd', 'ALooper_forThread',
-                   'ALooper_prepare', 'ALooper_release', 'ALooper_removeFd',
+                   'ALooper_prepare', 'ALooper_release', 'ALooper_removeFd', 'ALooper_wake',
                    'ANativeWindow_acquire', 'ANativeWindow_fromSurface',
                    'ANativeWindow_getFormat', 'ANativeWindow_release']:
         if not re.search(r'\b' + re.escape(symbol) + r'$', libandroid_symbols,
