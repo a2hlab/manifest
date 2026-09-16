@@ -1,9 +1,13 @@
 # Verification evidence
 
-All records here describe the September5 source rebuild under `a2hlab`.
-No raw device/app logs, account data, signing keys or binary build outputs are
-committed. Files were re-hashed by `tools/compare_builds.py`, not accepted solely
-because two prewritten hash manifests matched.
+The repeatability and provider-gap records below describe the September 5
+source rebuild under `a2hlab`. The later
+[`toutiao-api-board-gaps-20260915.md`](toutiao-api-board-gaps-20260915.md)
+records the restored OH board's unchanged-APK API-shim probe and its remaining
+proof gaps. No raw device/app logs, account data, signing keys or binary build
+outputs are committed. September 5 files were re-hashed by
+`tools/compare_builds.py`, not accepted solely because two prewritten hash
+manifests matched.
 
 The two builds used distinct source and output roots. The second workspace
 fetched the exact locked commits from GitHub/public upstream and applied only

@@ -5,6 +5,11 @@ platform, with Toutiao supplied as an unchanged, content-locked application.
 Toutiao application source is **not required**. The APK is never decompiled,
 patched, re-signed, or used to compile framework classes.
 
+The September 15 restored-board API-shim result and remaining proof gaps are
+recorded in [the board report](reports/toutiao-api-board-gaps-20260915.md).
+The unchanged APK reached a populated feed, while full source/UI acceptance
+remains false and the OH network helper still used kernel-route fallback.
+
 `app-inputs.lock.json` pins `com.ss.android.article.news` version 13.9.0
 (versionCode 13900), 138641340 bytes, SHA-256
 `a1112a0c941f865847c2fab9138cf815735268fbfcd41d697412fb80992c7395`.
