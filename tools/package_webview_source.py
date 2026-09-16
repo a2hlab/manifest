@@ -358,7 +358,10 @@ def main():
     for symbol in ['ALooper_acquire', 'ALooper_addFd', 'ALooper_forThread',
                    'ALooper_prepare', 'ALooper_release', 'ALooper_removeFd', 'ALooper_wake',
                    'ANativeWindow_acquire', 'ANativeWindow_fromSurface',
-                   'ANativeWindow_getFormat', 'ANativeWindow_release']:
+                   'ANativeWindow_getFormat', 'ANativeWindow_getHeight',
+                   'ANativeWindow_getWidth', 'ANativeWindow_lock',
+                   'ANativeWindow_release', 'ANativeWindow_setBuffersGeometry',
+                   'ANativeWindow_unlockAndPost']:
         if not re.search(r'\b' + re.escape(symbol) + r'$', libandroid_symbols,
                          re.MULTILINE):
             raise ValueError('Source libandroid export missing: ' + symbol)
