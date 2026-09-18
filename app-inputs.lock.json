@@ -13,6 +13,26 @@
       "reference": "parity27-runtime-inputs.lock.json:/data/local/tmp/asx/toutiao.apk",
       "rebuild": false,
       "modify_or_resign": false
+    },
+    "mcdonalds": {
+      "kind": "original-apk-with-splits",
+      "package": "com.mcdonalds.app",
+      "version_name": "26.31.1",
+      "version_code": null,
+      "abi": "arm64-v8a",
+      "bytes": 185384948,
+      "sha256": "2fdb9b0be1d4f7cd61854c18d6a180e915e68d521d87d17ff193f969b1e89f72",
+      "splits": [
+        {
+          "name": "split_config.arm64_v8a.apk",
+          "bytes": 41710702,
+          "sha256": "9956b2a7acd066f59adcb2193ea4cc6ff19c91cf5d2fc3e95f952e2815c7bee4"
+        }
+      ],
+      "delivery": "operator-supplied",
+      "reference": "/home/dspfac/mcdonalds-apk (base.apk + split_config.arm64_v8a.apk); extractNativeLibs=false, libraries stored uncompressed in the ABI split",
+      "rebuild": false,
+      "modify_or_resign": false
     }
   }
 }
