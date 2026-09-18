@@ -37,6 +37,10 @@ def main():
                         help='Exact harness runtime lock for opt-in ART JNI registration tracing')
     parser.add_argument('--trace-run-id', help='Unique structured trace run identity')
     parser.add_argument('--trace-scenario', default='cold-launch')
+    parser.add_argument('--app', default='toutiao', help='application key in app-inputs.lock.json')
+    parser.add_argument('--launch-activity',
+                        help='fully qualified launch activity; defaults to the pinned entry, '
+                             'then to <package>.activity.MainActivity')
     args = parser.parse_args()
     output = args.out.absolute()
     if output.exists() or not re.fullmatch(r'[a-zA-Z0-9_.]+', args.host):
@@ -44,13 +48,27 @@ def main():
     framework = json.loads(args.framework_report.read_text())
     app = json.loads((args.app_input / 'app-input.json').read_text())
     lock = json.loads((Path(__file__).resolve().parents[1] / 'app-inputs.lock.json').read_text())
+    if args.app not in lock['applications']:
+        raise ValueError('Unknown application: ' + args.app)
     if (not framework['passed'] or app['apk_modified'] or
-            app['application'] != lock['applications']['toutiao']):
+            app['application'] != lock['applications'][args.app]):
         raise ValueError('Expected accepted framework probe and pinned original APK')
     package = app['application']['package']
     if not re.fullmatch(r'[a-zA-Z0-9_.]+', package):
         raise ValueError('Invalid application package')
-    app_files = {'toutiao.apk': {'sha256': app['apk_sha256']}, **app['native_libraries']}
+    base_apk = args.app + '.apk'
+    launch_activity = (args.launch_activity
+                       or app['application'].get('launch_activity')
+                       or package + '.activity.MainActivity')
+    if not re.fullmatch(r'[a-zA-Z0-9_.$]+', launch_activity):
+        raise ValueError('Invalid launch activity: ' + launch_activity)
+    # Split APKs carry no code, but the density and language splits own the
+    # resources: McDonald's keeps 886 drawables and its own resources.arsc in
+    # split_config.xxxhdpi.apk. Every split must reach the asset manager or the
+    # app comes up unable to resolve most of its own resources.
+    split_apks = {item['staged']: {'sha256': item['sha256']}
+                  for item in (app.get('splits') or {}).values()}
+    app_files = {base_apk: {'sha256': app['apk_sha256']}, **split_apks, **app['native_libraries']}
     for name, entry in app_files.items():
         path = args.app_input.resolve() / name
         if not path.resolve().is_relative_to(args.app_input.resolve()) or digest(path) != entry['sha256']:
@@ -379,7 +397,9 @@ def main():
            'WESTLAKE_TRACE_NATIVE_LOADER': '1',
            'ASX_RUNTIME_OWNER_UID': str(uid), 'ASX_LAUNCH_PKG': package,
            'ASX_NATIVE_LIB_DIR': logical + '/lib/arm64-v8a',
-           'ASX_APK_PATH': logical + '/toutiao.apk', 'ASX_LAUNCH_ACTIVITY': package + '.activity.MainActivity',
+           'ASX_APK_PATH': logical + '/' + base_apk,
+           'ASX_SPLIT_APK_PATHS': ':'.join(logical + '/' + name for name in sorted(split_apks)),
+           'ASX_LAUNCH_ACTIVITY': launch_activity,
            'ASX_DIRECT_LAUNCH': '1', 'ASX_KEEP_THEME': '1', 'ASX_DIAG_THROWABLE': '1',
            'ASX_WEBVIEW_DATA_DIR': '/data/data/' + package + '/app_webview',
            'WL_PARENT_ID': str(window), 'WL_SUB_WINDOW': '1', 'WL_FOCUSABLE': '1',

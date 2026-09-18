@@ -32,7 +32,8 @@
       "delivery": "operator-supplied",
       "reference": "/home/dspfac/mcdonalds-apk (base.apk + split_config.arm64_v8a.apk); extractNativeLibs=false, libraries stored uncompressed in the ABI split",
       "rebuild": false,
-      "modify_or_resign": false
+      "modify_or_resign": false,
+      "launch_activity": "com.mcdonalds.mcdcoreapp.common.activity.SplashActivity"
     }
   }
 }
