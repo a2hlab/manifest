@@ -27,13 +27,83 @@
           "name": "split_config.arm64_v8a.apk",
           "bytes": 41710702,
           "sha256": "9956b2a7acd066f59adcb2193ea4cc6ff19c91cf5d2fc3e95f952e2815c7bee4"
+        },
+        {
+          "name": "split_config.xxxhdpi.apk",
+          "bytes": 15880740,
+          "sha256": "fba543f8706034eda58f8ebaae26d64b2a5daf804fbde457b0357db134e9aebd"
+        },
+        {
+          "name": "split_config.en.apk",
+          "bytes": 827801,
+          "sha256": "a4c2735c7de4517f26fd5e614550f4f4c65d3b859b0180a15dfe53986ac16641"
         }
       ],
       "delivery": "operator-supplied",
-      "reference": "/home/dspfac/mcdonalds-apk (base.apk + split_config.arm64_v8a.apk); extractNativeLibs=false, libraries stored uncompressed in the ABI split",
+      "reference": "mcdonalds-apk (base.apk + arm64_v8a, xxxhdpi and en splits); extractNativeLibs=false, libraries stored uncompressed in the ABI split; the density split carries 886 drawables and its own resources.arsc",
       "rebuild": false,
       "modify_or_resign": false,
       "launch_activity": "com.mcdonalds.mcdcoreapp.common.activity.SplashActivity"
+    },
+    "service-metadata-probe": {
+      "kind": "original-apk",
+      "package": "org.westlake.probe.defaultinterface",
+      "version_name": "1.0",
+      "version_code": 1,
+      "abi": "arm64-v8a",
+      "bytes": 12631,
+      "sha256": "96aee03964545692e6b04358eb55d2521357a4a86638ad26dfef02a0d57fbced",
+      "delivery": "harness-built white-box probe (westlake-harness probes/service-metadata)",
+      "reference": "isolates the PackageManager.getServiceInfo(GET_META_DATA) contract behind Firebase component discovery",
+      "rebuild": false,
+      "modify_or_resign": false,
+      "launch_activity": "org.westlake.probe.defaultinterface.MainActivity",
+      "pure_java": true
+    },
+    "provider-manifest-probe": {
+      "kind": "original-apk",
+      "package": "org.westlake.probe.providers",
+      "version_name": "1.0",
+      "version_code": 1,
+      "abi": "arm64-v8a",
+      "pure_java": true,
+      "bytes": 12691,
+      "sha256": "cc6571e948b07de5ef5319493c160944be6b1c60ea7122465f307cda877caad4",
+      "delivery": "harness-built white-box probe (westlake-harness probes/provider-manifest)",
+      "reference": "single-contract conformance probe; see the probe README",
+      "rebuild": false,
+      "modify_or_resign": false,
+      "launch_activity": "org.westlake.probe.providers.MainActivity"
+    },
+    "running-app-processes-probe": {
+      "kind": "original-apk",
+      "package": "org.westlake.probe.runningprocesses",
+      "version_name": "1.0",
+      "version_code": 1,
+      "abi": "arm64-v8a",
+      "pure_java": true,
+      "bytes": 12631,
+      "sha256": "259cb2c4b3aba8c9d98e4575dd87b1b8e8eea8bc50976e364a174e88d519b302",
+      "delivery": "harness-built white-box probe (westlake-harness probes/running-app-processes)",
+      "reference": "single-contract conformance probe; see the probe README",
+      "rebuild": false,
+      "modify_or_resign": false,
+      "launch_activity": "org.westlake.probe.runningprocesses.MainActivity"
+    },
+    "signin-layout-probe": {
+      "kind": "original-apk",
+      "package": "org.westlake.probe.signinlayout",
+      "version_name": "1.0",
+      "version_code": 1,
+      "abi": "arm64-v8a",
+      "pure_java": true,
+      "bytes": 74226,
+      "sha256": "f384476fb60d66600aa0e7f1a1f21fb8487c63c96fe341fea2188f0514e237ca",
+      "delivery": "harness-built white-box probe (westlake-harness probes/signin-layout)",
+      "reference": "McDonald's sign-in sheet rebuilt in code: same view classes, asset typefaces, gradient borders; verdict after first draw",
+      "rebuild": false,
+      "modify_or_resign": false,
+      "launch_activity": "org.westlake.probe.signinlayout.MainActivity"
     }
   }
 }

@@ -59,7 +59,9 @@ def prepare(apk, output, entry, app='toutiao', splits=()):
     for archive_path in [staged, *(output / item['staged'] for item in staged_splits.values())]:
         with zipfile.ZipFile(archive_path) as archive:
             extract_libraries(archive, archive_path.name, output, prefix, libraries)
-    if not libraries:
+    # A pure-Java application (the white-box probes) ships no native code; the lock says so
+    # explicitly rather than the stager guessing from an empty archive.
+    if not libraries and not entry.get('pure_java'):
         raise ValueError('Pinned APK and splits have no libraries for ' + entry['abi'])
     record = {'schema': 1, 'application': entry, 'apk_sha256': digest(staged),
               'apk_modified': False, 'native_libraries': libraries,

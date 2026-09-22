@@ -371,6 +371,14 @@ def main():
           (' ' + runtime + '/webview-t-data' if webview_files else '') +
           ' && chown -R ' + str(uid) + ':' + str(uid) + ' ' + runtime +
           ' && chmod 755 ' + runtime + '/appspawn-x')
+    # The app's own /data/data/<package> must exist and belong to the app uid before launch.
+    # /data/data is drwxrwx--x system:system, so the child cannot create it, and the direct-launch
+    # path's File(dataDir).mkdirs() sits inside a catch-and-ignore: the failure is silent and the
+    # app only finds out when something reaches for storage. Realm does, with mkfifo, and reports
+    # EACCES from deep inside onResume, which is a long way from the cause.
+    shell('mkdir -p /data/data/' + package + '/files /data/data/' + package + '/cache' +
+          ' && chown -R ' + str(uid) + ':' + str(uid) + ' /data/data/' + package +
+          ' && chmod 700 /data/data/' + package)
     for name in helpers:
         send(output / name, stage + '/' + name)
     shell('chmod 755 ' + stage + '/source_app_namespace ' + stage + '/host_spawn')
