@@ -165,6 +165,100 @@
       "rebuild": false,
       "modify_or_resign": false,
       "launch_activity": "org.westlake.probe.assets.MainActivity"
+    },
+    "subwaysurfers": {
+      "kind": "original-apk-with-splits",
+      "package": "com.kiloo.subwaysurf",
+      "version_name": "3.69.1",
+      "version_code": 0,
+      "abi": "arm64-v8a",
+      "pure_java": false,
+      "bytes": 207711321,
+      "sha256": "5904cda2c0f2a8898f49c06eef80df13f864be9d874370ac6430c427d34a2a4b",
+      "delivery": "APKPure via apkeep 0.18.0, arch arm64-v8a",
+      "reference": "harness validation corpus 2026-09-23: Unity IL2CPP game",
+      "rebuild": false,
+      "modify_or_resign": false,
+      "launch_activity": "com.sybogames.chili.multidex.ChiliMultidexSupportActivity",
+      "splits": [
+        {
+          "name": "config.arm64_v8a.apk",
+          "bytes": 33490860,
+          "sha256": "dc45bea9ef0a7efdedbbf6eb11f023789c1dee67341599c54dda7873a2777c35"
+        }
+      ]
+    },
+    "firefox": {
+      "kind": "original-apk-with-splits",
+      "package": "org.mozilla.firefox",
+      "version_name": "156.0",
+      "version_code": 0,
+      "abi": "arm64-v8a",
+      "pure_java": false,
+      "bytes": 49561150,
+      "sha256": "eba96cc660d0a49116db37c97535d01d809b21e217d4f24909eb33bf912882fc",
+      "delivery": "APKPure via apkeep 0.18.0, arch arm64-v8a",
+      "reference": "harness validation corpus 2026-09-23: Gecko browser with its own multiprocess model",
+      "rebuild": false,
+      "modify_or_resign": false,
+      "launch_activity": "org.mozilla.fenix.HomeActivity",
+      "splits": [
+        {
+          "name": "config.arm64_v8a.apk",
+          "bytes": 198796782,
+          "sha256": "6bbda34bfa4c5310b255e369b66e566324d0279cddb337efd8311b1b7ba209e7"
+        },
+        {
+          "name": "config.xhdpi.apk",
+          "bytes": 91556,
+          "sha256": "de168355ca86150a2cde355b3286a1be47aa7b996e0abce29a81267b8669867c"
+        }
+      ]
+    },
+    "vlc": {
+      "kind": "original-apk",
+      "package": "org.videolan.vlc",
+      "version_name": "3.7.1",
+      "version_code": 0,
+      "abi": "arm64-v8a",
+      "pure_java": false,
+      "bytes": 47990842,
+      "sha256": "c493c167de52724dbdd727fd6e20ec43d89200a847fb7b7d88da850faf336bcd",
+      "delivery": "APKPure via apkeep 0.18.0, arch arm64-v8a",
+      "reference": "harness validation corpus 2026-09-23: native C/C++ media stack",
+      "rebuild": false,
+      "modify_or_resign": false,
+      "launch_activity": "org.videolan.vlc.StartActivity"
+    },
+    "wikipedia": {
+      "kind": "original-apk",
+      "package": "org.wikipedia",
+      "version_name": "r/50606-r-2026-09-09",
+      "version_code": 0,
+      "abi": "arm64-v8a",
+      "pure_java": false,
+      "bytes": 82518241,
+      "sha256": "eba82a0f77940d8a6be5bd2e53723675a59859a6c8a51be5e50bd034fc77101f",
+      "delivery": "F-Droid repo (arm64 build; APKPure's arm64 bundle for these ships armeabi-v7a)",
+      "reference": "harness validation corpus 2026-09-23: Java/Kotlin control, native map library",
+      "rebuild": false,
+      "modify_or_resign": false,
+      "launch_activity": "org.wikipedia.main.MainActivity"
+    },
+    "localsend": {
+      "kind": "original-apk",
+      "package": "org.localsend.localsend_app",
+      "version_name": "1.18.2",
+      "version_code": 0,
+      "abi": "arm64-v8a",
+      "pure_java": false,
+      "bytes": 46558706,
+      "sha256": "82ec3568fba2aa5295b9aae8b76f701d7a4703d86b9f8bad749472038fbaeab3",
+      "delivery": "F-Droid repo (arm64 build; APKPure's arm64 bundle for these ships armeabi-v7a)",
+      "reference": "harness validation corpus 2026-09-23: Flutter engine",
+      "rebuild": false,
+      "modify_or_resign": false,
+      "launch_activity": "org.localsend.localsend_app.MainActivity"
     }
   }
 }
