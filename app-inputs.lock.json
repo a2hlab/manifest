@@ -150,6 +150,21 @@
       "rebuild": false,
       "modify_or_resign": false,
       "launch_activity": "com.emn8.mobilem8.nativeapp.bk.MainActivity"
+    },
+    "asset-list-probe": {
+      "kind": "original-apk",
+      "package": "org.westlake.probe.assets",
+      "version_name": "1.0",
+      "version_code": 1,
+      "abi": "arm64-v8a",
+      "pure_java": true,
+      "bytes": 12831,
+      "sha256": "7eb6b6e8bca2b71c7621b03b63c8e6d21bc69218cd6f5f2085519cdbbb3ba610",
+      "delivery": "harness-built white-box probe (westlake-harness probes/asset-list)",
+      "reference": "an app must find its own asset files by listing, not only by opening: McDonald's reads every configuration file only if getAssets().list(\"\") contains its name",
+      "rebuild": false,
+      "modify_or_resign": false,
+      "launch_activity": "org.westlake.probe.assets.MainActivity"
     }
   }
 }
