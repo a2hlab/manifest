@@ -27,6 +27,9 @@ def main():
     parser.add_argument('--host-build', type=Path, help='Verified signed source host build')
     parser.add_argument('--webview-input', type=Path,
                         help='Hash-locked device-captured WebView payload root')
+    parser.add_argument('--bionic-shim-build', type=Path,
+                        help='Source-built libwebview_bionic_shim.so replacing the device-captured '
+                             'copy in --webview-input (the captured copy predates the loader refusals)')
     parser.add_argument('--source-webview-build', type=Path,
                         help='Verified source WebView build overriding its APK and engine DSO')
     parser.add_argument('--android-native-target', action='append', default=[],
@@ -138,6 +141,22 @@ def main():
                     or digest(path) != entry['sha256']):
                 raise ValueError('Changed device-captured WebView input: ' + name)
             webview_paths[name] = path
+    if args.bionic_shim_build:
+        # The WebView input's bionic shim is also the ABI boundary preloaded for the APK's own
+        # native libraries. The device-captured copy predates the refusal of self-trapping
+        # libraries (Akamai's libakamaibmp.so raises an uncatchable SIGILL on load), so a
+        # source-built shim replaces it, hash-checked like every other input.
+        if not webview_files:
+            raise ValueError('A bionic shim build replaces the WebView input shim: pass --webview-input')
+        shim_root = args.bionic_shim_build.resolve()
+        shim_report = json.loads((shim_root / 'artifacts.json').read_text())
+        shim_entry = shim_report['artifacts']['libwebview_bionic_shim.so']
+        shim_path = shim_root / 'libwebview_bionic_shim.so'
+        if shim_report.get('errors') or digest(shim_path) != shim_entry['sha256']:
+            raise ValueError('Changed or failed bionic shim build')
+        webview_files['webview-t-lib/libwebview_bionic_shim.so'] = {
+            'sha256': shim_entry['sha256'], 'provenance': 'source-built'}
+        webview_paths['webview-t-lib/libwebview_bionic_shim.so'] = shim_path
     source_webview_report = None
     if args.source_webview_build:
         if not webview_files:
@@ -371,14 +390,14 @@ def main():
           (' ' + runtime + '/webview-t-data' if webview_files else '') +
           ' && chown -R ' + str(uid) + ':' + str(uid) + ' ' + runtime +
           ' && chmod 755 ' + runtime + '/appspawn-x')
-    # The app's own /data/data/<package> must exist and belong to the app uid before launch.
-    # /data/data is drwxrwx--x system:system, so the child cannot create it, and the direct-launch
-    # path's File(dataDir).mkdirs() sits inside a catch-and-ignore: the failure is silent and the
-    # app only finds out when something reaches for storage. Realm does, with mkfifo, and reports
-    # EACCES from deep inside onResume, which is a long way from the cause.
-    shell('mkdir -p /data/data/' + package + '/files /data/data/' + package + '/cache' +
-          ' && chown -R ' + str(uid) + ':' + str(uid) + ' /data/data/' + package +
-          ' && chmod 700 /data/data/' + package)
+    # The app's data directory is <runtime>/app-data/<package>: source_app_namespace mounts
+    # <runtime>/app-data over /data/data inside the child, so the host's /data/data is never seen.
+    # It inherits the host bundle's appdat label, and OpenHarmony denies app processes fifo_file
+    # creation there, which Android allows (Realm's .note pipe fails with EACCES under enforcing
+    # SELinux). data_app_el2_file, the label of the el2 base directory, grants hap domains dir,
+    # file, sock_file and fifo_file, so the app's tree is relabelled; lnk_file stays denied there
+    # as well (neverallow for hap_domain).
+    shell('chcon -R u:object_r:data_app_el2_file:s0 ' + runtime + '/app-data/' + package)
     for name in helpers:
         send(output / name, stage + '/' + name)
     shell('chmod 755 ' + stage + '/source_app_namespace ' + stage + '/host_spawn')

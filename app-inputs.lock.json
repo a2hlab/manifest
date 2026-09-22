@@ -113,9 +113,9 @@
       "abi": "arm64-v8a",
       "pure_java": true,
       "bytes": 12631,
-      "sha256": "c37cfde2d66f32ec92d9d9237c56808ff2ce525d6871d67d25490305807d08d4",
+      "sha256": "9b453448e0f6bd575b58591601a3874d6a30e6c33beec46ddebf960579c349db",
       "delivery": "harness-built white-box probe (westlake-harness probes/dialog-before-window)",
-      "reference": "a dialog shown from onCreate must stack above its activity's window; oracle is the screen and the platform window list",
+      "reference": "a dialog shown from onCreate must stack above its activity, be centred, dim what is behind it, and take touches on its button",
       "rebuild": false,
       "modify_or_resign": false,
       "launch_activity": "org.westlake.probe.dialogorder.MainActivity"
