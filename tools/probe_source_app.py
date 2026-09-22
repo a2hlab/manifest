@@ -32,6 +32,9 @@ def main():
                              'copy in --webview-input (the captured copy predates the loader refusals)')
     parser.add_argument('--source-webview-build', type=Path,
                         help='Verified source WebView build overriding its APK and engine DSO')
+    parser.add_argument('--runtime-env', action='append', default=[], metavar='KEY=VALUE',
+                        help='extra environment for the spawned child, e.g. APPSPAWNX_VERBOSE_CLASS=1 '
+                             "to trace class loading. Repeatable; it cannot replace a key the launcher sets")
     parser.add_argument('--touch-mode', choices=['stream', 'tap'], default='stream',
                         help="how the forwarder replays a physical gesture: 'stream' sends the "
                              "motion stream plus a hit-tested click for a stationary tap (drags "
@@ -498,6 +501,16 @@ def main():
         env['WESTLAKE_ACCOUNT_HELPER_PATH'] = logical + '/liboh_account_state.so'
     if 'liboh_connectivity_state.so' in framework['files']:
         env['WESTLAKE_CONNECTIVITY_HELPER_PATH'] = logical + '/liboh_connectivity_state.so'
+    for item in args.runtime_env:
+        key, separator, value = item.partition('=')
+        if not separator or not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', key):
+            raise ValueError('--runtime-env wants KEY=VALUE, got ' + item)
+        if key in env:
+            raise ValueError('--runtime-env may not replace ' + key + ', which the launcher sets')
+        env[key] = value
+    if args.runtime_env:
+        state['runtime_env'] = sorted(args.runtime_env)
+        save()
     script = output / 'run.sh'
     script.write_text('#!/system/bin/sh\nset -eu\ncd ' + logical + '\n' +
                       ''.join('export ' + k + '=' + shlex.quote(v) + '\n' for k, v in env.items()) +
