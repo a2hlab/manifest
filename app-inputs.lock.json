@@ -119,6 +119,37 @@
       "rebuild": false,
       "modify_or_resign": false,
       "launch_activity": "org.westlake.probe.dialogorder.MainActivity"
+    },
+    "burgerking": {
+      "kind": "original-apk-with-splits",
+      "package": "com.emn8.mobilem8.nativeapp.bk",
+      "version_name": "7.82.0",
+      "version_code": 100000516,
+      "abi": "arm64-v8a",
+      "bytes": 49271943,
+      "sha256": "635fe97c7cb00bbcd5ee0d1e00815addef23a930ef2225c6d7e3dd5c376c4502",
+      "splits": [
+        {
+          "name": "config.arm64_v8a.apk",
+          "bytes": 35363812,
+          "sha256": "f5dd95ef596d2d8ec18fade257b92b2de7cacb27533ce0c961c2d4e544f31f99"
+        },
+        {
+          "name": "config.xxhdpi.apk",
+          "bytes": 199613,
+          "sha256": "25e499373242b7c3edbdc13f4334c09d80eea69217ff31da95de275d0b9899db"
+        },
+        {
+          "name": "config.en.apk",
+          "bytes": 61849,
+          "sha256": "6c6fd30a6566a2a87d0c7dd093580c1468b15c78aa3cdea6a28ab069105d351a"
+        }
+      ],
+      "delivery": "APKPure XAPK via apkeep 0.18.0; base and splits verify with one signing certificate (61d006c3...d2a4)",
+      "reference": "Burger King 7.82.0 (React Native); blind test in westlake-harness benchmark/2026-09-22-burgerking-blind",
+      "rebuild": false,
+      "modify_or_resign": false,
+      "launch_activity": "com.emn8.mobilem8.nativeapp.bk.MainActivity"
     }
   }
 }
