@@ -1,264 +1,279 @@
 {
-  "schema": 1,
-  "applications": {
-    "toutiao": {
-      "kind": "original-apk",
-      "package": "com.ss.android.article.news",
-      "version_name": "13.9.0",
-      "version_code": 13900,
-      "abi": "arm64-v8a",
-      "bytes": 138641340,
-      "sha256": "a1112a0c941f865847c2fab9138cf815735268fbfcd41d697412fb80992c7395",
-      "delivery": "operator-supplied",
-      "reference": "parity27-runtime-inputs.lock.json:/data/local/tmp/asx/toutiao.apk",
-      "rebuild": false,
-      "modify_or_resign": false
+ "schema": 1,
+ "applications": {
+  "toutiao": {
+   "kind": "original-apk",
+   "package": "com.ss.android.article.news",
+   "version_name": "13.9.0",
+   "version_code": 13900,
+   "abi": "arm64-v8a",
+   "bytes": 138641340,
+   "sha256": "a1112a0c941f865847c2fab9138cf815735268fbfcd41d697412fb80992c7395",
+   "delivery": "operator-supplied",
+   "reference": "parity27-runtime-inputs.lock.json:/data/local/tmp/asx/toutiao.apk",
+   "rebuild": false,
+   "modify_or_resign": false
+  },
+  "mcdonalds": {
+   "kind": "original-apk-with-splits",
+   "package": "com.mcdonalds.app",
+   "version_name": "26.31.1",
+   "version_code": null,
+   "abi": "arm64-v8a",
+   "bytes": 185384948,
+   "sha256": "2fdb9b0be1d4f7cd61854c18d6a180e915e68d521d87d17ff193f969b1e89f72",
+   "splits": [
+    {
+     "name": "split_config.arm64_v8a.apk",
+     "bytes": 41710702,
+     "sha256": "9956b2a7acd066f59adcb2193ea4cc6ff19c91cf5d2fc3e95f952e2815c7bee4"
     },
-    "mcdonalds": {
-      "kind": "original-apk-with-splits",
-      "package": "com.mcdonalds.app",
-      "version_name": "26.31.1",
-      "version_code": null,
-      "abi": "arm64-v8a",
-      "bytes": 185384948,
-      "sha256": "2fdb9b0be1d4f7cd61854c18d6a180e915e68d521d87d17ff193f969b1e89f72",
-      "splits": [
-        {
-          "name": "split_config.arm64_v8a.apk",
-          "bytes": 41710702,
-          "sha256": "9956b2a7acd066f59adcb2193ea4cc6ff19c91cf5d2fc3e95f952e2815c7bee4"
-        },
-        {
-          "name": "split_config.xxxhdpi.apk",
-          "bytes": 15880740,
-          "sha256": "fba543f8706034eda58f8ebaae26d64b2a5daf804fbde457b0357db134e9aebd"
-        },
-        {
-          "name": "split_config.en.apk",
-          "bytes": 827801,
-          "sha256": "a4c2735c7de4517f26fd5e614550f4f4c65d3b859b0180a15dfe53986ac16641"
-        }
-      ],
-      "delivery": "operator-supplied",
-      "reference": "mcdonalds-apk (base.apk + arm64_v8a, xxxhdpi and en splits); extractNativeLibs=false, libraries stored uncompressed in the ABI split; the density split carries 886 drawables and its own resources.arsc",
-      "rebuild": false,
-      "modify_or_resign": false,
-      "launch_activity": "com.mcdonalds.mcdcoreapp.common.activity.SplashActivity"
+    {
+     "name": "split_config.xxxhdpi.apk",
+     "bytes": 15880740,
+     "sha256": "fba543f8706034eda58f8ebaae26d64b2a5daf804fbde457b0357db134e9aebd"
     },
-    "service-metadata-probe": {
-      "kind": "original-apk",
-      "package": "org.westlake.probe.defaultinterface",
-      "version_name": "1.0",
-      "version_code": 1,
-      "abi": "arm64-v8a",
-      "bytes": 12631,
-      "sha256": "96aee03964545692e6b04358eb55d2521357a4a86638ad26dfef02a0d57fbced",
-      "delivery": "harness-built white-box probe (westlake-harness probes/service-metadata)",
-      "reference": "isolates the PackageManager.getServiceInfo(GET_META_DATA) contract behind Firebase component discovery",
-      "rebuild": false,
-      "modify_or_resign": false,
-      "launch_activity": "org.westlake.probe.defaultinterface.MainActivity",
-      "pure_java": true
-    },
-    "provider-manifest-probe": {
-      "kind": "original-apk",
-      "package": "org.westlake.probe.providers",
-      "version_name": "1.0",
-      "version_code": 1,
-      "abi": "arm64-v8a",
-      "pure_java": true,
-      "bytes": 12691,
-      "sha256": "cc6571e948b07de5ef5319493c160944be6b1c60ea7122465f307cda877caad4",
-      "delivery": "harness-built white-box probe (westlake-harness probes/provider-manifest)",
-      "reference": "single-contract conformance probe; see the probe README",
-      "rebuild": false,
-      "modify_or_resign": false,
-      "launch_activity": "org.westlake.probe.providers.MainActivity"
-    },
-    "running-app-processes-probe": {
-      "kind": "original-apk",
-      "package": "org.westlake.probe.runningprocesses",
-      "version_name": "1.0",
-      "version_code": 1,
-      "abi": "arm64-v8a",
-      "pure_java": true,
-      "bytes": 12631,
-      "sha256": "259cb2c4b3aba8c9d98e4575dd87b1b8e8eea8bc50976e364a174e88d519b302",
-      "delivery": "harness-built white-box probe (westlake-harness probes/running-app-processes)",
-      "reference": "single-contract conformance probe; see the probe README",
-      "rebuild": false,
-      "modify_or_resign": false,
-      "launch_activity": "org.westlake.probe.runningprocesses.MainActivity"
-    },
-    "signin-layout-probe": {
-      "kind": "original-apk",
-      "package": "org.westlake.probe.signinlayout",
-      "version_name": "1.0",
-      "version_code": 1,
-      "abi": "arm64-v8a",
-      "pure_java": true,
-      "bytes": 74226,
-      "sha256": "f384476fb60d66600aa0e7f1a1f21fb8487c63c96fe341fea2188f0514e237ca",
-      "delivery": "harness-built white-box probe (westlake-harness probes/signin-layout)",
-      "reference": "McDonald's sign-in sheet rebuilt in code: same view classes, asset typefaces, gradient borders; verdict after first draw",
-      "rebuild": false,
-      "modify_or_resign": false,
-      "launch_activity": "org.westlake.probe.signinlayout.MainActivity"
-    },
-    "dialog-before-window-probe": {
-      "kind": "original-apk",
-      "package": "org.westlake.probe.dialogorder",
-      "version_name": "1.0",
-      "version_code": 1,
-      "abi": "arm64-v8a",
-      "pure_java": true,
-      "bytes": 12631,
-      "sha256": "50d80ca23ec7dc93aed94f7141361251b05b0d3d04f26a986a36f9d033b9b44f",
-      "delivery": "harness-built white-box probe (westlake-harness probes/dialog-before-window)",
-      "reference": "a dialog shown from onCreate must stack above its activity, be centred, fit the display, dim what is behind it, and take touches on its button",
-      "rebuild": false,
-      "modify_or_resign": false,
-      "launch_activity": "org.westlake.probe.dialogorder.MainActivity"
-    },
-    "burgerking": {
-      "kind": "original-apk-with-splits",
-      "package": "com.emn8.mobilem8.nativeapp.bk",
-      "version_name": "7.82.0",
-      "version_code": 100000516,
-      "abi": "arm64-v8a",
-      "bytes": 49271943,
-      "sha256": "635fe97c7cb00bbcd5ee0d1e00815addef23a930ef2225c6d7e3dd5c376c4502",
-      "splits": [
-        {
-          "name": "config.arm64_v8a.apk",
-          "bytes": 35363812,
-          "sha256": "f5dd95ef596d2d8ec18fade257b92b2de7cacb27533ce0c961c2d4e544f31f99"
-        },
-        {
-          "name": "config.xxhdpi.apk",
-          "bytes": 199613,
-          "sha256": "25e499373242b7c3edbdc13f4334c09d80eea69217ff31da95de275d0b9899db"
-        },
-        {
-          "name": "config.en.apk",
-          "bytes": 61849,
-          "sha256": "6c6fd30a6566a2a87d0c7dd093580c1468b15c78aa3cdea6a28ab069105d351a"
-        }
-      ],
-      "delivery": "APKPure XAPK via apkeep 0.18.0; base and splits verify with one signing certificate (61d006c3...d2a4)",
-      "reference": "Burger King 7.82.0 (React Native); blind test in westlake-harness benchmark/2026-09-22-burgerking-blind",
-      "rebuild": false,
-      "modify_or_resign": false,
-      "launch_activity": "com.emn8.mobilem8.nativeapp.bk.MainActivity"
-    },
-    "asset-list-probe": {
-      "kind": "original-apk",
-      "package": "org.westlake.probe.assets",
-      "version_name": "1.0",
-      "version_code": 1,
-      "abi": "arm64-v8a",
-      "pure_java": true,
-      "bytes": 12831,
-      "sha256": "7eb6b6e8bca2b71c7621b03b63c8e6d21bc69218cd6f5f2085519cdbbb3ba610",
-      "delivery": "harness-built white-box probe (westlake-harness probes/asset-list)",
-      "reference": "an app must find its own asset files by listing, not only by opening: McDonald's reads every configuration file only if getAssets().list(\"\") contains its name",
-      "rebuild": false,
-      "modify_or_resign": false,
-      "launch_activity": "org.westlake.probe.assets.MainActivity"
-    },
-    "subwaysurfers": {
-      "kind": "original-apk-with-splits",
-      "package": "com.kiloo.subwaysurf",
-      "version_name": "3.69.1",
-      "version_code": 0,
-      "abi": "arm64-v8a",
-      "pure_java": false,
-      "bytes": 207711321,
-      "sha256": "5904cda2c0f2a8898f49c06eef80df13f864be9d874370ac6430c427d34a2a4b",
-      "delivery": "APKPure via apkeep 0.18.0, arch arm64-v8a",
-      "reference": "harness validation corpus 2026-09-23: Unity IL2CPP game",
-      "rebuild": false,
-      "modify_or_resign": false,
-      "launch_activity": "com.sybogames.chili.multidex.ChiliMultidexSupportActivity",
-      "splits": [
-        {
-          "name": "config.arm64_v8a.apk",
-          "bytes": 33490860,
-          "sha256": "dc45bea9ef0a7efdedbbf6eb11f023789c1dee67341599c54dda7873a2777c35"
-        }
-      ]
-    },
-    "firefox": {
-      "kind": "original-apk-with-splits",
-      "package": "org.mozilla.firefox",
-      "version_name": "156.0",
-      "version_code": 0,
-      "abi": "arm64-v8a",
-      "pure_java": false,
-      "bytes": 49561150,
-      "sha256": "eba96cc660d0a49116db37c97535d01d809b21e217d4f24909eb33bf912882fc",
-      "delivery": "APKPure via apkeep 0.18.0, arch arm64-v8a",
-      "reference": "harness validation corpus 2026-09-23: Gecko browser with its own multiprocess model",
-      "rebuild": false,
-      "modify_or_resign": false,
-      "launch_activity": "org.mozilla.fenix.HomeActivity",
-      "splits": [
-        {
-          "name": "config.arm64_v8a.apk",
-          "bytes": 198796782,
-          "sha256": "6bbda34bfa4c5310b255e369b66e566324d0279cddb337efd8311b1b7ba209e7"
-        },
-        {
-          "name": "config.xhdpi.apk",
-          "bytes": 91556,
-          "sha256": "de168355ca86150a2cde355b3286a1be47aa7b996e0abce29a81267b8669867c"
-        }
-      ]
-    },
-    "vlc": {
-      "kind": "original-apk",
-      "package": "org.videolan.vlc",
-      "version_name": "3.7.1",
-      "version_code": 0,
-      "abi": "arm64-v8a",
-      "pure_java": false,
-      "bytes": 47990842,
-      "sha256": "c493c167de52724dbdd727fd6e20ec43d89200a847fb7b7d88da850faf336bcd",
-      "delivery": "APKPure via apkeep 0.18.0, arch arm64-v8a",
-      "reference": "harness validation corpus 2026-09-23: native C/C++ media stack",
-      "rebuild": false,
-      "modify_or_resign": false,
-      "launch_activity": "org.videolan.vlc.StartActivity"
-    },
-    "wikipedia": {
-      "kind": "original-apk",
-      "package": "org.wikipedia",
-      "version_name": "r/50606-r-2026-09-09",
-      "version_code": 0,
-      "abi": "arm64-v8a",
-      "pure_java": false,
-      "bytes": 82518241,
-      "sha256": "eba82a0f77940d8a6be5bd2e53723675a59859a6c8a51be5e50bd034fc77101f",
-      "delivery": "F-Droid repo (arm64 build; APKPure's arm64 bundle for these ships armeabi-v7a)",
-      "reference": "harness validation corpus 2026-09-23: Java/Kotlin control, native map library",
-      "rebuild": false,
-      "modify_or_resign": false,
-      "launch_activity": "org.wikipedia.main.MainActivity"
-    },
-    "localsend": {
-      "kind": "original-apk",
-      "package": "org.localsend.localsend_app",
-      "version_name": "1.18.2",
-      "version_code": 0,
-      "abi": "arm64-v8a",
-      "pure_java": false,
-      "bytes": 46558706,
-      "sha256": "82ec3568fba2aa5295b9aae8b76f701d7a4703d86b9f8bad749472038fbaeab3",
-      "delivery": "F-Droid repo (arm64 build; APKPure's arm64 bundle for these ships armeabi-v7a)",
-      "reference": "harness validation corpus 2026-09-23: Flutter engine",
-      "rebuild": false,
-      "modify_or_resign": false,
-      "launch_activity": "org.localsend.localsend_app.MainActivity"
+    {
+     "name": "split_config.en.apk",
+     "bytes": 827801,
+     "sha256": "a4c2735c7de4517f26fd5e614550f4f4c65d3b859b0180a15dfe53986ac16641"
     }
+   ],
+   "delivery": "operator-supplied",
+   "reference": "mcdonalds-apk (base.apk + arm64_v8a, xxxhdpi and en splits); extractNativeLibs=false, libraries stored uncompressed in the ABI split; the density split carries 886 drawables and its own resources.arsc",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.mcdonalds.mcdcoreapp.common.activity.SplashActivity"
+  },
+  "service-metadata-probe": {
+   "kind": "original-apk",
+   "package": "org.westlake.probe.defaultinterface",
+   "version_name": "1.0",
+   "version_code": 1,
+   "abi": "arm64-v8a",
+   "bytes": 12631,
+   "sha256": "96aee03964545692e6b04358eb55d2521357a4a86638ad26dfef02a0d57fbced",
+   "delivery": "harness-built white-box probe (westlake-harness probes/service-metadata)",
+   "reference": "isolates the PackageManager.getServiceInfo(GET_META_DATA) contract behind Firebase component discovery",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.westlake.probe.defaultinterface.MainActivity",
+   "pure_java": true
+  },
+  "provider-manifest-probe": {
+   "kind": "original-apk",
+   "package": "org.westlake.probe.providers",
+   "version_name": "1.0",
+   "version_code": 1,
+   "abi": "arm64-v8a",
+   "pure_java": true,
+   "bytes": 12691,
+   "sha256": "cc6571e948b07de5ef5319493c160944be6b1c60ea7122465f307cda877caad4",
+   "delivery": "harness-built white-box probe (westlake-harness probes/provider-manifest)",
+   "reference": "single-contract conformance probe; see the probe README",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.westlake.probe.providers.MainActivity"
+  },
+  "running-app-processes-probe": {
+   "kind": "original-apk",
+   "package": "org.westlake.probe.runningprocesses",
+   "version_name": "1.0",
+   "version_code": 1,
+   "abi": "arm64-v8a",
+   "pure_java": true,
+   "bytes": 12631,
+   "sha256": "259cb2c4b3aba8c9d98e4575dd87b1b8e8eea8bc50976e364a174e88d519b302",
+   "delivery": "harness-built white-box probe (westlake-harness probes/running-app-processes)",
+   "reference": "single-contract conformance probe; see the probe README",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.westlake.probe.runningprocesses.MainActivity"
+  },
+  "signin-layout-probe": {
+   "kind": "original-apk",
+   "package": "org.westlake.probe.signinlayout",
+   "version_name": "1.0",
+   "version_code": 1,
+   "abi": "arm64-v8a",
+   "pure_java": true,
+   "bytes": 74226,
+   "sha256": "f384476fb60d66600aa0e7f1a1f21fb8487c63c96fe341fea2188f0514e237ca",
+   "delivery": "harness-built white-box probe (westlake-harness probes/signin-layout)",
+   "reference": "McDonald's sign-in sheet rebuilt in code: same view classes, asset typefaces, gradient borders; verdict after first draw",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.westlake.probe.signinlayout.MainActivity"
+  },
+  "dialog-before-window-probe": {
+   "kind": "original-apk",
+   "package": "org.westlake.probe.dialogorder",
+   "version_name": "1.0",
+   "version_code": 1,
+   "abi": "arm64-v8a",
+   "pure_java": true,
+   "bytes": 12631,
+   "sha256": "50d80ca23ec7dc93aed94f7141361251b05b0d3d04f26a986a36f9d033b9b44f",
+   "delivery": "harness-built white-box probe (westlake-harness probes/dialog-before-window)",
+   "reference": "a dialog shown from onCreate must stack above its activity, be centred, fit the display, dim what is behind it, and take touches on its button",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.westlake.probe.dialogorder.MainActivity"
+  },
+  "burgerking": {
+   "kind": "original-apk-with-splits",
+   "package": "com.emn8.mobilem8.nativeapp.bk",
+   "version_name": "7.82.0",
+   "version_code": 100000516,
+   "abi": "arm64-v8a",
+   "bytes": 49271943,
+   "sha256": "635fe97c7cb00bbcd5ee0d1e00815addef23a930ef2225c6d7e3dd5c376c4502",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 35363812,
+     "sha256": "f5dd95ef596d2d8ec18fade257b92b2de7cacb27533ce0c961c2d4e544f31f99"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 199613,
+     "sha256": "25e499373242b7c3edbdc13f4334c09d80eea69217ff31da95de275d0b9899db"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 61849,
+     "sha256": "6c6fd30a6566a2a87d0c7dd093580c1468b15c78aa3cdea6a28ab069105d351a"
+    }
+   ],
+   "delivery": "APKPure XAPK via apkeep 0.18.0; base and splits verify with one signing certificate (61d006c3...d2a4)",
+   "reference": "Burger King 7.82.0 (React Native); blind test in westlake-harness benchmark/2026-09-22-burgerking-blind",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.emn8.mobilem8.nativeapp.bk.MainActivity"
+  },
+  "asset-list-probe": {
+   "kind": "original-apk",
+   "package": "org.westlake.probe.assets",
+   "version_name": "1.0",
+   "version_code": 1,
+   "abi": "arm64-v8a",
+   "pure_java": true,
+   "bytes": 12831,
+   "sha256": "7eb6b6e8bca2b71c7621b03b63c8e6d21bc69218cd6f5f2085519cdbbb3ba610",
+   "delivery": "harness-built white-box probe (westlake-harness probes/asset-list)",
+   "reference": "an app must find its own asset files by listing, not only by opening: McDonald's reads every configuration file only if getAssets().list(\"\") contains its name",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.westlake.probe.assets.MainActivity"
+  },
+  "subwaysurfers": {
+   "kind": "original-apk-with-splits",
+   "package": "com.kiloo.subwaysurf",
+   "version_name": "3.69.1",
+   "version_code": 0,
+   "abi": "arm64-v8a",
+   "pure_java": false,
+   "bytes": 207711321,
+   "sha256": "5904cda2c0f2a8898f49c06eef80df13f864be9d874370ac6430c427d34a2a4b",
+   "delivery": "APKPure via apkeep 0.18.0, arch arm64-v8a",
+   "reference": "harness validation corpus 2026-09-23: Unity IL2CPP game",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.sybogames.chili.multidex.ChiliMultidexSupportActivity",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 33490860,
+     "sha256": "dc45bea9ef0a7efdedbbf6eb11f023789c1dee67341599c54dda7873a2777c35"
+    }
+   ]
+  },
+  "firefox": {
+   "kind": "original-apk-with-splits",
+   "package": "org.mozilla.firefox",
+   "version_name": "156.0",
+   "version_code": 0,
+   "abi": "arm64-v8a",
+   "pure_java": false,
+   "bytes": 49561150,
+   "sha256": "eba96cc660d0a49116db37c97535d01d809b21e217d4f24909eb33bf912882fc",
+   "delivery": "APKPure via apkeep 0.18.0, arch arm64-v8a",
+   "reference": "harness validation corpus 2026-09-23: Gecko browser with its own multiprocess model",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.mozilla.fenix.HomeActivity",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 198796782,
+     "sha256": "6bbda34bfa4c5310b255e369b66e566324d0279cddb337efd8311b1b7ba209e7"
+    },
+    {
+     "name": "config.xhdpi.apk",
+     "bytes": 91556,
+     "sha256": "de168355ca86150a2cde355b3286a1be47aa7b996e0abce29a81267b8669867c"
+    }
+   ]
+  },
+  "vlc": {
+   "kind": "original-apk",
+   "package": "org.videolan.vlc",
+   "version_name": "3.7.1",
+   "version_code": 0,
+   "abi": "arm64-v8a",
+   "pure_java": false,
+   "bytes": 47990842,
+   "sha256": "c493c167de52724dbdd727fd6e20ec43d89200a847fb7b7d88da850faf336bcd",
+   "delivery": "APKPure via apkeep 0.18.0, arch arm64-v8a",
+   "reference": "harness validation corpus 2026-09-23: native C/C++ media stack",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.videolan.vlc.StartActivity"
+  },
+  "wikipedia": {
+   "kind": "original-apk",
+   "package": "org.wikipedia",
+   "version_name": "r/50606-r-2026-09-09",
+   "version_code": 0,
+   "abi": "arm64-v8a",
+   "pure_java": false,
+   "bytes": 82518241,
+   "sha256": "eba82a0f77940d8a6be5bd2e53723675a59859a6c8a51be5e50bd034fc77101f",
+   "delivery": "F-Droid repo (arm64 build; APKPure's arm64 bundle for these ships armeabi-v7a)",
+   "reference": "harness validation corpus 2026-09-23: Java/Kotlin control, native map library",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.wikipedia.main.MainActivity"
+  },
+  "localsend": {
+   "kind": "original-apk",
+   "package": "org.localsend.localsend_app",
+   "version_name": "1.18.2",
+   "version_code": 0,
+   "abi": "arm64-v8a",
+   "pure_java": false,
+   "bytes": 46558706,
+   "sha256": "82ec3568fba2aa5295b9aae8b76f701d7a4703d86b9f8bad749472038fbaeab3",
+   "delivery": "F-Droid repo (arm64 build; APKPure's arm64 bundle for these ships armeabi-v7a)",
+   "reference": "harness validation corpus 2026-09-23: Flutter engine",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.localsend.localsend_app.MainActivity"
+  },
+  "webview-boundaries-probe": {
+   "kind": "original-apk",
+   "package": "org.westlake.probe.wvb",
+   "version_name": "1.0",
+   "version_code": 1,
+   "abi": "arm64-v8a",
+   "pure_java": true,
+   "bytes": 12691,
+   "sha256": "695acf157522a172125b19aec41ce37d9edab3f8c8b4e7ba3c11905aa25432d6",
+   "delivery": "harness-built white-box probe (westlake-harness probes/webview-boundaries)",
+   "reference": "the three boundaries that decide whether an app can open a WebView screen: the multiprocess decision, which a compiled-in flag makes before the update service is asked; same-named libraries on the search path, where dlopen takes the first and only the second exports the NDK SurfaceControl surface; and the window context, where a throw aborts the process because every JNI return runs CheckException",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.westlake.probe.wvb.MainActivity"
   }
+ }
 }
