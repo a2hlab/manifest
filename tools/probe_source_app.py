@@ -276,8 +276,8 @@ def main():
 
     transport = [args.hdc, '-t', args.serial]
 
-    def call(command, cwd=output):
-        result = subprocess.run(transport + command, cwd=cwd, capture_output=True, timeout=55)
+    def call(command, cwd=output, timeout=55):
+        result = subprocess.run(transport + command, cwd=cwd, capture_output=True, timeout=timeout)
         text = (result.stdout + result.stderr).decode(errors='replace').replace('\r', '')
         if result.returncode or '[Fail]' in text:
             raise RuntimeError(text)
@@ -294,7 +294,11 @@ def main():
         return text[:match.start()]
 
     def send(path, remote):
-        call(['file', 'send', path.name, remote], cwd=path.parent)
+        # A flat 55 s held over USB and failed over wireless debugging: the ~200 MB launch archive
+        # moves at roughly 2 MB/s there, so the same send timed out for one app and scraped through
+        # for another. Size the limit from the file instead, assuming no better than 512 KiB/s.
+        seconds = max(55, path.stat().st_size // (512 * 1024) + 30)
+        call(['file', 'send', path.name, remote], cwd=path.parent, timeout=seconds)
         if shell('sha256sum ' + shlex.quote(remote)).split()[0] != digest(path):
             raise ValueError('Changed transfer: ' + remote)
 

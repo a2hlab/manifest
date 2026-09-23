@@ -67,8 +67,8 @@ def main():
     output.mkdir(parents=True)
     transport = [args.hdc, '-t', args.serial]
 
-    def call(command, cwd=output):
-        result = subprocess.run(transport + command, cwd=cwd, capture_output=True, timeout=55)
+    def call(command, cwd=output, timeout=55):
+        result = subprocess.run(transport + command, cwd=cwd, capture_output=True, timeout=timeout)
         text = (result.stdout + result.stderr).decode(errors='replace').replace('\r', '')
         if result.returncode or '[Fail]' in text:
             raise RuntimeError(text)
@@ -148,7 +148,9 @@ def main():
                 raise RuntimeError(text)
     for name, path in sorted(files.items()):
         if name not in copied:
-            call(['file', 'send', path.name, stage + '/' + name], cwd=path.parent)
+            call(['file', 'send', path.name, stage + '/' + name], cwd=path.parent,
+                 # sized from the file, as in probe_source_app: 55 s fails over wireless
+                 timeout=max(55, path.stat().st_size // (512 * 1024) + 30))
     actual = remote_hashes([stage + '/' + name for name in files])
     if actual != {stage + '/' + name: value for name, value in wanted.items()}:
         raise ValueError('Device transfers differ from declared source artifacts')
