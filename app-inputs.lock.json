@@ -495,6 +495,2302 @@
    "modify_or_resign": false,
    "pure_java": true,
    "launch_activity": "net.sourceforge.opencamera.MainActivity"
+  },
+  "co-AlipayGphone": {
+   "kind": "original-apk-with-splits",
+   "package": "com.eg.android.AlipayGphone",
+   "version_name": "12.12.16.7200",
+   "version_code": 212162,
+   "abi": "arm64-v8a",
+   "bytes": 289537230,
+   "sha256": "e84096c63f942bfd5a607b3a7aee5008888413c0ec70422a30104603394d9f8f",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "China top apps",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.eg.android.AlipayGphone.AlipayLogin",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 106187935,
+     "sha256": "3aff1b5640f1bb204c2236c9fd5b2b38f524aeedefc4e30398248f0a7770c345"
+    }
+   ]
+  },
+  "co-TextNow": {
+   "kind": "original-apk-with-splits",
+   "package": "com.enflick.android.TextNow",
+   "version_name": "26.8.0.0",
+   "version_code": 15410,
+   "abi": "arm64-v8a",
+   "bytes": 126608133,
+   "sha256": "acb920120f32fe4ad016fe2001f7ef1c5a734e222f8a1360de21cefe4f580749",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "Similarweb US top free 2026-09-21 ranks 11-51",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "authorization.ui.AuthorizationActivity",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 32286761,
+     "sha256": "57f8902735658ba56ab44f6b84c4e11d34040981d07b45769be32f61903f898c"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 1171453,
+     "sha256": "6a30627268d4c42f3c023ca2fc19c5fab022301ad906c3edd0047a3e585458cb"
+    }
+   ]
+  },
+  "co-aliexpresshd": {
+   "kind": "original-apk-with-splits",
+   "package": "com.alibaba.aliexpresshd",
+   "version_name": "8.175.4",
+   "version_code": 80005966,
+   "abi": "arm64-v8a",
+   "bytes": 66791713,
+   "sha256": "ba75788efd3d2351c5e63212504f2390426e698ca1bfb912705733ae59bf519a",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "category pick (travel/food/pay/video/edu/work/create/shop/game)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.aliexpress.app.FirstActivity",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 6277343,
+     "sha256": "a3d746f2262f6137ba2c2c7da8fe56d0dad7527616a4e7d900ec9c21bdaeeca6"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 554657,
+     "sha256": "ea961f89bcf86d874f525f4f5e1becebfd9ec78db11ba88ec8bee78633f51d52"
+    }
+   ]
+  },
+  "co-android": {
+   "kind": "original-apk-with-splits",
+   "package": "com.walmart.android",
+   "version_name": "26.36",
+   "version_code": 26360011,
+   "abi": "arm64-v8a",
+   "bytes": 337703803,
+   "sha256": "b163e810d24b1f4840391e270f5372d6499da13ef603e331b1092ad46c4e94fb",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "Similarweb US top free 2026-09-21 ranks 11-51",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.walmart.glass.integration.splash.SplashActivity",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 13789405,
+     "sha256": "f3b575b504f6f9b6889011d993ae568ce7c5755551e5f17d1800bbfef5f61e80"
+    },
+    {
+     "name": "config.hdpi.apk",
+     "bytes": 2697243,
+     "sha256": "e9f760cbaf24e719b424a18d765937e334acfdc3f887c73bcc4228728aeaa499"
+    }
+   ]
+  },
+  "co-aweme": {
+   "kind": "original-apk",
+   "package": "com.ss.android.ugc.aweme",
+   "version_name": "38.7.0",
+   "version_code": 380700,
+   "abi": "arm64-v8a",
+   "bytes": 360477054,
+   "sha256": "c400ae7596f5eeaa3e3b942be1f0da0f1fe7835c6cb51618a898c3f09145b840",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "China top apps",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.ss.android.ugc.aweme.splash.SplashActivity"
+  },
+  "co-barcelona": {
+   "kind": "original-apk-with-splits",
+   "package": "com.instagram.barcelona",
+   "version_name": "448.0.0.54.85",
+   "version_code": 511808302,
+   "abi": "arm64-v8a",
+   "bytes": 63760275,
+   "sha256": "c988e7e5dbd3759108563d9548d307d5996d777b62bc4cf2dee184168d1f4b60",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "Similarweb US top free 2026-09-21 ranks 11-51",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.instagram.barcelona.mainactivity.BarcelonaActivity",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 66558710,
+     "sha256": "70b3f5f346883cd13429ddab30452afbb4e813e5c26f08f173bc89586ea29572"
+    },
+    {
+     "name": "config.hdpi.apk",
+     "bytes": 4184837,
+     "sha256": "61228e763d8ff70e489170b40f14a0362b4a03aaa49f47cfbe56370c761f5246"
+    }
+   ]
+  },
+  "co-booking": {
+   "kind": "original-apk",
+   "package": "com.booking",
+   "version_name": "67.4.0.11",
+   "version_code": 901770,
+   "abi": "arm64-v8a",
+   "bytes": 333081513,
+   "sha256": "be7bc81cc247017ec3c4e1c357e929fe3a59463e6f127a95eb34ea6ca287972e",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "category pick (travel/food/pay/video/edu/work/create/shop/game)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.booking.startup.HomeActivity"
+  },
+  "co-candycrushsaga": {
+   "kind": "original-apk-with-splits",
+   "package": "com.king.candycrushsaga",
+   "version_name": "1.337.0.2",
+   "version_code": 13370020,
+   "abi": "arm64-v8a",
+   "bytes": 94668907,
+   "sha256": "451ccd35864c5dfed23252764b2b077f6cdbe23894ef454a6783e9f4efe6f1a2",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "category pick (travel/food/pay/video/edu/work/create/shop/game)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.king.candycrushsaga.CandyCrushSagaActivity",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 82203239,
+     "sha256": "e2fe9b0f0baa5c108cea2f282db62c9e6d48dc1314db5847170a4863a47a7285"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 70041,
+     "sha256": "f14fd86ffd924afee179f76b87a97217588fe7d245864585e14d579ce27fe635"
+    },
+    {
+     "name": "config.mdpi.apk",
+     "bytes": 166558,
+     "sha256": "8d384853192277af7c2d3be4f31eb09a699b9e668510af105f56bfd66c160028"
+    }
+   ]
+  },
+  "co-cash": {
+   "kind": "original-apk-with-splits",
+   "package": "com.squareup.cash",
+   "version_name": "5.65.0",
+   "version_code": 5650006,
+   "abi": "arm64-v8a",
+   "bytes": 119168243,
+   "sha256": "a82d6801a1549c6c46f94f332cfee23d119dc6c6848c0d6fbc4577c332209245",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "westlake-harness corpus/downloads.lock.json",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.squareup.cash.ui.MainActivity",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 12204016,
+     "sha256": "da8d3eb63484f0570d4ca0f4b172350e7778fd8104407e1d172c16125559238e"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 94418,
+     "sha256": "1f32f04dda348367f013b90bcfc02879c042e2d035e807ba3ae63e00bf716549"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 5827604,
+     "sha256": "80bd4a56799fc07dcdeff0c2b2d2320923982cafd6e3d792c457dd1a2a28d4c4"
+    }
+   ]
+  },
+  "co-chatgpt": {
+   "kind": "original-apk-with-splits",
+   "package": "com.openai.chatgpt",
+   "version_name": "1.2026.244",
+   "version_code": 2624421,
+   "abi": "arm64-v8a",
+   "bytes": 68616503,
+   "sha256": "3b029e54fdbfbfe41140c544bfc97f7f931bf9ba37a1df63c20d6382023ed68b",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "Similarweb US top free 2026-09-21 ranks 11-51",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.openai.chatgpt.MainActivity",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 21861420,
+     "sha256": "497f6306224f29d3ae111993a7001bfd6bc72d8978771722b04951e6ed043cf3"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 807122,
+     "sha256": "50c543b65f5179af131b410a364d336e9b6dc27aa647fbb6fb964706fb985aac"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 106909,
+     "sha256": "eb724b6708c7a1e447b7e7440ac6df8d1af74e8937db54f957b785a30ccd73be"
+    }
+   ]
+  },
+  "co-client": {
+   "kind": "original-apk-with-splits",
+   "package": "com.roblox.client",
+   "version_name": "2.740.931",
+   "version_code": 3170,
+   "abi": "arm64-v8a",
+   "bytes": 97621690,
+   "sha256": "114a6f8ed6f0f974cf632a9cbec2f5cd45e1d85d7ed251db4f3920140bc6ead4",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "category pick (travel/food/pay/video/edu/work/create/shop/game)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.roblox.client.startup.LauncherAliasMain",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 49620184,
+     "sha256": "975d32ad874fa6b78d9a3efda2ee51c4a28c84fdd45e36b549a850e1569ab363"
+    }
+   ]
+  },
+  "co-com-chase-sig-android": {
+   "kind": "original-apk-with-splits",
+   "package": "com.chase.sig.android",
+   "version_name": "4.662",
+   "version_code": 466215778,
+   "abi": "arm64-v8a",
+   "bytes": 171355510,
+   "sha256": "ea5055f4fb579cf9591068d9824dcf15bafb51d85284d857770549fc9dbdc27f",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "Similarweb US top free 2026-09-21 ranks 11-51",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.chase.sig.android.activity.SplashActivity",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 10368996,
+     "sha256": "1cf6225246801ecefd891dea92bc57a33dbf2754d5f6605763429b3ab4350f51"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 2356729,
+     "sha256": "969bddd25915fcc6ddddd1887009bd5607f8b8bd15b82e744935fe33671becb8"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 1841086,
+     "sha256": "8324cced2d8f1112c9036275347025a9e9e13833576cfcb5d898692e24a0f9a3"
+    }
+   ]
+  },
+  "co-com-instagram-android": {
+   "kind": "original-apk-with-splits",
+   "package": "com.instagram.android",
+   "version_name": "443.0.0.48.82",
+   "version_code": 385010774,
+   "abi": "arm64-v8a",
+   "bytes": 134510039,
+   "sha256": "ebcb9dbfe01878a9f3e063da32ae465e895188900fb7ed3a5664315b07cbbcb2",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "westlake-harness corpus/downloads.lock.json",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.instagram.android.activity.MainTabActivity",
+   "splits": [
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 7486512,
+     "sha256": "05c24c4f824bef9a58a21f5989bdb30b927c65c9bda14296c414a3743e7fa5df"
+    }
+   ]
+  },
+  "co-com-snapchat-android": {
+   "kind": "original-apk-with-splits",
+   "package": "com.snapchat.android",
+   "version_name": "14.20.0.50",
+   "version_code": 308672,
+   "abi": "arm64-v8a",
+   "bytes": 60396136,
+   "sha256": "bf0e183f45f2da4874737ed7a786c6870e08ea72b7d230066ab4239b940c9606",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "westlake-harness corpus/downloads.lock.json",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.snapchat.android.LandingPageActivity",
+   "splits": [
+    {
+     "name": "config.ar.apk",
+     "bytes": 2208153,
+     "sha256": "2c4c28039e7591afb5b927efc3d8d5204273121e152c0793f453ad72e0369e0e"
+    },
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 42252354,
+     "sha256": "53f4fac94ea0596b45f40d723efd09a73283cf4e51cf2a95bd1daa5b13dd2439"
+    },
+    {
+     "name": "config.de.apk",
+     "bytes": 1909145,
+     "sha256": "827523ddf2a7d40c25cb6df18eaa2bbe03f1f9d226ae4c27704392f26cc30ce5"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 1794457,
+     "sha256": "b3fd8963b9c97ded00d79a0fb972750eee8e52279a08949cd25e95365be2d045"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 4579737,
+     "sha256": "27c72e6efe48302c8709ed6372e8454ee1304a3f214ec8ee12276684ce1fc69b"
+    },
+    {
+     "name": "config.fr.apk",
+     "bytes": 1958297,
+     "sha256": "a9655c2ce0caff5c13c949adfc9fc79bae6a23adc81d4e5a57a3dca5d9bef16a"
+    },
+    {
+     "name": "config.hi.apk",
+     "bytes": 2789785,
+     "sha256": "af6b67f34dbf6a9aff054b653245ef927f57ceab579f3097fd49fbb2988c28b8"
+    },
+    {
+     "name": "config.in.apk",
+     "bytes": 1835417,
+     "sha256": "3a0a9fd203764735a66e3ebc45ab01c0316d761b3ca5b9dc9477703bc208d688"
+    },
+    {
+     "name": "config.it.apk",
+     "bytes": 1896857,
+     "sha256": "2c513b6da85cc5f1cd293619b114f0056a0449c74615e2069d177675b131c5b4"
+    },
+    {
+     "name": "config.ja.apk",
+     "bytes": 2023833,
+     "sha256": "e9f5aa67b6de1aa7fd3d26523b2faf97eecafb7858053811278e65ad0cf44b40"
+    },
+    {
+     "name": "config.ko.apk",
+     "bytes": 1937817,
+     "sha256": "ddcdbc4bab353f29e6bb7769290040636d5cc66833fa6f9f5779d8d0ce4043ef"
+    },
+    {
+     "name": "config.pt.apk",
+     "bytes": 2892185,
+     "sha256": "97c496863aad2ed1ef5f3b4379dd84c6df99f50d80bd8f7d724095822e1be76b"
+    },
+    {
+     "name": "config.ru.apk",
+     "bytes": 2285977,
+     "sha256": "397326c5e6a105e572b2f04c79a8e97ca911338b070c0893d306e95057952b3f"
+    },
+    {
+     "name": "config.th.apk",
+     "bytes": 2769305,
+     "sha256": "847f4f02047cbf58673cc9c88cbfbc842a75c431bb3983e9e8fc03942fc1069c"
+    },
+    {
+     "name": "config.tr.apk",
+     "bytes": 1896857,
+     "sha256": "c6d6637c9d5eaffccb2c44489920fa35558420f9f483a898452e82ff7c0a9d93"
+    },
+    {
+     "name": "config.vi.apk",
+     "bytes": 2105753,
+     "sha256": "723f818a56c8de5e1a7c4d676afa3a6515caf40f0390feb55788bd34cf4c0ba6"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 2188716,
+     "sha256": "92b900663cf87d2024ea3a80d4a3064554362a9c76a1ce30197b93a66a0770b9"
+    },
+    {
+     "name": "config.zh.apk",
+     "bytes": 2757017,
+     "sha256": "938ef37b0eea9af556cfe6a2bd8228cdde277e92dc832d3c902302bf346ffb02"
+    }
+   ]
+  },
+  "co-discord": {
+   "kind": "original-apk-with-splits",
+   "package": "com.discord",
+   "version_name": "341.13 - Stable",
+   "version_code": 341013,
+   "abi": "arm64-v8a",
+   "bytes": 105236917,
+   "sha256": "d543e2ced13ba0f7da43768e1c073f541fe7486d8560f28a0ddb83a9bda37690",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "westlake-harness corpus/downloads.lock.json",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.discord.main.MainDefault",
+   "splits": [
+    {
+     "name": "config.ar.apk",
+     "bytes": 37273,
+     "sha256": "bd06df07a8dafdb3d78d512703f5183be3d88fb4157367498c30dbf3fb36d84f"
+    },
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 60735057,
+     "sha256": "0c11a6e885a77c7970510d62b1c2aa6b5fce2f69448ac586a734756afb2760e7"
+    },
+    {
+     "name": "config.de.apk",
+     "bytes": 37273,
+     "sha256": "e8619d9f4e0c6067b3960ea9b588c7538b80ded39c129787d19c11e447c9f6cf"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 70041,
+     "sha256": "325e533cabc98f2a6d8adf9192f88400df1ee3f98708bdc836d3e7cdec694a8d"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 49561,
+     "sha256": "b898c16b9fa29d5db263732b7d41234f5981b78f173d0182376c5a31586f81a3"
+    },
+    {
+     "name": "config.fr.apk",
+     "bytes": 45465,
+     "sha256": "df608d780b39fa8b0b8ccc09f907ad9ab0130390433faea7e73fa427c9460441"
+    },
+    {
+     "name": "config.hi.apk",
+     "bytes": 41369,
+     "sha256": "588294aefa94b45d180057f96ed727a59702822aafd77d5cc63c15f1482d9f43"
+    },
+    {
+     "name": "config.in.apk",
+     "bytes": 33177,
+     "sha256": "549bc309a1d039e5c93fd4d4cd4f6363bc2bbf947a07f315ff4d28e7622cef38"
+    },
+    {
+     "name": "config.it.apk",
+     "bytes": 37273,
+     "sha256": "823c5fccf7dd2e3992b97ad04d3a6537ad6e376d304bfc73d820051fd7cac0ed"
+    },
+    {
+     "name": "config.ja.apk",
+     "bytes": 37273,
+     "sha256": "fc2c6ab8c109dcfb22c1852d6442a57c0a9a7c852aacbfd32d41e0357c837536"
+    },
+    {
+     "name": "config.ko.apk",
+     "bytes": 37273,
+     "sha256": "ff525d921a4e3259d2c3059dd0d1c2e886014dc8cb0c7eb56de5f441e68b4ad2"
+    },
+    {
+     "name": "config.my.apk",
+     "bytes": 45465,
+     "sha256": "7d97394ffcafb3b604eff3c9b20a51343499f9aeec261b746f2369b486db2e67"
+    },
+    {
+     "name": "config.pt.apk",
+     "bytes": 49561,
+     "sha256": "b84dd43c3816b31fecafbf8d3fac6d6f31a6037e6a98233f3f030207361d8c1b"
+    },
+    {
+     "name": "config.ru.apk",
+     "bytes": 41369,
+     "sha256": "0becc206a0c56639f41735ba0ec63def68395d32b24c0f9100018eacef517dea"
+    },
+    {
+     "name": "config.th.apk",
+     "bytes": 41369,
+     "sha256": "73062d5784058b8caa526453c04ca995c1ab42dfeb8529d33aa0fbd9621e96e2"
+    },
+    {
+     "name": "config.tr.apk",
+     "bytes": 37273,
+     "sha256": "549ffc4ed3f0a9a5b74845f4fd5387ccdd96095d21af73c99784ce65d7465094"
+    },
+    {
+     "name": "config.vi.apk",
+     "bytes": 37273,
+     "sha256": "c204979002d8b451c2c9e07e9e53f29887e95d205a534c8567e7e0ffc1d5388c"
+    },
+    {
+     "name": "config.xxxhdpi.apk",
+     "bytes": 11547009,
+     "sha256": "d12a69270c45475cac0587670a961d4ab58453bf05f22ae41fdb5a85bce581e3"
+    },
+    {
+     "name": "config.zh.apk",
+     "bytes": 57753,
+     "sha256": "24dc3cfcdfb4fd3af6f5be661f8d11426172ab1c5b93a59bc29f6fddf7c16163"
+    }
+   ]
+  },
+  "co-duolingo": {
+   "kind": "original-apk-with-splits",
+   "package": "com.duolingo",
+   "version_name": "6.98.3",
+   "version_code": 2462,
+   "abi": "arm64-v8a",
+   "bytes": 160401027,
+   "sha256": "918d5514b2e66709eda234a796a7bccde06f470780ac27033c47a73cae059ad0",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "category pick (travel/food/pay/video/edu/work/create/shop/game)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.duolingo.app.LoginActivity",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 25659722,
+     "sha256": "7fd8ea7c254334ea6f7fc2dfbeb41c61be1565a0733eb52c10ff82cc17d66894"
+    },
+    {
+     "name": "config.xxxhdpi.apk",
+     "bytes": 591771,
+     "sha256": "f2900eb6cd8cbf9cf7667b48efc5277ad6c3da9cfde74deba5ce457bf917a3d6"
+    }
+   ]
+  },
+  "co-frontpage": {
+   "kind": "original-apk-with-splits",
+   "package": "com.reddit.frontpage",
+   "version_name": "2026.37.0",
+   "version_code": 2637050,
+   "abi": "arm64-v8a",
+   "bytes": 113229437,
+   "sha256": "325d19c69d17bc97c98ff8382dc9cead642111888d4a9a3050f76952543edb58",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "Similarweb US top free 2026-09-21 ranks 11-51",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "launcher.default",
+   "splits": [
+    {
+     "name": "config.ar.apk",
+     "bytes": 2245017,
+     "sha256": "60c9651ba3c411d2731aefac01bcf78391e7bcce172038d8c78196b690782bf0"
+    },
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 6570672,
+     "sha256": "ed0120d35e3702ffa406fd840b068c7eb9a712b5f31133dcfcf4aa482108bf63"
+    },
+    {
+     "name": "config.de.apk",
+     "bytes": 1114521,
+     "sha256": "37fa5b184f7f4c29b3ad4131f8215f990938fcf313be9dd66fdb40f1a3b939cb"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 1360281,
+     "sha256": "99dd4804621fdd9413a47714850f2ae7c584778e78ca4ceef719b85cf3113856"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 1585561,
+     "sha256": "469ba476aa5549a4d576caf9a2789dd7699f4117cd98aa9177691d0c6b975ac1"
+    },
+    {
+     "name": "config.fr.apk",
+     "bytes": 1135001,
+     "sha256": "055aa5f9071b5d71d08440047570734c63ea36d6d2db4446c6f62b36a48206cf"
+    },
+    {
+     "name": "config.hi.apk",
+     "bytes": 1479065,
+     "sha256": "64dbb19f6a079af8a38e945b62372c66b1647855c2f2d2490651d5d4765500ef"
+    },
+    {
+     "name": "config.in.apk",
+     "bytes": 1065369,
+     "sha256": "642d8972354e3e5bb4df8c758375f1365725be3e6c64b78700045fd1713141d4"
+    },
+    {
+     "name": "config.it.apk",
+     "bytes": 1094041,
+     "sha256": "30e9e5e4e35bfc02d5a9ae934238a1dc35e098d19cd091d3f1c556eb57bd688a"
+    },
+    {
+     "name": "config.ja.apk",
+     "bytes": 1184153,
+     "sha256": "cf577a7af458df59349db1bce56b0067ee8f323b689fb87c735e1034a43423a2"
+    },
+    {
+     "name": "config.ko.apk",
+     "bytes": 1122713,
+     "sha256": "27c09459ebed0bb1742634d6ec77aacf631d3ca87fdff46cc97cc92680aaa6e2"
+    },
+    {
+     "name": "config.pt.apk",
+     "bytes": 1606041,
+     "sha256": "2c015e168e00497c58d78374a2c9d4b4db75e5018ab161103e3fd01301458df4"
+    },
+    {
+     "name": "config.ru.apk",
+     "bytes": 1364377,
+     "sha256": "abfefc89058c63a81051f7e9351471cee041044160e1a2faa009cb552ff587c2"
+    },
+    {
+     "name": "config.th.apk",
+     "bytes": 1466777,
+     "sha256": "b9d383859ff1daee306de7e5b67ad369b875a79255176aef02239c389639ae90"
+    },
+    {
+     "name": "config.tr.apk",
+     "bytes": 1098137,
+     "sha256": "bd940e3256499bba113510e5e40620b0c2da8df25dcf09a06ee5418fbf877675"
+    },
+    {
+     "name": "config.vi.apk",
+     "bytes": 1155481,
+     "sha256": "5ae63fbd6b018f98b9a4f897602e9af22f0cd5a04bce4f5d43ca9843f51d9ee9"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 4441222,
+     "sha256": "c3beddd230c01d300db8513fa9434b23a306f203950bc2cdc688940e16450eef"
+    },
+    {
+     "name": "config.zh.apk",
+     "bytes": 1524121,
+     "sha256": "ea600962c9ee45b72f93fb8fb443c9659e67bf8e350113f15fd7c337797b82e6"
+    }
+   ]
+  },
+  "co-katana": {
+   "kind": "original-apk-with-splits",
+   "package": "com.facebook.katana",
+   "version_name": "575.0.0.45.73",
+   "version_code": 474025197,
+   "abi": "arm64-v8a",
+   "bytes": 78366063,
+   "sha256": "4633cde4d7c662830147f27006c59563831e2a41564d5dffb0e3c178307aebcc",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "westlake-harness corpus/downloads.lock.json",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.facebook.katana.LoginActivity",
+   "splits": [
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 6922269,
+     "sha256": "f8ee73ca24cd8b71c35f3c228fd07751a9a09ef81945d691d8933e321f885b18"
+    }
+   ]
+  },
+  "co-lvoverseas": {
+   "kind": "original-apk",
+   "package": "com.lemon.lvoverseas",
+   "version_name": "19.7.0",
+   "version_code": 19700100,
+   "abi": "arm64-v8a",
+   "bytes": 321029140,
+   "sha256": "52afff43356fdd9d3ef6bc604cb8596f93d1bb1fb27809c8a1b8f0ee16d44859",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "category pick (travel/food/pay/video/edu/work/create/shop/game)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.vega.main.MainActivity"
+  },
+  "co-mediaclient": {
+   "kind": "original-apk-with-splits",
+   "package": "com.netflix.mediaclient",
+   "version_name": "9.84.0 build 3 74548",
+   "version_code": 74548,
+   "abi": "arm64-v8a",
+   "bytes": 28447663,
+   "sha256": "ff97451c9716936652e12176fe685817b9f68bf64c1a0b5515803f751a36ec12",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "category pick (travel/food/pay/video/edu/work/create/shop/game)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.netflix.mediaclient.ui.launch.UIWebViewActivity",
+   "splits": [
+    {
+     "name": "config.ar.apk",
+     "bytes": 647697,
+     "sha256": "1fac09af40ec8d5c46d69218a068a6b88895957daeb575c683b512017e5cac9d"
+    },
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 22013180,
+     "sha256": "5bf43f4094909210d813ee7f0191a10c2a573fa4c4e9317cf56fa771e9d9d858"
+    },
+    {
+     "name": "config.de.apk",
+     "bytes": 545297,
+     "sha256": "c55fbaaf661a929581f7c8ab1638f21d891d3a2a0765405c2f8b98a145377790"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 819609,
+     "sha256": "67a1c3b1aafd6a325040ad5ffe472cf6e8c116b0a794ed9a7c608ce82f43cc65"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 885265,
+     "sha256": "e3d6a43e056b157886b319842a1733759cef596803226371c71d9b34404f1c46"
+    },
+    {
+     "name": "config.fr.apk",
+     "bytes": 909961,
+     "sha256": "beb04c1f31bb22bcfa6260ce8fb5a9ad0a14692e85ffe4e75c227559726b7ddc"
+    },
+    {
+     "name": "config.hi.apk",
+     "bytes": 741905,
+     "sha256": "174995c1799096adfbba252d9585286ead6f058047d01286231e32af8f13f280"
+    },
+    {
+     "name": "config.in.apk",
+     "bytes": 696969,
+     "sha256": "d678a31213f8a65c4520a512323f9020be0491c08ab2b0326d38693079a0b7ab"
+    },
+    {
+     "name": "config.it.apk",
+     "bytes": 537105,
+     "sha256": "eb00b9647fa242280f4b776fab879742fcfb17f30cc528c50b128b8f737e048c"
+    },
+    {
+     "name": "config.ja.apk",
+     "bytes": 717329,
+     "sha256": "78e51d6167f103a3672895790ff78538c28a786fe46f368890908ae141975aa5"
+    },
+    {
+     "name": "config.ko.apk",
+     "bytes": 643661,
+     "sha256": "00a4aad03b68052f3cc017af9bea70e5a473f886496cb3b8aae1614778cd48a8"
+    },
+    {
+     "name": "config.my.apk",
+     "bytes": 74137,
+     "sha256": "e1862d6e88bcf3ec1d08c77c1b195c13ed5b5b9074db2f24f6aee59f948ba963"
+    },
+    {
+     "name": "config.pt.apk",
+     "bytes": 901769,
+     "sha256": "28363799f7b4bb646b225f5dc7122f4a6e64cc7e82ad2d28ee6f23ccdee61db7"
+    },
+    {
+     "name": "config.ru.apk",
+     "bytes": 651793,
+     "sha256": "12269c93f0fae60217cbdacf9e7df0bc2cfe588a02fbac27b963db5bf58cc717"
+    },
+    {
+     "name": "config.th.apk",
+     "bytes": 778769,
+     "sha256": "a833a7c39598b6db88505d2f8fdf8b7a41ea382d0cbe5f158b293f9dda6e1395"
+    },
+    {
+     "name": "config.tr.apk",
+     "bytes": 541201,
+     "sha256": "2e5c0d6fefec1334f2df5180ed84b49749f193aab98e15c49804c7c74942ea04"
+    },
+    {
+     "name": "config.vi.apk",
+     "bytes": 590353,
+     "sha256": "d155e0e41ed24d5bcd93739589c33f82dd798d738fe12846506b7017a2724a76"
+    },
+    {
+     "name": "config.xxxhdpi.apk",
+     "bytes": 1070793,
+     "sha256": "b8f69a2b56645b6c66617d0bb4eac50e642a3087447f2af8d6b78fa53823b600"
+    },
+    {
+     "name": "config.zh.apk",
+     "bytes": 1504361,
+     "sha256": "339aacb87984ba62babf6641cafa3ba6bc14ae05b3bf43c52239fb748737c719"
+    }
+   ]
+  },
+  "co-messenger": {
+   "kind": "original-apk-with-splits",
+   "package": "org.telegram.messenger",
+   "version_name": "12.10.3",
+   "version_code": 70892,
+   "abi": "arm64-v8a",
+   "bytes": 38565159,
+   "sha256": "6b3565f20af6681172b49cf84915818fb575ace8295cd1de08c4b9a2b3985f5e",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "Similarweb US top free 2026-09-21 ranks 11-51",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.telegram.messenger.DefaultIcon",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 19935744,
+     "sha256": "65ea9eac2c04023e920b8d0bc11a613cbdccbf55cdfdacb8808d0dac57660c48"
+    },
+    {
+     "name": "config.hdpi.apk",
+     "bytes": 1038256,
+     "sha256": "c35ff82adc4d8e80bc3eac1292f0ae5f91bf374e31cade0f52a42473733c8f65"
+    }
+   ]
+  },
+  "co-mm": {
+   "kind": "original-apk-with-splits",
+   "package": "com.tencent.mm",
+   "version_name": "8.0.72",
+   "version_code": 3085,
+   "abi": "arm64-v8a",
+   "bytes": 194770301,
+   "sha256": "59cfc54474ed23ff7276d1eea36ea779db7e6893d7b2cb925f28a0f3301784be",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "China top apps",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.tencent.mm.ui.LauncherUI",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 116628548,
+     "sha256": "d8b163761b6fb0ad47ac73e078cf918de5677ae1560eaa1cf40e0ee83f82e6c6"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 1892819,
+     "sha256": "4a13e21767af990858498c01421bf47acf80f6d9f5e405a01cad24fd6d948f78"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 704156,
+     "sha256": "4f59340b4b6f0123f94f6cf5bc3d85f2343215c123368cbc0053e81954e616ec"
+    }
+   ]
+  },
+  "co-mobile": {
+   "kind": "original-apk-with-splits",
+   "package": "com.ebay.mobile",
+   "version_name": "6.140.0.1",
+   "version_code": 6140001,
+   "abi": "arm64-v8a",
+   "bytes": 56109410,
+   "sha256": "41413b0d325177345150c3fbab723c1653d1b57e332e41ecf4bceaea175767b8",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "category pick (travel/food/pay/video/edu/work/create/shop/game)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.ebay.mobile.home.impl.main.MainActivity",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 12837638,
+     "sha256": "ccc03e32584815b5d55c12941645f98a817b2687ba339d3bf92e03eaecfbc055"
+    },
+    {
+     "name": "config.de.apk",
+     "bytes": 714140,
+     "sha256": "3e143d8b084edd626e49d392f7a6801caa655524e84382edd482435e0d52fe24"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 1499845,
+     "sha256": "33de7fcc570f01b73dcbae5cf8ed0877a4e6909d52f49449611510706988142e"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 1558442,
+     "sha256": "279223ce28749f901f22d27f2a18ebc38ecdc8b12695de32b18ab5fc7cbe148d"
+    },
+    {
+     "name": "config.fr.apk",
+     "bytes": 1087399,
+     "sha256": "f19ab22b2cc7260c3ca38272ad670e520ef4fd433d54587717afdb4d74cb94d7"
+    },
+    {
+     "name": "config.it.apk",
+     "bytes": 705729,
+     "sha256": "c53b409a014a073d167223fad21c7f4d2ac70916d9386bd6e76133c0f81ab7ab"
+    },
+    {
+     "name": "config.ja.apk",
+     "bytes": 696942,
+     "sha256": "85aeb8dc15cd4e77705c52e18f693e801f008b21b47d477e438980d558395e34"
+    },
+    {
+     "name": "config.ko.apk",
+     "bytes": 680558,
+     "sha256": "a6dc873c7d7bef74aa237b33fed66ad2c99798c468967bdfbfca637acda4cb90"
+    },
+    {
+     "name": "config.pt.apk",
+     "bytes": 689060,
+     "sha256": "fa354d4ffe57e48e0509a5e1220045b0d6773caf6e7253bfdb8929301c24877c"
+    },
+    {
+     "name": "config.ru.apk",
+     "bytes": 898329,
+     "sha256": "0e4362af166022926fc9e54fc3c5600f78032ef3891e3d54cda8c704a5855102"
+    },
+    {
+     "name": "config.xxxhdpi.apk",
+     "bytes": 889226,
+     "sha256": "b1c828c40d39cfef100cc1f7445036eafd49b541e8d37f416a7c85db9451793d"
+    },
+    {
+     "name": "config.zh.apk",
+     "bytes": 1017596,
+     "sha256": "9a8a98d599220541e9530ccfdb67ebadf60dde39ed125dc5fe44e7d1581eec71"
+    }
+   ]
+  },
+  "co-music": {
+   "kind": "original-apk-with-splits",
+   "package": "com.spotify.music",
+   "version_name": "9.1.84.2231",
+   "version_code": 146291969,
+   "abi": "arm64-v8a",
+   "bytes": 46235711,
+   "sha256": "e35fdc956fbea2bb23468bf934127b203ba68ca83d11154e045ec0b4b587b871",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "Similarweb US top free 2026-09-21 ranks 11-51",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.spotify.music.MainActivity",
+   "splits": [
+    {
+     "name": "config.ar.apk",
+     "bytes": 3342745,
+     "sha256": "a1c6eedcc115f895bcd9148b55c947ac7daa44c08e46dbd5fcffbf108043b2e0"
+    },
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 27329690,
+     "sha256": "f718ac2c44275463c228b6fce12d2d040db06e591631c18e53239d5bbf35bb6a"
+    },
+    {
+     "name": "config.de.apk",
+     "bytes": 1061273,
+     "sha256": "25b096d6d175a79ad837f0dda94657565fc3ebf651f4911d66da583c2417d305"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 999833,
+     "sha256": "08ec351dca00dd4e027fcf6ad3866863abdbae1d86f702a52b95e260bd9ba29a"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 2245017,
+     "sha256": "94e85e9fdb5f4c1b63bd0ebc9b2ea8c363456ea5948cac7c50b3fd8115c33374"
+    },
+    {
+     "name": "config.fr.apk",
+     "bytes": 1626521,
+     "sha256": "5388984315888ce859235a591c83b6c14b54cb1673a08e1bf7051b31ddf1a2f3"
+    },
+    {
+     "name": "config.hi.apk",
+     "bytes": 1458585,
+     "sha256": "eae0292c1f7d08cc2062ce88f006493276fa64b67b214e97c71cdccc216f73ae"
+    },
+    {
+     "name": "config.in.apk",
+     "bytes": 1012121,
+     "sha256": "2f45f6f768acb605f73e8b80188e2e5f76c6a8cfe99742554ca4daa3b4c0dafc"
+    },
+    {
+     "name": "config.it.apk",
+     "bytes": 1048985,
+     "sha256": "c22e55f75752fc253b865d4f94420140194c80397cded39c6eb97f829bd00f5b"
+    },
+    {
+     "name": "config.ja.apk",
+     "bytes": 1139097,
+     "sha256": "ccf5d71d2556544e24d0a409cde72b3112bab9810396c3b1606620f740d0bb1f"
+    },
+    {
+     "name": "config.ko.apk",
+     "bytes": 1089945,
+     "sha256": "71bc0e8cf0663a95d6dfa11143653cc86607b9b7241ec8669bb69f4e0e8a7bd2"
+    },
+    {
+     "name": "config.pt.apk",
+     "bytes": 1552793,
+     "sha256": "1e0430a35b47b0865c7cde22a27bec1f6ac8f16bff8e9901ff0f77ba464309f0"
+    },
+    {
+     "name": "config.ru.apk",
+     "bytes": 1245593,
+     "sha256": "3ece38348f4e911b3307ea5aca74e4f91fb849227fbca9804393ac4c18583469"
+    },
+    {
+     "name": "config.th.apk",
+     "bytes": 1380761,
+     "sha256": "b4fc2a61194bcd437426494ff57ee99fd20f5b8a28f29a5a34be8fdad37fcdfe"
+    },
+    {
+     "name": "config.tr.apk",
+     "bytes": 1044889,
+     "sha256": "1e8fe77ada5de623e80f8d40874640204f41849fedb3835a963304a9826e2d61"
+    },
+    {
+     "name": "config.vi.apk",
+     "bytes": 1110425,
+     "sha256": "9c25ef2b96799cdf38dcd5b69379812433333d33a84e110dd9f0ba902edfa28b"
+    },
+    {
+     "name": "config.xhdpi.apk",
+     "bytes": 386817,
+     "sha256": "53658da8cacc8e06dee1834a43b0ce7ba5abc08670bd79b5b7987ce91d47c326"
+    },
+    {
+     "name": "config.zh.apk",
+     "bytes": 1913241,
+     "sha256": "8009ecc277ee18e704ba85c8bc5397d85f9f2dde746dfc463f2ba60e087493da"
+    }
+   ]
+  },
+  "co-musically": {
+   "kind": "original-apk-with-splits",
+   "package": "com.zhiliaoapp.musically",
+   "version_name": "46.6.1",
+   "version_code": 2024606010,
+   "abi": "arm64-v8a",
+   "bytes": 72289786,
+   "sha256": "9ab415edcbcba56acc2077c21b99b5702d69a9b029ab76ba9145a444a3fe7ede",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "westlake-harness corpus/downloads.lock.json",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.ss.android.ugc.aweme.splash.SplashActivity",
+   "splits": [
+    {
+     "name": "config.ar.apk",
+     "bytes": 1078090,
+     "sha256": "9619795ffe8101c5a63625805fdee652525e25e4d0890b86a22ee29b4022cf5a"
+    },
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 56073529,
+     "sha256": "606662872f6236ce37d02a121fb250145d411da233f4bf6d8f25252c904d1b41"
+    },
+    {
+     "name": "config.de.apk",
+     "bytes": 1053513,
+     "sha256": "34ad8e0cb0912061669732e63edd63342a4a6207830bfda3403f5cd8589eac81"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 496814,
+     "sha256": "5a011f0579e7826ea7fcd21d6f29bff56e05e6909679ce63a9fd329f2347c485"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 1828011,
+     "sha256": "642f9f1efb12c8d54be522b33eb2ada4043c5165c4661ce6f86ef1bfafe604bd"
+    },
+    {
+     "name": "config.fr.apk",
+     "bytes": 1704952,
+     "sha256": "00e54ca46e0a431188fcdbd2e4416dafa299290b2b8b8415d23a1b9dbc165069"
+    },
+    {
+     "name": "config.hi.apk",
+     "bytes": 1143450,
+     "sha256": "64cf79a8b1a4d301da2ed0d4a5d5dc5e756ec15c89f99a2da186b639ea136d2d"
+    },
+    {
+     "name": "config.id.apk",
+     "bytes": 422579,
+     "sha256": "509f27079a25ab7dd9182c513090eaf173e4c99636cc0a9c9007168ede421a32"
+    },
+    {
+     "name": "config.in.apk",
+     "bytes": 967322,
+     "sha256": "8e213750bdd05632b791a0765bea6c7ee8942c7af9d55ccae61ee11b11999d00"
+    },
+    {
+     "name": "config.it.apk",
+     "bytes": 1012466,
+     "sha256": "43f3b294da8c2decb314b452effe56fa2aef769dc01e41732eaea9a12d09fb68"
+    },
+    {
+     "name": "config.ja.apk",
+     "bytes": 1024666,
+     "sha256": "a3bcdc32e9014354c0f4a2618c3b0a03166a32f540bb51baefc79b9c0dc596d5"
+    },
+    {
+     "name": "config.ko.apk",
+     "bytes": 995994,
+     "sha256": "16dc20685ca50a2ae3a7797269290d50aceb05506fe3e845032fc1f12f5e0bff"
+    },
+    {
+     "name": "config.my.apk",
+     "bytes": 1176306,
+     "sha256": "2a8ee9495bbdd9a2542cc3d34d97cbfd6ba0115c06f2bab8f601149465f720c4"
+    },
+    {
+     "name": "config.pt.apk",
+     "bytes": 1659721,
+     "sha256": "b858502ba71ac101c08f1ee0fb48c82c33cf3bcee67bd0dca39262ac15f4e8e3"
+    },
+    {
+     "name": "config.ru.apk",
+     "bytes": 1127066,
+     "sha256": "426be061de51b1e0447f06697f0e94ea276dde28acd97cb1cee59ac8fe767901"
+    },
+    {
+     "name": "config.th.apk",
+     "bytes": 1082010,
+     "sha256": "4c75592dc0654dd239eb817bacfbf6513a36a31664c36ff7411fbba055f484ce"
+    },
+    {
+     "name": "config.tr.apk",
+     "bytes": 1012378,
+     "sha256": "4316a7a0d1e33dd01d9ca97b768e1f262222999afa25abd735791d38c9f9595f"
+    },
+    {
+     "name": "config.vi.apk",
+     "bytes": 1008282,
+     "sha256": "27d13e960a730f33b0bbade6a599222272dea276e18794f5eb93c6c5e7de3eb0"
+    },
+    {
+     "name": "config.xxxhdpi.apk",
+     "bytes": 391299,
+     "sha256": "892a4fee491c49e36965d0b877c35453d9b7cdbe85aeb376ea584d05f34f5169"
+    },
+    {
+     "name": "config.zh.apk",
+     "bytes": 1737635,
+     "sha256": "823b8f36d561e6172e582a6056cc7922bd943eba533cd54f22d7bc06de422254"
+    },
+    {
+     "name": "df_a_dex.apk",
+     "bytes": 76883793,
+     "sha256": "d4cc62ecfe6235297f2b93f3625bd80aa0389b7327b52a0bd78f6b7e1f09f302"
+    },
+    {
+     "name": "df_kakao.apk",
+     "bytes": 16852,
+     "sha256": "932381675237bae7940eed61c1f44b4f15b864dc5fe0cb5c23cadba87b23f2a4"
+    },
+    {
+     "name": "df_kakao.config.arm64_v8a.apk",
+     "bytes": 74155,
+     "sha256": "ee3dd203ff46ed178bf076d02e3b58334fd5f997d78ac04297f6b316f9c41343"
+    },
+    {
+     "name": "df_line.apk",
+     "bytes": 16852,
+     "sha256": "887154aff368d82e1c49848c38acab11a80858c0aa9232e692ddfe11eecff24c"
+    },
+    {
+     "name": "df_line.config.arm64_v8a.apk",
+     "bytes": 37290,
+     "sha256": "5735638d7d39ac4eb3e1a275a322bc52f1b40eb0389719a0c8872487605b588d"
+    },
+    {
+     "name": "df_line_nonus.apk",
+     "bytes": 12694,
+     "sha256": "5f6ce337935e4ceaf82f400f3b24a28f70cddbf507ec1abc9d116a2c1a24ac6d"
+    },
+    {
+     "name": "df_location.apk",
+     "bytes": 12637,
+     "sha256": "b01d92c6beda93d765a4b19fed3e5ba4d895e53f4a30fdb1e5715d0ce4d5d89d"
+    },
+    {
+     "name": "df_location.config.arm64_v8a.apk",
+     "bytes": 106999,
+     "sha256": "37cc7e887b1148fc9d423247e41ab92955b926dd9a727b9d63e828843dcd1a79"
+    },
+    {
+     "name": "df_pns_biz.apk",
+     "bytes": 12637,
+     "sha256": "cd8564984923397382a8bc166bf959c73c11b59e6e30161fb9c893df74dbd90c"
+    },
+    {
+     "name": "df_pns_biz.config.arm64_v8a.apk",
+     "bytes": 16813,
+     "sha256": "1cdc486dcc26b40b749f12b053e187be91177ec85fdd4f24cbdd233357e054d0"
+    }
+   ]
+  },
+  "co-newsbreak": {
+   "kind": "original-apk-with-splits",
+   "package": "com.particlenews.newsbreak",
+   "version_name": "26.38.1",
+   "version_code": 26380103,
+   "abi": "arm64-v8a",
+   "bytes": 98104860,
+   "sha256": "4b5e89dafc1248d8169e1b0981ca6cd7d18dc15597d6e578010884f15b5d3b94",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "Similarweb US top free 2026-09-21 ranks 11-51",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.particlemedia.ui.guide.UserGuideActivity",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 19470170,
+     "sha256": "23a162c51600af87382d56f79a44a5286ab23b6c6bbc586b1e6927684e56e369"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 387902,
+     "sha256": "8a2ecb106b59515f3d27dc22ad41c1fb09dfcb1e8d59f296c7a273c5b7a05d4d"
+    }
+   ]
+  },
+  "co-orca": {
+   "kind": "original-apk",
+   "package": "com.facebook.orca",
+   "version_name": "575.0.0.48.90",
+   "version_code": 345012845,
+   "abi": "arm64-v8a",
+   "bytes": 84822249,
+   "sha256": "f48e1b4566408a9ecfe60afe45965bee740f459efa406df0cfd742af8c7f8344",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "westlake-harness corpus/downloads.lock.json",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.facebook.orca.auth.StartScreenActivity"
+  },
+  "co-p2pmobile": {
+   "kind": "original-apk-with-splits",
+   "package": "com.paypal.android.p2pmobile",
+   "version_name": "10.12.0",
+   "version_code": 1160090169,
+   "abi": "arm64-v8a",
+   "bytes": 132330116,
+   "sha256": "42a04f8822b3d4b831674053d291c233d63e63dbb40a1eaf7adb51a87afe74c1",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "category pick (travel/food/pay/video/edu/work/create/shop/game)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.paypal.oslo.app.MainActivity",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 40492210,
+     "sha256": "bd4d9e0f3776ddca30e1bed9dbdb3201d0873cb1186db3bb01c4062dc8aff3d3"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 27366025,
+     "sha256": "25b684dd18cab77ac70eba4dc05ae6b4183409ea6f9974444be46464682cf970"
+    },
+    {
+     "name": "config.hdpi.apk",
+     "bytes": 207653,
+     "sha256": "d35a8060f1e2159a2634c7e86d4a9d0d5c804e16addc9a69076ffb41815d39d9"
+    }
+   ]
+  },
+  "co-pinterest": {
+   "kind": "original-apk-with-splits",
+   "package": "com.pinterest",
+   "version_name": "14.25.0",
+   "version_code": 14258020,
+   "abi": "arm64-v8a",
+   "bytes": 36937969,
+   "sha256": "b6ccab7ad546d48e73295349cbc3892dcb2dd35e4508cf79b08a482f00eb73d3",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "Similarweb US top free 2026-09-21 ranks 11-51",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.pinterest.activity.PinterestActivity",
+   "splits": [
+    {
+     "name": "config.ar.apk",
+     "bytes": 741686,
+     "sha256": "e0e9c1fd574124a43f96f7b3e08973eed3a2af91d69c3f78c29b7b992ffb4e78"
+    },
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 12793133,
+     "sha256": "3890a017121bf3dab14d2ef0f613285475c76a9b28541238698be5c0cc58e21d"
+    },
+    {
+     "name": "config.de.apk",
+     "bytes": 606418,
+     "sha256": "b146599ca509665f9549197f6aa4973190af1fb63006e738851d3607b0007be7"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 815314,
+     "sha256": "16a6bdd09fc0ac01dd8dec308b3af2211710752f32b42ea307b1a740c3838095"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 880850,
+     "sha256": "a8d60de104131144efd990e1900dc941012a2249efec086b1a51f2bf0fa97a9a"
+    },
+    {
+     "name": "config.fr.apk",
+     "bytes": 622802,
+     "sha256": "0090d3d9fd963a7da6dccf25ddad51132c8a14331b7f1f04ce30b1bde3aff40c"
+    },
+    {
+     "name": "config.hi.apk",
+     "bytes": 856274,
+     "sha256": "353178351036dba683703d739b36ed7593a24ec7437425a0dc31f8a17ba7c5a7"
+    },
+    {
+     "name": "config.in.apk",
+     "bytes": 573650,
+     "sha256": "14b0fa189b38ba4aa7ab5248eb269920834ebb3f5864450ef51cce6dc9b6eacc"
+    },
+    {
+     "name": "config.it.apk",
+     "bytes": 590034,
+     "sha256": "4d048952cd208f02fadf040edd3cab7c57ffc1727f86529f1e1f667759fbebef"
+    },
+    {
+     "name": "config.ja.apk",
+     "bytes": 663762,
+     "sha256": "a38ef26843a5684fd222fb14bc56057c831adb7be8e70a74d188c49fc5167e89"
+    },
+    {
+     "name": "config.ko.apk",
+     "bytes": 626898,
+     "sha256": "5a5333f42bce03dcedd888558410ca61bd0db5ed5c8f65550adcce3795e4a5c3"
+    },
+    {
+     "name": "config.pt.apk",
+     "bytes": 1032402,
+     "sha256": "b620f2ee325ce39a8ecdc25846d13439e9a377fed54a84527a8b6b91ea8f4ee7"
+    },
+    {
+     "name": "config.ru.apk",
+     "bytes": 741586,
+     "sha256": "8310c52e47ac82d90620a1d8ef18c4262e3b59e6dee8f985db154a7d309e39d9"
+    },
+    {
+     "name": "config.th.apk",
+     "bytes": 827602,
+     "sha256": "d479c3cc042b3dbed182a1451088b46983ac58591b5b69fc4a7e0d7d37a16088"
+    },
+    {
+     "name": "config.tr.apk",
+     "bytes": 598226,
+     "sha256": "61f3935fb5833c75789408a3bff51c09999f887870028ec7f6c80052f9b051c2"
+    },
+    {
+     "name": "config.vi.apk",
+     "bytes": 651474,
+     "sha256": "64086b5ed87046cfaf8d00d1e02152974fe80eb95678a8e8032e864289e7d9d2"
+    },
+    {
+     "name": "config.xxxhdpi.apk",
+     "bytes": 3559020,
+     "sha256": "a2cda217ee78c8a2974b835e4b9c9635e0a469904c72690c93931e6dde8b3945"
+    },
+    {
+     "name": "config.zh.apk",
+     "bytes": 880850,
+     "sha256": "7ae6040eff27137ba5970e3cea83d095a425b39a95b5adf0cdfb9f9f6e21f109"
+    }
+   ]
+  },
+  "co-safetymapd": {
+   "kind": "original-apk-with-splits",
+   "package": "com.life360.android.safetymapd",
+   "version_name": "26.35.0",
+   "version_code": 2922180,
+   "abi": "arm64-v8a",
+   "bytes": 114200032,
+   "sha256": "a42877347ae6db46736e84971880e0f13d3be7dee727eae533c093d8a44e5cc0",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "Similarweb US top free 2026-09-21 ranks 11-51",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.life360.koko.LauncherNormal",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 5928098,
+     "sha256": "5db1096674f0f6c273d1b54fcb0a460f7b33f5f6f024d6bc0d844982d9dea3f0"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 1409433,
+     "sha256": "fec198fef77c8d8214c41abe3ab3f21e9a0b91b242a93090d35af6f30c6cd726"
+    },
+    {
+     "name": "config.hdpi.apk",
+     "bytes": 5706328,
+     "sha256": "1e2a55e7a01405c1a0b93595d785d8322c81008a9ec3561269f53cf67e13df90"
+    }
+   ]
+  },
+  "co-shopping": {
+   "kind": "original-apk-with-splits",
+   "package": "com.amazon.mShop.android.shopping",
+   "version_name": "32.12.4.100",
+   "version_code": 1241319416,
+   "abi": "arm64-v8a",
+   "bytes": 107068050,
+   "sha256": "0dfd32256d4d78aa700fe8d6c2b5d74b9a985a9bb2a23f9974cff0ee2ed5f59b",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "westlake-harness corpus/downloads.lock.json",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.amazon.mShop.appgrade.ui.AppgradeKillSwitchActivity",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 73685703,
+     "sha256": "69266c18987420dcce271551f60b05d298454a78a318db38ec00d322d6662e82"
+    },
+    {
+     "name": "config.hdpi.apk",
+     "bytes": 2221541,
+     "sha256": "200fb15ff0771dad43d2be08e5f0704fb56fcff83ec348890b293963c7e39009"
+    }
+   ]
+  },
+  "co-teams": {
+   "kind": "original-apk",
+   "package": "com.microsoft.teams",
+   "version_name": "1416/1.0.0.2026163804",
+   "version_code": 2026163843,
+   "abi": "arm64-v8a",
+   "bytes": 230490937,
+   "sha256": "ca830a2a4a5454e72552a91110309c6ed8d4a3cf90204c37c696374a04a2328b",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "category pick (travel/food/pay/video/edu/work/create/shop/game)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.microsoft.skype.teams.Launcher"
+  },
+  "co-ubercab": {
+   "kind": "original-apk-with-splits",
+   "package": "com.ubercab",
+   "version_name": "4.649.10000",
+   "version_code": 309729,
+   "abi": "arm64-v8a",
+   "bytes": 200438153,
+   "sha256": "68924ffd2970198026cf6a547b796bd84bb56f6c0ccee87132228c8af9ef490e",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "category pick (travel/food/pay/video/edu/work/create/shop/game)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.ubercab.presidio.app.core.root.RootActivity",
+   "splits": [
+    {
+     "name": "BarcodeScanner.apk",
+     "bytes": 1299488,
+     "sha256": "237963e390d771e657cf5b2e85f8c640e76ae0daf519ba1495fe7c08f33eb5b8"
+    },
+    {
+     "name": "BarcodeScanner.config.arm64_v8a.apk",
+     "bytes": 4977067,
+     "sha256": "a28244eb8c12ebb2dd35fb0e9956051e4bf0f3291ec6c2d99b88a926d51e14d2"
+    },
+    {
+     "name": "CarRentalsDFMApi.apk",
+     "bytes": 860367,
+     "sha256": "2f85b526a9edd6d594e9ad7952603d752b71102b7e2ecd534b16be6335e35bca"
+    },
+    {
+     "name": "EatsDFMAPI.apk",
+     "bytes": 12438,
+     "sha256": "97f757fdbe36f13d2876f9a4f0a6002826828f5d872ef43bb85ca747e72b9030"
+    },
+    {
+     "name": "EatsDFMViewAPI.apk",
+     "bytes": 12438,
+     "sha256": "08e8682fa8ec56b2a53f4552b7de31c3560f78e3f61d960418eb0499ddeb3d96"
+    },
+    {
+     "name": "FlashNacional.apk",
+     "bytes": 24783,
+     "sha256": "7669518396c918f0356a7a5ee2ca010d98029882a8d6dea8b97d3cb925a5a243"
+    },
+    {
+     "name": "GooglePaySdk.apk",
+     "bytes": 94571,
+     "sha256": "f9ba1c338805055ce1e918aa9396b217610b223e1af1d5ff3647d81e6909d608"
+    },
+    {
+     "name": "VoipTwilio.apk",
+     "bytes": 323791,
+     "sha256": "886f0a5340ae21ce823f0c920226ab33cf24d438a991312d5132b4b9101e72c7"
+    },
+    {
+     "name": "VoipTwilio.config.arm64_v8a.apk",
+     "bytes": 11694518,
+     "sha256": "0f0a698ad0cd0c7ab3a9862f19f45fc5f95f3ed7e56949a2c64b658e68163205"
+    },
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 17761617,
+     "sha256": "de58b5c6b0c435021e9af5e8a54ab4935f0b5c7313d91ce20ceb9b6cc9af086e"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 2011545,
+     "sha256": "5bcdf4ce1551253cc36f7472ad0df5de122185fbe234806b13a36e802345fa16"
+    },
+    {
+     "name": "config.xxxhdpi.apk",
+     "bytes": 760006,
+     "sha256": "447fad5baa02ef2c07e814898d362c116b4eb96cbd676ef79443d6f5f5e72511"
+    }
+   ]
+  },
+  "co-videomeetings": {
+   "kind": "original-apk-with-splits",
+   "package": "us.zoom.videomeetings",
+   "version_name": "7.1.0.41065",
+   "version_code": 6701000,
+   "abi": "arm64-v8a",
+   "bytes": 157545874,
+   "sha256": "7969e4169f06eee3da431fd847a1b486a5c543137d85c3f847618c932c8ab15f",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "category pick (travel/food/pay/video/edu/work/create/shop/game)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.zipow.videobox.LauncherActivity",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 123917733,
+     "sha256": "6c2f5336c77cd857746f303530594e87dd470bbbde554275ae5b510b65afeb12"
+    },
+    {
+     "name": "config.mdpi.apk",
+     "bytes": 1069796,
+     "sha256": "9b2b378ad6ea9f7170c5e63016e3057f526c3e47b95f9eb513294ffd8ab492da"
+    }
+   ]
+  },
+  "co-weibo": {
+   "kind": "original-apk-with-splits",
+   "package": "com.sina.weibo",
+   "version_name": "16.8.1",
+   "version_code": 8113,
+   "abi": "arm64-v8a",
+   "bytes": 242374756,
+   "sha256": "4754e3462645b16dcabcf5662373ef5dc89bdcacb3ead968aa13e42f73625eca",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "commercial100-results spare; China top apps",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.sina.weibo.SplashActivity",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 151333191,
+     "sha256": "5020b45d3972a1e25e279e9c029678c9760c3b32dac5c7ff542934c6c15eee97"
+    },
+    {
+     "name": "google_assets.apk",
+     "bytes": 31600456,
+     "sha256": "58fa18988cd4ab28435fa072560514aa45dbd40102b482581133ab698375b6d7"
+    }
+   ]
+  },
+  "co-whatsapp": {
+   "kind": "original-apk-with-splits",
+   "package": "com.whatsapp",
+   "version_name": "2.26.31.77",
+   "version_code": 263107700,
+   "abi": "arm64-v8a",
+   "bytes": 122572685,
+   "sha256": "e505d8a04527dc448beab2b123ace56a0cdfffa9c4126095d23d2d3670f9e296",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "westlake-harness corpus/downloads.lock.json",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.whatsapp.Main",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 13640341,
+     "sha256": "7bcf32d5c03394d548c5443a4690f66e4ef4aeb60626ae08c2985e3677c19873"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 2319184,
+     "sha256": "36883fa3f6116efbc241aaa62229e96c0f955781bdf96a2d4f9732599fed6100"
+    },
+    {
+     "name": "i18n_ko.apk",
+     "bytes": 262569,
+     "sha256": "c0474c2dc7342a63b9155375ff6d0c917e025e1336eb533d9ec03fe80fa062d9"
+    }
+   ]
+  },
+  "co-zzkko": {
+   "kind": "original-apk-with-splits",
+   "package": "com.zzkko",
+   "version_name": "15.4.2",
+   "version_code": 2926,
+   "abi": "arm64-v8a",
+   "bytes": 82061621,
+   "sha256": "1cf2f7d2a5ba52d2f5615dc39de532ed0cb4d46f0220246f6e078fbe461089be",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "category pick (travel/food/pay/video/edu/work/create/shop/game)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.shein.welcome.WelcomeActivity",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 13502366,
+     "sha256": "d70ccfaff3b033105848533156761e9d9f011d397111b4c2c30aa019aa687b61"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 215063,
+     "sha256": "548868cbdf9bd24551ad7718b7e41b3fa11c1b0aa34155f79a274f1deeae2ff5"
+    }
+   ]
+  },
+  "fd-AppManager": {
+   "kind": "original-apk",
+   "package": "io.github.muntashirakon.AppManager",
+   "version_name": "4.1.1",
+   "version_code": 451,
+   "abi": "arm64-v8a",
+   "bytes": 28145654,
+   "sha256": "e1f6ba10812c74016ad626e11e27a1ae450aec2c0964a11466abb9e7a9c8ef84",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "io.github.muntashirakon.AppManager.main.SplashActivity"
+  },
+  "fd-android": {
+   "kind": "original-apk",
+   "package": "net.thunderbird.android",
+   "version_name": "23.0",
+   "version_code": 31,
+   "abi": "arm64-v8a",
+   "bytes": 10822051,
+   "sha256": "1e4a2e23a4bff8c8d96eae7ed809f1ebd05a4ab24650ab792c226749dd51d936",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "net.thunderbird.app.common.MainActivity"
+  },
+  "fd-api": {
+   "kind": "original-apk",
+   "package": "com.termux.api",
+   "version_name": "0.53.0",
+   "version_code": 1002,
+   "abi": "arm64-v8a",
+   "bytes": 3956196,
+   "sha256": "4497dbbf81906df52e59ed387a5223d225aa0de3aca817cc557a621e4dadda44",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.termux.api.activities.TermuxAPILauncherActivity"
+  },
+  "fd-app": {
+   "kind": "original-apk",
+   "package": "com.unciv.app",
+   "version_name": "4.22.1",
+   "version_code": 1262,
+   "abi": "arm64-v8a",
+   "bytes": 27297784,
+   "sha256": "0eb71e65786a7879eae99bab48bbc30a6fa76bd2771d562a807fb7e93fb04add",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.unciv.app.AndroidLauncher"
+  },
+  "fd-auxio": {
+   "kind": "original-apk",
+   "package": "org.oxycblt.auxio",
+   "version_name": "4.1.5",
+   "version_code": 75,
+   "abi": "arm64-v8a",
+   "bytes": 11229630,
+   "sha256": "c2053d36c28dbe74de40eadcd8978ec874c465ed3352bba655d4b2b364780b45",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.oxycblt.auxio.MainActivity"
+  },
+  "fd-binaryeye": {
+   "kind": "original-apk",
+   "package": "de.markusfisch.android.binaryeye",
+   "version_name": "1.75.4",
+   "version_code": 179,
+   "abi": "arm64-v8a",
+   "bytes": 8676688,
+   "sha256": "428c26249c706bd79610d03a1a985dcc0efd9dd5469fc9be92c703459a4d5f93",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "de.markusfisch.android.binaryeye.activity.SplashActivity"
+  },
+  "fd-breezyweather": {
+   "kind": "original-apk",
+   "package": "org.breezyweather",
+   "version_name": "6.2.2_freenet",
+   "version_code": 60202,
+   "abi": "arm64-v8a",
+   "bytes": 20779665,
+   "sha256": "1369d817d426498715f8ccb6750baff19dadd78e85f707088e9bca43977570c0",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.breezyweather.ui.main.MainActivity"
+  },
+  "fd-calendar": {
+   "kind": "original-apk",
+   "package": "org.fossify.calendar",
+   "version_name": "1.10.3",
+   "version_code": 20,
+   "abi": "arm64-v8a",
+   "bytes": 7774487,
+   "sha256": "2acbd47fa2abc6dd4846e406ed2fd60c5c01b8613158d10e012135923ee24894",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.fossify.calendar.activities.SplashActivity.Green"
+  },
+  "fd-catima": {
+   "kind": "original-apk",
+   "package": "me.hackerchick.catima",
+   "version_name": "2.45.0",
+   "version_code": 1002,
+   "abi": "arm64-v8a",
+   "bytes": 5250454,
+   "sha256": "4f01f40d06d82fc5b8cfbbc5eccd083151a86564fbd4fa420eb54aaebf668b71",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "protect.card_locker.MainActivity"
+  },
+  "fd-client": {
+   "kind": "original-apk",
+   "package": "com.nextcloud.client",
+   "version_name": "35.0.0",
+   "version_code": 350000090,
+   "abi": "arm64-v8a",
+   "bytes": 96757432,
+   "sha256": "2d08059c9a0a94ef4316e5c8491e3c6aee99a87b58bb796163c44e08deb1615c",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.nmc.android.ui.LauncherActivity"
+  },
+  "fd-com-amaze-filemanager": {
+   "kind": "original-apk",
+   "package": "com.amaze.filemanager",
+   "version_name": "3.11.3",
+   "version_code": 125,
+   "abi": "arm64-v8a",
+   "bytes": 12329238,
+   "sha256": "35e0338dac1bf026f22d91e1b096c1c6eff1424ad7d6be52a7f8d3fe50987530",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.amaze.filemanager.ui.activities.MainActivity"
+  },
+  "fd-com-kunzisoft-keepass-libre": {
+   "kind": "original-apk",
+   "package": "com.kunzisoft.keepass.libre",
+   "version_name": "4.5.4",
+   "version_code": 45400,
+   "abi": "arm64-v8a",
+   "bytes": 16737649,
+   "sha256": "862f87a30baef06181f049adf7c460611605b25a807eaf3c25841a9dd84bed9e",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.kunzisoft.keepass.activities.FileDatabaseSelectActivity"
+  },
+  "fd-droidify": {
+   "kind": "original-apk",
+   "package": "com.looker.droidify",
+   "version_name": "0.7.7",
+   "version_code": 770,
+   "abi": "arm64-v8a",
+   "bytes": 6132710,
+   "sha256": "da3070f3f18bdbed1eab666677afd39e4b19a60c70f0bfca68a5730147f81f10",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.looker.droidify.MainActivity"
+  },
+  "fd-etar": {
+   "kind": "original-apk",
+   "package": "ws.xsoh.etar",
+   "version_name": "1.0.57",
+   "version_code": 57,
+   "abi": "arm64-v8a",
+   "bytes": 9226697,
+   "sha256": "dae01d93c8920aa63845868db2190bcc4aa6ff8410b1289de1ce27b1bb89c599",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.android.calendar.AllInOneActivity"
+  },
+  "fd-feeder": {
+   "kind": "original-apk",
+   "package": "com.nononsenseapps.feeder",
+   "version_name": "2.23.2",
+   "version_code": 4113,
+   "abi": "arm64-v8a",
+   "bytes": 60984447,
+   "sha256": "0aa5eb094f94ca29ab7956d75b9e5d7c19785ebdac74b9ae512930084338bf3c",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.nononsenseapps.feeder.ui.MainActivity"
+  },
+  "fd-fennec_fdroid": {
+   "kind": "original-apk",
+   "package": "org.mozilla.fennec_fdroid",
+   "version_name": "156.0.0",
+   "version_code": 1560020,
+   "abi": "arm64-v8a",
+   "bytes": 127634542,
+   "sha256": "27f2951376ca1085e0933066c902fdfe4d260916d381e233475c5fd6964f5745",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.mozilla.fennec_fdroid.App"
+  },
+  "fd-filemanager": {
+   "kind": "original-apk",
+   "package": "org.fossify.filemanager",
+   "version_name": "1.6.1",
+   "version_code": 13,
+   "abi": "arm64-v8a",
+   "bytes": 9982225,
+   "sha256": "9e97d2faf55fb2702386c3dc51e38a6b073781016b125701d3ab668419a70008",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.fossify.filemanager.activities.SplashActivity.Green"
+  },
+  "fd-fitness": {
+   "kind": "original-apk",
+   "package": "de.tadris.fitness",
+   "version_name": "16.3",
+   "version_code": 1630,
+   "abi": "arm64-v8a",
+   "bytes": 6772550,
+   "sha256": "e1708c7c4256748a5825e3f898a6898dac8a0988f6499c78d63ea48bbf8f352b",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "de.tadris.fitness.ui.MainActivity"
+  },
+  "fd-fluffychat": {
+   "kind": "original-apk",
+   "package": "chat.fluffy.fluffychat",
+   "version_name": "2.9.5",
+   "version_code": 3566,
+   "abi": "arm64-v8a",
+   "bytes": 185599421,
+   "sha256": "edcdf6171c09ab39ed76447c1ee11c66503d922dfe4f36f2dd429f2f9c652481",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "chat.fluffy.fluffychat.MainActivity"
+  },
+  "fd-gallery": {
+   "kind": "original-apk",
+   "package": "org.fossify.gallery",
+   "version_name": "1.13.1",
+   "version_code": 28,
+   "abi": "arm64-v8a",
+   "bytes": 38606538,
+   "sha256": "ae7e699599e81f70e2b82626bb1dfa883fe096cd938387133e123c116e5641d9",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.fossify.gallery.activities.SplashActivity.Green"
+  },
+  "fd-im-vector-app": {
+   "kind": "original-apk",
+   "package": "im.vector.app",
+   "version_name": "1.6.62",
+   "version_code": 40106622,
+   "abi": "arm64-v8a",
+   "bytes": 72422482,
+   "sha256": "ff73751599211c709c1e691d1a2b7412df0bab979ffbe8ff0d4b7f31c6a444c9",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "im.vector.application.features.Alias"
+  },
+  "fd-immich": {
+   "kind": "original-apk",
+   "package": "app.alextran.immich",
+   "version_name": "3.2.2",
+   "version_code": 3020299,
+   "abi": "arm64-v8a",
+   "bytes": 179565680,
+   "sha256": "36b0d1368881ad6388b011d9a5bb91f7bd6133371d1eb585390c80232b9f22ea",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "app.alextran.immich.MainActivity"
+  },
+  "fd-k9": {
+   "kind": "original-apk",
+   "package": "com.fsck.k9",
+   "version_name": "23.0",
+   "version_code": 39044,
+   "abi": "arm64-v8a",
+   "bytes": 10751521,
+   "sha256": "92cd3a81c7a8d066e517a50932fe85424de7752cb72e76032174d53ec36a2741",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "net.thunderbird.app.common.MainActivity"
+  },
+  "fd-kitchenowl": {
+   "kind": "original-apk",
+   "package": "com.tombursch.kitchenowl",
+   "version_name": "0.7.10",
+   "version_code": 124,
+   "abi": "arm64-v8a",
+   "bytes": 79890095,
+   "sha256": "c7fbb7a62636fc74f33ce443e4a844979782fd5ff3616d4c9cf80e0cf93645e1",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.tombursch.kitchenowl.MainActivity"
+  },
+  "fd-libre": {
+   "kind": "original-apk",
+   "package": "deckers.thibault.aves.libre",
+   "version_name": "1.15.3",
+   "version_code": 17702,
+   "abi": "arm64-v8a",
+   "bytes": 62519159,
+   "sha256": "25f986a8cae2c2086c939b0ca17f10d1cafdf82e7db20679810cb93018e6a39a",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "deckers.thibault.aves.MainActivity"
+  },
+  "fd-libretube": {
+   "kind": "original-apk",
+   "package": "com.github.libretube",
+   "version_name": "32.1",
+   "version_code": 72,
+   "abi": "arm64-v8a",
+   "bytes": 9253519,
+   "sha256": "792b1e37e7bd6a26d8da1c826a68677465c333633cb2198224cc96c84257d615",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.github.libretube.Default"
+  },
+  "fd-meet": {
+   "kind": "original-apk",
+   "package": "org.jitsi.meet",
+   "version_name": "26.0.0",
+   "version_code": 26000002,
+   "abi": "arm64-v8a",
+   "bytes": 19351057,
+   "sha256": "72a89e53ca532b3ab44e9204644edeef282d7d66a366939ea55f062057c47df4",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.jitsi.meet.MainActivity"
+  },
+  "fd-minetest": {
+   "kind": "original-apk",
+   "package": "net.minetest.minetest",
+   "version_name": "5.17.0",
+   "version_code": 5170000,
+   "abi": "arm64-v8a",
+   "bytes": 43074578,
+   "sha256": "87a136d408ed560d3d56e55ca2ac780deb7a8941635b16960c88831fb33f9233",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "net.minetest.minetest.MainActivity"
+  },
+  "fd-mobile": {
+   "kind": "original-apk",
+   "package": "org.jellyfin.mobile",
+   "version_name": "2.7.3",
+   "version_code": 2070399,
+   "abi": "arm64-v8a",
+   "bytes": 8964986,
+   "sha256": "f9f4b3ab46cc9434df811194c2d4351417f4db83a4c1a0facd0a662d69533f7f",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.jellyfin.mobile.MainActivity"
+  },
+  "fd-mpv": {
+   "kind": "original-apk",
+   "package": "is.xyz.mpv",
+   "version_name": "2026-09-17-release",
+   "version_code": 48,
+   "abi": "arm64-v8a",
+   "bytes": 123244634,
+   "sha256": "5cba2237b20ba34b79eaccfbd39bdb5b09d2a9a774bdccee09ca450eac4edd34",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "is.xyz.mpv.MainActivity"
+  },
+  "fd-musicplayer": {
+   "kind": "original-apk",
+   "package": "org.fossify.musicplayer",
+   "version_name": "1.8.1",
+   "version_code": 14,
+   "abi": "arm64-v8a",
+   "bytes": 11027320,
+   "sha256": "b5d0ce367544df1ac162adf71d642878c5b963a304ca0ddf8f8556f07bbba79b",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.fossify.musicplayer.activities.SplashActivity.Green"
+  },
+  "fd-netguard": {
+   "kind": "original-apk",
+   "package": "eu.faircode.netguard",
+   "version_name": "2.337",
+   "version_code": 2026080101,
+   "abi": "arm64-v8a",
+   "bytes": 2852296,
+   "sha256": "158b4308da0006298d22ed557adbff24b282fddeb1bc0b3468829a60f405a8c4",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "eu.faircode.netguard.ActivityMain"
+  },
+  "fd-noice": {
+   "kind": "original-apk",
+   "package": "com.github.ashutoshgngwr.noice",
+   "version_name": "2.5.7",
+   "version_code": 72,
+   "abi": "arm64-v8a",
+   "bytes": 5100016,
+   "sha256": "8e11b3136977e9f5dc897de85c26add9a219ea61884feabcbcd4e33566d5d2ca",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.github.ashutoshgngwr.noice.activity.MainActivity"
+  },
+  "fd-notes": {
+   "kind": "original-apk",
+   "package": "org.fossify.notes",
+   "version_name": "1.7.0",
+   "version_code": 13,
+   "abi": "arm64-v8a",
+   "bytes": 9528948,
+   "sha256": "5a56e0e39cc488e1f3b947d3801006d3b7450ec73c67f03195c64c5fd3b6bced",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.fossify.notes.activities.SplashActivity.Green"
+  },
+  "fd-organicmaps": {
+   "kind": "original-apk",
+   "package": "app.organicmaps",
+   "version_name": "2026.08.27-18-FDroid",
+   "version_code": 26082718,
+   "abi": "arm64-v8a",
+   "bytes": 64105378,
+   "sha256": "c1fc03a8bad4dac3c400c50764a929ec7a07b02ba572336bfdd9e722a4f96519",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "app.organicmaps.DownloadResourcesActivity"
+  },
+  "fd-plus": {
+   "kind": "original-apk",
+   "package": "net.osmand.plus",
+   "version_name": "5.3.10",
+   "version_code": 531003,
+   "abi": "arm64-v8a",
+   "bytes": 162183115,
+   "sha256": "27f1eb82d288a9939b7c0bdd0fb94f78749824ffc753d32d421e01cbe487e5e0",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "net.osmand.plus.activities.MapActivity"
+  },
+  "fd-reader": {
+   "kind": "original-apk",
+   "package": "me.ash.reader",
+   "version_name": "0.16.2",
+   "version_code": 47,
+   "abi": "arm64-v8a",
+   "bytes": 11209694,
+   "sha256": "78b1b8b9b6f6d18baaba31427895f1f10e9ca6cc1e01b3ceeb96df26e8fca075",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "me.ash.reader.infrastructure.android.MainActivity"
+  },
+  "fd-saber": {
+   "kind": "original-apk",
+   "package": "com.adilhanney.saber",
+   "version_name": "1.36.1",
+   "version_code": 1360102,
+   "abi": "arm64-v8a",
+   "bytes": 40592971,
+   "sha256": "5e2e3691288fdac77f988bbe26a3c557942b4fd5b4151f37ef0b8f6352127092",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.adilhanney.saber.MainActivity"
+  },
+  "fd-seal": {
+   "kind": "original-apk",
+   "package": "com.junkfood.seal",
+   "version_name": "1.13.1-(F-Droid)",
+   "version_code": 11312,
+   "abi": "arm64-v8a",
+   "bytes": 43057559,
+   "sha256": "7070a3d4f079046912b4b8dde4edc8d1ef6eade3c9c98b02bfcaba3669c11d98",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.junkfood.seal.MainActivity"
+  },
+  "fd-shatteredpixeldungeon": {
+   "kind": "original-apk",
+   "package": "com.shatteredpixel.shatteredpixeldungeon",
+   "version_name": "4.0.0",
+   "version_code": 912,
+   "abi": "arm64-v8a",
+   "bytes": 30266866,
+   "sha256": "ed1b43d7312a70e86c5cd159d4ac29d7d69fae1033331a4e70f9a00dd346b207",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.shatteredpixel.shatteredpixeldungeon.android.AndroidLauncher"
+  },
+  "fd-stk": {
+   "kind": "original-apk",
+   "package": "org.supertuxkart.stk",
+   "version_name": "1.4",
+   "version_code": 311,
+   "abi": "arm64-v8a",
+   "bytes": 165323629,
+   "sha256": "4a01fa9b566a694f0576d86ef84cc867c7dc37ef446e7cbbbb2449e7bbb9d3c6",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.supertuxkart.stk.SuperTuxKartActivity"
+  },
+  "fd-tasks": {
+   "kind": "original-apk",
+   "package": "org.tasks",
+   "version_name": "15.12",
+   "version_code": 151202,
+   "abi": "arm64-v8a",
+   "bytes": 28580639,
+   "sha256": "ed972cc1cec3456a11992435a3fcf132d1311f1e8dfd27758265122fbc206ce0",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.todoroo.astrid.activity.TaskListActivity"
+  },
+  "fd-tusky": {
+   "kind": "original-apk",
+   "package": "com.keylesspalace.tusky",
+   "version_name": "32.2",
+   "version_code": 142,
+   "abi": "arm64-v8a",
+   "bytes": 22364055,
+   "sha256": "3e8fcc49a80d4c30ab6f6037e51402c77e2694d27ec19ae5b8a93cd08b6caffa",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.keylesspalace.tusky.MainActivity"
+  },
+  "fd-tutanota": {
+   "kind": "original-apk",
+   "package": "de.tutao.tutanota",
+   "version_name": "359.260904.0",
+   "version_code": 396709,
+   "abi": "arm64-v8a",
+   "bytes": 77105604,
+   "sha256": "6e2b9cb23ddbdb1a1389426a913eebd7f7b7becf387acb668e512a84013e4033",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "de.tutao.tutanota.MainActivity"
+  },
+  "fd-uhabits": {
+   "kind": "original-apk",
+   "package": "org.isoron.uhabits",
+   "version_name": "2.3.1",
+   "version_code": 20301,
+   "abi": "arm64-v8a",
+   "bytes": 10753773,
+   "sha256": "3903d3be3db0f1622ad61cf5bb267515c95a4069e8dd46f73249721b1bb8173e",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.isoron.uhabits.MainActivity"
+  },
+  "fd-wifianalyzer": {
+   "kind": "original-apk",
+   "package": "com.vrem.wifianalyzer",
+   "version_name": "3.3.1",
+   "version_code": 72,
+   "abi": "arm64-v8a",
+   "bytes": 2119103,
+   "sha256": "282a06fcc5ce5d889799113a1c6edf5e408b0902acc542308ad21051a2a7cc2b",
+   "delivery": "corpus100 (fdroid100/commercial100 fetch)",
+   "reference": "F-Droid (fdroid100 fetch)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.vrem.wifianalyzer.MainActivity"
   }
  }
 }
