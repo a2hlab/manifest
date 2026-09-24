@@ -591,7 +591,7 @@
     },
     {
       "path": "/data/local/tmp/asx/webview-t-lib/libandroid.so",
-      "sha256": "2c32e862ba7034d30599a5c578f74fcaec757c917e0337404b03649fba1a9524",
+      "sha256": "d27c05662865fe0b87e7c52ba388795f7dd4f82d5f5f46f11be380aa3c6ac49b",
       "category": "webview",
       "local_substitution": {
         "reason": "built from westlake source by the manifest package_webview_source.py recipe",
@@ -613,7 +613,7 @@
     },
     {
       "path": "/data/local/tmp/asx/webview-t-lib/libwebview_bionic_shim.so",
-      "sha256": "90517a0ff618d0c4840d83c440e5eea3df6353be69ea450c33e88004d1d822fc",
+      "sha256": "ae6ac82830c2cd143469047c404765cd13b0c38106d2ccfe92596059f8e6b6ea",
       "category": "webview",
       "local_substitution": {
         "reason": "built from westlake source by the manifest package_webview_source.py recipe; includes the self-trapping-library refusal the captured copy predates",
