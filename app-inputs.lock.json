@@ -440,10 +440,10 @@
    "bytes": 64105378,
    "sha256": "c1fc03a8bad4dac3c400c50764a929ec7a07b02ba572336bfdd9e722a4f96519",
    "delivery": "F-Droid repo (sha256 checked against the index entry; arm64 libraries selected from the APK's own lib/ entries)",
-   "reference": "harness blind-prediction corpus 2 (2026-09-23): native C++ map engine rendering OpenGL ES into a SurfaceView; location",
+   "reference": "harness blind-prediction corpus 2 (2026-09-23): native C++ map engine rendering OpenGL ES into a SurfaceView; location (launcher DownloadResourcesActivity is an activity-alias of SplashActivity)",
    "rebuild": false,
    "modify_or_resign": false,
-   "launch_activity": "app.organicmaps.DownloadResourcesActivity"
+   "launch_activity": "app.organicmaps.SplashActivity"
   },
   "thunderbird": {
    "kind": "original-apk",
