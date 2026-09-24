@@ -32,6 +32,15 @@ def main():
                              'copy in --webview-input (the captured copy predates the loader refusals)')
     parser.add_argument('--source-webview-build', type=Path,
                         help='Verified source WebView build overriding its APK and engine DSO')
+    parser.add_argument('--runtime-env', action='append', default=[], metavar='KEY=VALUE',
+                        help='extra environment for the spawned child, e.g. APPSPAWNX_VERBOSE_CLASS=1 '
+                             "to trace class loading. Repeatable; it cannot replace a key the launcher sets")
+    parser.add_argument('--touch-mode', choices=['stream', 'tap'], default='stream',
+                        help="how the forwarder replays a physical gesture: 'stream' sends the "
+                             "motion stream plus a hit-tested click for a stationary tap (drags "
+                             "scroll, and a row whose click is stranded behind the main-queue "
+                             "barrier still fires); 'tap' sends one press/release per gesture, "
+                             "which is what views that ignore the synthesised click need")
     parser.add_argument('--android-native-target', action='append', default=[],
                         help='APK DSO basename to route through the isolated Android ABI namespace')
     parser.add_argument('--android-native-net-target', action='append', default=[],
@@ -267,8 +276,8 @@ def main():
 
     transport = [args.hdc, '-t', args.serial]
 
-    def call(command, cwd=output):
-        result = subprocess.run(transport + command, cwd=cwd, capture_output=True, timeout=55)
+    def call(command, cwd=output, timeout=55):
+        result = subprocess.run(transport + command, cwd=cwd, capture_output=True, timeout=timeout)
         text = (result.stdout + result.stderr).decode(errors='replace').replace('\r', '')
         if result.returncode or '[Fail]' in text:
             raise RuntimeError(text)
@@ -285,7 +294,11 @@ def main():
         return text[:match.start()]
 
     def send(path, remote):
-        call(['file', 'send', path.name, remote], cwd=path.parent)
+        # A flat 55 s held over USB and failed over wireless debugging: the ~200 MB launch archive
+        # moves at roughly 2 MB/s there, so the same send timed out for one app and scraped through
+        # for another. Size the limit from the file instead, assuming no better than 512 KiB/s.
+        seconds = max(55, path.stat().st_size // (512 * 1024) + 30)
+        call(['file', 'send', path.name, remote], cwd=path.parent, timeout=seconds)
         if shell('sha256sum ' + shlex.quote(remote)).split()[0] != digest(path):
             raise ValueError('Changed transfer: ' + remote)
 
@@ -492,6 +505,16 @@ def main():
         env['WESTLAKE_ACCOUNT_HELPER_PATH'] = logical + '/liboh_account_state.so'
     if 'liboh_connectivity_state.so' in framework['files']:
         env['WESTLAKE_CONNECTIVITY_HELPER_PATH'] = logical + '/liboh_connectivity_state.so'
+    for item in args.runtime_env:
+        key, separator, value = item.partition('=')
+        if not separator or not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', key):
+            raise ValueError('--runtime-env wants KEY=VALUE, got ' + item)
+        if key in env:
+            raise ValueError('--runtime-env may not replace ' + key + ', which the launcher sets')
+        env[key] = value
+    if args.runtime_env:
+        state['runtime_env'] = sorted(args.runtime_env)
+        save()
     script = output / 'run.sh'
     script.write_text('#!/system/bin/sh\nset -eu\ncd ' + logical + '\n' +
                       ''.join('export ' + k + '=' + shlex.quote(v) + '\n' for k, v in env.items()) +
@@ -538,11 +561,13 @@ def main():
     shell(': > ' + box + '; chown ' + str(uid) + ':' + str(uid) + ' ' + box +
           '; chmod 666 ' + box + '; ln -sf ' + box + ' /data/local/tmp/noice_tap')
     shell('P=$(pidof touchfwd 2>/dev/null); [ -n "$P" ] && kill $P 2>/dev/null; exit 0')
-    shell('setsid env WL_TOUCH_STREAM=1 WL_TOUCH_STREAM_CLICK=1 WL_TOUCH_COORD_GAIN=1 ' +
+    stream_env = ('WL_TOUCH_STREAM=1 WL_TOUCH_STREAM_CLICK=1 '
+                  if args.touch_mode == 'stream' else '')
+    shell('setsid env ' + stream_env + 'WL_TOUCH_COORD_GAIN=1 ' +
           stage + '/touchfwd ' + touch_device + ' </dev/null >' + stage +
           '/touchfwd.log 2>&1 & exit 0')
     time.sleep(1)
-    state['touch'] = {'device': touch_device, 'channel': box,
+    state['touch'] = {'device': touch_device, 'channel': box, 'mode': args.touch_mode,
                       'forwarder_pid': shell('pidof touchfwd; exit 0').strip()}
     save()
     print('SOURCE_APP_SPAWNED', json.dumps({k: state[k] for k in ['parent', 'child', 'stage', 'runtime']}), flush=True)
