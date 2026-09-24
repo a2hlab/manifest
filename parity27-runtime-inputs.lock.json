@@ -591,18 +591,36 @@
     },
     {
       "path": "/data/local/tmp/asx/webview-t-lib/libandroid.so",
-      "sha256": "f1fa918ce0ee0841db20408ad178cf07d628d1078a6e512ff1bf6a975eda6980",
-      "category": "webview"
+      "sha256": "2c32e862ba7034d30599a5c578f74fcaec757c917e0337404b03649fba1a9524",
+      "category": "webview",
+      "local_substitution": {
+        "reason": "built from westlake source by the manifest package_webview_source.py recipe",
+        "original": {
+          "sha256": "f1fa918ce0ee0841db20408ad178cf07d628d1078a6e512ff1bf6a975eda6980"
+        }
+      }
     },
     {
       "path": "/data/local/tmp/asx/webview-t-lib/libjnigraphics.so",
-      "sha256": "af90eaf4efde2f0029374466f4da34162d713d37f3c234620e0056bd2d40ef89",
-      "category": "webview"
+      "sha256": "6d1e01f251b6c163704635408af2b76c6e355ed86ca4ed65a5299ce350428c71",
+      "category": "webview",
+      "local_substitution": {
+        "reason": "built from westlake source by the manifest package_webview_source.py recipe",
+        "original": {
+          "sha256": "af90eaf4efde2f0029374466f4da34162d713d37f3c234620e0056bd2d40ef89"
+        }
+      }
     },
     {
       "path": "/data/local/tmp/asx/webview-t-lib/libwebview_bionic_shim.so",
-      "sha256": "e2103f79086810bd92b471c49011bb4ce1ae2a0ab1cb26ddfe012aa287104b23",
-      "category": "webview"
+      "sha256": "90517a0ff618d0c4840d83c440e5eea3df6353be69ea450c33e88004d1d822fc",
+      "category": "webview",
+      "local_substitution": {
+        "reason": "built from westlake source by the manifest package_webview_source.py recipe; includes the self-trapping-library refusal the captured copy predates",
+        "original": {
+          "sha256": "e2103f79086810bd92b471c49011bb4ce1ae2a0ab1cb26ddfe012aa287104b23"
+        }
+      }
     },
     {
       "path": "/data/local/tmp/asx/webview-t-lib/libwebviewchromium.so",
@@ -611,13 +629,25 @@
     },
     {
       "path": "/data/local/tmp/asx/webview-t-lib/libwebviewchromium_plat_support.so",
-      "sha256": "f68806b2c03314a95db5e9c1b5d1122c805f97fe74832de5973edaa75f565b4e",
-      "category": "webview"
+      "sha256": "d91b931d79c4b8a6eafa840b287be64855a2a0802e66e9bfd184d5a7bdad5fce",
+      "category": "webview",
+      "local_substitution": {
+        "reason": "built from westlake source by the manifest package_webview_source.py recipe",
+        "original": {
+          "sha256": "f68806b2c03314a95db5e9c1b5d1122c805f97fe74832de5973edaa75f565b4e"
+        }
+      }
     },
     {
       "path": "/data/local/tmp/asx/webview-t.apk",
-      "sha256": "bccbe4ff243f2a6a6b67b5f241d67bd9df8ba980d56043f42e74af5ef0eb7d21",
-      "category": "webview"
+      "sha256": "932c602192978650091b508c54ceb2ed41fa5efd5b8a33118a294c5b7db4dc0d",
+      "category": "webview",
+      "local_substitution": {
+        "reason": "AOSP android-13.0.0_r80 prebuilt arm64 webview.apk (Chromium 109.0.5414.123) plus westlake framework/webview-shim/smali assembled as classes2.dex, re-signed with this workstation's debug key",
+        "original": {
+          "sha256": "bccbe4ff243f2a6a6b67b5f241d67bd9df8ba980d56043f42e74af5ef0eb7d21"
+        }
+      }
     },
     {
       "path": "/system/etc/zoneinfo/tzdata",
