@@ -16,7 +16,13 @@
     {
       "path": "westlake",
       "url": "https://github.com/a2hlab/westlake.git",
-      "revision": "75d82d53ca11ca5e0796777bdfdab4f34faf70a6"
+      "revision": "22b945321929987c86b35cd99f9f2d2f4283e82e",
+      "local_substitution": {
+        "reason": "build the runtime from westlake main, which carries the fixes the harness records depend on (26 commits to 532633d, 59 to main)",
+        "original": {
+          "revision": "75d82d53ca11ca5e0796777bdfdab4f34faf70a6"
+        }
+      }
     },
     {
       "path": "art-build",
