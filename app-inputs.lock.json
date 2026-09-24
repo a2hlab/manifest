@@ -2188,7 +2188,8 @@
    "reference": "F-Droid (fdroid100 fetch)",
    "rebuild": false,
    "modify_or_resign": false,
-   "launch_activity": "com.termux.api.activities.TermuxAPILauncherActivity"
+   "launch_activity": "com.termux.api.activities.TermuxAPILauncherActivity",
+   "pure_java": true
   },
   "fd-app": {
    "kind": "original-apk",
@@ -2342,7 +2343,8 @@
    "reference": "F-Droid (fdroid100 fetch)",
    "rebuild": false,
    "modify_or_resign": false,
-   "launch_activity": "com.android.calendar.AllInOneActivity"
+   "launch_activity": "com.android.calendar.AllInOneActivity",
+   "pure_java": true
   },
   "fd-feeder": {
    "kind": "original-apk",
@@ -2510,7 +2512,8 @@
    "reference": "F-Droid (fdroid100 fetch)",
    "rebuild": false,
    "modify_or_resign": false,
-   "launch_activity": "com.github.libretube.Default"
+   "launch_activity": "com.github.libretube.Default",
+   "pure_java": true
   },
   "fd-meet": {
    "kind": "original-apk",
