@@ -27,8 +27,20 @@ def main():
     parser.add_argument('--host-build', type=Path, help='Verified signed source host build')
     parser.add_argument('--webview-input', type=Path,
                         help='Hash-locked device-captured WebView payload root')
+    parser.add_argument('--bionic-shim-build', type=Path,
+                        help='Source-built libwebview_bionic_shim.so replacing the device-captured '
+                             'copy in --webview-input (the captured copy predates the loader refusals)')
     parser.add_argument('--source-webview-build', type=Path,
                         help='Verified source WebView build overriding its APK and engine DSO')
+    parser.add_argument('--runtime-env', action='append', default=[], metavar='KEY=VALUE',
+                        help='extra environment for the spawned child, e.g. APPSPAWNX_VERBOSE_CLASS=1 '
+                             "to trace class loading. Repeatable; it cannot replace a key the launcher sets")
+    parser.add_argument('--touch-mode', choices=['stream', 'tap'], default='stream',
+                        help="how the forwarder replays a physical gesture: 'stream' sends the "
+                             "motion stream plus a hit-tested click for a stationary tap (drags "
+                             "scroll, and a row whose click is stranded behind the main-queue "
+                             "barrier still fires); 'tap' sends one press/release per gesture, "
+                             "which is what views that ignore the synthesised click need")
     parser.add_argument('--android-native-target', action='append', default=[],
                         help='APK DSO basename to route through the isolated Android ABI namespace')
     parser.add_argument('--android-native-net-target', action='append', default=[],
@@ -37,6 +49,10 @@ def main():
                         help='Exact harness runtime lock for opt-in ART JNI registration tracing')
     parser.add_argument('--trace-run-id', help='Unique structured trace run identity')
     parser.add_argument('--trace-scenario', default='cold-launch')
+    parser.add_argument('--app', default='toutiao', help='application key in app-inputs.lock.json')
+    parser.add_argument('--launch-activity',
+                        help='fully qualified launch activity; defaults to the pinned entry, '
+                             'then to <package>.activity.MainActivity')
     args = parser.parse_args()
     output = args.out.absolute()
     if output.exists() or not re.fullmatch(r'[a-zA-Z0-9_.]+', args.host):
@@ -44,13 +60,27 @@ def main():
     framework = json.loads(args.framework_report.read_text())
     app = json.loads((args.app_input / 'app-input.json').read_text())
     lock = json.loads((Path(__file__).resolve().parents[1] / 'app-inputs.lock.json').read_text())
+    if args.app not in lock['applications']:
+        raise ValueError('Unknown application: ' + args.app)
     if (not framework['passed'] or app['apk_modified'] or
-            app['application'] != lock['applications']['toutiao']):
+            app['application'] != lock['applications'][args.app]):
         raise ValueError('Expected accepted framework probe and pinned original APK')
     package = app['application']['package']
     if not re.fullmatch(r'[a-zA-Z0-9_.]+', package):
         raise ValueError('Invalid application package')
-    app_files = {'toutiao.apk': {'sha256': app['apk_sha256']}, **app['native_libraries']}
+    base_apk = args.app + '.apk'
+    launch_activity = (args.launch_activity
+                       or app['application'].get('launch_activity')
+                       or package + '.activity.MainActivity')
+    if not re.fullmatch(r'[a-zA-Z0-9_.$]+', launch_activity):
+        raise ValueError('Invalid launch activity: ' + launch_activity)
+    # Split APKs carry no code, but the density and language splits own the
+    # resources: McDonald's keeps 886 drawables and its own resources.arsc in
+    # split_config.xxxhdpi.apk. Every split must reach the asset manager or the
+    # app comes up unable to resolve most of its own resources.
+    split_apks = {item['staged']: {'sha256': item['sha256']}
+                  for item in (app.get('splits') or {}).values()}
+    app_files = {base_apk: {'sha256': app['apk_sha256']}, **split_apks, **app['native_libraries']}
     for name, entry in app_files.items():
         path = args.app_input.resolve() / name
         if not path.resolve().is_relative_to(args.app_input.resolve()) or digest(path) != entry['sha256']:
@@ -120,6 +150,22 @@ def main():
                     or digest(path) != entry['sha256']):
                 raise ValueError('Changed device-captured WebView input: ' + name)
             webview_paths[name] = path
+    if args.bionic_shim_build:
+        # The WebView input's bionic shim is also the ABI boundary preloaded for the APK's own
+        # native libraries. The device-captured copy predates the refusal of self-trapping
+        # libraries (Akamai's libakamaibmp.so raises an uncatchable SIGILL on load), so a
+        # source-built shim replaces it, hash-checked like every other input.
+        if not webview_files:
+            raise ValueError('A bionic shim build replaces the WebView input shim: pass --webview-input')
+        shim_root = args.bionic_shim_build.resolve()
+        shim_report = json.loads((shim_root / 'artifacts.json').read_text())
+        shim_entry = shim_report['artifacts']['libwebview_bionic_shim.so']
+        shim_path = shim_root / 'libwebview_bionic_shim.so'
+        if shim_report.get('errors') or digest(shim_path) != shim_entry['sha256']:
+            raise ValueError('Changed or failed bionic shim build')
+        webview_files['webview-t-lib/libwebview_bionic_shim.so'] = {
+            'sha256': shim_entry['sha256'], 'provenance': 'source-built'}
+        webview_paths['webview-t-lib/libwebview_bionic_shim.so'] = shim_path
     source_webview_report = None
     if args.source_webview_build:
         if not webview_files:
@@ -230,8 +276,8 @@ def main():
 
     transport = [args.hdc, '-t', args.serial]
 
-    def call(command, cwd=output):
-        result = subprocess.run(transport + command, cwd=cwd, capture_output=True, timeout=55)
+    def call(command, cwd=output, timeout=55):
+        result = subprocess.run(transport + command, cwd=cwd, capture_output=True, timeout=timeout)
         text = (result.stdout + result.stderr).decode(errors='replace').replace('\r', '')
         if result.returncode or '[Fail]' in text:
             raise RuntimeError(text)
@@ -248,7 +294,11 @@ def main():
         return text[:match.start()]
 
     def send(path, remote):
-        call(['file', 'send', path.name, remote], cwd=path.parent)
+        # A flat 55 s held over USB and failed over wireless debugging: the ~200 MB launch archive
+        # moves at roughly 2 MB/s there, so the same send timed out for one app and scraped through
+        # for another. Size the limit from the file instead, assuming no better than 512 KiB/s.
+        seconds = max(55, path.stat().st_size // (512 * 1024) + 30)
+        call(['file', 'send', path.name, remote], cwd=path.parent, timeout=seconds)
         if shell('sha256sum ' + shlex.quote(remote)).split()[0] != digest(path):
             raise ValueError('Changed transfer: ' + remote)
 
@@ -353,6 +403,14 @@ def main():
           (' ' + runtime + '/webview-t-data' if webview_files else '') +
           ' && chown -R ' + str(uid) + ':' + str(uid) + ' ' + runtime +
           ' && chmod 755 ' + runtime + '/appspawn-x')
+    # The app's data directory is <runtime>/app-data/<package>: source_app_namespace mounts
+    # <runtime>/app-data over /data/data inside the child, so the host's /data/data is never seen.
+    # It inherits the host bundle's appdat label, and OpenHarmony denies app processes fifo_file
+    # creation there, which Android allows (Realm's .note pipe fails with EACCES under enforcing
+    # SELinux). data_app_el2_file, the label of the el2 base directory, grants hap domains dir,
+    # file, sock_file and fifo_file, so the app's tree is relabelled; lnk_file stays denied there
+    # as well (neverallow for hap_domain).
+    shell('chcon -R u:object_r:data_app_el2_file:s0 ' + runtime + '/app-data/' + package)
     for name in helpers:
         send(output / name, stage + '/' + name)
     shell('chmod 755 ' + stage + '/source_app_namespace ' + stage + '/host_spawn')
@@ -379,7 +437,9 @@ def main():
            'WESTLAKE_TRACE_NATIVE_LOADER': '1',
            'ASX_RUNTIME_OWNER_UID': str(uid), 'ASX_LAUNCH_PKG': package,
            'ASX_NATIVE_LIB_DIR': logical + '/lib/arm64-v8a',
-           'ASX_APK_PATH': logical + '/toutiao.apk', 'ASX_LAUNCH_ACTIVITY': package + '.activity.MainActivity',
+           'ASX_APK_PATH': logical + '/' + base_apk,
+           'ASX_SPLIT_APK_PATHS': ':'.join(logical + '/' + name for name in sorted(split_apks)),
+           'ASX_LAUNCH_ACTIVITY': launch_activity,
            'ASX_DIRECT_LAUNCH': '1', 'ASX_KEEP_THEME': '1', 'ASX_DIAG_THROWABLE': '1',
            'ASX_WEBVIEW_DATA_DIR': '/data/data/' + package + '/app_webview',
            'WL_PARENT_ID': str(window), 'WL_SUB_WINDOW': '1', 'WL_FOCUSABLE': '1',
@@ -445,6 +505,16 @@ def main():
         env['WESTLAKE_ACCOUNT_HELPER_PATH'] = logical + '/liboh_account_state.so'
     if 'liboh_connectivity_state.so' in framework['files']:
         env['WESTLAKE_CONNECTIVITY_HELPER_PATH'] = logical + '/liboh_connectivity_state.so'
+    for item in args.runtime_env:
+        key, separator, value = item.partition('=')
+        if not separator or not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', key):
+            raise ValueError('--runtime-env wants KEY=VALUE, got ' + item)
+        if key in env:
+            raise ValueError('--runtime-env may not replace ' + key + ', which the launcher sets')
+        env[key] = value
+    if args.runtime_env:
+        state['runtime_env'] = sorted(args.runtime_env)
+        save()
     script = output / 'run.sh'
     script.write_text('#!/system/bin/sh\nset -eu\ncd ' + logical + '\n' +
                       ''.join('export ' + k + '=' + shlex.quote(v) + '\n' for k, v in env.items()) +
@@ -491,11 +561,13 @@ def main():
     shell(': > ' + box + '; chown ' + str(uid) + ':' + str(uid) + ' ' + box +
           '; chmod 666 ' + box + '; ln -sf ' + box + ' /data/local/tmp/noice_tap')
     shell('P=$(pidof touchfwd 2>/dev/null); [ -n "$P" ] && kill $P 2>/dev/null; exit 0')
-    shell('setsid env WL_TOUCH_STREAM=1 WL_TOUCH_STREAM_CLICK=1 WL_TOUCH_COORD_GAIN=1 ' +
+    stream_env = ('WL_TOUCH_STREAM=1 WL_TOUCH_STREAM_CLICK=1 '
+                  if args.touch_mode == 'stream' else '')
+    shell('setsid env ' + stream_env + 'WL_TOUCH_COORD_GAIN=1 ' +
           stage + '/touchfwd ' + touch_device + ' </dev/null >' + stage +
           '/touchfwd.log 2>&1 & exit 0')
     time.sleep(1)
-    state['touch'] = {'device': touch_device, 'channel': box,
+    state['touch'] = {'device': touch_device, 'channel': box, 'mode': args.touch_mode,
                       'forwarder_pid': shell('pidof touchfwd; exit 0').strip()}
     save()
     print('SOURCE_APP_SPAWNED', json.dumps({k: state[k] for k in ['parent', 'child', 'stage', 'runtime']}), flush=True)
