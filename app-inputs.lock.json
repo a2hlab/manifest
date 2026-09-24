@@ -2608,7 +2608,8 @@
    "reference": "F-Droid (fdroid100 fetch)",
    "rebuild": false,
    "modify_or_resign": false,
-   "launch_activity": "com.github.ashutoshgngwr.noice.activity.MainActivity"
+   "launch_activity": "com.github.ashutoshgngwr.noice.activity.MainActivity",
+   "pure_java": true
   },
   "fd-notes": {
    "kind": "original-apk",
@@ -2776,7 +2777,8 @@
    "reference": "F-Droid (fdroid100 fetch)",
    "rebuild": false,
    "modify_or_resign": false,
-   "launch_activity": "org.isoron.uhabits.MainActivity"
+   "launch_activity": "org.isoron.uhabits.MainActivity",
+   "pure_java": true
   },
   "fd-wifianalyzer": {
    "kind": "original-apk",
@@ -2790,7 +2792,8 @@
    "reference": "F-Droid (fdroid100 fetch)",
    "rebuild": false,
    "modify_or_resign": false,
-   "launch_activity": "com.vrem.wifianalyzer.MainActivity"
+   "launch_activity": "com.vrem.wifianalyzer.MainActivity",
+   "pure_java": true
   }
  }
 }
