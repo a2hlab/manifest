@@ -134,3 +134,54 @@ index 4b579e7db..bec3a6d51 100644
          public Provider(final ParseComponentArgs args, final ProviderInfo _info) {
              super(args, _info);
              info = _info;
+diff --git a/core/java/android/view/SurfaceView.java b/core/java/android/view/SurfaceView.java
+index 1d70d18ac..91c989a2e 100644
+--- a/core/java/android/view/SurfaceView.java
++++ b/core/java/android/view/SurfaceView.java
+@@ -893,8 +893,38 @@ public class SurfaceView extends View implements ViewRootImpl.SurfaceChangedCall
+         return t;
+     }
+ 
++    // Westlake: on OpenHarmony a SurfaceControl resolves to its window's one OH surface, so a
++    // SurfaceView's producer and the window's hwui would draw into the same OH window. The
++    // runtime's window adapter gives a SurfaceView that fills its window an OH surface of its own
++    // (adapter.window.WindowSessionAdapter.attachSurfaceView), bound to the BLAST layer before
++    // its BLASTBufferQueue resolves a window. Reached by name: the adapter is not a compile-time
++    // dependency of the framework.
++    private void westlakeAttachOwnSurface(ViewRootImpl viewRoot, String name) {
++        try {
++            Class.forName("adapter.window.WindowSessionAdapter")
++                    .getMethod("attachSurfaceView", Object.class, SurfaceControl.class,
++                            String.class, int.class, int.class, int.class, int.class,
++                            android.os.IBinder.class)
++                    .invoke(null, this, mBlastSurfaceControl, name, mSurfaceWidth,
++                            mSurfaceHeight, viewRoot.mWidth, viewRoot.mHeight,
++                            viewRoot.mWindowAttributes.token);
++        } catch (ReflectiveOperationException | LinkageError e) {
++            Log.w(TAG, "westlake: no own surface for " + name + ": " + e);
++        }
++    }
++
++    private void westlakeDetachOwnSurface() {
++        try {
++            Class.forName("adapter.window.WindowSessionAdapter")
++                    .getMethod("detachSurfaceView", Object.class).invoke(null, this);
++        } catch (ReflectiveOperationException | LinkageError e) {
++            Log.w(TAG, "westlake: detaching own surface: " + e);
++        }
++    }
++
+     private void releaseSurfaces(boolean releaseSurfacePackage) {
+         mAlpha = 1f;
++        westlakeDetachOwnSurface();
+         mSurface.destroy();
+         synchronized (mSurfaceControlLock) {
+             if (mBlastBufferQueue != null) {
+@@ -1455,6 +1485,7 @@ public class SurfaceView extends View implements ViewRootImpl.SurfaceChangedCall
+                     .setBLASTLayer()
+                     .setCallsite("SurfaceView.updateSurface")
+                     .build();
++            westlakeAttachOwnSurface(viewRoot, name);
+         } else {
+             // update blast layer
+             surfaceUpdateTransaction
