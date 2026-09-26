@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Package pinned Android ICU and optional complete default font assets."""
+"""Package pinned Android ICU, optional complete default font assets and optional tz data."""
 import argparse
 import json
 from pathlib import Path
@@ -14,6 +14,8 @@ def main():
     parser.add_argument('--workspace', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
     parser.add_argument('--fonts', action='store_true')
+    parser.add_argument('--tzdata', action='store_true',
+                        help="Android 15's time zone data, where ANDROID_TZDATA_ROOT readers look for it")
     args = parser.parse_args()
     workspace, output = args.workspace.resolve(), args.out.absolute()
     if output.exists():
@@ -65,6 +67,29 @@ def main():
             install(spec['fonts'][original]['source'], 'fonts/' + name)
         report['font_count'] = len(spec['fonts'])
         report['font_aliases'] = spec['aliases']
+    if args.tzdata:
+        # The time zone module's layout: $ANDROID_TZDATA_ROOT/etc/tz/versioned/<format major>/ holds
+        # libcore's tzdata and the lookup files, and icu/ the ICU overlay that ICU4J and ICU4C read
+        # zone rules from. Without it ICU lists no zones, java.util.TimeZone answers GMT for every
+        # zone and java.time registers none.
+        report['sources'] += verify_sources(workspace, ROOT / 'timezone-sources.lock.json')
+        data = workspace / 'android-source/system-timezone/output_data'
+        major = int((data / 'version/tz_version').read_text().split('.')[0])
+        if major != 8:
+            raise ValueError('Not the Android 15 tz data format: ' + str(major))
+        base = 'tzdata/etc/tz/versioned/' + str(major) + '/'
+        layout = {'iana/tzdata': 'tzdata', 'android/tzlookup.xml': 'tzlookup.xml',
+                  'android/telephonylookup.xml': 'telephonylookup.xml', 'version/tz_version': 'tz_version',
+                  **{'icu_overlay/' + n: 'icu/' + n for n in
+                     ['metaZones.res', 'timezoneTypes.res', 'windowsZones.res', 'zoneinfo64.res']}}
+        for relative, name in layout.items():
+            source, target = data / relative, output / (base + name)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(source, target)
+            report['inputs'][str(source.relative_to(workspace))] = digest(source)
+            report['artifacts'][base + name] = {'sha256': digest(target), 'bytes': target.stat().st_size}
+        report['tzdata_version'] = (data / 'version/tz_version').read_text().strip()
+        report['scope'] += '; Android 15 time zone data'
     (output / 'artifacts.json').write_text(json.dumps(report, indent=2, sort_keys=True) + '\n')
     print('SOURCE_RUNTIME_DATA_PACKAGED', len(report['artifacts']), 'assets', flush=True)
 

@@ -1,0 +1,16 @@
+{
+ "schema": 1,
+ "profile": "source-timezone-aosp15",
+ "projects": [
+  {
+   "path": "android-source/system-timezone",
+   "revision": "fba551ac75e9a9270714e1de5cb0bc036c3d9d3f",
+   "upstream": {
+    "revision": "fba551ac75e9a9270714e1de5cb0bc036c3d9d3f",
+    "tree": "3033200f31a47b4f1b4ff8d68451d1fd7e1ec175",
+    "url": "https://android.googlesource.com/platform/system/timezone"
+   },
+   "url": "https://android.googlesource.com/platform/system/timezone"
+  }
+ ]
+}
