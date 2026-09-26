@@ -1695,6 +1695,21 @@
    "rebuild": false,
    "modify_or_resign": false,
    "launch_activity": "org.adaway.ui.home.HomeActivity"
+  },
+  "icu-data-probe": {
+   "kind": "original-apk",
+   "package": "org.westlake.probe.icudata",
+   "version_name": "1.0",
+   "version_code": 1,
+   "abi": "arm64-v8a",
+   "pure_java": true,
+   "bytes": 12631,
+   "sha256": "6e61abacf0d97992fcc25d1bafe49246d71126c31cfd205e56f76ec5594013e6",
+   "delivery": "harness-built white-box probe (westlake-harness probes/icu-data)",
+   "reference": "locale display names, ICU4J data and zone rules the runtime gives an app (java.util.Locale, android.icu, java.util.TimeZone, java.time)",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.westlake.probe.icudata.MainActivity"
   }
  }
 }

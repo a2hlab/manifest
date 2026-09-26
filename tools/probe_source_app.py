@@ -30,6 +30,11 @@ def main():
     parser.add_argument('--bionic-shim-build', type=Path,
                         help='Source-built libwebview_bionic_shim.so replacing the device-captured '
                              'copy in --webview-input (the captured copy predates the loader refusals)')
+    parser.add_argument('--runtime-library-build', type=Path,
+                        help='build_android_native.py output whose --runtime-library entries replace '
+                             "the framework stage's copies in this launch only (a fix tried before a deploy)")
+    parser.add_argument('--runtime-library', action='append', default=[], metavar='NAME',
+                        help='library of --runtime-library-build to use in place of the staged one. Repeatable')
     parser.add_argument('--source-webview-build', type=Path,
                         help='Verified source WebView build overriding its APK and engine DSO')
     parser.add_argument('--runtime-env', action='append', default=[], metavar='KEY=VALUE',
@@ -166,6 +171,19 @@ def main():
         webview_files['webview-t-lib/libwebview_bionic_shim.so'] = {
             'sha256': shim_entry['sha256'], 'provenance': 'source-built'}
         webview_paths['webview-t-lib/libwebview_bionic_shim.so'] = shim_path
+    runtime_overrides = {}
+    if args.runtime_library:
+        if not args.runtime_library_build:
+            raise ValueError('--runtime-library needs --runtime-library-build')
+        build_root = args.runtime_library_build.resolve()
+        build_report = json.loads((build_root / 'artifacts.json').read_text())
+        for name in args.runtime_library:
+            entry = build_report['artifacts'].get(name)
+            path = build_root / 'lib' / name
+            if (entry is None or name not in framework['files'] or build_report.get('errors')
+                    or digest(path) != entry['sha256']):
+                raise ValueError('Runtime library override is not a built, staged library: ' + name)
+            runtime_overrides[name] = path
     source_webview_report = None
     if args.source_webview_build:
         if not webview_files:
@@ -388,11 +406,19 @@ def main():
         if webview_files:
             for name in sorted(webview_files):
                 tar.add(webview_paths[name], arcname=name, recursive=False)
+        for name in sorted(runtime_overrides):
+            tar.add(runtime_overrides[name], arcname=name, recursive=False)
     send(archive, stage + '/' + archive.name)
     shell('tar -xf ' + stage + '/' + archive.name + ' -C ' + runtime)
     expected_app = {runtime + '/' + n: e['sha256'] for n, e in app_files.items()}
     if hashes(sorted(expected_app)) != expected_app:
         raise ValueError('Candidate original APK files changed')
+    if runtime_overrides:
+        expected_overrides = {runtime + '/' + n: digest(p) for n, p in runtime_overrides.items()}
+        if hashes(sorted(expected_overrides)) != expected_overrides:
+            raise ValueError('Runtime library override did not land')
+        state['runtime_overrides'] = {n: digest(p) for n, p in runtime_overrides.items()}
+        save()
     if webview_files:
         expected_webview = {runtime + '/' + n: e['sha256'] for n, e in webview_files.items()}
         if hashes(sorted(expected_webview)) != expected_webview:
