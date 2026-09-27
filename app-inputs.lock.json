@@ -1704,7 +1704,7 @@
    "abi": "arm64-v8a",
    "pure_java": true,
    "bytes": 12631,
-   "sha256": "6e61abacf0d97992fcc25d1bafe49246d71126c31cfd205e56f76ec5594013e6",
+   "sha256": "130061c4eb3c79fecb6b75696c2c7abe230a7792525642b0fa8d87f143e8337a",
    "delivery": "harness-built white-box probe (westlake-harness probes/icu-data)",
    "reference": "locale display names, ICU4J data and zone rules the runtime gives an app (java.util.Locale, android.icu, java.util.TimeZone, java.time)",
    "rebuild": false,
@@ -3113,6 +3113,20 @@
    "modify_or_resign": false,
    "launch_activity": "com.danefinlay.ttsutil.ui.MainActivity",
    "pure_java": true
+  },
+  "ndk-assets-probe": {
+   "kind": "original-apk",
+   "package": "org.westlake.probe.ndkassets",
+   "version_name": "1.0",
+   "version_code": 1,
+   "abi": "arm64-v8a",
+   "bytes": 123477,
+   "sha256": "fbe70fbea94dd0c2aad2fba396f9d230b335ffd3a6a996ea95c67c7793de4599",
+   "delivery": "harness-built white-box probe (westlake-harness probes/ndk-assets)",
+   "reference": "the NDK asset path React Native loads its bundle through: AAssetManager_fromJava, AAssetManager_open, AAsset_read",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.westlake.probe.ndkassets.MainActivity"
   }
  }
 }
