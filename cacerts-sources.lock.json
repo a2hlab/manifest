@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "profile": "source-cacerts-aosp15",
+  "projects": [
+    {
+      "path": "android-source/system-ca-certificates",
+      "revision": "2207c6dd74f18819bbaa4566d1e6c5d956a452fd",
+      "upstream": {
+        "revision": "2207c6dd74f18819bbaa4566d1e6c5d956a452fd",
+        "tree": "26210a5f58c0483d8b3d57ae7467d6a1f06a5aa0",
+        "url": "https://android.googlesource.com/platform/system/ca-certificates"
+      },
+      "url": "https://android.googlesource.com/platform/system/ca-certificates"
+    }
+  ]
+}
