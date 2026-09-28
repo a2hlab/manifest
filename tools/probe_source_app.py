@@ -520,8 +520,12 @@ def main():
         env.update({
             'WESTLAKE_ANDROID_NATIVE_TARGETS': ':'.join(native_targets),
             'WESTLAKE_ANDROID_NATIVE_SEARCH_PATH': ':'.join(namespace_search),
+            # libwestlake_asset_bridge.so, when the runtime ships it, is shared from the parent: the
+            # WebView shim's libandroid here resolves AAsset* through it, and only the parent's copy
+            # reaches the initialized framework AssetManager2 (a copy loaded here would not).
             'WESTLAKE_ANDROID_NATIVE_INHERIT':
-                'libc.so:libdl.so:libm.so:libz.so:liblog.so',
+                'libc.so:libdl.so:libm.so:libz.so:liblog.so'
+                + (':libwestlake_asset_bridge.so' if 'libwestlake_asset_bridge.so' in framework['files'] else ''),
             'WESTLAKE_ANDROID_NATIVE_PRELOAD':
                 logical + '/webview-t-lib/libwebview_bionic_shim.so',
         })
