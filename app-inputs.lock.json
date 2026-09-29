@@ -4543,6 +4543,21 @@
    "rebuild": false,
    "modify_or_resign": false,
    "launch_activity": "de.killi199.timetracking.MainActivity"
+  },
+  "audio-tone-probe": {
+   "kind": "original-apk",
+   "package": "org.westlake.probe.audiotone",
+   "version_name": "1.0",
+   "version_code": 1,
+   "abi": "arm64-v8a",
+   "bytes": 717208,
+   "sha256": "872e7880321f74dbf4485dace7a16d158ab706ed076c83261f3fbad925a27039",
+   "delivery": "harness-built white-box probe (westlake-harness probes/audio-tone)",
+   "reference": "each Android audio path plays its own steady tone (AudioTrack 16-bit 48k and 44.1k, AudioTrack float non-blocking, MediaPlayer) so a recording of the board's output measures pitch and dropouts per path",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.westlake.probe.audiotone.MainActivity",
+   "pure_java": true
   }
  }
 }
