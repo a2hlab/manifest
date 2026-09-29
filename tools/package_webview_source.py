@@ -189,6 +189,7 @@ def main():
     readelf = sdk / 'llvm/bin/llvm-readelf'
     compiler_rt = sdk / 'llvm/lib/clang/15.0.4/lib/aarch64-linux-ohos'
     shim_source = westlake / 'framework/webview-shim/webview_bionic_shim.c'
+    opensles_source = westlake / 'framework/webview-shim/opensles_android_adapter.c'
     setjmp_source = westlake / 'framework/webview-shim/webview_setjmp_arm64.S'
     version_script = westlake / 'framework/webview-shim/webview_bionic_shim.map'
     libandroid_source = westlake / 'framework/webview-shim/libandroid_webview_core_shim.c'
@@ -231,6 +232,7 @@ def main():
     rewrites = rewrite_elf_dynstr(engine_target)
 
     shim_object = output / 'webview_bionic_shim.c.o'
+    opensles_object = output / 'opensles_android_adapter.c.o'
     setjmp_object = output / 'webview_setjmp_arm64.S.o'
     shim_target = output / 'webview-t-lib/libwebview_bionic_shim.so'
     libandroid_target = output / 'webview-t-lib/libandroid.so'
@@ -240,6 +242,11 @@ def main():
         [str(compiler), '--target=aarch64-linux-ohos',
          '--sysroot=' + str(sdk / 'sysroot'), '-fPIC', '-O2', '-Wall', '-Wextra',
          '-Werror', '-c', str(shim_source), '-o', str(shim_object)],
+        # Android's OpenSL ES over OH's: the shim exports slCreateEngine and Android's interface
+        # IDs, and answers an app's dlopen of libOpenSLES.so with itself.
+        [str(compiler), '--target=aarch64-linux-ohos',
+         '--sysroot=' + str(sdk / 'sysroot'), '-fPIC', '-O2', '-Wall', '-Wextra',
+         '-Werror', '-c', str(opensles_source), '-o', str(opensles_object)],
         [str(compiler), '--target=aarch64-linux-ohos',
          '--sysroot=' + str(sdk / 'sysroot'), '-fPIC', '-c', str(setjmp_source),
          '-o', str(setjmp_object)],
@@ -253,8 +260,11 @@ def main():
         '-Wl,-z,defs', '-Wl,--build-id=sha1',
         '-Wl,-soname,libwebview_bionic_shim.so',
         '-Wl,--version-script=' + str(version_script),
-        str(compiler_rt / 'clang_rt.crtbegin.o'), str(shim_object), str(setjmp_object),
-        '-Wl,--as-needed', '-ldl', '-lc', str(compiler_rt / 'libclang_rt.builtins.a'),
+        str(compiler_rt / 'clang_rt.crtbegin.o'), str(shim_object), str(opensles_object),
+        str(setjmp_object),
+        # A real dependency: a lookup by the shim's handle falls through to OH's library for
+        # every OpenSL symbol the adapter does not replace.
+        '-Wl,--no-as-needed', '-lOpenSLES', '-Wl,--as-needed', '-ldl', '-lc', str(compiler_rt / 'libclang_rt.builtins.a'),
         str(compiler_rt / 'clang_rt.crtend.o'), '-o', str(shim_target),
     ]
     with (output / 'boundary-link.log').open('x') as log:
