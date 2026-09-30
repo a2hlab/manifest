@@ -86,6 +86,10 @@ def main():
                         help='APK DSO basename to route through the isolated Android ABI namespace')
     parser.add_argument('--android-native-net-target', action='append', default=[],
                         help='Android DSO basename requiring Bionic network-structure translation')
+    parser.add_argument('--android-native-net-app-libraries', action='store_true',
+                        help='preload the network ABI translation for libraries the app writes and '
+                             'loads at run time (SoLoader/superpack), which no --android-native-net-target '
+                             'can name in advance')
     parser.add_argument('--trace-runtime-lock', type=Path,
                         help='Exact harness runtime lock for opt-in ART JNI registration tracing')
     parser.add_argument('--trace-run-id', help='Unique structured trace run identity')
@@ -545,7 +549,7 @@ def main():
             'WESTLAKE_TRACE_LIBART_SHA256': staged_bridges['libart.so'],
         })
     preloads = []
-    if native_net_targets:
+    if native_net_targets or args.android_native_net_app_libraries:
         preloads.append(logical + '/libandroid_native_network_compat.so')
         env.update({
             'WESTLAKE_ANDROID_NATIVE_NET_TARGETS': ':'.join(native_net_targets),
