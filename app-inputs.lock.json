@@ -5608,7 +5608,7 @@
    "version_code": 1,
    "abi": "arm64-v8a",
    "bytes": 41571,
-   "sha256": "62be1d0c3675481e4d16e95f7d0210298f0e90aaeef6245496be4cbac0b2e3ce",
+   "sha256": "d72d3d4556661938d0badae0aa8ae24228f3c35afd2985ff69202c1676f879fe",
    "delivery": "harness-built white-box probe (westlake-harness probes/runtime-answers)",
    "reference": "the startup answers the top-apps batch found wrong or refused: thread priorities, service answers, app-storage file operations, microphone recording, SAX parsing, MediaRecorder, NDK asset descriptors, stored-entry reads from the APK",
    "rebuild": false,
