@@ -5,6 +5,8 @@ The installed OH window host is a recorded platform prerequisite. A successful
 spawn is diagnostic progress, not acceptance of the app's UI or source closure.
 """
 import argparse
+import hashlib
+import io
 import json
 from pathlib import Path
 import re
@@ -16,6 +18,40 @@ import time
 import uuid
 from bootstrap_sdk import digest
 
+
+
+# DT_ANDROID_RELR{,SZ,ENT} -> DT_RELR{,SZ,ENT}. lld writes Android's own tag numbers for RELR on
+# Android targets; the encoding is the standard one. OH's musl applies DT_RELR (its own libraries
+# carry it) and DT_ANDROID_RELA, but not these tags, so the pointers they cover kept their
+# link-time values and Facebook, Instagram and Messenger died calling an INIT_ARRAY entry.
+ANDROID_RELR_TAGS = {0x6FFFE000: 36, 0x6FFFE001: 35, 0x6FFFE003: 37}
+
+
+def android_relr_retagged(path):
+    """The library's bytes with DT_ANDROID_RELR* renamed to DT_RELR*, or None if it has none."""
+    data = bytearray(path.read_bytes())
+    if data[:4] != b'\x7fELF' or data[4] != 2 or data[5] != 1:
+        return None
+    phoff = int.from_bytes(data[0x20:0x28], 'little')
+    count = int.from_bytes(data[0x38:0x3a], 'little')
+    changed = False
+    for index in range(count):
+        header = phoff + index * 56
+        if int.from_bytes(data[header:header + 4], 'little') != 2:  # PT_DYNAMIC
+            continue
+        offset = int.from_bytes(data[header + 8:header + 16], 'little')
+        size = int.from_bytes(data[header + 32:header + 40], 'little')
+        tags = [int.from_bytes(data[offset + i:offset + i + 8], 'little') for i in range(0, size, 16)]
+        if 36 in tags:
+            return None
+        for position in range(0, size, 16):
+            tag = int.from_bytes(data[offset + position:offset + position + 8], 'little')
+            if tag == 0:
+                break
+            if tag in ANDROID_RELR_TAGS:
+                data[offset + position:offset + position + 8] = ANDROID_RELR_TAGS[tag].to_bytes(8, 'little')
+                changed = True
+    return bytes(data) if changed else None
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -400,9 +436,25 @@ def main():
     if hashes(sorted(copied)) != copied:
         raise ValueError('Candidate source copy changed')
     archive = output / 'launch-inputs.tar'
+    # Libraries whose DT_ANDROID_RELR the board's loader would skip travel retagged (see
+    # android_relr_retagged); the device copy is checked against the retagged bytes.
+    loader_compat = {}
+    for name in sorted(app['native_libraries']):
+        retagged = android_relr_retagged(args.app_input / name) if name.endswith('.so') else None
+        if retagged is not None:
+            loader_compat[name] = retagged
+            app_files[name] = dict(app_files[name], sha256=hashlib.sha256(retagged).hexdigest())
+    if loader_compat:
+        print('LOADER_COMPAT DT_ANDROID_RELR retagged to DT_RELR:', ' '.join(sorted(loader_compat)), flush=True)
+    state['android_relr_retagged'] = sorted(loader_compat)
     with tarfile.open(archive, 'w') as tar:
         for name in sorted(app_files):
-            tar.add(args.app_input / name, arcname=name, recursive=False)
+            if name in loader_compat:
+                info = tar.gettarinfo(args.app_input / name, arcname=name)
+                info.size = len(loader_compat[name])
+                tar.addfile(info, io.BytesIO(loader_compat[name]))
+            else:
+                tar.add(args.app_input / name, arcname=name, recursive=False)
         if webview_files:
             for name in sorted(webview_files):
                 tar.add(webview_paths[name], arcname=name, recursive=False)
