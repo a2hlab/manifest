@@ -123,11 +123,15 @@ def main():
     # resources: McDonald's keeps 886 drawables and its own resources.arsc in
     # split_config.xxxhdpi.apk. Every split must reach the asset manager or the
     # app comes up unable to resolve most of its own resources.
-    split_apks = {item['staged']: {'sha256': item['sha256']}
-                  for item in (app.get('splits') or {}).values()}
+    # Each split goes on the board under the name Android installs it with, split_<name>.apk:
+    # Facebook's SoLoader picks its native-library split by a path ending split_config.<abi>.apk
+    # and otherwise reads the base APK, which carries no libraries (Threads).
+    split_sources = {'split_' + name: item['staged'] for name, item in (app.get('splits') or {}).items()}
+    split_apks = {'split_' + name: {'sha256': item['sha256']}
+                  for name, item in (app.get('splits') or {}).items()}
     app_files = {base_apk: {'sha256': app['apk_sha256']}, **split_apks, **app['native_libraries']}
     for name, entry in app_files.items():
-        path = args.app_input.resolve() / name
+        path = args.app_input.resolve() / split_sources.get(name, name)
         if not path.resolve().is_relative_to(args.app_input.resolve()) or digest(path) != entry['sha256']:
             raise ValueError('Changed original APK input: ' + name)
     trace = None
@@ -458,7 +462,7 @@ def main():
                 info.size = len(loader_compat[name])
                 tar.addfile(info, io.BytesIO(loader_compat[name]))
             else:
-                tar.add(args.app_input / name, arcname=name, recursive=False)
+                tar.add(args.app_input / split_sources.get(name, name), arcname=name, recursive=False)
         if webview_files:
             for name in sorted(webview_files):
                 tar.add(webview_paths[name], arcname=name, recursive=False)
