@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Package pinned Android ICU, optional complete default font assets and optional tz data."""
+"""Package pinned Android ICU, optional default fonts, tz data and CA certificates."""
 import argparse
 import json
 from pathlib import Path
@@ -16,6 +16,8 @@ def main():
     parser.add_argument('--fonts', action='store_true')
     parser.add_argument('--tzdata', action='store_true',
                         help="Android 15's time zone data, where ANDROID_TZDATA_ROOT readers look for it")
+    parser.add_argument('--cacerts', action='store_true',
+                        help="Android 15's system CA certificates, at $ANDROID_ROOT/etc/security/cacerts")
     args = parser.parse_args()
     workspace, output = args.workspace.resolve(), args.out.absolute()
     if output.exists():
@@ -90,6 +92,26 @@ def main():
             report['artifacts'][base + name] = {'sha256': digest(target), 'bytes': target.stat().st_size}
         report['tzdata_version'] = (data / 'version/tz_version').read_text().strip()
         report['scope'] += '; Android 15 time zone data'
+    if args.cacerts:
+        # Android's trust store: one PEM file per root, named by subject hash. Java's
+        # TrustedCertificateStore reads $ANDROID_ROOT/etc/security/cacerts; Dart's TLS reads the
+        # fixed /system/etc/security/cacerts and refuses every connection without it ("Failed to
+        # find root cert cache"), which the launcher's namespace helper maps onto this directory.
+        report['sources'] += verify_sources(workspace, ROOT / 'cacerts-sources.lock.json')
+        files = workspace / 'android-source/system-ca-certificates/files'
+        count = 0
+        for source in sorted(files.iterdir()):
+            if not source.is_file():
+                continue
+            target = output / 'etc/security/cacerts' / source.name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(source, target)
+            report['inputs'][str(source.relative_to(workspace))] = digest(source)
+            report['artifacts']['etc/security/cacerts/' + source.name] = {
+                'sha256': digest(target), 'bytes': target.stat().st_size}
+            count += 1
+        report['cacerts'] = count
+        report['scope'] += '; Android 15 system CA certificates'
     (output / 'artifacts.json').write_text(json.dumps(report, indent=2, sort_keys=True) + '\n')
     print('SOURCE_RUNTIME_DATA_PACKAGED', len(report['artifacts']), 'assets', flush=True)
 
