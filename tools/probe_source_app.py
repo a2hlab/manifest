@@ -66,6 +66,9 @@ def main():
     parser.add_argument('--bionic-shim-build', type=Path,
                         help='Source-built libwebview_bionic_shim.so replacing the device-captured '
                              'copy in --webview-input (the captured copy predates the loader refusals)')
+    parser.add_argument('--app-oat-dir', type=Path,
+                        help='host-compiled ART code for the app (<app>.odex and <app>.vdex, optionally '
+                             '<app>.art), staged as oat/arm64/<app>.* beside the APK, where ART looks first')
     parser.add_argument('--runtime-library-build', type=Path,
                         help='build_android_native.py output whose --runtime-library entries replace '
                              "the framework stage's copies in this launch only (a fix tried before a deploy)")
@@ -130,6 +133,16 @@ def main():
     split_apks = {'split_' + name: {'sha256': item['sha256']}
                   for name, item in (app.get('splits') or {}).items()}
     app_files = {base_apk: {'sha256': app['apk_sha256']}, **split_apks, **app['native_libraries']}
+    # Compiled code for the app, made on the host against the deployed boot image: without it ART has
+    # only the interpreter, since OH's policy denies an app domain the executable memory a JIT needs.
+    oat_files = {}
+    if args.app_oat_dir:
+        for ext in ('odex', 'vdex', 'art'):
+            path = args.app_oat_dir / (args.app + '.' + ext)
+            if path.is_file():
+                oat_files['oat/arm64/' + args.app + '.' + ext] = path.resolve()
+        if not {'oat/arm64/' + args.app + '.odex', 'oat/arm64/' + args.app + '.vdex'} <= set(oat_files):
+            raise ValueError('--app-oat-dir needs ' + args.app + '.odex and ' + args.app + '.vdex')
     for name, entry in app_files.items():
         path = args.app_input.resolve() / split_sources.get(name, name)
         if not path.resolve().is_relative_to(args.app_input.resolve()) or digest(path) != entry['sha256']:
@@ -463,6 +476,8 @@ def main():
                 tar.addfile(info, io.BytesIO(loader_compat[name]))
             else:
                 tar.add(args.app_input / split_sources.get(name, name), arcname=name, recursive=False)
+        for name in sorted(oat_files):
+            tar.add(oat_files[name], arcname=name, recursive=False)
         if webview_files:
             for name in sorted(webview_files):
                 tar.add(webview_paths[name], arcname=name, recursive=False)
@@ -471,6 +486,7 @@ def main():
     send(archive, stage + '/' + archive.name)
     shell('tar -xf ' + stage + '/' + archive.name + ' -C ' + runtime)
     expected_app = {runtime + '/' + n: e['sha256'] for n, e in app_files.items()}
+    expected_app.update({runtime + '/' + n: digest(p) for n, p in oat_files.items()})
     if hashes(sorted(expected_app)) != expected_app:
         raise ValueError('Candidate original APK files changed')
     if runtime_overrides:
