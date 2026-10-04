@@ -53,6 +53,106 @@ def android_relr_retagged(path):
                 changed = True
     return bytes(data) if changed else None
 
+# Dynamic tags init_array_sanitized reads. A library relocated by Android's packed format
+# (DT_ANDROID_REL/RELA) is left alone: which slots its relocations cover is not decoded here.
+DT_RELA, DT_RELASZ, DT_RELAENT = 7, 8, 9
+DT_INIT_ARRAY, DT_FINI_ARRAY, DT_INIT_ARRAYSZ, DT_FINI_ARRAYSZ = 25, 26, 27, 28
+ANDROID_PACKED_TAGS = {0x6000000F, 0x60000010, 0x60000011, 0x60000012}
+
+
+def init_array_sanitized(data):
+    """The library's bytes with null and -1 entries dropped from its init and fini arrays, or None if
+    it has none.
+
+    Bionic skips such entries (soinfo::call_array); OH's musl calls them, so the load jumps to
+    address 0 (pc 0 from do_init_fini). Obfuscators null an initializer after it runs: TikTok ships
+    eight libraries like that. ART's OpenNativeLibrary drops them from a library it loads, but not
+    from one the loader brings in as a dependency (TikTok's libttffmpeg.so, under libttmverify.so),
+    so every packaged library is fixed here. The entries left keep their order; one that moves
+    takes its RELA relocation with it.
+    """
+    data = bytearray(data)
+    if data[:4] != b'\x7fELF' or data[4] != 2 or data[5] != 1:
+        return None
+    u64 = lambda at: int.from_bytes(data[at:at + 8], 'little')
+    phoff, count = u64(0x20), int.from_bytes(data[0x38:0x3a], 'little')
+    loads, dynamic = [], None
+    for index in range(count):
+        header = phoff + index * 56
+        kind = int.from_bytes(data[header:header + 4], 'little')
+        if kind == 1:  # PT_LOAD: (vaddr, file offset, file size)
+            loads.append((u64(header + 16), u64(header + 8), u64(header + 32)))
+        elif kind == 2:
+            dynamic = (u64(header + 8), u64(header + 32))
+    if dynamic is None:
+        return None
+
+    def offset_of(vaddr):
+        for start, offset, size in loads:
+            if start <= vaddr < start + size:
+                return offset + vaddr - start
+        return None
+
+    tags = {}
+    for position in range(dynamic[0], dynamic[0] + dynamic[1], 16):
+        tag = u64(position)
+        if tag == 0:
+            break
+        tags.setdefault(tag, (position, u64(position + 8)))
+    if ANDROID_PACKED_TAGS & set(tags):
+        return None
+    relocations = []  # file offsets of RELA entries
+    if DT_RELA in tags and DT_RELASZ in tags:
+        start, size = offset_of(tags[DT_RELA][1]), tags[DT_RELASZ][1]
+        entry = tags.get(DT_RELAENT, (0, 24))[1]
+        if start is not None and entry:
+            relocations = list(range(start, start + size, entry))
+    changed = False
+    for array, size_tag in ((DT_INIT_ARRAY, DT_INIT_ARRAYSZ), (DT_FINI_ARRAY, DT_FINI_ARRAYSZ)):
+        if array not in tags or size_tag not in tags:
+            continue
+        base, slots = tags[array][1], tags[size_tag][1] // 8
+        start = offset_of(base)
+        if start is None or not slots:
+            continue
+        relocated = {}
+        for entry in relocations:
+            target = u64(entry)
+            if base <= target < base + slots * 8 and (target - base) % 8 == 0:
+                relocated[(target - base) // 8] = entry
+        values = [u64(start + 8 * i) for i in range(slots)]
+        kept = [i for i in range(slots) if i in relocated or values[i] not in (0, 0xFFFFFFFFFFFFFFFF)]
+        if len(kept) == slots:
+            continue
+        # An entry without a RELA relocation is RELR-relocated in place (or absolute): it cannot
+        # move, so only trailing entries are dropped then.
+        if any(new != old and old not in relocated for new, old in enumerate(kept)):
+            kept = list(range(max(kept) + 1)) if kept else []
+            if len(kept) == slots:
+                continue
+        for new, old in enumerate(kept):
+            if new == old:
+                continue
+            data[start + 8 * new:start + 8 * new + 8] = values[old].to_bytes(8, 'little')
+            if old in relocated:
+                data[relocated[old]:relocated[old] + 8] = (base + 8 * new).to_bytes(8, 'little')
+        for slot in range(len(kept), slots):
+            data[start + 8 * slot:start + 8 * slot + 8] = bytes(8)
+        position = tags[size_tag][0]
+        data[position + 8:position + 16] = (8 * len(kept)).to_bytes(8, 'little')
+        changed = True
+    return bytes(data) if changed else None
+
+
+def loader_compat_bytes(path):
+    """The library's bytes as the board's loader needs them, or None if it needs no change, and
+    which changes were made."""
+    retagged = android_relr_retagged(path)
+    sanitized = init_array_sanitized(retagged if retagged is not None else path.read_bytes())
+    changes = (['DT_ANDROID_RELR'] if retagged is not None else []) + (['null init/fini entries'] if sanitized else [])
+    return (sanitized or retagged), changes
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ['workspace', 'westlake-source', 'framework-report', 'app-input', 'out']:
@@ -66,6 +166,9 @@ def main():
     parser.add_argument('--bionic-shim-build', type=Path,
                         help='Source-built libwebview_bionic_shim.so replacing the device-captured '
                              'copy in --webview-input (the captured copy predates the loader refusals)')
+    parser.add_argument('--app-oat-dir', type=Path,
+                        help='host-compiled ART code for the app (<app>.odex and <app>.vdex, optionally '
+                             '<app>.art), staged as oat/arm64/<app>.* beside the APK, where ART looks first')
     parser.add_argument('--runtime-library-build', type=Path,
                         help='build_android_native.py output whose --runtime-library entries replace '
                              "the framework stage's copies in this launch only (a fix tried before a deploy)")
@@ -130,6 +233,16 @@ def main():
     split_apks = {'split_' + name: {'sha256': item['sha256']}
                   for name, item in (app.get('splits') or {}).items()}
     app_files = {base_apk: {'sha256': app['apk_sha256']}, **split_apks, **app['native_libraries']}
+    # Compiled code for the app, made on the host against the deployed boot image: without it ART has
+    # only the interpreter, since OH's policy denies an app domain the executable memory a JIT needs.
+    oat_files = {}
+    if args.app_oat_dir:
+        for ext in ('odex', 'vdex', 'art'):
+            path = args.app_oat_dir / (args.app + '.' + ext)
+            if path.is_file():
+                oat_files['oat/arm64/' + args.app + '.' + ext] = path.resolve()
+        if not {'oat/arm64/' + args.app + '.odex', 'oat/arm64/' + args.app + '.vdex'} <= set(oat_files):
+            raise ValueError('--app-oat-dir needs ' + args.app + '.odex and ' + args.app + '.vdex')
     for name, entry in app_files.items():
         path = args.app_input.resolve() / split_sources.get(name, name)
         if not path.resolve().is_relative_to(args.app_input.resolve()) or digest(path) != entry['sha256']:
@@ -444,17 +557,22 @@ def main():
     if hashes(sorted(copied)) != copied:
         raise ValueError('Candidate source copy changed')
     archive = output / 'launch-inputs.tar'
-    # Libraries whose DT_ANDROID_RELR the board's loader would skip travel retagged (see
-    # android_relr_retagged); the device copy is checked against the retagged bytes.
-    loader_compat = {}
+    # Libraries the board's loader would mishandle travel fixed (see android_relr_retagged and
+    # init_array_sanitized); the device copy is checked against the fixed bytes.
+    loader_compat, compat_changes = {}, {}
     for name in sorted(app['native_libraries']):
-        retagged = android_relr_retagged(args.app_input / name) if name.endswith('.so') else None
-        if retagged is not None:
-            loader_compat[name] = retagged
-            app_files[name] = dict(app_files[name], sha256=hashlib.sha256(retagged).hexdigest())
-    if loader_compat:
-        print('LOADER_COMPAT DT_ANDROID_RELR retagged to DT_RELR:', ' '.join(sorted(loader_compat)), flush=True)
-    state['android_relr_retagged'] = sorted(loader_compat)
+        fixed, changes = loader_compat_bytes(args.app_input / name) if name.endswith('.so') else (None, [])
+        if fixed is not None:
+            loader_compat[name] = fixed
+            compat_changes[name] = changes
+            app_files[name] = dict(app_files[name], sha256=hashlib.sha256(fixed).hexdigest())
+    for change in ('DT_ANDROID_RELR', 'null init/fini entries'):
+        names = sorted(n for n, c in compat_changes.items() if change in c)
+        if names:
+            print('LOADER_COMPAT %s:' % ('DT_ANDROID_RELR retagged to DT_RELR' if change == 'DT_ANDROID_RELR'
+                                         else 'null init/fini entries dropped'), ' '.join(names), flush=True)
+    state['android_relr_retagged'] = sorted(n for n, c in compat_changes.items() if 'DT_ANDROID_RELR' in c)
+    state['init_array_sanitized'] = sorted(n for n, c in compat_changes.items() if 'null init/fini entries' in c)
     with tarfile.open(archive, 'w') as tar:
         for name in sorted(app_files):
             if name in loader_compat:
@@ -463,6 +581,8 @@ def main():
                 tar.addfile(info, io.BytesIO(loader_compat[name]))
             else:
                 tar.add(args.app_input / split_sources.get(name, name), arcname=name, recursive=False)
+        for name in sorted(oat_files):
+            tar.add(oat_files[name], arcname=name, recursive=False)
         if webview_files:
             for name in sorted(webview_files):
                 tar.add(webview_paths[name], arcname=name, recursive=False)
@@ -471,6 +591,7 @@ def main():
     send(archive, stage + '/' + archive.name)
     shell('tar -xf ' + stage + '/' + archive.name + ' -C ' + runtime)
     expected_app = {runtime + '/' + n: e['sha256'] for n, e in app_files.items()}
+    expected_app.update({runtime + '/' + n: digest(p) for n, p in oat_files.items()})
     if hashes(sorted(expected_app)) != expected_app:
         raise ValueError('Candidate original APK files changed')
     if runtime_overrides:
