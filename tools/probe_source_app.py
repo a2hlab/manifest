@@ -53,6 +53,15 @@ def android_relr_retagged(path):
                 changed = True
     return bytes(data) if changed else None
 
+# The board's cache of launch inputs that are the same from one launch to the next, one file per
+# content hash (--input-cache). Every launch sent the WebView payload (185 MB) and any runtime
+# library overrides with the app, about 40 s over wireless hdc for files that had not changed; the
+# launcher's cleanup removes each launch's stage and runtime, so nothing else kept them. A file
+# enters the cache only after its hash checks, and every copy taken from it is checked again in the
+# runtime, as a sent file is. Entries unused for three days are dropped.
+INPUT_CACHE = '/data/local/tmp/a2hlab-input-cache'
+INPUT_CACHE_DAYS = 3
+
 # Dynamic tags init_array_sanitized reads. A library relocated by Android's packed format
 # (DT_ANDROID_REL/RELA) is left alone: which slots its relocations cover is not decoded here.
 DT_RELA, DT_RELASZ, DT_RELAENT = 7, 8, 9
@@ -174,6 +183,9 @@ def main():
                              "the framework stage's copies in this launch only (a fix tried before a deploy)")
     parser.add_argument('--runtime-library', action='append', default=[], metavar='NAME',
                         help='library of --runtime-library-build to use in place of the staged one. Repeatable')
+    parser.add_argument('--input-cache', action='store_true',
+                        help='stage the WebView files and runtime library overrides from a cache on the '
+                             'board, keyed by content, and send only the files it lacks (' + INPUT_CACHE + ')')
     parser.add_argument('--source-webview-build', type=Path,
                         help='Verified source WebView build overriding its APK and engine DSO')
     parser.add_argument('--runtime-env', action='append', default=[], metavar='KEY=VALUE',
@@ -486,6 +498,44 @@ def main():
                 result[name.strip()] = value
         return result
 
+    def stage_from_cache(files, runtime, stage):
+        """Copies files (runtime name -> local path) into runtime from the board's input cache, after
+        sending the ones the cache lacks. Returns which names were sent and which were reused."""
+        sums = {name: digest(path) for name, path in files.items()}
+        shell('mkdir -p ' + INPUT_CACHE + ' && rm -rf ' + INPUT_CACHE + '/.incoming')
+        present = set(shell('ls -1 ' + INPUT_CACHE).split())
+        missing = {}
+        for name, path in sorted(files.items()):
+            if sums[name] not in present:
+                missing.setdefault(sums[name], path)
+        if missing:
+            bundle = output / 'input-cache.tar'
+            with tarfile.open(bundle, 'w') as tar:
+                for value, path in sorted(missing.items()):
+                    tar.add(path, arcname=value, recursive=False)
+            send(bundle, stage + '/' + bundle.name)
+            incoming = INPUT_CACHE + '/.incoming'
+            shell('mkdir ' + incoming + ' && tar -xf ' + stage + '/' + bundle.name + ' -C ' + incoming)
+            arrived = {incoming + '/' + value: value for value in missing}
+            if hashes(sorted(arrived)) != arrived:
+                raise ValueError('Changed transfer into the input cache')
+            shell('mv ' + ' '.join(sorted(arrived)) + ' ' + INPUT_CACHE + '/ && rmdir ' + incoming)
+            bundle.unlink()
+        directories = sorted({str(Path(runtime + '/' + name).parent) for name in files})
+        commands = ['mkdir -p ' + ' '.join(map(shlex.quote, directories))]
+        commands += ['cp ' + INPUT_CACHE + '/' + sums[name] + ' ' + shlex.quote(runtime + '/' + name)
+                     for name in sorted(files)]
+        commands.append('touch ' + ' '.join(INPUT_CACHE + '/' + value for value in sorted(set(sums.values()))))
+        shell(' && '.join(commands))
+        shell('for f in $(find ' + INPUT_CACHE + ' -type f -mtime +' + str(INPUT_CACHE_DAYS) + '); do rm -f "$f"; done; true')
+        return {'dir': INPUT_CACHE,
+                'sent': sorted(name for name in files if sums[name] in missing),
+                'reused': sorted(name for name in files if sums[name] not in missing)}
+
+    def drop_from_cache(files):
+        """Removes the cache entries for files whose staged copies failed their hash check."""
+        shell('rm -f ' + ' '.join(INPUT_CACHE + '/' + digest(path) for path in files.values()))
+
     if args.serial not in subprocess.check_output([args.hdc, 'list', 'targets'], text=True).split():
         raise ValueError('Device is not connected')
     if shell('uname -m').strip() != 'aarch64':
@@ -573,6 +623,10 @@ def main():
                                          else 'null init/fini entries dropped'), ' '.join(names), flush=True)
     state['android_relr_retagged'] = sorted(n for n, c in compat_changes.items() if 'DT_ANDROID_RELR' in c)
     state['init_array_sanitized'] = sorted(n for n, c in compat_changes.items() if 'null init/fini entries' in c)
+    cached = {}
+    if args.input_cache:
+        cached = {name: webview_paths[name] for name in webview_files}
+        cached.update(runtime_overrides)
     with tarfile.open(archive, 'w') as tar:
         for name in sorted(app_files):
             if name in loader_compat:
@@ -585,11 +639,16 @@ def main():
             tar.add(oat_files[name], arcname=name, recursive=False)
         if webview_files:
             for name in sorted(webview_files):
-                tar.add(webview_paths[name], arcname=name, recursive=False)
+                if name not in cached:
+                    tar.add(webview_paths[name], arcname=name, recursive=False)
         for name in sorted(runtime_overrides):
-            tar.add(runtime_overrides[name], arcname=name, recursive=False)
+            if name not in cached:
+                tar.add(runtime_overrides[name], arcname=name, recursive=False)
     send(archive, stage + '/' + archive.name)
     shell('tar -xf ' + stage + '/' + archive.name + ' -C ' + runtime)
+    if cached:
+        state['input_cache'] = stage_from_cache(cached, runtime, stage)
+        save()
     expected_app = {runtime + '/' + n: e['sha256'] for n, e in app_files.items()}
     expected_app.update({runtime + '/' + n: digest(p) for n, p in oat_files.items()})
     if hashes(sorted(expected_app)) != expected_app:
@@ -597,12 +656,16 @@ def main():
     if runtime_overrides:
         expected_overrides = {runtime + '/' + n: digest(p) for n, p in runtime_overrides.items()}
         if hashes(sorted(expected_overrides)) != expected_overrides:
+            if cached:
+                drop_from_cache(runtime_overrides)
             raise ValueError('Runtime library override did not land')
         state['runtime_overrides'] = {n: digest(p) for n, p in runtime_overrides.items()}
         save()
     if webview_files:
         expected_webview = {runtime + '/' + n: e['sha256'] for n, e in webview_files.items()}
         if hashes(sorted(expected_webview)) != expected_webview:
+            if cached:
+                drop_from_cache({name: webview_paths[name] for name in webview_files})
             raise ValueError('Candidate WebView files changed')
     shell('mkdir -p ' + runtime + '/private-tmp/asx ' + runtime + '/data/dalvik-cache/arm64 ' +
           runtime + '/app-data/' + package + '/code_cache/art-volatile ' +
