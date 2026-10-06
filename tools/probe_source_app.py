@@ -232,6 +232,13 @@ def main():
     launch_activity = (args.launch_activity
                        or app['application'].get('launch_activity')
                        or package + '.activity.MainActivity')
+    # A manifest may name its classes relative to the package (Emacs's ".EmacsLauncherPreferencesActivity",
+    # built without Gradle's manifest merger); Android's parser expands them, and a launch by the
+    # relative name failed in ClassNotFoundException.
+    if launch_activity.startswith('.'):
+        launch_activity = package + launch_activity
+    elif '.' not in launch_activity:
+        launch_activity = package + '.' + launch_activity
     if not re.fullmatch(r'[a-zA-Z0-9_.$]+', launch_activity):
         raise ValueError('Invalid launch activity: ' + launch_activity)
     # Split APKs carry no code, but the density and language splits own the
@@ -767,8 +774,13 @@ def main():
             # libwestlake_asset_bridge.so, when the runtime ships it, is shared from the parent: the
             # WebView shim's libandroid here resolves AAsset* through it, and only the parent's copy
             # reaches the initialized framework AssetManager2 (a copy loaded here would not).
+            # So is the GL stack: the runtime's libGLESv1_CM.so needs OH's libGLES_mali.z.so, which this
+            # namespace's path does not reach (supertuxkart's SDL, routed, failed to load it), and one
+            # driver and one OH GL wrapper must serve both namespaces: EGL makes a context current in
+            # the parent's, and GL calls from here must see it.
             'WESTLAKE_ANDROID_NATIVE_INHERIT':
                 'libc.so:libdl.so:libm.so:libz.so:liblog.so'
+                + ':libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libGLES_mali.z.so'
                 + (':libwestlake_asset_bridge.so' if 'libwestlake_asset_bridge.so' in framework['files'] else ''),
             'WESTLAKE_ANDROID_NATIVE_PRELOAD':
                 logical + '/webview-t-lib/libwebview_bionic_shim.so',
