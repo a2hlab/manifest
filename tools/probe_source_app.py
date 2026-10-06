@@ -232,6 +232,13 @@ def main():
     launch_activity = (args.launch_activity
                        or app['application'].get('launch_activity')
                        or package + '.activity.MainActivity')
+    # A manifest may name its classes relative to the package (Emacs's ".EmacsLauncherPreferencesActivity",
+    # built without Gradle's manifest merger); Android's parser expands them, and a launch by the
+    # relative name failed in ClassNotFoundException.
+    if launch_activity.startswith('.'):
+        launch_activity = package + launch_activity
+    elif '.' not in launch_activity:
+        launch_activity = package + '.' + launch_activity
     if not re.fullmatch(r'[a-zA-Z0-9_.$]+', launch_activity):
         raise ValueError('Invalid launch activity: ' + launch_activity)
     # Split APKs carry no code, but the density and language splits own the
