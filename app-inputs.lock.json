@@ -1704,7 +1704,7 @@
    "abi": "arm64-v8a",
    "pure_java": true,
    "bytes": 12631,
-   "sha256": "130061c4eb3c79fecb6b75696c2c7abe230a7792525642b0fa8d87f143e8337a",
+   "sha256": "3cc9d4e744ec2bd4b6656190e8bbc79659c40eea637f3e2e62937e52d05f1546",
    "delivery": "harness-built white-box probe (westlake-harness probes/icu-data)",
    "reference": "locale display names, ICU4J data and zone rules the runtime gives an app (java.util.Locale, android.icu, java.util.TimeZone, java.time)",
    "rebuild": false,
