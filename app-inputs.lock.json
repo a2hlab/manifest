@@ -113,9 +113,9 @@
    "abi": "arm64-v8a",
    "pure_java": true,
    "bytes": 12631,
-   "sha256": "15264cd0fb08cc15ccc8d1721a314e524ecbc768b74f259db1311b207818be27",
+   "sha256": "7eb4b53732307ac20453f990cabbadff7cd0c69531167d90b8921167e50af18a",
    "delivery": "harness-built white-box probe (westlake-harness probes/dialog-before-window)",
-   "reference": "a dialog shown from onCreate must stack above its activity, be centred, fit the display, dim what is behind it, and take touches on its button",
+   "reference": "a dialog shown from onCreate must stack above its activity, be centred, fit the display, dim what is behind it, and take touches on its button, and stay centred when its window relays out",
    "rebuild": false,
    "modify_or_resign": false,
    "launch_activity": "org.westlake.probe.dialogorder.MainActivity"
