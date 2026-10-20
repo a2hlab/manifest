@@ -6223,9 +6223,9 @@
    "abi": "arm64-v8a",
    "pure_java": true,
    "bytes": 24979,
-   "sha256": "7c4ec6fd09dcdf32a413a5b0eb7db428e7ccc7fc345ef1e55e99dd33ded89bd6",
+   "sha256": "344d1f2b930763739d29cd58a152f84af5484c6421d8223b48b95cf71c59d20e",
    "delivery": "harness-built white-box probe (westlake-harness probes/framework-contracts)",
-   "reference": "framework contracts many apps rely on, measured per build: the audio service, the package manager's queries, KeyCharacterMap, JobScheduler, absence semantics, an unresolved activity start, a started activity's lifecycle and its result, the soft keyboard and focus after a dialog, notifications, activity recreation",
+   "reference": "framework contracts many apps rely on, measured per build: the audio service, the package manager's queries, KeyCharacterMap, JobScheduler, absence semantics, an unresolved activity start, a started activity's lifecycle and its result, the soft keyboard and focus after a dialog, notifications, activity recreation, alarms",
    "rebuild": false,
    "modify_or_resign": false,
    "launch_activity": "org.westlake.probe.contracts.MainActivity"
