@@ -6223,7 +6223,7 @@
    "abi": "arm64-v8a",
    "pure_java": true,
    "bytes": 29075,
-   "sha256": "e3762f6ce7b58e8802692fdbacf4ea9cb394f151abbf1158295ec04ebf6dc997",
+   "sha256": "2e2fa50e965945062b414f028be9e3880dc731a0c439f465c05323bafb1ebd37",
    "delivery": "harness-built white-box probe (westlake-harness probes/framework-contracts)",
    "reference": "framework contracts many apps rely on, measured per build: the audio service, the package manager's queries, KeyCharacterMap, JobScheduler, absence semantics, an unresolved activity start, a started activity's lifecycle and its result, the soft keyboard and focus after a dialog, notifications, activity recreation, alarms",
    "rebuild": false,
