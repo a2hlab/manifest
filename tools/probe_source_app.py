@@ -186,6 +186,9 @@ def main():
     parser.add_argument('--input-cache', action='store_true',
                         help='stage the WebView files and runtime library overrides from a cache on the '
                              'board, keyed by content, and send only the files it lacks (' + INPUT_CACHE + ')')
+    parser.add_argument('--guest-build', type=Path,
+                        help='Packages run in the app process beside it (microG GmsCore and Companion): '
+                             'an artifacts.json naming their APKs by sha256')
     parser.add_argument('--source-webview-build', type=Path,
                         help='Verified source WebView build overriding its APK and engine DSO')
     parser.add_argument('--runtime-env', action='append', default=[], metavar='KEY=VALUE',
@@ -373,6 +376,18 @@ def main():
                     or digest(path) != entry['sha256']):
                 raise ValueError('Runtime library override is not a built, staged library: ' + name)
             runtime_overrides[name] = path
+    # Guest packages (adapter.packagemanager.GuestPackages): staged as guests/<name>.apk and named in
+    # ASX_GUEST_APKS, which is also what makes the package manager report them.
+    guest_paths = {}
+    if args.guest_build:
+        guest_root = args.guest_build.resolve()
+        guest_report = json.loads((guest_root / 'artifacts.json').read_text())
+        for name, entry in sorted(guest_report['artifacts'].items()):
+            path = guest_root / name
+            if (not re.fullmatch(r'[a-zA-Z0-9_.]+\.apk', name) or guest_report.get('errors')
+                    or digest(path) != entry['sha256']):
+                raise ValueError('Changed or unexpected guest package: ' + name)
+            guest_paths['guests/' + name] = path
     source_webview_report = None
     if args.source_webview_build:
         if not webview_files:
@@ -647,6 +662,7 @@ def main():
     if args.input_cache:
         cached = {name: webview_paths[name] for name in webview_files}
         cached.update(runtime_overrides)
+        cached.update(guest_paths)
     with tarfile.open(archive, 'w') as tar:
         for name in sorted(app_files):
             if name in loader_compat:
@@ -664,6 +680,9 @@ def main():
         for name in sorted(runtime_overrides):
             if name not in cached:
                 tar.add(runtime_overrides[name], arcname=name, recursive=False)
+        for name in sorted(guest_paths):
+            if name not in cached:
+                tar.add(guest_paths[name], arcname=name, recursive=False)
     send(archive, stage + '/' + archive.name)
     shell('tar -xf ' + stage + '/' + archive.name + ' -C ' + runtime)
     if cached:
@@ -680,6 +699,14 @@ def main():
                 drop_from_cache(runtime_overrides)
             raise ValueError('Runtime library override did not land')
         state['runtime_overrides'] = {n: digest(p) for n, p in runtime_overrides.items()}
+        save()
+    if guest_paths:
+        expected_guests = {runtime + '/' + n: digest(p) for n, p in guest_paths.items()}
+        if hashes(sorted(expected_guests)) != expected_guests:
+            if cached:
+                drop_from_cache(guest_paths)
+            raise ValueError('Guest packages did not land')
+        state['guest_packages'] = {n: digest(p) for n, p in guest_paths.items()}
         save()
     if webview_files:
         expected_webview = {runtime + '/' + n: e['sha256'] for n, e in webview_files.items()}
@@ -763,6 +790,8 @@ def main():
             'WESTLAKE_ANDROID_NATIVE_NET_TARGETS': ':'.join(native_net_targets),
             'WESTLAKE_TRACE_ANDROID_NATIVE_NET': '1',
         })
+    if guest_paths:
+        env['ASX_GUEST_APKS'] = ':'.join(logical + '/' + name for name in sorted(guest_paths))
     if webview_files:
         preloads.append(logical + '/webview-t-lib/libwebview_bionic_shim.so')
         env.update({
