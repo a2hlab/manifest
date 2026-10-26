@@ -6229,6 +6229,3157 @@
    "rebuild": false,
    "modify_or_resign": false,
    "launch_activity": "org.westlake.probe.contracts.MainActivity"
+  },
+  "hk-com.spotify.music": {
+   "kind": "original-apk",
+   "package": "com.spotify.music",
+   "version_name": "9.1.94.1929",
+   "version_code": 147600575,
+   "abi": "arm64-v8a",
+   "bytes": 153798178,
+   "sha256": "a0a6fbe6b87249bd3de88f16b342cce233f94513d41a0f6f2a06558ba51a9304",
+   "delivery": "APKPure APK, arm64-v8a; verifies with one signing certificate (6505b181...8ffd)",
+   "reference": "harness HK top-1000 device round: Spotify",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.spotify.music.SpotifyMainActivity"
+  },
+  "hk-com.ss.android.ugc.aweme.mobile": {
+   "kind": "original-apk-with-splits",
+   "package": "com.ss.android.ugc.aweme.mobile",
+   "version_name": "39.1.2",
+   "version_code": 390102,
+   "abi": "arm64-v8a",
+   "bytes": 167434112,
+   "sha256": "89b8ca2e413ab94d3482cd7ec6a870da5fba607b60500d118ffb6355e74c9559",
+   "splits": [
+    {
+     "name": "config.ldpi.apk",
+     "bytes": 1861325,
+     "sha256": "51cc793141654d0789785eb5730c52356c0ec97fffbcb90d7a72cc6d4bdb2ff5"
+    },
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 40254326,
+     "sha256": "bf7724bba93abc868ee099f900464c575b87eaf92d3ab60be2d3ab6a6da7063a"
+    },
+    {
+     "name": "config.tvdpi.apk",
+     "bytes": 1798296,
+     "sha256": "baafe3d176e3234ed7f065055224078f515f73cb611f67894609cd50ec1a5f00"
+    },
+    {
+     "name": "config.mdpi.apk",
+     "bytes": 1432771,
+     "sha256": "d31bd00b7e79a063bde095de815f9692f6b9bedf14e523363b1853cd5f75860e"
+    },
+    {
+     "name": "config.xxxhdpi.apk",
+     "bytes": 1274677,
+     "sha256": "70495521642df04c94b980c46fbec2689ff6af5223b66965df8b60be8294631d"
+    },
+    {
+     "name": "config.zh.apk",
+     "bytes": 549273,
+     "sha256": "ca63068a4955e8df05956c5292387d7e9dc64d66d39d5007a25ffa5dbc454b0a"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 1188754,
+     "sha256": "46da0a1c7aa1cea1e25725531ad5cd4830e011b3044dc1fd21840d6a6fe68093"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (d7811ec4...2b27)",
+   "reference": "harness HK top-1000 device round: \u6296\u97f3",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.ss.android.ugc.aweme.main.MainActivity"
+  },
+  "hk-ai.x.grok": {
+   "kind": "original-apk-with-splits",
+   "package": "ai.x.grok",
+   "version_name": "1.2.50-release.00",
+   "version_code": 11250200,
+   "abi": "arm64-v8a",
+   "bytes": 53033415,
+   "sha256": "99c96596d50d7063828a43ba05450e718a41737440bdc8f613cda3331d417881",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 3281545,
+     "sha256": "dd3ab883f919a3c77426a886a3986fc821ea9bf67f9d44c6a105103dbf81e32d"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 286930,
+     "sha256": "d94a85454884103a9b268254d175e5649232fc4c3a7293e3f8f5b7e1adce0e08"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 478941,
+     "sha256": "d7c03e4a7fa5bcf08be11e5e01ccc9089117ce585b03e8ec811a93a1a42e5236"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (521bf5ce...4a12)",
+   "reference": "harness HK top-1000 device round: Grok",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "ai.x.grok.main.GrokActivity"
+  },
+  "hk-com.twitter.android": {
+   "kind": "original-apk-with-splits",
+   "package": "com.twitter.android",
+   "version_name": "12.37.2-prod.01",
+   "version_code": 312372001,
+   "abi": "arm64-v8a",
+   "bytes": 134173408,
+   "sha256": "fc1e7cf6c9b9a38fe958dded138263f88c3297150fff1c057f5d6688b676c1d2",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 76986346,
+     "sha256": "38b28548d805c8945ab79b20be2b091d950107a901e58cdd81ccc4c431b93fb7"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 1225122,
+     "sha256": "4efd43fbd75cd24971cff8b144a3cc5d51764a8f07b8d7edf84a86897285c741"
+    },
+    {
+     "name": "config.mdpi.apk",
+     "bytes": 327766,
+     "sha256": "4142a387ec872c64ea0420f24b336faff1dd6e163d9a4537b56c267bc4ee2c21"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (0fd9a0cf...2fe9)",
+   "reference": "harness HK top-1000 device round: X",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.x.android.main.MainActivity"
+  },
+  "hk-com.xingin.xhs": {
+   "kind": "original-apk-with-splits",
+   "package": "com.xingin.xhs",
+   "version_name": "9.51.0",
+   "version_code": 9510802,
+   "abi": "arm64-v8a",
+   "bytes": 142646935,
+   "sha256": "e1e848b96c9476559006b2f9b4e105ecfea79d43f677c0533a3d7ef3e21a512f",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 70841314,
+     "sha256": "7dd8b101a8ffd9c4363a536b9ca6da591112def5d78d8df536560355011977e9"
+    },
+    {
+     "name": "config.hdpi.apk",
+     "bytes": 744362,
+     "sha256": "b89fc43ee0ba34678059755567fbd2aac114e12a5b53ea2980766d4635f409f9"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (dbf2ddfe...fdcd)",
+   "reference": "harness HK top-1000 device round: rednote",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.xingin.xhs.index.v2.IndexActivityV2"
+  },
+  "hk-com.instagram.android": {
+   "kind": "original-apk-with-splits",
+   "package": "com.instagram.android",
+   "version_name": "452.1.0.53.64",
+   "version_code": 385811006,
+   "abi": "arm64-v8a",
+   "bytes": 143237227,
+   "sha256": "22f20062d16997e26009e73b0425974efef8ac69c76dd8912ee8a091213c39e2",
+   "splits": [
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 6892788,
+     "sha256": "0af9412a77443d7ddf26cdef959b2df0a6e8de3ae8b6bfb14764a50ea80ddd20"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (3a10c50c...c014)",
+   "reference": "harness HK top-1000 device round: Instagram",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.instagram.mainactivity.InstagramMainActivity"
+  },
+  "hk-com.facebook.katana": {
+   "kind": "original-apk-with-splits",
+   "package": "com.facebook.katana",
+   "version_name": "584.0.0.51.56",
+   "version_code": 475817508,
+   "abi": "arm64-v8a",
+   "bytes": 81809013,
+   "sha256": "c5e00114c68e66874d8569acfe98ba55026a865434e303ad928003be2e932c85",
+   "splits": [
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 6069192,
+     "sha256": "0aed5175cb84fab3cb63c29ca5101258b831ded9cb1a460340a8873d42293275"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (911d6044...2d27)",
+   "reference": "harness HK top-1000 device round: Facebook",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.facebook.katana.activity.FbMainTabActivity"
+  },
+  "hk-com.dramawave.app": {
+   "kind": "original-apk-with-splits",
+   "package": "com.dramawave.app",
+   "version_name": "2.0.51",
+   "version_code": 2051001,
+   "abi": "arm64-v8a",
+   "bytes": 128581549,
+   "sha256": "9a9ac517834d4296e2b1435f6cbcd00f70df7319345c9add7b74b83b82e1b907",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 20076543,
+     "sha256": "5f5d66ba33f1381c5c52d57881671b0c78d90c27e4259e0662d0459efd802739"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 266256,
+     "sha256": "3591c0d5a5c8b43c4c61fb34fa24bce2c2e676d9e77ede98436a0ee3d1a117fd"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (d32cca70...613d)",
+   "reference": "harness HK top-1000 device round: DramaWave",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.dramawave.app.splash.SplashActivity"
+  },
+  "hk-com.whatsapp": {
+   "kind": "original-apk-with-splits",
+   "package": "com.whatsapp",
+   "version_name": "2.26.41.77",
+   "version_code": 264107700,
+   "abi": "arm64-v8a",
+   "bytes": 139512726,
+   "sha256": "16efaf54c602c26e8b21a838ff50c7ebcb0197e8884bbc23b23f13eba5a6119d",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 14955071,
+     "sha256": "2ea35ad9cca5c1e62c41385718b7bee94a277b06e49c3953edc691b134b81317"
+    },
+    {
+     "name": "config.hdpi.apk",
+     "bytes": 1501396,
+     "sha256": "5b1571a4dfe7d61e80bcd71291865f05f50ad7b7d7c733a369db84d10c8733cc"
+    },
+    {
+     "name": "i18n_en.apk",
+     "bytes": 25001,
+     "sha256": "978bb00fc12f9d9cbefdc6b10a0644b9a5d1001bafe0dc5252570dfb2f4745af"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (fb920d38...a6c2)",
+   "reference": "harness HK top-1000 device round: WhatsApp",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.whatsapp.Main"
+  },
+  "hk-com.netshort.abroad": {
+   "kind": "original-apk-with-splits",
+   "package": "com.netshort.abroad",
+   "version_name": "2.3.5",
+   "version_code": 248,
+   "abi": "arm64-v8a",
+   "bytes": 113796552,
+   "sha256": "0292950555eeb2094fa320e1ba5959a8fc5807fe2d2f2fb96815c58b0c4efbf5",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 29224083,
+     "sha256": "7d11661ae76ee5fbac04f455bf7aa2034ef8e3ffc73678de81bada930eeca964"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 240499,
+     "sha256": "4860d870311c1f90aec4adb888e73487765f34c52e3a59a5d3177831515aa4a8"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (684ca364...24d2)",
+   "reference": "harness HK top-1000 device round: NetShort",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.netshort.abroad.ui.login.SplashActivity"
+  },
+  "hk-com.lemon.lvoverseas": {
+   "kind": "original-apk",
+   "package": "com.lemon.lvoverseas",
+   "version_name": "19.9.0",
+   "version_code": 19900300,
+   "abi": "arm64-v8a",
+   "bytes": 322386807,
+   "sha256": "cb7066909846da1b374d09159086f26d8d53611491bd4f8b56bfccb1984e21bb",
+   "delivery": "APKPure APK, arm64-v8a; verifies with one signing certificate (6f33fd44...db31)",
+   "reference": "harness HK top-1000 device round: CapCut",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.vega.main.MainActivity"
+  },
+  "hk-com.storymatrix.drama": {
+   "kind": "original-apk-with-splits",
+   "package": "com.storymatrix.drama",
+   "version_name": "7.0.0",
+   "version_code": 700,
+   "abi": "arm64-v8a",
+   "bytes": 91538454,
+   "sha256": "2333a8d20df07c0a9c17b28d25ba257be9255fc9c2d63f29c8a8ce2ad60b3415",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 27944651,
+     "sha256": "22bcfe2a18c4ccca1011976cac5cd1b64fee24027ab15db3a8ec87662d6e8ed3"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 450231,
+     "sha256": "fbddae3b788701a63cb79e4629d23bb0b6acdef02fc396f10089d2b04d94884a"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (003cc492...00a1)",
+   "reference": "harness HK top-1000 device round: DramaBox",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.storymatrix.drama.activity.MainActivity"
+  },
+  "hk-com.newleaf.app.android.victor": {
+   "kind": "original-apk-with-splits",
+   "package": "com.newleaf.app.android.victor",
+   "version_name": "4.2.20",
+   "version_code": 4220,
+   "abi": "arm64-v8a",
+   "bytes": 126882233,
+   "sha256": "498acdcf52496c59966289a39897421a9925fa456fd123914a5a8bbb7c3557d7",
+   "splits": [
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 157361,
+     "sha256": "8556d07bda19fa8acc63ead7c936ed008102ab843a99ea0945f2effb7e76f626"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (f5c949f6...e688)",
+   "reference": "harness HK top-1000 device round: ReelShort",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.newleaf.app.android.victor.MainActivity"
+  },
+  "hk-sg.bigo.live": {
+   "kind": "original-apk-with-splits",
+   "package": "sg.bigo.live",
+   "version_name": "6.53.0",
+   "version_code": 4136,
+   "abi": "arm64-v8a",
+   "bytes": 51707390,
+   "sha256": "d551cd6298b58fe7c2f19fcfd01788bae1a423a417941840edaa6578f8fb1db3",
+   "splits": [
+    {
+     "name": "config.th.apk",
+     "bytes": 1491154,
+     "sha256": "2f6b4b1388737e322eb78b202966f194c7b8013e08cc3d6c98e01535d117cc6a"
+    },
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 22542319,
+     "sha256": "63fab65163b17c26b4251a5e6d601af12ffb3a871e0734792d4ec5ff4547fcda"
+    },
+    {
+     "name": "config.de.apk",
+     "bytes": 954578,
+     "sha256": "fe54c87cadf058482acfa099638084ebf6f40757a36c5cf1914ac4a1f395d618"
+    },
+    {
+     "name": "config.fr.apk",
+     "bytes": 970962,
+     "sha256": "0cae8f4e31e82f00fec394f8c4ddd0e2a8cd37cd68c1e6dbe993f2687660a82c"
+    },
+    {
+     "name": "config.ja.apk",
+     "bytes": 1020114,
+     "sha256": "addc3591faf136519b25e068d8bd0988c6df5b177a266000aee2e8dfb14bc765"
+    },
+    {
+     "name": "config.vi.apk",
+     "bytes": 995538,
+     "sha256": "ab8fcdac7b0bc96079f3c849543ebad47f92fd4577f7ca3581ca048c8866711c"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 946386,
+     "sha256": "44664dbfcc2bbc25f6cca210067bf35111c53020230f160d4be94c378c893cd1"
+    },
+    {
+     "name": "config.mdpi.apk",
+     "bytes": 357675,
+     "sha256": "072ff79ae4a7601a69c54ce97ed0e33d03110355a0b1885e647ac7bc81bc6bde"
+    },
+    {
+     "name": "config.xxxhdpi.apk",
+     "bytes": 410797,
+     "sha256": "e987597ebd84cf3e1e2c57e761f290a41e9fcbe4a3dcad0bc445637c8dbfe00a"
+    },
+    {
+     "name": "config.armeabi_v7a.apk",
+     "bytes": 22341846,
+     "sha256": "d207c4662342ef764b3646cf0a87663fee231cc6a71f9cd46b60fe9d52e296af"
+    },
+    {
+     "name": "config.ko.apk",
+     "bytes": 975058,
+     "sha256": "1b2518fc7c0ede747ddc3cf3bce488ec355a6989db252894cd146c7eeb35d60b"
+    },
+    {
+     "name": "config.pt.apk",
+     "bytes": 930002,
+     "sha256": "8da6b71783be05b03607c91d9cfd303600b4a78a9872ad26263d3452779f8250"
+    },
+    {
+     "name": "config.tr.apk",
+     "bytes": 938194,
+     "sha256": "c77cbe5f2b125ff1648c164888bfcb56d7d4a5e77e266ab0bf2fc5dc9b53b89c"
+    },
+    {
+     "name": "config.ms.apk",
+     "bytes": 917714,
+     "sha256": "e7b3932d77dfaceb550568d88d42944aef8a8f8378e20dc33a19d09cc1b27085"
+    },
+    {
+     "name": "config.zh.apk",
+     "bytes": 1417426,
+     "sha256": "500d80214472dd884d83696009848a625b8e04a027f1f4f29ebbe7729fe9e9fb"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 353468,
+     "sha256": "6477bdf2e3b07d5586ba70bc6f5201454b4a046bcb97cc3bac3e36580317ee44"
+    },
+    {
+     "name": "config.it.apk",
+     "bytes": 942290,
+     "sha256": "cfed5b8468ff25f83f0b06d78e7cf0d68beedbd3ea1fc894c3e043b7d74e8969"
+    },
+    {
+     "name": "config.pl.apk",
+     "bytes": 930002,
+     "sha256": "92c51fc39cf8a6e5473555906f83f1171020c504c5955e892aa898e8afd80b9a"
+    },
+    {
+     "name": "config.ru.apk",
+     "bytes": 1257682,
+     "sha256": "80428d6bbbef936efbebe8c1752b96a691162146fdc54e1ce62f184579dd0b33"
+    },
+    {
+     "name": "config.ar.apk",
+     "bytes": 1130764,
+     "sha256": "c352e47becfa6218e25b2a5657d770ee4210ce6b059a8ab48d73403eddb005af"
+    },
+    {
+     "name": "config.hi.apk",
+     "bytes": 1106130,
+     "sha256": "c7311e48cfba86ae993bacdbad86f929042eeaafa48f6d51ddc4f93155ca27a2"
+    },
+    {
+     "name": "config.in.apk",
+     "bytes": 1021589,
+     "sha256": "35132f9b8b0fd2a9410914ebb650e02992dd1e9bbba38ac7bc2871d7abe45e9f"
+    },
+    {
+     "name": "config.hdpi.apk",
+     "bytes": 140474,
+     "sha256": "9ff9a9a4b73609f567afceb45606c7b2c35a86c918b125de174f56402f99037c"
+    },
+    {
+     "name": "config.tvdpi.apk",
+     "bytes": 198579,
+     "sha256": "0efaeb7c21fe3f9b1680474562b170b08aea3c50d55d25c5c46d50836cf86609"
+    },
+    {
+     "name": "config.ldpi.apk",
+     "bytes": 120454,
+     "sha256": "fc353ab5b89bb7a4e126c304f77a7e3357225d2b5f960b8898162874f3b0878a"
+    },
+    {
+     "name": "config.xhdpi.apk",
+     "bytes": 165076,
+     "sha256": "3c8f9db3e6fe44ff23699e90eaf6aaa984c2f084d61803f2e2691b28716bad29"
+    }
+   ],
+   "delivery": "APKPure (older arm64 build) XAPK, arm64-v8a; base and splits verify with one signing certificate (5c333105...9401)",
+   "reference": "harness HK top-1000 device round: BIGO LIVE",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "sg.bigo.live.home.MainActivity"
+  },
+  "hk-com.discord": {
+   "kind": "original-apk-with-splits",
+   "package": "com.discord",
+   "version_name": "350.8 - Stable",
+   "version_code": 350008,
+   "abi": "arm64-v8a",
+   "bytes": 122525167,
+   "sha256": "8a6b7929ff70ee9975533aca7b1bb6fa81547724b3b1c8a2e60ff5beb3ecc91e",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 73514771,
+     "sha256": "9ce7ed950c9076663a3ff1046460d835fd5313f9dd6a9287da9c487686894e91"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 70041,
+     "sha256": "0a2d09d775e43e482adcca0f1fc44b78b5ca62c0d98632c0a46df4bf2ad9e007"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 10743898,
+     "sha256": "afc8007cf371f190819aa408c7c537d02bc44969a3bb438657540b0ebd891357"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (3c39d23c...a113)",
+   "reference": "harness HK top-1000 device round: Discord",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.discord.main.MainActivity"
+  },
+  "hk-com.duolingo": {
+   "kind": "original-apk-with-splits",
+   "package": "com.duolingo",
+   "version_name": "6.102.4",
+   "version_code": 2481,
+   "abi": "arm64-v8a",
+   "bytes": 164494096,
+   "sha256": "7e8a66969a3ebd56b7c5b0cf40569caa2224564f8aac5ae8f4941c40e5bdda0d",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 25942251,
+     "sha256": "d8e9503050df93a0521636fb17cf88cd4cc2300a0e9763f9d6d89d8aeaf50aba"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 603772,
+     "sha256": "bf16857a0d7da2b7f3fc2ed3e8bb1afd75940de0f9682462e1a9bc30a0d97621"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (1233ff6d...1731)",
+   "reference": "harness HK top-1000 device round: Duolingo",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.duolingo.splash.LaunchActivity"
+  },
+  "hk-com.truecaller": {
+   "kind": "original-apk-with-splits",
+   "package": "com.truecaller",
+   "version_name": "26.41.5",
+   "version_code": 2641005,
+   "abi": "arm64-v8a",
+   "bytes": 84431185,
+   "sha256": "d1a4639333089ff6917270d89fb03072d560fb5e8d68b0a547ae39da91c31c10",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 13091960,
+     "sha256": "51ee7789bb7dda67c8e984195061a0aa1177209a00a0275576ae7b2d590f0e3e"
+    },
+    {
+     "name": "config.xhdpi.apk",
+     "bytes": 2965301,
+     "sha256": "4b8a068ed3479bf1c0199153a650d3ef5a18cdd19f78be47c9cba3522f7c126d"
+    },
+    {
+     "name": "insights_category_model.apk",
+     "bytes": 840176,
+     "sha256": "686ceeec849c8f16dbddb57027d7162684509246679b864e1457c2eadb3b06cb"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (7712b5f2...13ae)",
+   "reference": "harness HK top-1000 device round: Truecaller",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.truecaller.ui.TruecallerInit"
+  },
+  "hk-com.tencent.ibg.joox": {
+   "kind": "original-apk-with-splits",
+   "package": "com.tencent.ibg.joox",
+   "version_name": "9.12.1",
+   "version_code": 1898,
+   "abi": "arm64-v8a",
+   "bytes": 149522151,
+   "sha256": "8a976532bfbd862d34dad87ae48193fdb483628105f5d57f619f8a3c244a647a",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 74912605,
+     "sha256": "13f49fbcd1b14bd194a29beea41ec13b14ff0b6ebd8dd58559d517b6dc675436"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 90758,
+     "sha256": "01f806060690afe8611b587d02c699e2985f8d8f6a7fc9ef19c9d72f05764424"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 1273722,
+     "sha256": "77d7e65a9338b4047abe474f731a18654006e713cd1aff4545f858dfdbba1fe2"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (0efb2e93...3e26)",
+   "reference": "harness HK top-1000 device round: JOOX",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.tencent.wemusic.ui.main.LauncherUI"
+  },
+  "hk-com.whatsapp.w4b": {
+   "kind": "original-apk-with-splits",
+   "package": "com.whatsapp.w4b",
+   "version_name": "2.26.41.77",
+   "version_code": 264107714,
+   "abi": "arm64-v8a",
+   "bytes": 95702255,
+   "sha256": "4c3626cd4943924be8894612698fff5d4a52a65b72d5bee3ad97b203c8b52b3b",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 15479359,
+     "sha256": "b16d6a3fcdaa00c61a06fb43d07beebab0bd616bbbb135a7fc1c9407d8159a73"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 2816391,
+     "sha256": "c0aca3c5305b00aa0413b93abb7d145a4c8f516afacd9ce97e253b6fa196f3a6"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (fb920d38...a6c2)",
+   "reference": "harness HK top-1000 device round: WhatsApp\u00a0Business",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.whatsapp.Main"
+  },
+  "hk-com.iqiyi.i18n": {
+   "kind": "original-apk-with-splits",
+   "package": "com.iqiyi.i18n",
+   "version_name": "8.9.0",
+   "version_code": 731982,
+   "abi": "arm64-v8a",
+   "bytes": 109876690,
+   "sha256": "37e3729bc18f4cef87ebb9e09c80deaa0434f0b14624120bd20e48746bab136f",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 31491198,
+     "sha256": "d68e98c2c55a6e13ae96cd40d8653aa4e961a4af3ff947f523fa034a98c87059"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (d1055506...ca19)",
+   "reference": "harness HK top-1000 device round: iQIYI",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.qiyi.video.WelcomeActivity"
+  },
+  "hk-open.chat.gpt.aichat.bot.free.app": {
+   "kind": "original-apk-with-splits",
+   "package": "open.chat.gpt.aichat.bot.free.app",
+   "version_name": "1.3.8",
+   "version_code": 56,
+   "abi": "arm64-v8a",
+   "bytes": 30906413,
+   "sha256": "cc407bc39788be0791aa66a9cdf89f2c18beafc1a9a4cbf166c47438f9776cc3",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 14239054,
+     "sha256": "082fc4a428f9bd7c57f292aa9eb4720b44a96687af37163dd8085398e4ab8489"
+    },
+    {
+     "name": "config.hdpi.apk",
+     "bytes": 1117494,
+     "sha256": "70984e0cafad910291cd2851bafcf5af4b584677663467470acc14730f815e0f"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (270df108...2eb4)",
+   "reference": "harness HK top-1000 device round: OpenChat",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "open.chat.gpt.aichat.bot.free.app.page.splash.LauncherActivity"
+  },
+  "hk-com.microsoft.office.outlook": {
+   "kind": "original-apk",
+   "package": "com.microsoft.office.outlook",
+   "version_name": "5.2606.0",
+   "version_code": 82606013,
+   "abi": "arm64-v8a",
+   "bytes": 172142070,
+   "sha256": "aaf6a136b1de7d9dc1239bd320942608b915251c64f446a3f501add32232268e",
+   "delivery": "APKPure APK, arm64-v8a; verifies with one signing certificate (b925136f...7051)",
+   "reference": "harness HK top-1000 device round: Outlook",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.microsoft.office.outlook.MainCalendarActivity"
+  },
+  "hk-ai.x.grok.bot": {
+   "kind": "original-apk-with-splits",
+   "package": "ai.x.grok.bot",
+   "version_name": "1.17.0",
+   "version_code": 1109,
+   "abi": "arm64-v8a",
+   "bytes": 67160602,
+   "sha256": "694fed0b7a01a00d1ff0d43bc986a0b790dd42533e8d447d6e3d6d05e2273bf5",
+   "splits": [
+    {
+     "name": "config.hdpi.apk",
+     "bytes": 194454,
+     "sha256": "4559e8f479785fc3c5e76814dce206fd6d9f227a6f63e781fe01cdd97541ea39"
+    },
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 40238243,
+     "sha256": "f9a9e68c407d76d9f5e86a0a1a2ae792c6e62fe0e39c0822467b5776ca1e2f47"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 135577,
+     "sha256": "591fbded4a25bbcf098e06fbf15d8a7abfd6e88ba1e1b8ba46734d97f618d18b"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (f68872ec...3b74)",
+   "reference": "harness HK top-1000 device round: Grok Bot",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "ai.x.grok.bot.MainActivity"
+  },
+  "hk-com.linkedin.android": {
+   "kind": "original-apk",
+   "package": "com.linkedin.android",
+   "version_name": "6.1.1",
+   "version_code": 111206000,
+   "abi": "arm64-v8a",
+   "bytes": 54932864,
+   "sha256": "374d90477a2d2249498ba081742e297e38ec60218784e634dd760d77e899f3cd",
+   "delivery": "APKPure APK, arm64-v8a; verifies with one signing certificate (3b6a403c...0727)",
+   "reference": "harness HK top-1000 device round: \u9886\u82f1",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.linkedin.android.authenticator.LaunchActivity"
+  },
+  "hk-com.skysoft.kkbox.android": {
+   "kind": "original-apk-with-splits",
+   "package": "com.skysoft.kkbox.android",
+   "version_name": "6.20.20",
+   "version_code": 61030,
+   "abi": "arm64-v8a",
+   "bytes": 28799074,
+   "sha256": "26a49ccb7d19289e03debb8796e6c0c8c6628a3c6a74eadcd7e612e84ba1023d",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 23365055,
+     "sha256": "a5c832b9c12203d55206ac19584cd43ebacc9326818e890f4bd5a6b4d17e1767"
+    },
+    {
+     "name": "config.xhdpi.apk",
+     "bytes": 1676604,
+     "sha256": "340b67851531bf35e8336251b05f46a4031873d76dfc22c2e59fefbd83ab11c7"
+    }
+   ],
+   "delivery": "APKPure (older arm64 build) XAPK, arm64-v8a; base and splits verify with one signing certificate (cbaffa56...00f1)",
+   "reference": "harness HK top-1000 device round: KKBOX",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.skysoft.kkbox.android.HomeActivity"
+  },
+  "hk-com.strava": {
+   "kind": "original-apk-with-splits",
+   "package": "com.strava",
+   "version_name": "486.9",
+   "version_code": 12400193,
+   "abi": "arm64-v8a",
+   "bytes": 101126753,
+   "sha256": "4d9065ea539887f4fd1fecbed7c39f5bbd7dd5aed6e89636489b9ba7c546586e",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 43574359,
+     "sha256": "ccf3db2ae3c36ac033fc896e093a66303cf1228a4fff06ca2de4d365545cfd22"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 254162,
+     "sha256": "a7579191c8a5d33ed99b05763a48da2aa37d7e6f6d4d4a880c133d62cf334677"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 12766828,
+     "sha256": "d6deca6fce58302d7e836512e1ac6faad36d46366a9f35df03f4df1e53d54d33"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (fad6269b...5ab9)",
+   "reference": "harness HK top-1000 device round: Strava",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.strava.SplashActivity"
+  },
+  "hk-com.xiaomi.smarthome": {
+   "kind": "original-apk-with-splits",
+   "package": "com.xiaomi.smarthome",
+   "version_name": "11.8.706",
+   "version_code": 11080706,
+   "abi": "arm64-v8a",
+   "bytes": 153545823,
+   "sha256": "9af0d7a5f53d9ca68954a89ec62d914885beeccd5a92e154b924fd5a5ff2e1e5",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 74420762,
+     "sha256": "9e7abde35375f3561808b934a7ad292552e84f9130e0838ebaaa38d0fa5bbc34"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (b031fe98...f2d8)",
+   "reference": "harness HK top-1000 device round: Xiaomi Home",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.xiaomi.smarthome.SmartHomeMainActivity"
+  },
+  "hk-com.pikcloud.pikpak": {
+   "kind": "original-apk-with-splits",
+   "package": "com.pikcloud.pikpak",
+   "version_name": "2.5.1",
+   "version_code": 10288,
+   "abi": "arm64-v8a",
+   "bytes": 89419081,
+   "sha256": "4efabbb42548e0182077188201288bf2505ea6f5a51e3da4b7ca75076b535f40",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 20076195,
+     "sha256": "162cbc070ceaf0a10ad642dd2a86ec05bebf811c8f9089d9369f254127cd6659"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (3c9a14c5...a5d1)",
+   "reference": "harness HK top-1000 device round: PikPak",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.pikcloud.app.SplashActivity"
+  },
+  "hk-ch.protonvpn.android": {
+   "kind": "original-apk-with-splits",
+   "package": "ch.protonvpn.android",
+   "version_name": "5.20.98.0",
+   "version_code": 605209800,
+   "abi": "arm64-v8a",
+   "bytes": 27399822,
+   "sha256": "af2bf8b7341017a42da0ecd2720ed9a5f8a007ed62205385e3255a4c81ecc009",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 8430548,
+     "sha256": "37192b4a9b18435e821db20452545ddbbd938a1493610f82b638083ba3c24371"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 1332761,
+     "sha256": "2fb015b03c53d43535ca0a29d35b721227a7268504bc0bfda54add0fe0124788"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (dcc9439e...b853)",
+   "reference": "harness HK top-1000 device round: Proton VPN",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.protonvpn.android.redesign.app.ui.MainActivity"
+  },
+  "hk-org.telegram.messenger": {
+   "kind": "original-apk-with-splits",
+   "package": "org.telegram.messenger",
+   "version_name": "13.1.0",
+   "version_code": 72291,
+   "abi": "arm64-v8a",
+   "bytes": 39805450,
+   "sha256": "497e5b9113cc072da0c4b2d72f66caf8f123f4853ad647f195abff0deecd25f3",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 10506752,
+     "sha256": "4d364c59d01dc3a1211f50a1130ce09df546aee4ddec8088355e2cd8b3546768"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 1489572,
+     "sha256": "74ac81e4660982ecf46c67537f7d51630a9c974086d321e3b465d3880cc22bc6"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (49c15225...38e1)",
+   "reference": "harness HK top-1000 device round: Telegram",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "org.telegram.ui.LaunchActivity"
+  },
+  "hk-com.google.android.apps.subscriptions.red": {
+   "kind": "original-apk-with-splits",
+   "package": "com.google.android.apps.subscriptions.red",
+   "version_name": "1.331.1001988053",
+   "version_code": 674826,
+   "abi": "arm64-v8a",
+   "bytes": 20595141,
+   "sha256": "4e997f4fa73d9d4144d6553eabdc50bc890df06cc94339e3da11ef1a28e3de1a",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 327997,
+     "sha256": "f549856833cf48bcd269f249e7346672c7c0d8061c46b87c580b21706d192332"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 147666,
+     "sha256": "e60c893682af2fbdf1a0789f9e99efa4110bbe37273ee8465e1638dc2583e255"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 110617,
+     "sha256": "5b89da7a41a6ed6055a4e23ac80a5b3a0e6daefe9a6573b30caff1f0819ddcd6"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (e357f022...8953)",
+   "reference": "harness HK top-1000 device round: Google One",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.google.android.apps.subscriptions.red.main.MainActivity"
+  },
+  "hk-com.surfshark.vpnclient.android": {
+   "kind": "original-apk-with-splits",
+   "package": "com.surfshark.vpnclient.android",
+   "version_name": "3.36.0",
+   "version_code": 310049206,
+   "abi": "arm64-v8a",
+   "bytes": 44441585,
+   "sha256": "36fb019fa7d76a2595f0ad32cdd7edb187c20bd6b0ed1caa6c24bed03a5bd24e",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 30862481,
+     "sha256": "d893257b16e5f2e4776946e8feea8737c4643b1a3415f5cb7c5a7015d80c1beb"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 544265,
+     "sha256": "5a4d02de753af2e722d093f64fa4b519985ece54722bc6bea61ac09b403c3524"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (63b41b6c...5761)",
+   "reference": "harness HK top-1000 device round: Surfshark",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.surfshark.vpnclient.android.StartActivity"
+  },
+  "hk-com.nordvpn.android": {
+   "kind": "original-apk-with-splits",
+   "package": "com.nordvpn.android",
+   "version_name": "9.15.2",
+   "version_code": 2142,
+   "abi": "arm64-v8a",
+   "bytes": 45896278,
+   "sha256": "ee9845e5c7bddb36d60bee79d2ba3920fe190fc170433fa8312329d448eae892",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 17327855,
+     "sha256": "0ed0387c93002f79e64443616ca8c8299b2459afd9f82e7af63cec61530b6cdd"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 289147,
+     "sha256": "ed3eab0218dd4586b8db8b3224edbef5f681b4ce55b5c83ad6b59fb5b356f4ad"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (bc64ae07...1466)",
+   "reference": "harness HK top-1000 device round: NordVPN",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.nordvpn.android.mobile.welcome.WelcomeActivity"
+  },
+  "hk-com.wejoy.weplay": {
+   "kind": "original-apk-with-splits",
+   "package": "com.wejoy.weplay",
+   "version_name": "6.12.2",
+   "version_code": 61222,
+   "abi": "arm64-v8a",
+   "bytes": 140856303,
+   "sha256": "a04cbd9a59af6a0973d24e8e2a11ac6bf0f15e422da4bfa142fe9ddedf0cf0d1",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 70561268,
+     "sha256": "1b44214ea4e7e934c607b1a060069b5108764161e9c4b50e427f57d30079af85"
+    },
+    {
+     "name": "config.mdpi.apk",
+     "bytes": 1414384,
+     "sha256": "5b09612c03eba94dac1bf2ffde30523eb29e5c4b95524e86f031114ffb7442a4"
+    },
+    {
+     "name": "wepie_asset_pack.apk",
+     "bytes": 71929015,
+     "sha256": "000609874728828bf24b62ebeb0fb44a2fa0937c72b1e2ea52bcc6839ac10287"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (20ce69f5...18d5)",
+   "reference": "harness HK top-1000 device round: WePlay",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.wepie.wespy.module.login.start.StartActivity"
+  },
+  "hk-com.apple.android.music": {
+   "kind": "original-apk-with-splits",
+   "package": "com.apple.android.music",
+   "version_name": "6.5.3",
+   "version_code": 1599,
+   "abi": "arm64-v8a",
+   "bytes": 60495930,
+   "sha256": "3e30182123e408b17e6f284de2eb90a0985c4d6fb9c9634b99b5be9a2e25924a",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 39078075,
+     "sha256": "e7dbcd1aff5edefa3096d8d77f2aaaa6477e577ca8d683cac2a00f8da238e0ab"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 534362,
+     "sha256": "99da8ffd0066398e275215cd726df3df8d324850e7c4e2ff89f8204bd34708c9"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (771d8674...ff9b)",
+   "reference": "harness HK top-1000 device round: Apple Music",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.apple.android.music.onboarding.activities.SplashActivity"
+  },
+  "hk-com.google.android.gm": {
+   "kind": "original-apk-with-splits",
+   "package": "com.google.android.gm",
+   "version_name": "2026.10.19.1003431317.Release",
+   "version_code": 66123392,
+   "abi": "arm64-v8a",
+   "bytes": 89403690,
+   "sha256": "223474be9b00f69ae4c293bcc9be6e0e865d5e05f0110db1ed589d7f2bf8a94a",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 39592932,
+     "sha256": "865a9db4c03ee65ec0c6df7c1864238f2211d63e417c9c277acdc64e24500119"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 6357202,
+     "sha256": "288310f9dff70c56c08ebbef41d521e0fe419a7964aed3e4c989365da86264ba"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 1984506,
+     "sha256": "cb1f81a696653a538a3b2d59fc735294c87f30981573dcc6246f711c42f6a362"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (7ce83c1b...5053)",
+   "reference": "harness HK top-1000 device round: Gmail",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.google.android.gm.ui.MailActivityGmail"
+  },
+  "hk-com.bilibili.app.in": {
+   "kind": "original-apk-with-splits",
+   "package": "com.bilibili.app.in",
+   "version_name": "6.7.1",
+   "version_code": 9161100,
+   "abi": "arm64-v8a",
+   "bytes": 349777129,
+   "sha256": "125a05706eb0e987f6fce00886931039e8fd32fdcd323db0a79f3ffec9f936dd",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 128786706,
+     "sha256": "802f709aab785d80e3397b9ed97a9f2bd48f2e4ce94b766f16e8ea3910ecdd52"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 153133,
+     "sha256": "0d124b8927dbb0ce4923674058390364fa2eff88adb59de106d8d5a5340275cb"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (93ba270f...910e)",
+   "reference": "harness HK top-1000 device round: bilibili",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "tv.danmaku.bili.MainActivityV2"
+  },
+  "hk-com.microsoft.office.officehubrow": {
+   "kind": "original-apk",
+   "package": "com.microsoft.office.officehubrow",
+   "version_name": "16.0.19127.20172",
+   "version_code": 44743655,
+   "abi": "arm64-v8a",
+   "bytes": 406454039,
+   "sha256": "7791689682dc56e6b6c504c791fa4e752000a73cf5132c61462eb301e025faf1",
+   "delivery": "APKPure APK, arm64-v8a; verifies with one signing certificate (b925136f...7051)",
+   "reference": "harness HK top-1000 device round: M365 Copilot",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.microsoft.office.officemobile.OfficeMobileActivity"
+  },
+  "hk-us.zoom.videomeetings": {
+   "kind": "original-apk-with-splits",
+   "package": "us.zoom.videomeetings",
+   "version_name": "7.2.1.43844",
+   "version_code": 6702010,
+   "abi": "arm64-v8a",
+   "bytes": 171202260,
+   "sha256": "587464a1a657ae7beb02c0de6f74fa56ed3ac7f94a139eb06a51985497320f2b",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 127608622,
+     "sha256": "49feccc79d5798420c50ebb529d328e0dddf1f64d090948b46099c414d421a69"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 1549052,
+     "sha256": "7c922e1ecef543a7a161d143fea930edb8a2ee9e52a3ba822b5abb25d9f98ae4"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (60b75724...445d)",
+   "reference": "harness HK top-1000 device round: Zoom",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.zipow.videobox.LauncherActivity"
+  },
+  "hk-com.tinder": {
+   "kind": "original-apk-with-splits",
+   "package": "com.tinder",
+   "version_name": "17.37.3",
+   "version_code": 17370393,
+   "abi": "arm64-v8a",
+   "bytes": 127388546,
+   "sha256": "5185248686740948556f99ea27bd4502271186e646805f4e43da2aea7da9e115",
+   "splits": [
+    {
+     "name": "config.en.apk",
+     "bytes": 827602,
+     "sha256": "cda35a9c85f0a13b6cf17138ef213baf4c978103568eecdbdf5355ad17628dbe"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 13500213,
+     "sha256": "1f71928a7d9de2f1267b1ce7b00360920f7e96dda87a75f704494d5a8d29f7aa"
+    },
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 36582864,
+     "sha256": "5f3d4865da4409b81bda04ceaa4c9cde990c74e9735e9dcb9e8599ac4ac39737"
+    }
+   ],
+   "delivery": "APKPure (older arm64 build) XAPK, arm64-v8a; base and splits verify with one signing certificate (8ab14fd7...da1b)",
+   "reference": "harness HK top-1000 device round: Tinder",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.tinder.launch.internal.LaunchActivity"
+  },
+  "hk-com.disney.disneyplus": {
+   "kind": "original-apk-with-splits",
+   "package": "com.disney.disneyplus",
+   "version_name": "26.19.0+rc3-2026.10.20",
+   "version_code": 179245508,
+   "abi": "arm64-v8a",
+   "bytes": 45330224,
+   "sha256": "ff6d0731ec9375861771129fb5da9a3ba2692eb2c0fc7f66e7d08afc18dd5067",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 7574063,
+     "sha256": "a5303dfd78f9f0ec1b0aff025cbf9b334c7462a67b3ca03bebf4700baa20a71e"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 254162,
+     "sha256": "42e0e334e4115d86b68dce78a63a466c70afb2f7c216f47b3ccdc676f0306c62"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 515579,
+     "sha256": "17e9be84da47712d234834ec8262469fb9b91e70a4bbbe73ef54bade51d50ab2"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (b4d251e9...63d4)",
+   "reference": "harness HK top-1000 device round: Disney+",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.bamtechmedia.dominguez.main.MainActivity"
+  },
+  "hk-com.blink.drama.player": {
+   "kind": "original-apk-with-splits",
+   "package": "com.blink.drama.player",
+   "version_name": "3.6.0",
+   "version_code": 30600,
+   "abi": "arm64-v8a",
+   "bytes": 97462229,
+   "sha256": "860125e82c9b09812b53cdcb2699d968cdf1094a645b85842d14b3c115d4ac17",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 26959632,
+     "sha256": "3454931b7d8766d810a6d5e8b025627047f6446a5296eba91652be54019fab84"
+    },
+    {
+     "name": "config.hdpi.apk",
+     "bytes": 145887,
+     "sha256": "df3ddcb8ac270696830910ff796ac25cfc460508d7a738dd146562305d819e62"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (cc77a452...cf53)",
+   "reference": "harness HK top-1000 device round: BlinkDrama",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.blink.drama.player.ui.activity.BlinkRoutingActivity"
+  },
+  "hk-com.pico.live": {
+   "kind": "original-apk-with-splits",
+   "package": "com.pico.live",
+   "version_name": "11.3.5.2510",
+   "version_code": 101990,
+   "abi": "arm64-v8a",
+   "bytes": 153652380,
+   "sha256": "72a2dfa0a29ffce593e16e195717949b34858466b31dc39597022964292b6d4a",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 89116120,
+     "sha256": "58593b485343b6588233d13f3998180ae67726f4ce942ea806c3346adab12bf1"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (a5e51fae...0b24)",
+   "reference": "harness HK top-1000 device round: Wefun",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.pico.live.app.entrance.SplashActivity"
+  },
+  "hk-com.allbrowser.searchforbrowser": {
+   "kind": "original-apk-with-splits",
+   "package": "com.allbrowser.searchforbrowser",
+   "version_name": "1.2.2",
+   "version_code": 12002,
+   "abi": "arm64-v8a",
+   "bytes": 65559790,
+   "sha256": "af108f9bec9c36c8b54fe2c053ba2f5010dcab51baf6df43ac7499e0a6dfbefd",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 8545712,
+     "sha256": "d3c08ff8e506ecff866650730c94c9edf1505f9a5f27b51c277dfa17c0ce5b37"
+    },
+    {
+     "name": "config.hdpi.apk",
+     "bytes": 137700,
+     "sha256": "d1d1eea9d6bc2226c89e6f4cbef84707d5dcf103199bfc01b800b2b32012691a"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (c01ef44d...f273)",
+   "reference": "harness HK top-1000 device round: All Browser",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.allbrowser.searchforbrowser.view.LaunchActivity"
+  },
+  "hk-com.mt.mtxx.mtxx": {
+   "kind": "original-apk-with-splits",
+   "package": "com.mt.mtxx.mtxx",
+   "version_name": "12.20.6",
+   "version_code": 122006,
+   "abi": "arm64-v8a",
+   "bytes": 266927794,
+   "sha256": "539f32cf12b999d145512f3c46cc1b54c76f9cd171c570ff4ddbd1b00e12aca9",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 214747794,
+     "sha256": "e98cbb22180a4e75d474961d9e59e1595e5cc26f3a5aabdad14c8af2c276a52c"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 467411,
+     "sha256": "09f2e747b3eb45fb7afd9d2f49b4cefe27400f053a3481723e999f35a47dcbb6"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 452506,
+     "sha256": "588c6a9b3b19a14fb29eb35763654428f9eca835638c8e49d63c654c34911c17"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (fbf80b9d...0153)",
+   "reference": "harness HK top-1000 device round: Meitu",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.mt.mtxx.mtxx.MainActivity"
+  },
+  "hk-ai.perplexity.app.android": {
+   "kind": "original-apk-with-splits",
+   "package": "ai.perplexity.app.android",
+   "version_name": "2.102.0",
+   "version_code": 260671,
+   "abi": "arm64-v8a",
+   "bytes": 81426446,
+   "sha256": "3f5e167d2841274425d547d9b84084d336891f54ab7e065801ec0a862ac3be28",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 63706380,
+     "sha256": "a6c5693bfd1c03ec69abe29bf347a147c58aea99b5b2f2caec2b34e94cc6b628"
+    },
+    {
+     "name": "config.xxxhdpi.apk",
+     "bytes": 115474,
+     "sha256": "6549135b7d6bfbbec844931e402f86c93c6baec0a7b42ddf510e92c20cfec1ee"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (b5c7a5c9...6d18)",
+   "reference": "harness HK top-1000 device round: Perplexity",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "ai.perplexity.app.android.ui.main.MainActivity"
+  },
+  "hk-com.naver.linewebtoon": {
+   "kind": "original-apk-with-splits",
+   "package": "com.naver.linewebtoon",
+   "version_name": "26.101.0",
+   "version_code": 26101017,
+   "abi": "arm64-v8a",
+   "bytes": 107602041,
+   "sha256": "e6cd166fea2124180eb47f655bc122d75fb8bde2044f10ce473e823c7d15daec",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 9577718,
+     "sha256": "6f7b5025e74ddafa19cacc273436ca9e909a26e11cd7a456d774cee4b7fdbc14"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (0b8b8523...27bb)",
+   "reference": "harness HK top-1000 device round: WEBTOON",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.naver.linewebtoon.splash.SplashActivity"
+  },
+  "hk-tech.butterfly.app": {
+   "kind": "original-apk-with-splits",
+   "package": "tech.butterfly.app",
+   "version_name": "26.19.2",
+   "version_code": 426,
+   "abi": "arm64-v8a",
+   "bytes": 81446696,
+   "sha256": "3290665bca56b104ac4588a57294c57e9f7c4a56bbe8edddbb1f94393ac882a4",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 80737666,
+     "sha256": "c4f6d1d4e3dfc62591aabb7ac2f79dd2434cccee799dd2a0f048308c59fbf7b0"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 175920,
+     "sha256": "130811094b52c6848aaef194fb5e1baea3213fa21e63f049039a118d6a7dc062"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (06689246...4c81)",
+   "reference": "harness HK top-1000 device round: Manus",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "tech.butterfly.app.MainActivity"
+  },
+  "hk-hk.gov.immd.contactless": {
+   "kind": "original-apk-with-splits",
+   "package": "hk.gov.immd.contactless",
+   "version_name": "1.0.28",
+   "version_code": 30111,
+   "abi": "arm64-v8a",
+   "bytes": 16104243,
+   "sha256": "17fe7959e9a2267d1132148f3be8b1cb3571a99a69e9fd1f8f4f5b836deac208",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 37290,
+     "sha256": "384174b10ca86a292ca9e40593812290f47873c229961f4ff3c4502ded44f8e1"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 37273,
+     "sha256": "5573c483d5d2aab297c0bba7531a893b9dca87681f3af47f7e0b7bf76ef18cc6"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 24985,
+     "sha256": "5ccf92cd0b5846eb5ed70e3926768bb5de440701fd44bd1321b4759674ee0d70"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 336741,
+     "sha256": "cd67f22dc00c0738510d57682f6464b7da8cebf878fd1f02f24fa75e98ef3aec"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (253b7341...1db3)",
+   "reference": "harness HK top-1000 device round: HK e-Channel",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "hk.gov.immd.contactless.MainActivity"
+  },
+  "hk-com.audible.application": {
+   "kind": "original-apk",
+   "package": "com.audible.application",
+   "version_name": "26.41.07",
+   "version_code": 2090264107,
+   "abi": "arm64-v8a",
+   "bytes": 173006301,
+   "sha256": "eaf1ac8e147a10bd88e3ec0cc4f113bb2af8500cc52181eb3c2e81470988cf9e",
+   "delivery": "APKPure APK, arm64-v8a; verifies with one signing certificate (57901d5c...a80f)",
+   "reference": "harness HK top-1000 device round: Audible",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.audible.application.MainLauncher"
+  },
+  "hk-com.bumble.app": {
+   "kind": "original-apk-with-splits",
+   "package": "com.bumble.app",
+   "version_name": "5.489.0",
+   "version_code": 4119,
+   "abi": "arm64-v8a",
+   "bytes": 59569443,
+   "sha256": "74aac11f2ead0ff1ac4bcb6c95e54be36b45bcf4f6867b3d0a930e8e440757b8",
+   "splits": [
+    {
+     "name": "config.fr.apk",
+     "bytes": 712914,
+     "sha256": "3011d3e298610d0ec9d00b858c79682a9a830d47e189e8f2af4d6fa8a2006da3"
+    },
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 9401236,
+     "sha256": "f22124e394351d8941d394e67bd17a1e6307dfa55428f950a748a5aab875d377"
+    },
+    {
+     "name": "config.de.apk",
+     "bytes": 491730,
+     "sha256": "c340b9525d2c882c31074b88a82218ac703f594b4bba9ca3764e6c752d17a8c0"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 975058,
+     "sha256": "80721e050e745c58074f909f77ae97038e5f69a5d6a17ef9a35f9a94ed0c9772"
+    },
+    {
+     "name": "config.ja.apk",
+     "bytes": 532690,
+     "sha256": "6cd7b38d466c022dc0a8f49abf93ad725f68db5c5eef6c48ff37c569d7f5b34f"
+    },
+    {
+     "name": "config.tr.apk",
+     "bytes": 114898,
+     "sha256": "e84fc431e226cc7d910f64e1614925bd6dba43b5005e4b8175f44d7ba2a121be"
+    },
+    {
+     "name": "config.ar.apk",
+     "bytes": 123090,
+     "sha256": "475ef20f4efeafd5a8e9849b90a69a3d208a260f80a33f999f1edad6d39bf14f"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 1192146,
+     "sha256": "b8b24a7e1ab189d6169287081ebcdf590c5526232c958ee55febe1ba9f669c93"
+    },
+    {
+     "name": "config.hi.apk",
+     "bytes": 684242,
+     "sha256": "6f8bfbeef5338e4aa5ea2cad97dd6d1d4b77e0db52aac2a49778a5a7e2764f28"
+    },
+    {
+     "name": "config.in.apk",
+     "bytes": 155858,
+     "sha256": "6ceb89d8566fea56f2e87d74befd707bdad2b929eb46dcd37d0d23c3cb9d65bb"
+    },
+    {
+     "name": "config.it.apk",
+     "bytes": 495826,
+     "sha256": "4e1f9213e8651082a019ad21dfe769fdf39b7173460a8fbd56362d4415e4c03f"
+    },
+    {
+     "name": "config.zh.apk",
+     "bytes": 827602,
+     "sha256": "702ed0f73226634d40e7ddd72aec984d5ce969fa8aadbefcbfdb1ca152e5a6a1"
+    },
+    {
+     "name": "config.ru.apk",
+     "bytes": 590034,
+     "sha256": "a0cca8616ba9804e7839de1f319c9eb81b6ec9eda45eaf5daa2ba44add3331a9"
+    },
+    {
+     "name": "config.th.apk",
+     "bytes": 127186,
+     "sha256": "c46ad90add2cdd2ad335873f0077f0401df3763aedfc51811459fe26b367a350"
+    },
+    {
+     "name": "config.vi.apk",
+     "bytes": 118994,
+     "sha256": "66ade1fb8c8659c7306969f32be1823628f9409273fa1637fcd699b346457266"
+    },
+    {
+     "name": "config.xhdpi.apk",
+     "bytes": 1390828,
+     "sha256": "131c51da19ba09a3d016303cb933838262a47d503e6f23d3efcfef5bae3d7c96"
+    },
+    {
+     "name": "config.ko.apk",
+     "bytes": 520402,
+     "sha256": "9804e7e7847a92051beb50c0c3c69f38a81bf49a2687a49b642d80f589c8b9f4"
+    },
+    {
+     "name": "config.my.apk",
+     "bytes": 127186,
+     "sha256": "8a74bd3ac5546ddb23cc9dbd3c6fb115d49ec1962f0b2921a37c1422afb2199e"
+    },
+    {
+     "name": "config.pt.apk",
+     "bytes": 766162,
+     "sha256": "d40b9f8528ff7cb8f157d313a44408c3a1a1988fc72adb4489af54e979fe57cd"
+    }
+   ],
+   "delivery": "APKPure (older arm64 build) XAPK, arm64-v8a; base and splits verify with one signing certificate (e29e741a...c3bf)",
+   "reference": "harness HK top-1000 device round: Bumble",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.bumble.app.ui.launcher.BumbleLauncherActivity"
+  },
+  "hk-com.phoenix.read.oversea.gp": {
+   "kind": "original-apk-with-splits",
+   "package": "com.phoenix.read.oversea.gp",
+   "version_name": "7.4.1.33",
+   "version_code": 74133,
+   "abi": "arm64-v8a",
+   "bytes": 277930810,
+   "sha256": "7e79af745c48462beb107a4c0ac65c876e829a749bbf4dd681ec2b6359b57b80",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 58409936,
+     "sha256": "99a2cef9f2791ce35f156e4a63096cd1e38f7c8badb20706ad845872dcb93b6b"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 738585,
+     "sha256": "6440fe5ff7cf0047cc58d777a10489bfe182507a9f7f71d0f17e9973973b61c7"
+    },
+    {
+     "name": "config.zh.apk",
+     "bytes": 86425,
+     "sha256": "64b00469e549e51ec0c32d7d7c2bcebafb4a8435d99d6e1b58a065aa28c50678"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (4fa534cd...5612)",
+   "reference": "harness HK top-1000 device round: \u7ea2\u679c\u77ed\u5267",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.dragon.read.pages.main.MainFragmentActivity"
+  },
+  "hk-com.tvb.mytvsuper": {
+   "kind": "original-apk",
+   "package": "com.tvb.mytvsuper",
+   "version_name": "8.2.4",
+   "version_code": 604,
+   "abi": "arm64-v8a",
+   "bytes": 104411556,
+   "sha256": "fa971fb25a6fc07cd696a94b1f7ed1b298dd6ad880c2cffb3652371abcbb10d0",
+   "delivery": "APKPure APK, arm64-v8a; verifies with one signing certificate (9b7bd612...6b45)",
+   "reference": "harness HK top-1000 device round: myTV SUPER",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.quickplay.tvbmytv.activity.LandingActivity"
+  },
+  "hk-com.google.android.apps.bard": {
+   "kind": "original-apk-with-splits",
+   "package": "com.google.android.apps.bard",
+   "version_name": "1.0.995038376",
+   "version_code": 345,
+   "abi": "arm64-v8a",
+   "bytes": 5351117,
+   "sha256": "793fdf8cdaf56729b9f63b1a3895b4a2c0284c38adbb2f638bf727ef491ff9be",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 41198,
+     "sha256": "bbb0a390fced3151d0f68850ab92e39aa4a8ce1e22519025cf5194b6a1975222"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 41170,
+     "sha256": "fa733e1f2a328674cf67e966d4c7d64db935358d1cd258b19abf36e67ab4dc09"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 32978,
+     "sha256": "9eaa5d80cafc7c416dc135f38b772cdae081a4a337215627b8e45a02641d16d8"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 63712,
+     "sha256": "c56c343e1ac6f0b1590499bcc238e84c56b9e3a3fb2d12bbe00e84b33b7e1348"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (997c9c5d...efa7)",
+   "reference": "harness HK top-1000 device round: Gemini",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.google.android.apps.bard.shellapp.BardEntryPointActivity"
+  },
+  "hk-com.microsoft.skydrive": {
+   "kind": "original-apk",
+   "package": "com.microsoft.skydrive",
+   "version_name": "7.64.2",
+   "version_code": 2027640302,
+   "abi": "arm64-v8a",
+   "bytes": 111177456,
+   "sha256": "57893f06cd94b888509507e7a44b2b15b26debdb86187c16090fe61c55dd408c",
+   "delivery": "APKPure APK, arm64-v8a; verifies with one signing certificate (a0794215...e778)",
+   "reference": "harness HK top-1000 device round: OneDrive",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.microsoft.skydrive.MainActivity"
+  },
+  "hk-com.goline.beatitell": {
+   "kind": "original-apk-with-splits",
+   "package": "com.goline.beatitell",
+   "version_name": "1.4.7",
+   "version_code": 23,
+   "abi": "arm64-v8a",
+   "bytes": 55167283,
+   "sha256": "f02fa7e8ecb3905d5398433ebfb3c4a8e2b6a00423c83a3515b0a9adfdc262da",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 27624797,
+     "sha256": "8177ba0247b3ccfa80e30357cfb61a74034febe1b5d5d2dd2ab13d06f39c4c0b"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (c12975f1...1d93)",
+   "reference": "harness HK top-1000 device round: \u798f\u8bc9",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.goline.appfc5glication.GoogleGoLineLaunchFC2GCActivity"
+  },
+  "hk-com.google.android.apps.maps": {
+   "kind": "original-apk",
+   "package": "com.google.android.apps.maps",
+   "version_name": "26.43.00.1002020710",
+   "version_code": 1068844608,
+   "abi": "arm64-v8a",
+   "bytes": 304397539,
+   "sha256": "9ad0d0d3fbb34e1bc9e99c26d454a702c511dab6cb74fc98e2917d4c553f95ec",
+   "delivery": "APKPure APK, arm64-v8a; verifies with one signing certificate (7ce83c1b...5053)",
+   "reference": "harness HK top-1000 device round: Maps",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.google.android.maps.MapsActivity"
+  },
+  "hk-com.google.android.youtube": {
+   "kind": "original-apk",
+   "package": "com.google.android.youtube",
+   "version_name": "21.43.523",
+   "version_code": 1561307650,
+   "abi": "arm64-v8a",
+   "bytes": 210944969,
+   "sha256": "4410cf3e9a37db09e8bd0fcc2176d047284ce95192598e9118a5249194c1b84c",
+   "delivery": "APKPure APK, arm64-v8a; verifies with one signing certificate (5aad2bee...b0c6)",
+   "reference": "harness HK top-1000 device round: YouTube",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.google.android.apps.youtube.app.watchwhile.MainActivity"
+  },
+  "hk-com.baitu.qingshu": {
+   "kind": "original-apk-with-splits",
+   "package": "com.baitu.qingshu",
+   "version_name": "5.4.551.1015",
+   "version_code": 551,
+   "abi": "arm64-v8a",
+   "bytes": 69453839,
+   "sha256": "ba7d768b96d4665a93e9ba78b9f33d59c41681fa9f35fe2ed4018d23affa34f7",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 63799561,
+     "sha256": "b8a749288546130917b685993ac65f42327d2218ee39b69aa0af6a4c149ce6c9"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 264277,
+     "sha256": "af356eb250438b6536943427ec9638500742892591745f1621881194095c7337"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (de30f7fc...ccdc)",
+   "reference": "harness HK top-1000 device round: Poppo Live",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.androidrtc.chat.modules.SplashActivity"
+  },
+  "hk-com.codeway.aitutor": {
+   "kind": "original-apk-with-splits",
+   "package": "com.codeway.aitutor",
+   "version_name": "4.0.1",
+   "version_code": 869,
+   "abi": "arm64-v8a",
+   "bytes": 61511352,
+   "sha256": "14494dc4435f316210b36fb21082c726a33f99ed8c07aa5bf2d6ad0082c306d9",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 42091707,
+     "sha256": "962c805a9b8d62960a2fe88e789c1caf1d2aa963f91bda85235259ccf8634b6d"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 45465,
+     "sha256": "c16bb28f75341497127ea7e3f0c181ddb411abcf7a8987fa2f456fb79fc49e98"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 33177,
+     "sha256": "def4083aa67666422b4fd5af2e7d9138fa25a94ff203e84607de8e6995f8ed64"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 113773,
+     "sha256": "fc507c0ae8979b519b9a784eb1394f66a8cb98d5dc7159af4da92c4cd42db1ed"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (31361700...9b7b)",
+   "reference": "harness HK top-1000 device round: Learna AI",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.codeway.aitutor.MainActivity"
+  },
+  "hk-com.thecarousell.Carousell": {
+   "kind": "original-apk-with-splits",
+   "package": "com.thecarousell.Carousell",
+   "version_name": "2.478.9",
+   "version_code": 11199,
+   "abi": "arm64-v8a",
+   "bytes": 197725413,
+   "sha256": "965070c3dcc4ce4b37b55d5bba4fbbbdaa124897bc1e362ba0e1abf4ffcc67d5",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 41416292,
+     "sha256": "cf6008bd64836cac24adc6b9b8ab7208ceeb1ad3670c147bb33161dbd8749492"
+    },
+    {
+     "name": "config.hdpi.apk",
+     "bytes": 835991,
+     "sha256": "577ef47b3dab58b6e670d4a1683b58e096970b3d09116a6e8af8f2132d956880"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (27de161d...1a8a)",
+   "reference": "harness HK top-1000 device round: Carousell",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.thecarousell.Carousell.screens.general.EntryActivity"
+  },
+  "hk-com.freereels.app": {
+   "kind": "original-apk-with-splits",
+   "package": "com.freereels.app",
+   "version_name": "2.5.01",
+   "version_code": 200501001,
+   "abi": "arm64-v8a",
+   "bytes": 138382451,
+   "sha256": "6027ed5239709fabd23ce168956a86ee90ebcad5a7c4027c92cea5f000e0b3fa",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 20555972,
+     "sha256": "dabcd9878f5b58c3bf0ecc9deedbeefc83d00b3c20f6688b279831c1963aa733"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 270847,
+     "sha256": "06386a241416cae25bd26f63bc80e5cc2871da5479c339aca7e7ad9ef7024d81"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (b1b58822...9874)",
+   "reference": "harness HK top-1000 device round: FreeReels",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.dramawave.app.splash.SplashActivity"
+  },
+  "hk-com.tencent.qqlivei18n": {
+   "kind": "original-apk-with-splits",
+   "package": "com.tencent.qqlivei18n",
+   "version_name": "5.40.1.18590",
+   "version_code": 18590,
+   "abi": "arm64-v8a",
+   "bytes": 179853223,
+   "sha256": "d44a2b40497216a8e95468597ecedceb3f5effb33bb38caa011735ef4232e9b4",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 55906021,
+     "sha256": "591bc6d30f47750585d945f29bde39fbc5c36a2b28651ce063d80fa0bdc95c40"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 160153,
+     "sha256": "e869afd15303a60f1a6d370659f652d59f13a9870d6a0be2aaf793daecfa05ea"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 1144177,
+     "sha256": "59a899dcd8fa2dfd769a84851adcfb9420cbaf5e058b9aac9285dfeb143f072e"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (d7b26236...323c)",
+   "reference": "harness HK top-1000 device round: WeTV",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.tencent.qqliveinternational.base.MainActivity"
+  },
+  "hk-jp.pxv.android": {
+   "kind": "original-apk",
+   "package": "jp.pxv.android",
+   "version_name": "6.201.0",
+   "version_code": 69129,
+   "abi": "arm64-v8a",
+   "bytes": 38763724,
+   "sha256": "de93d4938e15d254b930768418e9d7e4f5a7ce1fd453f4ebf026e0710ed7e56f",
+   "delivery": "APKPure APK, arm64-v8a; verifies with one signing certificate (e9408c92...d9fb)",
+   "reference": "harness HK top-1000 device round: pixiv",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "jp.pxv.android.feature.routing.main.RoutingActivity"
+  },
+  "hk-com.fitbit.FitbitMobile": {
+   "kind": "original-apk-with-splits",
+   "package": "com.fitbit.FitbitMobile",
+   "version_name": "5.10.1.health-mobile-1104127819-998509810",
+   "version_code": 1104127819,
+   "abi": "arm64-v8a",
+   "bytes": 65008462,
+   "sha256": "e5a23d9ae25c9729f8120d40a027fe1b2ff96b6beee78f0901e04eec4f0ab9dd",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 4948861,
+     "sha256": "d454ebe6fa9408de7944a7d26b6db0295f8862b4afdcd0d7f6f6becb7a6238f0"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 1347794,
+     "sha256": "92aa91857b73eae27825221f9f16739ad7280c64ead732f0350e1c704328bec0"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 476918,
+     "sha256": "160206c884a5717e6120820ab52c303a3acc8126b489383c1983509dd7e9589c"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (2cc914da...f313)",
+   "reference": "harness HK top-1000 device round: Health",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.fitbit.FirstActivity"
+  },
+  "hk-com.jeremysteckling.facerrel": {
+   "kind": "original-apk-with-splits",
+   "package": "com.jeremysteckling.facerrel",
+   "version_name": "7.0.81_11172163_mobile_receiver.phone",
+   "version_code": 11172163,
+   "abi": "arm64-v8a",
+   "bytes": 95933221,
+   "sha256": "55aff7a02e31b8ee8f4c30560fa95761e6ad0daa477ebab632e6b1333427b550",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 62047111,
+     "sha256": "88cffc058d4db89999882acdb068e95234aed60fbc8ec7c6a719574eb2bf44aa"
+    },
+    {
+     "name": "config.de.apk",
+     "bytes": 98713,
+     "sha256": "1da469499afca7e2715b5282254a7df708f16f6320f8397e9b4210ae4c134c78"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 98713,
+     "sha256": "4db53f46a9a400903d3812ada80d8bd84a5faf3d2a851314417c61b2d33b51f3"
+    },
+    {
+     "name": "config.fr.apk",
+     "bytes": 102809,
+     "sha256": "f0805e3612903e898dfa680508af17402c7184f20f0a87ac2f55b5d4c5c3b3c9"
+    },
+    {
+     "name": "config.it.apk",
+     "bytes": 98713,
+     "sha256": "c65a3fe2440a4453290521084b8e06c86029ec9cc9636f151ecfd4ceccd93586"
+    },
+    {
+     "name": "config.ko.apk",
+     "bytes": 102809,
+     "sha256": "d09a54740775b4b51026dacd184aac6dcac09cd20d217ca97735f1616f140498"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 2998308,
+     "sha256": "d573c4b74eac44b24b080234bc458cf577213e03765362e80c8e2543018eef07"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (062c0e02...85a6)",
+   "reference": "harness HK top-1000 device round: Facer",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.jeremysteckling.facerrel.ui.activities.MainActivity"
+  },
+  "hk-com.canva.editor": {
+   "kind": "original-apk-with-splits",
+   "package": "com.canva.editor",
+   "version_name": "2.383.0",
+   "version_code": 29774207,
+   "abi": "arm64-v8a",
+   "bytes": 52537516,
+   "sha256": "f15c2369f685bd75d05e802df3b2f609c66d53fbc232c0f1da3c59f91119892a",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 47637736,
+     "sha256": "f5119e0a36c7f45ff8bf85307c17d49a56023c0390483e1483621067bdce761e"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 964766,
+     "sha256": "89690bef1bc2ac5fa7ef25571d7d354ec4d97a5a6e8337be7db204f152aad24c"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (f364ebf2...fb4d)",
+   "reference": "harness HK top-1000 device round: Canva",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.canva.app.editor.splash.SplashActivity"
+  },
+  "hk-com.deep.search.browser": {
+   "kind": "original-apk-with-splits",
+   "package": "com.deep.search.browser",
+   "version_name": "1.7.0",
+   "version_code": 17000,
+   "abi": "arm64-v8a",
+   "bytes": 58389159,
+   "sha256": "c18f6e4bf488227abb345ad4e063c9fe246bace54e3cacb7d23c0e50bc6568e7",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 8381872,
+     "sha256": "17732968b8206212e4ba819788ff99f3b4cdeed65b8673127f1909317c150093"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 137468,
+     "sha256": "753853824c8e52af66d0a561f7929770249817d481f99b790ee538be63c5999a"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (ae61257d...d68a)",
+   "reference": "harness HK top-1000 device round: Aura Browser",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.deep.search.browser.view.SplashActivity"
+  },
+  "hk-com.snapchat.android": {
+   "kind": "original-apk-with-splits",
+   "package": "com.snapchat.android",
+   "version_name": "14.29.0.50",
+   "version_code": 322522,
+   "abi": "arm64-v8a",
+   "bytes": 106880528,
+   "sha256": "e4d9d4aed7f7b354e8123e0e0ccdd344a6b2e0d023a36e12f31f9cc427ff33d7",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 95934472,
+     "sha256": "08752341456aa87d6852ebba2cbfff884ebc60a2d2213ba577c25f9925c7219f"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 1868185,
+     "sha256": "968875416519df2102cbdad48cbaea1954e7fdf20a1ba8e4a6617e7a019401fb"
+    },
+    {
+     "name": "config.hdpi.apk",
+     "bytes": 1330911,
+     "sha256": "23f03c0edc1930b4b4f6fff2862e2e6e627bd2fc7d3b6053152608a70418aabc"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (2f1caafc...5a58)",
+   "reference": "harness HK top-1000 device round: Snapchat",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.snap.mushroom.MainActivity"
+  },
+  "hk-com.adobe.reader": {
+   "kind": "original-apk-with-splits",
+   "package": "com.adobe.reader",
+   "version_name": "26.9.2.50367",
+   "version_code": 1932150367,
+   "abi": "arm64-v8a",
+   "bytes": 93179990,
+   "sha256": "1332e79ae70c4308ec6e9143f8b09efc54fd11227c3c787222ded9b6dae9d619",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 86010086,
+     "sha256": "d839c71d0a84577dede4c7e4888899d396174ad47fbebde9f6f70a8bd4e3a0cb"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 123356,
+     "sha256": "ed1e879020582c2bb2a02c79a05af667a71982990a423948f0db2551626a5f70"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 635324,
+     "sha256": "e1a813a8a648297881f77aa366348c95f2b1dc05c6113cffd2b7692a9286f569"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (b6dd0562...0faf)",
+   "reference": "harness HK top-1000 device round: Adobe Acrobat",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.adobe.reader.AdobeReader"
+  },
+  "hk-com.grindrapp.android": {
+   "kind": "original-apk-with-splits",
+   "package": "com.grindrapp.android",
+   "version_name": "26.15.1",
+   "version_code": 174557,
+   "abi": "arm64-v8a",
+   "bytes": 71621244,
+   "sha256": "07237884b19cc6ee3a84657935614f9317ee1497643473d3e26e3ee0f9f961e5",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 30938788,
+     "sha256": "48b6674c68b8ed510cefc116b8d66075521ed50ca1fa9efc599108c199d338dc"
+    },
+    {
+     "name": "config.ar.apk",
+     "bytes": 499922,
+     "sha256": "43df0bfccdc9877f2901d35cd0e67cf5cb9163bbb12661253307f247a574220b"
+    },
+    {
+     "name": "config.x86.apk",
+     "bytes": 28517800,
+     "sha256": "c26585b000a13c197f0186d3b28ab27b664936708298c95ec0f0943edae08eb9"
+    },
+    {
+     "name": "config.fr.apk",
+     "bytes": 450770,
+     "sha256": "39a1c0b5009ef970b95b1afca2e234dd1162fa93b5f8c1a4d6070506a1e1cf26"
+    },
+    {
+     "name": "config.ms.apk",
+     "bytes": 422098,
+     "sha256": "45d82ee50949cfbf40f4a8625623337ca7799213c5c72f6cc656dce766cdaddb"
+    },
+    {
+     "name": "config.ja.apk",
+     "bytes": 471250,
+     "sha256": "19d990b792de2282237e326f630e85d48904c8a04dbeb8177a8088f2b8e7143f"
+    },
+    {
+     "name": "config.in.apk",
+     "bytes": 409810,
+     "sha256": "e679d78382156de3980ff7d4b2c9c4f3c32f91f09236a1dd16950db2e3d1447f"
+    },
+    {
+     "name": "config.hi.apk",
+     "bytes": 618706,
+     "sha256": "e7b413cff143d763279c4986f8c02c610bb95c95da8fff60fa4ecd65a60e50f2"
+    },
+    {
+     "name": "config.ko.apk",
+     "bytes": 430290,
+     "sha256": "f9c819f6d6e452b12f42d0f49300fe24907bb3afe66c92ca656b131e344af107"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 7058416,
+     "sha256": "2aa527eb0cebfb9be262f942c5cd979ab62b7c5d212187b05e302cb4aa725c75"
+    },
+    {
+     "name": "config.x86_64.apk",
+     "bytes": 28706267,
+     "sha256": "cb77d60d333ca1a75eda5c40282c58e56f05ed6eb8f33c9014b5fa972c102cc0"
+    },
+    {
+     "name": "config.zh.apk",
+     "bytes": 647378,
+     "sha256": "9d34cea98c731fa2a81fd8d513cbaebba32869398ac978aeb927ac4ab73a3e6b"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 438482,
+     "sha256": "40398df2f45eab7273f735e0ffb4555596dcc5541da7e81eddab9d5423d75451"
+    },
+    {
+     "name": "config.th.apk",
+     "bytes": 610514,
+     "sha256": "dda1c4524bc2ed6907807cdc36c9ad9645ef21b84e376e7d4cbd4e9cd52e5d07"
+    },
+    {
+     "name": "config.de.apk",
+     "bytes": 442578,
+     "sha256": "6266edf63163af9162187696dc5c2bec6e123d2ae12b6562214c2677488ba8e8"
+    },
+    {
+     "name": "config.pt.apk",
+     "bytes": 422098,
+     "sha256": "120240af862a81f7943572014bf6dab827e08020f77fa154c8c934cf9275d542"
+    },
+    {
+     "name": "config.ru.apk",
+     "bytes": 549074,
+     "sha256": "4e4b6d2c7180a28d165ebae6d9d35f9b2fcb4ff083174c79b804067aaec298a2"
+    },
+    {
+     "name": "config.it.apk",
+     "bytes": 422098,
+     "sha256": "2548c28d68a0804ed82bb8526bd2b05379ab4e3fb31a1ed427eaa658f57af540"
+    },
+    {
+     "name": "config.vi.apk",
+     "bytes": 475346,
+     "sha256": "1b0e6657f9be3c58501a0849539cf255fca31154f75df13f5fcfbabfeb4d3545"
+    }
+   ],
+   "delivery": "APKPure (older arm64 build) XAPK, arm64-v8a; base and splits verify with one signing certificate (6e21a5f9...2897)",
+   "reference": "harness HK top-1000 device round: Grindr",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.grindrapp.android.ui.home.HomeActivity"
+  },
+  "hk-com.xinhe.tataxingqiunew": {
+   "kind": "original-apk-with-splits",
+   "package": "com.xinhe.tataxingqiunew",
+   "version_name": "2.2.9",
+   "version_code": 148,
+   "abi": "arm64-v8a",
+   "bytes": 223418983,
+   "sha256": "5604a1aa12db8fe95069a990e13a25672270526414d4333822231379d3ce2c3f",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 98028850,
+     "sha256": "9e849fa9f22e767f8baea39f20c13b2901151cd2f03d995faf383a74948bbf38"
+    },
+    {
+     "name": "config.xxxhdpi.apk",
+     "bytes": 206571,
+     "sha256": "29814cdde4109a142c07d13b57a4a35bf1c23218aaa03f118d96657541e7a036"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (62b72e1c...4ba5)",
+   "reference": "harness HK top-1000 device round: \u4ed6TA\u661f\u7403",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.xhtq.app.welcome.WelcomeActivity"
+  },
+  "hk-com.microsoft.office.excel": {
+   "kind": "original-apk",
+   "package": "com.microsoft.office.excel",
+   "version_name": "16.0.19127.20128",
+   "version_code": 2005742579,
+   "abi": "arm64-v8a",
+   "bytes": 123981035,
+   "sha256": "60e7958d1fc827e596bae0f0fb6c74eb31aba1047fc5372daa2fb53742cc8ed0",
+   "delivery": "APKPure APK, arm64-v8a; verifies with one signing certificate (b925136f...7051)",
+   "reference": "harness HK top-1000 device round: Microsoft Excel",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.microsoft.office.excel.excelMainActivity"
+  },
+  "hk-ai.onspace.app": {
+   "kind": "original-apk-with-splits",
+   "package": "ai.onspace.app",
+   "version_name": "2.2.4",
+   "version_code": 2240,
+   "abi": "arm64-v8a",
+   "bytes": 64606309,
+   "sha256": "5a6aeca2b52b38799c6c076bbe8f100928fc6c2001ec4a978f8a461ed267f1b4",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 27011289,
+     "sha256": "2d86992d7cf597c86c6632ed6eeea1692da32adea57f23a539a2651c392c723d"
+    },
+    {
+     "name": "config.hdpi.apk",
+     "bytes": 2186828,
+     "sha256": "b70a451cf3da6dbd32a9cfc91466e4ce9956d22bbb4d69e738c7990b94536c35"
+    }
+   ],
+   "delivery": "APKPure (older arm64 build) XAPK, arm64-v8a; base and splits verify with one signing certificate (4106de92...2838)",
+   "reference": "harness HK top-1000 device round: Crushie",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "ai.onspace.app.BudSplashActivity"
+  },
+  "hk-com.kakao.talk": {
+   "kind": "original-apk-with-splits",
+   "package": "com.kakao.talk",
+   "version_name": "26.8.0",
+   "version_code": 29260800,
+   "abi": "arm64-v8a",
+   "bytes": 254034349,
+   "sha256": "a01ec378a51fe45773681c8a847b491f50b12472dbc22a51da9fdf718515799f",
+   "splits": [
+    {
+     "name": "config.ar.apk",
+     "bytes": 987346,
+     "sha256": "092589fbeda16a21a83a073d6b4eb8a47b448dffd42c02d42203af0116fa2917"
+    },
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 32742820,
+     "sha256": "e11a00de9d6f150244eb4a600503607714d4749a7fc69ef85a5328cfff58b9bd"
+    },
+    {
+     "name": "config.de.apk",
+     "bytes": 864466,
+     "sha256": "79307c734bd7ed073110d81d54bed49474322726e6385d846786d2241d0e2593"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 546346,
+     "sha256": "0660512cc922ffcaac20812d30496047e05edbd558339ed911ed0d650ed2a036"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 958674,
+     "sha256": "a6df2cb497ae8a8e1b02c6f506f227ec74ad22ddc66752e36a10d47876e0c822"
+    },
+    {
+     "name": "config.fr.apk",
+     "bytes": 934098,
+     "sha256": "5083f2632227438273d0b2424d7ef90f8d132d7c10e8595bb3488e0976f1815b"
+    },
+    {
+     "name": "config.hi.apk",
+     "bytes": 127186,
+     "sha256": "60b780f37085cfeb4cdb6e43b73af1d6f27545ac88fbdc833a44258418c7076d"
+    },
+    {
+     "name": "config.in.apk",
+     "bytes": 831698,
+     "sha256": "88fa63972f2dd80f674cba93988cf21d0e7e7870cc1c927d6f0e77dd9a22f9fc"
+    },
+    {
+     "name": "config.it.apk",
+     "bytes": 852178,
+     "sha256": "d8472bd8501d3c50a2f560a16f47f39eb1f9259d7662b096e6bc8854f969cab2"
+    },
+    {
+     "name": "config.ja.apk",
+     "bytes": 1587618,
+     "sha256": "c90a8f77a4884380e914478ef29fa62e0fb280b99932d0f79ce4caba1a02d377"
+    },
+    {
+     "name": "config.ko.apk",
+     "bytes": 1423630,
+     "sha256": "19d6afe1b2af63644a204a3f775149dd226af3db13b14ba8b0e263e207c51b04"
+    },
+    {
+     "name": "config.my.apk",
+     "bytes": 127186,
+     "sha256": "f93c1e5be1c277e65b2ab8a6fcea7b9f9753d30ae3bb353f636a4c3258a52485"
+    },
+    {
+     "name": "config.pt.apk",
+     "bytes": 946386,
+     "sha256": "378f4482e6d3c740b029a3071be1769f8c027f3e7a64a3d43b8a1b415fd7e802"
+    },
+    {
+     "name": "config.ru.apk",
+     "bytes": 1155282,
+     "sha256": "a9d91dae9876442bbdfd21cf203b738e619ae699df15f6c43ed13769eda100b5"
+    },
+    {
+     "name": "config.th.apk",
+     "bytes": 1183954,
+     "sha256": "c0d6c930782c81695154975d9c7110696738a86b09a321e44b677a388f7b1323"
+    },
+    {
+     "name": "config.tr.apk",
+     "bytes": 843986,
+     "sha256": "97475f261ae658fef3d9d5516d78a3fdbaedc3571b63d0666c2de894ca2a573b"
+    },
+    {
+     "name": "config.vi.apk",
+     "bytes": 950482,
+     "sha256": "d93db0889da540435de39385f19790ce76a6a6f7196ca05260c44e9111290166"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 6471074,
+     "sha256": "6f9dc7bec12d21ac8e884872ac37fb918e8ed212ad51788090eadcadc93565f8"
+    },
+    {
+     "name": "config.zh.apk",
+     "bytes": 1327314,
+     "sha256": "4ec286f0b36c0d78a4119915083a6ce572bed5bc34a0ad9a29ec3f2f55e02499"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (2b06cc3d...d2ce)",
+   "reference": "harness HK top-1000 device round: KakaoTalk",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.kakao.talk.activity.SplashActivity"
+  },
+  "hk-com.windyty.android": {
+   "kind": "original-apk-with-splits",
+   "package": "com.windyty.android",
+   "version_name": "51.3.2",
+   "version_code": 5103023,
+   "abi": "arm64-v8a",
+   "bytes": 48450156,
+   "sha256": "8eab9ffa98e4a77eec2533780bed9f435f200e549c96bf19698bf0e6b7f719d9",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 53576,
+     "sha256": "3f4852e15c61ccc9b6a923841cc86c86783ea67d702fc2ccfee7fce365ea4a37"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 57554,
+     "sha256": "78e59ff60025289707975ccdd51e87e3df9e161ac32bb60473a032984ec6bc9d"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 2431527,
+     "sha256": "b3307a56a6625d531bd3b26ec204f31df76fb5f6e6dedd07ed7f25598fde6b90"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (487e861a...2663)",
+   "reference": "harness HK top-1000 device round: Windy",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.windyty.android.MainActivity"
+  },
+  "hk-com.zyhwplatform.shortplay": {
+   "kind": "original-apk-with-splits",
+   "package": "com.zyhwplatform.shortplay",
+   "version_name": "2.4.0.0",
+   "version_code": 101265,
+   "abi": "arm64-v8a",
+   "bytes": 154648629,
+   "sha256": "0e83776c80377fb404062a1e3b537fc10dcf70359f6a91f6bb049f6610c02778",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 14304583,
+     "sha256": "02dfd9184e2371b4d77d11c151a548f28d09917b42941187e33aa2ecaf2c769e"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 853687,
+     "sha256": "ebb36c7be3dad31d07e9cca564ed2c90feb427681048735d3fa334c6b3e9703a"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (3c21aac3...8651)",
+   "reference": "harness HK top-1000 device round: FlickReels",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.zhangwan.shortplay.ui.activity.SplashActivity"
+  },
+  "hk-com.instagram.barcelona": {
+   "kind": "original-apk-with-splits",
+   "package": "com.instagram.barcelona",
+   "version_name": "452.0.0.50.64",
+   "version_code": 512207651,
+   "abi": "arm64-v8a",
+   "bytes": 71096353,
+   "sha256": "bbe0a8948adbbbf3631fac443dbbabc7281bff31d7b2be955b1f43b8039f87e5",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 68559245,
+     "sha256": "d9dcc82b746c1dbbada44fc443990c46cc162126837de496ae2241367a2891b3"
+    },
+    {
+     "name": "config.xhdpi.apk",
+     "bytes": 4447928,
+     "sha256": "52823f537320ce61131a32c0454c64ac8252c4adf86448746ac265468ea7ad34"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (8f38da6b...0500)",
+   "reference": "harness HK top-1000 device round: Threads",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.instagram.barcelona.mainactivity.BarcelonaActivity"
+  },
+  "hk-com.larus.nova": {
+   "kind": "original-apk",
+   "package": "com.larus.nova",
+   "version_name": "13.1.0",
+   "version_code": 13010001,
+   "abi": "arm64-v8a",
+   "bytes": 293774818,
+   "sha256": "7cecf76c2c8ee4225faa8a22bdc48e7615a61b7e872ed705f6277e44fd786086",
+   "delivery": "APKPure APK, arm64-v8a; verifies with one signing certificate (ff04b47e...de2a)",
+   "reference": "harness HK top-1000 device round: \u8c46\u5305",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.larus.home.impl.MainActivity"
+  },
+  "hk-com.google.android.apps.walletnfcrel": {
+   "kind": "original-apk-with-splits",
+   "package": "com.google.android.apps.walletnfcrel",
+   "version_name": "26.41.996630916",
+   "version_code": 933966247,
+   "abi": "arm64-v8a",
+   "bytes": 30066530,
+   "sha256": "297c44a9cc513c936bfee95cb23707a66f16a87471ed8ec1ed451e705cc6d43b",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 1548878,
+     "sha256": "0cfa210d1f38fbb9e447b3d603a86d6eba046fce63b28e756374bfc0f2a3b617"
+    },
+    {
+     "name": "config.xhdpi.apk",
+     "bytes": 255338,
+     "sha256": "7f20b0bb60c9c7d890b05fbf2a66f80b1dde3308898159fb57088695d1dc4112"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (2c32196d...2039)",
+   "reference": "harness HK top-1000 device round: Google\u00a0Wallet",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.google.android.apps.wallet.main.WalletActivity"
+  },
+  "hk-com.loora.app": {
+   "kind": "original-apk-with-splits",
+   "package": "com.loora.app",
+   "version_name": "2.22.2",
+   "version_code": 216,
+   "abi": "arm64-v8a",
+   "bytes": 55150088,
+   "sha256": "7a6dd54a53ef04da834d489c54fcf21417101a5828925cb43293b9aa57dd0348",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 28583274,
+     "sha256": "6f9a39a378e171c3352dfff787f944e047b667bdf10e6f7373205772dbab1434"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 53049399,
+     "sha256": "ee89fa67a17a1bdc0dff0aba6645315e8d663b1572c2013bc06398a574053dfb"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (bc4ce35e...3d48)",
+   "reference": "harness HK top-1000 device round: Loora",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.loora.presentation.ui.screens.MainActivity"
+  },
+  "hk-hk.alipay.wallet": {
+   "kind": "original-apk-with-splits",
+   "package": "hk.alipay.wallet",
+   "version_name": "7.6.7.616",
+   "version_code": 973,
+   "abi": "arm64-v8a",
+   "bytes": 157079552,
+   "sha256": "2dc98fd5c178e8f87103a0162516ddcd6857fe93c94085ec3c8b6b902df20fe2",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 154054652,
+     "sha256": "6d7bb34f5ef2979d3725eb4a81efa07b388aa8b880f80481c510c136fda351a7"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (dfeb190b...5ab3)",
+   "reference": "harness HK top-1000 device round: AlipayHK",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.eg.android.AlipayGphone.AlipayLogin"
+  },
+  "hk-com.viu.phone": {
+   "kind": "original-apk",
+   "package": "com.viu.phone",
+   "version_name": "2.30.0",
+   "version_code": 853,
+   "abi": "arm64-v8a",
+   "bytes": 28154886,
+   "sha256": "470f4e5573b7f13df3ebc97977ad27055d2fb1e9f685a7bd343bf5d6ab7af316",
+   "delivery": "APKPure APK, arm64-v8a; verifies with one signing certificate (d178494a...b7a5)",
+   "reference": "harness HK top-1000 device round: Viu",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.viu.phone.v2.presentation.RouterActivity"
+  },
+  "hk-com.facebook.stella": {
+   "kind": "original-apk-with-splits",
+   "package": "com.facebook.stella",
+   "version_name": "295.0.0.37.164",
+   "version_code": 969502540,
+   "abi": "arm64-v8a",
+   "bytes": 94244397,
+   "sha256": "b3e2c2fc8103563027f1aa48e4ee8ccc5a08f31c2ed49fdb99abeb4a3a3b147b",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 184498046,
+     "sha256": "385292bf0a0b918bdcbafdb90bea1d7e7d95ce95611be209919a712dded414ba"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (c56f50a8...c768)",
+   "reference": "harness HK top-1000 device round: Meta AI",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.facebook.wearable.companion.silverstone.main.view.SilverstoneMainActivity"
+  },
+  "hk-com.coffeemeetsbagel": {
+   "kind": "original-apk-with-splits",
+   "package": "com.coffeemeetsbagel",
+   "version_name": "10.10.1",
+   "version_code": 22568,
+   "abi": "arm64-v8a",
+   "bytes": 57949414,
+   "sha256": "eafdbc964513badc48525e124dac1f4eb55cb2f34c5388d53bfca7ee373d4bc9",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 15386075,
+     "sha256": "57ccdfd5a0a9af016edec3af36ee63448b6a3e7c2e5a1ca97aba9358e6ed2f87"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 288758,
+     "sha256": "068e77200c6bc423e440a29c30353684aebc2d69a97a2a74711dadaca41cbca0"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (0a368542...c8b9)",
+   "reference": "harness HK top-1000 device round: Coffee Meets Bagel",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.coffeemeetsbagel.activities.ActivityLogin"
+  },
+  "hk-tv.twitch.android.app": {
+   "kind": "original-apk-with-splits",
+   "package": "tv.twitch.android.app",
+   "version_name": "31.7.0",
+   "version_code": 3107006,
+   "abi": "arm64-v8a",
+   "bytes": 109321778,
+   "sha256": "4c1e1bb8e75b52d964310cb74ec7c10587ae8eb7fed1efa4959a5e88098c9c56",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 55385424,
+     "sha256": "692386a6e8a675acc018be46b1d6a692c5fd0d565ff0cb1ac7953d02f3653b79"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 8173837,
+     "sha256": "08465c8841495fae2f837acf5c3760d3a9e206693e5618a2b3e2bd7fe21bafd7"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (1338f9b0...ac53)",
+   "reference": "harness HK top-1000 device round: Twitch",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "tv.twitch.android.app.core.LandingActivity"
+  },
+  "hk-cn.wps.moffice_eng": {
+   "kind": "original-apk-with-splits",
+   "package": "cn.wps.moffice_eng",
+   "version_name": "26.10.0",
+   "version_code": 1640,
+   "abi": "arm64-v8a",
+   "bytes": 228100713,
+   "sha256": "338c0497698bc62ce6fee5ecca1f933916ab77cc3931e336621563c5e623ec29",
+   "splits": [
+    {
+     "name": "config.fr.apk",
+     "bytes": 4075835,
+     "sha256": "a4a1d39244fb84c14795b4f88daec5d99d43b7bdde6c0bd0011d699a203ededc"
+    },
+    {
+     "name": "config.my.apk",
+     "bytes": 4370642,
+     "sha256": "c432b8ff816c476665ce8962e8111ef8e3b37b505799e9bb40d385101694bf0d"
+    },
+    {
+     "name": "config.vi.apk",
+     "bytes": 2777298,
+     "sha256": "cb9f28e8a85686ee97d9a30220a92de85a4f8efe39f6dd50e54683ca31bd5ee1"
+    },
+    {
+     "name": "config.ar.apk",
+     "bytes": 2961618,
+     "sha256": "00335d71b18c8cf519aaaea274d7e5eb67d2a188884481adbddb4f53547b6fe6"
+    },
+    {
+     "name": "config.de.apk",
+     "bytes": 2711867,
+     "sha256": "55d6a7329d4e006d0846b64c2c2d8c7464e869ddafd05377c28c79a32488bb52"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 3957051,
+     "sha256": "861ceb8346e63052a2cdeb65a2b83f8af22746a257fbb811d3b0c2b0b839b022"
+    },
+    {
+     "name": "config.tr.apk",
+     "bytes": 2621650,
+     "sha256": "e75be82103a06d4fa539ee73acb04b2bb5c84b7edebc2e747a4bf02533da81cf"
+    },
+    {
+     "name": "config.ru.apk",
+     "bytes": 3371323,
+     "sha256": "56e9c9255223af6eccbd6e348dd7dc70176015e75d367e90bda0728fc83d9cbf"
+    },
+    {
+     "name": "config.zh.apk",
+     "bytes": 4674629,
+     "sha256": "0a3d8f675bb360d4fb65ed30fa1acb8529f16115b8c2b126152cc83919cbcc49"
+    },
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 61460473,
+     "sha256": "f444fb8bae0165b5ac0b479516d7f6a82dadd2d2ced71fcf7746840dc3abcfad"
+    },
+    {
+     "name": "config.in.apk",
+     "bytes": 3158226,
+     "sha256": "8d3f4c102e958e368b484d1e4c0d46d7a0583b78d1a080e4acf0dac96326a48e"
+    },
+    {
+     "name": "config.it.apk",
+     "bytes": 2674999,
+     "sha256": "d7493e25c1dd9516b0057dbe7a961ec0cfda8ddac64f61ab0c3ca39d6bb8703b"
+    },
+    {
+     "name": "config.ja.apk",
+     "bytes": 2970485,
+     "sha256": "2abeb1e4537c161a6322f2aa9436dfb8cb90642d8b0ffe50de870d55c639021d"
+    },
+    {
+     "name": "config.th.apk",
+     "bytes": 4151365,
+     "sha256": "bae5538f94c638e91598a6b551fabd633825be1c1f946809416826ef1110edf5"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 241874,
+     "sha256": "93bda5094624d6ebf04d7cdbdc2a956f72493722c66b1283f81e463e99928813"
+    },
+    {
+     "name": "config.hi.apk",
+     "bytes": 3838162,
+     "sha256": "663fb25e076aaed4e7bb2b7db37dae911f5c558a54702eda46406cb5e5a83951"
+    },
+    {
+     "name": "config.ko.apk",
+     "bytes": 2707771,
+     "sha256": "25f8ec0f3361391326af5ced033cb0ada1318a384b8085f0b287b47f58415dd4"
+    },
+    {
+     "name": "config.pt.apk",
+     "bytes": 4010404,
+     "sha256": "c510584acb3a6b51a58baaa0257c9caf1b3255f26159b5ebeabb6507f8dafdf5"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (64399087...b3d7)",
+   "reference": "harness HK top-1000 device round: WPS Office",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "cn.wps.moffice.documentmanager.PreStartActivity"
+  },
+  "hk-com.taobao.taobao": {
+   "kind": "original-apk-with-splits",
+   "package": "com.taobao.taobao",
+   "version_name": "10.66.22.603",
+   "version_code": 815,
+   "abi": "arm64-v8a",
+   "bytes": 72175396,
+   "sha256": "5ce7cb3487f0bb309cde753b0f7bcc1bc4ddda5f4a3a0a1a4f79bcd84ed15442",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 39244763,
+     "sha256": "643b72ffd3ed44b5d665824e507d056ea9a5ecfee774de0153e8c55dc18272b2"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 330779,
+     "sha256": "e4878431c43817ca97a2cd5a52199488c034f6d75712557e76450c694a5a912f"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (c5e9bc4c...2743)",
+   "reference": "harness HK top-1000 device round: \u6dd8\u5b9d",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.taobao.tao.welcome.Welcome"
+  },
+  "hk-kling.ai.video.chat": {
+   "kind": "original-apk-with-splits",
+   "package": "kling.ai.video.chat",
+   "version_name": "3.9.20.409",
+   "version_code": 409,
+   "abi": "arm64-v8a",
+   "bytes": 44713008,
+   "sha256": "29583b521248f423c38fd2bf3864398068ebbc41ac58760758fd9034d84c3926",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 47648197,
+     "sha256": "8d2d21a9a4bb119ffe132915618196d7c87d0f158239076057709b0af25bf327"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 187773,
+     "sha256": "49cbca3f0efd125a8c7f61e73b1573369d08807f081c6351ec84bdacd19b29bd"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (671b46b1...c8d0)",
+   "reference": "harness HK top-1000 device round: KLINGAI",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.yxcorp.gifshow.kling.KLingHomeActivity"
+  },
+  "hk-com.tencent.mm": {
+   "kind": "original-apk-with-splits",
+   "package": "com.tencent.mm",
+   "version_name": "8.0.79",
+   "version_code": 3182,
+   "abi": "arm64-v8a",
+   "bytes": 218696255,
+   "sha256": "a92ef972d3924a7013244e36ae83b804087877368bfb144abf2e64dc9b3a913a",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 150762109,
+     "sha256": "0c931a367bd979d96e338829da0c02b34156ff2ab453f57abffcbcf633cfcd54"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 1962451,
+     "sha256": "fe7d609e461cfc0b5a0d6cd84d7e7faa0a4c38e4e5eae77c1800e31bd62ad0aa"
+    },
+    {
+     "name": "config.hdpi.apk",
+     "bytes": 671347,
+     "sha256": "f8fc9664c5838ccb0cad10f655ec7dbb57a754ce0ca7baf37f232c03f00e28a2"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (0fe4ff85...3c7c)",
+   "reference": "harness HK top-1000 device round: WeChat",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.tencent.mm.ui.LauncherUI"
+  },
+  "hk-com.ubercab": {
+   "kind": "original-apk-with-splits",
+   "package": "com.ubercab",
+   "version_name": "4.653.10004",
+   "version_code": 319956,
+   "abi": "arm64-v8a",
+   "bytes": 205653581,
+   "sha256": "7aaac6bc6ebd01c8e233a9bea0db1d37b005dfa1b7d8e89100f2dab997846b38",
+   "splits": [
+    {
+     "name": "BarcodeScanner.apk",
+     "bytes": 1295392,
+     "sha256": "d6a532bdc5b978f60afa3e6dd012f7ce8630566ad1039aa28e646ef1361b992c"
+    },
+    {
+     "name": "VoipTwilio.config.arm64_v8a.apk",
+     "bytes": 11694518,
+     "sha256": "65c4456fd06064a0d630c4c69791c7def644194460cb843267e1757e26beee7e"
+    },
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 17093969,
+     "sha256": "ad6d6bd05b850a751531528b175c21fb0663ec9ce95edef4396bda7a5b5b42d9"
+    },
+    {
+     "name": "config.zh.apk",
+     "bytes": 2572697,
+     "sha256": "002264864eb4dc47cfb96aa7dac3008d7a17d960c4e58dc13da0dfadfbd84044"
+    },
+    {
+     "name": "CarRentalsDFMApi.apk",
+     "bytes": 1900751,
+     "sha256": "ec630c1468c9711fdc6c28f7c761ba9df9dfbc36a64203a3c844f3d1217cb31a"
+    },
+    {
+     "name": "config.tr.apk",
+     "bytes": 1388953,
+     "sha256": "2d0bd0c1b63f63920e5fe601c806796a477ed7889d683bda76d02cf469285b96"
+    },
+    {
+     "name": "config.vi.apk",
+     "bytes": 1429913,
+     "sha256": "d2d7ba36971272b6ff8483d8b9449b8cbaa7da9204560f052fcfc7b41894b9cc"
+    },
+    {
+     "name": "config.it.apk",
+     "bytes": 1360281,
+     "sha256": "2ccf83703aec53db5d82adf966c94d99a6174c7a26827c529731ae4f8c17d777"
+    },
+    {
+     "name": "config.ja.apk",
+     "bytes": 1474969,
+     "sha256": "cfe6991680308e9f57ff6b471ec61b33e0f73cbc65845a822df540612b4799c1"
+    },
+    {
+     "name": "config.th.apk",
+     "bytes": 1884569,
+     "sha256": "3bf175830fdee5a0c76aa09da799e53b9a7d85a885f432f90e5c2c6db4118a9a"
+    },
+    {
+     "name": "config.pt.apk",
+     "bytes": 2118041,
+     "sha256": "3dde0dcec0bbe8cd876c05156c77fe8d6d617615d7b2331e7b9d14204d2d352c"
+    },
+    {
+     "name": "config.ar.apk",
+     "bytes": 2310553,
+     "sha256": "1cee44d102ee7fc639478413412fbd4c5b682965ac7b3b83210c76c44210abcc"
+    },
+    {
+     "name": "config.hi.apk",
+     "bytes": 1962393,
+     "sha256": "6d05420e948b1d02819ae11ab08507775135603906e3b3f9851a4f15c906060b"
+    },
+    {
+     "name": "config.in.apk",
+     "bytes": 1593753,
+     "sha256": "024f2429e7ec644471fa6c03d5762f6f417ebbac1a439f63cec2825a2158d635"
+    },
+    {
+     "name": "BarcodeScanner.config.arm64_v8a.apk",
+     "bytes": 4977067,
+     "sha256": "c131a3ca9faec35ea40902743e835b352fe572d1908f8d619f37faed3da0ba54"
+    },
+    {
+     "name": "EatsDFMViewAPI.apk",
+     "bytes": 12438,
+     "sha256": "5d012f9b3b5f5d23ff37e5a7092c6294c3dd1edabc1d65c4cf365833a9f189f5"
+    },
+    {
+     "name": "VoipTwilio.apk",
+     "bytes": 319695,
+     "sha256": "d977f511d2f7fd03017549d1533df2227c698d27a47c504a41b726a453c8ce7b"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 2052505,
+     "sha256": "84739f215e411c2226dc9bbad7751d78435456cc1fa9377c41ea040a1da14b48"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 3821977,
+     "sha256": "d12b5684f8be5b983be1b42d96161dadc9a62739f3eba5fe14fef1b526826bf6"
+    },
+    {
+     "name": "config.ko.apk",
+     "bytes": 1466777,
+     "sha256": "3568b3f2ad4a080fee228e591db9d04229af0911f4a77baeeee7118c6833a78a"
+    },
+    {
+     "name": "EatsDFMAPI.apk",
+     "bytes": 12438,
+     "sha256": "ef611cf11641dd15fc44a04822ae6e531faa31958a4558d68d6f0bab60219560"
+    },
+    {
+     "name": "FlashNacional.apk",
+     "bytes": 24783,
+     "sha256": "493d0135b06f858f4592758ef619bf285d227791aa534c55b2ee29a26865a9e6"
+    },
+    {
+     "name": "GooglePaySdk.apk",
+     "bytes": 94571,
+     "sha256": "553c5965dbfe0a84f8bf5e10f85696fd46a2b2385b804e6aa7bda478ab0099ee"
+    },
+    {
+     "name": "config.de.apk",
+     "bytes": 1520025,
+     "sha256": "d2510d73a9dd40a26366c57e579615b15995bb3e93fe7b2a36f7b145d1f75f41"
+    },
+    {
+     "name": "config.fr.apk",
+     "bytes": 2306457,
+     "sha256": "5bced0b7f35f10333388f3e54896f25c26fe0d2a0845ae9d9bc93f31d295865c"
+    },
+    {
+     "name": "config.my.apk",
+     "bytes": 319897,
+     "sha256": "2b16f58b4b425e9756154c00fa0f94449f93b348c9be946ce33c82bd11007abe"
+    },
+    {
+     "name": "config.ru.apk",
+     "bytes": 1724825,
+     "sha256": "6b513012767de06552b5babda4de176ee66c70151b83c09adf63e833d01d664d"
+    },
+    {
+     "name": "config.xxxhdpi.apk",
+     "bytes": 776390,
+     "sha256": "c4be97e73a6e936d141be1daec29a93dde16bdcf371ea1ae298b67955c540c97"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (4003231a...8392)",
+   "reference": "harness HK top-1000 device round: Uber",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.ubercab.presidio.app.core.root.RootActivity"
+  },
+  "hk-com.intsig.camscanner": {
+   "kind": "original-apk-with-splits",
+   "package": "com.intsig.camscanner",
+   "version_name": "7.27.0.2609220000",
+   "version_code": 72701,
+   "abi": "arm64-v8a",
+   "bytes": 165719989,
+   "sha256": "f39b2e9fd992b50628ca12a27e54970e04320d80d8c32bd6d1661dace0d801d3",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 65631652,
+     "sha256": "2794b58f1ba277e160eb5eca785624e47b0b6133172c9140d6cf0ac038e8fd09"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 303513,
+     "sha256": "36fa7620fc9cb705c5d440ffa3e68678ef6eb09b08eda737de5fdd7f1c57cec8"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (7fb4c4f7...a23f)",
+   "reference": "harness HK top-1000 device round: CamScanner",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.intsig.camscanner.mainmenu.mainactivity.MainActivity"
+  },
+  "hk-com.autonavi.minimap": {
+   "kind": "original-apk-with-splits",
+   "package": "com.autonavi.minimap",
+   "version_name": "17.01.0.2015",
+   "version_code": 170000,
+   "abi": "arm64-v8a",
+   "bytes": 171970494,
+   "sha256": "32586e63751564f8f17ff92ed5a0afc7699070d7d0da7003eb7ffb78bb3cdfae",
+   "splits": [
+    {
+     "name": "config.hdpi.apk",
+     "bytes": 476242,
+     "sha256": "4b383d0b3567c16cfa980f00c655bb69f64f0eb3a878dc36100a05d65e19516c"
+    },
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 80793692,
+     "sha256": "499faa5bae668d024b1dd9220af10fcc1f5a4cc0778a928ec61f2dcd245bee84"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 717209,
+     "sha256": "831ffd0c8c0c39c9bc4245d08d9c6e1e18e0e825c356707819974a5bb70b8111"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (b36c0b80...2e3e)",
+   "reference": "harness HK top-1000 device round: \u9ad8\u5fb7\u5730\u56fe",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.autonavi.map.activity.NewMapActivity"
+  },
+  "hk-com.nbaimd.gametime.nba2011": {
+   "kind": "original-apk-with-splits",
+   "package": "com.nbaimd.gametime.nba2011",
+   "version_name": "1.1.0",
+   "version_code": 1001017,
+   "abi": "arm64-v8a",
+   "bytes": 54881813,
+   "sha256": "6e8fc529f40ef8910c74ed45015b5921db0418a36c736eb4ce299649be215801",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 11891930,
+     "sha256": "2fb5a2c97d01b70c60dab072b03fa7fc78c4577cac3d2a297f6598ddc1fb828c"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 200914,
+     "sha256": "f2e485a8e0ec509b58e317580c07230fb060d962aef044f52e9658232c3d9ce8"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 419506,
+     "sha256": "82dc5c9a75bcb7db8bb653884769612c4996875ebd55ee1488052e5514143250"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (23092093...3aff)",
+   "reference": "harness HK top-1000 device round: NBA",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.nba.nextgen.navigation.root.RootActivity"
+  },
+  "hk-com.metalight.transitnow": {
+   "kind": "original-apk-with-splits",
+   "package": "com.metalight.transitnow",
+   "version_name": "0.1.45",
+   "version_code": 53,
+   "abi": "arm64-v8a",
+   "bytes": 29653217,
+   "sha256": "74c5e0fb4ebab60010261f6f296e8bd9af6bd8c33e22794d91fbbe9eb17da198",
+   "splits": [
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 22852238,
+     "sha256": "9a4b0b1babca35fa40de1aca41864cef64cd7419cd236c2c628b31635fe6dbc7"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 45465,
+     "sha256": "00a48982ffda9621407cb4a9bb02cafe0de40399f0bde45696a476e1535a2bdd"
+    },
+    {
+     "name": "config.es.apk",
+     "bytes": 29081,
+     "sha256": "2ff5712337851e07e55d33b335ae3f89d87f3288b6c8f583f570d983819f54b5"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 251597,
+     "sha256": "34c50f0a9875a43c0781bb141a83fd86173e26986bc0dddd1f7d69d21279ab7f"
+    }
+   ],
+   "delivery": "Google Play XAPK, arm64-v8a; base and splits verify with one signing certificate (79d1c42b...cad4)",
+   "reference": "harness HK top-1000 device round: TransitNow",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.metalight.transitnow.MainActivity"
+  },
+  "hk-live.shorttv.apps": {
+   "kind": "original-apk",
+   "package": "live.shorttv.apps",
+   "version_name": "9.7.1",
+   "version_code": 9710,
+   "abi": "arm64-v8a",
+   "bytes": 77308010,
+   "sha256": "44c8abef4f88c228e79cad26200cd6c75db5b5f7489e2470650cde34fe473879",
+   "delivery": "APKPure APK, arm64-v8a; verifies with one signing certificate (43cb52ef...e10a)",
+   "reference": "harness HK top-1000 device round: ShortMax",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.startshorts.androidplayer.ui.activity.RoutingActivity"
+  },
+  "hk-com.quickdoc.pdfreader": {
+   "kind": "original-apk",
+   "package": "com.quickdoc.pdfreader",
+   "version_name": "1.2.8",
+   "version_code": 32,
+   "abi": "arm64-v8a",
+   "bytes": 82438675,
+   "sha256": "f09114660bf5fc407fd1005294a247e9aeeeefa5dc8bf369bd847104b5539258",
+   "delivery": "APKPure APK, arm64-v8a; verifies with one signing certificate (398a2238...6f88)",
+   "reference": "harness HK top-1000 device round: \u00a0QuickDoc: PDF",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "com.mapp.tylerpdf.ui.activity.splash.SplashActivity"
+  },
+  "hk-sg.omi": {
+   "kind": "original-apk-with-splits",
+   "package": "sg.omi",
+   "version_name": "7.71.1",
+   "version_code": 707100101,
+   "abi": "arm64-v8a",
+   "bytes": 85600117,
+   "sha256": "01f1ab0b0b45c1c420803d86511127049655265dd8adb7b8b0ad984f43230209",
+   "splits": [
+    {
+     "name": "config.hdpi.apk",
+     "bytes": 11383542,
+     "sha256": "fd51f1d77cf8377e9e58a1a2c4f0d2e4a3d4bf676c3156890088586cdd01fdd8"
+    },
+    {
+     "name": "config.tvdpi.apk",
+     "bytes": 11452271,
+     "sha256": "e2ba4d06409d23db064da10ef2b9159289a55e032dc95216f9dd15e082392f75"
+    },
+    {
+     "name": "config.mdpi.apk",
+     "bytes": 11391734,
+     "sha256": "c57338089acb613e608bcdb8b65818ccc8e4d0389aa5d9d69dd4569321d25798"
+    },
+    {
+     "name": "config.arm64_v8a.apk",
+     "bytes": 38862426,
+     "sha256": "adc6605496ca2495f2d7a83c024f61eeccb6b26690817b34e6bb8184f31c4355"
+    },
+    {
+     "name": "config.xxxhdpi.apk",
+     "bytes": 19560573,
+     "sha256": "a8d36d4e6009fdc733900c07052dae791139e1b506e5c12963744ae85f0efb95"
+    },
+    {
+     "name": "config.ms.apk",
+     "bytes": 520601,
+     "sha256": "896dceaed3af022ca7156d8b1be68e6d027f6b12e65d6a065f45f73f1cdf89f1"
+    },
+    {
+     "name": "config.in.apk",
+     "bytes": 512409,
+     "sha256": "260e04356e4bcefc949334bc74a91925b239e5cc5c4960430604c5abb55c06c3"
+    },
+    {
+     "name": "config.armeabi_v7a.apk",
+     "bytes": 32390830,
+     "sha256": "f811cb5eee6ba133fdb21d6800060a54979cf9f46efb78f03366ef07f6d71bcd"
+    },
+    {
+     "name": "config.xxhdpi.apk",
+     "bytes": 19535997,
+     "sha256": "a1ca92a2371f374d957195051a18e1b47d698749bee773477526d37867567364"
+    },
+    {
+     "name": "config.zh.apk",
+     "bytes": 967179,
+     "sha256": "c824a43dedb73b504afd6dbd7b07922df7fbcec5e907a94e0fe6a50d0126d059"
+    },
+    {
+     "name": "config.ldpi.apk",
+     "bytes": 11497866,
+     "sha256": "0c080d7a8df7367de8ffd9664e5aa5b57b93b59af4eb3e02dbb087f73315b6c9"
+    },
+    {
+     "name": "config.th.apk",
+     "bytes": 770457,
+     "sha256": "72adc883047bbcc4c4c45148d59d3cacd72700de5a6a50aa78e40900af0e8e89"
+    },
+    {
+     "name": "config.en.apk",
+     "bytes": 57753,
+     "sha256": "f9c6ad26e5eee3c51f168d7ae1acc8628bb2c3da8729e4269491a4b676465107"
+    },
+    {
+     "name": "config.xhdpi.apk",
+     "bytes": 11363067,
+     "sha256": "73f7d37f0c60390fe3a175f0902ff2caf7a98a9fd36ecb8ebd7dd89b94d81aef"
+    }
+   ],
+   "delivery": "APKPure XAPK, arm64-v8a; base and splits verify with one signing certificate (034775b6...f4a0)",
+   "reference": "harness HK top-1000 device round: Omi",
+   "rebuild": false,
+   "modify_or_resign": false,
+   "launch_activity": "app.viewmodel.splash.SplashAct"
   }
  }
 }
