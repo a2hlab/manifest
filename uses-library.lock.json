@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "projects": [
+    {
+      "path": "android-source/apache-http",
+      "revision": "382ac60953a5bb93b8ce19953bbc41d356abf6fd",
+      "upstream": {
+        "revision": "1e5fcc92ec9a335c8e6bae67630278988e5f0662",
+        "tree": "553b8cf60261dace5486d1b9447af43402c82c59",
+        "url": "https://android.googlesource.com/platform/external/apache-http"
+      },
+      "url": "https://github.com/a2hlab/dep-android-source-apache-http.git"
+    }
+  ]
+}
