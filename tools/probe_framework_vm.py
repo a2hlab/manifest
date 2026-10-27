@@ -21,6 +21,10 @@ def main():
     parser.add_argument('--serial', required=True)
     parser.add_argument('--cache-report', type=Path)
     parser.add_argument('--data-build', type=Path)
+    parser.add_argument('--uses-library-build', type=Path, action='append', default=[],
+                        help='A jar for an Android shared library an app declares in '
+                             '<uses-library>, staged as framework/<name>.jar. Not on the boot '
+                             'class path: LoadedApk loads it per app that asks for it.')
     parser.add_argument('--contracts', action='store_true')
     args = parser.parse_args()
     output = args.out.absolute()
@@ -55,6 +59,8 @@ def main():
         data_report = include(args.data_build, '', lambda name: True)
         font_contracts = args.contracts and data_report.get('font_count', 0) > 0
     include(args.framework_build, 'fw/', lambda name: name in ['framework.jar', 'adapter-runtime-bcp.jar'])
+    for directory in args.uses_library_build:
+        include(directory, 'framework/', lambda name: name.endswith('.jar'))
     jars = source_jars(args.core_build.resolve(), [p.resolve() for p in args.extension_build])
     for name, path in jars.items():
         files['fw/' + name + '.jar'] = path

@@ -6207,10 +6207,10 @@
    "version_code": 1,
    "abi": "arm64-v8a",
    "pure_java": true,
-   "bytes": 25040,
-   "sha256": "083e46ef57a7429524d7e84a3eb6db713f388d156f485517ebcd5415a2b63a5e",
+   "bytes": 33297,
+   "sha256": "f25259e3a22eee8a4860ad7ad4fe04c2c311a7947c7b152e19190e4335d94af3",
    "delivery": "harness-built white-box probe (westlake-harness probes/media-contracts)",
-   "reference": "media contracts many apps rely on, measured per build on a bundled clip: MediaMetadataRetriever, MediaExtractor, MediaCodec, ImageReader, AudioTrack",
+   "reference": "media contracts many apps rely on, measured per build on a bundled clip: MediaMetadataRetriever, MediaExtractor, MediaCodec (to buffers and to a Surface), ImageReader, AudioTrack",
    "rebuild": false,
    "modify_or_resign": false,
    "launch_activity": "org.westlake.probe.media.MainActivity"
