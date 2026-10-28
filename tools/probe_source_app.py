@@ -421,13 +421,14 @@ def main():
             'sha256': shim_entry['sha256'], 'provenance': 'source-built'}
         webview_paths['webview-t-lib/libwebview_bionic_shim.so'] = shim_path
         # The NDK libraries the shim build stages beside it, on the Android namespace's path:
-        # libaaudio.so, a name for DT_NEEDED whose entry points the shim itself exports.
+        # libaaudio.so, a name for DT_NEEDED whose entry points the shim itself exports, and
+        # libandroid.so, built from source in place of the captured copy (the only one replaced).
         for name, entry in sorted(shim_report['artifacts'].items()):
             if name == 'libwebview_bionic_shim.so':
                 continue
             path = shim_root / name
             if (not re.fullmatch(r'lib[a-zA-Z0-9_.+-]+\.so', name)
-                    or 'webview-t-lib/' + name in webview_files
+                    or ('webview-t-lib/' + name in webview_files and name != 'libandroid.so')
                     or digest(path) != entry['sha256']):
                 raise ValueError('Changed or failed bionic shim build: ' + name)
             webview_files['webview-t-lib/' + name] = {
