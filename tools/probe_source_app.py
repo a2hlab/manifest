@@ -153,13 +153,83 @@ def init_array_sanitized(data):
     return bytes(data) if changed else None
 
 
+# Dynamic tags and relocation types gl_pointers_bound_locally reads.
+DT_STRTAB, DT_SYMTAB = 5, 6
+R_AARCH64_ABS64, R_AARCH64_GLOB_DAT, R_AARCH64_RELATIVE = 257, 1025, 1027
+GL_POINTER_NAME = re.compile(rb'(gl|egl|vk)[A-Z]')
+
+
+def gl_pointers_bound_locally(data):
+    """The library's bytes with each GLOB_DAT/ABS64 relocation to a GL-named data object the library
+    defines itself turned into a RELATIVE relocation to that object, or None if it has none.
+
+    GL loaders (Rive, glad, glew) keep function pointers in variables named after the GL functions
+    they hold. Android's GLES libraries do not export the extension functions, so bionic binds the
+    names to the loader's own variables; the board's Mali driver exports them and musl searches it
+    first, so the loader's store of eglGetProcAddress's answer went into the driver's code (Rive:
+    glFramebufferTexture2DMultisampleEXT, SEGV_ACCERR in libGLES_mali.z.so).
+    """
+    data = bytearray(data)
+    if data[:4] != b'\x7fELF' or data[4] != 2 or data[5] != 1:
+        return None
+    u64 = lambda at: int.from_bytes(data[at:at + 8], 'little')
+    phoff, count = u64(0x20), int.from_bytes(data[0x38:0x3a], 'little')
+    loads, dynamic = [], None
+    for index in range(count):
+        header = phoff + index * 56
+        kind = int.from_bytes(data[header:header + 4], 'little')
+        if kind == 1:
+            loads.append((u64(header + 16), u64(header + 8), u64(header + 32)))
+        elif kind == 2:
+            dynamic = (u64(header + 8), u64(header + 32))
+    if dynamic is None:
+        return None
+
+    def offset_of(vaddr):
+        for start, offset, size in loads:
+            if start <= vaddr < start + size:
+                return offset + vaddr - start
+        return None
+
+    tags = {}
+    for position in range(dynamic[0], dynamic[0] + dynamic[1], 16):
+        tag = u64(position)
+        if tag == 0:
+            break
+        tags.setdefault(tag, (position, u64(position + 8)))
+    if ANDROID_PACKED_TAGS & set(tags) or not {DT_RELA, DT_RELASZ, DT_SYMTAB, DT_STRTAB} <= set(tags):
+        return None
+    start, symtab, strtab = offset_of(tags[DT_RELA][1]), offset_of(tags[DT_SYMTAB][1]), offset_of(tags[DT_STRTAB][1])
+    entry = tags.get(DT_RELAENT, (0, 24))[1]
+    if None in (start, symtab, strtab) or not entry:
+        return None
+    changed = False
+    for rela in range(start, start + tags[DT_RELASZ][1], entry):
+        info = u64(rela + 8)
+        if info & 0xFFFFFFFF not in (R_AARCH64_ABS64, R_AARCH64_GLOB_DAT):
+            continue
+        sym = symtab + (info >> 32) * 24
+        name_at = strtab + int.from_bytes(data[sym:sym + 4], 'little')
+        kind, section, value = data[sym + 4] & 0xF, int.from_bytes(data[sym + 6:sym + 8], 'little'), u64(sym + 8)
+        if kind != 1 or section == 0 or not GL_POINTER_NAME.match(data[name_at:name_at + 4]):
+            continue  # not a defined STT_OBJECT with a GL name
+        addend = int.from_bytes(data[rela + 16:rela + 24], 'little', signed=True)
+        data[rela + 8:rela + 16] = R_AARCH64_RELATIVE.to_bytes(8, 'little')
+        data[rela + 16:rela + 24] = ((value + addend) & (2**64 - 1)).to_bytes(8, 'little')
+        changed = True
+    return bytes(data) if changed else None
+
+
+
 def loader_compat_bytes(path):
     """The library's bytes as the board's loader needs them, or None if it needs no change, and
     which changes were made."""
     retagged = android_relr_retagged(path)
     sanitized = init_array_sanitized(retagged if retagged is not None else path.read_bytes())
-    changes = (['DT_ANDROID_RELR'] if retagged is not None else []) + (['null init/fini entries'] if sanitized else [])
-    return (sanitized or retagged), changes
+    bound = gl_pointers_bound_locally(sanitized or retagged or path.read_bytes())
+    changes = ((['DT_ANDROID_RELR'] if retagged is not None else []) + (['null init/fini entries'] if sanitized else [])
+               + (['GL pointers bound locally'] if bound else []))
+    return (bound or sanitized or retagged), changes
 
 
 def main():
@@ -651,13 +721,15 @@ def main():
             loader_compat[name] = fixed
             compat_changes[name] = changes
             app_files[name] = dict(app_files[name], sha256=hashlib.sha256(fixed).hexdigest())
-    for change in ('DT_ANDROID_RELR', 'null init/fini entries'):
+    for change, said in (('DT_ANDROID_RELR', 'DT_ANDROID_RELR retagged to DT_RELR'),
+                         ('null init/fini entries', 'null init/fini entries dropped'),
+                         ('GL pointers bound locally', 'GL-named pointer variables bound to the library')):
         names = sorted(n for n, c in compat_changes.items() if change in c)
         if names:
-            print('LOADER_COMPAT %s:' % ('DT_ANDROID_RELR retagged to DT_RELR' if change == 'DT_ANDROID_RELR'
-                                         else 'null init/fini entries dropped'), ' '.join(names), flush=True)
+            print('LOADER_COMPAT %s:' % said, ' '.join(names), flush=True)
     state['android_relr_retagged'] = sorted(n for n, c in compat_changes.items() if 'DT_ANDROID_RELR' in c)
     state['init_array_sanitized'] = sorted(n for n, c in compat_changes.items() if 'null init/fini entries' in c)
+    state['gl_pointers_bound_locally'] = sorted(n for n, c in compat_changes.items() if 'GL pointers bound locally' in c)
     cached = {}
     if args.input_cache:
         cached = {name: webview_paths[name] for name in webview_files}
