@@ -339,6 +339,15 @@ def main():
         path = args.app_input.resolve() / split_sources.get(name, name)
         if not path.resolve().is_relative_to(args.app_input.resolve()) or digest(path) != entry['sha256']:
             raise ValueError('Changed original APK input: ' + name)
+    # A .so in the APK that is not ELF (StarMaker's libc++.so is an ld script, INPUT(...)) is not
+    # staged: no loader can map it, and in the app's library directory it shadowed the library of
+    # that name an OH dependency needs (OH's libOpenSLES.so -> libc++.so).
+    not_elf = sorted(name for name in app['native_libraries'] if name.endswith('.so')
+                     and (args.app_input / name).read_bytes()[:4] != b'\x7fELF')
+    for name in not_elf:
+        del app_files[name]
+    if not_elf:
+        print('NOT_STAGED non-ELF libraries:', ' '.join(not_elf), flush=True)
     trace = None
     if args.trace_runtime_lock:
         trace = json.loads(args.trace_runtime_lock.read_text())
@@ -716,7 +725,7 @@ def main():
     # Libraries the board's loader would mishandle travel fixed (see android_relr_retagged and
     # init_array_sanitized); the device copy is checked against the fixed bytes.
     loader_compat, compat_changes = {}, {}
-    for name in sorted(app['native_libraries']):
+    for name in sorted(n for n in app['native_libraries'] if n in app_files):
         fixed, changes = loader_compat_bytes(args.app_input / name) if name.endswith('.so') else (None, [])
         if fixed is not None:
             loader_compat[name] = fixed
