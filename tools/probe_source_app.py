@@ -418,7 +418,7 @@ def main():
     parser.add_argument('--runtime-library', action='append', default=[], metavar='NAME',
                         help='library of --runtime-library-build to use in place of the staged one. Repeatable')
     parser.add_argument('--input-cache', action='store_true',
-                        help='stage the WebView files and runtime library overrides from a cache on the '
+                        help='stage the WebView files, runtime library overrides, guest packages and the app\'s own files from a cache on the '
                              'board, keyed by content, and send only the files it lacks (' + INPUT_CACHE + ')')
     parser.add_argument('--guest-build', type=Path,
                         help='Packages run in the app process beside it (microG GmsCore and Companion): '
@@ -915,8 +915,15 @@ def main():
         cached = {name: webview_paths[name] for name in webview_files}
         cached.update(runtime_overrides)
         cached.update(guest_paths)
+        # The app's own files too (not the ones rewritten for the loader, which are made here): a
+        # round relaunches the apps of earlier rounds, and over a slow link the app was most of what
+        # went over the air each time.
+        cached.update({name: args.app_input / split_sources.get(name, name)
+                       for name in app_files if name not in loader_compat})
     with tarfile.open(archive, 'w') as tar:
         for name in sorted(app_files):
+            if name in cached:
+                continue
             if name in loader_compat:
                 info = tar.gettarinfo(args.app_input / name, arcname=name)
                 info.size = len(loader_compat[name])
