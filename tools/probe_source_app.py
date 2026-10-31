@@ -220,16 +220,180 @@ def gl_pointers_bound_locally(data):
     return bytes(data) if changed else None
 
 
+# Names the libraries global in a launched app's process export: the board's system libraries and
+# the runtime's (<workspace>/board-global-exports.txt, made by tools/board_global_exports.py; main
+# points this at it). Without the file no library is changed.
+BOARD_GLOBAL_EXPORTS = None
+DT_PLTRELSZ, DT_PLTREL, DT_JMPREL = 2, 20, 23
+R_AARCH64_JUMP_SLOT = 1026
+# Names left to the board. The C and C++ runtime ABI: the rest of the app still binds these to the
+# board's copies, so a library's own copy must not take over half of a pair (allocate/free,
+# throw/catch, type identity). JNI entry points and jni.h's inline JNIEnv/JavaVM wrappers: every copy
+# is the same code, so binding them changes nothing.
+RUNTIME_ABI_NAME = re.compile(rb'__|_Unwind_|_Z(St|T[IS]|nw|na|dl|da)|JNI_On|_ZN7_(JNIEnv|JavaVM)')
+_board_exports = None
 
-def loader_compat_bytes(path):
+
+def board_exports():
+    global _board_exports
+    if _board_exports is None:
+        exists = BOARD_GLOBAL_EXPORTS is not None and BOARD_GLOBAL_EXPORTS.exists()
+        names = BOARD_GLOBAL_EXPORTS.read_bytes().split() if exists else []
+        _board_exports = {name for name in names if not RUNTIME_ABI_NAME.match(name)}
+    return _board_exports
+
+
+def dynamic_symbol_names(data):
+    """The names a library's dynamic symbol table defines and the names it imports (from the
+    section headers; empty for a library without usable ones, as packers leave some)."""
+    try:
+        return _dynamic_symbol_names(data)
+    except (ValueError, IndexError):
+        return set(), set()
+
+
+def _dynamic_symbol_names(data):
+    defined, imported = set(), set()
+    if data[:4] != b'\x7fELF' or data[4] != 2 or data[5] != 1:
+        return defined, imported
+    u64 = lambda at: int.from_bytes(data[at:at + 8], 'little')
+    shoff, size, count = u64(0x28), int.from_bytes(data[0x3a:0x3c], 'little'), int.from_bytes(data[0x3c:0x3e], 'little')
+    for index in range(count):
+        header = shoff + index * size
+        if header + 64 > len(data) or int.from_bytes(data[header + 4:header + 8], 'little') != 11:  # SHT_DYNSYM
+            continue
+        link = shoff + int.from_bytes(data[header + 40:header + 44], 'little') * size
+        strtab, symtab, symsize = u64(link + 24), u64(header + 24), u64(header + 32)
+        for sym in range(symtab + 24, symtab + symsize, 24):
+            name_at = strtab + int.from_bytes(data[sym:sym + 4], 'little')
+            name = bytes(data[name_at:data.index(0, name_at)])
+            if data[sym + 4] >> 4 in (1, 2) and name:
+                (imported if data[sym + 6:sym + 8] == b'\0\0' else defined).add(name)
+    return defined, imported
+
+
+def libraries_bound_locally(libraries):
+    """The libraries own_exports_bound_locally may change: those whose names the board also has are
+    not shared with another of the app's libraries.
+
+    The rewrite reaches only a library's references to itself; another library's references still
+    reach the board's copy. Where an app splits one bundled library over several (OpenSSL's libssl
+    and libcrypto), binding one half to itself would mix two versions where today the board's copy
+    serves both, so such libraries are left as they are."""
+    board = board_exports()
+    symbols = {name: dynamic_symbol_names(data) for name, data in libraries.items()}
+    defining, importing = {}, {}
+    for defined, imported in symbols.values():
+        for name in defined & board:
+            defining[name] = defining.get(name, 0) + 1
+        for name in imported & board:
+            importing[name] = importing.get(name, 0) + 1
+    chosen = set()
+    for library, (defined, imported) in symbols.items():
+        shared = any(importing.get(name, 0) - (name in imported) for name in defined & board) \
+            or any(defining.get(name, 0) - (name in defined) for name in imported & board)
+        if not shared:
+            chosen.add(library)
+    return chosen
+
+
+def own_exports_bound_locally(data):
+    """The library's bytes with each JUMP_SLOT/GLOB_DAT/ABS64 relocation to a symbol the library
+    defines itself, and a library global in the app's process also exports, turned into a RELATIVE
+    relocation to the library's own definition, or None if it has none.
+
+    Bionic searches a library's own definitions before any library the app did not load: the board's
+    and the runtime's libraries are not visible to app code there. OH's musl searches the global
+    scope first, so the board's copy answers. ctrip's libun7zip.so bundles the LZMA SDK and its
+    SzArEx_Open called SzAr_DecodeFolder in the board's liblzma.z.so (loaded for libunwinder.z.so),
+    which jumped to a null pointer. A library relocated by Android's packed format keeps its DT_RELA
+    entries; its PLT relocations, never packed, are still rewritten. See libraries_bound_locally for
+    which of an app's libraries this is applied to.
+    """
+    try:
+        return _own_exports_bound_locally(data)
+    except (ValueError, IndexError):
+        return None  # a malformed dynamic section: left to the loader as it is
+
+
+def _own_exports_bound_locally(data):
+    board = board_exports()
+    data = bytearray(data)
+    if not board or data[:4] != b'\x7fELF' or data[4] != 2 or data[5] != 1:
+        return None
+    u64 = lambda at: int.from_bytes(data[at:at + 8], 'little')
+    phoff, count = u64(0x20), int.from_bytes(data[0x38:0x3a], 'little')
+    loads, dynamic = [], None
+    for index in range(count):
+        header = phoff + index * 56
+        kind = int.from_bytes(data[header:header + 4], 'little')
+        if kind == 1:
+            loads.append((u64(header + 16), u64(header + 8), u64(header + 32)))
+        elif kind == 2:
+            dynamic = (u64(header + 8), u64(header + 32))
+    if dynamic is None:
+        return None
+
+    def offset_of(vaddr):
+        for start, offset, size in loads:
+            if start <= vaddr < start + size:
+                return offset + vaddr - start
+        return None
+
+    tags = {}
+    for position in range(dynamic[0], dynamic[0] + dynamic[1], 16):
+        tag = u64(position)
+        if tag == 0:
+            break
+        tags.setdefault(tag, (position, u64(position + 8)))
+    if not {DT_SYMTAB, DT_STRTAB} <= set(tags):
+        return None
+    symtab, strtab = offset_of(tags[DT_SYMTAB][1]), offset_of(tags[DT_STRTAB][1])
+    if None in (symtab, strtab):
+        return None
+    tables = []
+    if DT_RELA in tags and DT_RELASZ in tags and not ANDROID_PACKED_TAGS & set(tags):
+        tables.append((offset_of(tags[DT_RELA][1]), tags[DT_RELASZ][1], tags.get(DT_RELAENT, (0, 24))[1]))
+    if DT_JMPREL in tags and DT_PLTRELSZ in tags and tags.get(DT_PLTREL, (0, DT_RELA))[1] == DT_RELA:
+        tables.append((offset_of(tags[DT_JMPREL][1]), tags[DT_PLTRELSZ][1], 24))
+    local = {}  # symbol index -> value, for the symbols to bind locally
+    changed = False
+    for start, size, entry in tables:
+        if start is None or not entry:
+            continue
+        for rela in range(start, start + size, entry):
+            info = u64(rela + 8)
+            if info & 0xFFFFFFFF not in (R_AARCH64_ABS64, R_AARCH64_GLOB_DAT, R_AARCH64_JUMP_SLOT):
+                continue
+            index = info >> 32
+            if index not in local:
+                sym = symtab + index * 24
+                name_at = strtab + int.from_bytes(data[sym:sym + 4], 'little')
+                name = bytes(data[name_at:data.index(0, name_at)])
+                kind, bind = data[sym + 4] & 0xF, data[sym + 4] >> 4
+                visibility, section = data[sym + 5] & 3, int.from_bytes(data[sym + 6:sym + 8], 'little')
+                own = (kind in (1, 2) and bind in (1, 2) and visibility == 0 and section != 0
+                       and name in board)
+                local[index] = u64(sym + 8) if own else None
+            if local[index] is None:
+                continue
+            addend = int.from_bytes(data[rela + 16:rela + 24], 'little', signed=True)
+            data[rela + 8:rela + 16] = R_AARCH64_RELATIVE.to_bytes(8, 'little')
+            data[rela + 16:rela + 24] = ((local[index] + addend) & (2**64 - 1)).to_bytes(8, 'little')
+            changed = True
+    return bytes(data) if changed else None
+
+
+def loader_compat_bytes(path, bind_own=False):
     """The library's bytes as the board's loader needs them, or None if it needs no change, and
-    which changes were made."""
+    which changes were made. bind_own applies own_exports_bound_locally."""
     retagged = android_relr_retagged(path)
     sanitized = init_array_sanitized(retagged if retagged is not None else path.read_bytes())
     bound = gl_pointers_bound_locally(sanitized or retagged or path.read_bytes())
+    own = own_exports_bound_locally(bound or sanitized or retagged or path.read_bytes()) if bind_own else None
     changes = ((['DT_ANDROID_RELR'] if retagged is not None else []) + (['null init/fini entries'] if sanitized else [])
-               + (['GL pointers bound locally'] if bound else []))
-    return (bound or sanitized or retagged), changes
+               + (['GL pointers bound locally'] if bound else []) + (['own exports bound locally'] if own else []))
+    return (own or bound or sanitized or retagged), changes
 
 
 def main():
@@ -254,7 +418,7 @@ def main():
     parser.add_argument('--runtime-library', action='append', default=[], metavar='NAME',
                         help='library of --runtime-library-build to use in place of the staged one. Repeatable')
     parser.add_argument('--input-cache', action='store_true',
-                        help='stage the WebView files and runtime library overrides from a cache on the '
+                        help='stage the WebView files, runtime library overrides, guest packages and the app\'s own files from a cache on the '
                              'board, keyed by content, and send only the files it lacks (' + INPUT_CACHE + ')')
     parser.add_argument('--guest-build', type=Path,
                         help='Packages run in the app process beside it (microG GmsCore and Companion): '
@@ -705,6 +869,8 @@ def main():
                  source_files=framework['files'], apk_sha256=app['apk_sha256'])
     save()
     sdk = args.workspace.resolve() / 'toolchains/ohos-sdk/native'
+    global BOARD_GLOBAL_EXPORTS
+    BOARD_GLOBAL_EXPORTS = args.workspace.resolve() / 'board-global-exports.txt'
     helpers = {}
     for source_name in ['source_app_namespace.c', 'host_spawn.c', 'touchfwd.c']:
         source = args.westlake_source.resolve() / 'native' / source_name
@@ -725,28 +891,39 @@ def main():
     # Libraries the board's loader would mishandle travel fixed (see android_relr_retagged and
     # init_array_sanitized); the device copy is checked against the fixed bytes.
     loader_compat, compat_changes = {}, {}
+    libraries = sorted(n for n in app['native_libraries'] if n in app_files and n.endswith('.so'))
+    bind_own = libraries_bound_locally({n: (args.app_input / n).read_bytes() for n in libraries})
     for name in sorted(n for n in app['native_libraries'] if n in app_files):
-        fixed, changes = loader_compat_bytes(args.app_input / name) if name.endswith('.so') else (None, [])
+        fixed, changes = loader_compat_bytes(args.app_input / name, name in bind_own) if name.endswith('.so') else (None, [])
         if fixed is not None:
             loader_compat[name] = fixed
             compat_changes[name] = changes
             app_files[name] = dict(app_files[name], sha256=hashlib.sha256(fixed).hexdigest())
     for change, said in (('DT_ANDROID_RELR', 'DT_ANDROID_RELR retagged to DT_RELR'),
                          ('null init/fini entries', 'null init/fini entries dropped'),
-                         ('GL pointers bound locally', 'GL-named pointer variables bound to the library')):
+                         ('GL pointers bound locally', 'GL-named pointer variables bound to the library'),
+                         ('own exports bound locally', 'exports the board also has bound to the library')):
         names = sorted(n for n, c in compat_changes.items() if change in c)
         if names:
             print('LOADER_COMPAT %s:' % said, ' '.join(names), flush=True)
     state['android_relr_retagged'] = sorted(n for n, c in compat_changes.items() if 'DT_ANDROID_RELR' in c)
     state['init_array_sanitized'] = sorted(n for n, c in compat_changes.items() if 'null init/fini entries' in c)
     state['gl_pointers_bound_locally'] = sorted(n for n, c in compat_changes.items() if 'GL pointers bound locally' in c)
+    state['own_exports_bound_locally'] = sorted(n for n, c in compat_changes.items() if 'own exports bound locally' in c)
     cached = {}
     if args.input_cache:
         cached = {name: webview_paths[name] for name in webview_files}
         cached.update(runtime_overrides)
         cached.update(guest_paths)
+        # The app's own files too (not the ones rewritten for the loader, which are made here): a
+        # round relaunches the apps of earlier rounds, and over a slow link the app was most of what
+        # went over the air each time.
+        cached.update({name: args.app_input / split_sources.get(name, name)
+                       for name in app_files if name not in loader_compat})
     with tarfile.open(archive, 'w') as tar:
         for name in sorted(app_files):
+            if name in cached:
+                continue
             if name in loader_compat:
                 info = tar.gettarinfo(args.app_input / name, arcname=name)
                 info.size = len(loader_compat[name])
