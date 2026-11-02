@@ -942,8 +942,11 @@ def main():
         for name in sorted(guest_paths):
             if name not in cached:
                 tar.add(guest_paths[name], arcname=name, recursive=False)
-    send(archive, stage + '/' + archive.name)
-    shell('tar -xf ' + stage + '/' + archive.name + ' -C ' + runtime)
+    # With every file of the app in the cache nothing is left to send, and the board's tar calls an
+    # archive with no members "Not tar".
+    if tar.members:
+        send(archive, stage + '/' + archive.name)
+        shell('tar -xf ' + stage + '/' + archive.name + ' -C ' + runtime)
     if cached:
         state['input_cache'] = stage_from_cache(cached, runtime, stage)
         save()
