@@ -801,11 +801,14 @@ def main():
             shell('mv ' + ' '.join(sorted(arrived)) + ' ' + INPUT_CACHE + '/ && rmdir ' + incoming)
             bundle.unlink()
         directories = sorted({str(Path(runtime + '/' + name).parent) for name in files})
-        commands = ['mkdir -p ' + ' '.join(map(shlex.quote, directories))]
+        commands = ['mkdir -p ' + shlex.quote(directory) for directory in directories]
         commands += ['cp ' + INPUT_CACHE + '/' + sums[name] + ' ' + shlex.quote(runtime + '/' + name)
                      for name in sorted(files)]
-        commands.append('touch ' + ' '.join(INPUT_CACHE + '/' + value for value in sorted(set(sums.values()))))
-        shell(' && '.join(commands))
+        commands += ['touch ' + INPUT_CACHE + '/' + value for value in sorted(set(sums.values()))]
+        # In pieces: Alipay's hundreds of libraries made one command of 70 KB, which hdc shell drops
+        # without an answer.
+        for start in range(0, len(commands), 24):
+            shell(' && '.join(commands[start:start + 24]))
         shell('for f in $(find ' + INPUT_CACHE + ' -type f -mtime +' + str(INPUT_CACHE_DAYS) + '); do rm -f "$f"; done; true')
         return {'dir': INPUT_CACHE,
                 'sent': sorted(name for name in files if sums[name] in missing),
