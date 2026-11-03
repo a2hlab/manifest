@@ -61,6 +61,7 @@ def android_relr_retagged(path):
 # runtime, as a sent file is. Entries unused for three days are dropped.
 INPUT_CACHE = '/data/local/tmp/a2hlab-input-cache'
 INPUT_CACHE_DAYS = 3
+INPUT_CACHE_MAX_KB = 40 * 1024 * 1024
 
 # Dynamic tags init_array_sanitized reads. A library relocated by Android's packed format
 # (DT_ANDROID_REL/RELA) is left alone: which slots its relocations cover is not decoded here.
@@ -810,6 +811,11 @@ def main():
         for start in range(0, len(commands), 24):
             shell(' && '.join(commands[start:start + 24]))
         shell('for f in $(find ' + INPUT_CACHE + ' -type f -mtime +' + str(INPUT_CACHE_DAYS) + '); do rm -f "$f"; done; true')
+        # Age alone does not bound it: a round of large apps put 74 GB here within three days and
+        # filled the board. Oldest first, down to the cap; this app's files were touched just above.
+        shell('cd ' + INPUT_CACHE + ' && total=$(du -sk . | cut -f1) && for f in $(ls -tr); do '
+              '[ "$total" -le ' + str(INPUT_CACHE_MAX_KB) + ' ] && break; '
+              'size=$(du -k "$f" | cut -f1); rm -f "$f"; total=$((total - size)); done; true')
         return {'dir': INPUT_CACHE,
                 'sent': sorted(name for name in files if sums[name] in missing),
                 'reused': sorted(name for name in files if sums[name] not in missing)}
