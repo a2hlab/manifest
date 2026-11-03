@@ -543,7 +543,7 @@ def main():
     available_native_basenames = {
         Path(name).name for name in app['native_libraries'] if name.endswith('.so')
     }
-    if any(not re.fullmatch(r'lib[a-zA-Z0-9_.+-]+\.so', name)
+    if any(not re.fullmatch(r'[a-zA-Z0-9_.+-]+\.so', name)
            or name not in available_native_basenames for name in native_targets):
         raise ValueError('Android namespace target is not a pinned APK DSO')
     webview_files = {}
