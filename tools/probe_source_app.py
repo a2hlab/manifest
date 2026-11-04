@@ -1019,7 +1019,7 @@ def main():
               '/vendor/lib64/hw', '/vendor/lib64', logical + '/lib/arm64-v8a']
     if webview_files:
         search.append(logical + '/webview-t-lib')
-    env = {'WESTLAKE_RUNTIME_ROOT': logical, 'LD_LIBRARY_PATH': ':'.join(search),
+    env = {'WESTLAKE_RUNTIME_ROOT': logical, 'WESTLAKE_RUNTIME_REAL_ROOT': runtime, 'LD_LIBRARY_PATH': ':'.join(search),
            'WESTLAKE_SOURCE_LOG_STDERR': '1',
            'WESTLAKE_SOURCE_PACKAGE': '1',
            'WESTLAKE_TRACE_NATIVE_LOADER': '1',
