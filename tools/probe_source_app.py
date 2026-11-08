@@ -1157,8 +1157,21 @@ def main():
     child_pid = state['child']
     box = '/proc/%d/root/data/local/tmp/noice_tap.%d' % (child_pid, child_pid)
     shell('chmod 755 ' + stage + '/touchfwd')
-    shell(': > ' + box + '; chown ' + str(uid) + ':' + str(uid) + ' ' + box +
-          '; chmod 666 ' + box + '; ln -sf ' + box + ' /data/local/tmp/noice_tap')
+    try:
+        shell(': > ' + box + '; chown ' + str(uid) + ':' + str(uid) + ' ' + box +
+              '; chmod 666 ' + box + '; ln -sf ' + box + ' /data/local/tmp/noice_tap')
+    except RuntimeError:
+        # A child that ends within a second of its spawn (an app whose anti-tamper library crashes
+        # it at once) is gone before its mailbox can be made in its namespace. The spawn is still
+        # reported, with the pid, so the caller collects the child's stderr and records how it ended.
+        if shell('[ -d /proc/%d ] && echo ALIVE; exit 0' % child_pid).strip() == 'ALIVE':
+            raise
+        state['touch'] = None
+        save()
+        print('SOURCE_APP_SPAWNED', json.dumps({k: state[k] for k in ['parent', 'child', 'stage', 'runtime']}),
+              flush=True)
+        print('SOURCE_APP_EXITED before its touch channel was made', flush=True)
+        return
     shell('P=$(pidof touchfwd 2>/dev/null); [ -n "$P" ] && kill $P 2>/dev/null; exit 0')
     stream_env = ('WL_TOUCH_STREAM=1 WL_TOUCH_STREAM_CLICK=1 '
                   if args.touch_mode == 'stream' else '')
