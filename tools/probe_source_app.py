@@ -8,6 +8,7 @@ import argparse
 import hashlib
 import io
 import json
+import os
 from pathlib import Path
 import re
 import shlex
@@ -317,10 +318,14 @@ def own_exports_bound_locally(data):
         return None  # a malformed dynamic section: left to the loader as it is
 
 
-def _own_exports_bound_locally(data):
+def _own_exports_bound_locally(data, wanted=None):
     board = board_exports()
+    if wanted is None:
+        if not board:
+            return None
+        wanted = board.__contains__
     data = bytearray(data)
-    if not board or data[:4] != b'\x7fELF' or data[4] != 2 or data[5] != 1:
+    if data[:4] != b'\x7fELF' or data[4] != 2 or data[5] != 1:
         return None
     u64 = lambda at: int.from_bytes(data[at:at + 8], 'little')
     phoff, count = u64(0x20), int.from_bytes(data[0x38:0x3a], 'little')
@@ -374,7 +379,7 @@ def _own_exports_bound_locally(data):
                 kind, bind = data[sym + 4] & 0xF, data[sym + 4] >> 4
                 visibility, section = data[sym + 5] & 3, int.from_bytes(data[sym + 6:sym + 8], 'little')
                 own = (kind in (1, 2) and bind in (1, 2) and visibility == 0 and section != 0
-                       and name in board)
+                       and wanted(name))
                 local[index] = u64(sym + 8) if own else None
             if local[index] is None:
                 continue
@@ -385,6 +390,17 @@ def _own_exports_bound_locally(data):
     return bytes(data) if changed else None
 
 
+def own_typeinfo_bound_locally(data):
+    """EXPERIMENT (WL_BIND_OWN_TYPEINFO=1): a library's GOT and PLT references to type info it defines itself
+    (_ZTI*, _ZTS*) bound to its own copy, as Bionic binds them (the library comes first in its own lookup).
+    OH's musl binds them to the first global library with the name, OH's libc++ among them, while the
+    library's catch tables may name its own copy directly."""
+    try:
+        return _own_exports_bound_locally(data, lambda name: name.startswith((b'_ZTI', b'_ZTS')))
+    except (ValueError, IndexError):
+        return None
+
+
 def loader_compat_bytes(path, bind_own=False):
     """The library's bytes as the board's loader needs them, or None if it needs no change, and
     which changes were made. bind_own applies own_exports_bound_locally."""
@@ -392,9 +408,12 @@ def loader_compat_bytes(path, bind_own=False):
     sanitized = init_array_sanitized(retagged if retagged is not None else path.read_bytes())
     bound = gl_pointers_bound_locally(sanitized or retagged or path.read_bytes())
     own = own_exports_bound_locally(bound or sanitized or retagged or path.read_bytes()) if bind_own else None
+    typeinfo = (own_typeinfo_bound_locally(own or bound or sanitized or retagged or path.read_bytes())
+                if os.environ.get('WL_BIND_OWN_TYPEINFO') == '1' else None)
     changes = ((['DT_ANDROID_RELR'] if retagged is not None else []) + (['null init/fini entries'] if sanitized else [])
-               + (['GL pointers bound locally'] if bound else []) + (['own exports bound locally'] if own else []))
-    return (own or bound or sanitized or retagged), changes
+               + (['GL pointers bound locally'] if bound else []) + (['own exports bound locally'] if own else [])
+               + (['own type info bound locally'] if typeinfo else []))
+    return (typeinfo or own or bound or sanitized or retagged), changes
 
 
 def main():
@@ -911,7 +930,8 @@ def main():
     for change, said in (('DT_ANDROID_RELR', 'DT_ANDROID_RELR retagged to DT_RELR'),
                          ('null init/fini entries', 'null init/fini entries dropped'),
                          ('GL pointers bound locally', 'GL-named pointer variables bound to the library'),
-                         ('own exports bound locally', 'exports the board also has bound to the library')):
+                         ('own exports bound locally', 'exports the board also has bound to the library'),
+                         ('own type info bound locally', 'EXPERIMENT own type info bound to the library')):
         names = sorted(n for n, c in compat_changes.items() if change in c)
         if names:
             print('LOADER_COMPAT %s:' % said, ' '.join(names), flush=True)
