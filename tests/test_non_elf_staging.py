@@ -1,4 +1,5 @@
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -14,6 +15,12 @@ class NonElfStagingTest(unittest.TestCase):
         data files shadow nothing and are staged as Android's installer extracts them."""
         board = {'libc++.so', 'libz.so', 'libOpenSLES.so'}
         self.assertEqual(probe_source_app.non_elf_not_staged(self.NOT_ELF, board), ['lib/arm64-v8a/libc++.so'])
+
+    def test_the_names_are_read_from_the_workspace(self):
+        with tempfile.TemporaryDirectory() as workspace:
+            self.assertIsNone(probe_source_app.board_library_names(Path(workspace)))
+            (Path(workspace) / 'board-library-names.txt').write_text('libc++.so\nlibz.so\n')
+            self.assertEqual(probe_source_app.board_library_names(Path(workspace)), {'libc++.so', 'libz.so'})
 
     def test_without_the_boards_names_none_is_staged(self):
         self.assertEqual(probe_source_app.non_elf_not_staged(self.NOT_ELF, None), self.NOT_ELF)

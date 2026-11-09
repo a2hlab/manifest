@@ -225,9 +225,6 @@ def gl_pointers_bound_locally(data):
 # the runtime's (<workspace>/board-global-exports.txt, made by tools/board_global_exports.py; main
 # points this at it). Without the file no library is changed.
 BOARD_GLOBAL_EXPORTS = None
-# The basenames of the board's libraries (<workspace>/board-library-names.txt, written beside the exports by
-# tools/board_global_exports.py; main points this at it).
-BOARD_LIBRARY_NAMES = None
 DT_PLTRELSZ, DT_PLTREL, DT_JMPREL = 2, 20, 23
 R_AARCH64_JUMP_SLOT = 1026
 # Names left to the board. The C and C++ runtime ABI: the rest of the app still binds these to the
@@ -244,11 +241,11 @@ def non_elf_not_staged(not_elf, board_names):
     return [name for name in not_elf if board_names is None or name.rsplit('/', 1)[-1] in board_names]
 
 
-def board_library_names():
-    """The basenames of the board's libraries, or None when the workspace has no list."""
-    if BOARD_LIBRARY_NAMES is None or not BOARD_LIBRARY_NAMES.exists():
-        return None
-    return set(BOARD_LIBRARY_NAMES.read_text().split())
+def board_library_names(workspace):
+    """The basenames of the board's libraries (<workspace>/board-library-names.txt, written beside the
+    exports by tools/board_global_exports.py), or None when the workspace has no list."""
+    names = workspace / 'board-library-names.txt'
+    return set(names.read_text().split()) if names.exists() else None
 
 
 def board_exports():
@@ -587,7 +584,7 @@ def main():
     # libc++.so). Without the workspace's list of board library names, none is staged.
     not_elf = sorted(name for name in app['native_libraries'] if name.endswith('.so')
                      and (args.app_input / name).read_bytes()[:4] != b'\x7fELF')
-    board_names = board_library_names()
+    board_names = board_library_names(args.workspace.resolve())
     shadowing = non_elf_not_staged(not_elf, board_names)
     for name in shadowing:
         del app_files[name]
@@ -962,8 +959,6 @@ def main():
     sdk = args.workspace.resolve() / 'toolchains/ohos-sdk/native'
     global BOARD_GLOBAL_EXPORTS
     BOARD_GLOBAL_EXPORTS = args.workspace.resolve() / 'board-global-exports.txt'
-    global BOARD_LIBRARY_NAMES
-    BOARD_LIBRARY_NAMES = args.workspace.resolve() / 'board-library-names.txt'
     helpers = {}
     for source_name in ['source_app_namespace.c', 'host_spawn.c', 'touchfwd.c']:
         source = args.westlake_source.resolve() / 'native' / source_name
