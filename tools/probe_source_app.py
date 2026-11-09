@@ -154,6 +154,49 @@ def init_array_sanitized(data):
     return bytes(data) if changed else None
 
 
+# DT_INIT and the tags legacy_init_staged renames DT_INIT_ARRAY{,SZ} to: OS-specific numbers no linker
+# defines, which OH's musl ignores and the bionic shim reads (westlake_run_dt_inits).
+DT_INIT = 12
+WL_DT_INIT_ARRAY, WL_DT_INIT_ARRAYSZ = 0x6FFFE0F0, 0x6FFFE0F1
+
+
+def legacy_init_staged(data):
+    """The library's bytes with DT_INIT_ARRAY{,SZ} renamed, when it has a DT_INIT as well, or None.
+
+    Bionic calls a library's DT_INIT and then its .init_array. OH's musl, built for arm64 with
+    NO_LEGACY_INITFINI, calls the array alone. A library that needs DT_INIT to have run first then
+    starts without it: iQIYI faulted inside libmsaoaidsec.so (DT_INIT and six array entries) as soon
+    as it was loaded. Renamed, the array is invisible to musl, which then runs no constructor of the
+    library, and the bionic shim calls DT_INIT and then the array after the load, in bionic's order.
+    musl still relocates the array's entries: relocations go by address, not by tag.
+    """
+    data = bytearray(data)
+    if data[:4] != b'\x7fELF' or data[4] != 2 or data[5] != 1:
+        return None
+    u64 = lambda at: int.from_bytes(data[at:at + 8], 'little')
+    phoff, count = u64(0x20), int.from_bytes(data[0x38:0x3a], 'little')
+    dynamic = None
+    for index in range(count):
+        header = phoff + index * 56
+        if int.from_bytes(data[header:header + 4], 'little') == 2:
+            dynamic = (u64(header + 8), u64(header + 32))
+    if dynamic is None:
+        return None
+    positions = {}
+    for position in range(dynamic[0], dynamic[0] + dynamic[1], 16):
+        tag = u64(position)
+        if tag == 0:
+            break
+        positions.setdefault(tag, position)
+    if DT_INIT not in positions or DT_INIT_ARRAY not in positions or DT_INIT_ARRAYSZ not in positions:
+        return None
+    if u64(positions[DT_INIT_ARRAYSZ] + 8) == 0 or WL_DT_INIT_ARRAY in positions:
+        return None
+    data[positions[DT_INIT_ARRAY]:positions[DT_INIT_ARRAY] + 8] = WL_DT_INIT_ARRAY.to_bytes(8, 'little')
+    data[positions[DT_INIT_ARRAYSZ]:positions[DT_INIT_ARRAYSZ] + 8] = WL_DT_INIT_ARRAYSZ.to_bytes(8, 'little')
+    return bytes(data)
+
+
 # Dynamic tags and relocation types gl_pointers_bound_locally reads.
 DT_STRTAB, DT_SYMTAB = 5, 6
 R_AARCH64_ABS64, R_AARCH64_GLOB_DAT, R_AARCH64_RELATIVE = 257, 1025, 1027
@@ -442,16 +485,24 @@ def _own_exports_bound_locally(data):
     return bytes(data) if changed else None
 
 
-def loader_compat_bytes(path, bind_own=False):
+# What a bionic shim build carries when it runs the init arrays legacy_init_staged renames.
+RUNS_RENAMED_INIT_ARRAYS = b'WESTLAKE_RUNS_RENAMED_INIT_ARRAYS=1'
+
+
+def loader_compat_bytes(path, bind_own=False, legacy_init=False):
     """The library's bytes as the board's loader needs them, or None if it needs no change, and
-    which changes were made. bind_own applies own_exports_bound_locally."""
+    which changes were made. bind_own applies own_exports_bound_locally; legacy_init applies
+    legacy_init_staged, which only a shim that runs the renamed arrays may be given: under any
+    other, the library's constructors would never run."""
     retagged = android_relr_retagged(path)
     sanitized = init_array_sanitized(retagged if retagged is not None else path.read_bytes())
     bound = gl_pointers_bound_locally(sanitized or retagged or path.read_bytes())
     own = own_exports_bound_locally(bound or sanitized or retagged or path.read_bytes()) if bind_own else None
+    legacy = legacy_init_staged(own or bound or sanitized or retagged or path.read_bytes()) if legacy_init else None
     changes = ((['DT_ANDROID_RELR'] if retagged is not None else []) + (['null init/fini entries'] if sanitized else [])
-               + (['GL pointers bound locally'] if bound else []) + (['own exports bound locally'] if own else []))
-    return (own or bound or sanitized or retagged), changes
+               + (['GL pointers bound locally'] if bound else []) + (['own exports bound locally'] if own else [])
+               + (['init array behind DT_INIT'] if legacy else []))
+    return (legacy or own or bound or sanitized or retagged), changes
 
 
 def main():
@@ -959,8 +1010,11 @@ def main():
     loader_compat, compat_changes = {}, {}
     libraries = sorted(n for n in app['native_libraries'] if n in app_files and n.endswith('.so'))
     bind_own = libraries_bound_locally({n: (args.app_input / n).read_bytes() for n in libraries})
+    shim_path = webview_paths.get('webview-t-lib/libwebview_bionic_shim.so')
+    runs_renamed_init_arrays = bool(shim_path) and RUNS_RENAMED_INIT_ARRAYS in Path(shim_path).read_bytes()
     for name in sorted(n for n in app['native_libraries'] if n in app_files):
-        fixed, changes = loader_compat_bytes(args.app_input / name, name in bind_own) if name.endswith('.so') else (None, [])
+        fixed, changes = (loader_compat_bytes(args.app_input / name, name in bind_own, runs_renamed_init_arrays)
+                          if name.endswith('.so') else (None, []))
         if fixed is not None:
             loader_compat[name] = fixed
             compat_changes[name] = changes
@@ -968,7 +1022,8 @@ def main():
     for change, said in (('DT_ANDROID_RELR', 'DT_ANDROID_RELR retagged to DT_RELR'),
                          ('null init/fini entries', 'null init/fini entries dropped'),
                          ('GL pointers bound locally', 'GL-named pointer variables bound to the library'),
-                         ('own exports bound locally', 'exports the board also has bound to the library')):
+                         ('own exports bound locally', 'exports the board also has bound to the library'),
+                         ('init array behind DT_INIT', 'init arrays renamed for the shim to run after DT_INIT')):
         names = sorted(n for n, c in compat_changes.items() if change in c)
         if names:
             print('LOADER_COMPAT %s:' % said, ' '.join(names), flush=True)
@@ -976,6 +1031,7 @@ def main():
     state['init_array_sanitized'] = sorted(n for n, c in compat_changes.items() if 'null init/fini entries' in c)
     state['gl_pointers_bound_locally'] = sorted(n for n, c in compat_changes.items() if 'GL pointers bound locally' in c)
     state['own_exports_bound_locally'] = sorted(n for n, c in compat_changes.items() if 'own exports bound locally' in c)
+    state['init_array_behind_dt_init'] = sorted(n for n, c in compat_changes.items() if 'init array behind DT_INIT' in c)
     cached = {}
     if args.input_cache:
         cached = {name: webview_paths[name] for name in webview_files}
