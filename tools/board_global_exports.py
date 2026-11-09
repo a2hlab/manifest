@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""board_global_exports.py <workspace> <board-libraries-dir> <runtime-index.json> -- write <workspace>/board-global-exports.txt.
+"""board_global_exports.py <workspace> <board-libraries-dir> <runtime-index.json> -- write <workspace>/board-global-exports.txt
+and <workspace>/board-library-names.txt.
 
 The names that libraries global in a launched app's process export: the board's system and vendor
 libraries a running app maps (copied from the board into <board-libraries-dir>, keeping their
@@ -40,6 +41,12 @@ def main():
     out = workspace / 'board-global-exports.txt'
     out.write_text(''.join(n + '\n' for n in sorted(names)))
     print(out, len(names))
+    # Every board library's basename, the C and C++ runtimes' included (StarMaker's non-ELF libc++.so
+    # shadowed the board's): an APK's non-ELF .so of such a name is not staged (probe_source_app.py).
+    library_names = sorted({path.name for path in board.rglob('*.so')})
+    out_names = workspace / 'board-library-names.txt'
+    out_names.write_text(''.join(n + '\n' for n in library_names))
+    print(out_names, len(library_names))
 
 
 if __name__ == '__main__':
