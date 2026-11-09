@@ -275,6 +275,18 @@ R_AARCH64_JUMP_SLOT = 1026
 # throw/catch, type identity). JNI entry points and jni.h's inline JNIEnv/JavaVM wrappers: every copy
 # is the same code, so binding them changes nothing.
 RUNTIME_ABI_NAME = re.compile(rb'__|_Unwind_|_Z(St|T[IS]|nw|na|dl|da)|JNI_On|_ZN7_(JNIEnv|JavaVM)')
+# Names the process's executable exports (<workspace>/executable-exports.txt, made by
+# tools/board_global_exports.py from appspawn-x). OH's loader shows an executable's symbols to every
+# linker namespace; Android shows app_process's to none. appspawn-x exports the type infos of six
+# standard exceptions (std::exception, logic_error, length_error, out_of_range, bad_alloc,
+# bad_array_new_length) as weak objects, so a library's references to its own copies of them reached
+# the executable's instead -- some of them: FNF's liblime.so throws std::invalid_argument, whose own type
+# info names the executable's logic_error as its base, and catches std::exception through its own
+# copy, so the catch never matched and the exception ended the app. These names are bound like the
+# board's, C++ runtime ABI included, since the executable's copy is the one every other reference in
+# the app reaches; jni.h's inline wrappers and _init/_fini are left alone (every copy is the same code).
+EXECUTABLE_EXPORTS = None
+EXECUTABLE_SKIPPED = re.compile(rb'JNI_On|_ZN7_(JNIEnv|JavaVM)|_init$|_fini$')
 _board_exports = None
 
 
@@ -284,6 +296,9 @@ def board_exports():
         exists = BOARD_GLOBAL_EXPORTS is not None and BOARD_GLOBAL_EXPORTS.exists()
         names = BOARD_GLOBAL_EXPORTS.read_bytes().split() if exists else []
         _board_exports = {name for name in names if not RUNTIME_ABI_NAME.match(name)}
+        if EXECUTABLE_EXPORTS is not None and EXECUTABLE_EXPORTS.exists():
+            _board_exports |= {name for name in EXECUTABLE_EXPORTS.read_bytes().split()
+                               if not EXECUTABLE_SKIPPED.match(name)}
     return _board_exports
 
 
@@ -986,8 +1001,9 @@ def main():
                  source_files=framework['files'], apk_sha256=app['apk_sha256'])
     save()
     sdk = args.workspace.resolve() / 'toolchains/ohos-sdk/native'
-    global BOARD_GLOBAL_EXPORTS
+    global BOARD_GLOBAL_EXPORTS, EXECUTABLE_EXPORTS
     BOARD_GLOBAL_EXPORTS = args.workspace.resolve() / 'board-global-exports.txt'
+    EXECUTABLE_EXPORTS = args.workspace.resolve() / 'executable-exports.txt'
     helpers = {}
     for source_name in ['source_app_namespace.c', 'host_spawn.c', 'touchfwd.c']:
         source = args.westlake_source.resolve() / 'native' / source_name
