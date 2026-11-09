@@ -1135,9 +1135,13 @@ def main():
         # ART's generic isolated namespace and let their DT_NEEDED graph select
         # the APK's own libc++_shared.so. The bionic boundary is preloaded in
         # that namespace; OH-native framework DSOs stay in the parent namespace.
+        # OH's own libraries that the runtime's reach are found where the parent namespace finds
+        # them: the platform SDK libraries and the chipset SDK libraries they need. Without
+        # chipset-sdk, OH's libimage_native.z.so loaded here and its libohosffmpeg.z.so did not,
+        # and Meta's Stella failed to load its accounts library.
         namespace_search = [logical + '/lib/arm64-v8a', logical + '/webview-t-lib',
                             logical, '/system/lib64/ndk', '/system/lib64/platformsdk',
-                            '/system/lib64/chipset-sdk-sp', '/system/lib64']
+                            '/system/lib64/chipset-sdk', '/system/lib64/chipset-sdk-sp', '/system/lib64']
         env.update({
             'WESTLAKE_ANDROID_NATIVE_TARGETS': ':'.join(native_targets),
             'WESTLAKE_ANDROID_NATIVE_SEARCH_PATH': ':'.join(namespace_search),
