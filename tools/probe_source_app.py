@@ -273,26 +273,83 @@ def _dynamic_symbol_names(data):
     return defined, imported
 
 
+def dynamic_needed(data):
+    """A library's DT_SONAME and DT_NEEDED names (from the section headers), or None for a library
+    without a usable dynamic section, as packers leave some."""
+    try:
+        return _dynamic_needed(data)
+    except (ValueError, IndexError):
+        return None
+
+
+def _dynamic_needed(data):
+    if data[:4] != b'\x7fELF' or data[4] != 2 or data[5] != 1:
+        return None
+    u64 = lambda at: int.from_bytes(data[at:at + 8], 'little')
+    shoff, size, count = u64(0x28), int.from_bytes(data[0x3a:0x3c], 'little'), int.from_bytes(data[0x3c:0x3e], 'little')
+    for index in range(count):
+        header = shoff + index * size
+        if header + 64 > len(data) or int.from_bytes(data[header + 4:header + 8], 'little') != 6:  # SHT_DYNAMIC
+            continue
+        link = shoff + int.from_bytes(data[header + 40:header + 44], 'little') * size
+        strtab, dynamic, dynsize = u64(link + 24), u64(header + 24), u64(header + 32)
+        soname, needed = None, set()
+        for entry in range(dynamic, dynamic + dynsize, 16):
+            tag, value = u64(entry), u64(entry + 8)
+            if tag == 0:
+                break
+            if tag in (1, 14):  # DT_NEEDED, DT_SONAME
+                name = bytes(data[strtab + value:data.index(0, strtab + value)])
+                if tag == 1:
+                    needed.add(name)
+                else:
+                    soname = name
+        return soname, needed
+    return None
+
+
 def libraries_bound_locally(libraries):
     """The libraries own_exports_bound_locally may change: those whose names the board also has are
-    not shared with another of the app's libraries.
+    not shared with another of the app's libraries that can reach them.
 
     The rewrite reaches only a library's references to itself; another library's references still
     reach the board's copy. Where an app splits one bundled library over several (OpenSSL's libssl
     and libcrypto), binding one half to itself would mix two versions where today the board's copy
-    serves both, so such libraries are left as they are."""
+    serves both, so such libraries are left as they are. A library shares a name only with the
+    libraries Bionic would let bind to it: one that has it in its DT_NEEDED closure. Billiards Hero's
+    libMyGame.so bundles zlib, and libcrashlytics-common.so imports zlib from the system's libz.so,
+    not from libMyGame: counted as shared, libMyGame was left alone, its deflateInit2_ called the
+    runtime's deflateReset with its own state, and the game faulted. A library whose dependencies
+    cannot be read counts as reaching every other one."""
     board = board_exports()
     symbols = {name: dynamic_symbol_names(data) for name, data in libraries.items()}
-    defining, importing = {}, {}
-    for defined, imported in symbols.values():
-        for name in defined & board:
-            defining[name] = defining.get(name, 0) + 1
-        for name in imported & board:
-            importing[name] = importing.get(name, 0) + 1
+    links, by_name = {}, {}
+    for name, data in libraries.items():
+        dynamic = dynamic_needed(data)
+        links[name] = None if dynamic is None else dynamic[1]
+        by_name[name.encode()] = name
+        if dynamic is not None and dynamic[0]:
+            by_name.setdefault(dynamic[0], name)
+
+    def reachable(library):
+        seen, todo = set(), [library]
+        while todo:
+            current = todo.pop()
+            needed = links.get(current)
+            targets = set(libraries) if needed is None else {by_name[n] for n in needed if n in by_name}
+            for target in targets - seen - {library}:
+                seen.add(target)
+                todo.append(target)
+        return seen
+
+    reach = {name: reachable(name) for name in libraries}
     chosen = set()
     for library, (defined, imported) in symbols.items():
-        shared = any(importing.get(name, 0) - (name in imported) for name in defined & board) \
-            or any(defining.get(name, 0) - (name in defined) for name in imported & board)
+        own = defined & board
+        shared = any(other != library and library in reach[other] and own & symbols[other][1]
+                     for other in libraries) \
+            or any(other != library and other in reach[library] and imported & board & symbols[other][0]
+                   for other in libraries)
         if not shared:
             chosen.add(library)
     return chosen
