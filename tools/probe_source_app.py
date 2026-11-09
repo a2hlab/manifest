@@ -545,6 +545,10 @@ def main():
                              "which is what views that ignore the synthesised click need")
     parser.add_argument('--android-native-target', action='append', default=[],
                         help='APK DSO basename to route through the isolated Android ABI namespace')
+    parser.add_argument('--android-native-all', action='store_true',
+                        help='route every APK DSO through the isolated Android ABI namespace: Android loads '
+                             "all of an app's libraries in the app's own namespace, where no platform C++ "
+                             'runtime or framework library comes ahead of the libraries the app ships')
     parser.add_argument('--android-native-net-target', action='append', default=[],
                         help='Android DSO basename requiring Bionic network-structure translation')
     parser.add_argument('--android-native-net-app-libraries', action='store_true',
@@ -654,6 +658,13 @@ def main():
     if any(not re.fullmatch(r'[a-zA-Z0-9_.+-]+\.so', name)
            or name not in available_native_basenames for name in native_targets):
         raise ValueError('Android namespace target is not a pinned APK DSO')
+    if args.android_native_all:
+        # Every staged library, as Android's class loader namespace holds them all. Outside it a library
+        # resolves against OH's global libraries first (OH's libc++, the runtime's framework libraries),
+        # before the libraries it needs and even before its own definitions.
+        not_staged = {Path(name).name for name in not_elf}
+        native_targets = sorted(name for name in available_native_basenames
+                                if re.fullmatch(r'[a-zA-Z0-9_.+-]+\.so', name) and name not in not_staged)
     webview_files = {}
     webview_paths = {}
     webview_lock_path = Path(__file__).resolve().parents[1] / 'parity27-runtime-inputs.lock.json'
