@@ -1139,7 +1139,9 @@ def main():
     # it extracts, and the app's ApplicationInfo names them there. Code that checks where it runs
     # reads that path, in its ApplicationInfo or in /proc/self/maps; /data/local/tmp/asx is a path
     # no installed app has. The same files, hard-linked, go in <runtime>/android-app, which
-    # source_app_namespace binds at the install path inside the app's namespace.
+    # source_app_namespace binds at the install path inside the app's namespace. As on Android, the
+    # files belong to the owner of /data/app (system), not to the app; the directory stays the
+    # app's until source_app_namespace has checked it, and that gives it to system too.
     install = None
     if args.android_install_path:
         token = lambda: base64.urlsafe_b64encode(os.urandom(16)).decode()
@@ -1151,7 +1153,8 @@ def main():
         links_script.write_text('set -e\ncd ' + runtime + '\nmkdir -p android-app/lib/arm64\n' +
                                 ''.join('ln -f ' + shlex.quote(a) + ' ' + shlex.quote('android-app/' + b) + '\n'
                                         for a, b in links) +
-                                'chown -R ' + str(uid) + ':' + str(uid) + ' android-app\n')
+                                'chown -R "$(stat -c %u:%g /data/app)" android-app\n' +
+                                'chown ' + str(uid) + ':' + str(uid) + ' android-app\n')
         send(links_script, stage + '/android-app.sh')
         shell('sh ' + stage + '/android-app.sh')
         state['android_install_path'] = install
