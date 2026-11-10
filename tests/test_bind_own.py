@@ -81,3 +81,34 @@ class BindOwnTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class ExecutableExportsTest(unittest.TestCase):
+    def setUp(self):
+        import tempfile
+        self.directory = Path(tempfile.mkdtemp())
+        (self.directory / 'board.txt').write_text('deflateReset\n_ZTISt9exception\n')
+        (self.directory / 'executable.txt').write_text(
+            '_ZTISt9exception\n_ZTSSt9exception\n_ZN7_JNIEnv9NewObjectEP7_jclassP10_jmethodIDz\n_init\n')
+        self.saved = (probe_source_app.BOARD_GLOBAL_EXPORTS, probe_source_app.EXECUTABLE_EXPORTS)
+        probe_source_app.BOARD_GLOBAL_EXPORTS = self.directory / 'board.txt'
+        probe_source_app.EXECUTABLE_EXPORTS = self.directory / 'executable.txt'
+        probe_source_app._board_exports = None
+
+    def tearDown(self):
+        probe_source_app.BOARD_GLOBAL_EXPORTS, probe_source_app.EXECUTABLE_EXPORTS = self.saved
+        probe_source_app._board_exports = None
+
+    def test_the_executables_type_infos_are_bound_and_its_jni_wrappers_are_not(self):
+        names = probe_source_app.board_exports()
+        # The board's copy of a C++ runtime name stays the board's; the executable's is bound.
+        self.assertIn(b'_ZTISt9exception', names)
+        self.assertIn(b'_ZTSSt9exception', names)
+        self.assertIn(b'deflateReset', names)
+        self.assertNotIn(b'_ZN7_JNIEnv9NewObjectEP7_jclassP10_jmethodIDz', names)
+        self.assertNotIn(b'_init', names)
+
+    def test_without_the_executable_list_runtime_names_stay_with_the_board(self):
+        probe_source_app.EXECUTABLE_EXPORTS = self.directory / 'absent.txt'
+        probe_source_app._board_exports = None
+        self.assertNotIn(b'_ZTISt9exception', probe_source_app.board_exports())

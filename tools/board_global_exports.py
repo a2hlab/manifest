@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
-"""board_global_exports.py <workspace> <board-libraries-dir> <runtime-index.json> -- write <workspace>/board-global-exports.txt
-and <workspace>/board-library-names.txt.
+"""board_global_exports.py <workspace> <board-libraries-dir> <runtime-index.json> [<executable>] -- write
+<workspace>/board-global-exports.txt and <workspace>/board-library-names.txt, and with <executable> (the
+runtime's appspawn-x) also <workspace>/executable-exports.txt: every name it exports, which OH's loader shows
+to every namespace.
 
 The names that libraries global in a launched app's process export: the board's system and vendor
 libraries a running app maps (copied from the board into <board-libraries-dir>, keeping their
@@ -47,6 +49,11 @@ def main():
     out_names = workspace / 'board-library-names.txt'
     out_names.write_text(''.join(n + '\n' for n in library_names))
     print(out_names, len(library_names))
+    if len(sys.argv) > 4:
+        executable = exports(readelf, Path(sys.argv[4]))
+        out = workspace / 'executable-exports.txt'
+        out.write_text(''.join(n + '\n' for n in sorted(executable)))
+        print(out, len(executable))
 
 
 if __name__ == '__main__':
