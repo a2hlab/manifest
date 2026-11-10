@@ -558,12 +558,15 @@ def main():
     parser.add_argument('--runtime-env', action='append', default=[], metavar='KEY=VALUE',
                         help='extra environment for the spawned child, e.g. APPSPAWNX_VERBOSE_CLASS=1 '
                              "to trace class loading. Repeatable; it cannot replace a key the launcher sets")
-    parser.add_argument('--touch-mode', choices=['stream', 'tap'], default='stream',
+    parser.add_argument('--touch-mode', choices=['stream', 'tap', 'off'], default='stream',
                         help="how the forwarder replays a physical gesture: 'stream' sends the "
                              "motion stream plus a hit-tested click for a stationary tap (drags "
                              "scroll, and a row whose click is stranded behind the main-queue "
                              "barrier still fires); 'tap' sends one press/release per gesture, "
-                             "which is what views that ignore the synthesised click need")
+                             "which is what views that ignore the synthesised click need; 'off' "
+                             "forwards nothing from the board's screen (the tap mailbox is still made, "
+                             "for taps a script sends), so a touch on the board cannot disturb an "
+                             "unattended run")
     parser.add_argument('--android-native-target', action='append', default=[],
                         help='APK DSO basename to route through the isolated Android ABI namespace')
     parser.add_argument('--android-native-net-target', action='append', default=[],
@@ -1347,12 +1350,15 @@ def main():
         print('SOURCE_APP_EXITED before its touch channel was made', flush=True)
         return
     shell('P=$(pidof touchfwd 2>/dev/null); [ -n "$P" ] && kill $P 2>/dev/null; exit 0')
-    stream_env = ('WL_TOUCH_STREAM=1 WL_TOUCH_STREAM_CLICK=1 '
-                  if args.touch_mode == 'stream' else '')
-    shell('setsid env ' + stream_env + 'WL_TOUCH_COORD_GAIN=1 ' +
-          stage + '/touchfwd ' + touch_device + ' </dev/null >' + stage +
-          '/touchfwd.log 2>&1 & exit 0')
-    time.sleep(1)
+    # Off: no forwarder. A real touch on the board reached the app under test in unattended rounds
+    # and closed it (four apps' "self-finish" were a press on a toolbar's back or close button).
+    if args.touch_mode != 'off':
+        stream_env = ('WL_TOUCH_STREAM=1 WL_TOUCH_STREAM_CLICK=1 '
+                      if args.touch_mode == 'stream' else '')
+        shell('setsid env ' + stream_env + 'WL_TOUCH_COORD_GAIN=1 ' +
+              stage + '/touchfwd ' + touch_device + ' </dev/null >' + stage +
+              '/touchfwd.log 2>&1 & exit 0')
+        time.sleep(1)
     state['touch'] = {'device': touch_device, 'channel': box, 'mode': args.touch_mode,
                       'forwarder_pid': shell('pidof touchfwd; exit 0').strip()}
     save()
