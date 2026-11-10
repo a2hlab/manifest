@@ -1128,6 +1128,16 @@ def main():
     # file, sock_file and fifo_file, so the app's tree is relabelled; lnk_file stays denied there
     # as well (neverallow for hap_domain).
     shell('chcon -R u:object_r:data_app_el2_file:s0 ' + runtime + '/app-data/' + package)
+    # The app's shared storage, /data/data/<package>/external (the primary volume Westlake publishes),
+    # keeps the host's appdat label instead. data_app_el2_file denies hap domains dir reparent, so a
+    # directory could not move to another parent: Unity downloads an asset bundle into
+    # UnityCache/Temp/<hash> and moves it under UnityCache/Shared/<bundle>/, and Monopoly Go's
+    # moves all failed ("Unable to move cache file ... error code - 9"), so its bundles never landed
+    # and it stayed black. appdat grants reparent but no fifo_file, which shared storage on Android
+    # (FUSE) does not support either; Realm's pipe stays in the app's private files.
+    shell('mkdir -p ' + runtime + '/app-data/' + package + '/external && chown ' + str(uid) + ':' + str(uid) +
+          ' ' + runtime + '/app-data/' + package + '/external && chcon -R u:object_r:appdat:s0 ' +
+          runtime + '/app-data/' + package + '/external')
     for name in helpers:
         send(output / name, stage + '/' + name)
     shell('chmod 755 ' + stage + '/source_app_namespace ' + stage + '/host_spawn')
