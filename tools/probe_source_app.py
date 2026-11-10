@@ -290,6 +290,19 @@ EXECUTABLE_SKIPPED = re.compile(rb'JNI_On|_ZN7_(JNIEnv|JavaVM)|_init$|_fini$')
 _board_exports = None
 
 
+def non_elf_not_staged(not_elf, board_names):
+    """The APK's non-ELF .so files that are not staged: those with a board library's name, which they
+    would shadow in the app's library directory; all of them when the board's names are unknown."""
+    return [name for name in not_elf if board_names is None or name.rsplit('/', 1)[-1] in board_names]
+
+
+def board_library_names(workspace):
+    """The basenames of the board's libraries (<workspace>/board-library-names.txt, written beside the
+    exports by tools/board_global_exports.py), or None when the workspace has no list."""
+    names = workspace / 'board-library-names.txt'
+    return set(names.read_text().split()) if names.exists() else None
+
+
 def board_exports():
     global _board_exports
     if _board_exports is None:
@@ -627,15 +640,24 @@ def main():
         path = args.app_input.resolve() / split_sources.get(name, name)
         if not path.resolve().is_relative_to(args.app_input.resolve()) or digest(path) != entry['sha256']:
             raise ValueError('Changed original APK input: ' + name)
-    # A .so in the APK that is not ELF (StarMaker's libc++.so is an ld script, INPUT(...)) is not
-    # staged: no loader can map it, and in the app's library directory it shadowed the library of
-    # that name an OH dependency needs (OH's libOpenSLES.so -> libc++.so).
+    # A .so in the APK that is not ELF is staged unchanged. Android's installer extracts every
+    # lib/<abi>/lib*.so whatever it holds, and apps keep data there that they read from their library
+    # directory: Alibaba's SecurityGuard (libsgmain*.so), UC's 7z WebView core, Alipay's bundles,
+    # Dingxiang's risk data, compressed engine libraries. Without them, UC's Application failed
+    # ("INVALID_COMPRESSED_LIB") and Taobao's SecurityGuard service was null. One whose name a board
+    # library has is not staged: in the app's library directory it shadowed that library for OH's own
+    # loads (StarMaker's libc++.so is an ld script, INPUT(...), and OH's libOpenSLES.so needs
+    # libc++.so). Without the workspace's list of board library names, none is staged.
     not_elf = sorted(name for name in app['native_libraries'] if name.endswith('.so')
                      and (args.app_input / name).read_bytes()[:4] != b'\x7fELF')
-    for name in not_elf:
+    board_names = board_library_names(args.workspace.resolve())
+    shadowing = non_elf_not_staged(not_elf, board_names)
+    for name in shadowing:
         del app_files[name]
-    if not_elf:
-        print('NOT_STAGED non-ELF libraries:', ' '.join(not_elf), flush=True)
+    if shadowing:
+        print('NOT_STAGED non-ELF libraries:', ' '.join(shadowing), flush=True)
+    if len(shadowing) < len(not_elf):
+        print('STAGED non-ELF files unchanged:', ' '.join(n for n in not_elf if n not in shadowing), flush=True)
     trace = None
     if args.trace_runtime_lock:
         trace = json.loads(args.trace_runtime_lock.read_text())
@@ -1024,13 +1046,13 @@ def main():
     # Libraries the board's loader would mishandle travel fixed (see android_relr_retagged and
     # init_array_sanitized); the device copy is checked against the fixed bytes.
     loader_compat, compat_changes = {}, {}
-    libraries = sorted(n for n in app['native_libraries'] if n in app_files and n.endswith('.so'))
+    libraries = sorted(n for n in app['native_libraries'] if n in app_files and n.endswith('.so') and n not in not_elf)
     bind_own = libraries_bound_locally({n: (args.app_input / n).read_bytes() for n in libraries})
     shim_path = webview_paths.get('webview-t-lib/libwebview_bionic_shim.so')
     runs_renamed_init_arrays = bool(shim_path) and RUNS_RENAMED_INIT_ARRAYS in Path(shim_path).read_bytes()
     for name in sorted(n for n in app['native_libraries'] if n in app_files):
         fixed, changes = (loader_compat_bytes(args.app_input / name, name in bind_own, runs_renamed_init_arrays)
-                          if name.endswith('.so') else (None, []))
+                          if name.endswith('.so') and name not in not_elf else (None, []))
         if fixed is not None:
             loader_compat[name] = fixed
             compat_changes[name] = changes
