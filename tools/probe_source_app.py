@@ -5,9 +5,11 @@ The installed OH window host is a recorded platform prerequisite. A successful
 spawn is diagnostic progress, not acceptance of the app's UI or source closure.
 """
 import argparse
+import base64
 import hashlib
 import io
 import json
+import os
 from pathlib import Path
 import re
 import shlex
@@ -549,6 +551,10 @@ def main():
                              'an artifacts.json naming their APKs by sha256')
     parser.add_argument('--source-webview-build', type=Path,
                         help='Verified source WebView build overriding its APK and engine DSO')
+    parser.add_argument('--android-install-path', action='store_true',
+                        help='stage the app\'s own files (base.apk, split_<name>.apk, lib/arm64) at an Android '
+                             'install path, /data/app/~~<id>==/<package>-<id>==, inside its namespace, and name '
+                             'them there in its ApplicationInfo, instead of under /data/local/tmp/asx')
     parser.add_argument('--runtime-env', action='append', default=[], metavar='KEY=VALUE',
                         help='extra environment for the spawned child, e.g. APPSPAWNX_VERBOSE_CLASS=1 '
                              "to trace class loading. Repeatable; it cannot replace a key the launcher sets")
@@ -1128,6 +1134,28 @@ def main():
     # file, sock_file and fifo_file, so the app's tree is relabelled; lnk_file stays denied there
     # as well (neverallow for hap_domain).
     shell('chcon -R u:object_r:data_app_el2_file:s0 ' + runtime + '/app-data/' + package)
+    # Android's package manager installs an app at /data/app/~~<id>==/<package>-<id>== (each id 16
+    # random bytes in URL-safe base64): base.apk, split_<name>.apk and lib/<isa> for the libraries
+    # it extracts, and the app's ApplicationInfo names them there. Code that checks where it runs
+    # reads that path, in its ApplicationInfo or in /proc/self/maps; /data/local/tmp/asx is a path
+    # no installed app has. The same files, hard-linked, go in <runtime>/android-app, which
+    # source_app_namespace binds at the install path inside the app's namespace.
+    install = None
+    if args.android_install_path:
+        token = lambda: base64.urlsafe_b64encode(os.urandom(16)).decode()
+        install = '/data/app/~~' + token() + '/' + package + '-' + token()
+        app_libraries = sorted(n for n in app_files if n.startswith('lib/arm64-v8a/'))
+        links = [(base_apk, 'base.apk')] + [(n, n) for n in sorted(split_apks)] + \
+                [(n, 'lib/arm64/' + n.rsplit('/', 1)[1]) for n in app_libraries]
+        links_script = output / 'android-app.sh'
+        links_script.write_text('set -e\ncd ' + runtime + '\nmkdir -p android-app/lib/arm64\n' +
+                                ''.join('ln -f ' + shlex.quote(a) + ' ' + shlex.quote('android-app/' + b) + '\n'
+                                        for a, b in links) +
+                                'chown -R ' + str(uid) + ':' + str(uid) + ' android-app\n')
+        send(links_script, stage + '/android-app.sh')
+        shell('sh ' + stage + '/android-app.sh')
+        state['android_install_path'] = install
+        save()
     for name in helpers:
         send(output / name, stage + '/' + name)
     shell('chmod 755 ' + stage + '/source_app_namespace ' + stage + '/host_spawn')
@@ -1143,9 +1171,10 @@ def main():
     request.write_bytes(struct.pack('<5I256s', 0xef201234, 0, 276 + len(body), 0x41324801, 4,
                                     args.host.encode()) + body)
     send(request, stage + '/request.bin')
+    app_lib_dir = install + '/lib/arm64' if install else logical + '/lib/arm64-v8a'
     search = [logical, '/system/lib64', '/system/lib64/platformsdk', '/system/lib64/chipset-sdk',
               '/system/lib64/chipset-sdk-sp', '/system/lib64/ndk', '/vendor/lib64/chipsetsdk',
-              '/vendor/lib64/hw', '/vendor/lib64', logical + '/lib/arm64-v8a']
+              '/vendor/lib64/hw', '/vendor/lib64', app_lib_dir]
     if webview_files:
         search.append(logical + '/webview-t-lib')
     env = {'WESTLAKE_RUNTIME_ROOT': logical, 'WESTLAKE_RUNTIME_REAL_ROOT': runtime, 'LD_LIBRARY_PATH': ':'.join(search),
@@ -1153,9 +1182,10 @@ def main():
            'WESTLAKE_SOURCE_PACKAGE': '1',
            'WESTLAKE_TRACE_NATIVE_LOADER': '1',
            'ASX_RUNTIME_OWNER_UID': str(uid), 'ASX_LAUNCH_PKG': package,
-           'ASX_NATIVE_LIB_DIR': logical + '/lib/arm64-v8a',
-           'ASX_APK_PATH': logical + '/' + base_apk,
-           'ASX_SPLIT_APK_PATHS': ':'.join(logical + '/' + name for name in sorted(split_apks)),
+           'ASX_NATIVE_LIB_DIR': app_lib_dir,
+           'ASX_APK_PATH': install + '/base.apk' if install else logical + '/' + base_apk,
+           'ASX_SPLIT_APK_PATHS': ':'.join((install if install else logical) + '/' + name
+                                           for name in sorted(split_apks)),
            'ASX_LAUNCH_ACTIVITY': launch_activity,
            'ASX_DIRECT_LAUNCH': '1', 'ASX_KEEP_THEME': '1', 'ASX_DIAG_THROWABLE': '1',
            'ASX_WEBVIEW_DATA_DIR': '/data/data/' + package + '/app_webview',
@@ -1211,7 +1241,7 @@ def main():
         # them: the platform SDK libraries and the chipset SDK libraries they need. Without
         # chipset-sdk, OH's libimage_native.z.so loaded here and its libohosffmpeg.z.so did not,
         # and Meta's Stella failed to load its accounts library.
-        namespace_search = [logical + '/lib/arm64-v8a', logical + '/webview-t-lib',
+        namespace_search = [app_lib_dir, logical + '/webview-t-lib',
                             logical, '/system/lib64/ndk', '/system/lib64/platformsdk',
                             '/system/lib64/chipset-sdk', '/system/lib64/chipset-sdk-sp', '/system/lib64']
         env.update({
@@ -1253,7 +1283,8 @@ def main():
                       'exec ' + logical + '/appspawn-x --socket-name ' + socket_name + '\n')
     send(script, runtime + '/run.sh')
     shell('chown ' + str(uid) + ':' + str(uid) + ' ' + runtime + '/run.sh')
-    command = ('nohup ' + stage + '/source_app_namespace ' + runtime + ' ' + str(uid) +
+    command = ((('WESTLAKE_ANDROID_APP_DIR=' + install + ' ') if install else '') +
+               'nohup ' + stage + '/source_app_namespace ' + runtime + ' ' + str(uid) +
                ' /system/bin/sh ' + logical + '/run.sh >' + stage + '/parent.log 2>&1 </dev/null & echo $!')
     state['parent'] = int(shell(command).strip())
     save()
