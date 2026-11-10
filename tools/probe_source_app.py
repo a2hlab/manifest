@@ -1139,9 +1139,13 @@ def main():
     # it extracts, and the app's ApplicationInfo names them there. Code that checks where it runs
     # reads that path, in its ApplicationInfo or in /proc/self/maps; /data/local/tmp/asx is a path
     # no installed app has. The same files, hard-linked, go in <runtime>/android-app, which
-    # source_app_namespace binds at the install path inside the app's namespace. As on Android, the
-    # files belong to the owner of /data/app (system), not to the app; the directory stays the
-    # app's until source_app_namespace has checked it, and that gives it to system too.
+    # source_app_namespace binds at the install path inside the app's namespace. As on Android 15,
+    # the files belong to the owner of /data/app (system), not to the app, the APKs 0644 and the
+    # libraries 0755; the directory stays the app's until source_app_namespace has checked it, and
+    # that gives it to system too. lib/arm64 itself stays the app's: the shim writes a loadable copy
+    # of a library the app unpacks into its own storage there, first on the app namespace's search
+    # path, and loads it by name (Instagram's libstartup.so, which its other libraries need by name).
+    # A system-owned lib/arm64 refused the copy, and Instagram stopped at "libstartup.so not found".
     install = None
     if args.android_install_path:
         token = lambda: base64.urlsafe_b64encode(os.urandom(16)).decode()
@@ -1154,6 +1158,9 @@ def main():
                                 ''.join('ln -f ' + shlex.quote(a) + ' ' + shlex.quote('android-app/' + b) + '\n'
                                         for a, b in links) +
                                 'chown -R "$(stat -c %u:%g /data/app)" android-app\n' +
+                                'chmod 644 android-app/*.apk\n' +
+                                ('chmod 755 android-app/lib/arm64/*\n' if app_libraries else '') +
+                                'chown ' + str(uid) + ':' + str(uid) + ' android-app/lib/arm64\n' +
                                 'chown ' + str(uid) + ':' + str(uid) + ' android-app\n')
         send(links_script, stage + '/android-app.sh')
         shell('sh ' + stage + '/android-app.sh')
