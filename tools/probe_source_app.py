@@ -555,6 +555,10 @@ def main():
                         help='stage the app\'s own files (base.apk, split_<name>.apk, lib/arm64) at an Android '
                              'install path, /data/app/~~<id>==/<package>-<id>==, inside its namespace, and name '
                              'them there in its ApplicationInfo, instead of under /data/local/tmp/asx')
+    parser.add_argument('--carried-app-data', metavar='BOARD_DIR',
+                        help='board directory holding app data that outlives a stage (harness PERSIST_DATA): '
+                             'if BOARD_DIR/<package> exists, it becomes this launch\'s data directory, as '
+                             '/data/data/<package> survives an update on Android, with its code_cache cleared')
     parser.add_argument('--runtime-env', action='append', default=[], metavar='KEY=VALUE',
                         help='extra environment for the spawned child, e.g. APPSPAWNX_VERBOSE_CLASS=1 '
                              "to trace class loading. Repeatable; it cannot replace a key the launcher sets")
@@ -1123,6 +1127,19 @@ def main():
             if cached:
                 drop_from_cache({name: webview_paths[name] for name in webview_files})
             raise ValueError('Candidate WebView files changed')
+    # Data that outlives the stage (the shared Play services process's account, check-in and guests):
+    # the directory the harness moved out of the previous stage moves in as the app's data directory,
+    # on the same filesystem, before the ownership and labels below are applied to it. Android keeps
+    # /data/data/<package> across an update and clears its code_cache, whose compiled code belongs to
+    # the old system image; so does this.
+    if args.carried_app_data:
+        carried = args.carried_app_data.rstrip('/') + '/' + package
+        target = runtime + '/app-data/' + package
+        moved = shell('if [ -d ' + shlex.quote(carried) + ' ]; then mkdir -p ' + runtime + '/app-data && rm -rf ' +
+                      shlex.quote(target) + ' && mv ' + shlex.quote(carried) + ' ' + shlex.quote(target) +
+                      ' && rm -rf ' + shlex.quote(target + '/code_cache') + ' && echo __A2H_CARRIED__; fi')
+        state['carried_app_data'] = carried if '__A2H_CARRIED__' in moved else None
+        save()
     shell('mkdir -p ' + runtime + '/private-tmp/asx ' + runtime + '/data/dalvik-cache/arm64 ' +
           runtime + '/app-data/' + package + '/code_cache/art-volatile ' +
           runtime + '/app-data/' + package + '/app_webview ' + runtime + '/app-data/' + args.host +
