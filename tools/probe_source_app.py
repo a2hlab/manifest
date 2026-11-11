@@ -543,6 +543,9 @@ def main():
                              "the framework stage's copies in this launch only (a fix tried before a deploy)")
     parser.add_argument('--runtime-library', action='append', default=[], metavar='NAME',
                         help='library of --runtime-library-build to use in place of the staged one. Repeatable')
+    parser.add_argument('--runtime-library-add', action='append', default=[], metavar='NAME',
+                        help='library of --runtime-library-build the framework stage lacks, added to the runtime '
+                             'directory (on the boot library path) in this launch only. Repeatable')
     parser.add_argument('--input-cache', action='store_true',
                         help='stage the WebView files, runtime library overrides, guest packages and the app\'s own files from a cache on the '
                              'board, keyed by content, and send only the files it lacks (' + INPUT_CACHE + ')')
@@ -745,17 +748,25 @@ def main():
                 'sha256': entry['sha256'], 'provenance': 'source-built'}
             webview_paths['webview-t-lib/' + name] = path
     runtime_overrides = {}
-    if args.runtime_library:
+    if args.runtime_library or args.runtime_library_add:
         if not args.runtime_library_build:
-            raise ValueError('--runtime-library needs --runtime-library-build')
+            raise ValueError('--runtime-library and --runtime-library-add need --runtime-library-build')
         build_root = args.runtime_library_build.resolve()
         build_report = json.loads((build_root / 'artifacts.json').read_text())
-        for name in args.runtime_library:
+        if set(args.runtime_library) & set(args.runtime_library_add):
+            raise ValueError('A runtime library is either replaced or added, not both')
+        for name in args.runtime_library + args.runtime_library_add:
             entry = build_report['artifacts'].get(name)
             path = build_root / 'lib' / name
-            if (entry is None or name not in framework['files'] or build_report.get('errors')
+            # A replacement must name a staged library and an addition must not, so neither can
+            # silently become the other.
+            staged = name in framework['files']
+            if (entry is None or staged != (name in args.runtime_library) or build_report.get('errors')
+                    or not re.fullmatch(r'lib[a-zA-Z0-9_.+-]+\.so', name)
                     or digest(path) != entry['sha256']):
-                raise ValueError('Runtime library override is not a built, staged library: ' + name)
+                raise ValueError('Runtime library ' + ('override is not a built, staged library: '
+                                                       if name in args.runtime_library else
+                                                       'addition is not a built library the stage lacks: ') + name)
             runtime_overrides[name] = path
     # Guest packages (adapter.packagemanager.GuestPackages): staged as guests/<name>.apk and named in
     # ASX_GUEST_APKS, which is also what makes the package manager report them.
@@ -1112,6 +1123,7 @@ def main():
                 drop_from_cache(runtime_overrides)
             raise ValueError('Runtime library override did not land')
         state['runtime_overrides'] = {n: digest(p) for n, p in runtime_overrides.items()}
+        state['runtime_additions'] = sorted(args.runtime_library_add)
         save()
     if guest_paths:
         expected_guests = {runtime + '/' + n: digest(p) for n, p in guest_paths.items()}
