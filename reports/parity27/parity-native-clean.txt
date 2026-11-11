@@ -1,2 +1,2 @@
 VERIFIED_TOOLCHAIN ohos-sdk 2b7a28540a12f9484c6c5e86fa155e2b47a217d4a627939dfefe7c1935488f4f
-SOURCE_BUILD_PASS native /home/dspfac/a2hlab-parity-clean-20260905/out/native
+SOURCE_BUILD_PASS native ~/a2hlab-parity-clean-20260905/out/native

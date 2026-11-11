@@ -28,7 +28,7 @@ def main():
     for source in (pinyin / 'resources').rglob('*'):
         if source.is_file():
             copy(source, WESTLAKE / 'apps/pinyin/resources' / source.relative_to(pinyin / 'resources'))
-    upstream = Path('/home/dspfac/bridge-build-arm64/gap-repair-20260904/pinyin/upstream')
+    upstream = (Path.home() / 'bridge-build-arm64/gap-repair-20260904/pinyin/upstream')
     revision = subprocess.check_output(['git', '-C', str(upstream), 'rev-parse', 'HEAD'], text=True).strip()
     assert revision == 'cd27df54150e5d96d86757dc7315ead69d469d9b'
     assert not subprocess.check_output(['git', '-C', str(upstream), 'status', '--porcelain'])

@@ -1320,13 +1320,13 @@
       "full_stack_accepted": false,
       "passed": false,
       "prerequisites": {
-        "/home/dspfac/a2hlab/source-closure/verify/out/appspawn-attempt3": "b95526b12ad574aaac16cac3d4ed3c77eac2c86a1c90ed861932e1386336f3d8",
-        "/home/dspfac/a2hlab/source-closure/verify/out/art-source-framework-boundary/runtime": "53628146668edddc866d76966e664e1470a83661a5a0df5aad02c59667d54568",
-        "/home/dspfac/a2hlab/source-closure/verify/out/framework-boot-attempt3": "dca32f8ce554e994fc31bfd023f74768c13f56c00e7104ab07372ef9bb3a192a",
-        "/home/dspfac/a2hlab/source-closure/verify/out/framework-res-ap3a": "beb871d077db20cc94f48761731624b010617aecccf3ca33f8a24d7c12926c9c",
-        "/home/dspfac/a2hlab/source-closure/verify/out/framework-runtime-attempt5": "d269a4b7a10708bfc1384fd72e7b141789929888abf3ce13b89a1da724a6f5d7",
-        "/home/dspfac/a2hlab/source-closure/verify/out/native-platform-attempt5": "c9a023dec2f520a97c1c08502edd0eb2be7d242553a07893ae2218b424d36a8f",
-        "/home/dspfac/a2hlab/source-closure/verify/out/runtime-data-attempt1": "819f971454782256e67e45a878bc11cc602a8bc4768befd8102d7b4f38405033"
+        "~/a2hlab/source-closure/verify/out/appspawn-attempt3": "b95526b12ad574aaac16cac3d4ed3c77eac2c86a1c90ed861932e1386336f3d8",
+        "~/a2hlab/source-closure/verify/out/art-source-framework-boundary/runtime": "53628146668edddc866d76966e664e1470a83661a5a0df5aad02c59667d54568",
+        "~/a2hlab/source-closure/verify/out/framework-boot-attempt3": "dca32f8ce554e994fc31bfd023f74768c13f56c00e7104ab07372ef9bb3a192a",
+        "~/a2hlab/source-closure/verify/out/framework-res-ap3a": "beb871d077db20cc94f48761731624b010617aecccf3ca33f8a24d7c12926c9c",
+        "~/a2hlab/source-closure/verify/out/framework-runtime-attempt5": "d269a4b7a10708bfc1384fd72e7b141789929888abf3ce13b89a1da724a6f5d7",
+        "~/a2hlab/source-closure/verify/out/native-platform-attempt5": "c9a023dec2f520a97c1c08502edd0eb2be7d242553a07893ae2218b424d36a8f",
+        "~/a2hlab/source-closure/verify/out/runtime-data-attempt1": "819f971454782256e67e45a878bc11cc602a8bc4768befd8102d7b4f38405033"
       },
       "scope": "source Appspawn framework initialization; not Toutiao UX acceptance",
       "stage": "/data/local/tmp/a2hlab-framework-da82483c3e4a4e0db4eae947c5a4dae3"
@@ -2553,13 +2553,13 @@
       "ndk_graphics_contracts_requested": true,
       "passed": true,
       "prerequisites": {
-        "/home/dspfac/a2hlab/source-closure/verify/out/appspawn-attempt11": "97586f2f8e4544fbe2bf78767c63a0277c67e698cb52931907d7dec5c3dd89d9",
-        "/home/dspfac/a2hlab/source-closure/verify/out/framework-boot-attempt4": "6978e753313cbbd6197cff14c16a84aeff2d700a8ab919ca06496d394306195e",
-        "/home/dspfac/a2hlab/source-closure/verify/out/framework-native15-runtime-attempt12": "11bcb5070b0905a0ce418a260864ef36a4a6af4735b9ffa1f23110597f5817c0",
-        "/home/dspfac/a2hlab/source-closure/verify/out/framework-res-ap3a": "beb871d077db20cc94f48761731624b010617aecccf3ca33f8a24d7c12926c9c",
-        "/home/dspfac/a2hlab/source-closure/verify/out/framework-runtime-attempt6": "0221b72d356dd5da4a64596df40abbe45950a4a4ff69b735618d78f73a16b2ca",
-        "/home/dspfac/a2hlab/source-closure/verify/out/native-platform15-attempt21": "00a7c0924cf9150c57714bbc975ae1f13697510fd87a9f9e2ba7121dac390f9b",
-        "/home/dspfac/a2hlab/source-closure/verify/out/runtime-data-attempt2": "122d6aed966997df49e70a576d7d28fc74e1cbba1d53a0624097d296971dce34"
+        "~/a2hlab/source-closure/verify/out/appspawn-attempt11": "97586f2f8e4544fbe2bf78767c63a0277c67e698cb52931907d7dec5c3dd89d9",
+        "~/a2hlab/source-closure/verify/out/framework-boot-attempt4": "6978e753313cbbd6197cff14c16a84aeff2d700a8ab919ca06496d394306195e",
+        "~/a2hlab/source-closure/verify/out/framework-native15-runtime-attempt12": "11bcb5070b0905a0ce418a260864ef36a4a6af4735b9ffa1f23110597f5817c0",
+        "~/a2hlab/source-closure/verify/out/framework-res-ap3a": "beb871d077db20cc94f48761731624b010617aecccf3ca33f8a24d7c12926c9c",
+        "~/a2hlab/source-closure/verify/out/framework-runtime-attempt6": "0221b72d356dd5da4a64596df40abbe45950a4a4ff69b735618d78f73a16b2ca",
+        "~/a2hlab/source-closure/verify/out/native-platform15-attempt21": "00a7c0924cf9150c57714bbc975ae1f13697510fd87a9f9e2ba7121dac390f9b",
+        "~/a2hlab/source-closure/verify/out/runtime-data-attempt2": "122d6aed966997df49e70a576d7d28fc74e1cbba1d53a0624097d296971dce34"
       },
       "scope": "source Appspawn framework initialization; not Toutiao UX acceptance",
       "stage": "/data/local/tmp/a2hlab-framework-673bf7752f904801a562662287a3fb60"
@@ -2716,23 +2716,23 @@
     },
     "source_gpu_render": {
       "command": [
-        "/home/dspfac/a2hlab/source-closure/verify/toolchains/ohos-sdk/native/llvm/bin/clang++",
+        "~/a2hlab/source-closure/verify/toolchains/ohos-sdk/native/llvm/bin/clang++",
         "--target=aarch64-linux-ohos",
-        "--sysroot=/home/dspfac/a2hlab/source-closure/verify/toolchains/ohos-sdk/native/sysroot",
+        "--sysroot=~/a2hlab/source-closure/verify/toolchains/ohos-sdk/native/sysroot",
         "-nostdlib++",
         "-pie",
         "-fuse-ld=lld",
         "-Wl,-z,defs",
         "-Wl,--allow-shlib-undefined",
-        "/home/dspfac/a2hlab/source-closure/verify/out/skia15-probe-objects1/objects/westlake_native_skia_gpu_probe.cpp.o",
+        "~/a2hlab/source-closure/verify/out/skia15-probe-objects1/objects/westlake_native_skia_gpu_probe.cpp.o",
         "-Wl,--as-needed",
-        "/home/dspfac/a2hlab/source-closure/verify/out/native-platform15-attempt21/libhwui.so",
-        "/home/dspfac/a2hlab/source-closure/verify/out/native-link-imports-attempt27/libEGL.so",
-        "/home/dspfac/a2hlab/source-closure/verify/out/native-link-imports-attempt27/libGLES_mali.z.so",
-        "/home/dspfac/a2hlab/source-closure/verify/out/native-link-imports-attempt27/libc++.so",
-        "/home/dspfac/a2hlab/source-closure/verify/out/native-link-imports-attempt27/libc.so",
+        "~/a2hlab/source-closure/verify/out/native-platform15-attempt21/libhwui.so",
+        "~/a2hlab/source-closure/verify/out/native-link-imports-attempt27/libEGL.so",
+        "~/a2hlab/source-closure/verify/out/native-link-imports-attempt27/libGLES_mali.z.so",
+        "~/a2hlab/source-closure/verify/out/native-link-imports-attempt27/libc++.so",
+        "~/a2hlab/source-closure/verify/out/native-link-imports-attempt27/libc.so",
         "-o",
-        "/home/dspfac/a2hlab/source-closure/verify/out/skia15-gpu-probe2/platform_load_probe"
+        "~/a2hlab/source-closure/verify/out/skia15-gpu-probe2/platform_load_probe"
       ],
       "device_command": "LD_LIBRARY_PATH=/data/local/tmp/a2hlab-native-d726963fb27b4cbb94888e6ac58ae455:/system/lib64:/system/lib64/platformsdk:/system/lib64/chipset-sdk:/system/lib64/chipset-sdk-sp:/system/lib64/ndk:/vendor/lib64/chipsetsdk:/vendor/lib64/hw:/vendor/lib64 timeout 30 /data/local/tmp/a2hlab-native-d726963fb27b4cbb94888e6ac58ae455/platform_load_probe libandroid.so libandroidfw.so libart.so libbase.so libbinder_ndk.so libcutils.so libexpat.so libft2.so libgif.so libharfbuzz_ng.so libhwui.so libicu_jni.so libicui18n.so libicuuc.so libjavacrypto.so libjnigraphics.so libjpeg.so liblog.so libminikin.so libnativehelper.so liboh_adapter_bridge.so liboh_android_runtime.so liboh_hwui_shim.so libpng.so libstatspull.so libstatssocket.so libultrahdr.so libutils.so libwebp.so libwestlake_binder.so libwestlake_runtime_boundary.so libwestlake_securec.so libwestlake_webp.so libwuffs.so libz.so libziparchive.so",
       "device_log_sha256": "fc92fc235d22ca77360ec75fa6033510435ac41fa3f77b1fbc9cb74c83df6ae5",
@@ -2824,9 +2824,9 @@
       "graphics_buffer_format": null,
       "passed": true,
       "prerequisites": {
-        "/home/dspfac/a2hlab/source-closure/verify/out/framework-native15-runtime-attempt12": "11bcb5070b0905a0ce418a260864ef36a4a6af4735b9ffa1f23110597f5817c0",
-        "/home/dspfac/a2hlab/source-closure/verify/out/native-platform15-attempt21": "00a7c0924cf9150c57714bbc975ae1f13697510fd87a9f9e2ba7121dac390f9b",
-        "/home/dspfac/a2hlab/source-closure/verify/out/skia15-gpu-probe2": "cba6c4c597c7e69ba74d59eec3d00ea0aceeb7e0216c74267231709d92e8f58e"
+        "~/a2hlab/source-closure/verify/out/framework-native15-runtime-attempt12": "11bcb5070b0905a0ce418a260864ef36a4a6af4735b9ffa1f23110597f5817c0",
+        "~/a2hlab/source-closure/verify/out/native-platform15-attempt21": "00a7c0924cf9150c57714bbc975ae1f13697510fd87a9f9e2ba7121dac390f9b",
+        "~/a2hlab/source-closure/verify/out/skia15-gpu-probe2": "cba6c4c597c7e69ba74d59eec3d00ea0aceeb7e0216c74267231709d92e8f58e"
       },
       "probe_source_sha256": "1a2537f09b53e6d7348dc31268a283899c5c5573ba5853d0cfe15f4e0978de7a",
       "scope": "source Ganesh GPU draw and readback",

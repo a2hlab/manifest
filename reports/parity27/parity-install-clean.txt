@@ -1,2 +1,2 @@
-TOOLCHAIN_READY /home/dspfac/a2hlab-parity-clean-20260905/toolchains/ohos-sdk 2b7a28540a12f9484c6c5e86fa155e2b47a217d4a627939dfefe7c1935488f4f
-TOOLCHAIN_READY /home/dspfac/a2hlab-parity-clean-20260905/toolchains/clang-15 b422f5d6d5288e331509fa5f5ec80251578df0439152f16193d097a32790c130
+TOOLCHAIN_READY ~/a2hlab-parity-clean-20260905/toolchains/ohos-sdk 2b7a28540a12f9484c6c5e86fa155e2b47a217d4a627939dfefe7c1935488f4f
+TOOLCHAIN_READY ~/a2hlab-parity-clean-20260905/toolchains/clang-15 b422f5d6d5288e331509fa5f5ec80251578df0439152f16193d097a32790c130
