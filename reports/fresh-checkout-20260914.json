@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "scope": "fresh remote checkout under /home/dspfac/a2hlab with no reuse of prior source or build outputs",
+  "scope": "fresh remote checkout under ~/a2hlab with no reuse of prior source or build outputs",
   "manifest": {
     "branch": "source-stack-closure",
     "revision": "cf383e3cd7d3f9b63149b6c1f3d06fc7635307f6",

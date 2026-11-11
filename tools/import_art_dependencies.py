@@ -8,7 +8,7 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT.parent / 'art-build'
-OLD_AOSP = Path('/home/dspfac/aosp-android-11')
+OLD_AOSP = (Path.home() / 'aosp-android-11')
 
 
 def git(repo, *args):
@@ -39,8 +39,8 @@ def main():
                      'revision': '814cc9385f8f8eaba6f4bfd1d723160c2132c76e'})
     (ROOT / 'upstream.lock.json').write_text(json.dumps({'schema': 1, 'projects': projects}, indent=2) + '\n')
     origins = [
-        (Path('/home/dspfac/android-to-openharmony-migration/dalvik-port/ohos-sysroot/usr/include'), OUTPUT / 'legacy-sysroot/usr/include'),
-        (Path('/home/dspfac/openharmony/third_party/curl/include'), OUTPUT / 'third_party/curl/include'),
+        ((Path.home() / 'android-to-openharmony-migration/dalvik-port/ohos-sysroot/usr/include'), OUTPUT / 'legacy-sysroot/usr/include'),
+        ((Path.home() / 'openharmony/third_party/curl/include'), OUTPUT / 'third_party/curl/include'),
     ]
     provenance = []
     for source, target in origins:
@@ -58,8 +58,8 @@ def main():
                                'sha256': hashlib.sha256(dst.read_bytes()).hexdigest(),
                                'original': str(src)})
     licenses = [
-        ('/home/dspfac/openharmony/third_party/musl/COPYRIGHT', 'legacy-sysroot/MUSL-COPYRIGHT'),
-        ('/home/dspfac/openharmony/third_party/curl/COPYING', 'third_party/curl/COPYING'),
+        (str(Path.home() / 'openharmony/third_party/musl/COPYRIGHT'), 'legacy-sysroot/MUSL-COPYRIGHT'),
+        (str(Path.home() / 'openharmony/third_party/curl/COPYING'), 'third_party/curl/COPYING'),
     ]
     for source, name in licenses:
         shutil.copyfile(source, OUTPUT / name)

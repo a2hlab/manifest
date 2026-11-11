@@ -7,7 +7,7 @@ import shutil
 import subprocess
 
 ROOT = Path(__file__).resolve().parents[2]
-OLD = Path('/home/dspfac/openharmony/.codex-worktrees/toutiao-repro-20260905')
+OLD = (Path.home() / 'openharmony/.codex-worktrees/toutiao-repro-20260905')
 PACKAGE = OLD / 'repro/toutiao-20260904'
 
 
@@ -31,7 +31,7 @@ def main():
             raise RuntimeError('Refusing to overwrite: ' + str(target))
         shutil.copy2(source, target)
         provenance[str(target.relative_to(ROOT))] = {'sha256': row['sha256'], 'checkpoint_path': row['stored']}
-    art = Path('/home/dspfac/art-latest')
+    art = (Path.home() / 'art-latest')
     selected = subprocess.check_output(['git', '-C', str(art), 'ls-files', '-z',
         'Makefile', 'Makefile.ohos-arm64', 'stubs', 'patches', 'ziparchive_hide.map']).decode().split('\0')
     for name in filter(None, selected):
@@ -47,9 +47,9 @@ def main():
         provenance[str(target.relative_to(ROOT))] = {'sha256': digest(data), 'checkpoint_commit': '556ed5f88c329f618e367772a5dd0086489389fc', 'checkpoint_path': name}
     target = ROOT / 'westlake/third_party/jni/jni.h'
     target.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copy2('/home/dspfac/bridge-build/aosp/libnativehelper/include_jni/jni.h', target)
-    shutil.copy2('/home/dspfac/android-to-openharmony-migration/LICENSE', ROOT / 'westlake/LICENSE')
-    shutil.copy2('/home/dspfac/aosp-art-15/NOTICE', ROOT / 'art-build/NOTICE')
+    shutil.copy2(str(Path.home() / 'bridge-build/aosp/libnativehelper/include_jni/jni.h'), target)
+    shutil.copy2(str(Path.home() / 'android-to-openharmony-migration/LICENSE'), ROOT / 'westlake/LICENSE')
+    shutil.copy2(str(Path.home() / 'aosp-art-15/NOTICE'), ROOT / 'art-build/NOTICE')
     (ROOT / 'manifest/import-provenance.json').write_text(json.dumps(provenance, sort_keys=True, indent=2) + '\n')
     print('IMPORTED_SOURCE_FILES', len(provenance))
 
