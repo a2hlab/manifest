@@ -1223,6 +1223,10 @@ def main():
     request.write_bytes(struct.pack('<5I256s', 0xef201234, 0, 276 + len(body), 0x41324801, 4,
                                     args.host.encode()) + body)
     send(request, stage + '/request.bin')
+    # The app asks its own appspawn-x for its other processes (westlake ADR-0002): the same request,
+    # under another process name. The runtime is the app's /data/local/tmp/asx.
+    send(request, runtime + '/spawn-request.bin')
+    shell('chown ' + str(uid) + ':' + str(uid) + ' ' + runtime + '/spawn-request.bin')
     app_lib_dir = install + '/lib/arm64' if install else logical + '/lib/arm64-v8a'
     search = [logical, '/system/lib64', '/system/lib64/platformsdk', '/system/lib64/chipset-sdk',
               '/system/lib64/chipset-sdk-sp', '/system/lib64/ndk', '/vendor/lib64/chipsetsdk',
@@ -1231,6 +1235,8 @@ def main():
         search.append(logical + '/webview-t-lib')
     env = {'WESTLAKE_RUNTIME_ROOT': logical, 'WESTLAKE_RUNTIME_REAL_ROOT': runtime, 'LD_LIBRARY_PATH': ':'.join(search),
            'WESTLAKE_SOURCE_LOG_STDERR': '1',
+           # Where the app's own appspawn-x listens, and the request that spawned the app (ADR-0002).
+           'WESTLAKE_SPAWN_SOCKET': socket, 'WESTLAKE_SPAWN_REQUEST': logical + '/spawn-request.bin',
            'WESTLAKE_SOURCE_PACKAGE': '1',
            'WESTLAKE_TRACE_NATIVE_LOADER': '1',
            'ASX_RUNTIME_OWNER_UID': str(uid), 'ASX_LAUNCH_PKG': package,
