@@ -950,8 +950,9 @@ def main():
             bundle.unlink()
         directories = sorted({str(Path(runtime + '/' + name).parent) for name in files})
         commands = ['mkdir -p ' + shlex.quote(directory) for directory in directories]
-        commands += ['cp ' + INPUT_CACHE + '/' + sums[name] + ' ' + shlex.quote(runtime + '/' + name)
-                     for name in sorted(files)]
+        # rm first: the runtime's framework files are links to the shared copy, and cp would write into it.
+        commands += ['rm -f ' + shlex.quote(runtime + '/' + name) + ' && cp ' + INPUT_CACHE + '/' + sums[name] + ' '
+                     + shlex.quote(runtime + '/' + name) for name in sorted(files)]
         commands += ['touch ' + INPUT_CACHE + '/' + value for value in sorted(set(sums.values()))]
         # In pieces: Alipay's hundreds of libraries made one command of 70 KB, which hdc shell drops
         # without an answer.
@@ -1040,7 +1041,30 @@ def main():
     state['helpers'] = helpers
     save()
     shell('mkdir ' + stage + ' ' + runtime)
-    shell('cp -a ' + previous + '/. ' + runtime + '/')
+    # The framework stage is the same for every launch of a build. Each launch used to copy it (about 1 GB)
+    # into its runtime, so no two apps shared a page of the boot image, the framework or the runtime's
+    # libraries: on the board the Play services process shared 6 MB with anything else. Now one copy per
+    # host and stage, root's and read-only, is hard-linked into each runtime, as Android's apps share one
+    # /system. It lives beside the runtimes: the kernel links only within one encryption policy, and
+    # /data/local/tmp's is not the host's data directory's.
+    files_dir = '/data/app/el2/100/base/' + args.host + '/files'
+    shared = files_dir + '/a2hlab-shared-' + Path(previous).name
+    if 'READY' not in shell('[ -f ' + shared + '/.a2hlab-shared-ready ] && echo READY; true'):
+        part = shared + '.part-' + suffix
+        shell('rm -rf ' + part + ' && mkdir ' + part + ' && cp -a ' + previous + '/. ' + part + '/')
+        copied = {part + '/' + n: e['sha256'] for n, e in framework['files'].items()}
+        if hashes(sorted(copied)) != copied:
+            shell('rm -rf ' + part)
+            raise ValueError('Shared framework copy changed')
+        shell('touch ' + part + '/.a2hlab-shared-ready && chown -R 0:0 ' + part + ' && chmod -R a-w ' + part +
+              ' && (mv -T ' + part + ' ' + shared + ' 2>/dev/null || rm -rf ' + part + ')')
+        # Copies for stages the board no longer has (a deploy keeps two) go; a runtime still linked to one
+        # keeps its files.
+        shell('for b in ' + files_dir + '/a2hlab-shared-*; do [ -d "$b" ] || continue; case "$b" in *.part-*) continue;; esac; '
+              's=/data/local/tmp/${b##*/a2hlab-shared-}; [ -d "$s" ] || rm -rf "$b"; done; true')
+    state['shared_framework'] = shared
+    save()
+    shell('cp -al ' + shared + '/. ' + runtime + '/ && rm -f ' + runtime + '/.a2hlab-shared-ready')
     copied = {runtime + '/' + n: e['sha256'] for n, e in framework['files'].items()}
     if hashes(sorted(copied)) != copied:
         raise ValueError('Candidate source copy changed')
@@ -1108,6 +1132,11 @@ def main():
     # archive with no members "Not tar".
     if tar.members:
         send(archive, stage + '/' + archive.name)
+        # A file of the launch that the framework stage also has (a runtime override) replaces the link to
+        # the shared copy instead of writing into it.
+        linked = sorted(set(m.name for m in tar.members) & set(framework['files']))
+        for start in range(0, len(linked), 24):
+            shell('cd ' + runtime + ' && rm -f ' + ' '.join(shlex.quote(n) for n in linked[start:start + 24]))
         shell('tar -xf ' + stage + '/' + archive.name + ' -C ' + runtime)
     if cached:
         state['input_cache'] = stage_from_cache(cached, runtime, stage)
@@ -1156,8 +1185,8 @@ def main():
           runtime + '/app-data/' + package + '/code_cache/art-volatile ' +
           runtime + '/app-data/' + package + '/app_webview ' + runtime + '/app-data/' + args.host +
           (' ' + runtime + '/webview-t-data' if webview_files else '') +
-          ' && chown -R ' + str(uid) + ':' + str(uid) + ' ' + runtime +
-          ' && chmod 755 ' + runtime + '/appspawn-x')
+          ' && find ' + runtime + ' \\( -type d -o -links 1 \\) -exec chown ' + str(uid) + ':' + str(uid) + ' {} +' +
+          ' && chmod a+rx ' + runtime + '/appspawn-x')
     # The app's data directory is <runtime>/app-data/<package>: source_app_namespace mounts
     # <runtime>/app-data over /data/data inside the child, so the host's /data/data is never seen.
     # It inherits the host bundle's appdat label, and OpenHarmony denies app processes fifo_file
