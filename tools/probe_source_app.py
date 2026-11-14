@@ -62,6 +62,8 @@ def android_relr_retagged(path):
 # enters the cache only after its hash checks, and every copy taken from it is checked again in the
 # runtime, as a sent file is. Entries unused for three days are dropped.
 INPUT_CACHE = '/data/local/tmp/a2hlab-input-cache'
+# Where Westlake's PackageInstaller sessions publish an installed package (InstalledPackages.DIR).
+INSTALLED_APPS = '/data/service/el1/public/appspawnx/installed'
 INPUT_CACHE_DAYS = 3
 INPUT_CACHE_MAX_KB = 40 * 1024 * 1024
 
@@ -558,6 +560,12 @@ def main():
                         help='stage the app\'s own files (base.apk, split_<name>.apk, lib/arm64) at an Android '
                              'install path, /data/app/~~<id>==/<package>-<id>==, inside its namespace, and name '
                              'them there in its ApplicationInfo, instead of under /data/local/tmp/asx')
+    parser.add_argument('--installed-app-dir', metavar='BOARD_DIR',
+                        help='board directory where an installer published the app (Westlake\'s package '
+                             'sessions publish to ' + INSTALLED_APPS + '/<package>): the app runs from the '
+                             'base.apk and split_<name>.apk there, which must be the pinned APKs and all the '
+                             'APKs there are, and its ApplicationInfo names them there. They are not sent or '
+                             'copied; the native libraries are staged as for every launch')
     parser.add_argument('--carried-app-data', metavar='BOARD_DIR',
                         help='board directory holding app data that outlives a stage (harness PERSIST_DATA): '
                              'if BOARD_DIR/<package> exists, it becomes this launch\'s data directory, as '
@@ -643,6 +651,20 @@ def main():
         path = args.app_input.resolve() / split_sources.get(name, name)
         if not path.resolve().is_relative_to(args.app_input.resolve()) or digest(path) != entry['sha256']:
             raise ValueError('Changed original APK input: ' + name)
+    # An app an installer published on the board (--installed-app-dir) runs from its installed APKs,
+    # as an installed app does on Android: they stay where the installer put them, and the pinned
+    # input only says what they must be. Its libraries still come from the input, where they were
+    # extracted and made loadable (OH's loader reads no library inside an APK).
+    installed_dir, installed_apks = None, {}
+    if args.installed_app_dir:
+        installed_dir = args.installed_app_dir.rstrip('/')
+        if not re.fullmatch(r'/[a-zA-Z0-9_./-]+', installed_dir) or '..' in installed_dir.split('/'):
+            raise ValueError('--installed-app-dir wants an absolute board path')
+        if args.android_install_path or args.app_oat_dir:
+            raise ValueError('--installed-app-dir runs the app from its installed APKs, '
+                             'without --android-install-path or --app-oat-dir')
+        installed_apks = {base_apk: installed_dir + '/base.apk',
+                          **{name: installed_dir + '/' + name for name in split_apks}}
     # A .so in the APK that is not ELF (StarMaker's libc++.so is an ld script, INPUT(...)) is not
     # staged: no loader can map it, and in the app's library directory it shadowed the library of
     # that name an OH dependency needs (OH's libOpenSLES.so -> libc++.so).
@@ -982,6 +1004,18 @@ def main():
     expected = {previous + '/' + n: e['sha256'] for n, e in framework['files'].items()}
     if hashes(sorted(expected)) != expected:
         raise ValueError('Previously staged source outputs changed')
+    if installed_dir:
+        # Every APK of the installed package is one the input pins: Android loads all of a package's
+        # installed splits, and a split the input lacks would go unnoticed here.
+        present = sorted(n for n in shell('ls -1 ' + shlex.quote(installed_dir)).split() if n.endswith('.apk'))
+        if present != sorted(Path(p).name for p in installed_apks.values()):
+            raise ValueError('Installed APKs are not the pinned set: ' + ' '.join(present))
+        wanted = {installed_apks[n]: app_files[n]['sha256'] for n in installed_apks}
+        if hashes(sorted(wanted)) != wanted:
+            raise ValueError('Installed APKs differ from the pinned ones')
+        state['installed_app_dir'] = installed_dir
+        state['installed_apks'] = {Path(p).name: app_files[n]['sha256'] for n, p in installed_apks.items()}
+        save()
     raw = shell('bm dump -n ' + args.host)
     host = json.loads(raw[raw.index('{'):])['applicationInfo']
     uid = host['uid']
@@ -1105,10 +1139,10 @@ def main():
         # round relaunches the apps of earlier rounds, and over a slow link the app was most of what
         # went over the air each time.
         cached.update({name: args.app_input / split_sources.get(name, name)
-                       for name in app_files if name not in loader_compat})
+                       for name in app_files if name not in loader_compat and name not in installed_apks})
     with tarfile.open(archive, 'w') as tar:
         for name in sorted(app_files):
-            if name in cached:
+            if name in cached or name in installed_apks:
                 continue
             if name in loader_compat:
                 info = tar.gettarinfo(args.app_input / name, arcname=name)
@@ -1141,7 +1175,7 @@ def main():
     if cached:
         state['input_cache'] = stage_from_cache(cached, runtime, stage)
         save()
-    expected_app = {runtime + '/' + n: e['sha256'] for n, e in app_files.items()}
+    expected_app = {runtime + '/' + n: e['sha256'] for n, e in app_files.items() if n not in installed_apks}
     expected_app.update({runtime + '/' + n: digest(p) for n, p in oat_files.items()})
     if hashes(sorted(expected_app)) != expected_app:
         raise ValueError('Candidate original APK files changed')
@@ -1270,8 +1304,10 @@ def main():
            'WESTLAKE_TRACE_NATIVE_LOADER': '1',
            'ASX_RUNTIME_OWNER_UID': str(uid), 'ASX_LAUNCH_PKG': package,
            'ASX_NATIVE_LIB_DIR': app_lib_dir,
-           'ASX_APK_PATH': install + '/base.apk' if install else logical + '/' + base_apk,
-           'ASX_SPLIT_APK_PATHS': ':'.join((install if install else logical) + '/' + name
+           'ASX_APK_PATH': (installed_apks[base_apk] if installed_dir else
+                            install + '/base.apk' if install else logical + '/' + base_apk),
+           'ASX_SPLIT_APK_PATHS': ':'.join(installed_apks[name] if installed_dir else
+                                           (install if install else logical) + '/' + name
                                            for name in sorted(split_apks)),
            'ASX_LAUNCH_ACTIVITY': launch_activity,
            'ASX_DIRECT_LAUNCH': '1', 'ASX_KEEP_THEME': '1', 'ASX_DIAG_THROWABLE': '1',
