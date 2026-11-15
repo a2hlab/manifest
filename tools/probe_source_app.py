@@ -1546,6 +1546,8 @@ def main():
         (output / 'parent.log').write_text(log)
         raise RuntimeError('Source parent did not listen; see ' + str(output / 'parent.log'))
     if args.managed:
+        # A running instance would take the start itself, and OH would ask for no process: OH stops it first.
+        shell('aa force-stop ' + args.host + '; exit 0')
         # The bundle's abilities are named after the app's activities: its main ability is the launcher activity.
         result = shell('aa start -b ' + args.host + ' -a ' + launch_activity)
         state['managed_start'] = result.strip()
