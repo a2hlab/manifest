@@ -562,7 +562,7 @@ def main():
     parser.add_argument('--runtime-env', action='append', default=[], metavar='KEY=VALUE',
                         help='extra environment for the spawned child, e.g. APPSPAWNX_VERBOSE_CLASS=1 '
                              "to trace class loading. Repeatable; it cannot replace a key the launcher sets")
-    parser.add_argument('--touch-mode', choices=['stream', 'tap', 'off'], default='stream',
+    parser.add_argument('--touch-mode', choices=['stream', 'tap', 'off', 'isolated'], default='stream',
                         help="how the forwarder replays a physical gesture: 'stream' sends the "
                              "motion stream plus a hit-tested click for a stationary tap (drags "
                              "scroll, and a row whose click is stranded behind the main-queue "
@@ -570,7 +570,8 @@ def main():
                              "which is what views that ignore the synthesised click need; 'off' "
                              "forwards nothing from the board's screen (the tap mailbox is still made, "
                              "for taps a script sends), so a touch on the board cannot disturb an "
-                             "unattended run")
+                             "unattended run; 'isolated' creates only a private per-process "
+                             "mailbox and leaves the global tap link and existing forwarders alone")
     parser.add_argument('--android-native-target', action='append', default=[],
                         help='APK DSO basename to route through the isolated Android ABI namespace')
     parser.add_argument('--android-native-net-target', action='append', default=[],
@@ -1211,6 +1212,11 @@ def main():
     request.write_bytes(struct.pack('<5I256s', 0xef201234, 0, 276 + len(body), 0x41324801, 4,
                                     args.host.encode()) + body)
     send(request, stage + '/request.bin')
+    # Child processes need the same authorized request inside their private
+    # mount namespace; the staging directory is hidden there.
+    send(request, runtime + '/spawn-request.bin')
+    shell('chown ' + str(uid) + ':' + str(uid) + ' ' + runtime + '/spawn-request.bin && '
+          'chmod 600 ' + runtime + '/spawn-request.bin')
     app_lib_dir = install + '/lib/arm64' if install else logical + '/lib/arm64-v8a'
     search = [logical, '/system/lib64', '/system/lib64/platformsdk', '/system/lib64/chipset-sdk',
               '/system/lib64/chipset-sdk-sp', '/system/lib64/ndk', '/vendor/lib64/chipsetsdk',
@@ -1218,6 +1224,8 @@ def main():
     if webview_files:
         search.append(logical + '/webview-t-lib')
     env = {'WESTLAKE_RUNTIME_ROOT': logical, 'WESTLAKE_RUNTIME_REAL_ROOT': runtime, 'LD_LIBRARY_PATH': ':'.join(search),
+           'WESTLAKE_SPAWN_SOCKET': socket,
+           'WESTLAKE_SPAWN_REQUEST': logical + '/spawn-request.bin',
            'WESTLAKE_SOURCE_LOG_STDERR': '1',
            'WESTLAKE_SOURCE_PACKAGE': '1',
            'WESTLAKE_TRACE_NATIVE_LOADER': '1',
@@ -1363,7 +1371,8 @@ def main():
     shell('chmod 755 ' + stage + '/touchfwd')
     try:
         shell(': > ' + box + '; chown ' + str(uid) + ':' + str(uid) + ' ' + box +
-              '; chmod 666 ' + box + '; ln -sf ' + box + ' /data/local/tmp/noice_tap')
+              '; chmod ' + ('600' if args.touch_mode == 'isolated' else '666') + ' ' + box + ('' if args.touch_mode == 'isolated' else
+              '; ln -sf ' + box + ' /data/local/tmp/noice_tap'))
     except RuntimeError:
         # A child that ends within a second of its spawn (an app whose anti-tamper library crashes
         # it at once) is gone before its mailbox can be made in its namespace. The spawn is still
@@ -1376,10 +1385,11 @@ def main():
               flush=True)
         print('SOURCE_APP_EXITED before its touch channel was made', flush=True)
         return
-    shell('P=$(pidof touchfwd 2>/dev/null); [ -n "$P" ] && kill $P 2>/dev/null; exit 0')
+    if args.touch_mode != 'isolated':
+        shell('P=$(pidof touchfwd 2>/dev/null); [ -n "$P" ] && kill $P 2>/dev/null; exit 0')
     # Off: no forwarder. A real touch on the board reached the app under test in unattended rounds
     # and closed it (four apps' "self-finish" were a press on a toolbar's back or close button).
-    if args.touch_mode != 'off':
+    if args.touch_mode not in ('off', 'isolated'):
         stream_env = ('WL_TOUCH_STREAM=1 WL_TOUCH_STREAM_CLICK=1 '
                       if args.touch_mode == 'stream' else '')
         shell('setsid env ' + stream_env + 'WL_TOUCH_COORD_GAIN=1 ' +
@@ -1387,7 +1397,7 @@ def main():
               '/touchfwd.log 2>&1 & exit 0')
         time.sleep(1)
     state['touch'] = {'device': touch_device, 'channel': box, 'mode': args.touch_mode,
-                      'forwarder_pid': shell('pidof touchfwd; exit 0').strip()}
+                      'forwarder_pid': '' if args.touch_mode == 'isolated' else shell('pidof touchfwd; exit 0').strip()}
     save()
     print('SOURCE_APP_SPAWNED', json.dumps({k: state[k] for k in ['parent', 'child', 'stage', 'runtime']}), flush=True)
 
