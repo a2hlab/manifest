@@ -1513,6 +1513,8 @@ def main():
         for key in ['ASX_DIRECT_LAUNCH', 'WL_PARENT_ID', 'WL_SUB_WINDOW', 'WL_SESSION_BUNDLE',
                     'WL_ABILITY_OWNED_WINDOWS']:
             env.pop(key, None)
+        # One OH ability hosts the app's Android task: the app's own activities start in its process.
+        env['WESTLAKE_MANAGED_LAUNCH'] = '1'
         # OH moves a managed app to the background, and ART then compacts a CMS heap (a moving collection)
         # unless the background collector is non-moving too; the app faulted on objects left in the
         # protected old space. A --runtime-env setting replaces this one.
