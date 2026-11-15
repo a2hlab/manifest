@@ -1516,6 +1516,11 @@ def main():
         # the spawner answers OH's application manager for this bundle only.
         env.update({'WESTLAKE_SPAWN_SOCKET_CONTEXT': 'u:r:appspawn:s0',
                     'WESTLAKE_SPAWN_MANAGED_BUNDLE': args.host})
+        # OH moves a managed app to the background, and ART then compacts a CMS heap (a moving collection)
+        # unless the background collector is non-moving too; the app faulted on objects left in the
+        # protected old space. A --runtime-env setting replaces this one.
+        if not any(item.startswith('APPSPAWNX_BACKGROUND_GC=') for item in args.runtime_env):
+            env['APPSPAWNX_BACKGROUND_GC'] = 'CMS'
         state['managed'] = True
         save()
     script = output / 'run.sh'
