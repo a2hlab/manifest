@@ -1,0 +1,1001 @@
+rank,package,title,kind,download_record,static_scan,gap_map,latest_rung,latest_stage,latest_round,latest_record_mtime_utc,latest_time_basis,latest_blocker_category,best_ever_rung,exploration_round,exploration_status,exploration_screens
+1,com.spotify.music,Spotify: Music and Podcasts,app,True,True,True,5,drawing,l8f,2026-11-14T05:17:15.596099+00:00,stderr-mtime,,5,l5c,survived-not-mostly-empty,5
+2,com.ss.android.ugc.aweme.mobile,抖音 Douyin,app,True,True,True,4,view,l8f,2026-11-14T05:19:28.360865+00:00,stderr-mtime,native-crash,5,hkf4a,ended-other,1
+3,ai.x.grok,Grok AI,app,True,True,True,5,drawing,l8f,2026-11-14T05:20:34.493223+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,2
+4,com.twitter.android,X,app,True,True,True,5,drawing,l8f,2026-11-14T05:21:42.897563+00:00,stderr-mtime,,5,l2n,survived-not-mostly-empty,1
+5,com.xingin.xhs,rednote,app,True,True,True,5,drawing,l5t,2026-11-09T23:31:16.044419+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,2
+6,com.instagram.android,Instagram,app,True,True,True,5,drawing,chk6,2026-11-11T09:16:44.747430+00:00,stderr-mtime,,5,l5c,survived-not-mostly-empty,9
+7,com.facebook.katana,Facebook,app,True,True,True,5,drawing,l6y,2026-11-11T05:58:28.042993+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,6
+8,com.dramawave.app,DramaWave - Dramas & Reels,app,True,True,True,5,drawing,s251b,2026-11-14T16:17:15.108973+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,9
+9,com.whatsapp,WhatsApp Messenger,app,True,True,True,5,drawing,l8f,2026-11-14T05:23:55.210287+00:00,stderr-mtime,,5,l5c,survived-not-mostly-empty,6
+10,com.netshort.abroad,NetShort - Popular Dramas & TV,app,True,True,True,1,runtime-init,l7d,2026-11-11T10:16:49.607476+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+11,com.lemon.lvoverseas,CapCut: Photo & Video Editor,app,True,True,True,5,drawing,l5v,2026-11-09T20:03:45.168333+00:00,stderr-mtime,,5,l4z,survived-not-mostly-empty,4
+12,com.storymatrix.drama,DramaBox - Stream Drama Shorts,app,True,True,True,1,runtime-init,l7d,2026-11-11T10:17:29.083494+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+13,com.newleaf.app.android.victor,ReelShort - Stream Drama & TV,app,True,True,True,5,drawing,l2i,2026-11-08T00:28:12.829402+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,7
+14,sg.bigo.live,"Bigo Live–Live Stream, Go Live",app,True,True,True,1,runtime-init,l7d,2026-11-11T10:18:21.271492+00:00,stderr-mtime,native-crash,1,hkf4a,ended-other,0
+15,com.discord,"Discord - Talk, Play, Hang Out",app,True,True,True,5,drawing,l8f,2026-11-14T05:25:06.250725+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,1
+16,com.duolingo,Duolingo: Learn Languages,app,True,True,True,5,drawing,l8f,2026-11-14T05:26:16.179093+00:00,stderr-mtime,,5,hkf4a,ended-other,0
+17,com.truecaller,Truecaller: Phone Call Blocker,app,True,True,True,5,drawing,l6p,2026-11-10T21:38:45.162409+00:00,stderr-mtime,,5,l4n,survived-not-mostly-empty,2
+18,com.tencent.ibg.joox,JOOX Music - AI Player,app,True,True,True,5,drawing,l8f,2026-11-14T05:27:28.151486+00:00,stderr-mtime,,5,l4x,survived-not-mostly-empty,5
+19,com.whatsapp.w4b,WhatsApp Business,app,True,True,True,5,drawing,l8f,2026-11-14T05:28:32.231853+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,3
+20,com.iqiyi.i18n,"iQIYI - Drama, Anime, Show",app,True,True,True,5,drawing,l2n,2026-11-08T04:24:09.556978+00:00,stderr-mtime,,5,l2n,survived-not-mostly-empty,12
+21,open.chat.gpt.aichat.bot.free.app,Open Chat - AI bot app,app,True,True,True,5,drawing,l8f,2026-11-14T05:29:39.916215+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,1
+22,com.microsoft.office.outlook,Microsoft Outlook,app,True,True,True,5,drawing,l6r,2026-11-10T23:27:26.911691+00:00,stderr-mtime,,5,hkf4a,ended-other,5
+23,ai.x.grok.bot,Grok Bot,app,True,True,True,1,runtime-init,l7d,2026-11-11T10:19:07.943500+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+24,com.linkedin.android,LinkedIn: Community & Network,app,True,True,True,5,drawing,l3k,2026-11-08T16:56:21.211789+00:00,stderr-mtime,,5,l3k,survived-not-mostly-empty,5
+25,com.skysoft.kkbox.android,KKBOX | Music and Podcasts,app,True,True,True,1,runtime-init,l7d,2026-11-11T10:19:52.731503+00:00,stderr-mtime,native-crash,1,hkf4a,ended-other,0
+26,com.strava,"Strava: Run, Bike, Walk",app,True,True,True,5,drawing,l8f,2026-11-14T05:30:47.352612+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,3
+27,com.xiaomi.smarthome,Xiaomi Home,app,True,True,True,5,drawing,l3k,2026-11-08T16:58:38.347904+00:00,stderr-mtime,,5,l3k,survived-not-mostly-empty,2
+28,com.pikcloud.pikpak,"PikPak-Safe Cloud, Video Saver",app,True,True,True,5,drawing,l2i,2026-11-08T00:50:18.802297+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,2
+29,ch.protonvpn.android,Proton VPN: Secure & Fast VPN,app,True,True,True,5,drawing,l2i,2026-11-08T00:52:25.386376+00:00,stderr-mtime,,5,l2i,mostly-empty-view-dumps,1
+30,org.telegram.messenger,Telegram,app,True,True,True,5,drawing,l7a,2026-11-11T07:22:44.963673+00:00,stderr-mtime,,5,l5c,survived-not-mostly-empty,3
+31,com.google.android.apps.subscriptions.red,Google One,app,True,True,True,5,drawing,l2i,2026-11-08T00:56:39.402545+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,1
+32,com.surfshark.vpnclient.android,Surfshark - 快速 VPN、防毒、廣告攔截,app,True,True,True,1,runtime-init,l7d,2026-11-11T10:20:32.755515+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+33,com.nordvpn.android,NordVPN: private & secure VPN,app,True,True,True,1,runtime-init,l7d,2026-11-11T10:21:15.999515+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+34,com.wejoy.weplay,WePlay - Party Game & Chat,app,True,True,True,1,runtime-init,l7d,2026-11-11T10:22:04.615544+00:00,stderr-mtime,native-crash,1,hkf4b,mostly-empty-view-dumps,1
+35,com.apple.android.music,Apple Music,app,True,True,True,5,drawing,l8f,2026-11-14T05:31:55.644969+00:00,stderr-mtime,,5,l2n,survived-not-mostly-empty,11
+36,com.google.android.gm,Gmail,app,True,True,True,5,drawing,l7d,2026-11-11T10:23:12.067530+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,4
+37,com.bilibili.app.in,bilibili - Anime · Video HD,app,True,True,True,5,drawing,l4w,2026-11-09T09:59:37.393787+00:00,stderr-mtime,,5,l4w,survived-not-mostly-empty,5
+38,com.microsoft.office.officehubrow,Microsoft Copilot,app,True,True,True,5,drawing,l6r,2026-11-10T23:29:38.515808+00:00,stderr-mtime,,5,hkf4a,ended-other,1
+39,us.zoom.videomeetings,Zoom Workplace,app,True,True,True,5,drawing,l5t,2026-11-09T23:34:43.144637+00:00,stderr-mtime,,5,l3i,survived-not-mostly-empty,3
+40,com.tinder,Tinder Dating App: Chat & Date,app,True,True,True,5,drawing,l8f,2026-11-14T05:33:03.285374+00:00,stderr-mtime,,5,l4p,survived-not-mostly-empty,3
+41,com.disney.disneyplus,Disney+,app,True,True,True,5,drawing,l4x,2026-11-09T14:16:45.791393+00:00,stderr-mtime,,5,l4x,survived-not-mostly-empty,4
+42,com.blink.drama.player,BlinkDrama: Short Dramas & TV,app,True,True,True,5,drawing,s251b,2026-11-14T16:18:28.129144+00:00,stderr-mtime,,5,l4n,survived-not-mostly-empty,9
+43,com.pico.live,"Wefun - Chat, Party and Game",app,True,True,True,5,drawing,l2i,2026-11-08T01:14:12.611262+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,4
+44,com.allbrowser.searchforbrowser,All Browser,app,True,True,True,5,drawing,l8f,2026-11-14T05:35:26.938184+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,3
+45,com.mt.mtxx.mtxx,Meitu,app,True,True,True,5,drawing,l5q,2026-11-09T22:03:08.755311+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,4
+46,ai.perplexity.app.android,Perplexity - Ask Anything,app,True,True,True,5,drawing,l8f,2026-11-14T05:36:43.362589+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,2
+47,com.naver.linewebtoon,"WEBTOON: Manga, Comics, Manhwa",app,True,True,True,5,drawing,l8f,2026-11-14T05:37:55.427014+00:00,stderr-mtime,,5,l4z,survived-not-mostly-empty,5
+48,tech.butterfly.app,Manus AI,app,True,True,True,5,drawing,l8f,2026-11-14T05:39:11.007415+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,1
+49,hk.gov.immd.contactless,Hong Kong e-Channel,app,True,True,True,5,drawing,l2i,2026-11-08T01:27:09.035789+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,1
+50,com.audible.application,Audible: Audiobooks & Podcasts,app,True,True,True,5,drawing,l2i,2026-11-08T01:29:15.283859+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,3
+51,com.bumble.app,Bumble Dating App: Meet & Date,app,True,True,True,5,drawing,l8f,2026-11-14T05:40:19.167815+00:00,stderr-mtime,,5,l2i,mostly-empty-view-dumps,1
+52,com.phoenix.read.oversea.gp,红果短剧 - 海量热门短剧随心看,app,True,True,True,3,activity,l7d,2026-11-11T10:25:31.067553+00:00,stderr-mtime,app-framework,3,hkf4b,ended-other,0
+53,com.tvb.mytvsuper,myTV SUPER - Watch TV and news,app,True,True,True,2,bound,l8f,2026-11-14T05:41:30.852233+00:00,stderr-mtime,app-framework,5,hkf4a,ended-other,0
+54,com.google.android.apps.bard,Google Gemini,app,True,True,True,5,drawing,l6r,2026-11-10T23:31:46.635962+00:00,stderr-mtime,,5,hkf4a,mostly-empty-view-dumps,2
+55,com.microsoft.skydrive,Microsoft OneDrive,app,True,True,True,5,drawing,l4i,2026-11-09T06:24:41.500078+00:00,stderr-mtime,,5,l4i,survived-not-mostly-empty,4
+56,com.goline.beatitell,FuSu,app,True,True,True,5,drawing,l8f,2026-11-14T05:42:37.532584+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,5
+57,com.google.android.apps.maps,Google Maps,app,True,True,True,5,drawing,l6v,2026-11-10T23:06:23.926460+00:00,stderr-mtime,,5,l2n,survived-not-mostly-empty,10
+58,com.google.android.youtube,YouTube,app,True,True,True,4,view,chk6,2026-11-11T09:19:34.995322+00:00,stderr-mtime,stall,5,l4x,survived-not-mostly-empty,4
+59,com.baitu.qingshu,Poppo Live - Live Stream,app,True,True,True,4,view,l7d,2026-11-11T10:27:27.167583+00:00,stderr-mtime,unclassified,5,l2i,survived-not-mostly-empty,4
+60,com.codeway.aitutor,"Learn English, Spanish: Learna",app,True,True,True,5,drawing,l8f,2026-11-14T05:43:51.777012+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,1
+61,com.thecarousell.Carousell,Carousell: Sell and Buy,app,True,True,True,5,drawing,l4n,2026-11-09T07:20:15.308437+00:00,stderr-mtime,,5,l4n,survived-not-mostly-empty,3
+62,com.freereels.app,FreeReels - Dramas & Reels,app,True,True,True,5,drawing,s251b,2026-11-14T16:19:38.749334+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,7
+63,com.tencent.qqlivei18n,WeTV: Asian & Local Drama,app,True,True,True,5,drawing,l8f,2026-11-14T05:46:31.537735+00:00,stderr-mtime,,5,l4z,survived-not-mostly-empty,7
+64,jp.pxv.android,pixiv,app,True,True,True,5,drawing,l2i,2026-11-08T01:54:19.872882+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,1
+65,com.fitbit.FitbitMobile,Google Health (Fitbit),app,True,True,True,5,drawing,l2i,2026-11-08T01:56:26.272914+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,1
+66,com.jeremysteckling.facerrel,Facer Watch Faces,app,True,True,True,5,drawing,l2i,2026-11-08T01:58:41.733035+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,1
+67,com.canva.editor,Canva: AI Photo & Video Editor,app,True,True,True,5,drawing,l8f,2026-11-14T05:47:43.630013+00:00,stderr-mtime,,5,l3m,survived-not-mostly-empty,2
+68,com.deep.search.browser,Aura Browser,app,True,True,True,5,drawing,l8f,2026-11-14T05:48:53.546264+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,5
+69,com.snapchat.android,Snapchat,app,True,True,True,5,drawing,l2i,2026-11-08T02:05:08.481298+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,2
+70,com.adobe.reader,Adobe Acrobat Reader: Edit PDF,app,True,True,True,5,drawing,l8f,2026-11-14T05:50:11.094543+00:00,stderr-mtime,,5,l5c,survived-not-mostly-empty,3
+71,com.grindrapp.android,Grindr - Gay Dating & Chat,app,True,True,True,1,runtime-init,l7d,2026-11-11T10:29:29.275593+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+72,com.xinhe.tataxingqiunew,TataLand,app,True,True,True,5,drawing,l8f,2026-11-14T05:51:32.746807+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,4
+73,com.microsoft.office.excel,Microsoft Excel: Spreadsheets,app,True,True,True,5,drawing,l6r,2026-11-10T23:33:24.816033+00:00,stderr-mtime,,5,hkf4a,ended-other,2
+74,ai.onspace.app,Crushie Al: Romance AI Chat,app,True,True,True,4,view,l8f,2026-11-14T05:52:36.847057+00:00,stderr-mtime,unclassified,5,hkf4a,ended-other,0
+75,com.kakao.talk,KakaoTalk : Messenger,app,True,True,True,5,drawing,l5a,2026-11-09T16:29:48.315864+00:00,stderr-mtime,,5,l5a,survived-not-mostly-empty,2
+76,com.android.chrome,Google Chrome,app,True,True,True,4,view,l7d,2026-11-11T10:31:38.851693+00:00,stderr-mtime,native-crash,4,hkf4a,ended-other,0
+77,com.windyty.android,Windy.com - Weather Forecast,app,True,True,True,5,drawing,l2i,2026-11-08T02:16:46.899277+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,1
+78,com.zyhwplatform.shortplay,FlickReels - AI Story & Drama,app,True,True,True,5,drawing,l8f,2026-11-14T05:53:48.139306+00:00,stderr-mtime,,5,hkf4a,survived-not-mostly-empty,10
+79,com.instagram.barcelona,Threads,app,True,True,True,5,drawing,l7d,2026-11-11T10:32:48.923716+00:00,stderr-mtime,,5,l4x,survived-not-mostly-empty,8
+80,com.google.android.googlequicksearchbox,Google,app,True,True,True,4,view,l7d,2026-11-11T10:34:42.807770+00:00,stderr-mtime,no-frame,4,hkf4a,survived-not-mostly-empty,1
+81,sg.omi,Omi - Dating & Meet Friends,app,True,True,True,5,drawing,hkf4a,2026-11-10T00:29:01.860736+00:00,stderr-mtime,,5,hkf4a,survived-not-mostly-empty,2
+82,com.larus.nova,豆包,app,True,True,True,5,drawing,l5v,2026-11-09T20:11:15.232771+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,2
+83,com.google.android.apps.walletnfcrel,Google Wallet,app,True,True,True,5,drawing,l2i,2026-11-08T02:27:29.901611+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,1
+84,com.loora.app,Speak English with Loora AI,app,True,True,True,5,drawing,l8f,2026-11-14T05:55:02.615580+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,1
+85,hk.alipay.wallet,AlipayHK,app,True,True,True,5,drawing,l7d,2026-11-11T10:36:16.775841+00:00,stderr-mtime,,5,l5p,ended-other,0
+86,com.viu.phone,Viu : Korean & Asian content,app,True,True,True,5,drawing,l4x,2026-11-09T14:23:16.971760+00:00,stderr-mtime,,5,l4x,survived-not-mostly-empty,1
+87,com.facebook.stella,Meta AI,app,True,True,True,5,drawing,hkf5a,2026-11-10T06:31:04.909214+00:00,stderr-mtime,,5,hkf5a,survived-not-mostly-empty,4
+88,com.coffeemeetsbagel,Coffee Meets Bagel Dating App,app,True,True,True,5,drawing,l4w,2026-11-09T10:04:23.689947+00:00,stderr-mtime,,5,l4w,survived-not-mostly-empty,4
+89,tv.twitch.android.app,Twitch: Live Streaming,app,True,True,True,5,drawing,l8f,2026-11-14T05:56:18.375804+00:00,stderr-mtime,,5,l4x,survived-not-mostly-empty,6
+90,cn.wps.moffice_eng,"WPS Office-PDF, Word, Sheet",app,True,True,True,5,drawing,l4n,2026-11-09T07:26:52.284941+00:00,stderr-mtime,,5,l4n,survived-not-mostly-empty,3
+91,com.taobao.taobao,淘宝,app,True,True,True,5,drawing,l6u,2026-11-10T22:46:12.513358+00:00,stderr-mtime,,5,hkf5a,ended-other,6
+92,kling.ai.video.chat,Kling AI: AI Image&Video Maker,app,True,True,True,2,bound,l8f,2026-11-14T05:57:22.580046+00:00,stderr-mtime,native-upcalls,4,hkf5a,ended-other,0
+93,com.tencent.mm,WeChat,app,True,True,True,5,drawing,l6v,2026-11-10T23:08:03.074552+00:00,stderr-mtime,,5,hkf5a,ended-other,2
+94,com.ubercab,Uber - Request a ride,app,True,True,True,5,drawing,l8f,2026-11-14T05:58:39.740318+00:00,stderr-mtime,,5,l5c,survived-not-mostly-empty,3
+95,com.intsig.camscanner,"CamScanner- scanner, PDF maker",app,True,True,True,5,drawing,l8f,2026-11-14T06:00:05.400641+00:00,stderr-mtime,,5,hkf5a,survived-not-mostly-empty,9
+96,com.autonavi.minimap,AMap Global,app,True,True,True,5,drawing,l6u,2026-11-10T22:47:27.049337+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,2
+97,com.nbaimd.gametime.nba2011,NBA: Live Games & Scores,app,True,True,True,5,drawing,l8f,2026-11-14T06:01:12.316865+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,1
+98,com.metalight.transitnow,TransitNow - Live Bus Tracker,app,True,True,True,5,drawing,l7a,2026-11-11T07:26:21.259949+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,1
+99,live.shorttv.apps,ShortMax - Short Dramas & TV,app,True,True,True,5,drawing,l2i,2026-11-08T02:56:22.338701+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,6
+100,com.quickdoc.pdfreader,QuickDoc: PDF Reader Tools,app,True,True,True,5,drawing,s251b,2026-11-14T16:20:44.933490+00:00,stderr-mtime,,5,l2i,survived-not-mostly-empty,10
+101,org.iggymedia.periodtracker,Flo Period & Pregnancy Tracker,app,True,True,True,5,drawing,l8f,2026-11-14T06:03:30.965361+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,4
+102,com.printage.floze,Floze: Romantasy AI Chat,app,True,True,True,1,runtime-init,l7d,2026-11-11T10:37:55.831889+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+103,com.github.android,GitHub,app,True,True,True,5,drawing,l3b,2026-11-08T08:33:18.891786+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,3
+104,com.poe.android,Poe - Fast AI Chat,app,True,True,True,1,runtime-init,l7d,2026-11-11T10:38:32.323909+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+105,com.storyreel.tv.android,StoryReel: Drama Shorts & TV,app,True,True,True,5,drawing,l3b,2026-11-08T08:36:01.427922+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,12
+106,com.quickbrowser.briskswifter,Quick Browser,app,True,True,True,5,drawing,l8f,2026-11-14T06:04:39.009605+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,8
+107,slide.watchFrenzy,WatchMaker Watch Faces,app,True,True,True,5,drawing,l3b,2026-11-08T08:40:10.328149+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,2
+108,com.dropbox.android,Dropbox: Files & Cloud Storage,app,True,True,True,5,drawing,l7d,2026-11-11T10:39:40.047951+00:00,stderr-mtime,,5,l3d,survived-not-mostly-empty,7
+109,com.biao.minemo,Minemo - Voice Chat & Friends,app,True,True,True,5,drawing,l3b,2026-11-08T08:44:27.252355+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,3
+110,com.kobobooks.android,Kobo | eBooks & Audiobooks,app,True,True,True,5,drawing,l3b,2026-11-08T08:46:41.060464+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,2
+111,com.read.goodnovel,"GoodNovel - Booktok, Stories",app,True,True,True,5,drawing,l8f,2026-11-14T06:05:47.481879+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,12
+112,com.flightradar24free,Flightradar24 Flight Tracker,app,True,True,True,5,drawing,l3b,2026-11-08T08:50:51.840687+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,4
+113,com.getpure.pure,PURE: Anonymous Dating & Chat,app,True,True,True,5,drawing,l8f,2026-11-14T06:06:57.618100+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,1
+114,com.vibeshort.visualnovel.android,VibeShort: AI Dramas & Reels,app,True,True,True,5,drawing,s251b,2026-11-14T16:21:54.641647+00:00,stderr-mtime,,5,l3n,survived-not-mostly-empty,8
+115,com.octopuscards.nfc_reader,Octopus,app,True,True,True,1,runtime-init,l7d,2026-11-11T10:40:27.351978+00:00,stderr-mtime,self-exit,5,hkf5a,ended-other,0
+116,com.tplink.iot,TP-Link Tapo,app,True,True,True,5,drawing,l3b,2026-11-08T08:58:00.645067+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,5
+117,com.alltrails.alltrails,"AllTrails: Hike, Bike & Run",app,True,True,True,5,drawing,l8f,2026-11-14T06:09:29.994665+00:00,stderr-mtime,,5,l3o,survived-not-mostly-empty,2
+118,all.documentreader.filereader.office.viewer,Document Reader & PDF Editor,app,True,True,True,5,drawing,s251b,2026-11-14T16:23:06.609835+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,1
+119,com.filemaster.cleaner.cachae,Clean Master,app,True,True,True,2,bound,l7d,2026-11-11T10:43:24.372070+00:00,stderr-mtime,stall,2,hkf5a,mostly-empty-view-dumps,1
+120,com.newreading.goodreels,GoodShort - Short Dramas Hub,app,True,True,True,5,drawing,l8d,2026-11-13T18:28:54.149241+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,10
+121,com.starmakerinteractive.starmaker,StarMaker-唱歌練歌，歡唱派對，全民K歌语音交友,app,True,True,True,5,drawing,l8f,2026-11-14T06:13:14.251465+00:00,stderr-mtime,,5,l5p,survived-not-mostly-empty,2
+122,com.qianwen.tellolive,Tello,app,True,True,True,5,drawing,l3b,2026-11-08T09:12:07.341798+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,6
+123,jp.naver.line.android,LINE: Calls & Messages,app,True,True,True,5,drawing,l5v,2026-11-09T20:17:11.301119+00:00,stderr-mtime,,5,l4m,survived-not-mostly-empty,6
+124,com.myfitnesspal.android,MyFitnessPal: Calorie Counter,app,True,True,True,5,drawing,l8f,2026-11-14T06:14:30.839750+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,2
+125,com.suno.android,Suno - AI Music & Songs Maker,app,True,True,True,5,drawing,hkf5a,2026-11-10T06:44:50.390267+00:00,stderr-mtime,,5,hkf5a,survived-not-mostly-empty,3
+126,com.konew.fintech.corp,K Cash,app,False,False,False,,unscored,,,,,,,,
+127,org.findmykids.app,Findmykids: Location tracker,app,True,True,True,5,drawing,l8f,2026-11-14T06:15:36.703984+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,2
+128,com.jobsdb,Jobsdb: Jobs & Part-time Work,app,True,True,True,5,drawing,l8f,2026-11-14T06:16:44.800236+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,2
+129,com.arashivision.insta360akiko,Insta360,app,True,True,True,5,drawing,l6p,2026-11-10T21:44:44.158500+00:00,stderr-mtime,,5,l5n,ended-other,2
+130,co.benx.weverse,Weverse: Connect with Artists,app,True,True,True,4,view,l8f,2026-11-14T06:18:38.188635+00:00,stderr-mtime,stall,5,l3b,survived-not-mostly-empty,2
+131,ai.tain.reelso,LoveyDovey - Dream Chats,app,True,True,True,5,drawing,l3b,2026-11-08T09:31:26.830809+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,1
+132,com.ceccoils.online759,759 Online,app,True,True,True,5,drawing,l3b,2026-11-08T09:33:33.654920+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,1
+133,com.amazon.mShop.android.shopping,Amazon Shopping,app,True,True,True,5,drawing,l5t,2026-11-09T23:42:51.433182+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,4
+134,com.meitu.meiyancamera,BeautyCam-AI Photo Editor,app,True,True,True,5,drawing,l3b,2026-11-08T09:38:18.535179+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,8
+135,com.facebook.orca,Messenger,app,True,True,True,5,drawing,l6y,2026-11-11T06:13:15.296634+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,7
+136,com.tradingview.tradingviewapp,TradingView: Track All Markets,app,True,True,True,5,drawing,l8f,2026-11-14T06:19:45.456852+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,12
+137,com.adobe.lrmobile,Lightroom Photo & Video Editor,app,True,True,True,1,runtime-init,l7d,2026-11-11T10:48:23.028235+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+138,com.youku.international.phone,"YOUKU-Drama, Film, Show, Anime",app,True,True,True,4,view,l7d,2026-11-11T10:49:15.712289+00:00,stderr-mtime,native-crash,4,hkf4b,ended-other,0
+139,com.immomo.miraimind,MiraiMind - Create Your Own AI,app,True,True,True,5,drawing,l8f,2026-11-14T06:20:58.521132+00:00,stderr-mtime,,5,l4w,survived-not-mostly-empty,11
+140,ai.frontia.app,Frontia: AI Cinematic Play,app,True,True,True,5,drawing,l3b,2026-11-08T09:49:29.347748+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,3
+141,com.quvideo.xiaoying,VivaVideo - Video Editor&Maker,app,True,True,True,1,runtime-init,l7d,2026-11-11T10:50:03.732336+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+142,com.wbd.stream,HBO Max: Stream TV & Movies,app,True,True,True,5,drawing,l8f,2026-11-14T06:22:13.617409+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,3
+143,com.moonshot.kimichat,Kimi,app,True,True,True,5,drawing,l8f,2026-11-14T06:23:19.601651+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,1
+144,com.badoo.mobile,Badoo Dating App: Meet & Date,app,True,True,True,5,drawing,l8f,2026-11-14T06:24:25.557874+00:00,stderr-mtime,,5,l3b,mostly-empty-view-dumps,3
+145,com.tantantribe.tribe,tantan - Global Dating App,app,True,True,True,5,drawing,l5q,2026-11-09T22:10:02.735724+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,3
+146,com.sofascore.results,Sofascore: Live Sports Scores,app,True,True,True,5,drawing,l6k,2026-11-10T19:18:01.984980+00:00,stderr-mtime,,5,hkf5a,survived-not-mostly-empty,10
+147,com.hevy,Hevy - Gym Log Workout Tracker,app,True,True,True,5,drawing,l3b,2026-11-08T10:03:34.060505+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,2
+148,com.apposter.watchmaker,TIMEFLIK Watch Faces,app,True,True,True,5,drawing,l3b,2026-11-08T10:05:40.212625+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,4
+149,com.daily.plan.list.todo,PDFReader - Master,app,True,True,True,5,drawing,l3b,2026-11-08T10:07:49.156729+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,6
+150,com.callapp.contacts,CallApp: Caller ID & Block,app,True,True,True,5,drawing,l3b,2026-11-08T10:09:58.884847+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,2
+151,com.hellotalk,HelloTalk - Learn Languages,app,True,True,True,5,drawing,l8f,2026-11-14T06:25:38.846126+00:00,stderr-mtime,,5,l4w,survived-not-mostly-empty,5
+152,com.koishd.pdf.viewer,"PDF Viewer Pro: Read, Edit PDF",app,True,True,True,5,drawing,l8f,2026-11-14T06:26:51.786397+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,2
+153,ctrip.english,"Trip.com: Book Flights, Hotels",app,True,True,True,5,drawing,l3b,2026-11-08T10:16:48.521205+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,8
+154,com.pixverseai.pixverse,PixVerse: AI Video Generator,app,True,True,True,5,drawing,l3b,2026-11-08T10:19:13.225334+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,1
+155,gogolook.callgogolook2,Whoscall: Caller ID & Block,app,True,True,True,5,drawing,l8f,2026-11-14T06:28:01.098641+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,2
+156,com.helen.uptk,Spark Live - Live Stream,app,True,True,True,5,drawing,hkf5a,2026-11-10T06:49:21.330621+00:00,stderr-mtime,,5,hkf5a,survived-not-mostly-empty,5
+157,org.thunderdog.challegram,Telegram X,app,True,True,True,5,drawing,l8f,2026-11-14T06:29:07.622884+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,8
+158,com.microsoft.office.word,Microsoft Word: Edit Documents,app,True,True,True,5,drawing,l7d,2026-11-11T10:52:32.496395+00:00,stderr-mtime,,5,hkf5a,ended-other,2
+159,app.bumpy.android,Bumpy – International Dating,app,True,True,True,5,drawing,l3b,2026-11-08T10:28:22.625787+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,3
+160,com.prominent.aicatch,AI Catch: AI Video Generator,app,True,True,True,5,drawing,l3b,2026-11-08T10:30:35.069911+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,7
+161,com.google.android.apps.translate,Google Translate,app,True,True,True,5,drawing,l3b,2026-11-08T10:32:42.378030+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,9
+162,com.picsart.studio,"Picsart AI Photo Editor, Video",app,True,True,True,5,drawing,l8f,2026-11-14T06:30:20.659060+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,1
+163,com.storage.androidcleaner,Cleanup: Phone Storage Cleaner,app,True,True,True,5,drawing,l3b,2026-11-08T10:37:10.466262+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,1
+164,com.konrev.bagelchat,BagelChat: AI Character Story,app,True,True,True,4,view,l7d,2026-11-11T10:53:15.388439+00:00,stderr-mtime,app-framework,5,hkf5a,ended-other,0
+165,com.intsig.camexam,Quiz AI: AI Homework Helper,app,True,True,True,1,runtime-init,l7d,2026-11-11T10:54:04.696466+00:00,stderr-mtime,native-crash,5,hkf5a,ended-other,0
+166,com.global.foodpanda.android,foodpanda: food & groceries,app,True,True,True,5,drawing,l3b,2026-11-08T10:41:07.162455+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,1
+167,com.dnd.dollarfix.df51,Dollarfix+,app,True,True,True,5,drawing,l3b,2026-11-08T10:43:23.990562+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,7
+168,music.musicplayer.playmusic.mp3player.audioplayer,Music Player & Mp3 Player,app,True,True,True,1,runtime-init,l7d,2026-11-11T10:55:45.988504+00:00,stderr-mtime,stall,1,hkf4b,ended-other,0
+169,com.deepseek.chat,DeepSeek - AI Assistant,app,True,True,True,5,drawing,l3b,2026-11-08T10:46:29.018724+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,2
+170,com.alibaba.wireless,1688,app,True,True,True,5,drawing,l6u,2026-11-10T22:49:28.065481+00:00,stderr-mtime,,5,hkf5a,ended-other,2
+171,com.audiomack,Audiomack: Music Downloader,app,True,True,True,5,drawing,l8f,2026-11-14T06:31:27.551352+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,6
+172,com.life360.android.safetymapd,Life360: Family Safety & GPS,app,True,True,True,5,drawing,l8f,2026-11-14T06:32:31.819556+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,1
+173,com.lucky.luckyclient,瑞幸咖啡,app,True,True,True,5,drawing,l4w,2026-11-09T10:16:59.634387+00:00,stderr-mtime,,5,l4w,survived-not-mostly-empty,2
+174,fc.com.ai.translate.live.voice.camera.pdf.doc,XTranslator Live: AI Translate,app,True,True,True,5,drawing,l3b,2026-11-08T10:56:48.127272+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,4
+175,appjp.ucvpn.com,UCVPN,app,True,True,True,5,drawing,hkf5a,2026-11-10T06:56:17.039142+00:00,stderr-mtime,,5,hkf5a,survived-not-mostly-empty,1
+176,com.picmepicme.app,VidFox: AI Photo Video Maker,app,True,True,True,5,drawing,l3b,2026-11-08T11:01:56.867551+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,8
+177,com.againstvirus.flux,Antivirus Flux,app,True,True,True,5,drawing,l8f,2026-11-14T06:33:41.235815+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,8
+178,com.google.android.inputmethod.latin,Gboard - the Google Keyboard,app,True,True,True,5,drawing,l8f,2026-11-14T06:34:51.144079+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,1
+179,com.aspiro.tidal,TIDAL Music: HiFi sound,app,True,True,True,5,drawing,l7d,2026-11-11T10:56:53.904584+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,3
+180,com.yuurewards.app,yuu HK & Macau,app,True,True,True,5,drawing,hkf5a,2026-11-10T06:58:32.467295+00:00,stderr-mtime,,5,hkf5a,survived-not-mostly-empty,4
+181,com.hisong.android,Pazzy,app,True,True,True,4,view,l7d,2026-11-11T10:58:42.484596+00:00,stderr-mtime,no-frame,5,hkf5a,survived-not-mostly-empty,1
+182,ai.hailuo.video,Hailuo AI: Image&Video Maker,app,True,True,True,5,drawing,l3b,2026-11-08T11:15:07.020409+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,4
+183,com.pulseal.qrlarcs,QR Code Scanner,app,True,True,True,5,drawing,l8f,2026-11-14T06:36:04.400325+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,1
+184,com.offerToday,OfferToday - Find Jobs,app,True,True,True,2,bound,l7d,2026-11-11T11:00:29.096673+00:00,stderr-mtime,no-frame,4,hkf5a,mostly-empty-view-dumps,1
+185,com.microsoft.teams,Microsoft Teams,app,True,True,True,5,drawing,l8f,2026-11-14T06:37:20.128616+00:00,stderr-mtime,,5,l5f,survived-not-mostly-empty,4
+186,wearos.smart.watch.bt.sync.notifier,Watch Sync App - BT Notifier,app,True,True,True,5,drawing,l3b,2026-11-08T11:24:47.949727+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,1
+187,com.ailanguageassistant.languagetutor.learnlanguages,Lurnia: AI Language Tutor,app,True,True,True,5,drawing,l3b,2026-11-08T11:26:54.614018+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,7
+188,com.tencent.wesing,全民K歌 (又：WeSing) - 華人聊天K歌直播遊戲,app,True,True,True,5,drawing,l3b,2026-11-08T11:29:18.106351+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,7
+189,com.facebook.lite,Facebook Lite,app,True,True,True,5,drawing,l3b,2026-11-08T11:31:30.442652+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,7
+190,com.ChinaMobile,MyLink My Zone,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:01:17.140703+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+191,com.photoroom.app,Photoroom: AI Photo Editor,app,True,True,True,4,view,l7d,2026-11-11T11:03:10.572775+00:00,stderr-mtime,stall,5,hkf5a,survived-not-mostly-empty,2
+192,com.sankuai.sailor.afooddelivery,Keeta - Food Delivery,app,True,True,True,5,drawing,l6r,2026-11-10T23:37:37.188281+00:00,stderr-mtime,,5,hkf5a,mostly-empty-view-dumps,4
+193,hk.org.ha.hago,HA Go,app,True,True,True,5,drawing,l5q,2026-11-09T22:12:24.083851+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,4
+194,com.netflix.mediaclient,Netflix,app,True,True,True,2,bound,l7d,2026-11-11T11:03:58.820808+00:00,stderr-mtime,native-crash,2,hkf5a,ended-other,0
+195,com.cupidmedia.wrapper.muslima,Muslima: Muslim Dating App,app,True,True,True,5,drawing,l6k,2026-11-10T19:23:40.556511+00:00,stderr-mtime,,5,hkf4b,survived-not-mostly-empty,1
+196,com.amazon.avod.thirdpartyclient,Prime Video,app,True,True,True,5,drawing,hkf1,2026-11-08T23:21:52.665229+00:00,stderr-mtime,,5,l3o,ended-other,2
+197,com.viber.voip,Rakuten Viber Messenger,app,True,True,True,5,drawing,l7d,2026-11-11T11:05:06.588834+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,6
+198,ai.app.ai,Chatbot App - AI Assistant,app,True,True,True,4,view,l7d,2026-11-11T11:06:59.256893+00:00,stderr-mtime,app-framework,5,hkf5a,survived-not-mostly-empty,1
+199,com.sf.hmto,SF-EXPRESS,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:07:41.456913+00:00,stderr-mtime,native-crash,1,hkf5a,ended-other,0
+200,com.pdf.pdfviewer.reader.allfile,PDF Reader Home App,app,True,True,True,5,drawing,l3b,2026-11-08T11:54:04.361726+00:00,stderr-mtime,,5,l3b,survived-not-mostly-empty,10
+201,com.recordpro.audiorecord,HiNoter - AI Note Taker,app,True,True,True,5,drawing,l8f,2026-11-14T06:38:31.540850+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,5
+202,com.accuweather.android,AccuWeather: Weather Radar,app,True,True,True,5,drawing,l3e,2026-11-08T13:10:27.131320+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,1
+203,apps.r.calculator,Calculator,app,True,True,True,5,drawing,l3e,2026-11-08T13:12:35.127432+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,1
+204,app.hkbus,巴士到站預報 - hkbus.app,app,True,True,True,5,drawing,l3e,2026-11-08T13:14:51.507551+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,1
+205,hk.com.hsbc.paymefromhsbc,PayMe by HSBC,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:08:28.084946+00:00,stderr-mtime,self-exit,1,hkf4b,ended-other,0
+206,com.chinarailway.globalticketing,Railway 12306,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:09:10.224974+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+207,com.lyfta,Lyfta: Gym Log Workout Tracker,app,True,True,True,5,drawing,l3e,2026-11-08T13:18:50.739758+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,6
+208,com.tipsyturbo.app,Tipsy: Live Your Story,app,True,True,True,5,drawing,l5a,2026-11-09T16:33:56.832109+00:00,stderr-mtime,,5,l5a,survived-not-mostly-empty,3
+209,com.studiokuma.callfilter,Call Defender - Caller ID,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:09:50.552996+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+210,com.codeway.chatapp,Chat AI: Ask Agent Anything,app,True,True,True,5,drawing,l5q,2026-11-09T22:14:37.631982+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,1
+211,com.mtr.mtrmobile,MTR Mobile,app,True,True,True,5,drawing,l6y,2026-11-11T06:16:27.009026+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,4
+212,com.haochang.party,全民party-歡歌進行時！歡歌不停歇！,app,True,True,True,2,bound,l7d,2026-11-11T11:10:57.081043+00:00,stderr-mtime,native-crash,5,l3q,ended-other,0
+213,com.office.cleaner.storage.ai,Phone Cleaner: AI Cleaner,app,True,True,True,5,drawing,l3e,2026-11-08T13:29:48.156333+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,3
+214,mega.privacy.android.app,MEGA,app,True,True,True,5,drawing,s251b,2026-11-14T16:24:19.333995+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,6
+215,de.mobileconcepts.cyberghost,CyberGhost VPN: Secure VPN,app,True,True,True,5,drawing,l8f,2026-11-14T06:40:50.205375+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,4
+216,com.cafe24.ec.pluseoliveyoung,OLIVE YOUNG US,app,True,True,True,5,drawing,l8f,2026-11-14T06:41:56.389618+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,1
+217,com.banix.drawsound.drawmusic,Draw Music: Sketch to Sound,app,True,True,True,5,drawing,l3e,2026-11-08T13:38:47.024799+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,7
+218,io.faceapp,FaceApp: Perfect Face Editor,app,True,True,True,5,drawing,l6k,2026-11-10T19:26:00.576340+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,7
+219,com.shdj.test,StardustTV - Movies & Dramas,app,False,False,False,,unscored,,,,,,,,
+220,com.google.android.apps.authenticator2,Google Authenticator,app,True,True,True,5,drawing,l3e,2026-11-08T13:43:16.761051+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,2
+221,com.mobilefootie.wc2010,FotMob - Soccer Live Scores,app,True,True,True,5,drawing,s251b,2026-11-14T16:25:24.462169+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,5
+222,hk.com.hsbc.hsbchkmobilebanking,HSBC HK Mobile Banking,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:12:55.649094+00:00,stderr-mtime,self-exit,1,hkf4b,ended-other,0
+223,com.uniqlo.hk.catalogue,UNIQLO Hong Kong & Macau,app,True,True,True,5,drawing,l8f,2026-11-14T06:44:04.598082+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,6
+224,com.nwfb,Citybus,app,True,True,True,5,drawing,l3e,2026-11-08T13:50:57.465441+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,5
+225,com.chat.moko,Moko Live: Live Stream & Chat,app,True,True,True,5,drawing,l3e,2026-11-08T13:53:17.301569+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,6
+226,homeworkout.fitness.app,Workout Planner Gym Log・Fit AI,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:13:33.141114+00:00,stderr-mtime,native-crash,1,hkf4b,mostly-empty-view-dumps,1
+227,com.smule.singandroid,"Smule: Sing, Duet & Karaoke",app,True,True,True,5,drawing,l3e,2026-11-08T13:58:12.381819+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,3
+228,ai.photogenerator.aivideo.aivideogenerator.aiart,Nexus - AI Video Generator,app,True,True,True,5,drawing,l7d,2026-11-11T11:14:38.673160+00:00,stderr-mtime,,5,l5q,ended-other,0
+229,com.midland.mrinfo,Midland Realty 美聯筍盤,app,True,True,True,4,view,l7d,2026-11-11T11:15:26.325192+00:00,stderr-mtime,native-crash,5,hkf5a,ended-other,0
+230,com.v2cross.proxy,Shadowrocket - VPN Proxy Nodes,app,True,True,True,5,drawing,l3e,2026-11-08T14:03:28.678095+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,7
+231,com.iqiyi.i18n.tv,iQIYI Video – Dramas & Movies,app,True,True,True,2,bound,l7d,2026-11-11T11:16:09.681220+00:00,stderr-mtime,native-loading,2,hkf5a,ended-other,0
+232,com.ai.polyverse.mirror,AI Mirror: AI Photo & Video,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:16:58.173267+00:00,stderr-mtime,native-crash,1,hkf4b,mostly-empty-view-dumps,1
+233,com.flow.mobile,Emochi: Chat With Character,app,True,True,True,5,drawing,l8f,2026-11-14T06:45:27.166363+00:00,stderr-mtime,,5,l3o,survived-not-mostly-empty,3
+234,com.nikkei.newspaper,日本経済新聞 電子版【公式】／経済ニュースアプリ,app,True,True,True,5,drawing,l3e,2026-11-08T14:11:29.666509+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,4
+235,com.actus.aoochat,TianYu,app,True,True,True,5,drawing,l8f,2026-11-14T06:46:31.262511+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,5
+236,com.imsgchat.banliao,BanLiao,app,True,True,True,5,drawing,l8f,2026-11-14T06:47:50.330703+00:00,stderr-mtime,,5,hkf5a,survived-not-mostly-empty,1
+237,tw.com.gamer.android.animad,巴哈姆特動畫瘋,app,True,True,True,5,drawing,l3e,2026-11-08T14:16:41.134792+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,4
+238,com.trusted.pdfeditor.pdfreader,PDF ProX: PDF Reader & Editor,app,True,True,True,5,drawing,l3e,2026-11-08T14:18:56.302906+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,2
+239,com.expressvpn.vpn,ExpressVPN: VPN Fast & Secure,app,True,True,True,5,drawing,l8f,2026-11-14T06:49:04.950897+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,4
+240,com.clean.mix.junk,Mix Cleaner,app,True,True,True,5,drawing,l3e,2026-11-08T14:23:24.807138+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,3
+241,com.tvb.mytvsuper.atv,myTV SUPER,app,False,True,True,,unscored,,,,,,,,
+242,com.blessedmate.fabian,Fuban,app,False,False,False,,unscored,,,,,,,,
+243,com.free.vpn.super.hotspot.open,VPN - Super Unlimited Proxy,app,True,True,True,5,drawing,l3e,2026-11-08T14:25:39.575249+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,5
+244,com.translate.ai.voice.screen.language,AI Translator: Voice & Screen,app,True,True,True,5,drawing,l3e,2026-11-08T14:27:54.935360+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,8
+245,com.citymapper.app.release,Citymapper,app,True,True,True,5,drawing,l8f,2026-11-14T06:50:10.907056+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,2
+246,com.unearby.sayhi,SayHi Chat Meet Dating People,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:17:38.365270+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+247,com.eg.android.AlipayGphone,Alipay,app,True,True,True,5,drawing,l8f,2026-11-14T06:51:37.127276+00:00,stderr-mtime,,5,l4w,survived-not-mostly-empty,6
+248,com.crunchyroll.crunchyroid,Crunchyroll: Anime Streaming,app,True,True,True,5,drawing,l6p,2026-11-10T21:50:12.634594+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,2
+249,com.shopback.app,ShopBack: Cashback & Rewards,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:19:54.009351+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+250,com.dearu.bubble.jyp,bubble for JYPnation,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:20:36.229374+00:00,stderr-mtime,unclassified,5,hkf5a,ended-other,0
+251,com.wrongchao.v2vpn,V2VPN - A Fast VPN Proxy,app,True,True,True,5,drawing,l3e,2026-11-08T14:40:43.980021+00:00,stderr-mtime,,5,l3e,mostly-empty-view-dumps,1
+252,cn.futu.trader,Futubull-Easy Investment,app,True,True,True,5,drawing,l8f,2026-11-14T06:53:10.359502+00:00,stderr-mtime,,5,l4w,survived-not-mostly-empty,4
+253,com.klook,Klook: Travel & Activities,app,True,True,True,5,drawing,l8f,2026-11-14T06:54:31.499706+00:00,stderr-mtime,,5,l5b,survived-not-mostly-empty,1
+254,com.miaozhua.read,喵爪小説 - 全球爆火小說漫劇必備神器，每日更新,app,True,True,True,5,drawing,l7d,2026-11-11T11:21:40.545369+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,5
+255,com.hktv.android.hktvmall,HKTVmall – online shopping,app,True,True,True,5,drawing,l3e,2026-11-08T14:50:19.708522+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,7
+256,com.roblox.client,Roblox,game,True,True,True,5,drawing,l8f,2026-11-14T06:55:45.387897+00:00,stderr-mtime,,5,l5b,survived-not-mostly-empty,1
+257,musicplayer.playmusic.audioplayer,Music Player & MP3 - DDMusic,app,True,True,True,5,drawing,l3e,2026-11-08T14:55:35.220819+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,1
+258,com.ai.art.magic.image.generator,AI Photo Editor: Art Studio,app,True,True,True,5,drawing,l3e,2026-11-08T14:57:55.420943+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,1
+259,quran.offline.alquran.holyquran.quranpak.quranmajeed.readquranoffline.holybookreading.alquranulkareem,Holy Quran Offline Reading,app,True,True,True,5,drawing,l3e,2026-11-08T15:00:09.993229+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,9
+260,com.sand.airdroidkidp,AirDroid Parental Control,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:23:22.301432+00:00,stderr-mtime,app-framework,1,hkf4b,mostly-empty-view-dumps,1
+261,com.superplaystudios.disneysolitairedreams,Disney Solitaire,game,True,True,True,5,drawing,l3e,2026-11-08T15:05:34.485343+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,1
+262,com.ea.gp.fifamobile,EA SPORTS FC Soccer Mobile 27,game,True,True,True,5,drawing,l6p,2026-11-10T21:51:26.354675+00:00,stderr-mtime,,5,hkf5a,survived-not-mostly-empty,1
+263,jp.konami.pesam,eFootball™,game,True,True,True,2,bound,l7d,2026-11-11T11:24:37.833491+00:00,stderr-mtime,native-crash,5,hkf5a,ended-other,0
+264,com.hitappsgames.wordsolitaire,Solitaire Associations Journey,game,True,True,True,5,drawing,l8f,2026-11-14T06:57:05.856089+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,1
+265,com.changdu.mobovideo,MoboReels: Good Reel Short TV,app,True,True,True,5,drawing,l7d,2026-11-11T11:25:47.065540+00:00,stderr-mtime,,5,l4n,survived-not-mostly-empty,1
+266,com.browserweb.astrotravel,Astro Browser,app,True,True,True,5,drawing,l8f,2026-11-14T06:58:14.040246+00:00,stderr-mtime,,5,l3m,survived-not-mostly-empty,8
+267,com.asw.moneyback,MoneyBack,app,True,True,True,5,drawing,hkf4b,2026-11-10T04:26:46.132300+00:00,stderr-mtime,,5,hkf4b,survived-not-mostly-empty,1
+268,com.levelinfinite.sgameGlobal,Honor of Kings,game,True,True,True,4,view,l7d,2026-11-11T11:28:14.773615+00:00,stderr-mtime,self-finish,4,hkf4b,ended-other,0
+269,com.king.candycrushsaga,Candy Crush Saga,game,True,True,True,5,drawing,l8f,2026-11-14T06:59:20.844423+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,1
+270,com.mergegames.gossipharbor,Gossip Harbor®: Merge & Story,game,True,True,True,5,drawing,l3e,2026-11-08T15:24:13.554309+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,4
+271,com.iyagames.flotshelter,Wild Water World,game,True,True,True,4,view,l7d,2026-11-11T11:30:29.989701+00:00,stderr-mtime,self-finish,5,hkf5a,survived-not-mostly-empty,1
+272,com.vincentb.MobControl,Mob Control,game,True,True,True,5,drawing,l8f,2026-11-14T07:00:45.664637+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,1
+273,com.santa.phone.tracker,Phone Tracker Pro & Locator,app,True,True,True,5,drawing,l8f,2026-11-14T07:01:52.380796+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,9
+274,jp.cocone.p2korea,Twin Tales,app,True,True,True,5,drawing,l8f,2026-11-14T07:03:14.185005+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,1
+275,com.yandex.browser,Yandex Browser with Alice AI,app,True,True,True,4,view,l7d,2026-11-11T11:31:35.709765+00:00,stderr-mtime,native-crash,5,hkf5a,ended-other,1
+276,com.fineart.universal.tv.remote.control,Universal Tv Remote-Cast to TV,app,True,True,True,5,drawing,l3e,2026-11-08T15:38:48.567074+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,1
+277,com.nianticlabs.pokemongo,Pokémon GO,game,True,True,True,5,drawing,l8f,2026-11-14T07:04:37.389163+00:00,stderr-mtime,,5,l5b,survived-not-mostly-empty,1
+278,jp.pokemon.pokemontcgp,Pokémon TCG Pocket,game,True,True,True,5,drawing,l8f,2026-11-14T07:06:13.317404+00:00,stderr-mtime,,5,hkf5a,ended-other,0
+279,hk.gov.epd.green,GREENS Mobile App,app,True,True,True,5,drawing,hkf5a,2026-11-10T07:29:40.013466+00:00,stderr-mtime,,5,hkf5a,survived-not-mostly-empty,1
+280,com.dragon.read.oversea.gp,番茄小说 - 热门短剧全本小说电子书阅读器,app,True,True,True,3,activity,l7d,2026-11-11T11:32:42.145806+00:00,stderr-mtime,app-framework,3,hkf4b,ended-other,0
+281,app.visory.security_camera,Surveillance Camera: Visory,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:33:24.805860+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+282,wni.WeathernewsTouch.jp,Weathernews Weather Forecast,app,True,True,True,5,drawing,l8f,2026-11-14T07:07:28.093580+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,1
+283,com.youmusic.magictiles,Magic Tiles 3™ - Piano Game,game,True,True,True,5,drawing,l8f,2026-11-14T07:08:40.745756+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,1
+284,pro.airemodel.android,AI Remodel - Interior Design,app,True,True,True,5,drawing,l8f,2026-11-14T07:09:48.017921+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,3
+285,com.flashget.parentalcontrol,FlashGet Kids:parental control,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:35:07.169932+00:00,stderr-mtime,app-framework,1,hkf4b,mostly-empty-view-dumps,1
+286,com.machipopo.media17,17LIVE - Live Streaming Chat,app,True,True,True,5,drawing,l8f,2026-11-14T07:11:13.290150+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,3
+287,hk.gov.ehealth.life,e+生活 e+Life,app,True,True,True,5,drawing,l3e,2026-11-08T16:01:22.366464+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,1
+288,com.nhn.android.webtoon,네이버 웹툰 - Naver Webtoon,app,True,True,True,5,drawing,l8f,2026-11-14T07:12:20.918318+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,10
+289,com.AnatomyLearning.Anatomy3DViewer3,Anatomy Learning - 3D Anatomy,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:35:50.453966+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+290,com.farlightgames.pgame.gp,Clash of Critters,game,True,True,True,1,runtime-init,l7d,2026-11-11T11:36:40.698000+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+291,com.miniclip.eightballpool,8 Ball Pool,game,True,True,True,1,runtime-init,l7d,2026-11-11T11:38:30.694089+00:00,stderr-mtime,app-framework,1,hkf5a,mostly-empty-view-dumps,1
+292,com.microsoft.emmx,Microsoft Edge,app,True,True,True,4,view,l7d,2026-11-11T11:39:29.974135+00:00,stderr-mtime,native-crash,5,hkf5a,ended-other,0
+293,calendar.agenda.calendarplanner.agendaplanner,Calendar Planner - Agenda App,app,True,True,True,5,drawing,l3e,2026-11-08T16:13:28.808826+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,7
+294,com.mhclyxpb.gatja,Merge Teahouse,game,True,True,True,4,view,l8f,2026-11-14T07:14:40.714692+00:00,stderr-mtime,unclassified,5,l3m,ended-other,0
+295,com.parknshop.parknshopapp,PNS eShop,app,True,True,True,5,drawing,hkf4b,2026-11-10T04:37:15.009642+00:00,stderr-mtime,,5,hkf4b,survived-not-mostly-empty,1
+296,tools.pocket.pdf.editor.expert,PDFMaster - PDF Reader,app,True,True,True,5,drawing,l3e,2026-11-08T16:18:55.177907+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,4
+297,com.greetingsisland.sam,Invitation Maker: Cards & RSVP,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:40:09.014163+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+298,de.wetteronline.wetterapp,Weather & Radar Forecast,app,True,True,True,5,drawing,l8f,2026-11-14T07:15:50.850837+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,2
+299,com.bandainamcoent.gget_WW,SD Gundam G Generation ETERNAL,game,True,True,True,5,drawing,l8f,2026-11-14T07:17:37.283078+00:00,stderr-mtime,,5,l3e,survived-not-mostly-empty,1
+300,com.pinterest,Pinterest,app,True,True,True,5,drawing,l4x,2026-11-09T14:27:37.568017+00:00,stderr-mtime,,5,l4x,survived-not-mostly-empty,2
+301,app.igames.ps2,IGAMES PS2,app,True,True,True,4,view,l8f,2026-11-14T07:19:24.299373+00:00,stderr-mtime,stall,5,,,
+302,com.gamespark.topking.gp,Top Lords,game,True,True,True,5,drawing,l6v,2026-11-10T23:14:32.914945+00:00,stderr-mtime,,5,hkf4b,ended-other,0
+303,com.run.tower.defense,Kingshot,game,True,True,True,1,runtime-init,l7d,2026-11-11T11:42:23.106279+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+304,com.chess,Chess - Play and Learn Online,game,True,True,True,5,drawing,hka,2026-11-06T11:02:19.960988+00:00,stderr-mtime,,5,,,
+305,apps.r.compass,Compass: Accurate Compass,app,True,True,True,5,drawing,hka,2026-11-06T11:03:31.161134+00:00,stderr-mtime,,5,,,
+306,com.gof.global,Whiteout Survival,game,True,True,True,1,runtime-init,l7d,2026-11-11T11:43:39.386335+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+307,com.unicostudio.braintest,Brain Test: Tricky Puzzles,game,True,True,True,5,drawing,l7d,2026-11-11T11:44:55.194386+00:00,stderr-mtime,,5,,,
+308,com.foshine.bemi,BeMi Love: AI戀愛聊天專屬角色與沉浸劇情,app,True,True,True,5,drawing,hka,2026-11-06T11:07:05.001600+00:00,stderr-mtime,,5,,,
+309,com.pujie.watchfaces,Pujie Watch Faces - Wear OS 6,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:46:37.078458+00:00,stderr-mtime,native-loading,1,hkf5a,mostly-empty-view-dumps,1
+310,com.gps.locationtracker.phonetracker.phonefinder.location,Phone Tracker - Location App,app,True,True,True,5,drawing,l8f,2026-11-14T07:20:42.891564+00:00,stderr-mtime,,5,,,
+311,com.mnogogames.triviascapes,IQ & brain test: Triviascapes,game,True,True,True,5,drawing,l5q,2026-11-09T22:18:00.968520+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,1
+312,com.starutopia.global,Blade War:Three Kingdoms,game,True,True,True,4,view,l7d,2026-11-11T11:48:12.950530+00:00,stderr-mtime,self-kill,5,hkf5a,ended-other,0
+313,com.proxima.dfm,Delta Force: 2nd Anniversary,game,True,True,True,2,bound,l7d,2026-11-11T11:50:39.466633+00:00,stderr-mtime,native-symbols,2,hkf4b,mostly-empty-view-dumps,1
+314,com.scaleup.chatai,AI Chatbot - Nova,app,True,True,True,5,drawing,hka,2026-11-06T11:15:23.554490+00:00,stderr-mtime,,5,,,
+315,chat.melting.apppp,Melting – AI Romance Chat,app,True,True,True,5,drawing,l8f,2026-11-14T07:21:56.519755+00:00,stderr-mtime,,5,,,
+316,com.everysing.lysn,Lysn,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:51:26.046722+00:00,stderr-mtime,unclassified,5,hkf5a,ended-other,0
+317,com.mobilesecretcodes.allandroidtips.androidtricks.allsecretcodes,Secret Codes And Mobile Hacks,app,True,True,True,5,drawing,hka,2026-11-06T11:18:21.998827+00:00,stderr-mtime,,5,,,
+318,com.translate.easy.languagete,AI Translate Easy,app,True,True,True,5,drawing,l8f,2026-11-14T07:23:04.555938+00:00,stderr-mtime,,5,,,
+319,com.cardmaker.invitationcardmaker.birthdayinvitation.weddinginvitation,All Invitation Card Maker App,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:52:06.370725+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+320,com.planner5d.planner5d,Planner 5D - AI Home Design,app,True,True,True,5,drawing,hka,2026-11-06T11:21:25.975144+00:00,stderr-mtime,,5,,,
+321,com.lbrc.PeriodCalendar,Period Tracker and Calendar,app,True,True,True,5,drawing,l8f,2026-11-14T07:24:11.448108+00:00,stderr-mtime,,5,,,
+322,io.supercent.bulldozermasters,Bulldozer Master: Crush & Mine,game,True,True,True,5,drawing,l8f,2026-11-14T07:25:28.196303+00:00,stderr-mtime,,5,,,
+323,com.scopely.monopolygo,MONOPOLY GO!,game,True,True,True,4,view,l7d,2026-11-11T11:53:10.262765+00:00,stderr-mtime,unclassified,4,hkf4b,ended-other,0
+324,com.tamjai.android,譚仔雲南米線  TamJai Yunnan Mixian,app,True,True,True,5,drawing,hka,2026-11-06T11:25:38.111588+00:00,stderr-mtime,,5,,,
+325,com.simtaxi.driver,閃的 Sim Taxi 司機版 - 香港call的士,app,True,True,True,5,drawing,l7d,2026-11-11T11:54:15.710812+00:00,stderr-mtime,,5,,,
+326,com.ivuu,Alfred Home Security Camera,app,True,True,True,5,drawing,hka,2026-11-06T11:28:38.763875+00:00,stderr-mtime,,5,,,
+327,com.legendwx.gp,半夜別修仙,game,True,True,True,5,drawing,l8f,2026-11-14T07:26:46.696491+00:00,stderr-mtime,,5,,,
+328,games.vaveda.militaryoverturn,Tower War - Tactical Conquest,game,True,True,True,1,runtime-init,l7d,2026-11-11T11:55:01.018841+00:00,stderr-mtime,native-crash,1,,,
+329,com.ovz.carscanner,Car Scanner ELM OBD2,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:56:00.866896+00:00,stderr-mtime,native-crash,1,hkf5a,ended-other,0
+330,com.grandegames.slots.dafu.casino,大福Online-全民休閒拉霸角子機,game,True,True,True,5,drawing,hkf5a,2026-11-10T07:42:10.590269+00:00,stderr-mtime,,5,hkf5a,survived-not-mostly-empty,1
+331,com.tomato.and.hkssbhc,時尚百貨城,game,True,True,True,1,runtime-init,l7d,2026-11-11T11:57:28.526967+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+332,io.smakapps.guessly,Charades Guess Game — Guessly,game,True,True,True,5,drawing,hka,2026-11-06T11:35:33.668526+00:00,stderr-mtime,,5,,,
+333,kidultlovin.word.zen,Zen Word® - Relax Puzzle Game,game,True,True,True,5,drawing,hkf5a,2026-11-10T07:44:34.038410+00:00,stderr-mtime,,5,hkf5a,survived-not-mostly-empty,1
+334,com.azure.authenticator,Microsoft Authenticator,app,True,True,True,5,drawing,hkf5a,2026-11-10T07:46:58.278576+00:00,stderr-mtime,,5,hkf5a,survived-not-mostly-empty,3
+335,net.zedge.android,Zedge™ Wallpapers & Ringtones,app,True,True,True,1,runtime-init,l7d,2026-11-11T11:58:12.307001+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+336,com.bilibili.lumi,Lumi Master,game,True,True,True,4,view,l8f,2026-11-14T07:27:57.028680+00:00,stderr-mtime,native-crash,5,hkf5a,ended-other,0
+337,com.brighteasestudio.pdfreader.pdfeditor,All PDF Reader & PDF Editor,app,True,True,True,5,drawing,hka,2026-11-06T11:42:03.645143+00:00,stderr-mtime,,5,,,
+338,com.volumecontrol.volumebassbooster.android2023,AI Hit Music Maker,app,True,True,True,5,drawing,hka,2026-11-06T11:43:20.017261+00:00,stderr-mtime,,5,,,
+339,com.paypal.android.p2pmobile,"PayPal - Pay, Send, Save",app,True,True,True,2,bound,l7d,2026-11-11T12:00:15.559097+00:00,stderr-mtime,native-crash,2,hkf5a,ended-other,0
+340,com.appswize.weddingcardmaker,Wedding Invitation Card Maker,app,True,True,True,5,drawing,hka,2026-11-06T11:45:33.397466+00:00,stderr-mtime,,5,,,
+341,com.fugo.wow,Words of Wonders: Crossword,game,True,True,True,5,drawing,l8f,2026-11-14T07:29:14.492842+00:00,stderr-mtime,,5,,,
+342,com.newai.ooc,OOC: The Playable Anime,app,True,True,True,2,bound,l7d,2026-11-11T12:01:04.635152+00:00,stderr-mtime,native-crash,2,hkf5a,ended-other,0
+343,com.diamondlife.slots.vegas.free,Lotsa Slots - Casino Games,game,True,True,True,5,drawing,l8f,2026-11-14T07:30:29.549037+00:00,stderr-mtime,,5,,,
+344,com.kurogame.wutheringwaves.global,Wuthering Waves,game,True,True,True,5,drawing,l6k,2026-11-10T19:39:58.407252+00:00,stderr-mtime,,5,,,
+345,jp.ne.ibis.ibispaintx.app,ibis Paint X,app,True,True,True,5,drawing,l7d,2026-11-11T12:02:13.047174+00:00,stderr-mtime,,5,hkf5a,survived-not-mostly-empty,6
+346,com.ftw_and_co.happn,happn: dating app,app,True,True,True,4,view,l8f,2026-11-14T07:31:17.373187+00:00,stderr-mtime,no-frame,5,l5q,ended-other,1
+347,com.whfplus.location.ker,GPS Location Tracker Plus,app,True,True,True,5,drawing,l8f,2026-11-14T07:32:23.369332+00:00,stderr-mtime,,5,,,
+348,com.substack.app,Substack,app,True,True,True,5,drawing,l8f,2026-11-14T07:33:36.157505+00:00,stderr-mtime,,5,,,
+349,com.loco.bike,LocoBike,app,True,True,True,5,drawing,hka,2026-11-06T11:56:33.226437+00:00,stderr-mtime,,5,,,
+350,app.kids360.parent,Kids360: Parental Control App,app,True,True,True,5,drawing,l8f,2026-11-14T07:34:40.425671+00:00,stderr-mtime,,5,,,
+351,com.miHoYo.GenshinImpact,Genshin Impact 6th Anniversary,game,True,True,True,5,drawing,l8f,2026-11-14T07:36:41.961961+00:00,stderr-mtime,,5,hkf5a,survived-not-mostly-empty,2
+352,com.hutchgames.formularacing,F1® Clash - Official 2026 Game,game,True,True,True,5,drawing,l8f,2026-11-14T07:37:55.824996+00:00,stderr-mtime,,5,,,
+353,com.smilegate.chaoszero.stove.google,Chaos Zero Nightmare,game,True,True,True,4,view,l7d,2026-11-11T12:04:29.567275+00:00,stderr-mtime,native-crash,5,hkf4a,ended-other,0
+354,com.project.idle.cd,Top Force,game,True,True,True,5,drawing,l8f,2026-11-14T07:39:36.638362+00:00,stderr-mtime,,5,,,
+355,com.truedevelopersstudio.automatictap.autoclicker,Auto Clicker - Automatic tap,app,True,True,True,5,drawing,hka,2026-11-06T12:04:48.631094+00:00,stderr-mtime,,5,,,
+356,com.scmp.newspulse,South China Morning Post,app,True,True,True,5,drawing,hka,2026-11-06T12:05:54.299171+00:00,stderr-mtime,,5,,,
+357,jp.co.shueisha.mangaplus,MANGA Plus by SHUEISHA,app,True,True,True,5,drawing,hka,2026-11-06T12:06:59.975272+00:00,stderr-mtime,,5,,,
+358,com.tencent.ig,PUBG MOBILE,game,True,True,True,4,view,l7d,2026-11-11T12:05:41.679330+00:00,stderr-mtime,unclassified,4,hkf4b,ended-other,0
+359,com.kakaku.tabelog.tourists,Tabelog - Food Guide in Japan,app,False,False,False,,unscored,,,,,,,,
+360,com.tj.dslrprofessional.hdcamera,DSLR HD Camera : 4K HD Camera,app,True,True,True,5,drawing,l7d,2026-11-11T12:06:52.087380+00:00,stderr-mtime,,5,,,
+361,com.MadOut.BIG,MadOut 2: Grand Auto Racing RP,game,True,True,True,5,drawing,l8f,2026-11-14T07:41:54.142695+00:00,stderr-mtime,,5,l4z,survived-not-mostly-empty,1
+362,com.nianticlabs.pikmin,Pikmin Bloom: Walk & Explore,game,True,True,True,5,drawing,l8f,2026-11-14T07:43:20.918922+00:00,stderr-mtime,,5,l5b,survived-not-mostly-empty,1
+363,com.webcomics.manga,WebComics - Webtoon & Manga,app,True,True,True,5,drawing,l8f,2026-11-14T07:44:32.131079+00:00,stderr-mtime,,5,,,
+364,com.amazon.kindle,Amazon Kindle: Reading App,app,True,True,True,5,drawing,hka,2026-11-06T12:15:37.559930+00:00,stderr-mtime,,5,,,
+365,com.universal.ac.remote.control.air.conditioner,Universal AC Remote Control,app,True,True,True,5,drawing,hka,2026-11-06T12:16:40.804010+00:00,stderr-mtime,,5,,,
+366,tiny.readpdf.com,Tiny PDF-Read PDF,app,True,True,True,5,drawing,hka,2026-11-06T12:17:59.676112+00:00,stderr-mtime,,5,,,
+367,enterprises.dating.boo,Boo Dating App: Date & Friends,app,True,True,True,5,drawing,hka,2026-11-06T12:19:06.848191+00:00,stderr-mtime,,5,,,
+368,com.mchutov.Quranify,Quranify: Quran Audio Player,app,False,False,False,,unscored,,,,,,,,
+369,com.firsttouchgames.dls7,Dream League Soccer 2026,game,True,True,True,1,runtime-init,l7d,2026-11-11T12:07:37.027411+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+370,com.fanatee.keep,Everyday Puzzles: Mini Games,game,True,True,True,5,drawing,hka,2026-11-06T12:21:02.752295+00:00,stderr-mtime,,5,,,
+371,com.square_enix.android_googleplay.mangaup_global,Manga UP!,app,True,True,True,1,runtime-init,l7d,2026-11-11T12:08:14.567436+00:00,stderr-mtime,native-crash,1,hkf4a,ended-other,0
+372,com.idealista.android,idealista,app,True,True,True,5,drawing,l8f,2026-11-14T07:45:42.395257+00:00,stderr-mtime,,5,,,
+373,air.com.playtika.slotomania,Slotomania™ Slots Casino Games,game,True,True,True,5,drawing,l7d,2026-11-11T12:09:27.679479+00:00,stderr-mtime,,5,l3m,survived-not-mostly-empty,1
+374,scameter.hk.cyberdefender,Scameter+,app,True,True,True,5,drawing,hka,2026-11-06T12:26:13.396738+00:00,stderr-mtime,,5,,,
+375,com.live.translator.ai,Live Translator: AI translate,app,True,True,True,5,drawing,l8f,2026-11-14T07:46:56.723381+00:00,stderr-mtime,,5,,,
+376,com.ronasoftstudios.earmaxfxpro,Microphone Amplifier,app,True,True,True,5,drawing,hka,2026-11-06T12:28:32.608923+00:00,stderr-mtime,,5,,,
+377,com.watchfacestudio.per023pro,PER23 Digital Watch Face,app,False,False,False,,unscored,,,,,,,,
+378,com.camerasideas.instashot,Video Editor & Maker - InShot,app,True,True,True,5,drawing,hkf1,2026-11-08T23:38:49.738090+00:00,stderr-mtime,,5,,,
+379,com.luckyshow.live,DesParty,app,True,True,True,5,drawing,hka,2026-11-06T12:31:41.605160+00:00,stderr-mtime,,5,,,
+380,com.peoplefun.wordcross,Wordscapes,game,True,True,True,5,drawing,hka,2026-11-06T12:32:57.885257+00:00,stderr-mtime,,5,,,
+381,au.com.shiftyjelly.pocketcasts,Pocket Casts - Podcast App,app,True,True,True,5,drawing,l8f,2026-11-14T07:48:10.827520+00:00,stderr-mtime,,5,,,
+382,hk.co.akindo_sushiro.sushiroapp,香港壽司郎,app,True,True,True,5,drawing,hkf4a,2026-11-10T02:06:19.154941+00:00,stderr-mtime,,5,hkf4a,survived-not-mostly-empty,1
+383,com.spinmaster.gabbysdollhouse,Gabbys Dollhouse: Cat Games,game,True,True,True,4,view,l8f,2026-11-14T07:49:15.115668+00:00,stderr-mtime,native-crash,5,,,
+384,com.gooddrama.idrama,iDrama – Short Dramas & Reels,app,True,True,True,5,drawing,l8f,2026-11-14T07:50:27.647768+00:00,stderr-mtime,,5,,,
+385,net.manta.comic,"Manta - Manga, Manhwa, Novels",app,True,True,True,5,drawing,hka,2026-11-06T12:38:51.221679+00:00,stderr-mtime,,5,,,
+386,cz.ackee.ventusky,Ventusky: Weather Forecast,app,True,True,True,5,drawing,hka,2026-11-06T12:39:54.957753+00:00,stderr-mtime,,5,,,
+387,com.photo.hd.camera.beauty.filter,HD Camera for Android,app,True,True,True,5,drawing,hka,2026-11-06T12:40:57.605824+00:00,stderr-mtime,,5,,,
+388,com.playrix.township,Township,game,True,True,True,5,drawing,l8f,2026-11-14T07:51:53.939929+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,3
+389,com.boost.samsung.remote,Remote for Smart Samsung TV,app,True,True,True,5,drawing,s251b,2026-11-14T16:26:30.030327+00:00,stderr-mtime,,5,,,
+390,com.supercell.brawlstars,Brawl Stars,game,True,True,True,1,runtime-init,l7d,2026-11-11T12:11:06.103544+00:00,stderr-mtime,self-exit,1,hkf4b,ended-other,0
+391,com.dreamgames.royalkingdom,Royal Kingdom,game,True,True,True,5,drawing,hka,2026-11-06T12:46:39.642215+00:00,stderr-mtime,,5,,,
+392,com.evernote,Evernote - Note Organizer,app,True,True,True,5,drawing,l5q,2026-11-09T22:23:51.932498+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,2
+393,qrcodescanner.barcodescanner.qrscanner.qrcodereader,QR 碼掃描器和條碼掃描器，掃描 QR 碼,app,True,True,True,5,drawing,l8f,2026-11-14T07:57:09.080490+00:00,stderr-mtime,,5,,,
+394,com.garena.game.kgtw,Garena 傳說對決：十週年裂隙穿梭版本,game,True,True,True,1,runtime-init,l7d,2026-11-11T12:11:58.647587+00:00,stderr-mtime,native-crash,1,hkf4a,ended-other,0
+395,com.nexon.devcat.mm.tw,瑪奇 Mobile,game,False,False,False,,unscored,,,,,,,,
+396,com.xiaomi.wearable,Mi Fitness (Xiaomi Wear),app,True,True,True,2,bound,l7d,2026-11-11T12:12:49.963599+00:00,stderr-mtime,app-framework,5,hkf4a,ended-other,0
+397,com.kkday.member,KKday - Everything travel,app,True,True,True,5,drawing,l8f,2026-11-14T07:58:22.620631+00:00,stderr-mtime,,5,,,
+398,com.vlbot.veluna,"FuYu-Chat Freely, Open Video",app,True,True,True,5,drawing,l8f,2026-11-14T07:59:37.872763+00:00,stderr-mtime,,5,,,
+399,com.qustodio.family.parental.control.app.screentime,Qustodio Parental Control App,app,True,True,True,5,drawing,hka,2026-11-06T12:56:22.722895+00:00,stderr-mtime,,5,,,
+400,com.innplaylabs.animalkingdomraid,Animals & Coins: Animal Run,game,True,True,True,5,drawing,l8f,2026-11-14T08:01:09.732925+00:00,stderr-mtime,,5,,,
+401,com.carxtech.sr,CarX Street,game,True,True,True,1,runtime-init,l7d,2026-11-11T12:14:55.795700+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+402,com.google.android.apps.youtube.music,YouTube Music,app,True,True,True,4,view,l7d,2026-11-11T12:16:43.127768+00:00,stderr-mtime,stall,4,hkf4a,survived-not-mostly-empty,2
+403,com.hollywood.merge,Hollywood Merge,game,True,True,True,5,drawing,l8f,2026-11-14T08:02:34.873091+00:00,stderr-mtime,,5,,,
+404,com.fatmerge.global,Tasty Travels: Merge Game,game,True,True,True,5,drawing,l8f,2026-11-14T08:04:21.761247+00:00,stderr-mtime,,5,,,
+405,com.userjoy.str,三國群英傳：策定九州,game,True,True,True,5,drawing,hka,2026-11-06T13:08:12.563733+00:00,stderr-mtime,,5,,,
+406,com.smakapps.imposter,Fakeit: Imposter Game,game,True,True,True,5,drawing,hka,2026-11-06T13:09:30.251830+00:00,stderr-mtime,,5,,,
+407,org.mozilla.firefox,Firefox Fast & Private Browser,app,True,True,True,5,drawing,l8f,2026-11-14T08:05:43.689414+00:00,stderr-mtime,,5,l4w,survived-not-mostly-empty,3
+408,bitpit.launcher,Niagara Launcher ‧ Home Screen,app,True,True,True,5,drawing,hka,2026-11-06T13:11:51.039989+00:00,stderr-mtime,,5,,,
+409,com.vr.heymandi,Heymandi Make Friends by Words,app,True,True,True,5,drawing,l8f,2026-11-14T08:07:03.637568+00:00,stderr-mtime,,5,,,
+410,com.a3.topgirl.gplay,Top Girl,game,True,True,True,5,drawing,l8f,2026-11-14T08:09:46.593844+00:00,stderr-mtime,,5,l5b,mostly-empty-view-dumps,1
+411,com.gameloft.android.ANMP.GloftA8HM,Asphalt 8 - Car Racing Game,game,True,True,True,4,view,l7d,2026-11-11T12:19:40.167913+00:00,stderr-mtime,native-crash,4,hkf4a,ended-other,0
+412,fc.all.text.pdf.document.voice.image.translate,"All Translate: Photo, PDF, DOC",app,True,True,True,5,drawing,l7d,2026-11-11T12:21:06.283946+00:00,stderr-mtime,,5,l4z,ended-other,0
+413,com.weather.Weather,The Weather Channel - Radar,app,True,True,True,5,drawing,l8f,2026-11-14T08:11:06.685984+00:00,stderr-mtime,,5,,,
+414,com.fapp.translate.language.translator.fasttranslation,"XTranslate - Photo, Voice, PDF",app,True,True,True,1,runtime-init,l7d,2026-11-11T12:21:48.323994+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+415,com.vanilla.picoboom,Picoboom: Imposter game online,game,True,True,True,5,drawing,l8f,2026-11-14T08:12:23.654448+00:00,stderr-mtime,,5,,,
+416,com.nimispace.app,NIMI App: Chat & Party,app,True,True,True,4,view,l7d,2026-11-11T12:22:34.820018+00:00,stderr-mtime,native-crash,4,hkf4a,ended-other,0
+417,com.gu_japan.osharemaker.hk,GU Hong Kong,app,True,True,True,5,drawing,l8f,2026-11-14T08:13:30.586151+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,5
+418,todolist.scheduleplanner.dailyplanner.todo.reminders,To-Do List - Schedule Planner,app,True,True,True,5,drawing,hka,2026-11-06T13:24:21.468870+00:00,stderr-mtime,,5,,,
+419,hairstyle.colorChanger.haircut_salon,Modiface Haircut：Hair Makeover,app,True,True,True,5,drawing,hka,2026-11-06T13:25:43.028924+00:00,stderr-mtime,,5,,,
+420,com.dazn,DAZN - Watch Live Sports,app,False,True,True,,unscored,,,,,,,,
+421,grit.storytel.app,Storytel - Audiobooks & Books,app,True,True,True,5,drawing,hka,2026-11-06T13:26:46.249024+00:00,stderr-mtime,,5,,,
+422,com.kwai.video,Kwai - Video & Drama,app,True,True,True,5,drawing,l8f,2026-11-14T08:14:35.282303+00:00,stderr-mtime,,5,,,
+423,com.rovio.angrybirdsfriends,Angry Birds Friends,game,True,True,True,5,drawing,hka,2026-11-06T13:29:43.333049+00:00,stderr-mtime,,5,,,
+424,com.matteljv.uno,UNO!™,game,True,True,True,5,drawing,l8f,2026-11-14T08:16:11.218476+00:00,stderr-mtime,,5,,,
+425,com.contentsfirst.tappytoon,Tappytoon Manhwa & Novels,app,True,True,True,5,drawing,hka,2026-11-06T13:32:27.381447+00:00,stderr-mtime,,5,,,
+426,com.lulufiretech.music.ct,粵語老歌 - 粵語經典流行歌曲,app,True,True,True,5,drawing,l8f,2026-11-14T08:17:20.142593+00:00,stderr-mtime,,5,,,
+427,com.adobe.scan.android,"Adobe Scan AI PDF Scanner, OCR",app,True,True,True,5,drawing,l8f,2026-11-14T08:18:45.082996+00:00,stderr-mtime,,5,,,
+428,com.miui.huanji,Mi Mover,app,True,True,True,5,drawing,hka,2026-11-06T13:35:42.389678+00:00,stderr-mtime,,5,,,
+429,com.dreamgames.royalmatch,Royal Match,game,True,True,True,5,drawing,l5b,2026-11-09T17:17:27.290655+00:00,stderr-mtime,,5,l5b,survived-not-mostly-empty,3
+430,com.readygo.barrel.gp,Last Z: Survival Shooter,game,True,True,True,5,drawing,l8f,2026-11-14T08:22:01.496705+00:00,stderr-mtime,,5,,,
+431,com.airplay.screencasttv,AirPlay - Cast Tv,app,True,True,True,5,drawing,l8f,2026-11-14T08:23:10.209276+00:00,stderr-mtime,,5,,,
+432,com.bochk.app.aos,BOCHK中銀香港,app,True,True,True,5,drawing,hka,2026-11-06T13:41:10.758054+00:00,stderr-mtime,,5,,,
+433,com.moniqtap.carplay.autocar.connect.android,Car Play Connect Auto Sync,app,True,True,True,5,drawing,l8f,2026-11-14T08:24:17.645876+00:00,stderr-mtime,,5,,,
+434,com.mobibrain.championforge,Champion Forge: Idle RPG,game,True,True,True,5,drawing,l8f,2026-11-14T08:25:35.594509+00:00,stderr-mtime,,5,,,
+435,ai.interior.design.home.renovation.app,AI Home Design: Interior DecAI,app,True,True,True,5,drawing,l8f,2026-11-14T08:26:50.811175+00:00,stderr-mtime,,5,,,
+436,com.bingo.cruise.free.best.top.game,Bingo Voyage - Live Bingo Game,game,True,True,True,1,runtime-init,l7d,2026-11-11T12:23:27.672056+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+437,com.fivexgames.shin.tc,蠟筆小新：GO！,game,True,True,True,1,runtime-init,l7d,2026-11-11T12:24:11.280091+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+438,com.etermax.preguntados.lite,Trivia Crack: Brain Quiz Games,game,True,True,True,5,drawing,l8f,2026-11-14T08:28:17.351924+00:00,stderr-mtime,,5,,,
+439,de.komoot.android,"komoot - hike, bike & run",app,True,True,True,5,drawing,hka,2026-11-06T13:49:08.033787+00:00,stderr-mtime,,5,,,
+440,com.wallacewong.kongboard,KongBoard 香港中文鍵盤,app,True,True,True,5,drawing,l8f,2026-11-14T08:29:25.064472+00:00,stderr-mtime,,5,,,
+441,com.wikiloc.wikilocandroid,Wikiloc - Trails of the World,app,True,True,True,1,runtime-init,l7d,2026-11-11T12:24:55.416119+00:00,stderr-mtime,native-crash,1,hkf4a,ended-other,0
+442,hk.gov.ehealth.ehr,醫健通eHealth,app,True,True,True,5,drawing,hka,2026-11-06T13:51:21.509691+00:00,stderr-mtime,,5,,,
+443,com.hketransport,HKeMobility,app,True,True,True,5,drawing,hka,2026-11-06T13:52:24.737630+00:00,stderr-mtime,,5,,,
+444,com.apple.atve.androidtv.appletv,"Apple TV: Shows, Movies & More",app,True,True,True,5,drawing,l8f,2026-11-14T08:30:39.981105+00:00,stderr-mtime,,5,,,
+445,jp.co.celsys.clipstudiopaint.googleplay,Clip Studio Paint,app,True,True,True,5,drawing,l6p,2026-11-10T21:54:28.346773+00:00,stderr-mtime,,5,hkf4a,survived-not-mostly-empty,1
+446,com.gismart.guitar,Real Guitar - Music Band Game,game,True,True,True,5,drawing,l8f,2026-11-14T08:31:50.581698+00:00,stderr-mtime,,5,,,
+447,com.egsl.zhy.gp1,惡鬼狩獵：終夜,game,True,True,True,,unscored,,,,,,,,
+448,com.nytimes.android,NYTimes: US and Global News,app,True,True,True,1,runtime-init,l7d,2026-11-11T12:26:37.136142+00:00,stderr-mtime,app-framework,1,hkf4a,mostly-empty-view-dumps,1
+449,com.gt.rivals.car.racing.game,GT Rivals: Real Racing Sim,game,True,True,True,5,drawing,l8d,2026-11-13T20:44:48.325564+00:00,stderr-mtime,,5,,,
+450,com.netease.yyslshmt,燕雲十六聲,game,True,True,True,4,view,l8f,2026-11-14T08:45:44.872796+00:00,stderr-mtime,stall,5,hkf4a,survived-not-mostly-empty,1
+451,com.dazzlefun.xnmj,少女迷境,game,True,True,True,5,drawing,hka,2026-11-06T14:05:16.304988+00:00,stderr-mtime,,5,,,
+452,com.gryphline.endfield.gp,Arknights: Endfield,game,True,True,True,4,view,l7d,2026-11-11T12:33:15.492422+00:00,stderr-mtime,native-crash,4,hkf4b,ended-other,0
+453,so.nymph.android,Nymph: Open-Minded Dating App,app,True,True,True,5,drawing,l8f,2026-11-14T08:46:59.981372+00:00,stderr-mtime,,5,,,
+454,com.os.airforce,1945 Air Force: Plane Shooter,game,True,True,True,1,runtime-init,l7d,2026-11-11T12:34:36.660490+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+455,com.espn.score_center,ESPN,app,True,True,True,5,drawing,l8f,2026-11-14T08:48:13.041989+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,8
+456,jp.cocone.sweetdays,Hello Kitty Dream Village,app,True,True,True,5,drawing,hka,2026-11-06T14:12:09.244663+00:00,stderr-mtime,,5,,,
+457,com.evif.itrap,Waky Pro-Voice chat & Chill,app,True,True,True,5,drawing,l7d,2026-11-11T12:35:45.380524+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,4
+458,com.clean.easycleaner.free.apps,Easy Cleaner,app,True,True,True,5,drawing,hka,2026-11-06T14:14:18.024528+00:00,stderr-mtime,,5,,,
+459,com.initialcoms.ridi,만화 웹툰 웹소설 도서는 리디,app,True,True,True,5,drawing,hka,2026-11-06T14:15:46.612452+00:00,stderr-mtime,,5,,,
+460,alldocumentreader.office.viewer.filereader.pdfviewer,All Document Reader:PDF Viewer,app,True,True,True,5,drawing,hka,2026-11-06T14:16:51.120419+00:00,stderr-mtime,,5,,,
+461,com.sticker.maker.emojifun.wastickers,Sticker Maker & Funny Emoji,app,True,True,True,5,drawing,hka,2026-11-06T14:18:00.984467+00:00,stderr-mtime,,5,,,
+462,com.HoYoverse.hkrpgoversea,Honkai: Star Rail,game,True,True,True,2,bound,l7d,2026-11-11T12:37:05.756600+00:00,stderr-mtime,unclassified,5,l5n,ended-other,0
+463,com.grabtaxi.passenger,Grab - Taxi & Food Delivery,app,True,True,True,5,drawing,l8f,2026-11-14T08:49:32.102672+00:00,stderr-mtime,,5,,,
+464,com.acmeaom.android.myradar,MyRadar Weather Radar,app,True,True,True,5,drawing,l8f,2026-11-14T08:51:06.799467+00:00,stderr-mtime,,5,,,
+465,com.lezhin.comics,Lezhin Comics - Daily Releases,app,True,True,True,5,drawing,hka,2026-11-06T14:23:06.412549+00:00,stderr-mtime,,5,,,
+466,slots.pcg.casino.games.free.android,Cash Frenzy™ - Casino Slots,game,True,True,True,5,drawing,hka,2026-11-06T14:24:15.304553+00:00,stderr-mtime,,5,,,
+467,com.madmadgroup.godtaxi,God Taxi-Get a taxi in HK,app,True,True,True,5,drawing,hka,2026-11-06T14:25:21.932571+00:00,stderr-mtime,,5,,,
+468,com.catfishanimationstudio.MuscularSystemLite,Anatomy 3D Atlas,app,True,True,True,1,runtime-init,l7d,2026-11-11T12:38:10.888632+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+469,us.mitene,FamilyAlbum - Photo Sharing,app,True,True,True,5,drawing,l8f,2026-11-14T08:52:18.068093+00:00,stderr-mtime,,5,,,
+470,com.sled.surfers.game,Sled Surfers,game,True,True,True,5,drawing,l8f,2026-11-14T08:53:40.392786+00:00,stderr-mtime,,5,,,
+471,com.grandgames.magicsort,Magic Sort!,game,True,True,True,5,drawing,l8f,2026-11-14T08:55:02.761473+00:00,stderr-mtime,,5,,,
+472,com.calm.android,"Calm - Sleep, Meditate, Relax",app,True,True,True,5,drawing,l8f,2026-11-14T08:56:15.870109+00:00,stderr-mtime,,5,,,
+473,com.optimumbrewlab.invitationcardmaker,"Invitation Card Maker, RSVP",app,True,True,True,5,drawing,hka,2026-11-06T14:32:24.476697+00:00,stderr-mtime,,5,,,
+474,cam.sweet.selfie.effect.camera,Beauty Camera - Sweet Camera,app,True,True,True,5,drawing,hka,2026-11-06T14:33:45.712695+00:00,stderr-mtime,,5,,,
+475,com.fingersoft.hcr2,Hill Climb Racing 2,game,True,True,True,1,runtime-init,l7d,2026-11-11T12:39:00.836667+00:00,stderr-mtime,self-exit,5,,,
+476,com.adobe.spark.post,"Adobe Express: AI Photo, Video",app,True,True,True,5,drawing,hka,2026-11-06T14:35:42.208724+00:00,stderr-mtime,,5,,,
+477,com.hp.pregnancy.lite,Pregnancy + | Tracker App,app,True,True,True,5,drawing,l8f,2026-11-14T08:57:37.138813+00:00,stderr-mtime,,5,,,
+478,com.playrix.gardenscapes,Gardenscapes,game,True,True,True,5,drawing,l7d,2026-11-11T12:40:21.040718+00:00,stderr-mtime,,5,l5a,survived-not-mostly-empty,1
+479,com.sdu.didi.psnger,DiDi China: Ride Hailing,app,True,True,True,1,runtime-init,l7d,2026-11-11T12:41:25.284759+00:00,stderr-mtime,self-kill,5,l5a,ended-other,0
+480,com.watchfacestudio.per32,PER32 Ultra Hybrid Watch Face,app,True,True,True,5,drawing,hka,2026-11-06T14:40:19.792813+00:00,stderr-mtime,,5,,,
+481,in.playsimple.wordsearch,Word Search Explorer,game,True,True,True,5,drawing,l8f,2026-11-14T08:58:53.255462+00:00,stderr-mtime,,5,,,
+482,com.yalla.yallagames,Yalla Ludo - Ludo&Jackaroo,game,True,True,True,4,view,l7d,2026-11-11T12:42:32.000827+00:00,stderr-mtime,unclassified,5,l5n,ended-other,0
+483,com.mnogoteams.triviablocks,Wood Quiz Blast: Trivia Blocks,game,True,True,True,5,drawing,hka,2026-11-06T14:43:42.300869+00:00,stderr-mtime,,5,,,
+484,com.vitagreen.vita_app,維特健靈,app,True,True,True,5,drawing,hka,2026-11-06T14:45:03.380889+00:00,stderr-mtime,,5,,,
+485,sweet.snap.art.camera.lite.snap.cat.face.camera,Sweet Editor Camera Lite,app,True,True,True,5,drawing,hka,2026-11-06T14:46:11.260924+00:00,stderr-mtime,,5,,,
+486,com.garena.game.codm,Call of Duty®: Mobile - Garena,game,True,True,True,2,bound,l7d,2026-11-11T12:44:55.948920+00:00,stderr-mtime,native-crash,2,hkf4b,ended-other,0
+487,com.fiveminlab.overgeared.hero.backpack.merge,Overgeared Hero: Merge RPG,game,True,True,True,5,drawing,hka,2026-11-06T14:49:31.468983+00:00,stderr-mtime,,5,,,
+488,com.cyphergames.royalsmash,Royal Smash! - Physics Puzzle,game,True,True,True,5,drawing,l8f,2026-11-14T09:00:22.492205+00:00,stderr-mtime,,5,,,
+489,com.logicappkids,LogicLike: ABC & Math for Kids,game,True,True,True,5,drawing,hka,2026-11-06T14:52:06.041081+00:00,stderr-mtime,,5,,,
+490,co.windyapp.android,Windy.app - Enhanced forecast,app,True,True,True,1,runtime-init,l7d,2026-11-11T12:45:43.148957+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+491,com.williamsinteractive.jackpotparty,Jackpot Party Casino Slots,game,True,True,True,5,drawing,hka,2026-11-06T14:54:03.869145+00:00,stderr-mtime,,5,,,
+492,com.loohp.hkbuseta,HK Bus ETA,app,True,True,True,5,drawing,hka,2026-11-06T14:55:06.141204+00:00,stderr-mtime,,5,,,
+493,net.gameduo.dfd,E.D.E.N : The Last Line,game,True,True,True,5,drawing,hka,2026-11-06T14:56:06.513236+00:00,stderr-mtime,,5,,,
+494,com.mobvoi.mwf.magicfaces,TimeShow Watch Faces,app,True,True,True,5,drawing,hka,2026-11-06T14:57:24.937315+00:00,stderr-mtime,,5,,,
+495,com.tfgco.games.sports.free.tennis.clash,Tennis Clash: Multiplayer Game,game,True,True,True,5,drawing,l8f,2026-11-14T09:01:47.000903+00:00,stderr-mtime,,5,,,
+496,com.icandesignapp.all,Home Planner AI: Room Interior,app,True,True,True,5,drawing,l8f,2026-11-14T09:04:06.154121+00:00,stderr-mtime,,5,,,
+497,hdmi.connector.five,USB Connector Cast Phone to TV,app,True,True,True,5,drawing,hka,2026-11-06T15:01:37.149497+00:00,stderr-mtime,,5,,,
+498,com.dashapp.user,DASH: HK's Main Taxi App,app,True,True,True,5,drawing,l8f,2026-11-14T09:05:26.202757+00:00,stderr-mtime,,5,l5b,survived-not-mostly-empty,1
+499,com.tstudio.emojibatteryicon,Emoji Battery Icon Customize,app,True,True,True,5,drawing,l3y,2026-11-08T21:17:15.662176+00:00,stderr-mtime,,5,l3y,survived-not-mostly-empty,2
+500,com.runwayml.prod,Runway: AI Image & Video,app,True,True,True,5,drawing,l8f,2026-11-14T09:06:43.187456+00:00,stderr-mtime,,5,,,
+501,com.geoguessr.app,GeoGuessr,game,True,True,True,5,drawing,l7d,2026-11-11T12:46:53.584991+00:00,stderr-mtime,,5,,,
+502,pilatesworkout.yogaworkout.loseweight.workoutapps,Pilates Workout at Home,app,True,True,True,5,drawing,l8f,2026-11-14T09:07:52.612041+00:00,stderr-mtime,,5,,,
+503,com.kamagames.pokerist,Texas Hold'em Poker: Pokerist,game,True,True,True,5,drawing,l8f,2026-11-14T09:09:24.116807+00:00,stderr-mtime,,5,l4n,survived-not-mostly-empty,2
+504,com.xs2theworld.cxmobile,Cathay Pacific,app,True,True,True,5,drawing,hka,2026-11-06T15:09:07.001836+00:00,stderr-mtime,,5,,,
+505,com.deepstash,Deepstash: Smarter Every Day!,app,True,True,True,5,drawing,l5q,2026-11-09T22:32:44.357027+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,3
+506,com.apps.home.design.plan.floor.planner,Floor Plan Creator Home Design,app,True,True,True,5,drawing,hka,2026-11-06T15:11:22.637955+00:00,stderr-mtime,,5,,,
+507,com.quickshare.smartdatashare.filetransfer.datatransfer.phoneclone.easyshare,Quick Share: File Transfer App,app,True,True,True,5,drawing,hka,2026-11-06T15:12:27.498005+00:00,stderr-mtime,,5,,,
+508,com.xmonetize.quizzland,QuizzLand. Quiz & Trivia game,game,True,True,True,5,drawing,hka,2026-11-06T15:13:37.710059+00:00,stderr-mtime,,5,,,
+509,com.reddit.frontpage,Reddit,app,True,True,True,5,drawing,l8f,2026-11-14T09:10:39.717439+00:00,stderr-mtime,,5,,,
+510,com.lang.lang,LANG LIVE - LIVE Music Shows,app,True,True,True,5,drawing,l8f,2026-11-14T09:12:00.686133+00:00,stderr-mtime,,5,,,
+511,com.ricacorp.ricacorp,Ricacorp Real Listing,app,True,True,True,5,drawing,hka,2026-11-06T15:17:14.018208+00:00,stderr-mtime,,5,,,
+512,com.compass.digital.direction.directionfinder,Digital Compass for Android,app,True,True,True,5,drawing,l4z,2026-11-09T16:05:39.002441+00:00,stderr-mtime,,5,l4z,survived-not-mostly-empty,2
+513,com.blood.sugar.tracker.glucometer.Diary.test.diabetes.checker.info.glucose.convert.logger.health.fitness.monitor.history,Blood Sugar Diary for Diabetes,app,True,True,True,5,drawing,hka,2026-11-06T15:19:17.270328+00:00,stderr-mtime,,5,,,
+514,com.digitalcarkeyllc.car.scanner.obd.elm.torque.fixd.carly,OBD2 Car Scanner - ELM Torque,app,True,True,True,5,drawing,hka,2026-11-06T15:20:37.918407+00:00,stderr-mtime,,5,,,
+515,com.CameraEndoscope.UsbCamera,Camera endoscope,app,True,True,True,5,drawing,hka,2026-11-06T15:21:38.978441+00:00,stderr-mtime,,5,,,
+516,com.kiloo.subwaysurf,Subway Surfers,game,True,True,True,5,drawing,l5q,2026-11-09T22:35:02.501145+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,1
+517,com.flaglink.aimovie,VifunAI : AI Video Generator,app,True,True,True,5,drawing,l8f,2026-11-14T09:13:10.662733+00:00,stderr-mtime,,5,,,
+518,com.lmyx.gptw,SSS冒險家,game,True,True,True,5,drawing,l8f,2026-11-14T09:14:34.739440+00:00,stderr-mtime,,5,,,
+519,com.joytunes.simplypiano,Simply Piano: Learn Piano Fast,app,True,True,True,5,drawing,hka,2026-11-06T15:27:13.394752+00:00,stderr-mtime,,5,,,
+520,com.dts.freefireth,Free Fire x NARUTO SHIPPUDEN,game,True,True,True,5,drawing,l8f,2026-11-14T09:16:05.884213+00:00,stderr-mtime,,5,l5n,ended-other,1
+521,com.amanotes.beathopper,Tiles Hop Music & Ball Game,game,True,True,True,5,drawing,l8f,2026-11-14T09:17:33.440960+00:00,stderr-mtime,,5,,,
+522,com.autoscout24,AutoScout24: Automobile market,app,True,True,True,5,drawing,hka,2026-11-06T15:31:06.634944+00:00,stderr-mtime,,5,,,
+523,com.joystar.btthgp,鬥破蒼穹M：少年崛起--動畫正版授權,game,True,True,True,5,drawing,l4w,2026-11-09T10:33:01.594956+00:00,stderr-mtime,,5,l4w,survived-not-mostly-empty,2
+524,com.pieyel.scrabble,Scrabble® GO – Fun with Words!,game,True,True,True,5,drawing,hka,2026-11-06T15:34:00.635113+00:00,stderr-mtime,,5,,,
+525,jp.cocone.livly,Livly Island - Adopt Cute Pets,app,True,True,True,5,drawing,l4h,2026-11-09T05:55:53.640545+00:00,stderr-mtime,,5,l4h,survived-not-mostly-empty,1
+526,com.blizzard.wtcg.hearthstone,Hearthstone,game,True,True,True,5,drawing,l8f,2026-11-14T09:19:29.141649+00:00,stderr-mtime,,5,,,
+527,io.mewtant.pixaiart,PixAI: AI Anime Art Generator,app,True,True,True,5,drawing,s251b,2026-11-14T16:27:34.466444+00:00,stderr-mtime,,5,,,
+528,com.yahoo.mobile.client.android.mail,Yahoo Mail: Email & Planner,app,True,True,True,5,drawing,hka,2026-11-06T15:39:04.335394+00:00,stderr-mtime,,5,,,
+529,uk.co.ordnancesurvey.osmaps,"OS Maps: Walk, Hike, Run, Bike",app,True,True,True,5,drawing,hka,2026-11-06T15:40:27.783485+00:00,stderr-mtime,,5,,,
+530,com.xiaomo.lastextract,Last Extract,game,True,True,True,5,drawing,hka,2026-11-06T15:41:53.647575+00:00,stderr-mtime,,5,,,
+531,es.monkimun.lingokids,Lingokids: Games & Shows,app,True,True,True,5,drawing,l7d,2026-11-11T12:49:38.241091+00:00,stderr-mtime,,5,,,
+532,com.flytaxi.hktaxi,Fly Taxi 的士 - HK book Taxi App,app,True,True,True,5,drawing,hka,2026-11-06T15:44:13.807710+00:00,stderr-mtime,,5,,,
+533,com.medium.reader,Medium: Read & Write Stories,app,True,True,True,5,drawing,hka,2026-11-06T15:45:14.791772+00:00,stderr-mtime,,5,,,
+534,pt.cosmicode.truthordare,Truth or Dare - Dirty & Spicy,game,True,True,True,5,drawing,l8f,2026-11-14T09:21:51.230333+00:00,stderr-mtime,,5,,,
+535,com.global.ztmslgtw,末日喧囂,game,True,True,True,5,drawing,l8f,2026-11-14T09:23:21.134814+00:00,stderr-mtime,,5,l4w,survived-not-mostly-empty,1
+536,io.voodoo.paper2,Paper.io 2,game,True,True,True,5,drawing,l7d,2026-11-11T12:50:56.761144+00:00,stderr-mtime,,5,,,
+537,com.keyconnect.android,KeyConnect Digital Car Key,app,True,True,True,4,view,l8f,2026-11-14T09:24:09.631031+00:00,stderr-mtime,no-frame,5,,,
+538,com.cvmobileapp,carVertical: Check Car History,app,True,True,True,5,drawing,l8f,2026-11-14T09:25:30.663481+00:00,stderr-mtime,,5,,,
+539,com.liveyap.timehut,TimeHut - Baby Album,app,True,True,True,5,drawing,l8f,2026-11-14T09:26:44.463864+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,1
+540,eu.nordeus.topgoal,Top Goal: Soccer Champion,game,True,True,True,5,drawing,hka,2026-11-06T15:54:15.620296+00:00,stderr-mtime,,5,,,
+541,ru.yandex.music,"Yandex Music, Books & Podcasts",app,True,True,True,5,drawing,hka,2026-11-06T15:55:19.176349+00:00,stderr-mtime,,5,,,
+542,com.pallo.passiontimerscoped,YPT - Yeolpumta,app,True,True,True,5,drawing,l3v,2026-11-08T19:56:19.121197+00:00,stderr-mtime,,5,l3v,survived-not-mostly-empty,2
+543,com.lyrebirdstudio.beauty,Beauty Makeup Editor & Camera,app,True,True,True,5,drawing,hka,2026-11-06T15:57:34.040476+00:00,stderr-mtime,,5,,,
+544,com.bytebloom.control.center.ioscontrol.bb,iOS Control Center - Panel,app,True,True,True,5,drawing,s251b,2026-11-14T16:28:37.290612+00:00,stderr-mtime,,5,,,
+545,eu.nordeus.topeleven.android,Top Eleven Be a Soccer Manager,game,True,True,True,5,drawing,l8f,2026-11-14T09:29:10.024640+00:00,stderr-mtime,,5,,,
+546,com.matryoshka.royal.cooking.kitchen.madness,Royal Cooking,game,True,True,True,5,drawing,l8f,2026-11-14T09:30:29.209067+00:00,stderr-mtime,,5,,,
+547,com.beyondtrip.hopegoo,HopeGoo-Travel to Asia,app,True,True,True,5,drawing,hka,2026-11-06T16:02:30.168806+00:00,stderr-mtime,,5,,,
+548,com.modhaus.cosmo,Cosmo : the Gate,app,True,True,True,5,drawing,hka,2026-11-06T16:03:41.340851+00:00,stderr-mtime,,5,,,
+549,com.wenext.wayak,Wyak-Voice Chat&Meet Friends,app,True,True,True,5,drawing,hka,2026-11-06T16:05:18.208972+00:00,stderr-mtime,,5,,,
+550,com.wildcaly.b5.hmt,NBA巔峰對決,game,True,True,True,5,drawing,hka,2026-11-06T16:06:51.609097+00:00,stderr-mtime,,5,,,
+551,com.huuuge.casino.slots,Huuuge Casino Slots Vegas 777,game,True,True,True,4,view,l8f,2026-11-14T09:32:27.889680+00:00,stderr-mtime,stall,4,hkf4a,survived-not-mostly-empty,1
+552,com.cooking.bingo.ldkwh,Bingo Frenzy™-Live Bingo Games,game,True,True,True,5,drawing,l8f,2026-11-14T09:33:46.862081+00:00,stderr-mtime,,5,,,
+553,com.xt.retouchoversea,Hypic - Photo Editor & AI Art,app,True,True,True,5,drawing,l7d,2026-11-11T12:54:17.789301+00:00,stderr-mtime,,5,,,
+554,com.mrtgd2.tw.and,嘎嘎特攻,game,True,True,True,5,drawing,l5q,2026-11-09T22:39:38.989437+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,1
+555,com.WalkTalk.FlightMaster,Epic Plane Evolution,game,True,True,True,5,drawing,l8f,2026-11-14T09:35:14.710557+00:00,stderr-mtime,,5,,,
+556,com.aim.racing,Extreme Car Driving Simulator,game,True,True,True,5,drawing,l8f,2026-11-14T09:36:33.118918+00:00,stderr-mtime,,5,l4z,survived-not-mostly-empty,1
+557,io.piesystems.pie,Pie VAT - Tax Free Shopping,app,True,True,True,5,drawing,hka,2026-11-06T16:16:43.009718+00:00,stderr-mtime,,5,,,
+558,easy.drum.real.music.drum.set,Easy Drum - Real Music Drum,game,True,True,True,5,drawing,l8f,2026-11-14T09:37:52.579362+00:00,stderr-mtime,,5,,,
+559,com.shorts.wave.drama,ShortsWave: Watch Drama Series,app,True,True,True,5,drawing,l5q,2026-11-09T22:42:02.905578+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,7
+560,com.wxdmxtw.android,新武俠大明星-《牧神記》聯動,game,True,True,True,5,drawing,hka,2026-11-06T16:21:45.414060+00:00,stderr-mtime,,5,,,
+561,com.thetrojanapps.qrcode.reader.scanner,QR Code Reader: QR Code Maker,app,True,True,True,5,drawing,hka,2026-11-06T16:22:59.102124+00:00,stderr-mtime,,5,,,
+562,com.moduleinfotech.birthday.greetings,Birthday Greetings & Wishes,app,True,True,True,5,drawing,hka,2026-11-06T16:24:00.222182+00:00,stderr-mtime,,5,,,
+563,com.iloveworking.ching,Ching - Auto Expense Tracker,app,True,True,True,5,drawing,hka,2026-11-06T16:25:05.694255+00:00,stderr-mtime,,5,,,
+564,com.alexeymorozua.prestige,Prestige: Watch Faces Wear OS,app,False,False,False,,unscored,,,,,,,,
+565,com.unicostudio.braintestlegacy,Brain Test All-Star: IQ Boost,game,True,True,True,5,drawing,hka,2026-11-06T16:26:43.806347+00:00,stderr-mtime,,5,,,
+566,com.zynga.livepoker,Zynga Poker ™ – Texas Holdem,game,True,True,True,5,drawing,hka,2026-11-06T16:28:01.618437+00:00,stderr-mtime,,5,,,
+567,com.devsisters.gb,CookieRun: OvenBreak,game,True,True,True,5,drawing,l8f,2026-11-14T09:40:57.080323+00:00,stderr-mtime,,5,,,
+568,video.editor.videomaker.effects.fx,AI Video Editor: ShotCut AI,app,True,True,True,1,runtime-init,l7d,2026-11-11T12:58:45.533478+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+569,com.pdfflow.read,PDF Flow,app,True,True,True,5,drawing,hka,2026-11-06T16:31:44.422691+00:00,stderr-mtime,,5,,,
+570,com.trending.movie.dramastory.shortreels,DramaReel: Short Movies,app,True,True,True,5,drawing,l7d,2026-11-11T12:59:50.561478+00:00,stderr-mtime,,5,,,
+571,com.live.earthmap.streetview.livecam,Live Earth Map - World Map 3D,app,True,True,True,5,drawing,l5q,2026-11-09T22:44:11.293680+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,1
+572,com.nordcurrent.flyingfever,Airplane Chefs - Cooking Game,game,True,True,True,5,drawing,l8f,2026-11-14T09:42:20.992746+00:00,stderr-mtime,,5,,,
+573,com.dlzq.rongmai,NeuralFin,app,True,True,True,5,drawing,hka,2026-11-06T16:36:31.994957+00:00,stderr-mtime,,5,,,
+574,com.dearu.bubble.stars,bubble with STARS,app,True,True,True,5,drawing,hka,2026-11-06T16:37:14.067054+00:00,stderr-mtime,,5,,,
+575,com.locatormidgard.findnumber,Phone Number Location Tracker,app,True,True,True,5,drawing,hka,2026-11-06T16:38:37.903141+00:00,stderr-mtime,,5,,,
+576,com.netigen.bestmirror,Phone Mirror app - True Mirror,app,True,True,True,5,drawing,hka,2026-11-06T16:39:41.651183+00:00,stderr-mtime,,5,,,
+577,io.whif,WHIF: Romance & BL AI Chat,app,True,True,True,5,drawing,l8f,2026-11-14T09:43:28.997096+00:00,stderr-mtime,,5,,,
+578,br.com.rodrigokolb.realdrum,Real Drum electronic drums set,game,True,True,True,5,drawing,s251b,2026-11-14T16:29:42.346786+00:00,stderr-mtime,,5,,,
+579,com.okcupid.okcupid,OkCupid Dating: Date Singles,app,False,False,False,,unscored,,,,,,,,
+580,com.Stargazer.StellaSora,星塔旅人,game,True,True,True,5,drawing,l6r,2026-11-10T23:49:44.616992+00:00,stderr-mtime,,5,hkf4a,ended-other,1
+581,com.vitastudio.mahjong,Vita Mahjong,game,True,True,True,5,drawing,hkf4a,2026-11-10T02:32:23.296432+00:00,stderr-mtime,,5,hkf4a,survived-not-mostly-empty,1
+582,com.Chillgaming.oneState,OneState RP - Role Play Life,game,True,True,True,5,drawing,l8f,2026-11-14T09:46:55.762173+00:00,stderr-mtime,,5,,,
+583,com.ea.game.nfs14_row,Need for Speed™ No Limits,game,True,True,True,5,drawing,l8f,2026-11-14T09:48:27.318636+00:00,stderr-mtime,,5,,,
+584,pdf.tap.scanner,PDF Scanner app - TapScanner,app,True,True,True,5,drawing,l8f,2026-11-14T09:49:37.559013+00:00,stderr-mtime,,5,,,
+585,com.bigbluebubble.singingmonsters.full,My Singing Monsters,game,True,True,True,4,view,l8f,2026-11-14T09:50:54.267381+00:00,stderr-mtime,native-crash,5,,,
+586,com.hangseng.rbmobile,Hang Seng Personal Banking,app,True,True,True,1,runtime-init,l7d,2026-11-11T13:01:03.821558+00:00,stderr-mtime,self-exit,5,hkf4a,ended-other,0
+587,com.longe.racehmt,巔峰極速,game,True,True,True,4,view,l8f,2026-11-14T09:55:10.852689+00:00,stderr-mtime,stall,5,,,
+588,com.qy.vicq,VICQ: Vibe with Live Creators,app,True,True,True,5,drawing,hka,2026-11-06T16:55:24.924187+00:00,stderr-mtime,,5,,,
+589,com.gamovation.mahjongclub,Mahjong Club - Solitaire Game,game,True,True,True,5,drawing,l8f,2026-11-14T09:56:33.309128+00:00,stderr-mtime,,5,l4f,survived-not-mostly-empty,1
+590,com.vigloo,Vigloo - Premier Short Dramas,app,True,True,True,1,runtime-init,l7d,2026-11-11T13:06:04.889780+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+591,com.brave.browser,"Brave Private Web Browser, VPN",app,True,True,True,5,drawing,l7d,2026-11-11T13:07:24.065837+00:00,stderr-mtime,,5,hkf4a,ended-other,1
+592,com.imo.android.imoim,imo-International Calls & Chat,app,True,True,True,5,drawing,s228k,2026-11-13T14:23:14.025199+00:00,stderr-mtime,,5,,,
+593,hub.browser.video.downloader.saver,Hub Video Downloader,app,True,True,True,5,drawing,hka,2026-11-06T17:25:18.242143+00:00,stderr-mtime,,5,,,
+594,com.jmsgame.jackpotmastercasino,Jackpot Master™ Slots - Casino,game,True,True,True,5,drawing,l8f,2026-11-14T09:58:06.249615+00:00,stderr-mtime,,5,,,
+595,com.familygpslocator.app,Family GPS Locator・Kids Safety,app,True,True,True,5,drawing,hka,2026-11-06T17:27:45.194271+00:00,stderr-mtime,,5,,,
+596,com.selabs.speak,Speak: Language Learning,app,True,True,True,5,drawing,l8f,2026-11-14T09:59:18.481966+00:00,stderr-mtime,,5,,,
+597,com.facer.pipboy_se,Fallout Pip-Boy SE Watch Face,app,False,False,False,,unscored,,,,,,,,
+598,com.hunantv.imgo.activity.inter,MangoTV,app,True,True,True,5,drawing,l4w,2026-11-09T10:37:47.191126+00:00,stderr-mtime,,5,l4w,survived-not-mostly-empty,4
+599,com.orange.kidspiano.music.songs,Piano Kids - Music & Songs,game,True,True,True,4,view,l7d,2026-11-11T13:08:07.301888+00:00,stderr-mtime,native-crash,4,hkf4a,ended-other,0
+600,com.HoYoverse.Nap,Zenless Zone Zero,game,True,True,True,4,view,l7d,2026-11-11T13:10:54.105989+00:00,stderr-mtime,app-framework,4,hkf4b,ended-other,0
+601,com.teenpatti.hd.gold,"Teen Patti GOLD, Rummy & Poker",game,True,True,True,5,drawing,hkf3,2026-11-09T03:14:24.000904+00:00,stderr-mtime,,5,,,
+602,com.app.lognexa,Lognexa,app,True,True,True,5,drawing,hka,2026-11-06T17:34:09.418696+00:00,stderr-mtime,,5,,,
+603,com.ticktick.task,TickTick:To Do List & Calendar,app,True,True,True,5,drawing,hka,2026-11-06T17:35:12.074770+00:00,stderr-mtime,,5,,,
+604,com.google.android.apps.docs.editors.docs,Google Docs,app,True,True,True,5,drawing,hka,2026-11-06T17:36:42.714853+00:00,stderr-mtime,,5,,,
+605,moe.shizuku.privileged.api,Shizuku,app,True,True,True,5,drawing,l5q,2026-11-09T22:46:16.841818+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,4
+606,com.bigwinepot.nwdn.international,Remini - AI Photo Enhancer,app,True,True,True,5,drawing,l8f,2026-11-14T10:00:43.606440+00:00,stderr-mtime,,5,,,
+607,com.sadcity.traffic.racer.russian.village,Traffic Racer Open World,game,True,True,True,5,drawing,l5q,2026-11-09T22:48:49.613968+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,2
+608,com.yuyin0117.yogo,NiuChat voice chat room,app,True,True,True,5,drawing,hka,2026-11-06T17:42:18.935221+00:00,stderr-mtime,,5,,,
+609,com.aidiangames.garden.gp,Dreamscape Island: Farm & Cook,game,True,True,True,5,drawing,hka,2026-11-06T17:44:01.607330+00:00,stderr-mtime,,5,,,
+610,com.Chodun.CatGunner,Idle Cat Gunner: Shooter RPG,game,True,True,True,5,drawing,l8f,2026-11-14T10:02:04.086829+00:00,stderr-mtime,,5,l2g,survived-not-mostly-empty,1
+611,com.topapp.Interlocution,問問塔羅,app,True,True,True,5,drawing,l8f,2026-11-14T10:03:16.871235+00:00,stderr-mtime,,5,,,
+612,com.kodansha.kmanga,K MANGA,app,True,True,True,5,drawing,l5q,2026-11-09T22:50:59.626103+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,2
+613,com.app.logsy,Logsy,app,True,True,True,5,drawing,hka,2026-11-06T17:48:29.719597+00:00,stderr-mtime,,5,,,
+614,com.nytimes.crossword,NYT Games: Wordle & Crossword,game,True,True,True,5,drawing,l8f,2026-11-14T10:04:49.103699+00:00,stderr-mtime,,5,,,
+615,com.igg.android.doomsdaylastsurvivors,Doomsday: Undead Bride,game,True,True,True,1,runtime-init,l7d,2026-11-11T13:12:44.710078+00:00,stderr-mtime,native-crash,1,hkf4a,ended-other,0
+616,com.hair_flutter,Hairstyle Try On - AI Haircut,app,True,True,True,5,drawing,hka,2026-11-06T17:52:45.967882+00:00,stderr-mtime,,5,,,
+617,com.neave.zoomearth,Zoom Earth - Weather Forecast,app,True,True,True,1,runtime-init,l7d,2026-11-11T13:13:26.286125+00:00,stderr-mtime,native-crash,1,hkf4a,ended-other,0
+618,com.standysoftware.colorstyle,Color Analysis - Dressika,app,True,True,True,1,runtime-init,l7d,2026-11-11T13:14:08.134166+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+619,com.Zeeppo.GuitarBand,Guitar Band: Rock Battle,game,True,True,True,5,drawing,hka,2026-11-06T17:57:34.924182+00:00,stderr-mtime,,5,,,
+620,com.fingersoft.hillclimb,Hill Climb Racing,game,True,True,True,4,view,l7d,2026-11-11T13:14:50.390194+00:00,stderr-mtime,native-crash,4,,,
+621,com.productmadness.cashmancasino,Cashman Casino Slots Games,game,True,True,True,5,drawing,l8f,2026-11-14T10:06:26.492211+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,1
+622,com.tranzmate,Moovit: Bus & Public Transit,app,True,True,True,5,drawing,l8f,2026-11-14T10:07:34.696572+00:00,stderr-mtime,,5,,,
+623,com.fgol.HungrySharkEvolution,Hungry Shark Evolution,game,True,True,True,5,drawing,l8f,2026-11-14T10:08:52.544992+00:00,stderr-mtime,,5,,,
+624,net.booksy.business,Booksy Biz: For Businesses,app,True,True,True,5,drawing,l8f,2026-11-14T10:10:07.853324+00:00,stderr-mtime,,5,,,
+625,com.productmadness.lightninglink,Lightning Link Casino Slots,game,True,True,True,5,drawing,l8f,2026-11-14T10:11:46.357873+00:00,stderr-mtime,,5,l4f,survived-not-mostly-empty,1
+626,in.playsimple.crossword.go,Crossword Go!,game,True,True,True,5,drawing,hka,2026-11-06T18:06:51.816793+00:00,stderr-mtime,,5,,,
+627,com.timeleft.app,Timeleft: Make New Friends IRL,app,True,True,True,1,runtime-init,l7d,2026-11-11T13:15:40.362249+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+628,com.atom.browser.surf,Atom Browser,app,True,True,True,5,drawing,s251b,2026-11-14T16:30:45.354908+00:00,stderr-mtime,,5,,,
+629,com.sprunki.mod.horror.incredibox.monster.beats.music.game,Sprunki Beat: Full Mod Music,game,True,True,True,5,drawing,hka,2026-11-06T18:10:19.337026+00:00,stderr-mtime,,5,,,
+630,kr.co.millie.millieshelf,밀리의 서재 - 독서와 무제한 친해지리,app,True,True,True,1,runtime-init,l7d,2026-11-11T13:16:33.182273+00:00,stderr-mtime,native-crash,1,hkf4a,ended-other,0
+631,com.fdzq.app,方德智投-港美股交易 & AI智能選股,app,True,True,True,1,runtime-init,l7d,2026-11-11T13:17:29.314291+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+632,com.lyt.addons,MochiCloner Premium & Add‑ons,app,True,True,True,5,drawing,hka,2026-11-06T18:14:04.785262+00:00,stderr-mtime,,5,,,
+633,com.nexters.herowars,Hero Wars: Alliance RPG Legend,game,True,True,True,5,drawing,l8f,2026-11-14T10:14:18.798659+00:00,stderr-mtime,,5,,,
+634,com.gameloft.android.ANMP.GloftA9HM,Asphalt Legends - Racing Game,game,True,True,True,5,drawing,l7d,2026-11-11T13:21:32.386485+00:00,stderr-mtime,,5,hkf4a,ended-other,0
+635,com.smartwidgetlabs.chatgpt,Chat Smith: AI Chatbot & Agent,app,True,True,True,5,drawing,l8f,2026-11-14T10:16:09.043258+00:00,stderr-mtime,,5,,,
+636,com.watchfacestudio.per27,PER27 Digital Watch Face,app,True,True,True,5,drawing,hka,2026-11-06T18:22:13.409098+00:00,stderr-mtime,,5,,,
+637,com.netease.eggypartyhmt,蛋仔派對,game,True,True,True,4,view,s251b,2026-11-14T16:32:14.811141+00:00,stderr-mtime,stall,5,hkf4a,survived-not-mostly-empty,1
+638,beauty.picshop.sweet.face.camera,Sweet Camera Selfie,app,True,True,True,5,drawing,l7d,2026-11-11T13:22:43.534555+00:00,stderr-mtime,,5,,,
+639,com.biglime.cookingmadness,Cooking Madness: A Chef's Game,game,True,True,True,5,drawing,l7d,2026-11-11T13:24:13.174635+00:00,stderr-mtime,,5,,,
+640,com.supercell.clashofclans,Clash of Clans,game,True,True,True,1,runtime-init,l7d,2026-11-11T13:25:20.658668+00:00,stderr-mtime,self-exit,1,hkf4b,ended-other,0
+641,com.UCMobile.intl,"UC Browser-Safe, Fast, Private",app,True,True,True,5,drawing,l6u,2026-11-10T22:54:21.489772+00:00,stderr-mtime,,5,hkf4b,mostly-empty-view-dumps,1
+642,in.playsimple.wordtrip.association,Word Connect Association,game,True,True,True,5,drawing,l8f,2026-11-14T10:20:33.944324+00:00,stderr-mtime,,5,,,
+643,com.qookkagame.sgzzlb.hkmo,三國志・戰略版（港澳版）,game,True,True,True,4,view,l7d,2026-11-11T13:26:31.030725+00:00,stderr-mtime,native-crash,4,hkf4b,ended-other,0
+644,com.taxsee.taxsee,maxim — order a taxi & food,app,True,True,True,5,drawing,l8f,2026-11-14T10:21:41.868573+00:00,stderr-mtime,,5,,,
+645,com.meitu.wink,Wink: Video Enhancer & Editor,app,True,True,True,5,drawing,hka,2026-11-06T18:36:31.468560+00:00,stderr-mtime,,5,,,
+646,com.dxx.firenow,Survivor.io,game,True,True,True,5,drawing,hkf4a,2026-11-10T02:52:17.685634+00:00,stderr-mtime,,5,hkf4a,survived-not-mostly-empty,1
+647,com.genieeplus.carplay.sync,Car Play Sync for Android Awto,app,True,True,True,4,view,s251b,2026-11-14T16:34:59.311523+00:00,stderr-mtime,stall,5,hkf4a,survived-not-mostly-empty,3
+648,com.nexon.bluearchive,Blue Archive,game,True,True,True,5,drawing,hka,2026-11-06T18:41:21.960362+00:00,stderr-mtime,,5,,,
+649,com.fanatee.cody,CodyCross: Crossword Puzzles,game,True,True,True,5,drawing,l8f,2026-11-14T10:25:49.933420+00:00,stderr-mtime,,5,,,
+650,com.funplus.ts.global,Tiles Survive!,game,True,True,True,1,runtime-init,l7d,2026-11-11T13:30:31.094890+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+651,com.toomics.global.google,Toomics - Read Premium Comics,app,True,True,True,5,drawing,l8f,2026-11-14T10:26:56.233647+00:00,stderr-mtime,,5,,,
+652,com.azmobile.broken.screen.wallpaper,Broken Screen: Magic Wallpaper,app,True,True,True,5,drawing,s251b,2026-11-14T16:36:03.859696+00:00,stderr-mtime,,5,l4z,survived-not-mostly-empty,7
+653,com.hellosimply.simplydraw,Simply Draw: Learn to Draw,app,True,True,True,4,view,l8f,2026-11-14T10:29:03.946526+00:00,stderr-mtime,no-frame,5,l4z,ended-other,1
+654,dovi.darkhero.survival,Dark Hunter - Hunter Hero RPG,game,True,True,True,5,drawing,hka,2026-11-06T18:49:12.764072+00:00,stderr-mtime,,5,,,
+655,com.ProjectMoon.LimbusCompany,Limbus Company,game,True,True,True,1,runtime-init,l7d,2026-11-11T13:33:23.387007+00:00,stderr-mtime,self-exit,1,hkf4b,ended-other,0
+656,com.widgify.worldroid,Widgify - DIY Phone Screen,app,True,True,True,5,drawing,l7d,2026-11-11T13:34:31.687076+00:00,stderr-mtime,,5,,,
+657,com.ludo.king,Ludo King®,game,True,True,True,5,drawing,l8f,2026-11-14T10:30:22.570256+00:00,stderr-mtime,,5,,,
+658,jp.konami.masterduel,Yu-Gi-Oh! Master Duel,game,True,True,True,5,drawing,l8f,2026-11-14T10:31:41.982520+00:00,stderr-mtime,,5,l4h,survived-not-mostly-empty,1
+659,com.camerasideas.trimmer,YouCut - Video Editor & Maker,app,True,True,True,5,drawing,hkf1,2026-11-09T00:11:15.607779+00:00,stderr-mtime,,5,,,
+660,com.mustname.car_connect,Car Play Sync for Android Auto,app,True,True,True,5,drawing,hka,2026-11-06T18:56:30.572217+00:00,stderr-mtime,,5,,,
+661,com.josef.electrodrumpadnew,Real Electro Drum Pad: Hip Hop,game,True,True,True,5,drawing,l7d,2026-11-11T13:35:34.631137+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,1
+662,com.dinoapp.chat,Dino - Meet New Friends,app,True,True,True,5,drawing,hka,2026-11-06T18:58:40.364228+00:00,stderr-mtime,,5,,,
+663,com.bimiboo.kids.drawing,Coloring for Kids: Drawing 2-6,game,True,True,True,5,drawing,hka,2026-11-06T18:59:49.772292+00:00,stderr-mtime,,5,,,
+664,com.galixo.tv.remote.control.tvremote.alltvremote,TV Remote Control,app,True,True,True,5,drawing,l5q,2026-11-09T22:57:48.426477+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,4
+665,app.artworkout.learn.how.to.draw,Learn how to draw - ArtWorkout,app,True,True,True,5,drawing,hka,2026-11-06T19:02:26.788342+00:00,stderr-mtime,,5,,,
+666,com.precious.aiphotostudio,Precious - AI Photo Studio,app,True,True,True,5,drawing,l8f,2026-11-14T10:32:49.070806+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,3
+667,com.roomperfect.global,Family Farm Merge,game,True,True,True,5,drawing,l8f,2026-11-14T10:34:28.971145+00:00,stderr-mtime,,5,,,
+668,com.app.logsense,LogSense,app,True,True,True,5,drawing,hka,2026-11-06T19:05:58.420430+00:00,stderr-mtime,,5,,,
+669,com.arcsoft.perfect365,Perfect365: Face Makeup Editor,app,True,True,True,5,drawing,s251b,2026-11-14T16:37:17.863843+00:00,stderr-mtime,,5,,,
+670,com.fun.lastwar.gp,Last War:Survival Game,game,True,True,True,5,drawing,hka,2026-11-06T19:09:03.364487+00:00,stderr-mtime,,5,,,
+671,com.asianmobile.fontskeyboard,Emoji Font Keyboard & Themes,app,True,True,True,5,drawing,s251b,2026-11-14T16:38:24.208010+00:00,stderr-mtime,,5,,,
+672,com.gps.liveearthtracker.map.routefinder.navigation,GPS Navigation: Live Earth Map,app,True,True,True,5,drawing,hka,2026-11-06T19:11:10.732473+00:00,stderr-mtime,,5,,,
+673,com.easygames.race,Race Master 3D: Car Racing,game,True,True,True,5,drawing,l8f,2026-11-14T10:38:19.467911+00:00,stderr-mtime,,5,,,
+674,com.litatom.app,Litmatch—Make new friends,app,True,True,True,5,drawing,hka,2026-11-06T19:14:02.140586+00:00,stderr-mtime,,5,,,
+675,com.xman.tw.gp,超能戰爭,game,True,True,True,1,runtime-init,l7d,2026-11-11T13:37:48.147221+00:00,stderr-mtime,app-framework,1,hkf4a,mostly-empty-view-dumps,1
+676,com.classdojo.android,ClassDojo,app,True,True,True,5,drawing,l5a,2026-11-09T16:47:19.184881+00:00,stderr-mtime,,5,l5a,survived-not-mostly-empty,4
+677,fasttranslate.voice.photo.alllanguagestranslator.trangoai.oktranslate,All Language Translator Fast,app,True,True,True,5,drawing,hka,2026-11-06T19:18:40.968702+00:00,stderr-mtime,,5,,,
+678,com.losttemplegames.duckysort,Quack Sort: Loop Puzzle,game,True,True,True,5,drawing,hka,2026-11-06T19:19:57.876726+00:00,stderr-mtime,,5,,,
+679,com.movile.playkids.pkxd,"PK XD: Fun, friends & games",game,True,True,True,5,drawing,l8f,2026-11-14T10:39:52.420233+00:00,stderr-mtime,,5,,,
+680,com.invinciblesstudioltd.soccermanager2025,Soccer Manager 2027 - Football,game,True,True,True,5,drawing,hka,2026-11-06T19:23:26.356797+00:00,stderr-mtime,,5,,,
+681,com.bandlab.bandlab,BandLab – Music Making Studio,app,True,True,True,5,drawing,l8f,2026-11-14T10:41:20.016536+00:00,stderr-mtime,,5,,,
+682,com.squarevalley.i8birdies,18Birdies Golf GPS Rangefinder,app,True,True,True,5,drawing,hka,2026-11-06T19:25:45.052918+00:00,stderr-mtime,,5,,,
+683,mobi.mangatoon.comics.aphone,MangaToon: Comic & Manga,app,True,True,True,5,drawing,l8f,2026-11-14T10:42:27.448761+00:00,stderr-mtime,,5,,,
+684,com.iconchanger.widget.theme.shortcut,"Themepack - App Icons, Widgets",app,True,True,True,1,runtime-init,l7d,2026-11-11T13:39:42.579336+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+685,com.shazam.android,Shazam: Find Music & Concerts,app,True,True,True,5,drawing,l8f,2026-11-14T10:43:33.560986+00:00,stderr-mtime,,5,,,
+686,com.sinyee.babybus.taxi,Baby Panda's School Bus,game,True,True,True,5,drawing,l6k,2026-11-10T20:21:03.642010+00:00,stderr-mtime,,5,,,
+687,com.alightcreative.motion,Alight Motion,app,True,True,True,1,runtime-init,l7d,2026-11-11T13:40:29.343372+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+688,com.gotv.nflgamecenter.us.lite,NFL,app,True,True,True,5,drawing,hka,2026-11-06T19:31:44.173202+00:00,stderr-mtime,,5,,,
+689,com.softwareupdate.allappsupdate,Update Software App: Updates,app,True,True,True,5,drawing,l7d,2026-11-11T13:41:35.103421+00:00,stderr-mtime,,5,,,
+690,com.aieditor.artgen,MePic－AI Photo Video Generator,app,True,True,True,5,drawing,hka,2026-11-06T19:34:18.065320+00:00,stderr-mtime,,5,,,
+691,com.hairu.app,Hairu: Hairstyle Try On,app,True,True,True,5,drawing,hka,2026-11-06T19:35:24.269358+00:00,stderr-mtime,,5,,,
+692,com.clap.tofind.phone.finder.whistle,Clap to Find My Phone: Whistle,app,True,True,True,5,drawing,l5q,2026-11-09T23:02:06.698750+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,1
+693,com.vectorunit.purple.googleplay,Beach Buggy Racing,game,True,True,True,5,drawing,l8f,2026-11-14T10:44:44.249206+00:00,stderr-mtime,,5,,,
+694,chat.ometv.dating,OmeTV Chat — Friends & Dating,app,True,True,True,5,drawing,l8f,2026-11-14T10:45:55.713471+00:00,stderr-mtime,,5,,,
+695,pt.cosmicode.imposter,Imposter Up - Who is the Spy?,game,True,True,True,5,drawing,l8f,2026-11-14T10:47:25.669766+00:00,stderr-mtime,,5,,,
+696,com.cola.game,Flambé®: Merge & Cook,game,True,True,True,5,drawing,l8f,2026-11-14T10:48:41.330048+00:00,stderr-mtime,,5,,,
+697,com.fourtechnologies.mynetdiary.ad,Calorie Counter - MyNetDiary,app,True,True,True,5,drawing,l8f,2026-11-14T10:49:52.594271+00:00,stderr-mtime,,5,,,
+698,com.jaumo,Jaumo Dating App: Flirt & Date,app,True,True,True,5,drawing,l8f,2026-11-14T10:51:02.066509+00:00,stderr-mtime,,5,,,
+699,ginlemon.flowerfree,Smart Launcher 6 ‧ Home Screen,app,True,True,True,5,drawing,l7d,2026-11-11T13:43:57.907526+00:00,stderr-mtime,,5,,,
+700,ai.talkpal,Talkpal - AI Language Learning,app,True,True,True,1,runtime-init,l7d,2026-11-11T13:44:45.183583+00:00,stderr-mtime,native-crash,1,hkf4a,ended-other,0
+701,com.timesgroup.magicbricks,"Magicbricks Buy, Rent Property",app,True,True,True,1,runtime-init,l7d,2026-11-11T13:45:32.163610+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+702,com.bestapp.entertainment.ringsfree,Android Ringtone Songs,app,True,True,True,5,drawing,hka,2026-11-06T19:48:38.541976+00:00,stderr-mtime,,5,,,
+703,com.biglord.gp.tw,主公來點將,game,True,True,True,5,drawing,l8f,2026-11-14T10:52:34.274822+00:00,stderr-mtime,,5,,,
+704,com.sonypicturestelevision.millionaire,Official Millionaire Game,game,True,True,True,5,drawing,hka,2026-11-06T19:51:33.034121+00:00,stderr-mtime,,5,,,
+705,pdfreader.pdfviewer.free.officetool,PDF Reader - PDF Editor,app,True,True,True,5,drawing,l8f,2026-11-14T10:56:25.531589+00:00,stderr-mtime,,5,,,
+706,com.datamount.tipsme,Tipsme - Football Livescore,app,True,True,True,5,drawing,l8f,2026-11-14T10:57:36.563848+00:00,stderr-mtime,,5,,,
+707,com.todoist,Todoist: To Do List & Calendar,app,True,True,True,5,drawing,hka,2026-11-06T19:54:44.914253+00:00,stderr-mtime,,5,,,
+708,com.ttech.aihairtryon,Hair Color & Hairstyle Try On,app,True,True,True,5,drawing,hka,2026-11-06T19:55:48.978302+00:00,stderr-mtime,,5,,,
+709,com.xd.TLglobal,Torchlight: Infinite,game,True,True,True,2,bound,l7d,2026-11-11T13:47:17.103698+00:00,stderr-mtime,native-crash,2,hkf4a,ended-other,0
+710,com.gcl.mictospeaker.bluetoothspeaker.volumebooster,Mic to Speaker Bluetooth Mic,app,True,True,True,5,drawing,hka,2026-11-06T19:59:37.354498+00:00,stderr-mtime,,5,,,
+711,com.nhn.android.search,네이버 - NAVER,app,True,True,True,5,drawing,l6k,2026-11-10T20:27:13.001930+00:00,stderr-mtime,,5,l3x,survived-not-mostly-empty,4
+712,com.mrblue.mrblue,"미스터블루 - 웹툰, 만화, 소설앱",app,True,True,True,5,drawing,l7d,2026-11-11T13:48:27.939741+00:00,stderr-mtime,,5,l5q,ended-other,1
+713,world.letsgo.booster.android.pro,LetsVPN,app,True,True,True,5,drawing,l5q,2026-11-09T23:06:15.138991+00:00,stderr-mtime,,5,l5q,mostly-empty-view-dumps,1
+714,com.ddup.zombiewaves.zw,Zombie Waves,game,True,True,True,2,bound,l7d,2026-11-11T13:50:02.291821+00:00,stderr-mtime,native-crash,2,hkf4b,ended-other,0
+715,com.olzhas.carparking.multyplayer2,Car Parking Multiplayer 2,game,True,True,True,5,drawing,hkf4a,2026-11-10T03:05:02.450342+00:00,stderr-mtime,,5,hkf4a,survived-not-mostly-empty,1
+716,com.justgame.jails,Lands of Jail,game,True,True,True,4,view,l8f,2026-11-14T10:58:53.440099+00:00,stderr-mtime,native-crash,4,hkf4a,ended-other,0
+717,com.watchfacestudio.lbclassic06,TAG HEUER CARRERA 3 Watch Face,app,False,False,False,,unscored,,,,,,,,
+718,com.drillyapps.babydaybook,Baby Daybook - Newborn Tracker,app,True,True,True,1,runtime-init,l7d,2026-11-11T13:51:58.691906+00:00,stderr-mtime,native-crash,1,hkf4a,ended-other,0
+719,io.supercent.linkedcubic,Snake Clash!,game,True,True,True,1,runtime-init,l7d,2026-11-11T13:52:48.751945+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+720,me.funkin.fnf,Friday Night Funkin',game,True,True,True,5,drawing,l6k,2026-11-10T20:29:04.729849+00:00,stderr-mtime,,5,hkf4a,survived-not-mostly-empty,1
+721,hk.gov.immd.mobileapps,HK Immigration Department,app,True,True,True,5,drawing,l7d,2026-11-11T13:53:52.980003+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,1
+722,com.superb.rhv,Rhythm Hive,game,True,True,True,1,runtime-init,l7d,2026-11-11T13:54:53.680069+00:00,stderr-mtime,self-exit,1,hkf4b,ended-other,0
+723,de.mdiener.rain.usa,Rain Alarm,app,True,True,True,5,drawing,l7d,2026-11-11T13:55:58.988077+00:00,stderr-mtime,,5,,,
+724,jp.co.drecom.wizardry.daphne,Wizardry Variants Daphne,game,True,True,True,1,runtime-init,l7d,2026-11-11T13:56:54.188140+00:00,stderr-mtime,native-crash,1,hkf4a,ended-other,0
+725,com.fitbod.fitbod,Fitbod: Workout & Gym Planner,app,True,True,True,5,drawing,l8f,2026-11-14T11:00:25.756409+00:00,stderr-mtime,,5,,,
+726,helsi.me,Helsi: Health & Doctor Search,app,True,True,True,5,drawing,hka,2026-11-06T20:22:16.735785+00:00,stderr-mtime,,5,,,
+727,com.rush.xtreme.sports,RUSH: Xtreme,game,True,True,True,5,drawing,l8f,2026-11-14T11:01:46.240692+00:00,stderr-mtime,,5,l2f,survived-not-mostly-empty,1
+728,com.vblast.flipaclip,FlipaClip: Draw 2D Animation,app,True,True,True,1,runtime-init,l7d,2026-11-11T13:58:57.740235+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+729,com.readygo.dark.gp,Dark War Survival,game,True,True,True,5,drawing,l8f,2026-11-14T11:04:33.997192+00:00,stderr-mtime,,5,,,
+730,cam.camy,Camy — Live Video CCTV,app,True,True,True,5,drawing,hka,2026-11-06T20:28:18.192198+00:00,stderr-mtime,,5,,,
+731,com.soccer.football.livescores.news,Football Live Scores & News,app,True,True,True,5,drawing,s251b,2026-11-14T16:39:28.848162+00:00,stderr-mtime,,5,,,
+732,com.fox.jstwgp,青丘世界：緣起,game,True,True,True,5,drawing,l7d,2026-11-11T14:00:45.044318+00:00,stderr-mtime,,5,l4w,survived-not-mostly-empty,1
+733,com.google.android.calendar,Google Calendar,app,True,True,True,5,drawing,hka,2026-11-06T20:32:02.124421+00:00,stderr-mtime,,5,,,
+734,org.blubblub.app.speechblubs,Speech Blubs: Language Therapy,app,True,True,True,5,drawing,hka,2026-11-06T20:33:11.516466+00:00,stderr-mtime,,5,,,
+735,com.jaumo.casual,HookUp & Casual Dating App CSL,app,True,True,True,5,drawing,l8f,2026-11-14T11:06:50.633679+00:00,stderr-mtime,,5,,,
+736,com.catdaddy.nba2km,NBA 2K Mobile Basketball Game,game,True,True,True,4,view,l7d,2026-11-11T14:02:24.612389+00:00,stderr-mtime,native-crash,4,hkf4a,ended-other,0
+737,beatmaker.edm.musicgames.PianoGames,Piano Fire: Edm Music & Piano,game,True,True,True,5,drawing,hka,2026-11-06T20:37:12.116701+00:00,stderr-mtime,,5,,,
+738,com.m88.idleXX,杖劍傳說：坎斯汀之約,game,True,True,True,5,drawing,hka,2026-11-06T20:40:43.036889+00:00,stderr-mtime,,5,,,
+739,com.hily.app,Hily Dating app: Meet & Date,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:03:09.944422+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+740,com.ltgames.android.m71.tw,一念逍遙,game,True,True,True,5,drawing,l7d,2026-11-11T14:04:41.960517+00:00,stderr-mtime,,5,,,
+741,com.heygen.app,HeyGen: AI Video Generator,app,True,True,True,5,drawing,l8f,2026-11-14T11:07:55.397874+00:00,stderr-mtime,,5,,,
+742,kz.sirius.kidssecurity,Parental Control App Blocker,app,True,True,True,5,drawing,hka,2026-11-06T20:45:52.753209+00:00,stderr-mtime,,5,,,
+743,com.wonderpeople.megahitpoker.global,Mega Hit Poker: Texas Holdem,game,True,True,True,5,drawing,hka,2026-11-06T20:47:04.809294+00:00,stderr-mtime,,5,,,
+744,mirrorapp.lightmirror.beautymirror.makeupmirror,Mirror App - Beauty Mirror,app,True,True,True,5,drawing,hka,2026-11-06T20:48:06.957326+00:00,stderr-mtime,,5,,,
+745,com.gear2.growslayer,Slayer Legend : Idle RPG,game,True,True,True,1,runtime-init,l7d,2026-11-11T14:05:45.904596+00:00,stderr-mtime,unclassified,1,hkf4a,ended-other,0
+746,com.fusionmedia.investing,Investing.com: Stock Market,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:06:32.980651+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+747,com.interstellarapps.hairstyleai,Hairstyle & Hair Color Changer,app,True,True,True,5,drawing,hka,2026-11-06T20:51:23.461521+00:00,stderr-mtime,,5,,,
+748,ringtonesforandroidphonefree.ringtones.ringtonessongs.ringtonesapp,Ringtones for Android Phone,app,True,True,True,5,drawing,l7d,2026-11-11T14:07:37.416686+00:00,stderr-mtime,,5,,,
+749,br.tv.horizonte.android.premierefc,Premiere: Jogos ao vivo,app,True,True,True,5,drawing,l8f,2026-11-14T11:09:04.830134+00:00,stderr-mtime,,5,,,
+750,com.qookkagames.xczyw.gp.hk,信長之野望 真戰（港澳版）,game,True,True,True,5,drawing,l6u,2026-11-10T22:57:02.589925+00:00,stderr-mtime,,5,,,
+751,hero.claw.master,Claw Master – Roguelike Hero,game,True,True,True,5,drawing,hka,2026-11-06T20:58:01.189903+00:00,stderr-mtime,,5,,,
+752,com.touchie.ai,Touchie - AI Story & Create,app,True,True,True,5,drawing,l8f,2026-11-14T11:10:26.870414+00:00,stderr-mtime,,5,,,
+753,com.marvel.unlimited,Marvel Unlimited,app,True,True,True,5,drawing,l8f,2026-11-14T11:11:33.806634+00:00,stderr-mtime,,5,,,
+754,com.commsource.beautyplus,BeautyPlus-Selfie Photo Editor,app,True,True,True,5,drawing,l8f,2026-11-14T11:13:18.770995+00:00,stderr-mtime,,5,,,
+755,com.pof.android,Plenty of Fish : Dating App,app,True,True,True,5,drawing,l8f,2026-11-14T11:14:33.215242+00:00,stderr-mtime,,5,,,
+756,sg.partying.android.lite,Veeka: Find Community & Fun,app,True,True,True,5,drawing,l4w,2026-11-09T10:42:56.375277+00:00,stderr-mtime,,5,l4w,survived-not-mostly-empty,1
+757,com.tenetapps.artielab,ARtie Lab: AR Drawing & Sketch,app,True,True,True,5,drawing,l8f,2026-11-14T11:15:43.683486+00:00,stderr-mtime,,5,,,
+758,com.napper,Napper: Baby Sleep & Parenting,app,True,True,True,5,drawing,hka,2026-11-06T21:06:44.174415+00:00,stderr-mtime,,5,,,
+759,io.iftech.bistrobridge,Kuli Kuli: Travel Translator,app,True,True,True,5,drawing,hka,2026-11-06T21:07:49.674479+00:00,stderr-mtime,,5,,,
+760,com.global.sgdbztw,時光大爆炸,game,True,True,True,5,drawing,l8f,2026-11-14T11:18:13.039998+00:00,stderr-mtime,,5,,,
+761,link.socialai.app,status - sims but social media,app,True,True,True,5,drawing,l8f,2026-11-14T11:19:30.212151+00:00,stderr-mtime,,5,,,
+762,com.isharing.isharing,iSharing: GPS Location Tracker,app,True,True,True,5,drawing,l8f,2026-11-14T11:20:51.084339+00:00,stderr-mtime,,5,,,
+763,dance.fit.zumba.weightloss.danceburn,Dancefitme - Fun Weight Loss,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:08:20.056761+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+764,tsoiyatshing.hikingtrailhk,Hiking Trail HK,app,True,True,True,5,drawing,hka,2026-11-06T21:14:23.838869+00:00,stderr-mtime,,5,,,
+765,com.supportware.Buienradar,Buienradar - weer,app,True,True,True,5,drawing,l5q,2026-11-09T23:10:30.715233+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,2
+766,com.mnogoteams.quizblitz,Quiz Blitz: Test Brain Game,game,True,True,True,5,drawing,hka,2026-11-06T21:17:04.883025+00:00,stderr-mtime,,5,,,
+767,ai.zuoye.shijuanbao,試卷寶-拍照抹除筆跡，整理試卷錯題,app,True,True,True,5,drawing,hka,2026-11-06T21:18:10.991087+00:00,stderr-mtime,,5,,,
+768,com.outdooractive.Outdooractive,Outdooractive. Hike and Ride,app,True,True,True,5,drawing,hka,2026-11-06T21:19:18.171148+00:00,stderr-mtime,,5,,,
+769,com.todtv.tod,TOD by beIN,app,True,True,True,4,view,l8f,2026-11-14T11:21:43.316488+00:00,stderr-mtime,no-frame,5,,,
+770,com.themekit.widgets.themes,ThemeKit - Themes & Widgets,app,True,True,True,5,drawing,hka,2026-11-06T21:21:52.499307+00:00,stderr-mtime,,5,,,
+771,com.kaboom.apps.free.invitation.maker,Invitation Maker－Card Creator,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:08:58.528764+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+772,com.geozilla.family,Geozilla - Family GPS Locator,app,True,True,True,5,drawing,l8f,2026-11-14T11:22:48.776612+00:00,stderr-mtime,,5,,,
+773,com.viralpet.app,ViralPet: AI Pet Video Maker,app,True,True,True,5,drawing,hka,2026-11-06T21:24:38.991472+00:00,stderr-mtime,,5,,,
+774,com.arlosoft.macrodroid,MacroDroid - Device Automation,app,True,True,True,5,drawing,hka,2026-11-06T21:25:44.147533+00:00,stderr-mtime,,5,,,
+775,com.google.android.contacts,Contacts,app,True,True,True,5,drawing,hka,2026-11-06T21:27:13.635625+00:00,stderr-mtime,,5,,,
+776,lequipe.fr,"L’ÉQUIPE - actu, score, match",app,True,True,True,5,drawing,hka,2026-11-06T21:28:24.491707+00:00,stderr-mtime,,5,,,
+777,tiktok.video.downloader.nowatermark.tiktokdownload.snaptik,SnapTok - TT Video Downloader,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:09:39.052826+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+778,com.udates,Once: Chat & Connect App,app,True,True,True,5,drawing,hka,2026-11-06T21:30:12.699786+00:00,stderr-mtime,,5,,,
+779,com.badguytw.gp,不良人：破局,game,True,True,True,5,drawing,l8f,2026-11-14T11:24:27.404850+00:00,stderr-mtime,,5,,,
+780,com.fansipan.epic.stickman.survival.rpg.idle.game,Epic Stickman: Idle RPG War,game,True,True,True,1,runtime-init,l7d,2026-11-11T14:10:39.984886+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+781,com.chorefriend.chorefriend,Chorefriend: Cleaning Schedule,app,True,True,True,5,drawing,hka,2026-11-06T21:33:58.824023+00:00,stderr-mtime,,5,,,
+782,com.eyezy.android,Findio: GPS phone tracker,app,True,True,True,5,drawing,l8f,2026-11-14T11:25:37.101008+00:00,stderr-mtime,,5,,,
+783,life.channel.accurate.local.weather.forecast,Local Weather：Weather Forecast,app,True,True,True,5,drawing,hka,2026-11-06T21:36:07.496114+00:00,stderr-mtime,,5,,,
+784,com.popularapp.periodcalendar,Period Calendar Period Tracker,app,True,True,True,5,drawing,hka,2026-11-06T21:37:10.676193+00:00,stderr-mtime,,5,,,
+785,com.unicostudio.braintest5,Brain Test X: Hard Challenge,game,True,True,True,5,drawing,hka,2026-11-06T21:38:52.528297+00:00,stderr-mtime,,5,,,
+786,ai.leonardo.leonardo,Leonardo.Ai - Image Generator,app,True,True,True,5,drawing,hka,2026-11-06T21:39:57.172348+00:00,stderr-mtime,,5,,,
+787,com.musicdreamtiles.pianogame,Dreameow Tiles: Rhythm Cat,game,True,True,True,5,drawing,hka,2026-11-06T21:41:06.484448+00:00,stderr-mtime,,5,,,
+788,com.bomcomics.bomtoon.playstore,봄툰,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:12:25.384943+00:00,stderr-mtime,stall,1,hkf4b,ended-other,0
+789,com.tfgco.apps.coloring.free.color.by.number,Color by Number：Coloring Games,game,True,True,True,5,drawing,hka,2026-11-06T21:42:55.940539+00:00,stderr-mtime,,5,,,
+790,com.alien.shooter.galaxy.attack,Galaxy Attack: Shooting Game,game,True,True,True,1,runtime-init,l7d,2026-11-11T14:13:21.441026+00:00,stderr-mtime,native-crash,1,,,
+791,com.untitledshows.pov,POV – Disposable Camera Events,app,True,True,True,5,drawing,hka,2026-11-06T21:46:11.424709+00:00,stderr-mtime,,5,,,
+792,com.blackmagicdesign.android.blackmagiccam,Blackmagic Camera,app,False,False,False,,unscored,,,,,,,,
+793,com.cricheroes.cricheroes.alpha,CricHeroes-Cricket Scoring App,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:15:06.065116+00:00,stderr-mtime,stall,1,hkf4b,mostly-empty-view-dumps,1
+794,com.zing.zalo,Zalo,app,True,True,True,5,drawing,l8f,2026-11-14T11:26:53.709179+00:00,stderr-mtime,,5,hkf4a,survived-not-mostly-empty,6
+795,jp.co.yamap,YAMAP -Social Trekking GPS App,app,True,True,True,5,drawing,hka,2026-11-06T21:49:43.448918+00:00,stderr-mtime,,5,,,
+796,com.hybeim.architect,Architect: Land of Exiles,game,True,True,True,,unscored,,,,,,,,
+797,com.unicostudio.braintest2new,Brain Test 2: Tricky Stories,game,True,True,True,5,drawing,hka,2026-11-06T21:53:38.197144+00:00,stderr-mtime,,5,,,
+798,com.musescore.playerlite,MuseScore: Music Chords & Tabs,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:15:56.921189+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+799,com.qoni.guesstheiranswer,Guess Their Answer - IQ Games,game,True,True,True,5,drawing,l8f,2026-11-14T11:28:10.385361+00:00,stderr-mtime,,5,,,
+800,com.runbuddy.prod,Runna: Running Plans & Coach,app,False,False,False,,unscored,,,,,,,,
+801,com.moonfrog.ludo.club,Ludo Club - Fun Dice Game,game,True,True,True,5,drawing,l8f,2026-11-14T11:29:27.953537+00:00,stderr-mtime,,5,,,
+802,com.google.android.apps.adm,Google’s Find Hub,app,True,True,True,5,drawing,l8f,2026-11-14T11:30:46.081732+00:00,stderr-mtime,,5,hkf4a,mostly-empty-view-dumps,1
+803,com.cedargames.mysterytown,Mystery Town: Merge Games,game,True,True,True,5,drawing,l8f,2026-11-14T11:32:28.721951+00:00,stderr-mtime,,5,l4w,survived-not-mostly-empty,1
+804,com.globalcomix.mobileapp,GlobalComix: Comics and Manga,app,True,True,True,5,drawing,l4f,2026-11-09T04:57:03.010884+00:00,stderr-mtime,,5,l4f,survived-not-mostly-empty,1
+805,com.easybrain.crossword.puzzles,Crossword Master - Word Puzzle,game,True,True,True,5,drawing,hka,2026-11-06T22:02:09.109764+00:00,stderr-mtime,,5,,,
+806,com.bitmango.go.wordcookies,Word Cookies! ®,game,True,True,True,5,drawing,l8f,2026-11-14T11:33:54.238136+00:00,stderr-mtime,,5,,,
+807,com.lemonde.androidapp,"Le Monde, Live News",app,True,True,True,5,drawing,hka,2026-11-06T22:04:58.313818+00:00,stderr-mtime,,5,,,
+808,com.loadcomplete.welldiver,WellDiver,game,True,True,True,1,runtime-init,l7d,2026-11-11T14:19:48.385420+00:00,stderr-mtime,unclassified,1,hkf4a,ended-other,0
+809,com.percent.aos.cooptd,Coop TD: Together,game,True,True,True,1,runtime-init,l7d,2026-11-11T14:20:56.905481+00:00,stderr-mtime,native-crash,1,hkf4a,ended-other,0
+810,se.maginteractive.quizduel2,QuizDuel! Quiz & Trivia Game,game,True,True,True,5,drawing,hka,2026-11-06T22:08:15.142000+00:00,stderr-mtime,,5,,,
+811,io.randomco.travel,Travel Town - Merge Adventure,game,True,True,True,5,drawing,hka,2026-11-06T22:10:07.854084+00:00,stderr-mtime,,5,,,
+812,video.ai.videogenerator,AI Video Generator: 3D FlixAI,app,True,True,True,5,drawing,l5q,2026-11-09T23:12:41.111348+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,1
+813,no.mobitroll.kahoot.android,Kahoot! Play & Create Quizzes,app,True,True,True,5,drawing,hka,2026-11-06T22:12:48.498262+00:00,stderr-mtime,,5,,,
+814,com.quizlet.quizletandroid,Quizlet: More than Flashcards,app,True,True,True,5,drawing,l8f,2026-11-14T11:35:02.646299+00:00,stderr-mtime,,5,,,
+815,com.guardian,The Guardian - US & World News,app,True,True,True,5,drawing,l8f,2026-11-14T11:36:12.070459+00:00,stderr-mtime,,5,,,
+816,com.topwar.gp,Top War: Battle Game,game,True,True,True,5,drawing,l8f,2026-11-14T11:37:54.910605+00:00,stderr-mtime,,5,,,
+817,com.supercell.clashroyale,Clash Royale,game,True,True,True,1,runtime-init,l7d,2026-11-11T14:23:22.353602+00:00,stderr-mtime,self-exit,1,hkf4b,ended-other,0
+818,com.greenmushroom.boomblitz.gp,Top Heroes: Kingdom Saga,game,True,True,True,5,drawing,l8f,2026-11-14T11:39:16.086805+00:00,stderr-mtime,,5,hkf4a,ended-other,0
+819,com.skgames.trafficrider,Traffic Rider,game,True,True,True,5,drawing,hka,2026-11-06T22:21:10.334755+00:00,stderr-mtime,,5,,,
+820,com.topcog.archmageidle,Archmage Idle,game,True,True,True,5,drawing,hka,2026-11-06T22:22:19.422828+00:00,stderr-mtime,,5,,,
+821,com.grad.def,Yami Star - Voice Chat,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:25:20.525728+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+822,com.flortumapp.date,My Flirt: Meet People Nearby,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:26:01.849779+00:00,stderr-mtime,native-crash,1,hkf4a,ended-other,0
+823,com.cronometer.android.gold,Cronometer: Calorie Counter,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:26:44.741817+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+824,com.huckleberry_labs.app,Huckleberry: Baby Tracker,app,True,True,True,5,drawing,l7d,2026-11-11T14:27:56.281888+00:00,stderr-mtime,,5,,,
+825,com.eset.ems2.gp,ESET Mobile Security Antivirus,app,True,True,True,5,drawing,l3y,2026-11-08T21:22:22.970980+00:00,stderr-mtime,,5,l3y,survived-not-mostly-empty,5
+826,com.coretoolslab.cleaner.storage.ai,Phone Cleanup: AI Cleaner,app,True,True,True,5,drawing,hka,2026-11-06T22:27:56.371161+00:00,stderr-mtime,,5,,,
+827,com.mysugr.android.companion,mySugr - Diabetes Tracker Log,app,True,True,True,5,drawing,hka,2026-11-06T22:29:30.535257+00:00,stderr-mtime,,5,,,
+828,com.netease.idv_tw.googleplay,第五人格,game,True,True,True,5,drawing,l8f,2026-11-14T11:43:29.019421+00:00,stderr-mtime,,5,,,
+829,com.phstw.global,醫起救世界：鼠裡逃生,game,True,True,True,5,drawing,l8f,2026-11-14T11:45:09.579642+00:00,stderr-mtime,,5,l2g,survived-not-mostly-empty,1
+830,com.weather.nold.forecast,Live Weather: Weather Forecast,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:28:33.117923+00:00,stderr-mtime,native-crash,1,hkf4a,ended-other,0
+831,ai.photo.generator.editor.fotos.ai.image.app.free,AI Photo Generator: Muselab AI,app,True,True,True,5,drawing,hka,2026-11-06T22:37:49.311736+00:00,stderr-mtime,,5,,,
+832,com.google.android.apps.chromecast.app,Google Home,app,True,True,True,5,drawing,hka,2026-11-06T22:39:31.619843+00:00,stderr-mtime,,5,,,
+833,com.sibeliusstudios.gallerie,Gallerie Wallpapers,app,True,True,True,5,drawing,l6r,2026-11-11T00:05:27.549901+00:00,stderr-mtime,,5,hkf4a,survived-not-mostly-empty,1
+834,com.flags.quiz.trivia,Flags Quiz - Guess The Flag,game,True,True,True,5,drawing,l8f,2026-11-14T11:46:34.115844+00:00,stderr-mtime,,5,l2g,survived-not-mostly-empty,1
+835,app.game.rentaapps,漫画 ”Ｒｅｎｔａ”マンガ レンタル漫画アプリ,app,True,True,True,5,drawing,hka,2026-11-06T22:43:40.108074+00:00,stderr-mtime,,5,,,
+836,com.platogo.pmp,Slotpark Casino Slots Games,game,True,True,True,5,drawing,hka,2026-11-06T22:44:43.492127+00:00,stderr-mtime,,5,,,
+837,com.playdigious.ninekings,9 Kings,game,True,True,True,1,runtime-init,l7d,2026-11-11T14:29:23.825969+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+838,org.thoughtcrime.securesms,Signal Private Messenger,app,True,True,True,5,drawing,hka,2026-11-06T22:47:09.916245+00:00,stderr-mtime,,5,,,
+839,com.unicostudio.braintest4,Brain Test 4: Tricky Friends,game,True,True,True,5,drawing,l4h,2026-11-09T06:00:45.457834+00:00,stderr-mtime,,5,l4h,survived-not-mostly-empty,2
+840,com.maps.radar.navigation.android2023,"MapXplorer: Navigation, Radar",app,True,True,True,1,runtime-init,l7d,2026-11-11T14:30:26.954026+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+841,luma.sora.pika.runway.video.ai,Drma: AI Short Drama Maker,app,True,True,True,5,drawing,l8f,2026-11-14T11:47:58.340039+00:00,stderr-mtime,,5,,,
+842,com.pixel.art.coloring.color.number,Happy Color®: Color by Number,game,True,True,True,5,drawing,hka,2026-11-06T22:52:10.384571+00:00,stderr-mtime,,5,,,
+843,com.discovenger.app,LiveLocate - Family Tracker,app,True,True,True,5,drawing,l8f,2026-11-14T11:49:07.004189+00:00,stderr-mtime,,5,,,
+844,com.wetter.androidclient,weather24: Forecast & Radar,app,True,True,True,5,drawing,hka,2026-11-06T22:54:18.336698+00:00,stderr-mtime,,5,,,
+845,com.sec.android.app.sbrowser,Samsung Browser,app,True,True,True,4,view,l7d,2026-11-11T14:31:34.578089+00:00,stderr-mtime,native-crash,4,hkf4a,ended-other,0
+846,com.football.soccer.league,Football League 2026,game,True,True,True,5,drawing,l8f,2026-11-14T11:50:33.132387+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,1
+847,com.geotrackpro.gpsphonelocationtracker,Phone Tracker & GPS Location,app,True,True,True,5,drawing,l6r,2026-11-11T00:07:45.310041+00:00,stderr-mtime,,5,hkf4a,survived-not-mostly-empty,7
+848,com.app.nextlog,NextLog,app,True,True,True,5,drawing,l7d,2026-11-11T14:32:46.706155+00:00,stderr-mtime,,5,,,
+849,com.miniclip.plagueinc,Plague Inc.,game,True,True,True,5,drawing,l6k,2026-11-10T20:41:38.337735+00:00,stderr-mtime,,5,l3y,survived-not-mostly-empty,2
+850,com.a3d4medical.completeanatomy,Complete Anatomy - Learn in 3D,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:34:16.214266+00:00,stderr-mtime,native-crash,1,hkf4a,ended-other,0
+851,com.freevoicetranslator.languagetranslate.speakandtranslate,Languages Translator App,app,True,True,True,5,drawing,l8f,2026-11-14T11:51:45.864568+00:00,stderr-mtime,,5,,,
+852,com.sygic.familywhere.android,Find my Phone - Family Locator,app,True,True,True,5,drawing,l8f,2026-11-14T11:52:53.032716+00:00,stderr-mtime,,5,,,
+853,com.pocketchamps.game,Pocket Champs: 3D Racing Games,game,True,True,True,5,drawing,hka,2026-11-06T23:05:15.193344+00:00,stderr-mtime,,5,,,
+854,com.tdsking.videostatus,Mecha Core,game,True,True,True,5,drawing,l8f,2026-11-14T11:55:07.505026+00:00,stderr-mtime,,5,,,
+855,com.sinyee.babybus.world,Baby Panda World-Learning Game,game,True,True,True,5,drawing,hkf3,2026-11-09T03:39:57.202372+00:00,stderr-mtime,,5,,,
+856,com.master.hotelmaster,My Perfect Hotel,game,True,True,True,5,drawing,l8f,2026-11-14T11:56:30.373216+00:00,stderr-mtime,,5,,,
+857,com.miniclip.carrom,Carrom Pool: Disc Game,game,True,True,True,4,view,l7d,2026-11-11T14:36:28.578375+00:00,stderr-mtime,native-crash,4,hkf4a,ended-other,0
+858,com.retouchphoto.objectremover.enhanceimage.ai,AI Photo Editor: Photo Enhance,app,True,True,True,5,drawing,hka,2026-11-06T23:11:47.481711+00:00,stderr-mtime,,5,,,
+859,com.wemadeconnect.aos.makedrama.google,MAke Drama : MAD,game,True,True,True,4,view,l8f,2026-11-14T11:57:39.697365+00:00,stderr-mtime,unclassified,5,,,
+860,com.crypt.gram.puzz,Cryptogram: Word Logic Puzzles,game,True,True,True,5,drawing,hka,2026-11-06T23:14:18.357856+00:00,stderr-mtime,,5,,,
+861,com.wallapers.sillysmiles.live.wallpaper,Wallpics - Live Wallpapers 4K,app,True,True,True,5,drawing,l7d,2026-11-11T14:37:33.322448+00:00,stderr-mtime,,5,,,
+862,com.merge.cooking.theme.restaurant.food,Merge Cooking®,game,True,True,True,1,runtime-init,l7d,2026-11-11T14:38:40.358510+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+863,com.ax.car.engine.sounds,Car Engine Sounds - Gas Pedal,app,True,True,True,5,drawing,hka,2026-11-06T23:17:52.602039+00:00,stderr-mtime,,5,,,
+864,com.devolverdigital.ballxpit,BALL x PIT,game,True,True,True,1,runtime-init,l7d,2026-11-11T14:39:35.782569+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+865,cool.fonts.symbol.keyboard.custom.fancy.text.editor,Fonts Art - Keyboard Fonts,app,True,True,True,5,drawing,l8f,2026-11-14T11:58:50.609528+00:00,stderr-mtime,,5,,,
+866,com.tvb.iNews,TVB News+ – News & Lifestyle,app,True,True,True,5,drawing,l4h,2026-11-09T06:02:56.350393+00:00,stderr-mtime,,5,l4h,survived-not-mostly-empty,1
+867,com.askout.social,AskOut: Post & Join Plans,app,True,True,True,5,drawing,hka,2026-11-06T23:22:28.914330+00:00,stderr-mtime,,5,,,
+868,com.bellyBloom.pregnancy.tracker,Baby & Pregnancy Tracker App,app,True,True,True,5,drawing,hka,2026-11-06T23:23:32.966367+00:00,stderr-mtime,,5,,,
+869,com.deeporbit.regenradarlivenl,Weather & Rain Radar Forecast,app,True,True,True,5,drawing,hka,2026-11-06T23:24:36.742453+00:00,stderr-mtime,,5,,,
+870,com.YoBroStudios.MergeSpinner,Spinner Merge Blitz: Spin Top,game,True,True,True,5,drawing,l8f,2026-11-14T12:00:06.953717+00:00,stderr-mtime,,5,,,
+871,com.ultimateguitar.tabs,Ultimate Guitar: Chords & Tabs,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:40:26.670612+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+872,com.running.ball.beat.dancing.color.music.game,Running Roadball,game,True,True,True,5,drawing,hka,2026-11-06T23:28:17.858669+00:00,stderr-mtime,,5,,,
+873,de.delitoon,LEZHIN DE,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:41:04.554652+00:00,stderr-mtime,native-crash,1,hkf4a,ended-other,0
+874,org.eobdfacile.android,OBD2 Car Scanner - EOBD Facile,app,True,True,True,5,drawing,hkf3,2026-11-09T03:41:54.402472+00:00,stderr-mtime,,5,,,
+875,com.frontrow.vlog,VN: Photo & Video Editor,app,True,True,True,5,drawing,l8f,2026-11-14T12:01:45.021934+00:00,stderr-mtime,,5,,,
+876,com.defensez.survivaltd,Defense Z: Survival TD,game,True,True,True,5,drawing,l8f,2026-11-14T12:03:17.466143+00:00,stderr-mtime,,5,,,
+877,com.ballytechnologies.quickhitslots,Quick Hit Casino Slots Games,game,True,True,True,5,drawing,hka,2026-11-06T23:34:58.751062+00:00,stderr-mtime,,5,,,
+878,com.droid27.transparentclockweather,Transparent clock and weather,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:41:45.498693+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+879,com.sillens.shapeupclub,Lifesum: AI Calorie Tracker,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:42:36.226740+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+880,com.tutotoons.app.fluvsies.free,Fluvsies - Cute Virtual Pets,game,True,True,True,5,drawing,l8f,2026-11-14T12:04:43.578331+00:00,stderr-mtime,,5,,,
+881,com.x.aniimos,Aniimo,game,True,True,True,1,runtime-init,l7d,2026-11-11T14:43:35.962812+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+882,com.football.livescores.liveupdates,Football Live Score: Soccer,app,True,True,True,5,drawing,l3y,2026-11-08T21:26:38.391208+00:00,stderr-mtime,,5,l3y,survived-not-mostly-empty,5
+883,com.lucky_apps.RainViewer,RainViewer: Live Weather Radar,app,True,True,True,5,drawing,l8f,2026-11-14T12:05:53.354508+00:00,stderr-mtime,,5,,,
+884,com.storytoys.lego.bluey.googleplay,LEGO® Bluey,game,True,True,True,5,drawing,hka,2026-11-06T23:41:36.051455+00:00,stderr-mtime,,5,,,
+885,wsj.reader_sp,The Wall Street Journal,app,True,True,True,5,drawing,hka,2026-11-06T23:42:59.395528+00:00,stderr-mtime,,5,,,
+886,com.scannerradio,Scanner Radio - Police Scanner,app,True,True,True,4,view,l8f,2026-11-14T12:06:40.514600+00:00,stderr-mtime,no-frame,5,,,
+887,adventure.party.real.life,Sunday City: Life RolePlay,game,True,True,True,5,drawing,l7d,2026-11-11T14:45:47.410914+00:00,stderr-mtime,,5,l5i,survived-not-mostly-empty,1
+888,com.security.fileguard,File Cleaner-Storage Cleaner,app,True,True,True,5,drawing,hka,2026-11-06T23:47:22.343759+00:00,stderr-mtime,,5,,,
+889,com.matryoshka.cooking.vibes,We Are Cooking: Taste of Life,game,True,True,True,5,drawing,l8f,2026-11-14T12:08:11.290820+00:00,stderr-mtime,,5,,,
+890,com.ubisoft.dance.JustDance,Just Dance Now,game,True,True,True,5,drawing,l8f,2026-11-14T12:09:24.830984+00:00,stderr-mtime,,5,l4n,survived-not-mostly-empty,1
+891,pro.godok.gymwork,Gymwork: Workout Tracker Log,app,True,True,True,5,drawing,hka,2026-11-06T23:51:30.804025+00:00,stderr-mtime,,5,,,
+892,com.storytoys.marvelhq.googleplay,Marvel HQ: Kids Super Hero Fun,game,True,True,True,1,runtime-init,l7d,2026-11-11T14:47:19.155003+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+893,com.merge.game.foodstars,Foodstars: Merge & Cook,game,True,True,True,5,drawing,hka,2026-11-06T23:54:48.720207+00:00,stderr-mtime,,5,,,
+894,com.draw.sketch.ardrawing.trace.anime.paint,Artrace: AR Easy Draw & Sketch,app,True,True,True,4,view,s251b,2026-11-14T16:40:25.468302+00:00,stderr-mtime,native-crash,4,hkf4a,ended-other,0
+895,com.openmygame.games.android.fillwordsoffline,Fillwords: Word Search Puzzles,game,True,True,True,5,drawing,hka,2026-11-06T23:56:53.428349+00:00,stderr-mtime,,5,,,
+896,ai.photoeditor.retouch.enhance.photo.generator,AI Photo Studio: Editor Pro,app,True,True,True,5,drawing,hka,2026-11-06T23:58:01.008406+00:00,stderr-mtime,,5,,,
+897,com.app.screenza,Screenza,app,True,True,True,5,drawing,hka,2026-11-06T23:59:34.028486+00:00,stderr-mtime,,5,,,
+898,com.dating.chat.citas.app,Meet Singles & Date – Catchyy,app,True,True,True,5,drawing,l6k,2026-11-10T20:46:34.717676+00:00,stderr-mtime,,5,l3y,survived-not-mostly-empty,6
+899,app.source.getcontact,Getcontact,app,True,True,True,5,drawing,s251b,2026-11-14T16:41:39.040475+00:00,stderr-mtime,,5,,,
+900,com.beatmaker.aimusic,Beatron - AI Music Maker,app,True,True,True,5,drawing,l8f,2026-11-14T12:12:53.095365+00:00,stderr-mtime,,5,,,
+901,com.touch2goal.soccer,Mini Soccer Star: Football Cup,game,True,True,True,1,runtime-init,l7d,2026-11-11T14:49:04.743127+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+902,ai.mybuddy.talkingflashcards_new,Buddy.ai: Kids Learning Games,app,True,True,True,5,drawing,l8f,2026-11-14T12:14:38.487641+00:00,stderr-mtime,,5,,,
+903,com.nianticlabs.monsterhunter,Monster Hunter Now,game,True,True,True,5,drawing,l8f,2026-11-14T12:16:01.563832+00:00,stderr-mtime,,5,l5b,survived-not-mostly-empty,1
+904,com.skylum.luminar,Luminar: Photo Editor&Enhancer,app,True,True,True,5,drawing,l8f,2026-11-14T12:17:22.456044+00:00,stderr-mtime,,5,,,
+905,com.encar.encarMobileApp,Encar,app,True,True,True,5,drawing,l8f,2026-11-14T12:18:31.896187+00:00,stderr-mtime,,5,,,
+906,com.fzhbkd.bkme,精靈出發：大冒險,game,True,True,True,5,drawing,l8f,2026-11-14T12:20:00.928332+00:00,stderr-mtime,,5,,,
+907,com.opera.browser,Opera browser with VPN,app,True,True,True,5,drawing,l6r,2026-11-11T00:12:51.566354+00:00,stderr-mtime,,5,l5q,mostly-empty-view-dumps,2
+908,jp.gocro.smartnews.android,SmartNews: Local Breaking News,app,True,True,True,5,drawing,hka,2026-11-07T00:12:17.533233+00:00,stderr-mtime,,5,,,
+909,com.callpod.android_apps.keeper,Keeper Password Manager,app,True,True,True,5,drawing,l8f,2026-11-14T12:21:24.940482+00:00,stderr-mtime,,5,,,
+910,com.dts.freefiremax,Free Fire MAX x NARUTO,game,True,True,True,5,drawing,l6j,2026-11-10T18:00:12.872821+00:00,stderr-mtime,,5,hkf4a,ended-other,1
+911,com.niceteen.games.dtbam,Deal To Be A Millionaire,game,True,True,True,5,drawing,l8f,2026-11-14T12:22:45.844636+00:00,stderr-mtime,,5,,,
+912,com.global.live,Hiya-Group Voice Chat,app,True,True,True,5,drawing,l5v,2026-11-09T20:43:10.774633+00:00,stderr-mtime,,5,,,
+913,com.vigafun.funfinity.foodhunt,Food Hunt: Pixel Puzzle,game,True,True,True,5,drawing,hka,2026-11-07T00:18:48.577635+00:00,stderr-mtime,,5,,,
+914,com.getepic.Epic,Epic: Kids' Books & Reading,app,True,True,True,5,drawing,l8f,2026-11-14T12:23:51.468768+00:00,stderr-mtime,,5,,,
+915,com.grouprx.pureanti,Antivirus Pure,app,True,True,True,5,drawing,l8f,2026-11-14T12:24:58.988873+00:00,stderr-mtime,,5,,,
+916,com.bilibili.sirius,BanG Dream! Our Notes,game,True,True,True,4,view,l7d,2026-11-11T14:50:23.503187+00:00,stderr-mtime,unclassified,4,hkf4b,ended-other,0
+917,solitaire.word.association.connections.puzzle,Associate Words: Solitaire,game,True,True,True,5,drawing,l8f,2026-11-14T12:26:15.313015+00:00,stderr-mtime,,5,,,
+918,com.thousandfold.reverie.gp.blansh,Thousandfold Reverie AI,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:51:08.547251+00:00,stderr-mtime,native-crash,1,hkf4a,ended-other,0
+919,ai.praktika.android,Praktika – AI Language Tutor,app,True,True,True,5,drawing,l8f,2026-11-14T12:27:51.437190+00:00,stderr-mtime,,5,,,
+920,com.janitor.ai,Janitor: Interactive Stories,app,True,True,True,5,drawing,l8f,2026-11-14T12:29:05.521339+00:00,stderr-mtime,,5,,,
+921,com.datemyage,DateMyAge Mature Connections,app,True,True,True,5,drawing,l8f,2026-11-14T12:30:18.669451+00:00,stderr-mtime,,5,,,
+922,com.wachanga.superchat,ChatGO - AI Chat Assistant,app,True,True,True,5,drawing,l8f,2026-11-14T12:31:32.573582+00:00,stderr-mtime,,5,,,
+923,com.storytoys.lego.duplo.peppa.pig.googleplay,LEGO® DUPLO® Peppa Pig,game,True,True,True,5,drawing,hka,2026-11-07T00:31:03.782336+00:00,stderr-mtime,,5,,,
+924,tw.com.iwplay.nte,異環,game,False,False,False,,unscored,,,,,,,,
+925,semlog.family.parent,SemLog,app,True,True,True,5,drawing,hka,2026-11-07T00:32:08.954394+00:00,stderr-mtime,,5,,,
+926,com.gamamobi.nikke,勝利女神：妮姬,game,False,False,False,,unscored,,,,,,,,
+927,global.gps.location.tracker.kids,GPS Location Tracker For Kids,app,True,True,True,5,drawing,l8f,2026-11-14T12:32:45.725718+00:00,stderr-mtime,,5,,,
+928,com.regasoftware.udisc,UDisc Disc Golf App,app,True,True,True,5,drawing,l8f,2026-11-14T12:34:12.281893+00:00,stderr-mtime,,5,,,
+929,com.delitoon,LEZHIN FR,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:52:51.271331+00:00,stderr-mtime,native-crash,1,hkf4a,ended-other,0
+930,com.abi.colony.flow,Colony Flow!,game,True,True,True,5,drawing,l8f,2026-11-14T12:35:33.238009+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,2
+931,jp.co.mixi.monsterstrikeTW,怪物彈珠 - RPG手機遊戲,game,True,True,True,5,drawing,l8f,2026-11-14T12:36:56.186163+00:00,stderr-mtime,,5,,,
+932,com.unicornstudio.cashparty.slots.casino.vegas.free,Cash Club Casino - Vegas Slots,game,True,True,True,4,view,l8f,2026-11-14T12:37:58.590287+00:00,stderr-mtime,native-crash,4,hkf4a,ended-other,0
+933,com.rephoto.recover.pro,照片恢復：找回刪除的照片、影片和文檔,app,True,True,True,5,drawing,l8f,2026-11-14T12:39:49.786477+00:00,stderr-mtime,,5,,,
+934,com.liteorange.hometopia,Frost Valley™: Merge & Story,game,True,True,True,5,drawing,l8f,2026-11-14T12:41:28.082643+00:00,stderr-mtime,,5,,,
+935,jp.co.ponos.battlecatstw,貓咪大戰爭,game,True,True,True,5,drawing,hka,2026-11-07T00:44:13.255085+00:00,stderr-mtime,,5,,,
+936,com.huuuge.casino.texas,Billionaire Casino Slots 777,game,True,True,True,4,view,l8f,2026-11-14T12:43:16.274835+00:00,stderr-mtime,stall,4,hkf4a,survived-not-mostly-empty,1
+937,com.drone.assist,Drone App: Forecast for UAV,app,True,True,True,5,drawing,hka,2026-11-07T00:46:59.771268+00:00,stderr-mtime,,5,,,
+938,org.kustom.widget,KWGT Kustom Widget Maker,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:57:40.211631+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+939,fr.thema.wear.watch.dmax,D-Max Watch Face,app,True,True,True,5,drawing,hka,2026-11-07T00:49:22.971398+00:00,stderr-mtime,,5,,,
+940,com.billiards.billiardhero.rescueshot,Billiard Hero™️,game,True,True,True,5,drawing,l8f,2026-11-14T12:45:03.943608+00:00,stderr-mtime,,5,l4m,survived-not-mostly-empty,1
+941,com.weatherradar.liveradar.weathermap,Weather Radar & Weather Live,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:58:19.787649+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+942,com.comikey.banagher,Comikey - Manga & Webcomics,app,True,True,True,1,runtime-init,l7d,2026-11-11T14:59:07.111719+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+943,com.productmadness.hovmobile,Heart of Vegas Casino Slots,game,True,True,True,5,drawing,l8f,2026-11-14T12:46:59.143178+00:00,stderr-mtime,,5,,,
+944,com.pixonic.wwr,War Robots Multiplayer Battles,game,True,True,True,1,runtime-init,l7d,2026-11-11T15:00:30.275783+00:00,stderr-mtime,unclassified,2,hkf4b,ended-other,0
+945,com.onetaptool.pdfeditor.pdfreader,PDF Reader & PDF Viewer,app,True,True,True,5,drawing,hka,2026-11-07T00:57:42.647884+00:00,stderr-mtime,,5,,,
+946,ch.protonmail.android,Proton Mail: Encrypted Email,app,True,True,True,5,drawing,hka,2026-11-07T00:59:13.031959+00:00,stderr-mtime,,5,,,
+947,gen.tech.keiki.world.learning,Keiki Learning games for Kids,game,True,True,True,5,drawing,hka,2026-11-07T01:00:26.620067+00:00,stderr-mtime,,5,,,
+948,com.appediet.appediet,AI Calorie Counter - Appediet,app,True,True,True,5,drawing,l8f,2026-11-14T12:48:13.291297+00:00,stderr-mtime,,5,,,
+949,com.checkitt,Ground News,app,True,True,True,5,drawing,l8f,2026-11-14T12:49:41.239451+00:00,stderr-mtime,,5,,,
+950,com.PepiPlay.PepiHospital,Pepi City: Hospital Life,game,True,True,True,5,drawing,l8f,2026-11-14T12:51:02.031621+00:00,stderr-mtime,,5,l4f,survived-not-mostly-empty,1
+951,com.igg.android.lordsmobile,Lords Mobile: Kingdom Wars,game,True,True,True,5,drawing,l8f,2026-11-14T12:53:40.196823+00:00,stderr-mtime,,5,,,
+952,com.themekit.lite.widgets.themes,ThemePro - Widget & Wallpaper,app,True,True,True,5,drawing,hka,2026-11-07T01:08:35.052513+00:00,stderr-mtime,,5,,,
+953,vidma.video.editor.videomaker,AI Video Editor - Vidma Cut AI,app,True,True,True,5,drawing,hka,2026-11-07T01:09:44.180604+00:00,stderr-mtime,,5,,,
+954,com.dartslive.dlapp,DARTSLIVE,app,True,True,True,5,drawing,l8f,2026-11-14T12:54:50.501432+00:00,stderr-mtime,,5,,,
+955,com.accurate.weather.forecast.live,"Weather Radar, Live Radar",app,True,True,True,5,drawing,l7d,2026-11-11T15:02:39.987911+00:00,stderr-mtime,,5,hkf4a,survived-not-mostly-empty,7
+956,com.logoquiz.triviagame,Logo Quiz - World Trivia Game,game,True,True,True,5,drawing,l8f,2026-11-14T12:56:08.998089+00:00,stderr-mtime,,5,l2g,survived-not-mostly-empty,1
+957,com.global.hiyagame,Hiya Game – Party & Voice Chat,app,True,True,True,5,drawing,l5v,2026-11-09T20:44:17.450719+00:00,stderr-mtime,,5,,,
+958,game.qualiarts.hololive.dreams.com,hololive Dreams,game,True,True,True,5,drawing,l8f,2026-11-14T12:58:04.183062+00:00,stderr-mtime,,5,,,
+959,co.astra_ai.app.twa,Astra AI: Study & Exam Prep,app,True,True,True,1,runtime-init,l7d,2026-11-11T15:03:18.431956+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+960,com.zynga.words3,Words With Friends Word Game,game,True,True,True,5,drawing,hka,2026-11-07T01:19:27.529177+00:00,stderr-mtime,,5,,,
+961,com.bamnetworks.mobile.android.gameday.atbat,MLB,app,True,True,True,5,drawing,l8f,2026-11-14T12:59:15.271655+00:00,stderr-mtime,,5,l5q,survived-not-mostly-empty,5
+962,com.golfbuddy.smartcaddie,Smart Caddie-Golf GPS,app,True,True,True,5,drawing,l7d,2026-11-11T15:04:27.752021+00:00,stderr-mtime,,5,,,
+963,com.scaleup.dancehit.ai,DanceHit: AI Dance Generator,app,False,False,False,,unscored,,,,,,,,
+964,com.tutotoons.app.dopplesworld,Dopples World,game,True,True,True,5,drawing,s251b,2026-11-14T16:42:59.224662+00:00,stderr-mtime,,5,,,
+965,com.garena.game.fctw,Garena Speed Drifters,game,True,True,True,5,drawing,l7d,2026-11-11T15:08:42.248257+00:00,stderr-mtime,,5,hkf4b,ended-other,0
+966,com.rrsolutions.fevercheckup,Body Temperature・Fever Tracker,app,True,True,True,5,drawing,hka,2026-11-07T01:28:30.621656+00:00,stderr-mtime,,5,,,
+967,scorebuzz.soccerlivescore.livesports.footballscore,SnapGoal: Football Live Scores,app,True,True,True,5,drawing,hka,2026-11-07T01:29:40.913758+00:00,stderr-mtime,,5,,,
+968,wp.wattpad,Wattpad - Read & Write Stories,app,True,True,True,5,drawing,s251b,2026-11-14T16:44:06.521937+00:00,stderr-mtime,,5,,,
+969,jp.pokemon.pokemonchampions,Pokémon Champions,game,False,False,False,,unscored,,,,,,,,
+970,com.azarlive.android,"Azar: Video Chat, Meet Friends",app,True,True,True,5,drawing,l8f,2026-11-14T13:03:18.681741+00:00,stderr-mtime,,5,,,
+971,com.compassfree.digitalcompass.forandroid.app,Compass app - Accurate Compass,app,True,True,True,5,drawing,hka,2026-11-07T01:33:49.165968+00:00,stderr-mtime,,5,,,
+972,com.tikie.ai.android,TiKie: AI Fantasy & Roleplay,app,True,True,True,5,drawing,hka,2026-11-07T01:35:03.374062+00:00,stderr-mtime,,5,,,
+973,com.adsk.sketchbook,Sketchbook,app,True,True,True,5,drawing,hka,2026-11-07T01:36:11.230125+00:00,stderr-mtime,,5,,,
+974,com.more.lastshelter.gp,Last Shelter: War Z,game,True,True,True,5,drawing,l8f,2026-11-14T13:05:31.822891+00:00,stderr-mtime,,5,,,
+975,com.amiko.ai,Amiko: Chat to Learn Languages,app,True,True,True,5,drawing,l8f,2026-11-14T13:06:43.611493+00:00,stderr-mtime,,5,,,
+976,com.rummikubfree,Rummikub®,game,True,True,True,5,drawing,hka,2026-11-07T01:41:01.906419+00:00,stderr-mtime,,5,,,
+977,com.wgame.codeball,屍控防線 - Zomline Survival,game,True,True,True,5,drawing,l8f,2026-11-14T13:08:38.636467+00:00,stderr-mtime,,5,,,
+978,com.google.android.keep,Google Keep - Notes and lists,app,True,True,True,5,drawing,hka,2026-11-07T01:43:51.098569+00:00,stderr-mtime,,5,,,
+979,com.murka.scatterslots,Scatter Slots - Slot Machines,game,True,True,True,5,drawing,l7d,2026-11-11T15:10:09.204343+00:00,stderr-mtime,,5,,,
+980,com.sinyee.babybus.kids,BabyBus Kids: Play & Learn,game,True,True,True,5,drawing,hka,2026-11-07T01:46:27.294733+00:00,stderr-mtime,,5,,,
+981,com.screenshake.dominodreams,Domino Dreams™,game,True,True,True,5,drawing,hka,2026-11-07T01:48:19.790825+00:00,stderr-mtime,,5,,,
+982,com.miniclip.realsniper,Pure Sniper: Gun Shooter Games,game,True,True,True,5,drawing,hka,2026-11-07T01:49:32.118903+00:00,stderr-mtime,,5,,,
+983,music.beat.piano.fire.magic.tiles.challenge.free,Beat Piano - Music EDM Tiles,game,True,True,True,5,drawing,l8f,2026-11-14T13:09:59.625160+00:00,stderr-mtime,,5,,,
+984,com.s01.global,Lordrush,game,True,True,True,1,runtime-init,l7d,2026-11-11T15:11:25.888403+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+985,com.liteup.getgains,Gravl: AI Personal Trainer,app,True,True,True,5,drawing,l6r,2026-11-11T00:17:16.614601+00:00,stderr-mtime,,5,hkf4a,survived-not-mostly-empty,4
+986,com.bandainamcoent.dblegends_ww,DRAGON BALL LEGENDS,game,True,True,True,5,drawing,hka,2026-11-07T01:55:37.823250+00:00,stderr-mtime,,5,,,
+987,com.navitime.local.navitime,NAVITIME - Map & Transfer Navi,app,True,True,True,5,drawing,hka,2026-11-07T01:56:45.515340+00:00,stderr-mtime,,5,,,
+988,com.dating.android,Dating.com: Global Online Chat,app,True,True,True,5,drawing,l8f,2026-11-14T13:11:12.973766+00:00,stderr-mtime,,5,,,
+989,com.cat.hole.puzzle.aos,Drop the Cat!,game,True,True,True,5,drawing,l5v,2026-11-09T20:45:29.026787+00:00,stderr-mtime,,5,l5i,survived-not-mostly-empty,2
+990,com.aws.android,Weather Forecast by WeatherBug,app,True,True,True,1,runtime-init,l7d,2026-11-11T15:12:14.840465+00:00,stderr-mtime,native-crash,1,hkf4b,ended-other,0
+991,com.obdocker.obdocker,OBDocker - OBD2 Car Scanner,app,True,True,True,5,drawing,l8f,2026-11-14T13:12:49.378584+00:00,stderr-mtime,,5,,,
+992,com.jumappbuild.app,Pinduo Market,app,True,True,True,5,drawing,hka,2026-11-07T02:02:51.751651+00:00,stderr-mtime,,5,,,
+993,com.playstudios.popslots,POP! Slots™,game,True,True,True,4,view,l7d,2026-11-11T15:15:47.228676+00:00,stderr-mtime,stall,4,hkf4a,survived-not-mostly-empty,1
+994,com.santech.desireapp,DesireLand: Anonymous Dating,app,True,True,True,4,view,l8f,2026-11-14T13:13:39.059028+00:00,stderr-mtime,no-frame,5,l4z,ended-other,1
+995,com.universal.tv.remote.control.screen.mirroring,Remote Control for All TV,app,True,True,True,5,drawing,hka,2026-11-07T02:06:49.135924+00:00,stderr-mtime,,5,,,
+996,com.skyhorse.dyqdj.tw.gp,道友請渡劫,game,False,False,False,,unscored,,,,,,,,
+997,com.house.design.floorplancreate.rebuild,House Design 3D Floor Plan App,app,True,True,True,5,drawing,hka,2026-11-07T02:08:33.599995+00:00,stderr-mtime,,5,,,
+998,com.peoplefun.wordsolitaire,Wordscapes Solitaire,game,True,True,True,5,drawing,l7d,2026-11-11T15:18:13.592816+00:00,stderr-mtime,,5,,,
+999,com.remoteapps.dashcam.android,Dash Cam: Dashcam Viewer,app,True,True,True,5,drawing,hka,2026-11-07T02:10:56.516147+00:00,stderr-mtime,,5,,,
+1000,com.mi.earphone,Xiaomi Earbuds,app,True,True,True,5,drawing,hka,2026-11-07T02:11:59.764220+00:00,stderr-mtime,,5,,,

@@ -1,0 +1,87 @@
+Play services' service broker (getService), by service: the apps that asked, those whose request was taken (no exception), and the connection result Play services called back with
+  MEASUREMENT (93): 305 apps; 305 taken, 303 connected
+    CANCELED (13): 19
+    API_DISABLED (23): 4
+  APP_SET_ID (300): 207 apps; 207 taken, 205 connected
+  CLIENT_TELEMETRY (270): 172 apps; 172 taken, 5 connected
+    API_DISABLED (23): 172
+  PHENOTYPE (51): 139 apps; 139 taken, 139 connected
+    API_DISABLED (23): 1
+    API_UNAVAILABLE (16): 1
+    CANCELED (13): 1
+  GASS (116): 72 apps; 72 taken, 69 connected
+    API_DISABLED (23): 2
+    CANCELED (13): 2
+  GAMES (1): 60 apps; 60 taken, 0 connected
+    CANCELED (13): 41
+  AUTH_BLOCKSTORE (258): 36 apps; 36 taken, 36 connected
+  GOOGLE_LOCATION_MANAGER (23): 35 apps; 35 taken, 34 connected
+  ADMOB (8): 31 apps; 31 taken, 27 connected
+    API_DISABLED (23): 1
+  AUTH_GOOGLE_SIGN_IN (91): 27 apps; 27 taken, 27 connected
+  CAST_API (161): 13 apps; 13 taken, 11 connected
+  WEAR (14): 12 apps; 12 taken, 0 connected
+    API_UNAVAILABLE (16): 11
+  CLEARCUT_LOGGER (40): 12 apps; 12 taken, 12 connected
+  USAGE_REPORTING (41): 10 apps; 10 taken, 10 connected
+  AUTH_API_IDENTITY_SIGNIN (212): 9 apps; 9 taken, 9 connected
+  DYNAMIC_LINKS_API (131): 8 apps; 8 taken, 8 connected
+  DEVICE_PERFORMANCE (322): 6 apps; 6 taken, 6 connected
+  RECAPTCHABASE (380): 6 apps; 6 taken, 6 connected
+  TIME (326): 4 apps; 4 taken, 4 connected
+  SMS_RETRIEVER (126): 3 apps; 3 taken, 3 connected
+  SAFETY_NET (45): 2 apps; 2 taken, 2 connected
+  AUTH_ACCOUNT_TRANSFER (128): 2 apps; 2 taken, 2 connected
+  MODULE_INSTALL (308): 2 apps; 2 taken, 2 connected
+  GOOGLE_AUTH_AANG (343): 2 apps; 2 taken, 2 connected
+  WALLET (4): 1 apps; 1 taken, 1 connected
+  PEOPLE (5): 1 apps; 1 taken, 1 connected
+  AUTH_PROXY (16): 1 apps; 1 taken, 1 connected
+  FEEDBACK (29): 1 apps; 1 taken, 1 connected
+  PSEUDONYMOUS_ID (38): 1 apps; 1 taken, 1 connected
+  FIT_RECORDING (56): 1 apps; 1 taken, 0 connected
+  FIT_HISTORY (57): 1 apps; 1 taken, 0 connected
+  AUTH_CREDENTIALS (68): 1 apps; 1 taken, 1 connected
+  MOBSTORE_FILE (160): 1 apps; 1 taken, 1 connected
+  PAY (198): 1 apps; 1 taken, 1 connected
+  FACS_CACHE (202): 1 apps; 1 taken, 1 connected
+  MDI_SYNC (215): 1 apps; 1 taken, 1 connected
+  NEARBY_FAST_PAIR (265): 1 apps; 1 taken, 1 connected
+  LOCATION_SHARING_REPORTER (277): 1 apps; 1 taken, 1 connected
+  FIND_MY_DEVICE_SPOT (284): 1 apps; 1 taken, 1 connected
+  INAPP_REACH (315): 1 apps; 1 taken, 1 connected
+  AUTH_RESTORE_CREDENTIAL (381): 1 apps; 1 taken, 0 connected
+    API_UNAVAILABLE (16): 1
+Play services interfaces in the binder trace:
+  android.content.IContentProvider: 322 apps; 322 answered
+  com.google.android.gms.measurement.internal.IMeasurementService: 304 apps; 304 answered
+    reply unknown-code: 1
+  com.google.android.gms.ads.identifier.internal.IAdvertisingIdService: 296 apps; 296 answered
+  com.google.android.gms.appset.internal.IAppSetService: 207 apps; 207 answered
+  com.google.android.gms.phenotype.internal.IPhenotypeService: 139 apps; 139 answered
+    reply -1 (SecurityException): 21
+  com.google.android.gms.gass.internal.IGassService: 72 apps; 72 answered
+  com.google.android.gms.ads.internal.request.IAdRequestService: 30 apps; 30 answered
+  com.google.android.gms.location.internal.IGoogleLocationManagerService: 25 apps; 23 answered
+    reply -1 (SecurityException): 2
+  com.google.android.gms.auth.blockstore.internal.IBlockstoreService: 17 apps; 17 answered
+  com.google.android.gms.cast.internal.ICastService: 13 apps; 13 one-way, 13 called back
+  com.google.android.gms.clearcut.internal.IClearcutLoggerService: 12 apps; 12 one-way, 12 called back
+  com.google.android.gms.usagereporting.internal.IUsageReportingService: 10 apps; 10 answered
+  com.google.android.gms.auth.api.identity.internal.ISignInService: 7 apps; 7 answered
+  com.google.firebase.dynamiclinks.internal.IDynamicLinksService: 6 apps; 6 answered
+  com.google.android.gms.deviceperformance.internal.IDevicePerformanceService: 6 apps; 6 answered
+  com.google.android.gms.recaptchabase.internal.IRecaptchaBaseService: 6 apps; 6 answered
+  com.google.android.gms.auth.api.signin.internal.ISignInService: 4 apps; 4 answered
+  com.google.android.gms.time.trustedtime.internal.ITrustedTimeService: 4 apps; 4 answered
+  com.google.android.gms.common.moduleinstall.internal.IModuleInstallService: 2 apps; 2 answered
+  com.google.android.gms.safetynet.internal.ISafetyNetService: 2 apps; 2 answered
+  com.google.android.gms.auth.aang.internal.IGoogleAuthAangService: 2 apps; 2 answered
+  com.google.android.gms.auth.api.accounttransfer.internal.IAccountTransferService: 2 apps; 2 answered
+  com.google.android.gms.findmydevice.spot.internal.ISpotManagementService: 1 apps; 1 answered
+  com.google.android.gms.mobstore.IMobStoreFileService: 1 apps; 1 answered
+  com.google.android.gms.people.internal.IPeopleService: 1 apps; 1 answered
+  com.google.android.gms.inappreach.internal.IInAppReachService: 1 apps; 1 answered
+  com.google.android.gms.wallet.internal.IOwService: 1 apps; 1 one-way, 1 called back
+  com.google.android.gms.analytics.internal.IAnalyticsService: 1 apps; 1 answered
+  com.google.android.gms.auth.api.phone.internal.ISmsRetrieverApiService: 1 apps; 1 answered

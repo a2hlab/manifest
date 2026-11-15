@@ -31,6 +31,16 @@ The [Android-reference parity follow-up](PARITY27.md) pins the generic JIT
 file-cache/runtime fixes, portable controls, benchmark verification and binary
 dependency inventories. It retains the full-build gate.
 
+The [OpenHarmony 7.0 migration estimate](reports/openharmony-7-upgrade-estimate-20261114.md)
+records the preliminary 6–10 engineer-week budget, confirmed private-interface
+changes, board-support dependencies and proposed acceptance work. It is a
+planning note, not an OH 7.0 build or device-acceptance result.
+
+The [Hong Kong top-1000 progress report](reports/hk-top1000-progress-20261114.md)
+summarizes retained device rounds, functional checks, current Play/OH integration
+work and the API adaptation inventory. Its per-app evidence table distinguishes
+latest observations, historical best results and full application acceptance.
+
 The [2026-09-14 fresh-checkout record](reports/fresh-checkout-20260914.json)
 verifies that the then-current `source-stack-closure` branch could fetch its pinned a2hlab
 repository, install both toolchains and rebuild the documented `native`, `apps`
