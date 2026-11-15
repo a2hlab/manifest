@@ -1150,8 +1150,9 @@ def main():
     stage = '/data/local/tmp/a2hlab-app-' + suffix
     logical = '/data/local/tmp/asx'
     # OH's application manager sends a managed bundle's spawn to the CJAppSpawn socket (its entry module's
-    # srcEntry is a dotted class name, AppMgrServiceInner's IsCjApplication); this launch's spawner takes it over.
-    socket_name = 'CJAppSpawn' if args.managed else 'A2HSource' + suffix[:20]
+    # srcEntry is a dotted class name, AppMgrServiceInner's IsCjApplication). There the spawn router (appspawn-x
+    # --route, one for every managed bundle) passes it to the spawner this launch starts on its own socket.
+    socket_name = 'A2HSource' + suffix[:20]
     socket = '/dev/unix/socket/' + socket_name
     state.update(stage=stage, runtime=runtime, uid=uid, host=host, socket=socket,
                  source_files=framework['files'], apk_sha256=app['apk_sha256'])
@@ -1512,10 +1513,6 @@ def main():
         for key in ['ASX_DIRECT_LAUNCH', 'WL_PARENT_ID', 'WL_SUB_WINDOW', 'WL_SESSION_BUNDLE',
                     'WL_ABILITY_OWNED_WINDOWS']:
             env.pop(key, None)
-        # foundation may connect only to a socket with appspawn's context (su, the shell's, is refused), and
-        # the spawner answers OH's application manager for this bundle only.
-        env.update({'WESTLAKE_SPAWN_SOCKET_CONTEXT': 'u:r:appspawn:s0',
-                    'WESTLAKE_SPAWN_MANAGED_BUNDLE': args.host})
         # OH moves a managed app to the background, and ART then compacts a CMS heap (a moving collection)
         # unless the background collector is non-moving too; the app faulted on objects left in the
         # protected old space. A --runtime-env setting replaces this one.
@@ -1534,11 +1531,8 @@ def main():
                ' /system/bin/sh ' + logical + '/run.sh >' + stage + '/parent.log 2>&1 </dev/null & echo $!')
     state['parent'] = int(shell(command).strip())
     save()
-    # A managed launch's socket path exists before its spawner listens (init made CJAppSpawn): wait for the line.
-    ready = ('grep -q "Listen socket ready (manual).*path=' + socket + '" ' + stage + '/parent.log && echo READY; exit 0'
-             if args.managed else 'if [ -S ' + socket + ' ]; then echo READY; fi')
     for _ in range(60):
-        if 'READY' in shell(ready):
+        if 'READY' in shell('if [ -S ' + socket + ' ]; then echo READY; fi'):
             break
         time.sleep(0.5)
     else:
@@ -1546,6 +1540,31 @@ def main():
         (output / 'parent.log').write_text(log)
         raise RuntimeError('Source parent did not listen; see ' + str(output / 'parent.log'))
     if args.managed:
+        # The router finds this bundle's spawner in a registry only root can write.
+        registry = '/data/service/el1/public/westlake-registry/managed'
+        shell('mkdir -p ' + registry + ' && chmod 700 /data/service/el1/public/westlake-registry ' + registry +
+              ' && echo ' + socket + ' > ' + registry + '/' + args.host + '.new && chmod 600 ' + registry + '/' +
+              args.host + '.new && mv ' + registry + '/' + args.host + '.new ' + registry + '/' + args.host)
+        # One router for all managed bundles, outside any app's namespace; foundation may connect only to a
+        # socket with appspawn's SELinux context (su, the shell's, is refused).
+        router_args = 'appspawn-x --socket-name CJAppSpawn --route'
+        running = shell('for p in $(pidof appspawn-x); do [ "$(ps -o args= -p $p | tail -n 1)" = "' + router_args +
+                        '" ] && echo $p; done; exit 0').split()
+        if not running:
+            router_search = [runtime] + [d for d in search if d != logical and not d.startswith(logical + '/')]
+            shell('cd ' + runtime + ' && (LD_LIBRARY_PATH=' + ':'.join(router_search) +
+                  ' WESTLAKE_SPAWN_SOCKET_CONTEXT=u:r:appspawn:s0 nohup ' + runtime + '/appspawn-x --socket-name '
+                  'CJAppSpawn --route > /data/local/tmp/a2hlab-spawn-router.log 2>&1 < /dev/null &); exit 0')
+            for _ in range(40):
+                if 'READY' in shell('grep -q "routing OH" /data/local/tmp/a2hlab-spawn-router.log && echo READY; '
+                                    'exit 0'):
+                    break
+                time.sleep(0.5)
+            else:
+                raise RuntimeError('The spawn router did not start: ' +
+                                   shell('tail -n 20 /data/local/tmp/a2hlab-spawn-router.log; exit 0'))
+        state['spawn_router'] = running[0] if running else 'started'
+        save()
         # A running instance would take the start itself, and OH would ask for no process: OH stops it first.
         shell('aa force-stop ' + args.host + '; exit 0')
         # The bundle's abilities are named after the app's activities: its main ability is the launcher activity.
