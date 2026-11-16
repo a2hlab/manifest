@@ -1,0 +1,165 @@
+{
+  "generated_at_utc": "2026-11-15T07:49:55.151074+00:00",
+  "report_date_local": "2026-11-14 America/Los_Angeles",
+  "classification": "historical evidence aggregation, not current-build or full-functional acceptance",
+  "ranked_packages": 1000,
+  "kinds": {
+    "app": 706,
+    "game": 294
+  },
+  "download_registry_packages": 980,
+  "download_source_labels": {
+    "apkpure": 535,
+    "play": 341,
+    "play-only": 65,
+    "apkpure-variant": 37,
+    "huawei": 1,
+    "apkpure-no-arm64": 1
+  },
+  "static_scans": 982,
+  "gap_maps": 982,
+  "scored_packages": 978,
+  "unscored_packages": 22,
+  "round_logs_read": 315,
+  "rounds_with_scores": 301,
+  "score_rows_including_repeated_tables": 223306,
+  "latest_mixed_rungs": {
+    "spawned": 0,
+    "runtime-init": 119,
+    "bound": 16,
+    "activity": 2,
+    "view": 56,
+    "drawing": 785
+  },
+  "best_ever_rungs": {
+    "spawned": 0,
+    "runtime-init": 111,
+    "bound": 10,
+    "activity": 2,
+    "view": 26,
+    "drawing": 829
+  },
+  "latest_mixed_blocker_categories": {
+    "app-framework": 12,
+    "unclassified": 14,
+    "native-crash": 124,
+    "stall": 16,
+    "no-frame": 9,
+    "self-finish": 2,
+    "self-kill": 2,
+    "self-exit": 10,
+    "native-upcalls": 1,
+    "native-loading": 2,
+    "native-symbols": 1
+  },
+  "rank_bands": [
+    {
+      "rank_first": 1,
+      "rank_last": 100,
+      "scored": 100,
+      "latest_mixed_drawing": 82,
+      "best_ever_drawing": 87
+    },
+    {
+      "rank_first": 101,
+      "rank_last": 300,
+      "scored": 196,
+      "latest_mixed_drawing": 152,
+      "best_ever_drawing": 167
+    },
+    {
+      "rank_first": 301,
+      "rank_last": 500,
+      "scored": 194,
+      "latest_mixed_drawing": 150,
+      "best_ever_drawing": 163
+    },
+    {
+      "rank_first": 501,
+      "rank_last": 700,
+      "scored": 197,
+      "latest_mixed_drawing": 170,
+      "best_ever_drawing": 177
+    },
+    {
+      "rank_first": 701,
+      "rank_last": 1000,
+      "scored": 291,
+      "latest_mixed_drawing": 231,
+      "best_ever_drawing": 235
+    }
+  ],
+  "exploration_records": 1277,
+  "explored_packages": 515,
+  "latest_exploration_status": {
+    "survived-not-mostly-empty": 315,
+    "ended-other": 176,
+    "mostly-empty-view-dumps": 24
+  },
+  "latest_exploration_record_utc": "2026-11-10T07:55:33.631119+00:00",
+  "functional_check_set": [
+    {
+      "package": "com.google.android.youtube",
+      "round": "chk6",
+      "passed": 5,
+      "of": 5,
+      "record_mtime_utc": "2026-11-11T09:19:30.779323+00:00"
+    },
+    {
+      "package": "com.instagram.android",
+      "round": "chk6",
+      "passed": 3,
+      "of": 3,
+      "record_mtime_utc": "2026-11-11T09:16:40.607421+00:00"
+    },
+    {
+      "package": "com.spotify.music",
+      "round": "chk6",
+      "passed": 2,
+      "of": 2,
+      "record_mtime_utc": "2026-11-11T09:15:16.611463+00:00"
+    },
+    {
+      "package": "com.ubercab",
+      "round": "chk6",
+      "passed": 1,
+      "of": 1,
+      "record_mtime_utc": "2026-11-11T09:20:51.839282+00:00"
+    },
+    {
+      "package": "com.viber.voip",
+      "round": "chk6",
+      "passed": 3,
+      "of": 3,
+      "record_mtime_utc": "2026-11-11T09:22:13.247228+00:00"
+    },
+    {
+      "package": "com.whatsapp",
+      "round": "chk6",
+      "passed": 2,
+      "of": 2,
+      "record_mtime_utc": "2026-11-11T09:17:55.239381+00:00"
+    }
+  ],
+  "static_play_scan_packages": 982,
+  "static_play_any_family": 961,
+  "static_play_family_reach": {
+    "client-telemetry": 944,
+    "advertising-id": 919,
+    "push": 849,
+    "measurement": 840,
+    "location": 761,
+    "sign-in": 667,
+    "app-set-id": 615,
+    "sms-retriever": 554,
+    "gass": 522,
+    "admob": 515,
+    "phenotype": 315,
+    "blockstore": 186,
+    "games": 170,
+    "wear": 92,
+    "clearcut": 64,
+    "dynamic-links": 48,
+    "safetynet": 22
+  }
+}

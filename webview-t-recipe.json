@@ -1,0 +1,1027 @@
+{
+ "schema": 1,
+ "profile": "parity27-webview-t-input",
+ "description": "Rebuilds, byte for byte, the four device-captured WebView files a launch reads when a bionic shim build replaces the captured shim and libandroid.so. Outputs are checked against parity27-runtime-inputs.lock.json.",
+ "aosp_webview_apk": {
+  "sha256": "39655f84bcc079941725f44a0dd6b5e0354281964ad59f65352f4ec0f5540417",
+  "bytes": 97595507,
+  "package": "com.android.webview",
+  "version_name": "109.0.5414.123",
+  "origin": {
+   "repository": "https://android.googlesource.com/platform/external/chromium-webview",
+   "commit": "259ec8d2ad6dd574a7e6de96b317a80de87c227b",
+   "path": "prebuilt/arm64/webview.apk"
+  }
+ },
+ "smali_tools": {
+  "smali-2.5.2.jar": {
+   "maven": "org.smali:smali:2.5.2",
+   "sha256": "136c5c4653d6531bd7b6f10f35f8691cb96432e727d30b4d5579826ee01e9419"
+  },
+  "baksmali-2.5.2.jar": {
+   "maven": "org.smali:baksmali:2.5.2",
+   "sha256": "1ed236266d7dc4907aade0b19a34f77efac25342b63c8ace52e579039941b389"
+  },
+  "dexlib2-2.5.2.jar": {
+   "maven": "org.smali:dexlib2:2.5.2",
+   "sha256": "5a5c8982d8bd7d6e3bb1a0713049e3c78b719ec32b20f6b619885cec30a0dd61"
+  },
+  "util-2.5.2.jar": {
+   "maven": "org.smali:util:2.5.2",
+   "sha256": "4f580a9cff3ebb83cb3fd20bec88e37e4f183796ca652732992611620282daea"
+  },
+  "antlr-runtime-3.5.2.jar": {
+   "maven": "org.antlr:antlr-runtime:3.5.2",
+   "sha256": "ce3fc8ecb10f39e9a3cddcbb2ce350d272d9cd3d0b1e18e6fe73c3b9389c8734"
+  },
+  "antlr-3.5.2.jar": {
+   "maven": "org.antlr:antlr:3.5.2",
+   "sha256": "5ac36c2acfb0a0f3d37dafe20b5b570f2643e2d000c648d44503c2738be643df"
+  },
+  "stringtemplate-3.2.1.jar": {
+   "maven": "org.antlr:stringtemplate:3.2.1",
+   "sha256": "f66ce72e965e5301cb0f020e54d2ba6ad76feb91b3cbfc30dbbf00c06a6df6d7"
+  },
+  "guava-27.1-android.jar": {
+   "maven": "com.google.guava:guava:27.1-android",
+   "sha256": "686404f2d1d4d221911f96bd627ff60dac2226a5dfa6fb8ba517073eb97ec0ef"
+  },
+  "jcommander-1.64.jar": {
+   "maven": "com.beust:jcommander:1.64",
+   "sha256": "156be736199c990321d9ff77090b199629cfc9865e2d6c13f7cd291bb1641817"
+  }
+ },
+ "compiler_identity": "llvm-project 81cdec3cd117b1e6e3a9f1ebc4695d790c978463",
+ "engine_import_renames": {
+  "connect": "wl_conn",
+  "freeaddrinfo": "wl_freeai_oh",
+  "getaddrinfo": "wl_getai_oh",
+  "longjmp": "wl_ljmp",
+  "pthread_sigmask": "wl_pthread_mask",
+  "setjmp": "wl_sjp",
+  "sigaction": "wl_sigact",
+  "sigaddset": "wl_addset",
+  "sigemptyset": "wl_emptyset",
+  "sigfillset": "wl_fillset",
+  "sigismember": "wl_ismember"
+ },
+ "dex": {
+  "added_smali": [
+   "framework/webview-shim/webview-t/apk/smali",
+   "framework/webview-shim/smali"
+  ],
+  "patch": "framework/webview-shim/webview-t/apk/chromium-classes.patch",
+  "order": "framework/webview-shim/webview-t/apk/dex-order.json"
+ },
+ "apk_dex_entry": {
+  "dos_time": "2026-08-31T18:48:46",
+  "unix_time": 1788227325,
+  "uid": 1000,
+  "gid": 1000
+ },
+ "jnigraphics": {
+  "stage": [
+   {
+    "stage": "ad-frameworks-native/include/android/bitmap.h",
+    "from": "westlake:framework/webview-shim/webview-t/vendored/android-13.0.0_r1/frameworks/native/include/android/bitmap.h",
+    "sha256": "b7e2382451670bb2e7fe81b1135d82d1d7be2c8c35ad1799dbace93897eabf7c"
+   },
+   {
+    "stage": "ad-libnativehelper/include_jni/jni.h",
+    "from": "workspace:android-source/libnativehelper/include_jni/jni.h",
+    "sha256": "c88ce2cb6ce10378cd4c706a3a2ad017794aedb9314ddcc341e39b470cdb601a"
+   },
+   {
+    "stage": "webview-shim/libjnigraphics_webview_shim.cpp",
+    "from": "westlake:framework/webview-shim/libjnigraphics_webview_shim.cpp",
+    "sha256": "fe59a84067d4417c7c04ecb2e28e61440663221250a07e1c0938827095d377a9"
+   }
+  ],
+  "libcxx_stub": [
+   "_end",
+   "_edata",
+   "__bss_start"
+  ]
+ },
+ "plat_support": {
+  "stage": [
+   {
+    "stage": "ad-libnativehelper/include/nativehelper/JNIHelp.h",
+    "from": "workspace:android-source/libnativehelper/include/nativehelper/JNIHelp.h",
+    "patch": "westlake:framework/webview-shim/webview-t/plat-support/JNIHelp.h.patch",
+    "sha256": "ecc4828759bb2597e456e8c0d86eb8e189197a5318e686f12ad6995e870b590e"
+   },
+   {
+    "stage": "ad-libnativehelper/include_jni/jni.h",
+    "from": "workspace:android-source/libnativehelper/include_jni/jni.h",
+    "sha256": "c88ce2cb6ce10378cd4c706a3a2ad017794aedb9314ddcc341e39b470cdb601a"
+   },
+   {
+    "stage": "ad-libnativehelper/include_platform/nativehelper/JNIPlatformHelp.h",
+    "from": "workspace:android-source/libnativehelper/include_platform/nativehelper/JNIPlatformHelp.h",
+    "sha256": "57ef3faa2a46d68ec7059d62d62fa4929f8884458f9e1b8889c01c60abba1c25"
+   },
+   {
+    "stage": "aosp11/frameworks/native/include/android/bitmap.h",
+    "from": "westlake:framework/webview-shim/webview-t/vendored/android-11.0.0_r48/frameworks/native/include/android/bitmap.h",
+    "sha256": "6e73d354475d88924c437cdc0de34078203710d5f91c82110cc7ec4cb6282b0f"
+   },
+   {
+    "stage": "aosp11/libnativehelper/header_only_include/nativehelper/nativehelper_utils.h",
+    "from": "workspace:upstream/aosp-11/libnativehelper/header_only_include/nativehelper/nativehelper_utils.h",
+    "sha256": "de7c092de074403ac9d059f2e5974461c51d1dfbdbc02e2e0f585707df765d0e"
+   },
+   {
+    "stage": "aosp11/libnativehelper/header_only_include/nativehelper/scoped_local_ref.h",
+    "from": "workspace:upstream/aosp-11/libnativehelper/header_only_include/nativehelper/scoped_local_ref.h",
+    "sha256": "450ff5e6568d80b7d7c62746ac0557887db9391a30b18778d9919eb15935f580"
+   },
+   {
+    "stage": "aosp11/libnativehelper/header_only_include/nativehelper/scoped_utf_chars.h",
+    "from": "workspace:upstream/aosp-11/libnativehelper/header_only_include/nativehelper/scoped_utf_chars.h",
+    "sha256": "f7e968b472079ac0994c078b34ce51644eaa9b1050350c38c4865cf55918c11e"
+   },
+   {
+    "stage": "aosp14/libs/hwui/CanvasProperty.h",
+    "from": "workspace:android-source/frameworks-base/libs/hwui/CanvasProperty.h",
+    "sha256": "e79d79e58e35547e265f97f1842cb28742cfc3f2aea80669050315469f7e4ced"
+   },
+   {
+    "stage": "aosp14/libs/hwui/CanvasTransform.h",
+    "from": "workspace:preserved/runtime-sources/aosp14-hwui/libs/hwui/CanvasTransform.h",
+    "sha256": "a49eb8b259c3e9c7fedcb4d2c254b67825d3755faba3bd0d97cdefcbb52394d8"
+   },
+   {
+    "stage": "aosp14/libs/hwui/Properties.h",
+    "from": "workspace:preserved/runtime-sources/aosp14-hwui/libs/hwui/Properties.h",
+    "sha256": "8cb2e7ac75238873bb01ea497eb23b0d4ae6b704d56f1e2f18e2dc0c82669d02"
+   },
+   {
+    "stage": "aosp14/libs/hwui/SaveFlags.h",
+    "from": "workspace:android-source/frameworks-base/libs/hwui/SaveFlags.h",
+    "sha256": "ee74463c11dc2bf7bba3ba052b5ddacbf6446a14a0b0cad5be454ed3cbcfd20c"
+   },
+   {
+    "stage": "aosp14/libs/hwui/hwui/Bitmap.h",
+    "from": "workspace:android-source/frameworks-base/libs/hwui/hwui/Bitmap.h",
+    "sha256": "f580fb41fe674a3f6245707a4d578647b3baffae9c929002182fce739cbcbfff"
+   },
+   {
+    "stage": "aosp14/libs/hwui/hwui/Canvas.h",
+    "from": "workspace:preserved/runtime-sources/aosp14-hwui/libs/hwui/hwui/Canvas.h",
+    "sha256": "59058c93adbc507a641a3cd765a99b3907fd0fac8e33b2186ed295f026460a85"
+   },
+   {
+    "stage": "aosp14/libs/hwui/jni/Bitmap.h",
+    "from": "workspace:android-source/frameworks-base/libs/hwui/jni/Bitmap.h",
+    "sha256": "9799bf7b5dc4ee9b5d86df3fee514f1d56726f8f6ffb062d6784abb7ca0a8d1d"
+   },
+   {
+    "stage": "aosp14/libs/hwui/jni/GraphicsJNI.h",
+    "from": "workspace:preserved/runtime-sources/aosp14-hwui/libs/hwui/jni/GraphicsJNI.h",
+    "sha256": "7acc6b76f805bd061eefd16a5b3c72b63be6ccad6213de720d54a3b5683f72a1"
+   },
+   {
+    "stage": "aosp14/libs/hwui/jni/graphics_jni_helpers.h",
+    "from": "workspace:preserved/runtime-sources/aosp14-hwui/libs/hwui/jni/graphics_jni_helpers.h",
+    "sha256": "aba701169eb8df69122df1d17673e4cd3b0d5b0259fb2d3f0391d95f26fd9395"
+   },
+   {
+    "stage": "aosp14/libs/hwui/pipeline/skia/AnimatedDrawables.h",
+    "from": "workspace:android-source/frameworks-base/libs/hwui/pipeline/skia/AnimatedDrawables.h",
+    "sha256": "946fa8c2f5231c1530eee98e58d492f3b60315738bf48dc2fc23858d06bbc329"
+   },
+   {
+    "stage": "aosp14/libs/hwui/private/hwui/DrawGlInfo.h",
+    "from": "workspace:preserved/runtime-sources/aosp14-hwui/libs/hwui/private/hwui/DrawGlInfo.h",
+    "sha256": "c8f853bc8ee05a0dcbbbcf527cb0efbd7c34fb61c9651588ee424de2846b3731"
+   },
+   {
+    "stage": "aosp14/libs/hwui/private/hwui/DrawVkInfo.h",
+    "from": "workspace:android-source/frameworks-base/libs/hwui/private/hwui/DrawVkInfo.h",
+    "sha256": "af218f934eb0e1d49fda655e4af77ee2de4c1fbc22e56ea6a26949991e03362a"
+   },
+   {
+    "stage": "aosp14/libs/hwui/private/hwui/WebViewFunctor.h",
+    "from": "workspace:preserved/runtime-sources/aosp14-hwui/libs/hwui/private/hwui/WebViewFunctor.h",
+    "sha256": "90440939bdc3c82e5c8928583905a10bee34214da3040ebab26af76e13095ec1"
+   },
+   {
+    "stage": "aosp14/libs/hwui/utils/Macros.h",
+    "from": "workspace:android-source/frameworks-base/libs/hwui/utils/Macros.h",
+    "sha256": "01e03fbcb56be31648ade38f13a297c630fd1fe883d55fd72ad59d386c66e3b9"
+   },
+   {
+    "stage": "aosp15/system/core/libcutils/include/cutils/compiler.h",
+    "from": "workspace:android-source/system-core/libcutils/include/cutils/compiler.h",
+    "sha256": "b544a1f41e0ec7592773af661cd21ba53c3e1165dd4a67c32d6cd9d79cf2abd6"
+   },
+   {
+    "stage": "aosp15/system/core/libutils/include/utils/Errors.h",
+    "from": "workspace:android-source/system-core/libutils/binder/include/utils/Errors.h",
+    "sha256": "001f9c16788f4dbe3a6d70f2a8e9b55d6928f91e086de498d86ad327d869ff19"
+   },
+   {
+    "stage": "aosp15/system/core/libutils/include/utils/Functor.h",
+    "from": "workspace:android-source/system-core/libutils/include/utils/Functor.h",
+    "sha256": "ff353a17c188e104e41aca2631c27364e80157dad23ebe5c591af25e6870629e"
+   },
+   {
+    "stage": "aosp15/system/core/libutils/include/utils/LightRefBase.h",
+    "from": "workspace:android-source/system-core/libutils/binder/include/utils/LightRefBase.h",
+    "sha256": "69e4814a1fb150b747bfff3a144535c6cc8584e037a2b847b7b719c1a75e94f1"
+   },
+   {
+    "stage": "aosp15/system/core/libutils/include/utils/Log.h",
+    "from": "workspace:android-source/system-core/libutils/include/utils/Log.h",
+    "sha256": "74f0f6c731593ec8c2bcd05e71c74372b469236977136af113ac8a15bdfbf939"
+   },
+   {
+    "stage": "aosp15/system/core/libutils/include/utils/RefBase.h",
+    "from": "workspace:android-source/system-core/libutils/binder/include/utils/RefBase.h",
+    "sha256": "58949eeb23be4e5ff91c4904d9c643e6ed9b9f96a0b789b5aa04f679602c0373"
+   },
+   {
+    "stage": "aosp15/system/core/libutils/include/utils/StrongPointer.h",
+    "from": "workspace:android-source/system-core/libutils/binder/include/utils/StrongPointer.h",
+    "sha256": "992b24f3902fc8540021cd14f65b4a18c36101a4c34ff5e4b6a3857f33e7b6d2"
+   },
+   {
+    "stage": "aosp15/system/core/libutils/include/utils/TypeHelpers.h",
+    "from": "workspace:android-source/system-core/libutils/binder/include/utils/TypeHelpers.h",
+    "sha256": "36973dcbd99139f3af9c1d4a9487d1e0315c0c2555eebd6aecedd2185ee27107"
+   },
+   {
+    "stage": "aosp15/system/logging/liblog/include/android/log.h",
+    "from": "workspace:android-source/logging/liblog/include/android/log.h",
+    "sha256": "ec7e66a6a6b7342c08ffa7459c15929da0c42e871f0ca5a003cbf1d024c5f597"
+   },
+   {
+    "stage": "aosp15/system/logging/liblog/include/log/log.h",
+    "from": "workspace:android-source/logging/liblog/include/log/log.h",
+    "sha256": "a88a797a352663075686bc6e3bf76675e1606367eaf12efd70f75706b84a595c"
+   },
+   {
+    "stage": "aosp15/system/logging/liblog/include/log/log_id.h",
+    "from": "workspace:android-source/logging/liblog/include/log/log_id.h",
+    "sha256": "c905e4e217e2bc389c0ae2d9a489ead7fbe9aef649f7d036bb8688be1ea9dd5d"
+   },
+   {
+    "stage": "aosp15/system/logging/liblog/include/log/log_main.h",
+    "from": "workspace:android-source/logging/liblog/include/log/log_main.h",
+    "sha256": "e402f10ca5457d85d231c831ca0daca6ab0dd22b2564dad924c2194e1132fb5c"
+   },
+   {
+    "stage": "aosp15/system/logging/liblog/include/log/log_radio.h",
+    "from": "workspace:android-source/logging/liblog/include/log/log_radio.h",
+    "sha256": "b84f5357c3d5cacdd034b28c67a7a3d69ee9d3dae39be9175660ed44afc5edf5"
+   },
+   {
+    "stage": "aosp15/system/logging/liblog/include/log/log_safetynet.h",
+    "from": "workspace:android-source/logging/liblog/include/log/log_safetynet.h",
+    "sha256": "3381a2b153f0542a47202e0230daf9d30b68b04e970690c2947940dc05312cfa"
+   },
+   {
+    "stage": "aosp15/system/logging/liblog/include/log/log_system.h",
+    "from": "workspace:android-source/logging/liblog/include/log/log_system.h",
+    "sha256": "35e31b751960fd45760546baa1e6b1ae5cc0f3c25d5b292c50e1487dd36670f0"
+   },
+   {
+    "stage": "aosp15/system/logging/liblog/include/log/log_time.h",
+    "from": "workspace:android-source/logging/liblog/include/log/log_time.h",
+    "sha256": "ba916f8fa49be1db30aeb6cbff4f7323164e0e327cfdecf7e1dc95b7f9491d9c"
+   },
+   {
+    "stage": "hwui_stubinc/android/file_descriptor_jni.h",
+    "from": "workspace:preserved/runtime-sources/local/hwui_stubinc/android/file_descriptor_jni.h",
+    "sha256": "40ca396ce8a07181a6b7f496340efac624ad95fb88e95f7ad909292b92453ffd"
+   },
+   {
+    "stage": "hwui_stubinc/arm64_force_include.h",
+    "from": "workspace:preserved/runtime-sources/local/hwui_stubinc/arm64_force_include.h",
+    "sha256": "e41bb322c813f3cab1bec15b3506da01e5b0d7f6b9d3b6a999d188359110d082"
+   },
+   {
+    "stage": "libcxx_compat_arm64.h",
+    "from": "workspace:preserved/runtime-sources/local/libcxx_compat_arm64.h",
+    "sha256": "1a47f8b324fc6c149dce2229815b1e492e28610c87446bd93ed1d6d08359ca6d"
+   },
+   {
+    "stage": "plat-src/draw_fn.h",
+    "from": "workspace:android-source/frameworks-base/native/webview/plat_support/draw_fn.h",
+    "patch": "westlake:framework/webview-shim/webview-t/plat-support/plat-support.patch",
+    "sha256": "16bf4ba54bc086b14409ebd30bff63ada228d087ec08b61abd4101972b75af78"
+   },
+   {
+    "stage": "plat-src/draw_functor.cpp",
+    "from": "workspace:android-source/frameworks-base/native/webview/plat_support/draw_functor.cpp",
+    "patch": "westlake:framework/webview-shim/webview-t/plat-support/plat-support.patch",
+    "sha256": "46f46d23d5496b9abbaf294b83abbd927b8e7e058258560752bf5d5920819abe"
+   },
+   {
+    "stage": "plat-src/draw_gl.h",
+    "from": "workspace:android-source/frameworks-base/native/webview/plat_support/draw_gl.h",
+    "sha256": "c1b9bf4d9d79123300dd76c47b7b28f3d6d5943c396a0c41bbf5f32507960919"
+   },
+   {
+    "stage": "plat-src/draw_gl_functor.cpp",
+    "from": "workspace:android-source/frameworks-base/native/webview/plat_support/draw_gl_functor.cpp",
+    "sha256": "e746e309441636b62f6728e86368b27faf4ce1ecf4c4c043017904b451caf595"
+   },
+   {
+    "stage": "plat-src/draw_sw.h",
+    "from": "workspace:android-source/frameworks-base/native/webview/plat_support/draw_sw.h",
+    "sha256": "c8b6ec8014aafc7b3ef5fff9e1205a6cd23b0fb0eb0a797fb3e61d9c4457cbce"
+   },
+   {
+    "stage": "plat-src/functor_utils.cpp",
+    "from": "workspace:android-source/frameworks-base/native/webview/plat_support/functor_utils.cpp",
+    "sha256": "a2abb04bdb0b2005e5cbbe800c8b5397c8b7ef9df973059d5a7679db55e84f67"
+   },
+   {
+    "stage": "plat-src/functor_utils.h",
+    "from": "workspace:android-source/frameworks-base/native/webview/plat_support/functor_utils.h",
+    "sha256": "f8c9f5857a564fdbf58a7b35a056406a4981e845d4204a1469cf7882cfef5015"
+   },
+   {
+    "stage": "plat-src/graphic_buffer_impl.h",
+    "from": "workspace:android-source/frameworks-base/native/webview/plat_support/graphic_buffer_impl.h",
+    "patch": "westlake:framework/webview-shim/webview-t/plat-support/plat-support.patch",
+    "sha256": "5b65680b0db2386a2438d62db88e70deab6c70c872c2b04982bd85d822d9c7d6"
+   },
+   {
+    "stage": "plat-src/graphics_utils.cpp",
+    "from": "workspace:android-source/frameworks-base/native/webview/plat_support/graphics_utils.cpp",
+    "patch": "westlake:framework/webview-shim/webview-t/plat-support/plat-support.patch",
+    "sha256": "59e827931cfd49577fa9e1f8642b5b3a48bc45c83cf02acd8b3a678321b8c614"
+   },
+   {
+    "stage": "plat-src/jni_entry_point.cpp",
+    "from": "workspace:android-source/frameworks-base/native/webview/plat_support/jni_entry_point.cpp",
+    "patch": "westlake:framework/webview-shim/webview-t/plat-support/plat-support.patch",
+    "sha256": "63c3de6c0bcdd480fed453b33c870498c0417a575ceae8e3b3c740dec2413da5"
+   },
+   {
+    "stage": "skia-m133/include/codec/SkCodec.h",
+    "from": "workspace:android-source/oh-skia/m133/include/codec/SkCodec.h",
+    "sha256": "9a19efeb71b2693459a038c785877bcc337211c85c83ee114976040e66b6e371"
+   },
+   {
+    "stage": "skia-m133/include/codec/SkEncodedOrigin.h",
+    "from": "workspace:android-source/oh-skia/m133/include/codec/SkEncodedOrigin.h",
+    "sha256": "2147f92f2303053f0f97611646c338311532f9129f983dd06fe60c1520a3f239"
+   },
+   {
+    "stage": "skia-m133/include/config/SkUserConfig.h",
+    "from": "workspace:android-source/oh-skia/m133/include/config/SkUserConfig.h",
+    "sha256": "90cd3852aed7765258e05eefef0253387e357c09fbac0f5cce93da463cd4b0d2"
+   },
+   {
+    "stage": "skia-m133/include/core/SkAlphaType.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkAlphaType.h",
+    "sha256": "20018b056292a1ff63e67cb3b0aed18d3fa64947b693fe8707d85a1a3c63c973"
+   },
+   {
+    "stage": "skia-m133/include/core/SkArc.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkArc.h",
+    "sha256": "67fd804e55c70dbbdbbfff6912d4a7e48244b42897a8b2afe9f411c4bb779fb4"
+   },
+   {
+    "stage": "skia-m133/include/core/SkBitmap.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkBitmap.h",
+    "sha256": "98a79c8472332ed058c9ae22286f6f806afd694f079d09c6f961e57e0de52abd"
+   },
+   {
+    "stage": "skia-m133/include/core/SkBlendMode.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkBlendMode.h",
+    "sha256": "13578e67b2f1ee0bfdc0a1878e08e59bf4b666297059b16841f53ba2911f49ea"
+   },
+   {
+    "stage": "skia-m133/include/core/SkBlender.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkBlender.h",
+    "sha256": "50084450462e4d69eae41584d2e81603bb370c48d0d4877e2798dbbb82d616d5"
+   },
+   {
+    "stage": "skia-m133/include/core/SkCanvas.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkCanvas.h",
+    "replace": [
+     [
+      "class SK_API SkCanvas ",
+      "class SK_API_TYPE SkCanvas "
+     ]
+    ],
+    "sha256": "4229448efae285cae5fb7d3adfcc3b5bb1ddb84f47f13a649909f6658b807a26"
+   },
+   {
+    "stage": "skia-m133/include/core/SkCanvasVirtualEnforcer.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkCanvasVirtualEnforcer.h",
+    "sha256": "28221aeeab7566d55e32c12c0885911988df81b8286ad62b001eba2fdb71019f"
+   },
+   {
+    "stage": "skia-m133/include/core/SkClipOp.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkClipOp.h",
+    "sha256": "edc01d20d90e6698193e291a0339147ec4c72343c601ae998e81a74f23e7dda1"
+   },
+   {
+    "stage": "skia-m133/include/core/SkColor.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkColor.h",
+    "sha256": "56b4b613129455fd655ecde1fe1c3e25df53754cfce10f52ceb2c56b52ef463a"
+   },
+   {
+    "stage": "skia-m133/include/core/SkColorFilter.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkColorFilter.h",
+    "sha256": "549a4a0f2a1d2fd5b15784f60283b8ee86465e2f9c168733a1aa7f0eeb115737"
+   },
+   {
+    "stage": "skia-m133/include/core/SkColorSpace.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkColorSpace.h",
+    "sha256": "319e5d0b8317258690f00d096bf0111328ca5313be82c8c775ff1c33c9605ddd"
+   },
+   {
+    "stage": "skia-m133/include/core/SkColorType.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkColorType.h",
+    "sha256": "908e1ab8560f8e75464e6f26abfb3fd9908ee11a2636eb9f0600226f93b39404"
+   },
+   {
+    "stage": "skia-m133/include/core/SkData.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkData.h",
+    "sha256": "c32f55bd2317b5cebbcbc608cd99db2f6a82aa75e2f54d4ee3ea6f4df23ab6a3"
+   },
+   {
+    "stage": "skia-m133/include/core/SkDrawable.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkDrawable.h",
+    "replace": [
+     [
+      "class SK_API SkDrawable ",
+      "class SK_API_TYPE SkDrawable "
+     ]
+    ],
+    "sha256": "1f51aa9f8af66447b3a7b14b1ee32190b5ffa202e95681eeca1ceb1ca60d2bce"
+   },
+   {
+    "stage": "skia-m133/include/core/SkFlattenable.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkFlattenable.h",
+    "sha256": "c038bd7d1cb1137e4ab3989b16c8f030dbd323bd282940bdaf92c2a9144f67bb"
+   },
+   {
+    "stage": "skia-m133/include/core/SkFontTypes.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkFontTypes.h",
+    "sha256": "fcc92a99efd3ea5a14a6b7d42369ab55a21b55460c9934068af1c801d8918276"
+   },
+   {
+    "stage": "skia-m133/include/core/SkImage.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkImage.h",
+    "sha256": "3d254463b66e555f0217f121faa3db21387e0f78583ddb16b53a56fca8cd93e6"
+   },
+   {
+    "stage": "skia-m133/include/core/SkImageFilter.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkImageFilter.h",
+    "sha256": "176876cca50c702f40973100d99b73bc2d020d8c828884c3d72dbeaf5ab74f0c"
+   },
+   {
+    "stage": "skia-m133/include/core/SkImageInfo.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkImageInfo.h",
+    "sha256": "317837f7cd654197f021e5e96090ee0e14e8fc8a18246e596fefbc68a6eb155e"
+   },
+   {
+    "stage": "skia-m133/include/core/SkM44.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkM44.h",
+    "sha256": "afa25fa90d83ead1c05401eb6f19c869320639dc7406275b4eac0ff518fad6e8"
+   },
+   {
+    "stage": "skia-m133/include/core/SkMallocPixelRef.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkMallocPixelRef.h",
+    "sha256": "19264adaa0c28a3727316ad037eb30e3a37a83277a50317e58888007f4a0f520"
+   },
+   {
+    "stage": "skia-m133/include/core/SkMatrix.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkMatrix.h",
+    "sha256": "d9f682221551640149422ec351be9386136d66efad26a58d6277dd4d096e15ee"
+   },
+   {
+    "stage": "skia-m133/include/core/SkPaint.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkPaint.h",
+    "sha256": "df0beca34338503434ca1f5d82107557464a21f3defe7cf5ec1defd543dea8d2"
+   },
+   {
+    "stage": "skia-m133/include/core/SkPixelRef.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkPixelRef.h",
+    "replace": [
+     [
+      "class SK_API SkPixelRef ",
+      "class SK_API_TYPE SkPixelRef "
+     ]
+    ],
+    "sha256": "7fa57922413c6dfa2f3a918b2fa17060c0814e15c11be619e4fbc4a8a2892662"
+   },
+   {
+    "stage": "skia-m133/include/core/SkPixmap.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkPixmap.h",
+    "sha256": "07862f50846f38502f3910c8d73b2d66e44c4f635ec896fc619d78f72e32230c"
+   },
+   {
+    "stage": "skia-m133/include/core/SkPoint.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkPoint.h",
+    "sha256": "80982c59c72d8af6b1d3150222568111a16246ad1d96163f73c4c5e45e89eb64"
+   },
+   {
+    "stage": "skia-m133/include/core/SkRasterHandleAllocator.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkRasterHandleAllocator.h",
+    "sha256": "23face2765365fa2ffe7058261ca21be83637a40a71dccd77f726fcb6c4e1d35"
+   },
+   {
+    "stage": "skia-m133/include/core/SkRect.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkRect.h",
+    "sha256": "d46de1598de910ce270722762c4f6453942fb9c0069bd22ec8922abf915bb0ee"
+   },
+   {
+    "stage": "skia-m133/include/core/SkRefCnt.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkRefCnt.h",
+    "sha256": "1fa21c776ef9ed2002c54f9fde529220f762a173ef10fcc2a121eee0dfc6ab8b"
+   },
+   {
+    "stage": "skia-m133/include/core/SkSamplingOptions.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkSamplingOptions.h",
+    "sha256": "102449111bcc9674061aa54e5a44523d9e64ac14ab70deccf67a292d874c5f87"
+   },
+   {
+    "stage": "skia-m133/include/core/SkScalar.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkScalar.h",
+    "sha256": "7aa703c3bc254ba8e3230edc06576f3f14be6b55580cac23faaa39b8934f49d7"
+   },
+   {
+    "stage": "skia-m133/include/core/SkShader.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkShader.h",
+    "sha256": "8e8ba5d1d50f92ac7b8538d55be353518f9c38c70cab1f71828d0168f65f5ace"
+   },
+   {
+    "stage": "skia-m133/include/core/SkSize.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkSize.h",
+    "sha256": "e671b8fc7177760ba4dfd88f2a77d82093003a5abbca47b5fa7a6dd7dc2da16b"
+   },
+   {
+    "stage": "skia-m133/include/core/SkSpan.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkSpan.h",
+    "sha256": "fc0f350addef26b335b9af0dd8cdbc031cc0608290663b6d71fa19d3d5f741a9"
+   },
+   {
+    "stage": "skia-m133/include/core/SkString.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkString.h",
+    "sha256": "136cc1ed8d7ad0eb757014137ec9aa54eedcda36f33adf8286d252a86f8ceff4"
+   },
+   {
+    "stage": "skia-m133/include/core/SkSurfaceProps.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkSurfaceProps.h",
+    "sha256": "aaa6aa116415dcb481fd117b2a6a336244682493d1acb29f03ddaeb4b218c134"
+   },
+   {
+    "stage": "skia-m133/include/core/SkTileMode.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkTileMode.h",
+    "sha256": "36466a04e84ca8d16efa8af157f0518e564b00cd887836a1b4f9ea5f8d2f2c51"
+   },
+   {
+    "stage": "skia-m133/include/core/SkTypes.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkTypes.h",
+    "sha256": "6539d036102517a042fc7ab45b17bdbdf6686d5b5502178a5ef20d45c198d93e"
+   },
+   {
+    "stage": "skia-m133/include/core/SkYUVAInfo.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkYUVAInfo.h",
+    "sha256": "ec2ecd1e2dfa2b36a351533e70ded8fee0a3e122310e4ed4f2ee67af1b4ffb4b"
+   },
+   {
+    "stage": "skia-m133/include/core/SkYUVAPixmaps.h",
+    "from": "workspace:android-source/oh-skia/m133/include/core/SkYUVAPixmaps.h",
+    "sha256": "a9135b5b38d19002885aec28bcb28ced7280df9201d2e6b2fd70edc9ac2e6ccb"
+   },
+   {
+    "stage": "skia-m133/include/effects/SkRuntimeEffect.h",
+    "from": "workspace:android-source/oh-skia/m133/include/effects/SkRuntimeEffect.h",
+    "sha256": "805b98bca7473cf530689083a3a4b9b3c500e613e96edbf64601bdefa2e1043e"
+   },
+   {
+    "stage": "skia-m133/include/private/SkEncodedInfo.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/SkEncodedInfo.h",
+    "sha256": "f46951903d4f5876df5bbc3c2af5ced78f647e165627f584ba8ef996b4b8c609"
+   },
+   {
+    "stage": "skia-m133/include/private/SkIDChangeListener.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/SkIDChangeListener.h",
+    "sha256": "1ee35d1812514cb531d06fb8db782d27262c3b16759cb704a6dca43755c3b3e5"
+   },
+   {
+    "stage": "skia-m133/include/private/SkSLSampleUsage.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/SkSLSampleUsage.h",
+    "sha256": "e7c2b147f60d309c5c0ade4430c556d9b65feb699aa2e59f0f38bcb65f19c4f5"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkAPI.h",
+    "from": "westlake:third_party/oh61-window-headers/third_party/skia/m133/include/private/base/SkAPI.h",
+    "sha256": "efbf66b51197de7f36b0c3bba6f41f9aeef0bf34a3a0b7e207281eaded885c1a"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkASAN.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkASAN.h",
+    "sha256": "7bde3faed763ba6f93f0b0b84cb72c6bb187e5b6ba39007df97df741474fd04b"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkAlign.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkAlign.h",
+    "sha256": "be0fc65db328db286fd526a4f7d9b6b17e0b2a2593f93f85582c5a61e1bfa049"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkAlignedStorage.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkAlignedStorage.h",
+    "sha256": "f77627116f03995d40a4a0373c03ff6ce740baaf86a72432517ff426b7b6381f"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkAssert.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkAssert.h",
+    "sha256": "6cdb99bf5c50e16a937bfc4223091cb5f3b5eda4d90f85552502701f6fb73937"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkAttributes.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkAttributes.h",
+    "sha256": "d4221e6cfe53c6f490494971a86ef25cc270ad74060f97de3417706e827ba5a8"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkCPUTypes.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkCPUTypes.h",
+    "sha256": "3b4b118465517b61823aac8495909c1e2738f76aba9dba9a51f2caac35a3c92b"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkContainers.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkContainers.h",
+    "sha256": "9e06e87e0f54a1132197c957f8ab4a90e536bf13e45f8ff23a330b40a33c0c59"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkDebug.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkDebug.h",
+    "sha256": "fc5bb28ebf2cc1c4b47dd437fa858690f32eb246cd245c55443ebcaeec25c1ba"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkDeque.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkDeque.h",
+    "sha256": "16bd359ccb0b262dc3f9c03b2f1ca0a4fb4cbe4f1e92b2ad5ec96f3ac9b4a064"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkFeatures.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkFeatures.h",
+    "sha256": "08e33e0039d665dbf322e80a10f0fea1bfe43b45a2a92a085ec3dbf619d45d5f"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkFixed.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkFixed.h",
+    "sha256": "dbb3aed7b717ac59d9513f5286d0fc0ed3f278208697397a8a06fa8413f8a039"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkFloatingPoint.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkFloatingPoint.h",
+    "sha256": "e0736ca8493dec4be27c1341a590eb866dad4e4c203f7adf31c7bde0bf32abb1"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkLoadUserConfig.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkLoadUserConfig.h",
+    "sha256": "b830bb0d376cd4a5135ed29823fa5319b32db0858906903e3c57aeb294b3bf0d"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkMacros.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkMacros.h",
+    "sha256": "f36748f52dada5acccece4f35e66e5bad2159b43fed12ddc761e80e7bfd37498"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkMalloc.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkMalloc.h",
+    "sha256": "75d744b61aa1872cbcd6e5a7c76f3f2096987d7d16dae5640e6024a00ea8ae47"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkMath.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkMath.h",
+    "sha256": "7292f09319be31930cbb47b91d470197c49c5652988e98f7679c26b91bc33708"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkMutex.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkMutex.h",
+    "sha256": "ba8e75360921f51112e6cf43eb9f1e0dae76dd07957ddedb2215c3e97664dc28"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkNoncopyable.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkNoncopyable.h",
+    "sha256": "c41fa71221bb05a3979e19faa93fcbf559cf5f9a6d6c914787e2153c44602379"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkOnce.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkOnce.h",
+    "sha256": "1dcb408d62dc1a92ca2f6670db707466ffd81e198fd9b9e73b1990b0c017f164"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkPoint_impl.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkPoint_impl.h",
+    "sha256": "1ba7c9af79beec2dc9cc99a1b6610f09265ce6eba39c77382e94ead12a61cb97"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkSafe32.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkSafe32.h",
+    "sha256": "0935c512899cf4636f8ee4ecb8c4563514b1e14f4a15fc180a55429898aad198"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkSemaphore.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkSemaphore.h",
+    "sha256": "11e0ee988d0717541dcf2e015591c9accd44147f06a31a48d1d0c99ee66143ba"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkSpan_impl.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkSpan_impl.h",
+    "sha256": "005ece17718b4ea4582e19f005c91e8be85122c3bf0daf47694d992da7bbd07f"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkTArray.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkTArray.h",
+    "sha256": "c82c0b2598d5414c0f0fd033888ce170b44699951f0009450fdae2e47e4a4fd2"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkTDArray.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkTDArray.h",
+    "sha256": "1f2c7c38633d838beddecdebaff9dbb102e8256b29fd48e90c84d7ec6d6c754d"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkTFitsIn.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkTFitsIn.h",
+    "sha256": "c94ce20dc01516c88a9628f1f9097a42cdb8f5bb1b35d2eb41501a8b2edb9960"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkTLogic.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkTLogic.h",
+    "sha256": "fb0678e3deb88cc9db88df0f07963d6e76c39e2fec48144c89f76c42667062ab"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkTPin.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkTPin.h",
+    "sha256": "4110e78719d3a35d417e34cfdacee452ce4d2df5c34564943073aff8dd7d943f"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkTemplates.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkTemplates.h",
+    "sha256": "7938a23868c615f7d9111144bc8109b20a6a5c61b56890cbc3280534aa678893"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkThreadAnnotations.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkThreadAnnotations.h",
+    "sha256": "8e8e582b955b24ec3b79610e516b6373c76994fd7e5b1fc7626db2b808e3c0c5"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkThreadID.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkThreadID.h",
+    "sha256": "212cb87c98bba9f1ca18132f5b20e28889cb7332d50e25ddc46a9f43143a2846"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkTo.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkTo.h",
+    "sha256": "1351b3ed7a18dd2e1c164c6eff54759b1703ae0cf0b9a11388a6ba6a4164f30b"
+   },
+   {
+    "stage": "skia-m133/include/private/base/SkTypeTraits.h",
+    "from": "workspace:android-source/oh-skia/m133/include/private/base/SkTypeTraits.h",
+    "sha256": "c534c87c6d288ef5a2534ec35c1e5b451aeeb1e7baa3de1c23df343306a0ef0e"
+   },
+   {
+    "stage": "skia-m133/include/sksl/SkSLDebugTrace.h",
+    "from": "workspace:android-source/oh-skia/m133/include/sksl/SkSLDebugTrace.h",
+    "sha256": "eb95883168f35372ac86dfd5faaf09da60e06c2a7a79ad6008f35ebb7187107c"
+   },
+   {
+    "stage": "skia-m133/include/sksl/SkSLVersion.h",
+    "from": "workspace:android-source/oh-skia/m133/include/sksl/SkSLVersion.h",
+    "sha256": "17531acbc5b7e361c9e6d9ee9512a8b734fe16a244c448ee05af6f3fb24c53e6"
+   },
+   {
+    "stage": "skia-m133/include/utils/SkCanvasStateUtils.h",
+    "from": "workspace:android-source/oh-skia/m133/include/utils/SkCanvasStateUtils.h",
+    "sha256": "d4a18f85980ed8ef40c5454466421422ea85a1b4d6404d20781248a56091cd10"
+   },
+   {
+    "stage": "skia-m133/include/utils/SkNWayCanvas.h",
+    "from": "workspace:android-source/oh-skia/m133/include/utils/SkNWayCanvas.h",
+    "sha256": "93d23b483eaccf6960ef4b4f3e3fd89ba5575bcafd4ea9987df6c24c3a45e64d"
+   },
+   {
+    "stage": "skia-m133/include/utils/SkNoDrawCanvas.h",
+    "from": "workspace:android-source/oh-skia/m133/include/utils/SkNoDrawCanvas.h",
+    "sha256": "fd70a6f77168de670235efb65ed04fa2d4f637f5bb85905772099a359b602961"
+   },
+   {
+    "stage": "skia-m133/include/utils/SkPaintFilterCanvas.h",
+    "from": "workspace:android-source/oh-skia/m133/include/utils/SkPaintFilterCanvas.h",
+    "replace": [
+     [
+      "class SK_API SkPaintFilterCanvas ",
+      "class SK_API_TYPE SkPaintFilterCanvas "
+     ]
+    ],
+    "sha256": "7aacce1b3187c6127f49cffa088502e7693c9630e1fd5c0fc5a278e427de50bd"
+   },
+   {
+    "stage": "skia-m133/modules/skcms/skcms.h",
+    "from": "workspace:android-source/oh-skia/m133/modules/skcms/skcms.h",
+    "sha256": "f3431fe230076dda4dcad5c3b1cc4789ef6d71967f254c6fdac32a3b97bb94de"
+   },
+   {
+    "stage": "skia-m133/modules/skcms/src/skcms_public.h",
+    "from": "workspace:android-source/oh-skia/m133/modules/skcms/src/skcms_public.h",
+    "sha256": "b891a1b039a1f2eb482315c0031d7b37fafe535328f46efc5260b5db3efa1330"
+   },
+   {
+    "stage": "skia_compat_headers/BRDAllocator.h",
+    "from": "workspace:preserved/runtime-sources/local/skia_compat_headers/BRDAllocator.h",
+    "sha256": "524ea356b91aadf9e477851bbbb901d1b419aae5e1761eaf479bc6001f6de1da"
+   },
+   {
+    "stage": "skia_compat_headers/SkBitmap.h",
+    "from": "workspace:preserved/runtime-sources/local/skia_compat_headers/SkBitmap.h",
+    "sha256": "d1664f3610fe31c0fc416ff1f701fb7b6002b2502a0773d0200b6e7571fc5c3e"
+   },
+   {
+    "stage": "skia_compat_headers/SkCanvasStateUtils.h",
+    "from": "workspace:preserved/runtime-sources/local/skia_compat_headers/SkCanvasStateUtils.h",
+    "sha256": "641a8eaf37020ba12427ffa5cd5bf6c9a824ecda1c364ffa3784befc9b3ffdee"
+   },
+   {
+    "stage": "skia_compat_headers/SkCodec.h",
+    "from": "workspace:preserved/runtime-sources/local/skia_compat_headers/SkCodec.h",
+    "sha256": "c55ac646489b90724d2b45b26736bc1eef617c6909b1de3991b3418ace2a5517"
+   },
+   {
+    "stage": "skia_compat_headers/SkColorFilter.h",
+    "from": "workspace:preserved/runtime-sources/local/skia_compat_headers/SkColorFilter.h",
+    "sha256": "6d2e1f4a96640f250c48c0c7bf8f09029e1838ea46f28adbbc68660090708bf0"
+   },
+   {
+    "stage": "skia_compat_headers/SkColorSpace.h",
+    "from": "workspace:preserved/runtime-sources/local/skia_compat_headers/SkColorSpace.h",
+    "sha256": "9ec2d2eded2a5f51eeae2b0bb184656b2e524b70ccb3c4eea3412dfe08e11399"
+   },
+   {
+    "stage": "skia_compat_headers/SkImageInfo.h",
+    "from": "workspace:preserved/runtime-sources/local/skia_compat_headers/SkImageInfo.h",
+    "sha256": "f5fd1a1db5bdca2e5a65e3b34064dfb857834be853dab0dd63980e336c3535f4"
+   },
+   {
+    "stage": "skia_compat_headers/SkMatrix.h",
+    "from": "workspace:preserved/runtime-sources/local/skia_compat_headers/SkMatrix.h",
+    "sha256": "acc70d48552deec1e4fad4b247d2022da59a90bed9c08f417a68260180c284fe"
+   },
+   {
+    "stage": "skia_compat_headers/SkPaint.h",
+    "from": "workspace:preserved/runtime-sources/local/skia_compat_headers/SkPaint.h",
+    "sha256": "039d70ba5178ed0ae1ffde4fe95f13070746d0c007083f83997e5ce6b4376121"
+   },
+   {
+    "stage": "skia_compat_headers/SkPaintFilterCanvas.h",
+    "from": "workspace:preserved/runtime-sources/local/skia_compat_headers/SkPaintFilterCanvas.h",
+    "sha256": "5278025fdf44308f8128fb18dffea050f65e7404359d07bc7b636dc124146cce"
+   },
+   {
+    "stage": "skia_compat_headers/SkPoint.h",
+    "from": "workspace:preserved/runtime-sources/local/skia_compat_headers/SkPoint.h",
+    "sha256": "d1e30b6b5ba8d30397f27d593c2561f7211384bfe4b2d7f70319494f63f2a32c"
+   },
+   {
+    "stage": "skia_compat_headers/SkRect.h",
+    "from": "workspace:preserved/runtime-sources/local/skia_compat_headers/SkRect.h",
+    "sha256": "87e2474a92f6f5a90a27ccaab2d27e70b76ed1436a5296737e20bf9adb252a42"
+   },
+   {
+    "stage": "skia_compat_headers/SkRefCnt.h",
+    "from": "workspace:preserved/runtime-sources/local/skia_compat_headers/SkRefCnt.h",
+    "sha256": "c84c271ce844dd6f8bbd2abc4edd5a5d18120553bac81a32523acf2c6be3965b"
+   },
+   {
+    "stage": "skia_compat_headers/SkRuntimeEffect.h",
+    "from": "workspace:preserved/runtime-sources/local/skia_compat_headers/SkRuntimeEffect.h",
+    "sha256": "15d1b5051c8066d7d6ff251c2d4673661bafdd6ad60f75dc11b7aa5d527695c1"
+   },
+   {
+    "stage": "skia_compat_headers/androidfw/ResourceTypes.h",
+    "from": "workspace:preserved/runtime-sources/local/skia_compat_headers/androidfw/ResourceTypes.h",
+    "sha256": "ecd37fc5196fcff2d0d503636b33954d865aac23a094828d19e360553c74cc22"
+   },
+   {
+    "stage": "skia_compat_headers/apex/choreographer.h",
+    "from": "workspace:preserved/runtime-sources/local/skia_compat_headers/apex/choreographer.h",
+    "sha256": "161552612d2e1d2c828b7a98e74ef76cdd5e1899ae4508c34f8f33317e5011f2"
+   },
+   {
+    "stage": "skia_compat_headers/hwui_force_include.h",
+    "from": "workspace:preserved/runtime-sources/local/skia_compat_headers/hwui_force_include.h",
+    "sha256": "fa042fad1b4f6107db0793ec6fe114abb1d1a55907ca8f107f3cef75ba5aaeae"
+   },
+   {
+    "stage": "skia_compat_headers/nativehelper/JNIPlatformHelp.h",
+    "from": "workspace:preserved/runtime-sources/local/skia_compat_headers/nativehelper/JNIPlatformHelp.h",
+    "sha256": "477ab3a8c8c0db636cc806c0b44dff7811ee12f7870096af61182fa99f7a0290"
+   },
+   {
+    "stage": "skia_compat_headers/vulkan/vulkan.h",
+    "from": "workspace:preserved/runtime-sources/local/skia_compat_headers/vulkan/vulkan.h",
+    "sha256": "0ddf9b9dbb15e3b5339db46ee9cf05022a9c4148b0e17f972194b766257c1352"
+   },
+   {
+    "stage": "webview-shim/graphic_buffer_impl_oh.cpp",
+    "from": "westlake:framework/webview-shim/graphic_buffer_impl_oh.cpp",
+    "replace": [
+     [
+      "#include \"webview_graphic_buffer_oh.h\"",
+      "#include \"graphic_buffer_impl.h\""
+     ]
+    ],
+    "sha256": "9a22dcc65a39794499c59f9b78c4df099228550c4aaf714be4b8c224730d27fe"
+   }
+  ],
+  "stubs": {
+   "libhwui.so": [
+    [
+     "_ZN11GraphicsJNI15getNativeCanvasEP7_JNIEnvP8_jobject",
+     "function",
+     "global"
+    ],
+    [
+     "_ZN7android10uirenderer21WebViewFunctor_createEPvRKNS0_23WebViewFunctorCallbacksENS0_10RenderModeE",
+     "function",
+     "global"
+    ],
+    [
+     "_ZN7android10uirenderer22WebViewFunctor_releaseEi",
+     "function",
+     "global"
+    ],
+    [
+     "_ZN7android10uirenderer38WebViewFunctor_queryPlatformRenderModeEv",
+     "function",
+     "global"
+    ],
+    [
+     "__android_log_assert",
+     "function",
+     "global"
+    ],
+    [
+     "__android_log_print",
+     "function",
+     "global"
+    ],
+    [
+     "__cxa_guard_abort",
+     "function",
+     "global"
+    ]
+   ],
+   "libc++_shared.so": [
+    [
+     "_Unwind_Resume",
+     "function",
+     "global"
+    ],
+    [
+     "_ZSt9terminatev",
+     "function",
+     "global"
+    ],
+    [
+     "_ZdlPv",
+     "function",
+     "weak"
+    ],
+    [
+     "_Znwm",
+     "function",
+     "weak"
+    ],
+    [
+     "__cxa_begin_catch",
+     "function",
+     "global"
+    ],
+    [
+     "__cxa_guard_abort",
+     "function",
+     "global"
+    ],
+    [
+     "__cxa_guard_acquire",
+     "function",
+     "global"
+    ],
+    [
+     "__cxa_guard_release",
+     "function",
+     "global"
+    ],
+    [
+     "__gxx_personality_v0",
+     "function",
+     "global"
+    ]
+   ]
+  }
+ }
+}

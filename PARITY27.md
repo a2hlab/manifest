@@ -32,7 +32,8 @@ Yes, there are binary dependencies, separate from the generic runtime fix:
 | Window helper link providers | Operator supplied `libipc_single.z.so` and `libutils.z.so`, hash-locked in Westlake `tests/parity/window-providers.lock.json`; object compilation needs neither |
 | Ten framework/core JARs and matching ART/OAT/VDEX boot images | Historical compiled inputs; complete matching source recipe remains missing |
 | Full bridge/HWUI/runtime providers and OH firmware/vendor graphics | Observed immutable hashes recorded; complete source/build closure remains missing |
-| WebView and Toutiao APK/native libraries | External application inputs; identities recorded, application binaries not distributed |
+| WebView input (six files) | Not distributed; the four a launch reads with a bionic shim build are rebuilt byte for byte by `tools/build_webview_input.py` (below) |
+| Toutiao APK/native libraries | External application inputs; identities recorded, application binaries not distributed |
 | gnirehtet Windows relay/Android VPN client | Optional official v2.5.1 input; scripts verify relay/client hashes |
 | Host OS, Git/LFS, Python, Make, host compiler/Java and signing identity | Operator environment; no checked-in hermetic host image |
 
@@ -52,6 +53,32 @@ python3 tools/verify_parity_inputs.py --root /path/to/reference-input-tree
 
 Missing or changed inputs fail. This read-only check neither uploads binaries
 nor treats hashes as a source build. Matching names alone are insufficient.
+
+## Rebuild the WebView input
+
+`probe_source_app.py --webview-input` accepts only the six locked WebView files.
+With `--bionic-shim-build` it stages that build's `libwebview_bionic_shim.so` and
+`libandroid.so` and reads the other four. This rebuilds those four byte for byte:
+
+```sh
+python3 tools/build_webview_input.py --workspace /absolute/workspace \
+  --westlake-source /absolute/workspace/westlake \
+  --aosp-webview-apk webview.apk --smali-tools smali-jars/ --out /absolute/new-dir
+```
+
+Inputs:
+- `webview.apk`: AOSP's `prebuilt/arm64/webview.apk` at
+  `platform/external/chromium-webview` commit `259ec8d2ad6dd574a7e6de96b317a80de87c227b`.
+- `smali-jars/`: the nine Maven Central jars `webview-t-recipe.json` lists.
+- The workspace's toolchains and pinned source trees.
+- Westlake's `framework/webview-shim/webview-t`, which describes the changes.
+
+`java` and Info-ZIP `zip` 3.0 must be on `PATH`. Any output that differs from
+the lock fails the run.
+
+This is a reproducible copy of the captured input. It is not a source build:
+the APK is Google's AOSP prebuilt. `package_webview_source.py` remains the
+Chromium source route.
 
 The two window **link-input** hashes are distinct from the deployed firmware
 hashes in the runtime inventory. The former describe the libraries used by the

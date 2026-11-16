@@ -90,6 +90,17 @@ def main():
             shutil.copyfile(source, target)
             report['inputs'][str(source.relative_to(workspace))] = digest(source)
             report['artifacts'][base + name] = {'sha256': digest(target), 'bytes': target.stat().st_size}
+        # The same tzdata where a phone running Android 15 also has it, read by code older than the
+        # versioned layout: the module's unversioned $ANDROID_TZDATA_ROOT/etc/tz/tzdata and the system's
+        # $ANDROID_ROOT/usr/share/zoneinfo/tzdata, each beside its tz_version. Unity's Mono looks only
+        # there for TimeZoneInfo.Local, and Boom Blitz died of TimeZoneNotFoundException with the zone
+        # known (persist.sys.timezone) but no database found.
+        for directory in ('tzdata/etc/tz/', 'usr/share/zoneinfo/'):
+            for relative, name in (('iana/tzdata', 'tzdata'), ('version/tz_version', 'tz_version')):
+                source, target = data / relative, output / (directory + name)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(source, target)
+                report['artifacts'][directory + name] = {'sha256': digest(target), 'bytes': target.stat().st_size}
         report['tzdata_version'] = (data / 'version/tz_version').read_text().strip()
         report['scope'] += '; Android 15 time zone data'
     if args.cacerts:
