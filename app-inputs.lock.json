@@ -9453,6 +9453,79 @@
    "pure_java": true,
    "sha256": "551d6a18bbbbd7097690738d8ec2add8e0e413eaa65dd1b81eff953f17248957",
    "version_code": 0
+  },
+  "google-two-path-probe": {
+   "abi": "arm64-v8a",
+   "bytes": 33165,
+   "launch_activity": "org.westlake.googlebootstrap.probe.TwoPathActivity",
+   "package": "org.westlake.googlebootstrap.probe",
+   "pure_java": true,
+   "sha256": "ff1f297b0500b45d83b8e52fe7c3c229977fbf0c07d6aab630418aabaa1a6400",
+   "version_code": 0
+  },
+  "google-two-path-store": {
+   "abi": "arm64-v8a",
+   "bytes": 63913374,
+   "delivery": "GrapheneOS app repository mirror; Google-signed, unmodified",
+   "kind": "original-apk-with-splits",
+   "launch_activity": "com.google.android.finsky.activities.MainActivity",
+   "modify_or_resign": false,
+   "package": "com.android.vending",
+   "rebuild": false,
+   "reference": "test board spike only",
+   "sha256": "99e272eb43df794fb96c5c60ca5dfc0b7b96b16465e120b00eda374c559ea272",
+   "splits": [
+    {
+     "bytes": 2524020,
+     "name": "split_config.arm64_v8a.apk",
+     "sha256": "56b167c87af7a7a2c046da2b0ac8aad3790c2c563eb5cd8736bdd68a6da098a3"
+    },
+    {
+     "bytes": 614610,
+     "name": "split_config.en.apk",
+     "sha256": "a3525adb4f7fcc22c9d88f614a737b9fcfdc08ce8e2e48b1bdf82b19899f043b"
+    },
+    {
+     "bytes": 16534,
+     "name": "split_phonesky_data_loader.apk",
+     "sha256": "5f4eb035a8d302bfd1ec4d10da305a6a7cc690b382a002aee7e7ddba17bdffa5"
+    },
+    {
+     "bytes": 65772,
+     "name": "split_phonesky_data_loader.config.arm64_v8a.apk",
+     "sha256": "da27ec1f71343d4c4595590e09358c27ba8c7643fc85f264741cfd7598638d9d"
+    },
+    {
+     "bytes": 16534,
+     "name": "split_phonesky_webrtc_native_lib.apk",
+     "sha256": "53b2a25b01cc27dfb7f378b4109c024a873fa7e3b2c959d916a6af2c6b190901"
+    },
+    {
+     "bytes": 6758640,
+     "name": "split_phonesky_webrtc_native_lib.config.arm64_v8a.apk",
+     "sha256": "2eca7377b287d0751cacf6e54ca4baf165f88687dd251315cad2986daaa960f6"
+    }
+   ],
+   "version_code": 85354840,
+   "version_name": "53.5.48-34 [0] [PR] 995634172"
+  },
+  "google-two-path-denied-probe": {
+   "abi": "arm64-v8a",
+   "bytes": 33165,
+   "launch_activity": "org.westlake.googlebootstrap.probe.TwoPathActivity",
+   "package": "org.westlake.googlebootstrap.probe",
+   "pure_java": true,
+   "sha256": "bb4f5c190594899092bd9cdf0bff5f661109a0691e4273d556ad538fe3b9697d",
+   "version_code": 0
+  },
+  "google-two-path-probe-v2": {
+   "abi": "arm64-v8a",
+   "bytes": 33165,
+   "launch_activity": "org.westlake.googlebootstrap.probe.TwoPathActivity",
+   "package": "org.westlake.googlebootstrap.probe",
+   "pure_java": true,
+   "sha256": "5ce884f84d18f8e7aec8a9839b8eba257e3ba157a31ec72813c627846f84987e",
+   "version_code": 0
   }
  }
 }

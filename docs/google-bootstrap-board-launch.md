@@ -43,3 +43,35 @@ The lock adds the pinned official GMS, microG and source-built external probe
 inputs used in the experiment. They are separate from the HK corpus results.
 The probe APK must match its recorded hash; it does not validate all Google
 APIs or any corpus-wide improvement.
+
+## Live two-path validation
+
+The concurrent auth/API implementation and bounded board results are pinned to
+[Westlake dbcc2f08c20a16c313284410bd46691e6ccd8254](https://github.com/a2hlab/westlake/blob/dbcc2f08c20a16c313284410bd46691e6ccd8254/docs/google-two-path-validation.md).
+Use that source checkout explicitly with `--westlake-source` when building and
+launching this experiment; the general `sources.lock.json` is not advanced by
+this experimental input update.
+
+The additional app-input keys are `google-two-path-probe` (the original lifecycle
+probe), `google-two-path-probe-v2` (adds wrong-account and denial classification
+checks), `google-two-path-denied-probe` (same package, different ungranted signer),
+and `google-two-path-store` (the unmodified official Store and its splits). These
+are separate experiment fixtures, not new HK corpus acceptance claims.
+
+The final run obtained scoped tokens from a live microG host and Advertising ID
+from official GMS in the same client. Official Play Store loaded its catalogue,
+downloaded and installed WhatsApp. Provider failure/restart and authorization
+revocation checks passed. The reusable credential remained only in microG;
+official GMS still reported uncertified status.
+
+In addition to the launcher flags above, configure separate auth and Play sockets,
+enforce channel identity, pin the auth provider APK/root spawner and install exact
+package/certificate/scope grants in microG's private data. The linked report
+contains the tested flags and pins. It also records a Store-only private install
+mount: the existing global installed-package directory belonged to another native
+host UID, so the fixture used a directory owned by its own UID inside its mount
+namespace. It did not change the global directory's permissions.
+
+The successful install is in Westlake's package registry within that namespace.
+It does not establish native OH BMS publication, production UID/SELinux isolation,
+Google certification, Play Integrity, or full API/corpus coverage.
