@@ -249,3 +249,47 @@ consent/recovery, background refresh, account switching and in-flight auth
 cancellation/revocation still need work or validation. All experiment apps share
 native UID 20010056; per-app production isolation is not proven. This update
 leaves `sources.lock.json` and HK corpus acceptance unchanged.
+
+## Retest of the 26 previously refused corpus apps
+
+The [complete Westlake retest report](https://github.com/a2hlab/westlake/blob/027c5b923efa0306e0f3db69d7156b041f3e711c/docs/google-service-retest.md)
+records the fresh 2026-11-16 UTC board run and sanitized per-app evidence. This
+manifest update adds the 22 original corpus input pins missing from this worktree;
+four target pins were already present. Existing input pins and `sources.lock.json`
+are unchanged. All 26 archives/APKs and signers were checked before launch.
+
+The run used the same build-11 adapter from Westlake
+`51d53662e1f13749b8bcbe074cc19bbdf8b9ece0`, with SHA-256
+`59864362f89b0f9d01a02bec9e1582b67d988cd5c546f22ec2321355f03ff2f3`.
+Launch one app at a time with fresh private data/runtime directories and
+`--touch-mode isolated`. Retain each app's native-library remedies listed in the
+report's per-app JSON. Corpus clients used these runtime settings:
+
+```text
+WESTLAKE_REMOTE_ACTIVITIES=1
+WESTLAKE_GOOGLE_PRIVATE_LOGS=1
+WESTLAKE_GOOGLE_SIGNIN_DIAGNOSTICS=1
+WESTLAKE_CHANNEL_IDENTITY=enforce
+WESTLAKE_LOCATION_GNSS=0
+WESTLAKE_PLAY_TRACE=1
+WESTLAKE_PLAY_SERVICES_CONNECT=wl.twopath.gms01
+WESTLAKE_PLAY_STORE_CONNECT=wl.twopath.store01
+```
+
+The named endpoints refer to the existing verified official GMS and Store hosts;
+use the corresponding live endpoints in a new fixture. Clients have no direct
+microG connection. The hosts retain the private delegation setup described above.
+
+All 26 apps had at least one successful Google service callback, with no sampled
+status 9. Twenty-five primary processes survived baseline observation; Artrace
+crashed in a native `libpag.so` path. Several apps still showed device rejection,
+empty/splash content, or no target UI. The separately authorized FotMob Google
+sign-in failed locally while routing a cross-package `PendingIntent`, before
+account selection or token delegation. No new account was created.
+
+Official GMS had recorded `uncertified_status=1` without an override throughout
+this run, unlike the earlier restricted snapshot. This comparison did not change
+only registration and cannot establish a registration workaround. Service
+connections are not completed features; native UID isolation, certification and
+full corpus acceptance remain unproven. Private raw logs and screenshots are not
+part of this update.
