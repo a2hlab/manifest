@@ -166,3 +166,32 @@ isolation, physical-touch/task acceptance, certification or full hybrid
 compatibility. The general source lock remains unchanged. Value-free results
 and source/runtime hashes are committed in Westlake; account-bearing captures
 and private app data are excluded.
+
+## Continued auth-boundary validation
+
+[Westlake eda489528ee9cfe91843a0c4b212b471372689dc](https://github.com/a2hlab/westlake/blob/eda489528ee9cfe91843a0c4b212b471372689dc/docs/google-auth-boundary-validation.md)
+adds opt-in, value-free tracing at official GMS credential/cache reads and a
+four-button token probe. The new `google-official-auth-probe-v3` input pins that
+probe signed with the existing approved development signer. Verify the signer
+before launch; the first diagnostic build used the wrong key and was correctly
+rejected during account listing. That setup failure is excluded from the actual
+package-spoof test, and no provider grant was changed.
+
+The approved probe repeated the successful forced microG `ac2dm` control and
+the official SDK/Binder `BadAuthentication` results. The same probe claiming
+Spotify in both package options received `SecurityException`. A separate real
+Spotify replay again reached Google's account picker and verification screen,
+then returned one cancellation after explicit Back.
+
+The new trace observes Spotify-owned OAuth and server-client cache keys with
+request options. At the cache boundary, the immediate caller is another GMS
+process. Completing the token-only path still requires verified original-app
+delegation, OAuth options, consent, expiry and invalidation; a cache-key string
+alone is not authorization. Native GMS token issuance and Spotify login remain
+unproven.
+
+Enable `WESTLAKE_GOOGLE_AUTH_BOUNDARY_TRACE=1` together with private logs on the
+official host. The trace emits fixed categories and stack frames, not raw keys,
+accounts or tokens. Build/source/runtime hashes and the approved probe results
+are pinned in the linked report. This input update leaves the general source
+lock unchanged and does not advance corpus acceptance or production isolation.
