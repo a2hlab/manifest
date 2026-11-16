@@ -612,6 +612,11 @@ def main():
                         help='board directory holding app data that outlives a stage (harness PERSIST_DATA): '
                              'if BOARD_DIR/<package> exists, it becomes this launch\'s data directory, as '
                              '/data/data/<package> survives an update on Android, with its code_cache cleared')
+    parser.add_argument('--private-data', action='store_true',
+                        help='the host bundle serves apps under other uids (a Play host under its own bundle, '
+                             'ADR-0003 stage 2): they reach its code by path, as Android apps read /data/app, '
+                             'so the bundle and files directories become traversable (0711), while its data '
+                             '(<runtime>/app-data) stays its own (0700)')
     parser.add_argument('--runtime-env', action='append', default=[], metavar='KEY=VALUE',
                         help='extra environment for the spawned child, e.g. APPSPAWNX_VERBOSE_CLASS=1 '
                              "to trace class loading. Repeatable; it cannot replace a key the launcher sets")
@@ -1233,6 +1238,16 @@ def main():
     shell('mkdir -p ' + runtime + '/app-data/' + package + '/external && chown ' + str(uid) + ':' + str(uid) +
           ' ' + runtime + '/app-data/' + package + '/external && chcon -R u:object_r:appdat:s0 ' +
           runtime + '/app-data/' + package + '/external')
+    # A host other apps call under their own uid (--private-data): OH creates its bundle's directories 0700, so
+    # nothing of the runtime would be reachable. Client libraries load code from it by path (DynamiteModule
+    # reads Play services' APK and splits through the ApplicationInfo the channel localizes), as every Android
+    # app reads /data/app; its data, the account store included, is the host's alone. Set before the spawn, so
+    # no other uid ever sees the data directory open.
+    if args.private_data:
+        shell('chmod 711 /data/app/el2/100/base/' + args.host + ' ' + files_dir + ' && chmod 700 ' + runtime +
+              '/app-data')
+        state['private_data'] = True
+        save()
     # Android's package manager installs an app at /data/app/~~<id>==/<package>-<id>== (each id 16
     # random bytes in URL-safe base64): base.apk, split_<name>.apk and lib/<isa> for the libraries
     # it extracts, and the app's ApplicationInfo names them there. Code that checks where it runs
