@@ -32,7 +32,9 @@ The complete source-built payload still needs the framework/adapter ownership
 graph, full boot classpath, rendering/bridge provider closure, and fresh Toutiao
 UI/scroll/input acceptance. WebView support must also be source-built or proven
 to be a declared OH host-firmware provider. Captured runtime copies do not meet
-that requirement.
+that requirement. `tools/build_webview_input.py` makes the captured WebView
+input reproducible from AOSP's prebuilt WebView and pinned sources (see
+PARITY27.md), which lets others run it but is still not a source build.
 
 See `reports/source-stack-progress.json` for the current core/native evidence.
 `full-build-gaps.json` and `tools/rebuild.py --profile full` remain fail-closed
