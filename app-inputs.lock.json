@@ -10511,6 +10511,15 @@
    "pure_java": true,
    "sha256": "19d3030c8eba2705880585530c5c571bf00f69c4cb1039eb22a18f7f8cb60b93",
    "version_code": 1
+  },
+  "google-official-auth-probe-v5": {
+   "abi": "arm64-v8a",
+   "bytes": 2125302,
+   "launch_activity": "org.westlake.googlebootstrap.probe.OfficialAuthActivity",
+   "package": "org.westlake.googlebootstrap.probe",
+   "pure_java": true,
+   "sha256": "67ed0d05f9a8d177a67b78be5e29035f46e3723ddf63bb916bbbb37dd36be842",
+   "version_code": 0
   }
  }
 }
