@@ -9556,11 +9556,11 @@
   },
   "remote-activity-client": {
    "abi": "arm64-v8a",
-   "bytes": 29069,
+   "bytes": 33165,
    "launch_activity": "org.westlake.remoteactivity.fixture.Fixture$Client",
    "package": "org.westlake.googlebootstrap.remoteactivity",
    "pure_java": true,
-   "sha256": "9d4519cf91ce1e562a3a5a5302de8265d0882b0163e77cc1e3dec9394caaa042",
+   "sha256": "be981c21b3f46c82aab6bc8f3fb77757b662d714e9de44e46a26db6d05a65581",
    "version_code": 1
   },
   "google-official-auth-probe-v3": {
