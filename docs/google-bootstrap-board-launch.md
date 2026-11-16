@@ -112,3 +112,16 @@ These are experiment fixtures, not new corpus acceptance passes. The general
 `sources.lock.json` remains unchanged. The pinned APKs require the original
 development signing key/toolchain to reproduce their identity; a new signer
 requires a new input hash and an explicitly authorized provider grant.
+
+The subsequent [Spotify log diagnosis at Westlake b29cc0b](https://github.com/a2hlab/westlake/blob/b29cc0bda7798cea3cf1fae8b7b3607f35ae2460/docs/spotify-google-signin-diagnosis.md)
+confirms the immediate cause: OH activity resolution returns no handler for
+Google Sign-In, Android start error `-91` becomes `ActivityNotFoundException`,
+and Spotify's bundled SDK returns Google `Status(17)`. The Google account
+picker is never reached. The target activity is present in the GMS APK and its
+declared UI process is alive. This is separate from the token-service error.
+
+That replay adds opt-in, value-free activity diagnostics to a rebuilt adapter
+using `WESTLAKE_GOOGLE_SIGNIN_DIAGNOSTICS=1` together with private logs. The
+base framework JAR, Spotify APK and provider hosts remain the same; no new
+app-input pin or activity-routing fix is introduced. The linked report records
+the diagnostic build/source hashes and exact board events.
