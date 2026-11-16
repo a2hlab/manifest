@@ -522,6 +522,54 @@ def loader_compat_bytes(path, bind_own=False, legacy_init=False):
     return (legacy or own or bound or sanitized or retagged), changes
 
 
+WEBVIEW_DEVICE_INPUT = {
+    'webview-t.apk',
+    'webview-t-lib/libandroid.so',
+    'webview-t-lib/libjnigraphics.so',
+    'webview-t-lib/libwebview_bionic_shim.so',
+    'webview-t-lib/libwebviewchromium.so',
+    'webview-t-lib/libwebviewchromium_plat_support.so',
+}
+
+
+def shim_replaced_webview_files(shim_report):
+    """The device-captured WebView files a bionic shim build stands in for: its shim, and its
+    libandroid.so when it built one. A launch stages the build's copies, so the captured ones are
+    neither required nor read."""
+    return {'webview-t-lib/' + name for name in ['libwebview_bionic_shim.so', 'libandroid.so']
+            if name in shim_report.get('artifacts', {})}
+
+
+def webview_device_input(lock, root, replaced=()):
+    """Hash-check the device-captured WebView input under root against the parity27 lock.
+
+    Returns (files, paths) for every locked WebView file except those in replaced.
+    tools/build_webview_input.py rebuilds the files a launch reads from public sources."""
+    prefix = '/data/local/tmp/asx/'
+    files = {
+        entry['path'].removeprefix(prefix): {
+            'sha256': entry['sha256'],
+            'provenance': 'device-captured',
+        }
+        for entry in lock['files']
+        if entry.get('category') == 'webview' and entry['path'].startswith(prefix)
+    }
+    if (set(files) != WEBVIEW_DEVICE_INPUT or not set(replaced) <= WEBVIEW_DEVICE_INPUT
+            or lock.get('complete_build_input_closure') is not False):
+        raise ValueError('Unexpected WebView device-input lock')
+    root = root.resolve()
+    paths = {}
+    for name in sorted(replaced):
+        del files[name]
+    for name, entry in files.items():
+        path = root / name
+        if (not path.is_file() or not path.resolve().is_relative_to(root)
+                or digest(path) != entry['sha256']):
+            raise ValueError('Missing or changed device-captured WebView input: ' + name)
+        paths[name] = path
+    return files, paths
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ['workspace', 'westlake-source', 'framework-report', 'app-input', 'out']:
@@ -531,10 +579,12 @@ def main():
     parser.add_argument('--host', default='org.westlake.imehost')
     parser.add_argument('--host-build', type=Path, help='Verified signed source host build')
     parser.add_argument('--webview-input', type=Path,
-                        help='Hash-locked device-captured WebView payload root')
+                        help='Hash-locked device-captured WebView payload root '
+                             '(tools/build_webview_input.py rebuilds it)')
     parser.add_argument('--bionic-shim-build', type=Path,
-                        help='Source-built libwebview_bionic_shim.so replacing the device-captured '
-                             'copy in --webview-input (the captured copy predates the loader refusals)')
+                        help='Source-built libwebview_bionic_shim.so and libandroid.so replacing the '
+                             'device-captured copies in --webview-input, which then needs neither '
+                             '(the captured shim predates the loader refusals)')
     parser.add_argument('--app-oat-dir', type=Path,
                         help='host-compiled ART code for the app (<app>.odex and <app>.vdex, optionally '
                              '<app>.art), staged as oat/arm64/<app>.* beside the APK, where ART looks first')
@@ -685,35 +735,14 @@ def main():
     webview_files = {}
     webview_paths = {}
     webview_lock_path = Path(__file__).resolve().parents[1] / 'parity27-runtime-inputs.lock.json'
+    shim_report = None
+    if args.bionic_shim_build:
+        shim_root = args.bionic_shim_build.resolve()
+        shim_report = json.loads((shim_root / 'artifacts.json').read_text())
     if args.webview_input:
-        webview_lock = json.loads(webview_lock_path.read_text())
-        prefix = '/data/local/tmp/asx/'
-        webview_files = {
-            entry['path'].removeprefix(prefix): {
-                'sha256': entry['sha256'],
-                'provenance': 'device-captured',
-            }
-            for entry in webview_lock['files']
-            if entry.get('category') == 'webview' and entry['path'].startswith(prefix)
-        }
-        required = {
-            'webview-t.apk',
-            'webview-t-lib/libandroid.so',
-            'webview-t-lib/libjnigraphics.so',
-            'webview-t-lib/libwebview_bionic_shim.so',
-            'webview-t-lib/libwebviewchromium.so',
-            'webview-t-lib/libwebviewchromium_plat_support.so',
-        }
-        if (set(webview_files) != required
-                or webview_lock.get('complete_build_input_closure') is not False):
-            raise ValueError('Unexpected WebView device-input lock')
-        webview_root = args.webview_input.resolve()
-        for name, entry in webview_files.items():
-            path = webview_root / name
-            if (not path.resolve().is_relative_to(webview_root)
-                    or digest(path) != entry['sha256']):
-                raise ValueError('Changed device-captured WebView input: ' + name)
-            webview_paths[name] = path
+        webview_files, webview_paths = webview_device_input(
+            json.loads(webview_lock_path.read_text()), args.webview_input,
+            shim_replaced_webview_files(shim_report) if shim_report else ())
     if args.bionic_shim_build:
         # The WebView input's bionic shim is also the ABI boundary preloaded for the APK's own
         # native libraries. The device-captured copy predates the refusal of self-trapping
@@ -721,8 +750,6 @@ def main():
         # source-built shim replaces it, hash-checked like every other input.
         if not webview_files:
             raise ValueError('A bionic shim build replaces the WebView input shim: pass --webview-input')
-        shim_root = args.bionic_shim_build.resolve()
-        shim_report = json.loads((shim_root / 'artifacts.json').read_text())
         shim_entry = shim_report['artifacts']['libwebview_bionic_shim.so']
         shim_path = shim_root / 'libwebview_bionic_shim.so'
         if shim_report.get('errors') or digest(shim_path) != shim_entry['sha256']:
@@ -732,13 +759,14 @@ def main():
         webview_paths['webview-t-lib/libwebview_bionic_shim.so'] = shim_path
         # The NDK libraries the shim build stages beside it, on the Android namespace's path:
         # libaaudio.so, a name for DT_NEEDED whose entry points the shim itself exports, and
-        # libandroid.so, built from source in place of the captured copy (the only one replaced).
+        # libandroid.so, built from source in place of the captured copy (the only one replaced,
+        # so webview_device_input left it out).
         for name, entry in sorted(shim_report['artifacts'].items()):
             if name == 'libwebview_bionic_shim.so':
                 continue
             path = shim_root / name
             if (not re.fullmatch(r'lib[a-zA-Z0-9_.+-]+\.so', name)
-                    or ('webview-t-lib/' + name in webview_files and name != 'libandroid.so')
+                    or 'webview-t-lib/' + name in webview_files
                     or digest(path) != entry['sha256']):
                 raise ValueError('Changed or failed bionic shim build: ' + name)
             webview_files['webview-t-lib/' + name] = {
