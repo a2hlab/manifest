@@ -9526,6 +9526,24 @@
    "pure_java": true,
    "sha256": "5ce884f84d18f8e7aec8a9839b8eba257e3ba157a31ec72813c627846f84987e",
    "version_code": 0
+  },
+  "google-official-auth-probe": {
+   "abi": "arm64-v8a",
+   "bytes": 2121206,
+   "launch_activity": "org.westlake.googlebootstrap.probe.OfficialAuthActivity",
+   "package": "org.westlake.googlebootstrap.probe",
+   "pure_java": true,
+   "sha256": "4869b283a8addcdde863179d1e4cc92cb8e62b8a3beeeb6ad459f75b8cc5fb79",
+   "version_code": 0
+  },
+  "google-official-auth-probe-v2": {
+   "abi": "arm64-v8a",
+   "bytes": 2121206,
+   "launch_activity": "org.westlake.googlebootstrap.probe.OfficialAuthActivity",
+   "package": "org.westlake.googlebootstrap.probe",
+   "pure_java": true,
+   "sha256": "5772f59a64c44b61abf337f125dc5e24aaaecc651bebc503f905379ede894535",
+   "version_code": 0
   }
  }
 }
