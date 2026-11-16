@@ -3,6 +3,8 @@
 
 These are public upstream sample credentials, for development devices only.
 The original third-party Android APK is not an input to this tool.
+With --managed it signs an APK's own bundle that make_managed_bundle.py made from
+the host HAP (ADR-0008): the host's program under the app's package name.
 """
 import argparse
 import json
@@ -11,12 +13,28 @@ import subprocess
 import zipfile
 from bootstrap_sdk import digest
 from install_java import verify_java
+from make_managed_bundle import MANAGED_DESCRIPTION
+
+
+def check_signable(module, report, managed=False):
+    """Only the source Westlake host is signed. That is either a host bundle, or, with managed, the
+    bundle make_managed_bundle.py made from one for the package its report names."""
+    bundle = module['app']['bundleName']
+    if managed:
+        record = report.get('managed_bundle') or {}
+        if (record.get('package') != bundle or record.get('changed') != ['module.json'] or
+                module['module'].get('description') != MANAGED_DESCRIPTION):
+            raise ValueError('Not a managed bundle made from a source Westlake host HAP')
+    elif not bundle.startswith('org.westlake.'):
+        raise ValueError('Only source Westlake host HAPs are supported')
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ['workspace', 'host-build', 'out']:
         parser.add_argument('--' + name, type=Path, required=True)
+    parser.add_argument('--managed', action='store_true',
+                        help="--host-build is an APK's own bundle from make_managed_bundle.py")
     args = parser.parse_args()
     workspace, output = args.workspace.resolve(), args.out.absolute()
     if output.exists():
@@ -34,8 +52,7 @@ def main():
         raise ValueError('Source host HAP differs from its build report')
     with zipfile.ZipFile(hap) as archive:
         module = json.loads(archive.read('module.json'))
-        if not module['app']['bundleName'].startswith('org.westlake.'):
-            raise ValueError('Only source Westlake host HAPs are supported')
+        check_signable(module, report, args.managed)
         payload = {n: archive.read(n) for n in archive.namelist()}
     java, java_tree = verify_java(workspace)
     dist = source / 'dist'

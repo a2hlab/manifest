@@ -659,11 +659,12 @@ def main():
                              'so the bundle and files directories become traversable (0711), while its data '
                              '(<runtime>/app-data) stays its own (0700)')
     parser.add_argument('--managed', action='store_true',
-                        help='ADR-0008 managed launch (spike): --host is an OH bundle of the app\'s own, whose '
-                             'entry module OH\'s application manager starts through the CJAppSpawn spawner '
-                             '(a dotted srcEntry). This launch\'s appspawn-x serves that socket; the launcher '
-                             'starts the bundle\'s EntryAbility with aa, and OH asks for the process, with the '
-                             'bundle\'s own uid and token, and gives it the ability and its window session')
+                        help='ADR-0008 managed launch, test board only (docs/managed-launch.md): --host is the '
+                             'app\'s own OH bundle (tools/make_managed_bundle.py). OH\'s application manager '
+                             'sends its spawn to the CJAppSpawn socket (a dotted srcEntry), where the spawn '
+                             'router passes it to this launch\'s appspawn-x. The launcher starts the bundle\'s '
+                             'ability, named after the launcher activity, with aa; OH gives the process the '
+                             'bundle\'s own uid and token, the ability and its window session')
     parser.add_argument('--runtime-env', action='append', default=[], metavar='KEY=VALUE',
                         help='extra environment for the spawned child, e.g. APPSPAWNX_VERBOSE_CLASS=1 '
                              "to trace class loading. Repeatable; it cannot replace a key the launcher sets")
