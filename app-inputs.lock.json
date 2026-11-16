@@ -9547,20 +9547,20 @@
   },
   "remote-activity-host": {
    "abi": "arm64-v8a",
-   "bytes": 24973,
+   "bytes": 29069,
    "launch_activity": "org.westlake.remoteactivity.fixture.Fixture$Host",
    "package": "com.google.android.gms",
    "pure_java": true,
-   "sha256": "1133e1af6969ccc74f7fc26df736012c5322b42fe8187c0341c76c468ab0a443",
+   "sha256": "1866aef80ff89a1b7f375b6a0ed3acc0782f073e881b40430dc1132595046ea8",
    "version_code": 1
   },
   "remote-activity-client": {
    "abi": "arm64-v8a",
-   "bytes": 24973,
+   "bytes": 29069,
    "launch_activity": "org.westlake.remoteactivity.fixture.Fixture$Client",
    "package": "org.westlake.googlebootstrap.remoteactivity",
    "pure_java": true,
-   "sha256": "bb16fc8fe031b31659425436b949e02edbb0194ecd691c784562aad7a284635c",
+   "sha256": "9d4519cf91ce1e562a3a5a5302de8265d0882b0163e77cc1e3dec9394caaa042",
    "version_code": 1
   },
   "google-official-auth-probe-v3": {
@@ -10502,6 +10502,15 @@
    ],
    "version_code": 3830,
    "version_name": "11.41.1"
+  },
+  "remote-activity-store": {
+   "abi": "arm64-v8a",
+   "bytes": 29069,
+   "launch_activity": "org.westlake.remoteactivity.fixture.Fixture$Host",
+   "package": "com.android.vending",
+   "pure_java": true,
+   "sha256": "19d3030c8eba2705880585530c5c571bf00f69c4cb1039eb22a18f7f8cb60b93",
+   "version_code": 1
   }
  }
 }

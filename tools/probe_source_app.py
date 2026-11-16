@@ -21,6 +21,23 @@ import uuid
 from bootstrap_sdk import digest
 
 
+def restore_carried_app_data(shell, board_dir, package, runtime):
+    """An explicitly requested update must never silently become a fresh installation."""
+    carried = board_dir.rstrip('/') + '/' + package
+    target = runtime.rstrip('/') + '/app-data/' + package
+    if carried == target:
+        raise ValueError('Carried app data must be outside the new runtime')
+    moved = shell('if [ -d ' + shlex.quote(carried) + ' ]; then mkdir -p ' +
+                  shlex.quote(runtime.rstrip('/') + '/app-data') + ' && rm -rf ' +
+                  shlex.quote(target) + ' && mv ' + shlex.quote(carried) + ' ' +
+                  shlex.quote(target) + ' && rm -rf ' + shlex.quote(target + '/code_cache') +
+                  ' && echo __A2H_CARRIED__; fi')
+    if '__A2H_CARRIED__' not in moved.splitlines():
+        raise ValueError('Requested carried app data was not restored: ' + carried +
+                         '; --carried-app-data must name the directory containing the package directory')
+    return carried
+
+
 
 # DT_ANDROID_RELR{,SZ,ENT} -> DT_RELR{,SZ,ENT}. lld writes Android's own tag numbers for RELR on
 # Android targets; the encoding is the standard one. OH's musl applies DT_RELR (its own libraries
@@ -557,8 +574,9 @@ def main():
                              'them there in its ApplicationInfo, instead of under /data/local/tmp/asx')
     parser.add_argument('--carried-app-data', metavar='BOARD_DIR',
                         help='board directory holding app data that outlives a stage (harness PERSIST_DATA): '
-                             'if BOARD_DIR/<package> exists, it becomes this launch\'s data directory, as '
-                             '/data/data/<package> survives an update on Android, with its code_cache cleared')
+                             'BOARD_DIR/<package> must exist and becomes this launch\'s data directory, as '
+                             '/data/data/<package> survives an update on Android, with its code_cache cleared; '
+                             'a missing directory aborts the launch instead of starting with empty data')
     parser.add_argument('--runtime-env', action='append', default=[], metavar='KEY=VALUE',
                         help='extra environment for the spawned child, e.g. APPSPAWNX_VERBOSE_CLASS=1 '
                              "to trace class loading. Repeatable; it cannot replace a key the launcher sets")
@@ -1134,12 +1152,7 @@ def main():
     # /data/data/<package> across an update and clears its code_cache, whose compiled code belongs to
     # the old system image; so does this.
     if args.carried_app_data:
-        carried = args.carried_app_data.rstrip('/') + '/' + package
-        target = runtime + '/app-data/' + package
-        moved = shell('if [ -d ' + shlex.quote(carried) + ' ]; then mkdir -p ' + runtime + '/app-data && rm -rf ' +
-                      shlex.quote(target) + ' && mv ' + shlex.quote(carried) + ' ' + shlex.quote(target) +
-                      ' && rm -rf ' + shlex.quote(target + '/code_cache') + ' && echo __A2H_CARRIED__; fi')
-        state['carried_app_data'] = carried if '__A2H_CARRIED__' in moved else None
+        state['carried_app_data'] = restore_carried_app_data(shell, args.carried_app_data, package, runtime)
         save()
     shell('mkdir -p ' + runtime + '/private-tmp/asx ' + runtime + '/data/dalvik-cache/arm64 ' +
           runtime + '/app-data/' + package + '/code_cache/art-volatile ' +
