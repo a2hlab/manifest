@@ -9544,6 +9544,24 @@
    "pure_java": true,
    "sha256": "5772f59a64c44b61abf337f125dc5e24aaaecc651bebc503f905379ede894535",
    "version_code": 0
+  },
+  "remote-activity-host": {
+   "abi": "arm64-v8a",
+   "bytes": 24973,
+   "launch_activity": "org.westlake.remoteactivity.fixture.Fixture$Host",
+   "package": "com.google.android.gms",
+   "pure_java": true,
+   "sha256": "1133e1af6969ccc74f7fc26df736012c5322b42fe8187c0341c76c468ab0a443",
+   "version_code": 1
+  },
+  "remote-activity-client": {
+   "abi": "arm64-v8a",
+   "bytes": 24973,
+   "launch_activity": "org.westlake.remoteactivity.fixture.Fixture$Client",
+   "package": "org.westlake.googlebootstrap.remoteactivity",
+   "pure_java": true,
+   "sha256": "bb16fc8fe031b31659425436b949e02edbb0194ecd691c784562aad7a284635c",
+   "version_code": 1
   }
  }
 }

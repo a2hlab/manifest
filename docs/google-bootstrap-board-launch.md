@@ -125,3 +125,44 @@ using `WESTLAKE_GOOGLE_SIGNIN_DIAGNOSTICS=1` together with private logs. The
 base framework JAR, Spotify APK and provider hosts remain the same; no new
 app-input pin or activity-routing fix is introduced. The linked report records
 the diagnostic build/source hashes and exact board events.
+
+## Activity/result bridge and final Spotify replay
+
+[Westlake 4e564a4d3ca051076ee27db19c58322dc9a02d68](https://github.com/a2hlab/westlake/blob/4e564a4d3ca051076ee27db19c58322dc9a02d68/docs/remote-activity-results.md)
+implements the opt-in activity/result route, same-app PendingIntent preparation,
+account-picker visibility metadata, and `FLAG_ACTIVITY_FORWARD_RESULT` handling.
+Build this checkout explicitly with `--westlake-source`. Both client and target
+need `WESTLAKE_REMOTE_ACTIVITIES=1`, `WESTLAKE_CHANNEL_IDENTITY=enforce` and
+`WESTLAKE_GOOGLE_PRIVATE_LOGS=1`, in addition to the experiment's existing
+separate auth and Play endpoints and provider pins.
+
+The final board replay reached official Google's account picker from Spotify,
+accepted the authorized existing account, and traversed all three forwarding
+redirects without premature cancellation. Google then displayed "Verify it's
+you" and requested sign-in again. Back returned exactly one canceled result to
+Spotify (Google status 12501 after that deliberate cancellation); GMS's UI
+process survived. Spotify is **not authenticated**. Official GMS still requests
+credential/cache reads withheld by the token-only proxy. The reusable credential
+remains only in microG; completing native official auth needs a separate scoped
+token-mediation contract.
+
+The new `remote-activity-host` and `remote-activity-client` lock entries pin the
+source-only contract fixture from that Westlake commit. The host deliberately
+uses package `com.google.android.gms` but contains no Google code or account
+data. Run it on a dedicated `wl.remote.fixture...` endpoint without an auth
+connection. Stage each app sequentially when using the shared input cache.
+The linked fixture README supplies its build and board checks.
+
+The final fixture passed its filtering, caller/referrer, nested Parcelable,
+PendingIntent, result-forwarding, foreign-access denial, cancellation and
+target-death checks. A separate run verified caller-death cleanup. Java build,
+packaging, boot generation, framework preload and six existing bootstrap tests
+passed. The unchanged manifest app-input test has a pre-existing failure:
+modified-APK rejection leaves an output directory; this was reproduced against
+the baseline files and is not fixed by this change.
+
+These results do not advance HK corpus acceptance, production UID/SELinux
+isolation, physical-touch/task acceptance, certification or full hybrid
+compatibility. The general source lock remains unchanged. Value-free results
+and source/runtime hashes are committed in Westlake; account-bearing captures
+and private app data are excluded.
