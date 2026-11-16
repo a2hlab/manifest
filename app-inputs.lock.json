@@ -9398,6 +9398,125 @@
    "pure_java": true,
    "sha256": "bb16fc8fe031b31659425436b949e02edbb0194ecd691c784562aad7a284635c",
    "version_code": 1
+  },
+  "microg-bootstrap": {
+   "abi": "arm64-v8a",
+   "bytes": 108113833,
+   "launch_activity": "org.microg.gms.ui.SettingsActivity",
+   "package": "com.google.android.gms",
+   "sha256": "e5e6cba078bdec812b5450599350e5c1a12c8b7438da5bf77123af170f8c1a35",
+   "version_code": 252432034
+  },
+  "hk-com.google.android.gms": {
+   "abi": "arm64-v8a",
+   "bytes": 151492258,
+   "delivery": "GrapheneOS app repo mirror; Google-signed, unmodified",
+   "kind": "original-apk-with-splits",
+   "launch_activity": "com.google.android.gms.app.settings.GoogleSettingsActivity",
+   "modify_or_resign": false,
+   "package": "com.google.android.gms",
+   "rebuild": false,
+   "reference": "test board spike only",
+   "sha256": "1159bb46cad6f4afd7f4a570b1a5674f1285a12e573dbe6501ed4b059fd902d1",
+   "splits": [
+    {
+     "bytes": 10081456,
+     "name": "CronetDynamite_installtime.apk",
+     "sha256": "f07a59826905c071b902771ba84b87160434ec4960998207bbf997b8d8dafddf"
+    },
+    {
+     "bytes": 1089207,
+     "name": "DynamiteModulesA_installtime.apk",
+     "sha256": "cc2e9bea37ad70e93041cb1fc225d7d9ec71954d31a41e1cc7d8760464c58127"
+    },
+    {
+     "bytes": 2356559,
+     "name": "DynamiteModulesC_installtime.apk",
+     "sha256": "2d7526541405adeea6463f4ad9a3ae81e57b8503ec5aa8e38e62521ca57c09dc"
+    },
+    {
+     "bytes": 271364,
+     "name": "GoogleCertificates_installtime.apk",
+     "sha256": "48da5337e40167f313430e3ddf518e13e9f061498b70131f8022c49a540048a9"
+    },
+    {
+     "bytes": 2576544,
+     "name": "MapsDynamite_installtime.apk",
+     "sha256": "e365f5815c0bfbd0880c9b23a77616cbdffef5b691f600a150ae3618d99d1381"
+    },
+    {
+     "bytes": 877572,
+     "name": "MeasurementDynamite_installtime.apk",
+     "sha256": "a48cb042a993aca3eba17fb3f76e7ce154cfb957bf62a6d6cd0d7a9f687ed90b"
+    },
+    {
+     "bytes": 1159577,
+     "name": "config.en.apk",
+     "sha256": "b734ef491ab9a6ea3119aab1b882c7b75b21cb51274a556e5a6eb24dc202808e"
+    },
+    {
+     "bytes": 2006320,
+     "name": "config.xxhdpi.apk",
+     "sha256": "d818ed029910f247cf913137fd775375e37a88c8a04335fa7934ff25aac553cb"
+    }
+   ],
+   "version_code": 244034029,
+   "version_name": "24.40.34"
+  },
+  "google-two-path-store": {
+   "abi": "arm64-v8a",
+   "bytes": 63913374,
+   "delivery": "GrapheneOS app repository mirror; Google-signed, unmodified",
+   "kind": "original-apk-with-splits",
+   "launch_activity": "com.google.android.finsky.activities.MainActivity",
+   "modify_or_resign": false,
+   "package": "com.android.vending",
+   "rebuild": false,
+   "reference": "test board spike only",
+   "sha256": "99e272eb43df794fb96c5c60ca5dfc0b7b96b16465e120b00eda374c559ea272",
+   "splits": [
+    {
+     "bytes": 2524020,
+     "name": "split_config.arm64_v8a.apk",
+     "sha256": "56b167c87af7a7a2c046da2b0ac8aad3790c2c563eb5cd8736bdd68a6da098a3"
+    },
+    {
+     "bytes": 614610,
+     "name": "split_config.en.apk",
+     "sha256": "a3525adb4f7fcc22c9d88f614a737b9fcfdc08ce8e2e48b1bdf82b19899f043b"
+    },
+    {
+     "bytes": 16534,
+     "name": "split_phonesky_data_loader.apk",
+     "sha256": "5f4eb035a8d302bfd1ec4d10da305a6a7cc690b382a002aee7e7ddba17bdffa5"
+    },
+    {
+     "bytes": 65772,
+     "name": "split_phonesky_data_loader.config.arm64_v8a.apk",
+     "sha256": "da27ec1f71343d4c4595590e09358c27ba8c7643fc85f264741cfd7598638d9d"
+    },
+    {
+     "bytes": 16534,
+     "name": "split_phonesky_webrtc_native_lib.apk",
+     "sha256": "53b2a25b01cc27dfb7f378b4109c024a873fa7e3b2c959d916a6af2c6b190901"
+    },
+    {
+     "bytes": 6758640,
+     "name": "split_phonesky_webrtc_native_lib.config.arm64_v8a.apk",
+     "sha256": "2eca7377b287d0751cacf6e54ca4baf165f88687dd251315cad2986daaa960f6"
+    }
+   ],
+   "version_code": 85354840,
+   "version_name": "53.5.48-34 [0] [PR] 995634172"
+  },
+  "google-official-auth-probe-v4": {
+   "abi": "arm64-v8a",
+   "bytes": 2121206,
+   "launch_activity": "org.westlake.googlebootstrap.probe.OfficialAuthActivity",
+   "package": "org.westlake.googlebootstrap.probe",
+   "pure_java": true,
+   "sha256": "475755430db28ad1012bd9dc02871d29af7f8c9f390848987a10ba75251b9979",
+   "version_code": 0
   }
  }
 }
