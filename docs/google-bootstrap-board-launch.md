@@ -1,5 +1,10 @@
 # Launching the Google bootstrap board experiment
 
+Latest bounded result: [Westlake 51d5366](https://github.com/a2hlab/westlake/blob/51d53662e1f13749b8bcbe074cc19bbdf8b9ece0/docs/google-auth-delegation-validation.md)
+returned Google OAuth/server-code results through microG and official GMS to
+Spotify, which advanced to its new-account form. Testing stopped there without
+signup. The older failed runs below are preserved as historical evidence.
+
 The Westlake experiment is documented in
 [google-bootstrap-experiment.md](https://github.com/a2hlab/westlake/blob/experiment/microg-bootstrap/docs/google-bootstrap-experiment.md).
 This manifest change supplies the launcher prerequisites; it does not establish
@@ -195,3 +200,52 @@ official host. The trace emits fixed categories and stack frames, not raw keys,
 accounts or tokens. Build/source/runtime hashes and the approved probe results
 are pinned in the linked report. This input update leaves the general source
 lock unchanged and does not advance corpus acceptance or production isolation.
+
+## Delegated Spotify authentication
+
+Build explicitly from
+[Westlake 51d53662e1f13749b8bcbe074cc19bbdf8b9ece0](https://github.com/a2hlab/westlake/tree/51d53662e1f13749b8bcbe074cc19bbdf8b9ece0).
+The new `google-official-auth-probe-v4` input pins the six-button source-built
+probe, SHA-256
+`475755430db28ad1012bd9dc02871d29af7f8c9f390848987a10ba75251b9979`,
+with the existing approved development signer. It adds two negative tests for
+the GMS UI and microG delegation endpoints. The real Spotify APK supplies the
+positive interactive test; the probe does not impersonate a successful Spotify
+login.
+
+In addition to the existing identity, private-log, remote-activity and pinned
+provider settings, enable `WESTLAKE_GOOGLE_AUTH_DELEGATION=1` on official GMS and
+microG. Install the exact private broker/original-app policy documented in the
+linked Westlake report. Spotify retains only official GMS/Store connections,
+with no direct microG grant. The provider independently verifies the original
+Spotify process/APK and requires a live account-selection witness before and
+after network I/O. Reusable credentials are withheld from official GMS.
+
+The final build-11 run observed four fresh OAuth responses, three fresh server-code
+responses, one exact cache invalidation, and one official activity `RESULT_OK`
+received by Spotify. These are repeated reads during one flow, not seven APIs.
+Spotify displayed its Create account / date-of-birth form. No date of birth was
+entered and no signup was submitted. Completed account login and playback remain
+untested. The forced direct microG control passed; both foreign delegation
+requests and the official token package-spoof test were rejected.
+
+The earlier delegated requests had failed locally with
+`NetworkOnMainThreadException`; the tested change executes HTTP on a bounded
+worker while preserving channel and selection checks. The initial client-ID
+grant was also corrected to Spotify's actual compiled login client, rather than
+its different `default_web_client_id` resource. The report preserves the failure
+and success evidence, source/runtime hashes, private-credential entry counts and
+remaining limitations.
+
+Use fresh app runtime directories for this replay, preserving account data only
+on-device. Reusing old runtime directories caused an unresolved physical-display
+discovery abort in preliminary UI runs. Stage apps sequentially, start microG,
+then official GMS and Store, then Spotify. When microG's spawner changes, update
+the provider pin in every client. A missing Store host can make Spotify select
+`NO_IMPL` before authentication begins.
+
+The new bridge is opt-in and tied to the tested GMS cache protocol. General
+consent/recovery, background refresh, account switching and in-flight auth
+cancellation/revocation still need work or validation. All experiment apps share
+native UID 20010056; per-app production isolation is not proven. This update
+leaves `sources.lock.json` and HK corpus acceptance unchanged.
