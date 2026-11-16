@@ -1354,7 +1354,9 @@ def main():
     # The app asks its own appspawn-x for its other processes (westlake ADR-0002): the same request,
     # under another process name. The runtime is the app's /data/local/tmp/asx.
     send(request, runtime + '/spawn-request.bin')
-    shell('chown ' + str(uid) + ':' + str(uid) + ' ' + runtime + '/spawn-request.bin')
+    # The request names the app's credentials: only the app reads it (ADR-0002 processes resend it).
+    shell('chown ' + str(uid) + ':' + str(uid) + ' ' + runtime + '/spawn-request.bin && '
+          'chmod 600 ' + runtime + '/spawn-request.bin')
     app_lib_dir = install + '/lib/arm64' if install else logical + '/lib/arm64-v8a'
     search = [logical, '/system/lib64', '/system/lib64/platformsdk', '/system/lib64/chipset-sdk',
               '/system/lib64/chipset-sdk-sp', '/system/lib64/ndk', '/vendor/lib64/chipsetsdk',
