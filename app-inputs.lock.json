@@ -10631,6 +10631,15 @@
       "rebuild": false,
       "modify_or_resign": false,
       "launch_activity": "com.google.android.apps.docs.app.NewMainProxyActivity"
+    },
+    "local-activity-fixture": {
+      "abi": "arm64-v8a",
+      "bytes": 16781,
+      "launch_activity": "org.westlake.activityreuse.fixture.Fixture$Root",
+      "package": "org.westlake.activityreuse.fixture",
+      "pure_java": true,
+      "sha256": "95b7ff393ab9b1add64d76aa7ff37f79212d282f2b0e98e115c4dc9996fdd37a",
+      "version_code": 1
     }
   }
 }
