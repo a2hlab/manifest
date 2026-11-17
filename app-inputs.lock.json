@@ -10520,6 +10520,117 @@
       "pure_java": true,
       "sha256": "67ed0d05f9a8d177a67b78be5e29035f46e3723ddf63bb916bbbb37dd36be842",
       "version_code": 0
+    },
+    "hk-com.google.android.apps.docs": {
+      "kind": "original-apk-with-splits",
+      "package": "com.google.android.apps.docs",
+      "version_name": "2.26.457.0.all.alldpi",
+      "version_code": 214733669,
+      "abi": "arm64-v8a",
+      "bytes": 20831684,
+      "sha256": "852c43fd8b3c6dc3f5269c813209f193c970f511c5e99b268f0a79ed85e8f5bd",
+      "splits": [
+        {
+          "name": "config.ar.apk",
+          "bytes": 569554,
+          "sha256": "dcc9959cada4a6a3f4f21d45a6dfda991bd63f4af07d3008b4adfbb003cbf789"
+        },
+        {
+          "name": "config.arm64_v8a.apk",
+          "bytes": 19829643,
+          "sha256": "b77ffa85b80c4af8bfd5ed7bbc5ecac2a26f2337d0d9e99ce080a6d94b368664"
+        },
+        {
+          "name": "config.de.apk",
+          "bytes": 467154,
+          "sha256": "b33d03b300ee3015ac72fa559a5cb1d7f2e0cde30f7741e492868d055f35444d"
+        },
+        {
+          "name": "config.en.apk",
+          "bytes": 590034,
+          "sha256": "e1323c6784ff669977955146693d68fdb17dbd153183cb05f2ce3d70bd04ae01"
+        },
+        {
+          "name": "config.es.apk",
+          "bytes": 647378,
+          "sha256": "6b9134ceaf63fdaca1f775cd6d860b2dafb1bd47fd2e8a53dddb9f4bb89b1c2e"
+        },
+        {
+          "name": "config.fr.apk",
+          "bytes": 712914,
+          "sha256": "a0abdf12d4840bc3045e708290584b0032fd49ac58b0afe03688c234db148969"
+        },
+        {
+          "name": "config.hi.apk",
+          "bytes": 659666,
+          "sha256": "15fd752f894e7f634601c5aabf540d475b066ffcf8e8ff0f840033b6932f63a8"
+        },
+        {
+          "name": "config.in.apk",
+          "bytes": 438482,
+          "sha256": "7dff159376efcf822842b29af9ce8c91cff7531cd09cfa172ac47488cf4e4963"
+        },
+        {
+          "name": "config.it.apk",
+          "bytes": 463058,
+          "sha256": "7312d7a38c4e448b8b8b22112d580fa0aed96e877f68307d1f0e37c16bdb3033"
+        },
+        {
+          "name": "config.ja.apk",
+          "bytes": 495826,
+          "sha256": "e7c0eccdacec39f687811a3918446b2d464fe580147ed739561653a9e666a121"
+        },
+        {
+          "name": "config.ko.apk",
+          "bytes": 458962,
+          "sha256": "9aa8050e52127267f2a560a1db089039a7bccc175bb9b16915e41fdd9a4cbc49"
+        },
+        {
+          "name": "config.my.apk",
+          "bytes": 684242,
+          "sha256": "b4e90fbae55d37991703848a5311d101751a768b73b3821479d423c2a30f3d9b"
+        },
+        {
+          "name": "config.pt.apk",
+          "bytes": 692434,
+          "sha256": "4764fd97c8ab940fb5dd7d0dd78ba9bf4af491ba0d808a41c5c64777e3132751"
+        },
+        {
+          "name": "config.ru.apk",
+          "bytes": 573650,
+          "sha256": "24e1758be1f10f2142b936f5c0550366779632cabe06250c51c7930e813ecc3e"
+        },
+        {
+          "name": "config.th.apk",
+          "bytes": 610514,
+          "sha256": "18fb51d4557e8fb55d298a5b5513d35da044dbdfda8813089cef245dfad56c9b"
+        },
+        {
+          "name": "config.tr.apk",
+          "bytes": 454866,
+          "sha256": "34eeeba4ce275b0bbdf028fb787ceef77fe02adcc5f7423f162d221c0fb7188a"
+        },
+        {
+          "name": "config.vi.apk",
+          "bytes": 487634,
+          "sha256": "8d6c6624b98e5becd79c4400dded545f8213d6cc51ce345a27c70f87b86550bc"
+        },
+        {
+          "name": "config.xhdpi.apk",
+          "bytes": 1182427,
+          "sha256": "569a860e9d8c659d0dd34ec7bf6a21062fad586053651479a1fd516b2af6f77f"
+        },
+        {
+          "name": "config.zh.apk",
+          "bytes": 884946,
+          "sha256": "05d6eece93b7889bfdf3d506122eec187bf6ca55835e18e198c5082236006839"
+        }
+      ],
+      "delivery": "APKPure via apkeep; APK signatures and v3.1 rotation verified on base and all splits. Legacy signer f0fd6c5b...db83 is published by drive.google.com/.well-known/assetlinks.json; Android 33+ signer 1d4f2ef6...f156.",
+      "reference": "Two-path live44 Google Drive account and file round-trip validation",
+      "rebuild": false,
+      "modify_or_resign": false,
+      "launch_activity": "com.google.android.apps.docs.app.NewMainProxyActivity"
     }
   }
 }
