@@ -20,10 +20,14 @@ def digest(path):
         return hashlib.file_digest(stream, 'sha256').hexdigest()
 
 
-def stage_archive(source, staged, expected):
-    """Copy one pinned archive into the output and prove the bytes consumed are the pinned ones."""
+def verify_archive(source, expected):
     if source.stat().st_size != expected['bytes'] or digest(source) != expected['sha256']:
         raise ValueError('Original archive size/SHA256 does not match app-inputs.lock.json: ' + source.name)
+
+
+def stage_archive(source, staged, expected):
+    """Copy one pinned archive into the output and prove the bytes consumed are the pinned ones."""
+    verify_archive(source, expected)
     shutil.copyfile(source, staged)
     # Recheck the bytes consumed, including a source file changed during copy.
     if staged.stat().st_size != expected['bytes'] or digest(staged) != expected['sha256']:
@@ -46,6 +50,11 @@ def prepare(apk, output, entry, app='toutiao', splits=()):
     if set(pinned_splits) != set(given_splits):
         raise ValueError('Split APKs given do not match the pinned set: expected '
                          + ', '.join(sorted(pinned_splits)) + '; got ' + ', '.join(sorted(given_splits)))
+    # Reject invalid inputs before publishing even an empty output directory.
+    # stage_archive rechecks at copy time to detect changes after this preflight.
+    verify_archive(apk, entry)
+    for name, item in pinned_splits.items():
+        verify_archive(given_splits[name], item)
     output.mkdir(parents=True)
     staged = output / (app + '.apk')
     stage_archive(apk, staged, entry)
