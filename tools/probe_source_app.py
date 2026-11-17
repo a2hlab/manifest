@@ -79,6 +79,8 @@ def android_relr_retagged(path):
 # enters the cache only after its hash checks, and every copy taken from it is checked again in the
 # runtime, as a sent file is. Entries unused for three days are dropped.
 INPUT_CACHE = '/data/local/tmp/a2hlab-input-cache'
+# Where Westlake's PackageInstaller sessions publish an installed package (InstalledPackages.DIR).
+INSTALLED_APPS = '/data/service/el1/public/appspawnx/installed'
 INPUT_CACHE_DAYS = 3
 INPUT_CACHE_MAX_KB = 40 * 1024 * 1024
 
@@ -307,6 +309,19 @@ RUNTIME_ABI_NAME = re.compile(rb'__|_Unwind_|_Z(St|T[IS]|nw|na|dl|da)|JNI_On|_ZN
 EXECUTABLE_EXPORTS = None
 EXECUTABLE_SKIPPED = re.compile(rb'JNI_On|_ZN7_(JNIEnv|JavaVM)|_init$|_fini$')
 _board_exports = None
+
+
+def non_elf_not_staged(not_elf, board_names):
+    """The APK's non-ELF .so files that are not staged: those with a board library's name, which they
+    would shadow in the app's library directory; all of them when the board's names are unknown."""
+    return [name for name in not_elf if board_names is None or name.rsplit('/', 1)[-1] in board_names]
+
+
+def board_library_names(workspace):
+    """The basenames of the board's libraries (<workspace>/board-library-names.txt, written beside the
+    exports by tools/board_global_exports.py), or None when the workspace has no list."""
+    names = workspace / 'board-library-names.txt'
+    return set(names.read_text().split()) if names.exists() else None
 
 
 def board_exports():
@@ -539,6 +554,54 @@ def loader_compat_bytes(path, bind_own=False, legacy_init=False):
     return (legacy or own or bound or sanitized or retagged), changes
 
 
+WEBVIEW_DEVICE_INPUT = {
+    'webview-t.apk',
+    'webview-t-lib/libandroid.so',
+    'webview-t-lib/libjnigraphics.so',
+    'webview-t-lib/libwebview_bionic_shim.so',
+    'webview-t-lib/libwebviewchromium.so',
+    'webview-t-lib/libwebviewchromium_plat_support.so',
+}
+
+
+def shim_replaced_webview_files(shim_report):
+    """The device-captured WebView files a bionic shim build stands in for: its shim, and its
+    libandroid.so when it built one. A launch stages the build's copies, so the captured ones are
+    neither required nor read."""
+    return {'webview-t-lib/' + name for name in ['libwebview_bionic_shim.so', 'libandroid.so']
+            if name in shim_report.get('artifacts', {})}
+
+
+def webview_device_input(lock, root, replaced=()):
+    """Hash-check the device-captured WebView input under root against the parity27 lock.
+
+    Returns (files, paths) for every locked WebView file except those in replaced.
+    tools/build_webview_input.py rebuilds the files a launch reads from public sources."""
+    prefix = '/data/local/tmp/asx/'
+    files = {
+        entry['path'].removeprefix(prefix): {
+            'sha256': entry['sha256'],
+            'provenance': 'device-captured',
+        }
+        for entry in lock['files']
+        if entry.get('category') == 'webview' and entry['path'].startswith(prefix)
+    }
+    if (set(files) != WEBVIEW_DEVICE_INPUT or not set(replaced) <= WEBVIEW_DEVICE_INPUT
+            or lock.get('complete_build_input_closure') is not False):
+        raise ValueError('Unexpected WebView device-input lock')
+    root = root.resolve()
+    paths = {}
+    for name in sorted(replaced):
+        del files[name]
+    for name, entry in files.items():
+        path = root / name
+        if (not path.is_file() or not path.resolve().is_relative_to(root)
+                or digest(path) != entry['sha256']):
+            raise ValueError('Missing or changed device-captured WebView input: ' + name)
+        paths[name] = path
+    return files, paths
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ['workspace', 'westlake-source', 'framework-report', 'app-input', 'out']:
@@ -548,10 +611,12 @@ def main():
     parser.add_argument('--host', default='org.westlake.imehost')
     parser.add_argument('--host-build', type=Path, help='Verified signed source host build')
     parser.add_argument('--webview-input', type=Path,
-                        help='Hash-locked device-captured WebView payload root')
+                        help='Hash-locked device-captured WebView payload root '
+                             '(tools/build_webview_input.py rebuilds it)')
     parser.add_argument('--bionic-shim-build', type=Path,
-                        help='Source-built libwebview_bionic_shim.so replacing the device-captured '
-                             'copy in --webview-input (the captured copy predates the loader refusals)')
+                        help='Source-built libwebview_bionic_shim.so and libandroid.so replacing the '
+                             'device-captured copies in --webview-input, which then needs neither '
+                             '(the captured shim predates the loader refusals)')
     parser.add_argument('--app-oat-dir', type=Path,
                         help='host-compiled ART code for the app (<app>.odex and <app>.vdex, optionally '
                              '<app>.art), staged as oat/arm64/<app>.* beside the APK, where ART looks first')
@@ -560,6 +625,9 @@ def main():
                              "the framework stage's copies in this launch only (a fix tried before a deploy)")
     parser.add_argument('--runtime-library', action='append', default=[], metavar='NAME',
                         help='library of --runtime-library-build to use in place of the staged one. Repeatable')
+    parser.add_argument('--runtime-library-add', action='append', default=[], metavar='NAME',
+                        help='library of --runtime-library-build the framework stage lacks, added to the runtime '
+                             'directory (on the boot library path) in this launch only. Repeatable')
     parser.add_argument('--input-cache', action='store_true',
                         help='stage the WebView files, runtime library overrides, guest packages and the app\'s own files from a cache on the '
                              'board, keyed by content, and send only the files it lacks (' + INPUT_CACHE + ')')
@@ -572,6 +640,12 @@ def main():
                         help='stage the app\'s own files (base.apk, split_<name>.apk, lib/arm64) at an Android '
                              'install path, /data/app/~~<id>==/<package>-<id>==, inside its namespace, and name '
                              'them there in its ApplicationInfo, instead of under /data/local/tmp/asx')
+    parser.add_argument('--installed-app-dir', metavar='BOARD_DIR',
+                        help='board directory where an installer published the app (Westlake\'s package '
+                             'sessions publish to ' + INSTALLED_APPS + '/<package>): the app runs from the '
+                             'base.apk and split_<name>.apk there, which must be the pinned APKs and all the '
+                             'APKs there are, and its ApplicationInfo names them there. They are not sent or '
+                             'copied; the native libraries are staged as for every launch')
     parser.add_argument('--carried-app-data', metavar='BOARD_DIR',
                         help='board directory holding app data that outlives a stage (harness PERSIST_DATA): '
                              'BOARD_DIR/<package> must exist and becomes this launch\'s data directory, as '
@@ -579,6 +653,11 @@ def main():
                              'a missing directory aborts the launch instead of starting with empty data')
     parser.add_argument('--host-window-bridge', action='store_true',
                         help='opt in to the signed authclienthost/authservicehost development window bridge')
+    parser.add_argument('--private-data', action='store_true',
+                        help='the host bundle serves apps under other uids (a Play host under its own bundle, '
+                             'ADR-0003 stage 2): they reach its code by path, as Android apps read /data/app, '
+                             'so the bundle and files directories become traversable (0711), while its data '
+                             '(<runtime>/app-data) stays its own (0700)')
     parser.add_argument('--runtime-env', action='append', default=[], metavar='KEY=VALUE',
                         help='extra environment for the spawned child, e.g. APPSPAWNX_VERBOSE_CLASS=1 '
                              "to trace class loading. Repeatable; it cannot replace a key the launcher sets")
@@ -664,15 +743,38 @@ def main():
         path = args.app_input.resolve() / split_sources.get(name, name)
         if not path.resolve().is_relative_to(args.app_input.resolve()) or digest(path) != entry['sha256']:
             raise ValueError('Changed original APK input: ' + name)
-    # A .so in the APK that is not ELF (StarMaker's libc++.so is an ld script, INPUT(...)) is not
-    # staged: no loader can map it, and in the app's library directory it shadowed the library of
-    # that name an OH dependency needs (OH's libOpenSLES.so -> libc++.so).
+    # An app an installer published on the board (--installed-app-dir) runs from its installed APKs,
+    # as an installed app does on Android: they stay where the installer put them, and the pinned
+    # input only says what they must be. Its libraries still come from the input, where they were
+    # extracted and made loadable (OH's loader reads no library inside an APK).
+    installed_dir, installed_apks = None, {}
+    if args.installed_app_dir:
+        installed_dir = args.installed_app_dir.rstrip('/')
+        if not re.fullmatch(r'/[a-zA-Z0-9_./-]+', installed_dir) or '..' in installed_dir.split('/'):
+            raise ValueError('--installed-app-dir wants an absolute board path')
+        if args.android_install_path or args.app_oat_dir:
+            raise ValueError('--installed-app-dir runs the app from its installed APKs, '
+                             'without --android-install-path or --app-oat-dir')
+        installed_apks = {base_apk: installed_dir + '/base.apk',
+                          **{name: installed_dir + '/' + name for name in split_apks}}
+    # A .so in the APK that is not ELF is staged unchanged. Android's installer extracts every
+    # lib/<abi>/lib*.so whatever it holds, and apps keep data there that they read from their library
+    # directory: Alibaba's SecurityGuard (libsgmain*.so), UC's 7z WebView core, Alipay's bundles,
+    # Dingxiang's risk data, compressed engine libraries. Without them, UC's Application failed
+    # ("INVALID_COMPRESSED_LIB") and Taobao's SecurityGuard service was null. One whose name a board
+    # library has is not staged: in the app's library directory it shadowed that library for OH's own
+    # loads (StarMaker's libc++.so is an ld script, INPUT(...), and OH's libOpenSLES.so needs
+    # libc++.so). Without the workspace's list of board library names, none is staged.
     not_elf = sorted(name for name in app['native_libraries'] if name.endswith('.so')
                      and (args.app_input / name).read_bytes()[:4] != b'\x7fELF')
-    for name in not_elf:
+    board_names = board_library_names(args.workspace.resolve())
+    shadowing = non_elf_not_staged(not_elf, board_names)
+    for name in shadowing:
         del app_files[name]
-    if not_elf:
-        print('NOT_STAGED non-ELF libraries:', ' '.join(not_elf), flush=True)
+    if shadowing:
+        print('NOT_STAGED non-ELF libraries:', ' '.join(shadowing), flush=True)
+    if len(shadowing) < len(not_elf):
+        print('STAGED non-ELF files unchanged:', ' '.join(n for n in not_elf if n not in shadowing), flush=True)
     trace = None
     if args.trace_runtime_lock:
         trace = json.loads(args.trace_runtime_lock.read_text())
@@ -709,35 +811,14 @@ def main():
     webview_files = {}
     webview_paths = {}
     webview_lock_path = Path(__file__).resolve().parents[1] / 'parity27-runtime-inputs.lock.json'
+    shim_report = None
+    if args.bionic_shim_build:
+        shim_root = args.bionic_shim_build.resolve()
+        shim_report = json.loads((shim_root / 'artifacts.json').read_text())
     if args.webview_input:
-        webview_lock = json.loads(webview_lock_path.read_text())
-        prefix = '/data/local/tmp/asx/'
-        webview_files = {
-            entry['path'].removeprefix(prefix): {
-                'sha256': entry['sha256'],
-                'provenance': 'device-captured',
-            }
-            for entry in webview_lock['files']
-            if entry.get('category') == 'webview' and entry['path'].startswith(prefix)
-        }
-        required = {
-            'webview-t.apk',
-            'webview-t-lib/libandroid.so',
-            'webview-t-lib/libjnigraphics.so',
-            'webview-t-lib/libwebview_bionic_shim.so',
-            'webview-t-lib/libwebviewchromium.so',
-            'webview-t-lib/libwebviewchromium_plat_support.so',
-        }
-        if (set(webview_files) != required
-                or webview_lock.get('complete_build_input_closure') is not False):
-            raise ValueError('Unexpected WebView device-input lock')
-        webview_root = args.webview_input.resolve()
-        for name, entry in webview_files.items():
-            path = webview_root / name
-            if (not path.resolve().is_relative_to(webview_root)
-                    or digest(path) != entry['sha256']):
-                raise ValueError('Changed device-captured WebView input: ' + name)
-            webview_paths[name] = path
+        webview_files, webview_paths = webview_device_input(
+            json.loads(webview_lock_path.read_text()), args.webview_input,
+            shim_replaced_webview_files(shim_report) if shim_report else ())
     if args.bionic_shim_build:
         # The WebView input's bionic shim is also the ABI boundary preloaded for the APK's own
         # native libraries. The device-captured copy predates the refusal of self-trapping
@@ -745,8 +826,6 @@ def main():
         # source-built shim replaces it, hash-checked like every other input.
         if not webview_files:
             raise ValueError('A bionic shim build replaces the WebView input shim: pass --webview-input')
-        shim_root = args.bionic_shim_build.resolve()
-        shim_report = json.loads((shim_root / 'artifacts.json').read_text())
         shim_entry = shim_report['artifacts']['libwebview_bionic_shim.so']
         shim_path = shim_root / 'libwebview_bionic_shim.so'
         if shim_report.get('errors') or digest(shim_path) != shim_entry['sha256']:
@@ -756,30 +835,39 @@ def main():
         webview_paths['webview-t-lib/libwebview_bionic_shim.so'] = shim_path
         # The NDK libraries the shim build stages beside it, on the Android namespace's path:
         # libaaudio.so, a name for DT_NEEDED whose entry points the shim itself exports, and
-        # libandroid.so, built from source in place of the captured copy (the only one replaced).
+        # libandroid.so, built from source in place of the captured copy (the only one replaced,
+        # so webview_device_input left it out).
         for name, entry in sorted(shim_report['artifacts'].items()):
             if name == 'libwebview_bionic_shim.so':
                 continue
             path = shim_root / name
             if (not re.fullmatch(r'lib[a-zA-Z0-9_.+-]+\.so', name)
-                    or ('webview-t-lib/' + name in webview_files and name != 'libandroid.so')
+                    or 'webview-t-lib/' + name in webview_files
                     or digest(path) != entry['sha256']):
                 raise ValueError('Changed or failed bionic shim build: ' + name)
             webview_files['webview-t-lib/' + name] = {
                 'sha256': entry['sha256'], 'provenance': 'source-built'}
             webview_paths['webview-t-lib/' + name] = path
     runtime_overrides = {}
-    if args.runtime_library:
+    if args.runtime_library or args.runtime_library_add:
         if not args.runtime_library_build:
-            raise ValueError('--runtime-library needs --runtime-library-build')
+            raise ValueError('--runtime-library and --runtime-library-add need --runtime-library-build')
         build_root = args.runtime_library_build.resolve()
         build_report = json.loads((build_root / 'artifacts.json').read_text())
-        for name in args.runtime_library:
+        if set(args.runtime_library) & set(args.runtime_library_add):
+            raise ValueError('A runtime library is either replaced or added, not both')
+        for name in args.runtime_library + args.runtime_library_add:
             entry = build_report['artifacts'].get(name)
             path = build_root / 'lib' / name
-            if (entry is None or name not in framework['files'] or build_report.get('errors')
+            # A replacement must name a staged library and an addition must not, so neither can
+            # silently become the other.
+            staged = name in framework['files']
+            if (entry is None or staged != (name in args.runtime_library) or build_report.get('errors')
+                    or not re.fullmatch(r'lib[a-zA-Z0-9_.+-]+\.so', name)
                     or digest(path) != entry['sha256']):
-                raise ValueError('Runtime library override is not a built, staged library: ' + name)
+                raise ValueError('Runtime library ' + ('override is not a built, staged library: '
+                                                       if name in args.runtime_library else
+                                                       'addition is not a built library the stage lacks: ') + name)
             runtime_overrides[name] = path
     # Guest packages (adapter.packagemanager.GuestPackages): staged as guests/<name>.apk and named in
     # ASX_GUEST_APKS, which is also what makes the package manager report them.
@@ -963,8 +1051,9 @@ def main():
             bundle.unlink()
         directories = sorted({str(Path(runtime + '/' + name).parent) for name in files})
         commands = ['mkdir -p ' + shlex.quote(directory) for directory in directories]
-        commands += ['cp ' + INPUT_CACHE + '/' + sums[name] + ' ' + shlex.quote(runtime + '/' + name)
-                     for name in sorted(files)]
+        # rm first: the runtime's framework files are links to the shared copy, and cp would write into it.
+        commands += ['rm -f ' + shlex.quote(runtime + '/' + name) + ' && cp ' + INPUT_CACHE + '/' + sums[name] + ' '
+                     + shlex.quote(runtime + '/' + name) for name in sorted(files)]
         commands += ['touch ' + INPUT_CACHE + '/' + value for value in sorted(set(sums.values()))]
         # In pieces: Alipay's hundreds of libraries made one command of 70 KB, which hdc shell drops
         # without an answer.
@@ -994,6 +1083,18 @@ def main():
     expected = {previous + '/' + n: e['sha256'] for n, e in framework['files'].items()}
     if hashes(sorted(expected)) != expected:
         raise ValueError('Previously staged source outputs changed')
+    if installed_dir:
+        # Every APK of the installed package is one the input pins: Android loads all of a package's
+        # installed splits, and a split the input lacks would go unnoticed here.
+        present = sorted(n for n in shell('ls -1 ' + shlex.quote(installed_dir)).split() if n.endswith('.apk'))
+        if present != sorted(Path(p).name for p in installed_apks.values()):
+            raise ValueError('Installed APKs are not the pinned set: ' + ' '.join(present))
+        wanted = {installed_apks[n]: app_files[n]['sha256'] for n in installed_apks}
+        if hashes(sorted(wanted)) != wanted:
+            raise ValueError('Installed APKs differ from the pinned ones')
+        state['installed_app_dir'] = installed_dir
+        state['installed_apks'] = {Path(p).name: app_files[n]['sha256'] for n, p in installed_apks.items()}
+        save()
     raw = shell('bm dump -n ' + args.host)
     host = json.loads(raw[raw.index('{'):])['applicationInfo']
     uid = host['uid']
@@ -1061,7 +1162,30 @@ def main():
     state['helpers'] = helpers
     save()
     shell('mkdir ' + stage + ' ' + runtime)
-    shell('cp -a ' + previous + '/. ' + runtime + '/')
+    # The framework stage is the same for every launch of a build. Each launch used to copy it (about 1 GB)
+    # into its runtime, so no two apps shared a page of the boot image, the framework or the runtime's
+    # libraries: on the board the Play services process shared 6 MB with anything else. Now one copy per
+    # host and stage, root's and read-only, is hard-linked into each runtime, as Android's apps share one
+    # /system. It lives beside the runtimes: the kernel links only within one encryption policy, and
+    # /data/local/tmp's is not the host's data directory's.
+    files_dir = '/data/app/el2/100/base/' + args.host + '/files'
+    shared = files_dir + '/a2hlab-shared-' + Path(previous).name
+    if 'READY' not in shell('[ -f ' + shared + '/.a2hlab-shared-ready ] && echo READY; true'):
+        part = shared + '.part-' + suffix
+        shell('rm -rf ' + part + ' && mkdir ' + part + ' && cp -a ' + previous + '/. ' + part + '/')
+        copied = {part + '/' + n: e['sha256'] for n, e in framework['files'].items()}
+        if hashes(sorted(copied)) != copied:
+            shell('rm -rf ' + part)
+            raise ValueError('Shared framework copy changed')
+        shell('touch ' + part + '/.a2hlab-shared-ready && chown -R 0:0 ' + part + ' && chmod -R a-w ' + part +
+              ' && (mv -T ' + part + ' ' + shared + ' 2>/dev/null || rm -rf ' + part + ')')
+        # Copies for stages the board no longer has (a deploy keeps two) go; a runtime still linked to one
+        # keeps its files.
+        shell('for b in ' + files_dir + '/a2hlab-shared-*; do [ -d "$b" ] || continue; case "$b" in *.part-*) continue;; esac; '
+              's=/data/local/tmp/${b##*/a2hlab-shared-}; [ -d "$s" ] || rm -rf "$b"; done; true')
+    state['shared_framework'] = shared
+    save()
+    shell('cp -al ' + shared + '/. ' + runtime + '/ && rm -f ' + runtime + '/.a2hlab-shared-ready')
     copied = {runtime + '/' + n: e['sha256'] for n, e in framework['files'].items()}
     if hashes(sorted(copied)) != copied:
         raise ValueError('Candidate source copy changed')
@@ -1069,13 +1193,13 @@ def main():
     # Libraries the board's loader would mishandle travel fixed (see android_relr_retagged and
     # init_array_sanitized); the device copy is checked against the fixed bytes.
     loader_compat, compat_changes = {}, {}
-    libraries = sorted(n for n in app['native_libraries'] if n in app_files and n.endswith('.so'))
+    libraries = sorted(n for n in app['native_libraries'] if n in app_files and n.endswith('.so') and n not in not_elf)
     bind_own = libraries_bound_locally({n: (args.app_input / n).read_bytes() for n in libraries})
     shim_path = webview_paths.get('webview-t-lib/libwebview_bionic_shim.so')
     runs_renamed_init_arrays = bool(shim_path) and RUNS_RENAMED_INIT_ARRAYS in Path(shim_path).read_bytes()
     for name in sorted(n for n in app['native_libraries'] if n in app_files):
         fixed, changes = (loader_compat_bytes(args.app_input / name, name in bind_own, runs_renamed_init_arrays)
-                          if name.endswith('.so') else (None, []))
+                          if name.endswith('.so') and name not in not_elf else (None, []))
         if fixed is not None:
             loader_compat[name] = fixed
             compat_changes[name] = changes
@@ -1102,10 +1226,10 @@ def main():
         # round relaunches the apps of earlier rounds, and over a slow link the app was most of what
         # went over the air each time.
         cached.update({name: args.app_input / split_sources.get(name, name)
-                       for name in app_files if name not in loader_compat})
+                       for name in app_files if name not in loader_compat and name not in installed_apks})
     with tarfile.open(archive, 'w') as tar:
         for name in sorted(app_files):
-            if name in cached:
+            if name in cached or name in installed_apks:
                 continue
             if name in loader_compat:
                 info = tar.gettarinfo(args.app_input / name, arcname=name)
@@ -1129,11 +1253,16 @@ def main():
     # archive with no members "Not tar".
     if tar.members:
         send(archive, stage + '/' + archive.name)
+        # A file of the launch that the framework stage also has (a runtime override) replaces the link to
+        # the shared copy instead of writing into it.
+        linked = sorted(set(m.name for m in tar.members) & set(framework['files']))
+        for start in range(0, len(linked), 24):
+            shell('cd ' + runtime + ' && rm -f ' + ' '.join(shlex.quote(n) for n in linked[start:start + 24]))
         shell('tar -xf ' + stage + '/' + archive.name + ' -C ' + runtime)
     if cached:
         state['input_cache'] = stage_from_cache(cached, runtime, stage)
         save()
-    expected_app = {runtime + '/' + n: e['sha256'] for n, e in app_files.items()}
+    expected_app = {runtime + '/' + n: e['sha256'] for n, e in app_files.items() if n not in installed_apks}
     expected_app.update({runtime + '/' + n: digest(p) for n, p in oat_files.items()})
     if hashes(sorted(expected_app)) != expected_app:
         raise ValueError('Candidate original APK files changed')
@@ -1144,6 +1273,7 @@ def main():
                 drop_from_cache(runtime_overrides)
             raise ValueError('Runtime library override did not land')
         state['runtime_overrides'] = {n: digest(p) for n, p in runtime_overrides.items()}
+        state['runtime_additions'] = sorted(args.runtime_library_add)
         save()
     if guest_paths:
         expected_guests = {runtime + '/' + n: digest(p) for n, p in guest_paths.items()}
@@ -1171,8 +1301,8 @@ def main():
           runtime + '/app-data/' + package + '/code_cache/art-volatile ' +
           runtime + '/app-data/' + package + '/app_webview ' + runtime + '/app-data/' + args.host +
           (' ' + runtime + '/webview-t-data' if webview_files else '') +
-          ' && chown -R ' + str(uid) + ':' + str(uid) + ' ' + runtime +
-          ' && chmod 755 ' + runtime + '/appspawn-x')
+          ' && find ' + runtime + ' \\( -type d -o -links 1 \\) -exec chown ' + str(uid) + ':' + str(uid) + ' {} +' +
+          ' && chmod a+rx ' + runtime + '/appspawn-x')
     # The app's data directory is <runtime>/app-data/<package>: source_app_namespace mounts
     # <runtime>/app-data over /data/data inside the child, so the host's /data/data is never seen.
     # It inherits the host bundle's appdat label, and OpenHarmony denies app processes fifo_file
@@ -1191,6 +1321,16 @@ def main():
     shell('mkdir -p ' + runtime + '/app-data/' + package + '/external && chown ' + str(uid) + ':' + str(uid) +
           ' ' + runtime + '/app-data/' + package + '/external && chcon -R u:object_r:appdat:s0 ' +
           runtime + '/app-data/' + package + '/external')
+    # A host other apps call under their own uid (--private-data): OH creates its bundle's directories 0700, so
+    # nothing of the runtime would be reachable. Client libraries load code from it by path (DynamiteModule
+    # reads Play services' APK and splits through the ApplicationInfo the channel localizes), as every Android
+    # app reads /data/app; its data, the account store included, is the host's alone. Set before the spawn, so
+    # no other uid ever sees the data directory open.
+    if args.private_data:
+        shell('chmod 711 /data/app/el2/100/base/' + args.host + ' ' + files_dir + ' && chmod 700 ' + runtime +
+              '/app-data')
+        state['private_data'] = True
+        save()
     # Android's package manager installs an app at /data/app/~~<id>==/<package>-<id>== (each id 16
     # random bytes in URL-safe base64): base.apk, split_<name>.apk and lib/<isa> for the libraries
     # it extracts, and the app's ApplicationInfo names them there. Code that checks where it runs
@@ -1238,9 +1378,10 @@ def main():
     request.write_bytes(struct.pack('<5I256s', 0xef201234, 0, 276 + len(body), 0x41324801, 4,
                                     args.host.encode()) + body)
     send(request, stage + '/request.bin')
-    # Child processes need the same authorized request inside their private
-    # mount namespace; the staging directory is hidden there.
+    # The app asks its own appspawn-x for its other processes (westlake ADR-0002): the same request,
+    # under another process name. The runtime is the app's /data/local/tmp/asx.
     send(request, runtime + '/spawn-request.bin')
+    # The request names the app's credentials: only the app reads it (ADR-0002 processes resend it).
     shell('chown ' + str(uid) + ':' + str(uid) + ' ' + runtime + '/spawn-request.bin && '
           'chmod 600 ' + runtime + '/spawn-request.bin')
     app_lib_dir = install + '/lib/arm64' if install else logical + '/lib/arm64-v8a'
@@ -1250,15 +1391,17 @@ def main():
     if webview_files:
         search.append(logical + '/webview-t-lib')
     env = {'WESTLAKE_RUNTIME_ROOT': logical, 'WESTLAKE_RUNTIME_REAL_ROOT': runtime, 'LD_LIBRARY_PATH': ':'.join(search),
-           'WESTLAKE_SPAWN_SOCKET': socket,
-           'WESTLAKE_SPAWN_REQUEST': logical + '/spawn-request.bin',
            'WESTLAKE_SOURCE_LOG_STDERR': '1',
+           # Where the app's own appspawn-x listens, and the request that spawned the app (ADR-0002).
+           'WESTLAKE_SPAWN_SOCKET': socket, 'WESTLAKE_SPAWN_REQUEST': logical + '/spawn-request.bin',
            'WESTLAKE_SOURCE_PACKAGE': '1',
            'WESTLAKE_TRACE_NATIVE_LOADER': '1',
            'ASX_RUNTIME_OWNER_UID': str(uid), 'ASX_LAUNCH_PKG': package,
            'ASX_NATIVE_LIB_DIR': app_lib_dir,
-           'ASX_APK_PATH': install + '/base.apk' if install else logical + '/' + base_apk,
-           'ASX_SPLIT_APK_PATHS': ':'.join((install if install else logical) + '/' + name
+           'ASX_APK_PATH': (installed_apks[base_apk] if installed_dir else
+                            install + '/base.apk' if install else logical + '/' + base_apk),
+           'ASX_SPLIT_APK_PATHS': ':'.join(installed_apks[name] if installed_dir else
+                                           (install if install else logical) + '/' + name
                                            for name in sorted(split_apks)),
            'ASX_LAUNCH_ACTIVITY': launch_activity,
            'ASX_DIRECT_LAUNCH': '1', 'ASX_KEEP_THEME': '1', 'ASX_DIAG_THROWABLE': '1',
