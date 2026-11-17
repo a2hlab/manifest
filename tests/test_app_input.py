@@ -56,6 +56,22 @@ class OriginalAppInputTest(unittest.TestCase):
                 APP.prepare(apk, output, entry)
             self.assertEqual((output / 'marker').read_text(), 'keep')
 
+    def test_modified_split_is_rejected_before_staging_base(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            apk, entry = self.fixture(root)
+            split = root / 'split.apk'
+            with zipfile.ZipFile(split, 'w') as archive:
+                archive.writestr('assets/example', b'original')
+            entry['splits'] = [{'name': split.name, 'sha256': APP.digest(split),
+                                'bytes': split.stat().st_size}]
+            data = bytearray(split.read_bytes())
+            data[-1] ^= 1
+            split.write_bytes(data)
+            with self.assertRaisesRegex(ValueError, 'does not match'):
+                APP.prepare(apk, root / 'out', entry, splits=[split])
+            self.assertFalse((root / 'out').exists())
+
 
 if __name__ == '__main__':
     unittest.main()

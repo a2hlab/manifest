@@ -21,6 +21,23 @@ import uuid
 from bootstrap_sdk import digest
 
 
+def restore_carried_app_data(shell, board_dir, package, runtime):
+    """An explicitly requested update must never silently become a fresh installation."""
+    carried = board_dir.rstrip('/') + '/' + package
+    target = runtime.rstrip('/') + '/app-data/' + package
+    if carried == target:
+        raise ValueError('Carried app data must be outside the new runtime')
+    moved = shell('if [ -d ' + shlex.quote(carried) + ' ]; then mkdir -p ' +
+                  shlex.quote(runtime.rstrip('/') + '/app-data') + ' && rm -rf ' +
+                  shlex.quote(target) + ' && mv ' + shlex.quote(carried) + ' ' +
+                  shlex.quote(target) + ' && rm -rf ' + shlex.quote(target + '/code_cache') +
+                  ' && echo __A2H_CARRIED__; fi')
+    if '__A2H_CARRIED__' not in moved.splitlines():
+        raise ValueError('Requested carried app data was not restored: ' + carried +
+                         '; --carried-app-data must name the directory containing the package directory')
+    return carried
+
+
 
 # DT_ANDROID_RELR{,SZ,ENT} -> DT_RELR{,SZ,ENT}. lld writes Android's own tag numbers for RELR on
 # Android targets; the encoding is the standard one. OH's musl applies DT_RELR (its own libraries
@@ -631,8 +648,11 @@ def main():
                              'copied; the native libraries are staged as for every launch')
     parser.add_argument('--carried-app-data', metavar='BOARD_DIR',
                         help='board directory holding app data that outlives a stage (harness PERSIST_DATA): '
-                             'if BOARD_DIR/<package> exists, it becomes this launch\'s data directory, as '
-                             '/data/data/<package> survives an update on Android, with its code_cache cleared')
+                             'BOARD_DIR/<package> must exist and becomes this launch\'s data directory, as '
+                             '/data/data/<package> survives an update on Android, with its code_cache cleared; '
+                             'a missing directory aborts the launch instead of starting with empty data')
+    parser.add_argument('--host-window-bridge', action='store_true',
+                        help='opt in to the signed authclienthost/authservicehost development window bridge')
     parser.add_argument('--private-data', action='store_true',
                         help='the host bundle serves apps under other uids (a Play host under its own bundle, '
                              'ADR-0003 stage 2): they reach its code by path, as Android apps read /data/app, '
@@ -641,7 +661,7 @@ def main():
     parser.add_argument('--runtime-env', action='append', default=[], metavar='KEY=VALUE',
                         help='extra environment for the spawned child, e.g. APPSPAWNX_VERBOSE_CLASS=1 '
                              "to trace class loading. Repeatable; it cannot replace a key the launcher sets")
-    parser.add_argument('--touch-mode', choices=['stream', 'tap', 'off'], default='stream',
+    parser.add_argument('--touch-mode', choices=['stream', 'tap', 'off', 'isolated'], default='stream',
                         help="how the forwarder replays a physical gesture: 'stream' sends the "
                              "motion stream plus a hit-tested click for a stationary tap (drags "
                              "scroll, and a row whose click is stranded behind the main-queue "
@@ -649,7 +669,8 @@ def main():
                              "which is what views that ignore the synthesised click need; 'off' "
                              "forwards nothing from the board's screen (the tap mailbox is still made, "
                              "for taps a script sends), so a touch on the board cannot disturb an "
-                             "unattended run")
+                             "unattended run; 'isolated' creates only a private per-process "
+                             "mailbox and leaves the global tap link and existing forwarders alone")
     parser.add_argument('--android-native-target', action='append', default=[],
                         help='APK DSO basename to route through the isolated Android ABI namespace')
     parser.add_argument('--android-native-net-target', action='append', default=[],
@@ -670,6 +691,9 @@ def main():
     output = args.out.absolute()
     if output.exists() or not re.fullmatch(r'[a-zA-Z0-9_.]+', args.host):
         parser.error('Use a new output and a valid host package')
+    if args.host_window_bridge and (not args.host_build or args.host not in
+            ('org.westlake.authclienthost', 'org.westlake.authservicehost')):
+        parser.error('--host-window-bridge requires a verified dedicated authentication host build')
     framework = json.loads(args.framework_report.read_text())
     app = json.loads((args.app_input / 'app-input.json').read_text())
     lock = json.loads((Path(__file__).resolve().parents[1] / 'app-inputs.lock.json').read_text())
@@ -1087,7 +1111,8 @@ def main():
         state['source_host_build_sha256'] = digest(args.host_build / 'artifacts.json')
         state['source_host_hap_sha256'] = wanted
     shell('power-shell wakeup')
-    result = shell('aa start -b ' + args.host + ' -a EntryAbility')
+    result = shell('aa start -b ' + args.host + ' -a EntryAbility' +
+                   (' --pb westlake.remoteHostWindows true' if args.host_window_bridge else ''))
     if 'start ability successfully' not in result:
         raise RuntimeError(result)
     host_pid = None
@@ -1105,6 +1130,13 @@ def main():
     if not window or window <= 0:
         raise ValueError('Missing host window')
     state.update(host_pid=host_pid, window=window)
+    host_control = None
+    if args.host_window_bridge:
+        host_control = '/data/app/el2/100/base/' + args.host + '/haps/entry/files/westlake-host-window'
+        shell('mkdir -p ' + host_control + ' && chown ' + str(uid) + ':' + str(uid) +
+              ' ' + host_control + ' && chmod 700 ' + host_control)
+        state['host_window_bridge'] = {'developmentOnly': True, 'directory': host_control,
+                                       'normalOhAbilityChecks': True, 'perApkIsolation': False}
     suffix = uuid.uuid4().hex
     runtime = '/data/app/el2/100/base/' + args.host + '/files/a2hlab-source-' + suffix
     stage = '/data/local/tmp/a2hlab-app-' + suffix
@@ -1263,12 +1295,7 @@ def main():
     # /data/data/<package> across an update and clears its code_cache, whose compiled code belongs to
     # the old system image; so does this.
     if args.carried_app_data:
-        carried = args.carried_app_data.rstrip('/') + '/' + package
-        target = runtime + '/app-data/' + package
-        moved = shell('if [ -d ' + shlex.quote(carried) + ' ]; then mkdir -p ' + runtime + '/app-data && rm -rf ' +
-                      shlex.quote(target) + ' && mv ' + shlex.quote(carried) + ' ' + shlex.quote(target) +
-                      ' && rm -rf ' + shlex.quote(target + '/code_cache') + ' && echo __A2H_CARRIED__; fi')
-        state['carried_app_data'] = carried if '__A2H_CARRIED__' in moved else None
+        state['carried_app_data'] = restore_carried_app_data(shell, args.carried_app_data, package, runtime)
         save()
     shell('mkdir -p ' + runtime + '/private-tmp/asx ' + runtime + '/data/dalvik-cache/arm64 ' +
           runtime + '/app-data/' + package + '/code_cache/art-volatile ' +
@@ -1457,6 +1484,9 @@ def main():
         env['WESTLAKE_ACCOUNT_HELPER_PATH'] = logical + '/liboh_account_state.so'
     if 'liboh_connectivity_state.so' in framework['files']:
         env['WESTLAKE_CONNECTIVITY_HELPER_PATH'] = logical + '/liboh_connectivity_state.so'
+    if host_control is not None:
+        env['WESTLAKE_REMOTE_HOST_WINDOWS'] = '1'
+        env['WESTLAKE_HOST_CONTROL_DIR'] = host_control
     for item in args.runtime_env:
         key, separator, value = item.partition('=')
         if not separator or not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', key):
@@ -1513,7 +1543,8 @@ def main():
     shell('chmod 755 ' + stage + '/touchfwd')
     try:
         shell(': > ' + box + '; chown ' + str(uid) + ':' + str(uid) + ' ' + box +
-              '; chmod 666 ' + box + '; ln -sf ' + box + ' /data/local/tmp/noice_tap')
+              '; chmod ' + ('600' if args.touch_mode == 'isolated' else '666') + ' ' + box + ('' if args.touch_mode == 'isolated' else
+              '; ln -sf ' + box + ' /data/local/tmp/noice_tap'))
     except RuntimeError:
         # A child that ends within a second of its spawn (an app whose anti-tamper library crashes
         # it at once) is gone before its mailbox can be made in its namespace. The spawn is still
@@ -1526,10 +1557,11 @@ def main():
               flush=True)
         print('SOURCE_APP_EXITED before its touch channel was made', flush=True)
         return
-    shell('P=$(pidof touchfwd 2>/dev/null); [ -n "$P" ] && kill $P 2>/dev/null; exit 0')
+    if args.touch_mode != 'isolated':
+        shell('P=$(pidof touchfwd 2>/dev/null); [ -n "$P" ] && kill $P 2>/dev/null; exit 0')
     # Off: no forwarder. A real touch on the board reached the app under test in unattended rounds
     # and closed it (four apps' "self-finish" were a press on a toolbar's back or close button).
-    if args.touch_mode != 'off':
+    if args.touch_mode not in ('off', 'isolated'):
         stream_env = ('WL_TOUCH_STREAM=1 WL_TOUCH_STREAM_CLICK=1 '
                       if args.touch_mode == 'stream' else '')
         shell('setsid env ' + stream_env + 'WL_TOUCH_COORD_GAIN=1 ' +
@@ -1537,7 +1569,7 @@ def main():
               '/touchfwd.log 2>&1 & exit 0')
         time.sleep(1)
     state['touch'] = {'device': touch_device, 'channel': box, 'mode': args.touch_mode,
-                      'forwarder_pid': shell('pidof touchfwd; exit 0').strip()}
+                      'forwarder_pid': '' if args.touch_mode == 'isolated' else shell('pidof touchfwd; exit 0').strip()}
     save()
     print('SOURCE_APP_SPAWNED', json.dumps({k: state[k] for k in ['parent', 'child', 'stage', 'runtime']}), flush=True)
 
