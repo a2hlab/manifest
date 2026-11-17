@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "scope": "Generic isolated Android font root at the host filesystem boundary",
+  "scope": "Android source boundary adaptations: isolated font root and opt-in same-process sync calls",
   "files": {
     "frameworks-base/graphics/java/android/graphics/fonts/SystemFonts.java": {
       "\"/system/etc/font_fallback.xml\"": "System.getProperty(\"westlake.android.root\", \"/system\") + \"/etc/font_fallback.xml\"",
@@ -12,6 +12,9 @@
     "frameworks-base/graphics/java/android/graphics/Typeface.java": {
       "\"/system/fonts/Roboto-Regular.ttf\"": "SystemFonts.SYSTEM_FONT_DIR + \"Roboto-Regular.ttf\"",
       "\"/system/fonts/RobotoStatic-Regular.ttf\"": "SystemFonts.SYSTEM_FONT_DIR + \"RobotoStatic-Regular.ttf\""
+    },
+    "frameworks-base/core/java/android/content/AbstractThreadedSyncAdapter.java": {
+      "            if (callingUid != Process.SYSTEM_UID) {": "            // Westlake's opt-in scheduler binds only an adapter owned by this app.\n            // Accept its direct in-process call without impersonating the system UID.\n            final boolean localScheduler = \"1\".equals(System.getenv(\"WESTLAKE_LOCAL_SYNC\"))\n                    && callingUid == Process.myUid() && Binder.getCallingPid() == Process.myPid();\n            if (callingUid != Process.SYSTEM_UID && !localScheduler) {"
     }
   }
 }
