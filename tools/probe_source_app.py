@@ -577,6 +577,8 @@ def main():
                              'BOARD_DIR/<package> must exist and becomes this launch\'s data directory, as '
                              '/data/data/<package> survives an update on Android, with its code_cache cleared; '
                              'a missing directory aborts the launch instead of starting with empty data')
+    parser.add_argument('--host-window-bridge', action='store_true',
+                        help='opt in to the signed authclienthost/authservicehost development window bridge')
     parser.add_argument('--runtime-env', action='append', default=[], metavar='KEY=VALUE',
                         help='extra environment for the spawned child, e.g. APPSPAWNX_VERBOSE_CLASS=1 '
                              "to trace class loading. Repeatable; it cannot replace a key the launcher sets")
@@ -610,6 +612,9 @@ def main():
     output = args.out.absolute()
     if output.exists() or not re.fullmatch(r'[a-zA-Z0-9_.]+', args.host):
         parser.error('Use a new output and a valid host package')
+    if args.host_window_bridge and (not args.host_build or args.host not in
+            ('org.westlake.authclienthost', 'org.westlake.authservicehost')):
+        parser.error('--host-window-bridge requires a verified dedicated authentication host build')
     framework = json.loads(args.framework_report.read_text())
     app = json.loads((args.app_input / 'app-input.json').read_text())
     lock = json.loads((Path(__file__).resolve().parents[1] / 'app-inputs.lock.json').read_text())
@@ -1005,7 +1010,8 @@ def main():
         state['source_host_build_sha256'] = digest(args.host_build / 'artifacts.json')
         state['source_host_hap_sha256'] = wanted
     shell('power-shell wakeup')
-    result = shell('aa start -b ' + args.host + ' -a EntryAbility')
+    result = shell('aa start -b ' + args.host + ' -a EntryAbility' +
+                   (' --pb westlake.remoteHostWindows true' if args.host_window_bridge else ''))
     if 'start ability successfully' not in result:
         raise RuntimeError(result)
     host_pid = None
@@ -1023,6 +1029,13 @@ def main():
     if not window or window <= 0:
         raise ValueError('Missing host window')
     state.update(host_pid=host_pid, window=window)
+    host_control = None
+    if args.host_window_bridge:
+        host_control = '/data/app/el2/100/base/' + args.host + '/haps/entry/files/westlake-host-window'
+        shell('mkdir -p ' + host_control + ' && chown ' + str(uid) + ':' + str(uid) +
+              ' ' + host_control + ' && chmod 700 ' + host_control)
+        state['host_window_bridge'] = {'developmentOnly': True, 'directory': host_control,
+                                       'normalOhAbilityChecks': True, 'perApkIsolation': False}
     suffix = uuid.uuid4().hex
     runtime = '/data/app/el2/100/base/' + args.host + '/files/a2hlab-source-' + suffix
     stage = '/data/local/tmp/a2hlab-app-' + suffix
@@ -1328,6 +1341,9 @@ def main():
         env['WESTLAKE_ACCOUNT_HELPER_PATH'] = logical + '/liboh_account_state.so'
     if 'liboh_connectivity_state.so' in framework['files']:
         env['WESTLAKE_CONNECTIVITY_HELPER_PATH'] = logical + '/liboh_connectivity_state.so'
+    if host_control is not None:
+        env['WESTLAKE_REMOTE_HOST_WINDOWS'] = '1'
+        env['WESTLAKE_HOST_CONTROL_DIR'] = host_control
     for item in args.runtime_env:
         key, separator, value = item.partition('=')
         if not separator or not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', key):
