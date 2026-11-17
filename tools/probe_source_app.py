@@ -703,6 +703,9 @@ def main():
             app['application'] != lock['applications'][args.app]):
         raise ValueError('Expected accepted framework probe and pinned original APK')
     package = app['application']['package']
+    dedicated_apk_host = args.host.startswith('org.westlake.apk.')
+    if dedicated_apk_host and (not args.host_build or args.host != 'org.westlake.apk.' + package):
+        parser.error('A dedicated APK host requires its signed host build and matching locked APK package')
     if not re.fullmatch(r'[a-zA-Z0-9_.]+', package):
         raise ValueError('Invalid application package')
     base_apk = args.app + '.apk'
@@ -1111,8 +1114,12 @@ def main():
         state['source_host_build_sha256'] = digest(args.host_build / 'artifacts.json')
         state['source_host_hap_sha256'] = wanted
     shell('power-shell wakeup')
-    result = shell('aa start -b ' + args.host + ' -a EntryAbility' +
-                   (' --pb westlake.remoteHostWindows true' if args.host_window_bridge else ''))
+    host_parameters = ''
+    if args.host_window_bridge:
+        host_parameters = ' --pb westlake.remoteHostWindows true'
+    elif dedicated_apk_host:
+        host_parameters = ' --pb westlake.ownAppSettings true'
+    result = shell('aa start -b ' + args.host + ' -a EntryAbility' + host_parameters)
     if 'start ability successfully' not in result:
         raise RuntimeError(result)
     host_pid = None
@@ -1131,12 +1138,15 @@ def main():
         raise ValueError('Missing host window')
     state.update(host_pid=host_pid, window=window)
     host_control = None
-    if args.host_window_bridge:
+    if args.host_window_bridge or dedicated_apk_host:
         host_control = '/data/app/el2/100/base/' + args.host + '/haps/entry/files/westlake-host-window'
         shell('mkdir -p ' + host_control + ' && chown ' + str(uid) + ':' + str(uid) +
               ' ' + host_control + ' && chmod 700 ' + host_control)
-        state['host_window_bridge'] = {'developmentOnly': True, 'directory': host_control,
-                                       'normalOhAbilityChecks': True, 'perApkIsolation': False}
+        if dedicated_apk_host:
+            state['own_app_settings'] = {'package': package, 'host': args.host, 'directory': host_control}
+        else:
+            state['host_window_bridge'] = {'developmentOnly': True, 'directory': host_control,
+                                           'normalOhAbilityChecks': True, 'perApkIsolation': False}
     suffix = uuid.uuid4().hex
     runtime = '/data/app/el2/100/base/' + args.host + '/files/a2hlab-source-' + suffix
     stage = '/data/local/tmp/a2hlab-app-' + suffix
@@ -1331,6 +1341,8 @@ def main():
               '/app-data')
         state['private_data'] = True
         save()
+    if dedicated_apk_host:
+        shell('chmod 700 ' + runtime + '/app-data ' + runtime + '/app-data/' + package)
     # Android's package manager installs an app at /data/app/~~<id>==/<package>-<id>== (each id 16
     # random bytes in URL-safe base64): base.apk, split_<name>.apk and lib/<isa> for the libraries
     # it extracts, and the app's ApplicationInfo names them there. Code that checks where it runs
@@ -1484,14 +1496,16 @@ def main():
         env['WESTLAKE_ACCOUNT_HELPER_PATH'] = logical + '/liboh_account_state.so'
     if 'liboh_connectivity_state.so' in framework['files']:
         env['WESTLAKE_CONNECTIVITY_HELPER_PATH'] = logical + '/liboh_connectivity_state.so'
-    if host_control is not None:
+    if dedicated_apk_host:
+        env['WESTLAKE_OWN_SETTINGS_DIR'] = host_control
+    elif host_control is not None:
         env['WESTLAKE_REMOTE_HOST_WINDOWS'] = '1'
         env['WESTLAKE_HOST_CONTROL_DIR'] = host_control
     for item in args.runtime_env:
         key, separator, value = item.partition('=')
         if not separator or not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', key):
             raise ValueError('--runtime-env wants KEY=VALUE, got ' + item)
-        if key in env:
+        if key in env or key == 'WESTLAKE_OWN_SETTINGS_DIR':
             raise ValueError('--runtime-env may not replace ' + key + ', which the launcher sets')
         env[key] = value
     if args.runtime_env:
