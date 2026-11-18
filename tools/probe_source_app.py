@@ -21,6 +21,14 @@ import uuid
 from bootstrap_sdk import digest
 
 
+def spawn_launcher(runtime, env):
+    # The peer asks this listener to identify the child that appspawn-x forked.
+    exports = ''.join('export ' + key + '=' + shlex.quote(value) + '\n' for key, value in env.items())
+    return ('#!/system/bin/sh\nset -eu\ncd ' + shlex.quote(runtime) + '\n' + exports +
+            'exec ' + shlex.quote(runtime + '/appspawn-x') +
+            ' --socket-name "${WESTLAKE_SPAWN_SOCKET##*/}"\n')
+
+
 def host_window_configuration(host, package, host_build, remote):
     dedicated = host.startswith('org.westlake.apk.')
     if dedicated and (not host_build or host != 'org.westlake.apk.' + package):
@@ -1198,8 +1206,7 @@ def main():
     runtime = '/data/app/el2/100/base/' + args.host + '/files/a2hlab-source-' + suffix
     stage = '/data/local/tmp/a2hlab-app-' + suffix
     logical = '/data/local/tmp/asx'
-    socket_name = 'A2HSource' + suffix[:20]
-    socket = '/dev/unix/socket/' + socket_name
+    socket = '/dev/unix/socket/A2HSource' + suffix[:20]
     state.update(stage=stage, runtime=runtime, uid=uid, host=host, socket=socket,
                  source_files=framework['files'], apk_sha256=app['apk_sha256'])
     save()
@@ -1555,9 +1562,7 @@ def main():
         state['runtime_env'] = sorted(args.runtime_env)
         save()
     script = output / 'run.sh'
-    script.write_text('#!/system/bin/sh\nset -eu\ncd ' + logical + '\n' +
-                      ''.join('export ' + k + '=' + shlex.quote(v) + '\n' for k, v in env.items()) +
-                      'exec ' + logical + '/appspawn-x --socket-name ' + socket_name + '\n')
+    script.write_text(spawn_launcher(logical, env))
     send(script, runtime + '/run.sh')
     shell('chown ' + str(uid) + ':' + str(uid) + ' ' + runtime + '/run.sh')
     command = ((('WESTLAKE_ANDROID_APP_DIR=' + install + ' ') if install else '') +
