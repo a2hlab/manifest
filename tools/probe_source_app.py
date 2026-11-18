@@ -29,6 +29,17 @@ def spawn_launcher(runtime, env):
             ' --socket-name "${WESTLAKE_SPAWN_SOCKET##*/}"\n')
 
 
+def default_store_activity_route(app_key, env, pinned_gms_sha256):
+    # The Store's account authenticator returns an Intent for an activity in Play services.
+    if (app_key == 'google-two-path-store' and 'WESTLAKE_REMOTE_ACTIVITIES' not in env
+            and env.get('WESTLAKE_PLAY_STORE_SERVE') and env.get('WESTLAKE_PLAY_SERVICES_CONNECT')
+            and env.get('WESTLAKE_CHANNEL_IDENTITY') == 'enforce' and env.get('WESTLAKE_PLAY_CODE_SPAWNER')
+            and pinned_gms_sha256 and env.get('WESTLAKE_PLAY_CODE_APK_SHA256') == pinned_gms_sha256):
+        env['WESTLAKE_REMOTE_ACTIVITIES'] = '1'
+        return True
+    return False
+
+
 def host_window_configuration(host, package, host_build, remote):
     dedicated = host.startswith('org.westlake.apk.')
     if dedicated and (not host_build or host != 'org.westlake.apk.' + package):
@@ -1558,6 +1569,9 @@ def main():
         if key in env or key == 'WESTLAKE_OWN_SETTINGS_DIR':
             raise ValueError('--runtime-env may not replace ' + key + ', which the launcher sets')
         env[key] = value
+    official_gms = lock['applications'].get('hk-com.google.android.gms', {})
+    if default_store_activity_route(args.app, env, official_gms.get('sha256')):
+        state['store_activity_route_defaulted'] = True
     if args.runtime_env:
         state['runtime_env'] = sorted(args.runtime_env)
         save()
