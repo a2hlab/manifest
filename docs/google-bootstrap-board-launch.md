@@ -141,6 +141,17 @@ need `WESTLAKE_REMOTE_ACTIVITIES=1`, `WESTLAKE_CHANNEL_IDENTITY=enforce` and
 `WESTLAKE_GOOGLE_PRIVATE_LOGS=1`, in addition to the experiment's existing
 separate auth and Play endpoints and provider pins.
 
+The original Play Store is also a client of the Google sign-in activity. For
+the locked `google-two-path-store` input, the source-app launcher now enables
+remote activity resolution by default when the Store serves its own channel,
+connects to Play services, enforces channel identity and pins the official GMS
+APK and spawner. An explicit `WESTLAKE_REMOTE_ACTIVITIES` setting takes
+precedence. Without the route, tapping Sign in on the tested Store build
+terminated its process with `ActivityNotFoundException`. With the route, GMS
+received its exported redirect activity from the verified Store process. The
+following PendingIntent was rejected and the Store received a canceled result.
+No account login was observed in that run.
+
 The final board replay reached official Google's account picker from Spotify,
 accepted the authorized existing account, and traversed all three forwarding
 redirects without premature cancellation. Google then displayed "Verify it's
