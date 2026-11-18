@@ -135,10 +135,10 @@ index 4b579e7db..bec3a6d51 100644
              super(args, _info);
              info = _info;
 diff --git a/core/java/android/view/SurfaceView.java b/core/java/android/view/SurfaceView.java
-index 1d70d18ac..91c989a2e 100644
+index 1d70d18ac..8d7382231 100644
 --- a/core/java/android/view/SurfaceView.java
 +++ b/core/java/android/view/SurfaceView.java
-@@ -893,8 +893,38 @@ public class SurfaceView extends View implements ViewRootImpl.SurfaceChangedCall
+@@ -893,8 +893,42 @@ public class SurfaceView extends View implements ViewRootImpl.SurfaceChangedCall
          return t;
      }
  
@@ -148,21 +148,25 @@ index 1d70d18ac..91c989a2e 100644
 +    // (adapter.window.WindowSessionAdapter.attachSurfaceView), bound to the BLAST layer before
 +    // its BLASTBufferQueue resolves a window. Reached by name: the adapter is not a compile-time
 +    // dependency of the framework.
++    private volatile boolean mWestlakeOwnSurface;
++
 +    private void westlakeAttachOwnSurface(ViewRootImpl viewRoot, String name) {
 +        try {
-+            Class.forName("adapter.window.WindowSessionAdapter")
++            Object session = Class.forName("adapter.window.WindowSessionAdapter")
 +                    .getMethod("attachSurfaceView", Object.class, SurfaceControl.class,
 +                            String.class, int.class, int.class, int.class, int.class,
 +                            android.os.IBinder.class)
-+                    .invoke(null, this, mBlastSurfaceControl, name, mSurfaceWidth,
-+                            mSurfaceHeight, viewRoot.mWidth, viewRoot.mHeight,
++                    .invoke(null, this, mBlastSurfaceControl, name, mScreenRect.width(),
++                            mScreenRect.height(), viewRoot.mWidth, viewRoot.mHeight,
 +                            viewRoot.mWindowAttributes.token);
++            mWestlakeOwnSurface = session instanceof Integer && (Integer) session > 0;
 +        } catch (ReflectiveOperationException | LinkageError e) {
 +            Log.w(TAG, "westlake: no own surface for " + name + ": " + e);
 +        }
 +    }
 +
 +    private void westlakeDetachOwnSurface() {
++        mWestlakeOwnSurface = false;
 +        try {
 +            Class.forName("adapter.window.WindowSessionAdapter")
 +                    .getMethod("detachSurfaceView", Object.class).invoke(null, this);
@@ -177,7 +181,21 @@ index 1d70d18ac..91c989a2e 100644
          mSurface.destroy();
          synchronized (mSurfaceControlLock) {
              if (mBlastBufferQueue != null) {
-@@ -1455,6 +1485,7 @@ public class SurfaceView extends View implements ViewRootImpl.SurfaceChangedCall
+@@ -1023,8 +1057,11 @@ public class SurfaceView extends View implements ViewRootImpl.SurfaceChangedCall
+                     }
+                 }
+
+-                surfaceUpdateTransaction.setDesintationFrame(mBlastSurfaceControl, mSurfaceWidth,
+-                            mSurfaceHeight);
++                // A dedicated OH window has no SurfaceFlinger parent to scale its BLAST
++                // layer. Send its displayed extent directly; keep the producer buffer size.
++                surfaceUpdateTransaction.setDesintationFrame(mBlastSurfaceControl,
++                        mWestlakeOwnSurface ? mScreenRect.width() : mSurfaceWidth,
++                        mWestlakeOwnSurface ? mScreenRect.height() : mSurfaceHeight);
+
+                 if (isHardwareAccelerated()) {
+                     // This will consume the passed in transaction and the transaction will be
+@@ -1455,6 +1492,7 @@ public class SurfaceView extends View implements ViewRootImpl.SurfaceChangedCall
                      .setBLASTLayer()
                      .setCallsite("SurfaceView.updateSurface")
                      .build();
@@ -185,3 +203,15 @@ index 1d70d18ac..91c989a2e 100644
          } else {
              // update blast layer
              surfaceUpdateTransaction
+@@ -1587,6 +1625,11 @@ public class SurfaceView extends View implements ViewRootImpl.SurfaceChangedCall
+                             mRTLastReportedPosition.height()
+                                     / (float) mRtSurfaceHeight /*postScaleY*/);
+
++                    if (mWestlakeOwnSurface && mBlastSurfaceControl != null
++                            && this == mPositionListener) {
++                        mPositionChangedTransaction.setDesintationFrame(mBlastSurfaceControl,
++                                right - left, bottom - top);
++                    }
+                     mPositionChangedTransaction.show(mSurfaceControl);
+                 }
+                 applyOrMergeTransaction(mPositionChangedTransaction, frameNumber);
