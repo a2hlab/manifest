@@ -21,6 +21,26 @@ import uuid
 from bootstrap_sdk import digest
 
 
+def host_window_configuration(host, package, host_build, remote):
+    dedicated = host.startswith('org.westlake.apk.')
+    if dedicated and (not host_build or host != 'org.westlake.apk.' + package):
+        raise ValueError('A dedicated APK host requires its signed host build and matching locked APK package')
+    if remote and (not host_build or not (dedicated or host in
+            ('org.westlake.authclienthost', 'org.westlake.authservicehost'))):
+        raise ValueError('--host-window-bridge requires a verified window host build')
+    directory = '/data/app/el2/100/base/' + host + '/haps/entry/files/westlake-host-window'
+    parameters = ''
+    env = {}
+    if dedicated:
+        parameters += ' --pb westlake.ownAppSettings true'
+        env['WESTLAKE_OWN_SETTINGS_DIR'] = directory
+    if remote:
+        parameters += ' --pb westlake.remoteHostWindows true'
+        env['WESTLAKE_REMOTE_HOST_WINDOWS'] = '1'
+        env['WESTLAKE_HOST_CONTROL_DIR'] = directory
+    return parameters, env
+
+
 def read_host_window(shell, host_pid):
     """Read the current native host's main window, including older installed HAPs."""
     raw = shell(f'cat /proc/{host_pid}/root/data/storage/el2/base/haps/entry/files/window-state.json'
@@ -686,7 +706,7 @@ def main():
                              '/data/data/<package> survives an update on Android, with its code_cache cleared; '
                              'a missing directory aborts the launch instead of starting with empty data')
     parser.add_argument('--host-window-bridge', action='store_true',
-                        help='opt in to the signed authclienthost/authservicehost development window bridge')
+                        help='enable native window handoff for the signed service, shared client, or matching APK host')
     parser.add_argument('--private-data', action='store_true',
                         help='the host bundle serves apps under other uids (a Play host under its own bundle, '
                              'ADR-0003 stage 2): they reach its code by path, as Android apps read /data/app, '
@@ -725,9 +745,6 @@ def main():
     output = args.out.absolute()
     if output.exists() or not re.fullmatch(r'[a-zA-Z0-9_.]+', args.host):
         parser.error('Use a new output and a valid host package')
-    if args.host_window_bridge and (not args.host_build or args.host not in
-            ('org.westlake.authclienthost', 'org.westlake.authservicehost')):
-        parser.error('--host-window-bridge requires a verified dedicated authentication host build')
     framework = json.loads(args.framework_report.read_text())
     app = json.loads((args.app_input / 'app-input.json').read_text())
     lock = json.loads((Path(__file__).resolve().parents[1] / 'app-inputs.lock.json').read_text())
@@ -737,9 +754,11 @@ def main():
             app['application'] != lock['applications'][args.app]):
         raise ValueError('Expected accepted framework probe and pinned original APK')
     package = app['application']['package']
-    dedicated_apk_host = args.host.startswith('org.westlake.apk.')
-    if dedicated_apk_host and (not args.host_build or args.host != 'org.westlake.apk.' + package):
-        parser.error('A dedicated APK host requires its signed host build and matching locked APK package')
+    try:
+        host_parameters, window_env = host_window_configuration(args.host, package, args.host_build, args.host_window_bridge)
+    except ValueError as error:
+        parser.error(str(error))
+    dedicated_apk_host = 'WESTLAKE_OWN_SETTINGS_DIR' in window_env
     if not re.fullmatch(r'[a-zA-Z0-9_.]+', package):
         raise ValueError('Invalid application package')
     base_apk = args.app + '.apk'
@@ -1148,11 +1167,6 @@ def main():
         state['source_host_build_sha256'] = digest(args.host_build / 'artifacts.json')
         state['source_host_hap_sha256'] = wanted
     shell('power-shell wakeup')
-    host_parameters = ''
-    if args.host_window_bridge:
-        host_parameters = ' --pb westlake.remoteHostWindows true'
-    elif dedicated_apk_host:
-        host_parameters = ' --pb westlake.ownAppSettings true'
     result = shell('aa start -b ' + args.host + ' -a EntryAbility' + host_parameters)
     if 'start ability successfully' not in result:
         raise RuntimeError(result)
@@ -1171,14 +1185,13 @@ def main():
     if not window or window <= 0:
         raise ValueError('No main window for the current OpenHarmony host process')
     state.update(host_pid=host_pid, window=window)
-    host_control = None
-    if args.host_window_bridge or dedicated_apk_host:
-        host_control = '/data/app/el2/100/base/' + args.host + '/haps/entry/files/westlake-host-window'
+    host_control = window_env.get('WESTLAKE_HOST_CONTROL_DIR') or window_env.get('WESTLAKE_OWN_SETTINGS_DIR')
+    if host_control:
         shell('mkdir -p ' + host_control + ' && chown ' + str(uid) + ':' + str(uid) +
               ' ' + host_control + ' && chmod 700 ' + host_control)
         if dedicated_apk_host:
             state['own_app_settings'] = {'package': package, 'host': args.host, 'directory': host_control}
-        else:
+        if args.host_window_bridge:
             state['host_window_bridge'] = {'developmentOnly': True, 'directory': host_control,
                                            'normalOhAbilityChecks': True, 'perApkIsolation': False}
     suffix = uuid.uuid4().hex
@@ -1530,11 +1543,7 @@ def main():
         env['WESTLAKE_ACCOUNT_HELPER_PATH'] = logical + '/liboh_account_state.so'
     if 'liboh_connectivity_state.so' in framework['files']:
         env['WESTLAKE_CONNECTIVITY_HELPER_PATH'] = logical + '/liboh_connectivity_state.so'
-    if dedicated_apk_host:
-        env['WESTLAKE_OWN_SETTINGS_DIR'] = host_control
-    elif host_control is not None:
-        env['WESTLAKE_REMOTE_HOST_WINDOWS'] = '1'
-        env['WESTLAKE_HOST_CONTROL_DIR'] = host_control
+    env.update(window_env)
     for item in args.runtime_env:
         key, separator, value = item.partition('=')
         if not separator or not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', key):
