@@ -135,7 +135,7 @@ index 4b579e7db..bec3a6d51 100644
              super(args, _info);
              info = _info;
 diff --git a/core/java/android/view/SurfaceView.java b/core/java/android/view/SurfaceView.java
-index 1d70d18ac..8d7382231 100644
+index 1d70d18ac..1d2edb7fa 100644
 --- a/core/java/android/view/SurfaceView.java
 +++ b/core/java/android/view/SurfaceView.java
 @@ -893,8 +893,42 @@ public class SurfaceView extends View implements ViewRootImpl.SurfaceChangedCall
@@ -181,21 +181,24 @@ index 1d70d18ac..8d7382231 100644
          mSurface.destroy();
          synchronized (mSurfaceControlLock) {
              if (mBlastBufferQueue != null) {
-@@ -1023,8 +1057,11 @@ public class SurfaceView extends View implements ViewRootImpl.SurfaceChangedCall
+@@ -1023,8 +1057,14 @@ public class SurfaceView extends View implements ViewRootImpl.SurfaceChangedCall
                      }
                  }
 
 -                surfaceUpdateTransaction.setDesintationFrame(mBlastSurfaceControl, mSurfaceWidth,
 -                            mSurfaceHeight);
-+                // A dedicated OH window has no SurfaceFlinger parent to scale its BLAST
-+                // layer. Send its displayed extent directly; keep the producer buffer size.
-+                surfaceUpdateTransaction.setDesintationFrame(mBlastSurfaceControl,
-+                        mWestlakeOwnSurface ? mScreenRect.width() : mSurfaceWidth,
-+                        mWestlakeOwnSurface ? mScreenRect.height() : mSurfaceHeight);
++                // The dedicated OH sub-window starts at the activity origin. Its content
++                // needs the full display rectangle, including any letterbox offset.
++                if (mWestlakeOwnSurface) {
++                    surfaceUpdateTransaction.setDesintationFrame(mBlastSurfaceControl, mScreenRect);
++                } else {
++                    surfaceUpdateTransaction.setDesintationFrame(mBlastSurfaceControl,
++                            mSurfaceWidth, mSurfaceHeight);
++                }
 
                  if (isHardwareAccelerated()) {
                      // This will consume the passed in transaction and the transaction will be
-@@ -1455,6 +1492,7 @@ public class SurfaceView extends View implements ViewRootImpl.SurfaceChangedCall
+@@ -1455,6 +1495,7 @@ public class SurfaceView extends View implements ViewRootImpl.SurfaceChangedCall
                      .setBLASTLayer()
                      .setCallsite("SurfaceView.updateSurface")
                      .build();
@@ -203,14 +206,14 @@ index 1d70d18ac..8d7382231 100644
          } else {
              // update blast layer
              surfaceUpdateTransaction
-@@ -1587,6 +1625,11 @@ public class SurfaceView extends View implements ViewRootImpl.SurfaceChangedCall
+@@ -1587,6 +1628,11 @@ public class SurfaceView extends View implements ViewRootImpl.SurfaceChangedCall
                              mRTLastReportedPosition.height()
                                      / (float) mRtSurfaceHeight /*postScaleY*/);
 
 +                    if (mWestlakeOwnSurface && mBlastSurfaceControl != null
 +                            && this == mPositionListener) {
 +                        mPositionChangedTransaction.setDesintationFrame(mBlastSurfaceControl,
-+                                right - left, bottom - top);
++                                mRTLastReportedPosition);
 +                    }
                      mPositionChangedTransaction.show(mSurfaceControl);
                  }

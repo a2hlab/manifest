@@ -15,10 +15,10 @@
       ],
       "path": "android-source/frameworks-base",
       "patch": "patches/android15/frameworks-base-toutiao-api-compat.patch",
-      "patch_sha256": "7dc64820417b275e29f8aab8fa8d5313e5955a3d6fdfc28fa46a9d168e425e93",
+      "patch_sha256": "12f15e76c51ffd5969ec7b42a7884143839b6ca0e05f1ea6a959136986f48212",
       "revision": "2ccf774088791253092f6921d6476d308b046dfc",
       "snapshot_tree": "ae2d2d422a7ed657121aae991daf866712bec1e8",
-      "tree": "6becaa01081dd5e376d03207d4d16d112140c1dc",
+      "tree": "042ec6fde604a8cafff19f9f1944609c6927234b",
       "upstream": {
         "revision": "4e43ad12e1b211f15152e9c5b16b0fe88e6b93f3",
         "tree": "9583c6d9586b84169697623a44af09e8ac3d79b9",
