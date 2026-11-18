@@ -21,6 +21,40 @@ import uuid
 from bootstrap_sdk import digest
 
 
+def read_host_window(shell, host_pid):
+    """Read the current native host's main window, including older installed HAPs."""
+    raw = shell(f'cat /proc/{host_pid}/root/data/storage/el2/base/haps/entry/files/window-state.json'
+                ' 2>/dev/null || true')
+    state = json.loads(raw) if raw.strip() else {}
+    if not isinstance(state, dict):
+        return None
+    stamped = 'ownerPid' in state
+    window = state.get('mainWindowId')
+    if stamped and (state['ownerPid'] != host_pid or type(window) is not int or window <= 0):
+        return None
+
+    # Older hosts persist only the latest lifecycle event. A foreground event
+    # omits the window, and a killed host can leave its predecessor's ID on disk.
+    # Query only rows belonging to this host PID. Type 1 is its app main window.
+    rows = shell('hidumper -s WindowManagerService -a "-a" | grep -E ' +
+                 shlex.quote(r'^[^[:space:]]+[[:space:]]+[0-9]+[[:space:]]+' +
+                             str(host_pid) + r'[[:space:]]') + ' || true')
+    main_windows = set()
+    for row in rows.splitlines():
+        fields = row.split()
+        if (len(fields) >= 5 and fields[2] == str(host_pid) and fields[4] == '1'
+                and fields[3].isdigit() and int(fields[3]) > 0):
+            main_windows.add(int(fields[3]))
+    if stamped:
+        return window if window in main_windows else None
+    if len(main_windows) == 1:
+        return main_windows.pop()
+    details = state.get('details', {})
+    properties = details.get('window', details) if isinstance(details, dict) else {}
+    preferred = properties.get('id') if isinstance(properties, dict) else None
+    return preferred if type(preferred) is int and preferred in main_windows else None
+
+
 def restore_carried_app_data(shell, board_dir, package, runtime):
     """An explicitly requested update must never silently become a fresh installation."""
     carried = board_dir.rstrip('/') + '/' + package
@@ -1127,15 +1161,15 @@ def main():
     for _ in range(60):
         try:
             host_pid = int(shell('pidof ' + args.host).strip())
-            host_state = json.loads(shell(f'cat /proc/{host_pid}/root/data/storage/el2/base/haps/entry/files/window-state.json'))
-            window = int(host_state['details'].get('window', host_state['details'])['id'])
-            if window > 0:
+            observed = read_host_window(shell, host_pid)
+            if observed and shell('pidof ' + args.host).strip() == str(host_pid):
+                window = observed
                 break
         except (RuntimeError, ValueError, KeyError):
             pass
         time.sleep(0.25)
     if not window or window <= 0:
-        raise ValueError('Missing host window')
+        raise ValueError('No main window for the current OpenHarmony host process')
     state.update(host_pid=host_pid, window=window)
     host_control = None
     if args.host_window_bridge or dedicated_apk_host:
