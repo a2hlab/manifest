@@ -678,6 +678,13 @@ def main():
                              "for taps a script sends), so a touch on the board cannot disturb an "
                              "unattended run; 'isolated' creates only a private per-process "
                              "mailbox and leaves the global tap link and existing forwarders alone")
+    parser.add_argument('--touch-device', default='/dev/input/event2',
+                        help="evdev node of the device's touchscreen, read by the forwarder (default: the "
+                             "test board's digitizer; on the OnePlus 6 it is /dev/input/event1)")
+    parser.add_argument('--touch-size', default='',
+                        help="WIDTHxHEIGHT of the screen the touchscreen covers, in pixels; the forwarder "
+                             "scales the device's raw range to it (default: the forwarder's 1200x1920, "
+                             "the test board's screen)")
     parser.add_argument('--android-native-target', action='append', default=[],
                         help='APK DSO basename to route through the isolated Android ABI namespace')
     parser.add_argument('--android-native-net-target', action='append', default=[],
@@ -1118,6 +1125,13 @@ def main():
         state['source_host_build_sha256'] = digest(args.host_build / 'artifacts.json')
         state['source_host_hap_sha256'] = wanted
     shell('power-shell wakeup')
+    # A host that is not running writes a new window-state.json once its window is up. Until then the
+    # file left by the previous host process names that process's window -- an id a classic window
+    # manager has freed (each start gets a new one), so the child's sub-window would be refused as
+    # WM_ERROR_INVALID_PARENT. Remove it first, so the loop below waits for the new host's window.
+    if not args.managed and not shell('pidof ' + args.host + '; exit 0').strip():
+        shell('rm -f /data/app/el2/100/base/' + args.host +
+              '/haps/entry/files/window-state.json; exit 0')
     host_pid = None
     window = None
     # A managed launch starts the bundle's ability only once its spawner listens (below); there is no host
@@ -1607,8 +1621,14 @@ def main():
     #   * the bridge only ever opens the mailbox for reading, so it must be created here
     #     and owned by the app uid.
     # event2 is this board's real digitizer (gsl680_tp, ABS 0..1200 x 0..1920); event5 is
-    # the virtual node and is NOT what a finger drives.
-    touch_device = '/dev/input/event2'
+    # the virtual node and is NOT what a finger drives. Other devices pass --touch-device.
+    touch_device = args.touch_device
+    touch_size = ''
+    if args.touch_size:
+        tw, _, th = args.touch_size.partition('x')
+        if not (tw.isdigit() and th.isdigit()):
+            raise ValueError('--touch-size must be WIDTHxHEIGHT, got ' + args.touch_size)
+        touch_size = 'WL_TOUCH_WIDTH=%s WL_TOUCH_HEIGHT=%s ' % (tw, th)
     child_pid = state['child']
     box = '/proc/%d/root/data/local/tmp/noice_tap.%d' % (child_pid, child_pid)
     shell('chmod 755 ' + stage + '/touchfwd')
@@ -1635,7 +1655,7 @@ def main():
     if args.touch_mode not in ('off', 'isolated'):
         stream_env = ('WL_TOUCH_STREAM=1 WL_TOUCH_STREAM_CLICK=1 '
                       if args.touch_mode == 'stream' else '')
-        shell('setsid env ' + stream_env + 'WL_TOUCH_COORD_GAIN=1 ' +
+        shell('setsid env ' + stream_env + touch_size + 'WL_TOUCH_COORD_GAIN=1 ' +
               stage + '/touchfwd ' + touch_device + ' </dev/null >' + stage +
               '/touchfwd.log 2>&1 & exit 0')
         time.sleep(1)
