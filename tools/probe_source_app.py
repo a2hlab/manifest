@@ -1483,7 +1483,9 @@ def main():
            'ASX_LAUNCH_ACTIVITY': launch_activity,
            'ASX_DIRECT_LAUNCH': '1', 'ASX_KEEP_THEME': '1', 'ASX_DIAG_THROWABLE': '1',
            'ASX_WEBVIEW_DATA_DIR': '/data/data/' + package + '/app_webview',
-           'WL_PARENT_ID': str(window), 'WL_SUB_WINDOW': '1', 'WL_FOCUSABLE': '1',
+           # WL_PARENT_PID: the host process that owns WL_PARENT_ID. Westlake ends the app's process when that
+           # host ends (HostLifecycleWatch), also for hosts whose window-state.json records no pid.
+           'WL_PARENT_ID': str(window), 'WL_PARENT_PID': str(host_pid), 'WL_SUB_WINDOW': '1', 'WL_FOCUSABLE': '1',
            'WL_SESSION_BUNDLE': args.host, 'WL_ABILITY_OWNED_WINDOWS': '1', 'WL_MMI': '1',
            'WESTLAKE_OH_JIT_ANON_FALLBACK': '1',
            # WESTLAKE §812 (openharmony art-fixes): this standalone ARM64 port has no
