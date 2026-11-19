@@ -77,7 +77,9 @@ def android_relr_retagged(path):
 # library overrides with the app, about 40 s over wireless hdc for files that had not changed; the
 # launcher's cleanup removes each launch's stage and runtime, so nothing else kept them. A file
 # enters the cache only after its hash checks, and every copy taken from it is checked again in the
-# runtime, as a sent file is. Entries unused for three days are dropped.
+# runtime, as a sent file is. Entries unused for three days are dropped. With --input-cache-link (a board whose
+# /data is one filesystem without encryption policies, such as a RAM disk) only the files every app shares are
+# cached, and each runtime gets links to them, as it gets links to the framework's shared copy.
 INPUT_CACHE = '/data/local/tmp/a2hlab-input-cache'
 # Where Westlake's PackageInstaller sessions publish an installed package (InstalledPackages.DIR).
 INSTALLED_APPS = '/data/service/el1/public/appspawnx/installed'
@@ -631,6 +633,11 @@ def main():
     parser.add_argument('--input-cache', action='store_true',
                         help='stage the WebView files, runtime library overrides, guest packages and the app\'s own files from a cache on the '
                              'board, keyed by content, and send only the files it lacks (' + INPUT_CACHE + ')')
+    parser.add_argument('--input-cache-link', action='store_true',
+                        help='an input cache of only the files every app shares (the WebView files, runtime library '
+                             'overrides and guest packages), linked into the runtime rather than copied: for a board '
+                             'whose /data is one filesystem without encryption policies, such as a RAM disk, where a '
+                             'copy per launch costs memory and the app\'s own files would fill the cache')
     parser.add_argument('--guest-build', type=Path,
                         help='Packages run in the app process beside it (microG GmsCore and Companion): '
                              'an artifacts.json naming their APKs by sha256')
@@ -1040,9 +1047,11 @@ def main():
                 result[name.strip()] = value
         return result
 
-    def stage_from_cache(files, runtime, stage):
+    def stage_from_cache(files, runtime, stage, link=False):
         """Copies files (runtime name -> local path) into runtime from the board's input cache, after
-        sending the ones the cache lacks. Returns which names were sent and which were reused."""
+        sending the ones the cache lacks; with link, links them (a copy where the kernel will not link). A link
+        keeps the cache's owner, root: the runtime's ownership step changes only files with one link, so the app
+        cannot write a file the next launch shares. Returns which names were sent and which were reused."""
         sums = {name: digest(path) for name, path in files.items()}
         shell('mkdir -p ' + INPUT_CACHE + ' && rm -rf ' + INPUT_CACHE + '/.incoming')
         present = set(shell('ls -1 ' + INPUT_CACHE).split())
@@ -1066,8 +1075,11 @@ def main():
         directories = sorted({str(Path(runtime + '/' + name).parent) for name in files})
         commands = ['mkdir -p ' + shlex.quote(directory) for directory in directories]
         # rm first: the runtime's framework files are links to the shared copy, and cp would write into it.
-        commands += ['rm -f ' + shlex.quote(runtime + '/' + name) + ' && cp ' + INPUT_CACHE + '/' + sums[name] + ' '
-                     + shlex.quote(runtime + '/' + name) for name in sorted(files)]
+        def place(name):
+            source, target = INPUT_CACHE + '/' + sums[name], shlex.quote(runtime + '/' + name)
+            return ('(ln ' + source + ' ' + target + ' 2>/dev/null || cp ' + source + ' ' + target + ')'
+                    if link else 'cp ' + source + ' ' + target)
+        commands += ['rm -f ' + shlex.quote(runtime + '/' + name) + ' && ' + place(name) for name in sorted(files)]
         commands += ['touch ' + INPUT_CACHE + '/' + value for value in sorted(set(sums.values()))]
         # In pieces: Alipay's hundreds of libraries made one command of 70 KB, which hdc shell drops
         # without an answer.
@@ -1079,7 +1091,7 @@ def main():
         shell('cd ' + INPUT_CACHE + ' && total=$(du -sk . | cut -f1) && for f in $(ls -tr); do '
               '[ "$total" -le ' + str(INPUT_CACHE_MAX_KB) + ' ] && break; '
               'size=$(du -k "$f" | cut -f1); rm -f "$f"; total=$((total - size)); done; true')
-        return {'dir': INPUT_CACHE,
+        return {'dir': INPUT_CACHE, 'linked': link,
                 'sent': sorted(name for name in files if sums[name] in missing),
                 'reused': sorted(name for name in files if sums[name] not in missing)}
 
@@ -1244,15 +1256,16 @@ def main():
     state['own_exports_bound_locally'] = sorted(n for n, c in compat_changes.items() if 'own exports bound locally' in c)
     state['init_array_behind_dt_init'] = sorted(n for n, c in compat_changes.items() if 'init array behind DT_INIT' in c)
     cached = {}
-    if args.input_cache:
+    if args.input_cache or args.input_cache_link:
         cached = {name: webview_paths[name] for name in webview_files}
         cached.update(runtime_overrides)
         cached.update(guest_paths)
         # The app's own files too (not the ones rewritten for the loader, which are made here): a
         # round relaunches the apps of earlier rounds, and over a slow link the app was most of what
         # went over the air each time.
-        cached.update({name: args.app_input / split_sources.get(name, name)
-                       for name in app_files if name not in loader_compat and name not in installed_apks})
+        if not args.input_cache_link:
+            cached.update({name: args.app_input / split_sources.get(name, name)
+                           for name in app_files if name not in loader_compat and name not in installed_apks})
     with tarfile.open(archive, 'w') as tar:
         for name in sorted(app_files):
             if name in cached or name in installed_apks:
@@ -1286,7 +1299,7 @@ def main():
             shell('cd ' + runtime + ' && rm -f ' + ' '.join(shlex.quote(n) for n in linked[start:start + 24]))
         shell('tar -xf ' + stage + '/' + archive.name + ' -C ' + runtime)
     if cached:
-        state['input_cache'] = stage_from_cache(cached, runtime, stage)
+        state['input_cache'] = stage_from_cache(cached, runtime, stage, link=args.input_cache_link)
         save()
     expected_app = {runtime + '/' + n: e['sha256'] for n, e in app_files.items() if n not in installed_apks}
     expected_app.update({runtime + '/' + n: digest(p) for n, p in oat_files.items()})
