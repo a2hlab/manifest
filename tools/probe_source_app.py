@@ -1020,10 +1020,13 @@ def main():
         return text
 
     def shell(command):
+        started = time.time()
         text = call(['shell', 'sh -c ' + shlex.quote(command) +
                      '; a2h_rc=$?; printf "\\n__A2H_RC__%s\\n" "$a2h_rc"'])
+        # When it started and how long it took: where a launch spends its time.
         with (output / 'commands.jsonl').open('a') as journal:
-            journal.write(json.dumps({'command': command, 'output': text}) + '\n')
+            journal.write(json.dumps({'command': command, 'output': text, 'started': round(started, 3),
+                                      'seconds': round(time.time() - started, 3)}) + '\n')
         match = re.search(r'\n__A2H_RC__(\d+)\n?$', text)
         if not match or int(match[1]):
             raise RuntimeError(text)
