@@ -658,6 +658,13 @@ def main():
                              'ADR-0003 stage 2): they reach its code by path, as Android apps read /data/app, '
                              'so the bundle and files directories become traversable (0711), while its data '
                              '(<runtime>/app-data) stays its own (0700)')
+    parser.add_argument('--managed', action='store_true',
+                        help='ADR-0008 managed launch, test board only (docs/managed-launch.md): --host is the '
+                             'app\'s own OH bundle (tools/make_managed_bundle.py). OH\'s application manager '
+                             'sends its spawn to the CJAppSpawn socket (a dotted srcEntry), where the spawn '
+                             'router passes it to this launch\'s appspawn-x. The launcher starts the bundle\'s '
+                             'ability, named after the launcher activity, with aa; OH gives the process the '
+                             'bundle\'s own uid and token, the ability and its window session')
     parser.add_argument('--runtime-env', action='append', default=[], metavar='KEY=VALUE',
                         help='extra environment for the spawned child, e.g. APPSPAWNX_VERBOSE_CLASS=1 '
                              "to trace class loading. Repeatable; it cannot replace a key the launcher sets")
@@ -863,7 +870,7 @@ def main():
             # silently become the other.
             staged = name in framework['files']
             if (entry is None or staged != (name in args.runtime_library) or build_report.get('errors')
-                    or not re.fullmatch(r'lib[a-zA-Z0-9_.+-]+\.so', name)
+                    or not re.fullmatch(r'lib[a-zA-Z0-9_.+-]+\.so|appspawn-x', name)
                     or digest(path) != entry['sha256']):
                 raise ValueError('Runtime library ' + ('override is not a built, staged library: '
                                                        if name in args.runtime_library else
@@ -1111,13 +1118,15 @@ def main():
         state['source_host_build_sha256'] = digest(args.host_build / 'artifacts.json')
         state['source_host_hap_sha256'] = wanted
     shell('power-shell wakeup')
-    result = shell('aa start -b ' + args.host + ' -a EntryAbility' +
-                   (' --pb westlake.remoteHostWindows true' if args.host_window_bridge else ''))
-    if 'start ability successfully' not in result:
-        raise RuntimeError(result)
     host_pid = None
     window = None
-    for _ in range(60):
+    # A managed launch starts the bundle's ability only once its spawner listens (below); there is no host
+    # window to borrow.
+    result = '' if args.managed else shell('aa start -b ' + args.host + ' -a EntryAbility' +
+                                           (' --pb westlake.remoteHostWindows true' if args.host_window_bridge else ''))
+    if not args.managed and 'start ability successfully' not in result:
+        raise RuntimeError(result)
+    for _ in range(0 if args.managed else 60):
         try:
             host_pid = int(shell('pidof ' + args.host).strip())
             host_state = json.loads(shell(f'cat /proc/{host_pid}/root/data/storage/el2/base/haps/entry/files/window-state.json'))
@@ -1127,7 +1136,7 @@ def main():
         except (RuntimeError, ValueError, KeyError):
             pass
         time.sleep(0.25)
-    if not window or window <= 0:
+    if not args.managed and (not window or window <= 0):
         raise ValueError('Missing host window')
     state.update(host_pid=host_pid, window=window)
     host_control = None
@@ -1141,6 +1150,9 @@ def main():
     runtime = '/data/app/el2/100/base/' + args.host + '/files/a2hlab-source-' + suffix
     stage = '/data/local/tmp/a2hlab-app-' + suffix
     logical = '/data/local/tmp/asx'
+    # OH's application manager sends a managed bundle's spawn to the CJAppSpawn socket (its entry module's
+    # srcEntry is a dotted class name, AppMgrServiceInner's IsCjApplication). There the spawn router (appspawn-x
+    # --route, one for every managed bundle) passes it to the spawner this launch starts on its own socket.
     socket_name = 'A2HSource' + suffix[:20]
     socket = '/dev/unix/socket/' + socket_name
     state.update(stage=stage, runtime=runtime, uid=uid, host=host, socket=socket,
@@ -1497,6 +1509,20 @@ def main():
     if args.runtime_env:
         state['runtime_env'] = sorted(args.runtime_env)
         save()
+    if args.managed:
+        # The app gets its ability and main window session from OH, not a direct launch under a borrowed window.
+        for key in ['ASX_DIRECT_LAUNCH', 'WL_PARENT_ID', 'WL_SUB_WINDOW', 'WL_SESSION_BUNDLE',
+                    'WL_ABILITY_OWNED_WINDOWS']:
+            env.pop(key, None)
+        # One OH ability hosts the app's Android task: the app's own activities start in its process.
+        env['WESTLAKE_MANAGED_LAUNCH'] = '1'
+        # OH moves a managed app to the background, and ART then compacts a CMS heap (a moving collection)
+        # unless the background collector is non-moving too; the app faulted on objects left in the
+        # protected old space. A --runtime-env setting replaces this one.
+        if not any(item.startswith('APPSPAWNX_BACKGROUND_GC=') for item in args.runtime_env):
+            env['APPSPAWNX_BACKGROUND_GC'] = 'CMS'
+        state['managed'] = True
+        save()
     script = output / 'run.sh'
     script.write_text('#!/system/bin/sh\nset -eu\ncd ' + logical + '\n' +
                       ''.join('export ' + k + '=' + shlex.quote(v) + '\n' for k, v in env.items()) +
@@ -1516,10 +1542,55 @@ def main():
         log = shell('tail -n 500 ' + stage + '/parent.log')
         (output / 'parent.log').write_text(log)
         raise RuntimeError('Source parent did not listen; see ' + str(output / 'parent.log'))
-    response = shell(stage + '/host_spawn ' + socket + ' ' + stage + '/request.bin')
-    match = re.search(r'HOST_SPAWN result=0 pid=(\d+)', response)
-    if not match:
-        raise RuntimeError(response)
+    if args.managed:
+        # The router finds this bundle's spawner in a registry only root can write.
+        registry = '/data/service/el1/public/westlake-registry/managed'
+        shell('mkdir -p ' + registry + ' && chmod 700 /data/service/el1/public/westlake-registry ' + registry +
+              ' && echo ' + socket + ' > ' + registry + '/' + args.host + '.new && chmod 600 ' + registry + '/' +
+              args.host + '.new && mv ' + registry + '/' + args.host + '.new ' + registry + '/' + args.host)
+        # One router for all managed bundles, outside any app's namespace; foundation may connect only to a
+        # socket with appspawn's SELinux context (su, the shell's, is refused).
+        router_args = 'appspawn-x --socket-name CJAppSpawn --route'
+        running = shell('for p in $(pidof appspawn-x); do [ "$(ps -o args= -p $p | tail -n 1)" = "' + router_args +
+                        '" ] && echo $p; done; exit 0').split()
+        if not running:
+            router_search = [runtime] + [d for d in search if d != logical and not d.startswith(logical + '/')]
+            shell('cd ' + runtime + ' && (LD_LIBRARY_PATH=' + ':'.join(router_search) +
+                  ' WESTLAKE_SPAWN_SOCKET_CONTEXT=u:r:appspawn:s0 nohup ' + runtime + '/appspawn-x --socket-name '
+                  'CJAppSpawn --route > /data/local/tmp/a2hlab-spawn-router.log 2>&1 < /dev/null &); exit 0')
+            for _ in range(40):
+                if 'READY' in shell('grep -q "routing OH" /data/local/tmp/a2hlab-spawn-router.log && echo READY; '
+                                    'exit 0'):
+                    break
+                time.sleep(0.5)
+            else:
+                raise RuntimeError('The spawn router did not start: ' +
+                                   shell('tail -n 20 /data/local/tmp/a2hlab-spawn-router.log; exit 0'))
+        state['spawn_router'] = running[0] if running else 'started'
+        save()
+        # A running instance would take the start itself, and OH would ask for no process: OH stops it first.
+        shell('aa force-stop ' + args.host + '; exit 0')
+        # The bundle's abilities are named after the app's activities: its main ability is the launcher activity.
+        result = shell('aa start -b ' + args.host + ' -a ' + launch_activity)
+        state['managed_start'] = result.strip()
+        save()
+        if 'start ability successfully' not in result:
+            raise RuntimeError(result)
+        for _ in range(60):
+            match = re.search(r'Spawned child pid=(\d+) for ' + re.escape(args.host) + ' ',
+                              shell('grep -a "Spawned child pid=" ' + stage + '/parent.log; exit 0'))
+            if match:
+                break
+            time.sleep(0.5)
+        else:
+            log = shell('tail -n 500 ' + stage + '/parent.log')
+            (output / 'parent.log').write_text(log)
+            raise RuntimeError('OH did not ask this spawner for ' + args.host + '; see ' + str(output / 'parent.log'))
+    else:
+        response = shell(stage + '/host_spawn ' + socket + ' ' + stage + '/request.bin')
+        match = re.search(r'HOST_SPAWN result=0 pid=(\d+)', response)
+        if not match:
+            raise RuntimeError(response)
     state['child'] = int(match[1])
     save()
     # WESTLAKE: a physical touch never reaches this app through OH MMI. Its windows are
