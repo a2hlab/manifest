@@ -77,7 +77,9 @@ def android_relr_retagged(path):
 # library overrides with the app, about 40 s over wireless hdc for files that had not changed; the
 # launcher's cleanup removes each launch's stage and runtime, so nothing else kept them. A file
 # enters the cache only after its hash checks, and every copy taken from it is checked again in the
-# runtime, as a sent file is. Entries unused for three days are dropped.
+# runtime, as a sent file is. Entries unused for three days are dropped. With --input-cache-link (a board whose
+# /data is one filesystem without encryption policies, such as a RAM disk) only the files every app shares are
+# cached, and each runtime gets links to them, as it gets links to the framework's shared copy.
 INPUT_CACHE = '/data/local/tmp/a2hlab-input-cache'
 # Where Westlake's PackageInstaller sessions publish an installed package (InstalledPackages.DIR).
 INSTALLED_APPS = '/data/service/el1/public/appspawnx/installed'
@@ -631,6 +633,11 @@ def main():
     parser.add_argument('--input-cache', action='store_true',
                         help='stage the WebView files, runtime library overrides, guest packages and the app\'s own files from a cache on the '
                              'board, keyed by content, and send only the files it lacks (' + INPUT_CACHE + ')')
+    parser.add_argument('--input-cache-link', action='store_true',
+                        help='an input cache of only the files every app shares (the WebView files, runtime library '
+                             'overrides and guest packages), linked into the runtime rather than copied: for a board '
+                             'whose /data is one filesystem without encryption policies, such as a RAM disk, where a '
+                             'copy per launch costs memory and the app\'s own files would fill the cache')
     parser.add_argument('--guest-build', type=Path,
                         help='Packages run in the app process beside it (microG GmsCore and Companion): '
                              'an artifacts.json naming their APKs by sha256')
@@ -678,6 +685,13 @@ def main():
                              "for taps a script sends), so a touch on the board cannot disturb an "
                              "unattended run; 'isolated' creates only a private per-process "
                              "mailbox and leaves the global tap link and existing forwarders alone")
+    parser.add_argument('--touch-device', default='/dev/input/event2',
+                        help="evdev node of the device's touchscreen, read by the forwarder (default: the "
+                             "test board's digitizer; on the OnePlus 6 it is /dev/input/event1)")
+    parser.add_argument('--touch-size', default='',
+                        help="WIDTHxHEIGHT of the screen the touchscreen covers, in pixels; the forwarder "
+                             "scales the device's raw range to it (default: the forwarder's 1200x1920, "
+                             "the test board's screen)")
     parser.add_argument('--android-native-target', action='append', default=[],
                         help='APK DSO basename to route through the isolated Android ABI namespace')
     parser.add_argument('--android-native-net-target', action='append', default=[],
@@ -1006,10 +1020,13 @@ def main():
         return text
 
     def shell(command):
+        started = time.time()
         text = call(['shell', 'sh -c ' + shlex.quote(command) +
                      '; a2h_rc=$?; printf "\\n__A2H_RC__%s\\n" "$a2h_rc"'])
+        # When it started and how long it took: where a launch spends its time.
         with (output / 'commands.jsonl').open('a') as journal:
-            journal.write(json.dumps({'command': command, 'output': text}) + '\n')
+            journal.write(json.dumps({'command': command, 'output': text, 'started': round(started, 3),
+                                      'seconds': round(time.time() - started, 3)}) + '\n')
         match = re.search(r'\n__A2H_RC__(\d+)\n?$', text)
         if not match or int(match[1]):
             raise RuntimeError(text)
@@ -1033,9 +1050,11 @@ def main():
                 result[name.strip()] = value
         return result
 
-    def stage_from_cache(files, runtime, stage):
+    def stage_from_cache(files, runtime, stage, link=False):
         """Copies files (runtime name -> local path) into runtime from the board's input cache, after
-        sending the ones the cache lacks. Returns which names were sent and which were reused."""
+        sending the ones the cache lacks; with link, links them (a copy where the kernel will not link). A link
+        keeps the cache's owner, root: the runtime's ownership step changes only files with one link, so the app
+        cannot write a file the next launch shares. Returns which names were sent and which were reused."""
         sums = {name: digest(path) for name, path in files.items()}
         shell('mkdir -p ' + INPUT_CACHE + ' && rm -rf ' + INPUT_CACHE + '/.incoming')
         present = set(shell('ls -1 ' + INPUT_CACHE).split())
@@ -1059,8 +1078,11 @@ def main():
         directories = sorted({str(Path(runtime + '/' + name).parent) for name in files})
         commands = ['mkdir -p ' + shlex.quote(directory) for directory in directories]
         # rm first: the runtime's framework files are links to the shared copy, and cp would write into it.
-        commands += ['rm -f ' + shlex.quote(runtime + '/' + name) + ' && cp ' + INPUT_CACHE + '/' + sums[name] + ' '
-                     + shlex.quote(runtime + '/' + name) for name in sorted(files)]
+        def place(name):
+            source, target = INPUT_CACHE + '/' + sums[name], shlex.quote(runtime + '/' + name)
+            return ('(ln ' + source + ' ' + target + ' 2>/dev/null || cp ' + source + ' ' + target + ')'
+                    if link else 'cp ' + source + ' ' + target)
+        commands += ['rm -f ' + shlex.quote(runtime + '/' + name) + ' && ' + place(name) for name in sorted(files)]
         commands += ['touch ' + INPUT_CACHE + '/' + value for value in sorted(set(sums.values()))]
         # In pieces: Alipay's hundreds of libraries made one command of 70 KB, which hdc shell drops
         # without an answer.
@@ -1072,7 +1094,7 @@ def main():
         shell('cd ' + INPUT_CACHE + ' && total=$(du -sk . | cut -f1) && for f in $(ls -tr); do '
               '[ "$total" -le ' + str(INPUT_CACHE_MAX_KB) + ' ] && break; '
               'size=$(du -k "$f" | cut -f1); rm -f "$f"; total=$((total - size)); done; true')
-        return {'dir': INPUT_CACHE,
+        return {'dir': INPUT_CACHE, 'linked': link,
                 'sent': sorted(name for name in files if sums[name] in missing),
                 'reused': sorted(name for name in files if sums[name] not in missing)}
 
@@ -1118,6 +1140,13 @@ def main():
         state['source_host_build_sha256'] = digest(args.host_build / 'artifacts.json')
         state['source_host_hap_sha256'] = wanted
     shell('power-shell wakeup')
+    # A host that is not running writes a new window-state.json once its window is up. Until then the
+    # file left by the previous host process names that process's window -- an id a classic window
+    # manager has freed (each start gets a new one), so the child's sub-window would be refused as
+    # WM_ERROR_INVALID_PARENT. Remove it first, so the loop below waits for the new host's window.
+    if not args.managed and not shell('pidof ' + args.host + '; exit 0').strip():
+        shell('rm -f /data/app/el2/100/base/' + args.host +
+              '/haps/entry/files/window-state.json; exit 0')
     host_pid = None
     window = None
     # A managed launch starts the bundle's ability only once its spawner listens (below); there is no host
@@ -1230,15 +1259,16 @@ def main():
     state['own_exports_bound_locally'] = sorted(n for n, c in compat_changes.items() if 'own exports bound locally' in c)
     state['init_array_behind_dt_init'] = sorted(n for n, c in compat_changes.items() if 'init array behind DT_INIT' in c)
     cached = {}
-    if args.input_cache:
+    if args.input_cache or args.input_cache_link:
         cached = {name: webview_paths[name] for name in webview_files}
         cached.update(runtime_overrides)
         cached.update(guest_paths)
         # The app's own files too (not the ones rewritten for the loader, which are made here): a
         # round relaunches the apps of earlier rounds, and over a slow link the app was most of what
         # went over the air each time.
-        cached.update({name: args.app_input / split_sources.get(name, name)
-                       for name in app_files if name not in loader_compat and name not in installed_apks})
+        if not args.input_cache_link:
+            cached.update({name: args.app_input / split_sources.get(name, name)
+                           for name in app_files if name not in loader_compat and name not in installed_apks})
     with tarfile.open(archive, 'w') as tar:
         for name in sorted(app_files):
             if name in cached or name in installed_apks:
@@ -1272,7 +1302,7 @@ def main():
             shell('cd ' + runtime + ' && rm -f ' + ' '.join(shlex.quote(n) for n in linked[start:start + 24]))
         shell('tar -xf ' + stage + '/' + archive.name + ' -C ' + runtime)
     if cached:
-        state['input_cache'] = stage_from_cache(cached, runtime, stage)
+        state['input_cache'] = stage_from_cache(cached, runtime, stage, link=args.input_cache_link)
         save()
     expected_app = {runtime + '/' + n: e['sha256'] for n, e in app_files.items() if n not in installed_apks}
     expected_app.update({runtime + '/' + n: digest(p) for n, p in oat_files.items()})
@@ -1607,8 +1637,14 @@ def main():
     #   * the bridge only ever opens the mailbox for reading, so it must be created here
     #     and owned by the app uid.
     # event2 is this board's real digitizer (gsl680_tp, ABS 0..1200 x 0..1920); event5 is
-    # the virtual node and is NOT what a finger drives.
-    touch_device = '/dev/input/event2'
+    # the virtual node and is NOT what a finger drives. Other devices pass --touch-device.
+    touch_device = args.touch_device
+    touch_size = ''
+    if args.touch_size:
+        tw, _, th = args.touch_size.partition('x')
+        if not (tw.isdigit() and th.isdigit()):
+            raise ValueError('--touch-size must be WIDTHxHEIGHT, got ' + args.touch_size)
+        touch_size = 'WL_TOUCH_WIDTH=%s WL_TOUCH_HEIGHT=%s ' % (tw, th)
     child_pid = state['child']
     box = '/proc/%d/root/data/local/tmp/noice_tap.%d' % (child_pid, child_pid)
     shell('chmod 755 ' + stage + '/touchfwd')
@@ -1635,7 +1671,7 @@ def main():
     if args.touch_mode not in ('off', 'isolated'):
         stream_env = ('WL_TOUCH_STREAM=1 WL_TOUCH_STREAM_CLICK=1 '
                       if args.touch_mode == 'stream' else '')
-        shell('setsid env ' + stream_env + 'WL_TOUCH_COORD_GAIN=1 ' +
+        shell('setsid env ' + stream_env + touch_size + 'WL_TOUCH_COORD_GAIN=1 ' +
               stage + '/touchfwd ' + touch_device + ' </dev/null >' + stage +
               '/touchfwd.log 2>&1 & exit 0')
         time.sleep(1)
