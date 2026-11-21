@@ -49,9 +49,9 @@ class ManagedBundleTest(unittest.TestCase):
         (self.host / 'artifacts.json').write_text(json.dumps(
             {'artifacts': {make_managed_bundle.HAP: {'sha256': sha}}, 'errors': []}))
 
-    def make(self, name='out', package=PACKAGE, activity=ACTIVITY):
+    def make(self, name='out', package=PACKAGE, activity=ACTIVITY, orientation=None):
         out = self.root / name
-        report = make_managed_bundle.make_bundle(self.host, out, package, activity)
+        report = make_managed_bundle.make_bundle(self.host, out, package, activity, orientation)
         with zipfile.ZipFile(out / make_managed_bundle.HAP) as archive:
             files = {n: archive.read(n) for n in archive.namelist()}
         return report, files
@@ -119,6 +119,25 @@ class ManagedBundleTest(unittest.TestCase):
             self.assertEqual((entry['mainElement'], entry['abilities'][0]['name']), (full, full))
             self.assertEqual(entry['requestPermissions'][0]['usedScene']['abilities'], [full])
             self.assertEqual(report['managed_bundle']['activity'], full)
+
+    def test_orientation(self):
+        # The launcher activity's android:screenOrientation, by number or manifest name, in OH's terms.
+        for i, (android, oh) in enumerate([('11', 'auto_rotation_landscape_restricted'),
+                                           ('sensorLandscape', 'auto_rotation_landscape'), ('0', 'landscape'),
+                                           ('1', 'portrait'), ('reversePortrait', 'portrait_inverted')]):
+            report, files = self.make('o%d' % i, orientation=android)
+            module = json.loads(files['module.json'])
+            self.assertEqual(module['module']['abilities'][0]['orientation'], oh)
+            self.assertEqual(report['managed_bundle']['orientation'], oh)
+            check_signable(module, report, managed=True)
+        # unspecified, nosensor and none: the system's choice, no field.
+        for i, android in enumerate(['-1', 'nosensor', None, '']):
+            report, files = self.make('u%d' % i, orientation=android)
+            self.assertNotIn('orientation', json.loads(files['module.json'])['module']['abilities'][0])
+            self.assertIsNone(report['managed_bundle']['orientation'])
+        for android in ['99', 'sideways']:
+            with self.assertRaisesRegex(ValueError, 'screenOrientation'):
+                self.make('bad-' + android, orientation=android)
 
 
 if __name__ == '__main__':
