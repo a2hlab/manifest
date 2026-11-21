@@ -92,7 +92,7 @@ class ManagedBundleTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'bundle name'):
             self.make('a', package='nodots')
         with self.assertRaisesRegex(ValueError, 'activity'):
-            self.make('b', activity='MainActivity')
+            self.make('b', activity='Main-Activity')
         foreign = json.loads(json.dumps(HOST_MODULE))
         foreign['app']['bundleName'] = 'com.example.app'
         self.write_host(foreign)
@@ -107,6 +107,18 @@ class ManagedBundleTest(unittest.TestCase):
         self.make('e')
         with self.assertRaisesRegex(ValueError, 'must be new'):
             self.make('e')
+
+
+    def test_relative_activity_names(self):
+        # As Android and probe_source_app.py resolve them: Netflix names its launcher ".ui.launch.UIWebViewActivity".
+        for i, (name, full) in enumerate([('.ui.launch.Main', PACKAGE + '.ui.launch.Main'),
+                                          ('MainActivity', PACKAGE + '.MainActivity'),
+                                          (ACTIVITY, ACTIVITY)]):
+            report, files = self.make('rel%d' % i, activity=name)
+            entry = json.loads(files['module.json'])['module']
+            self.assertEqual((entry['mainElement'], entry['abilities'][0]['name']), (full, full))
+            self.assertEqual(entry['requestPermissions'][0]['usedScene']['abilities'], [full])
+            self.assertEqual(report['managed_bundle']['activity'], full)
 
 
 if __name__ == '__main__':

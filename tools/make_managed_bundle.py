@@ -8,7 +8,9 @@ The bundle keeps the host's program and resources unchanged; only module.json ch
   Cangjie (AppMgrServiceInner's IsCjApplication) and asks the CJAppSpawn spawner for the process.
   The launcher's spawn router (appspawn-x --route) serves that socket and passes the request to the
   app's own appspawn-x.
-- The ability is named after the app's launcher activity, which the launcher starts with aa.
+- The ability is named after the app's launcher activity, which the launcher starts with aa. A
+  manifest may name it relative to the package (".ui.Main", or "Main" without a dot); like
+  Android and probe_source_app.py, the name is resolved against the package first.
 - The ability drops the enable.remove.starting.window metadata. With it, SceneBoard would also wait
   up to 5 s for the app to remove the starting window. It goes at the app's first frame anyway.
 - Only the network permissions stay requested (INTERNET, GET_NETWORK_INFO). A development-signed
@@ -37,10 +39,21 @@ def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def class_name(package, name):
+    """An activity name as Android resolves it (PackageParser.buildClassName): relative to the package
+    when it starts with a dot or has no dot at all."""
+    if name.startswith('.'):
+        return package + name
+    if '.' not in name:
+        return package + '.' + name
+    return name
+
+
 def managed_module(module, package, activity):
     """The host HAP's module.json, changed into the app's own managed bundle."""
     if not BUNDLE_NAME.fullmatch(package) or not 7 <= len(package) <= 128:
         raise ValueError('Not an OH bundle name: ' + package)
+    activity = class_name(package, activity)
     if not CLASS_NAME.fullmatch(activity) or len(activity) > 127:
         raise ValueError('Not an activity class name usable as an OH ability name: ' + activity)
     if not module['app']['bundleName'].startswith('org.westlake.'):
@@ -80,6 +93,7 @@ def make_bundle(host_build, out, package, activity):
     if report.get('errors') or digest(source) != report['artifacts'][HAP]['sha256']:
         raise ValueError('Source host HAP differs from its build report')
     out.mkdir(parents=True)
+    activity = class_name(package, activity)
     hap = out / HAP
     with zipfile.ZipFile(source) as archive, zipfile.ZipFile(hap, 'w') as bundle:
         for info in archive.infolist():
