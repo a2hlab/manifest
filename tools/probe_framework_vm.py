@@ -6,9 +6,44 @@ from pathlib import Path
 import re
 import shlex
 import subprocess
+import sys
 import uuid
 from bootstrap_sdk import digest
 from build_core_boot import source_jars
+
+
+def remote_hashes(shell, paths, attempts=1, note=None):
+    """The device's SHA-256 of each path, by sha256sum in batches of 32: {path: hash}.
+
+    shell() already fails when a call does not finish (no exit-status marker), yet the final check
+    failed with 'Device transfers differ from declared source artifacts' while every file was in
+    place: finished calls answered some paths with no hash (2026-11-21, both OnePlus 6 phones, whose
+    sha256sum is a wrapper running openssl per file; the next deployment passed). With attempts > 1
+    the paths without a hash are asked again, alone, and note() gets what the device printed for
+    them. A hash that differs is returned as read; a really missing file stays missing.
+    """
+    hashes = {}
+    pending = list(paths)
+    for attempt in range(max(1, attempts)):
+        said = {}
+        for start in range(0, len(pending), 32):
+            batch = pending[start:start + 32]
+            _, text = shell('sha256sum ' + ' '.join(map(shlex.quote, batch)))
+            for line in text.splitlines():
+                match = re.fullmatch(r'([0-9a-f]{64})\s+(.+)', line)
+                if match:
+                    hashes[match[2]] = match[1]
+                else:
+                    for path in batch:
+                        if path in line:
+                            said.setdefault(path, line.strip())
+        pending = [path for path in pending if path not in hashes]
+        if not pending:
+            break
+        if note and attempt + 1 < attempts:
+            shown = '; '.join(said.get(path, path + ': (nothing printed)') for path in pending[:3])
+            note('%d of %d paths without a hash, asking again: %s' % (len(pending), len(paths), shown))
+    return hashes
 
 
 def main():
@@ -120,16 +155,6 @@ def main():
     if code:
         raise RuntimeError(text)
 
-    def remote_hashes(paths):
-        hashes = {}
-        for start in range(0, len(paths), 32):
-            _, text = shell('sha256sum ' + ' '.join(map(shlex.quote, paths[start:start + 32])))
-            for line in text.splitlines():
-                match = re.fullmatch(r'([0-9a-f]{64})\s+(.+)', line)
-                if match:
-                    hashes[match[2]] = match[1]
-        return hashes
-
     # Batch cache reads and copies, while still verifying every source and every
     # destination byte identity. Hundreds of fonts need not incur four transport
     # round trips per file. A missing or changed cache entry is sent from host.
@@ -140,7 +165,7 @@ def main():
             previous_hash = old.get('sha256') if isinstance(old, dict) else old
             if previous_hash == wanted[name]:
                 candidates[name] = cache['stage'] + '/' + name
-    cached = remote_hashes(list(candidates.values()))
+    cached = remote_hashes(shell, list(candidates.values()))  # a missing cache entry is normal: ask once
     groups, copied = {}, set()
     for name, previous in candidates.items():
         if cached.get(previous) == wanted[name]:
@@ -157,7 +182,8 @@ def main():
             call(['file', 'send', path.name, stage + '/' + name], cwd=path.parent,
                  # sized from the file, as in probe_source_app: 55 s fails over wireless
                  timeout=max(55, path.stat().st_size // (512 * 1024) + 30))
-    actual = remote_hashes([stage + '/' + name for name in files])
+    actual = remote_hashes(shell, [stage + '/' + name for name in files], attempts=3,
+                           note=lambda text: print('probe_framework_vm: ' + text, file=sys.stderr, flush=True))
     if actual != {stage + '/' + name: value for name, value in wanted.items()}:
         raise ValueError('Device transfers differ from declared source artifacts')
     record['files'] = {name: {'sha256': wanted[name], 'bytes': path.stat().st_size}
