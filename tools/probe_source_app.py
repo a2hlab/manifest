@@ -1236,6 +1236,10 @@ def main():
         helpers[target.name] = {'source_sha256': digest(source), 'sha256': digest(target), 'command': command}
     state['helpers'] = helpers
     save()
+    # A stage root of its own (--stage-root) may not exist yet: the first install-style launch makes it. The
+    # stage itself stays a plain mkdir, so a name that already exists still stops the launch.
+    if stage.rsplit('/', 1)[0] != '/data/local/tmp':
+        shell('mkdir -p ' + stage.rsplit('/', 1)[0])
     shell('mkdir ' + stage + ' ' + runtime)
     # The framework stage is the same for every launch of a build. Each launch used to copy it (about 1 GB)
     # into its runtime, so no two apps shared a page of the boot image, the framework or the runtime's
