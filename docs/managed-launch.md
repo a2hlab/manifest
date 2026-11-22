@@ -71,7 +71,31 @@ platform owner's decision (ADR-0008, feasibility question 2).
 5. **Stop it** with `aa force-stop <android package>`. That removes the process, its windows and its
    ability record.
 
-## Limits
+## Installed apps: started and stopped by OH
+
+The steps above start an app through the launcher. Two more launcher options leave it installed, so OH starts it
+again from its own entry points (the home screen, `aa start`, recents), as an installed app starts on a phone.
+
+- **The spawner's start is registered.** A managed launch also writes
+  `/data/service/el1/public/westlake-registry/managed/<package>.start`, root's only like the registry. It holds
+  the launch's own start of the app's spawner. When OH asks for the app's process and the registered spawner
+  does not accept connections, the spawn router (westlake `managed/on-demand-spawner`) runs that script, waits up
+  to 30 s for the spawner, and passes the request on. This happens after `aa force-stop` of the spawner, or after
+  a reboot. A spawner that accepts but does not answer is not asked twice.
+- **`--stage-root /data/local/tmp/a2hlab-installed`** keeps the launch's stage (helpers, the installed APK files,
+  `parent.log`) out of `/data/local/tmp/a2hlab-app-*`, which rounds delete. The default stays `/data/local/tmp`.
+- **Relaunching replaces the app's spawner.** The launcher stops the bundle's previous spawner, the one the
+  registry named before this launch. appspawn-x ends a spawner's processes with it (SIGTERM), and ends an app's
+  other processes when its main process ends.
+
+The app's data is in `<runtime>/app-data/<package>`. A relaunch carries it into the new runtime
+(`--carried-app-data`, `PERSIST_DATA=<package>` in the harness). `bm uninstall` removes it with the bundle.
+Uninstalling should also remove the app's registry entries and its stage under the stage root.
+
+After a reboot the router is not running and parameters set with `param set` are gone. Re-set them, then start the
+router again with the library path of its first start; that path is in the launch's state, under the spawner
+socket's runtime.
+
 
 - One process per app: an app's declared secondary processes are not under OH's application manager
   yet (ADR-0002, ADR-0008 decision 2).
