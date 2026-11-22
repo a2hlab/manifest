@@ -72,6 +72,27 @@ def android_relr_retagged(path):
                 changed = True
     return bytes(data) if changed else None
 
+# A launch's stage: /data/local/tmp/a2hlab-app-<suffix>, or under one directory of its own in /data/local/tmp
+# (--stage-root): an installed managed app keeps its stage where rounds never delete it. inspect_source_app.py
+# accepts the same paths.
+STAGE_ROOT = re.compile(r'/data/local/tmp(/[A-Za-z0-9_][A-Za-z0-9_.-]*)?/?')
+
+
+def stage_dir(root, suffix):
+    if not STAGE_ROOT.fullmatch(root) or not re.fullmatch(r'[a-f0-9]{32}', suffix):
+        raise ValueError('--stage-root wants /data/local/tmp or one directory in it')
+    return root.rstrip('/') + '/a2hlab-app-' + suffix
+
+
+def spawner_start_script(host, socket, start_command):
+    """The script the spawn router runs to start a managed bundle's spawner when it is gone (appspawn-x
+    --route, <registry>/<bundle>.start): the launch's own start, in the background."""
+    if '\n' in start_command or not start_command.rstrip().endswith('&'):
+        raise ValueError('the spawner start must be one background command')
+    return ('#!/system/bin/sh\n# ' + host + ': starts its spawner on ' + socket + ', as the launch started it; '
+            'the spawn router runs this when that spawner is gone.\n' + start_command + '\n')
+
+
 # The board's cache of launch inputs that are the same from one launch to the next, one file per
 # content hash (--input-cache). Every launch sent the WebView payload (185 MB) and any runtime
 # library overrides with the app, about 40 s over wireless hdc for files that had not changed; the
@@ -660,6 +681,11 @@ def main():
                              'a missing directory aborts the launch instead of starting with empty data')
     parser.add_argument('--host-window-bridge', action='store_true',
                         help='opt in to the signed authclienthost/authservicehost development window bridge')
+    parser.add_argument('--stage-root', default='/data/local/tmp', metavar='BOARD_DIR',
+                        help='board directory for this launch\'s stage (helpers, installed APK files, parent.log); '
+                             'default /data/local/tmp. An installed managed app keeps its stage where rounds '
+                             'never delete (e.g. /data/local/tmp/a2hlab-installed), so the spawn router can start '
+                             'its spawner again from it')
     parser.add_argument('--private-data', action='store_true',
                         help='the host bundle serves apps under other uids (a Play host under its own bundle, '
                              'ADR-0003 stage 2): they reach its code by path, as Android apps read /data/app, '
@@ -1177,7 +1203,7 @@ def main():
                                        'normalOhAbilityChecks': True, 'perApkIsolation': False}
     suffix = uuid.uuid4().hex
     runtime = '/data/app/el2/100/base/' + args.host + '/files/a2hlab-source-' + suffix
-    stage = '/data/local/tmp/a2hlab-app-' + suffix
+    stage = stage_dir(args.stage_root, suffix)
     logical = '/data/local/tmp/asx'
     # OH's application manager sends a managed bundle's spawn to the CJAppSpawn socket (its entry module's
     # srcEntry is a dotted class name, AppMgrServiceInner's IsCjApplication). There the spawn router (appspawn-x
@@ -1563,6 +1589,10 @@ def main():
                'nohup ' + stage + '/source_app_namespace ' + runtime + ' ' + str(uid) +
                ' /system/bin/sh ' + logical + '/run.sh >' + stage + '/parent.log 2>&1 </dev/null & echo $!')
     state['parent'] = int(shell(command).strip())
+    # The same start, in the background, for the spawn router (managed launches, below); its log is appended.
+    spawner_start = ((('WESTLAKE_ANDROID_APP_DIR=' + install + ' ') if install else '') +
+                     'nohup ' + stage + '/source_app_namespace ' + runtime + ' ' + str(uid) +
+                     ' /system/bin/sh ' + logical + '/run.sh >>' + stage + '/parent.log 2>&1 </dev/null &')
     save()
     for _ in range(60):
         if 'READY' in shell('if [ -S ' + socket + ' ]; then echo READY; fi'):
@@ -1578,6 +1608,17 @@ def main():
         shell('mkdir -p ' + registry + ' && chmod 700 /data/service/el1/public/westlake-registry ' + registry +
               ' && echo ' + socket + ' > ' + registry + '/' + args.host + '.new && chmod 600 ' + registry + '/' +
               args.host + '.new && mv ' + registry + '/' + args.host + '.new ' + registry + '/' + args.host)
+        # And how to start that spawner again: the router runs <bundle>.start when the spawner is gone (an app
+        # installed earlier, after the spawner stopped or the board rebooted), so OH's own entry points (the home
+        # screen, aa start, recents) start the app without the launcher. Root's only, like the registry.
+        start = output / 'spawner.start'
+        start.write_text(spawner_start_script(args.host, socket, spawner_start))
+        send(start, stage + '/spawner.start')
+        shell('mv ' + stage + '/spawner.start ' + registry + '/' + args.host + '.start.new && chown 0:0 ' + registry +
+              '/' + args.host + '.start.new && chmod 600 ' + registry + '/' + args.host + '.start.new && mv ' +
+              registry + '/' + args.host + '.start.new ' + registry + '/' + args.host + '.start')
+        state['spawner_start'] = registry + '/' + args.host + '.start'
+        save()
         # One router for all managed bundles, outside any app's namespace; foundation may connect only to a
         # socket with appspawn's SELinux context (su, the shell's, is refused).
         router_args = 'appspawn-x --socket-name CJAppSpawn --route'

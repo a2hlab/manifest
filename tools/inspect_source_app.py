@@ -26,7 +26,7 @@ def main():
     runtime = state['runtime']
     if not re.fullmatch(r'/data/app/el2/100/base/[\w.]+/files/a2hlab-source-[a-f0-9]{32}', runtime):
         raise ValueError('Not an isolated source app runtime')
-    if not re.fullmatch(r'/data/local/tmp/a2hlab-app-[a-f0-9]{32}', state['stage']):
+    if not re.fullmatch(r'/data/local/tmp(/[A-Za-z0-9_][A-Za-z0-9_.-]*)?/a2hlab-app-[a-f0-9]{32}', state['stage']):  # = probe_source_app.stage_dir
         raise ValueError('Invalid probe stage')
     output.mkdir(parents=True)
     transport = [args.hdc, '-t', args.serial]
