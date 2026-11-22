@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
-from probe_source_app import spawner_start_script, stage_dir  # noqa: E402
+from probe_source_app import previous_spawner_name, spawner_start_script, stage_dir  # noqa: E402
 
 SUFFIX = 'a' * 32
 INSPECTOR = (Path(__file__).resolve().parents[1] / 'tools/inspect_source_app.py').read_text()
@@ -51,6 +51,21 @@ class SpawnerStart(unittest.TestCase):
             spawner_start_script('org.example', '/dev/unix/socket/x', self.COMMAND.rstrip(' &'))
         with self.assertRaises(ValueError):
             spawner_start_script('org.example', '/dev/unix/socket/x', 'rm -rf /\n' + self.COMMAND)
+
+
+
+class PreviousSpawner(unittest.TestCase):
+    OLD = '/dev/unix/socket/A2HSource' + 'b' * 20
+    NEW = '/dev/unix/socket/A2HSource' + 'c' * 20
+
+    def test_an_earlier_spawner_is_named(self):
+        self.assertEqual(previous_spawner_name(self.OLD + '\n', self.NEW), 'A2HSource' + 'b' * 20)
+
+    def test_none_when_new_missing_or_not_a_spawner(self):
+        self.assertIsNone(previous_spawner_name(self.NEW, self.NEW))
+        self.assertIsNone(previous_spawner_name('', self.NEW))
+        self.assertIsNone(previous_spawner_name('/dev/unix/socket/CJAppSpawn', self.NEW))
+        self.assertIsNone(previous_spawner_name('/dev/unix/socket/A2HSource1") kill 1; echo "', self.NEW))
 
 
 if __name__ == '__main__':

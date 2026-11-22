@@ -84,6 +84,14 @@ def stage_dir(root, suffix):
     return root.rstrip('/') + '/a2hlab-app-' + suffix
 
 
+def previous_spawner_name(registered, current_socket):
+    """The socket name of a bundle's earlier spawner, from its registry entry (the text it held before this
+    launch), when it differs from this launch's; None otherwise or when the entry is not a spawner socket."""
+    socket = (registered or '').strip()
+    match = re.fullmatch(r'/dev/unix/socket/(A2HSource[0-9a-f]{20})', socket)
+    return match.group(1) if match and socket != current_socket else None
+
+
 def spawner_start_script(host, socket, start_command):
     """The script the spawn router runs to start a managed bundle's spawner when it is gone (appspawn-x
     --route, <registry>/<bundle>.start): the launch's own start, in the background."""
@@ -1605,6 +1613,7 @@ def main():
     if args.managed:
         # The router finds this bundle's spawner in a registry only root can write.
         registry = '/data/service/el1/public/westlake-registry/managed'
+        previous = previous_spawner_name(shell('cat ' + registry + '/' + args.host + ' 2>/dev/null; exit 0'), socket)
         shell('mkdir -p ' + registry + ' && chmod 700 /data/service/el1/public/westlake-registry ' + registry +
               ' && echo ' + socket + ' > ' + registry + '/' + args.host + '.new && chmod 600 ' + registry + '/' +
               args.host + '.new && mv ' + registry + '/' + args.host + '.new ' + registry + '/' + args.host)
@@ -1641,6 +1650,13 @@ def main():
         save()
         # A running instance would take the start itself, and OH would ask for no process: OH stops it first.
         shell('aa force-stop ' + args.host + '; exit 0')
+        # The bundle's earlier spawner, now out of the registry, is reached by nothing: stop it. Its own
+        # processes end with it (appspawn-x ends its children on SIGTERM).
+        if previous:
+            stopped = shell('for p in $(pidof appspawn-x); do case "$(ps -o args= -p $p | tail -n 1)" in '
+                            '*"--socket-name ' + previous + '") kill $p && echo $p ;; esac; done; exit 0').split()
+            state['previous_spawner_stopped'] = stopped
+            save()
         # The bundle's abilities are named after the app's activities: its main ability is the launcher activity.
         result = shell('aa start -b ' + args.host + ' -a ' + launch_activity)
         state['managed_start'] = result.strip()
