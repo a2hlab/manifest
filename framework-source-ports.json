@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "scope": "Generic isolated Android font root at the host filesystem boundary",
+  "scope": "Framework sources ported at the host boundary: the isolated Android font root; an app's own host user as Android user 0 (ADR-0003)",
   "files": {
     "frameworks-base/graphics/java/android/graphics/fonts/SystemFonts.java": {
       "\"/system/etc/font_fallback.xml\"": "System.getProperty(\"westlake.android.root\", \"/system\") + \"/etc/font_fallback.xml\"",
@@ -12,6 +12,11 @@
     "frameworks-base/graphics/java/android/graphics/Typeface.java": {
       "\"/system/fonts/Roboto-Regular.ttf\"": "SystemFonts.SYSTEM_FONT_DIR + \"Roboto-Regular.ttf\"",
       "\"/system/fonts/RobotoStatic-Regular.ttf\"": "SystemFonts.SYSTEM_FONT_DIR + \"RobotoStatic-Regular.ttf\""
+    },
+    "frameworks-base/core/java/android/os/UserHandle.java": {
+      "    public static @UserIdInt int getUserId(int uid) {\n        if (MU_ENABLED) {\n            return uid / PER_USER_RANGE;\n": "    public static @UserIdInt int getUserId(int uid) {\n        if (MU_ENABLED) {\n            return westlakeAndroidUser(uid / PER_USER_RANGE);\n",
+      "        if (MU_ENABLED && appId >= 0) {\n            return userId * PER_USER_RANGE + (appId % PER_USER_RANGE);\n": "        if (MU_ENABLED && appId >= 0) {\n            return westlakeHostUser(userId, appId) * PER_USER_RANGE + (appId % PER_USER_RANGE);\n",
+      "    /** @hide */\n    @UnsupportedAppUsage\n    public static @UserIdInt int getCallingUserId() {\n": "    /**\n     * Westlake (ADR-0003): Android user ids map to host identities explicitly, not by division. The host\n     * numbers an OS account's uids from its own base (OpenHarmony: 200000 per account), so a host uid divided\n     * by PER_USER_RANGE gives a number (200 for OpenHarmony's account 100) that is no Android user, and\n     * UserManager.isSystemUser() said false in every app. An app sees its own host user as Android user 0,\n     * the system user, as on a phone; uids stay the host's, other host users keep their numbers.\n     */\n    private static int westlakeAndroidUser(int hostUser) {\n        return hostUser != USER_SYSTEM && hostUser == Process.myUid() / PER_USER_RANGE ? USER_SYSTEM : hostUser;\n    }\n\n    /** Westlake: the host user that Android user id userId names for appId (see westlakeAndroidUser). */\n    private static int westlakeHostUser(int userId, int appId) {\n        if (userId != USER_SYSTEM || appId % PER_USER_RANGE < Process.FIRST_APPLICATION_UID) return userId;\n        return Process.myUid() / PER_USER_RANGE;\n    }\n\n    /** @hide */\n    @UnsupportedAppUsage\n    public static @UserIdInt int getCallingUserId() {\n"
     }
   }
 }
