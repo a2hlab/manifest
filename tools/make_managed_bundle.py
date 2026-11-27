@@ -11,8 +11,11 @@ The bundle keeps the host's program and resources unchanged; only module.json ch
 - The ability is named after the app's launcher activity, which the launcher starts with aa.
 - The ability drops the enable.remove.starting.window metadata. With it, SceneBoard would also wait
   up to 5 s for the app to remove the starting window. It goes at the app's first frame anyway.
-- Only the network permissions stay requested (INTERNET, GET_NETWORK_INFO). A development-signed
-  bundle gets no restricted ACLs, and Android permissions are not mapped to OH ones yet (ADR-0004).
+- The network permissions stay requested (INTERNET, GET_NETWORK_INFO). Of the host's user_grant
+  permissions, one stays only when the APK requests the Android permission it stands for
+  (--android-permission, from the APK's manifest): CAMERA for android.permission.CAMERA, MICROPHONE
+  for RECORD_AUDIO, the location ones for ACCESS_FINE/COARSE_LOCATION. A development-signed bundle
+  gets no restricted ACLs.
 
 The output directory holds imehost-unsigned.hap and artifacts.json. sign_development_host.py signs
 them with --managed.
@@ -26,6 +29,14 @@ from pathlib import Path
 
 MANAGED_DESCRIPTION = 'Westlake managed launch (ADR-0008)'
 NETWORK_PERMISSIONS = ('ohos.permission.INTERNET', 'ohos.permission.GET_NETWORK_INFO')
+# The host's user_grant permissions and the Android permissions an app must request to keep each one.
+ANDROID_FOR_OH = {
+    'ohos.permission.CAMERA': ('android.permission.CAMERA',),
+    'ohos.permission.MICROPHONE': ('android.permission.RECORD_AUDIO',),
+    'ohos.permission.APPROXIMATELY_LOCATION': ('android.permission.ACCESS_COARSE_LOCATION',
+                                               'android.permission.ACCESS_FINE_LOCATION'),
+    'ohos.permission.LOCATION': ('android.permission.ACCESS_FINE_LOCATION',),
+}
 HAP = 'imehost-unsigned.hap'
 # OH bundle names: 7 to 128 characters, a letter first, at least one dot. Android package names are
 # stricter, so every Android package fits.
@@ -37,7 +48,7 @@ def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def managed_module(module, package, activity):
+def managed_module(module, package, activity, android_permissions=()):
     """The host HAP's module.json, changed into the app's own managed bundle."""
     if not BUNDLE_NAME.fullmatch(package) or not 7 <= len(package) <= 128:
         raise ValueError('Not an OH bundle name: ' + package)
@@ -62,7 +73,9 @@ def managed_module(module, package, activity):
         ability.pop('metadata', None)
     old_name, ability['name'] = ability['name'], activity
     entry['mainElement'] = activity
-    permissions = [p for p in entry.get('requestPermissions', []) if p['name'] in NETWORK_PERMISSIONS]
+    android_permissions = set(android_permissions)
+    permissions = [p for p in entry.get('requestPermissions', []) if p['name'] in NETWORK_PERMISSIONS
+                   or android_permissions.intersection(ANDROID_FOR_OH.get(p['name'], ()))]
     for permission in permissions:
         used = permission.get('usedScene', {}).get('abilities')
         if used:
@@ -71,7 +84,7 @@ def managed_module(module, package, activity):
     return result
 
 
-def make_bundle(host_build, out, package, activity):
+def make_bundle(host_build, out, package, activity, android_permissions=()):
     host_build, out = Path(host_build), Path(out)
     if out.exists():
         raise ValueError('--out must be new')
@@ -85,7 +98,7 @@ def make_bundle(host_build, out, package, activity):
         for info in archive.infolist():
             data = archive.read(info.filename)
             if info.filename == 'module.json':
-                data = json.dumps(managed_module(json.loads(data), package, activity), indent=4).encode()
+                data = json.dumps(managed_module(json.loads(data), package, activity, android_permissions), indent=4).encode()
             bundle.writestr(info, data)
     record = {'artifacts': {HAP: {'sha256': digest(hap)}}, 'errors': [],
               'managed_bundle': {'package': package, 'activity': activity, 'changed': ['module.json'],
@@ -102,8 +115,10 @@ def main():
     parser.add_argument('--package', required=True, help="the Android package, the bundle's name")
     parser.add_argument('--activity', required=True, help="the app's launcher activity class, its ability name")
     parser.add_argument('--out', type=Path, required=True, help='a new directory')
+    parser.add_argument('--android-permission', action='append', default=[],
+                        help="an Android permission the APK requests; repeat (keeps the host's OH counterpart)")
     args = parser.parse_args()
-    record = make_bundle(args.host_build, args.out, args.package, args.activity)
+    record = make_bundle(args.host_build, args.out, args.package, args.activity, args.android_permission)
     print('MANAGED_BUNDLE', args.package, record['artifacts'][HAP]['sha256'])
 
 

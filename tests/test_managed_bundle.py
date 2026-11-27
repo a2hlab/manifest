@@ -49,9 +49,9 @@ class ManagedBundleTest(unittest.TestCase):
         (self.host / 'artifacts.json').write_text(json.dumps(
             {'artifacts': {make_managed_bundle.HAP: {'sha256': sha}}, 'errors': []}))
 
-    def make(self, name='out', package=PACKAGE, activity=ACTIVITY):
+    def make(self, name='out', package=PACKAGE, activity=ACTIVITY, android_permissions=()):
         out = self.root / name
-        report = make_managed_bundle.make_bundle(self.host, out, package, activity)
+        report = make_managed_bundle.make_bundle(self.host, out, package, activity, android_permissions)
         with zipfile.ZipFile(out / make_managed_bundle.HAP) as archive:
             files = {n: archive.read(n) for n in archive.namelist()}
         return report, files
@@ -78,6 +78,30 @@ class ManagedBundleTest(unittest.TestCase):
         check_signable(module, report, managed=True)
         with self.assertRaises(ValueError):
             check_signable(module, report)
+
+    def test_user_grant_permissions_follow_the_apk(self):
+        module = json.loads(json.dumps(HOST_MODULE))
+        module['module']['requestPermissions'] += [
+            {'name': 'ohos.permission.CAMERA', 'usedScene': {'abilities': ['EntryAbility'], 'when': 'inuse'}},
+            {'name': 'ohos.permission.APPROXIMATELY_LOCATION'},
+            {'name': 'ohos.permission.LOCATION'},
+        ]
+        self.write_host(module)
+        _, files = self.make(android_permissions=['android.permission.CAMERA',
+                                                  'android.permission.ACCESS_COARSE_LOCATION',
+                                                  'android.permission.INTERNET'])
+        entry = json.loads(files['module.json'])['module']
+        self.assertEqual([p['name'] for p in entry['requestPermissions']],
+                         ['ohos.permission.INTERNET', 'ohos.permission.GET_NETWORK_INFO',
+                          'ohos.permission.CAMERA', 'ohos.permission.APPROXIMATELY_LOCATION'])
+        camera = [p for p in entry['requestPermissions'] if p['name'] == 'ohos.permission.CAMERA'][0]
+        self.assertEqual(camera['usedScene']['abilities'], [ACTIVITY])
+        _, files = self.make('fine', android_permissions=['android.permission.ACCESS_FINE_LOCATION',
+                                                          'android.permission.RECORD_AUDIO'])
+        names = [p['name'] for p in json.loads(files['module.json'])['module']['requestPermissions']]
+        self.assertEqual(names, ['ohos.permission.INTERNET', 'ohos.permission.GET_NETWORK_INFO',
+                                 'ohos.permission.MICROPHONE', 'ohos.permission.APPROXIMATELY_LOCATION',
+                                 'ohos.permission.LOCATION'])
 
     def test_signer_still_refuses_other_bundles(self):
         check_signable(HOST_MODULE, {})
